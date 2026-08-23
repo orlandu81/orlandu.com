@@ -6,6 +6,10 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
+  { type: "image", src: "media/2026/red-tents-pair.jpg", title: "Red Tents, twin engines", caption: "Two VS. DualSystem Red Tent cocktails, back when there were two — the one on the right is still here; its twin moved on to another garage", cat: "arcade", date: "2026-08" },
+  { type: "image", src: "media/2026/donkey-kong-tkg4.jpg", title: "Donkey Kong TKG4", caption: "The four-board legend, marquee lit, 130,300 on the board", cat: "arcade", date: "2026-08" },
+  { type: "image", src: "media/2026/mario-bros-widebody.jpg", title: "Mario Bros. widebody", caption: "The orange stunner — two players, one sewer, zero excuses", cat: "arcade", date: "2026-08" },
+  { type: "image", src: "media/2026/mini-cute-mvc.jpg", title: "Mini Cute, main event", caption: "Marvel vs. Capcom on the candy cab, KLH towers flanking, mini poster overhead — free play forever", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/bvm-20e1u-crosshatch.jpg", title: "Calibration hours", caption: "Crosshatch pattern up on the BVM-20E1U, AMS-100 on monitor duty above — the ongoing work of keeping the primary broadcast chassis honest", cat: "projects", date: "2026-08" },
   { type: "image", src: "media/2026/garage-wide.jpg", title: "Down the garage arcade", caption: "The long view — deck collection overhead, the cabinet row, pinball in the back, and pro monitors wherever they fit", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/d9-smb.jpg", title: "BVM-D9H5J, reporting for duty", caption: "Super Mario Bros. on the 9-inch broadcast reference — currently looking for a new home on the For Sale page", cat: "monitors", date: "2026-08" },
