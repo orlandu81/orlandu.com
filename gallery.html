@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gallery — Orlandu's Arcade</title>
+<meta name="description" content="Photos and video from Orlandu's Arcade — cabinets, pinball, Sony pro monitors, and workbench projects.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;500;600&family=Barlow+Condensed:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="navwrap">
+    <a class="navlogo" href="index.html"><img src="assets/logo-wordmark.png" alt="Orlandu's Arcade"></a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="games.html">Game Room</a>
+      <a href="monitors.html">Monitor Fleet</a>
+      <a href="gallery.html" class="here">Gallery</a>
+      <a href="projects.html">Projects</a>
+      <a href="forsale.html">For Sale</a>
+      <a href="wanted.html">Wanted</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="kicker">Attract Mode</div>
+  <h1 class="page">Gallery</h1>
+  <p class="lede">The photo and video log of the arcade — new shots land here straight from the garage.</p>
+
+  <div class="filters" id="filters">
+    <button data-cat="all" class="on">All</button>
+    <button data-cat="arcade">Arcade</button>
+    <button data-cat="pinball">Pinball</button>
+    <button data-cat="monitors">Monitors</button>
+    <button data-cat="projects">Projects</button>
+    <button data-cat="signage">Signage</button>
+  </div>
+
+  <div class="masonry" id="wall"></div>
+
+  <div class="empty" id="empty" hidden>
+    <div class="px">▚▚ NO SIGNAL ▞▞</div>
+    <p>The gallery is just getting started. First photos from the arcade bay are on their way.</p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="footwrap">
+    <img src="assets/mascot.png" alt="Orlandu's Arcade mascot">
+    <div class="links">
+      <a href="about.html">About</a>
+      <a href="about.html#contact">Contact</a>
+      <a href="trinitron-fleet-vol1.html">Trinitron Fleet Vol. 1</a>
+    </div>
+    <div class="fine">© 2026 Orlandu's Arcade™ · San Clemente, CA<br>All logos and characters are trademarks of Orlandu's Arcade.</div>
+  </div>
+</footer>
+
+<script src="assets/gallery-data.js"></script>
+<script>
+(function(){
+  const wall = document.getElementById('wall');
+  const empty = document.getElementById('empty');
+  const filters = document.getElementById('filters');
+
+  function render(cat){
+    wall.innerHTML = '';
+    const items = GALLERY.filter(g => cat === 'all' || g.cat === cat);
+    if (!items.length){ empty.hidden = false; return; }
+    empty.hidden = true;
+    for (const g of items){
+      const fig = document.createElement('figure');
+      fig.className = 'shot';
+      if (g.type === 'video'){
+        const v = document.createElement('video');
+        v.src = g.src; v.controls = true; v.preload = 'metadata';
+        if (g.poster) v.poster = g.poster;
+        fig.appendChild(v);
+      } else {
+        const i = document.createElement('img');
+        i.src = g.src; i.alt = g.title || ''; i.loading = 'lazy';
+        fig.appendChild(i);
+      }
+      const cap = document.createElement('figcaption');
+      cap.innerHTML = '<b>' + (g.title||'') + '</b>' +
+        (g.caption ? ' — ' + g.caption : '') +
+        '<span class="cat">' + g.cat + (g.date ? ' · ' + g.date : '') + '</span>';
+      fig.appendChild(cap);
+      wall.appendChild(fig);
+    }
+  }
+
+  filters.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    filters.querySelectorAll('button').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    render(b.dataset.cat);
+  });
+
+  render('all');
+})();
+</script>
+
+</body>
+</html>

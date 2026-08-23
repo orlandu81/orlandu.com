@@ -1,0 +1,208 @@
+/* ══════════════════════════════════════════════════════════
+   ORLANDU'S ARCADE — orlandu.com
+   Neon Grid house style · San Clemente, CA
+   ══════════════════════════════════════════════════════════ */
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+
+:root{
+  --bg:#0a0a12;
+  --bg2:#0e0e1a;
+  --panel:#131322;
+  --panel2:#181829;
+  --line:#262640;
+  --ink:#e8e8f2;
+  --dim:#9a9ab4;
+  --fire1:#ff2d00;
+  --fire2:#ff8a00;
+  --fire3:#ffd400;
+  --cyan:#5ee9ff;
+  --cyan-dim:#2aa8c0;
+  --disp:"Orbitron","Eurostile","Trebuchet MS",Helvetica,sans-serif;
+  --body:"Rajdhani","Barlow Condensed","Arial Narrow",Helvetica,sans-serif;
+  --cond:"Barlow Condensed","Arial Narrow",Helvetica,sans-serif;
+  --pixel:"Press Start 2P","Courier New",monospace;
+  --mono:ui-monospace,"Courier New",monospace;
+}
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:1.1rem;
+  line-height:1.55;
+  min-height:100vh;
+  position:relative;
+}
+
+/* subtle CRT scanlines over everything */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 3px);
+  opacity:.5;
+}
+
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+
+/* ── Header / nav ─────────────────────────────── */
+header.site{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,10,18,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.navwrap{max-width:1200px;margin:0 auto;padding:.6rem 1.2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.navlogo img{height:44px;width:auto}
+nav.main{display:flex;gap:.15rem;flex-wrap:wrap;margin-left:auto}
+nav.main a{
+  font-family:var(--disp);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--dim);padding:.55rem .7rem;border-radius:6px;white-space:nowrap;
+}
+nav.main a:hover{color:var(--cyan);background:var(--panel);text-decoration:none}
+nav.main a.here{color:var(--fire3);background:var(--panel)}
+
+/* ── Layout ───────────────────────────────────── */
+main{max-width:1200px;margin:0 auto;padding:2rem 1.2rem 4rem}
+.kicker{
+  font-family:var(--pixel);font-size:.62rem;color:var(--cyan);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:.9rem;
+}
+h1.page{
+  font-family:var(--disp);font-weight:800;font-size:clamp(1.7rem,4.5vw,2.7rem);
+  letter-spacing:.03em;text-transform:uppercase;line-height:1.15;
+  background:linear-gradient(180deg,var(--fire3),var(--fire2) 55%,var(--fire1));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 0 rgba(0,0,0,.7));
+  margin-bottom:.4rem;
+}
+p.lede{color:var(--dim);font-size:1.2rem;max-width:62ch;margin-bottom:2.2rem}
+section{margin-bottom:3rem}
+h2.sec{
+  font-family:var(--disp);font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cyan);border-bottom:1px solid var(--line);padding-bottom:.5rem;margin-bottom:1.2rem;
+}
+h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-transform:none;font-size:.85rem;margin-left:.6rem}
+
+/* ── Cards ────────────────────────────────────── */
+.grid{display:grid;gap:1rem}
+.grid.c2{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.grid.c3{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.card{
+  background:linear-gradient(180deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.2rem;
+  position:relative;overflow:hidden;
+}
+.card:hover{border-color:var(--cyan-dim)}
+.card h3{font-family:var(--disp);font-size:1rem;letter-spacing:.04em;margin-bottom:.35rem;color:var(--ink)}
+.card .sub{font-family:var(--cond);color:var(--fire2);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem}
+.card p{color:var(--dim);font-size:1rem}
+.card.linked{display:block;color:inherit}
+.card.linked:hover{text-decoration:none}
+
+/* status + tag badges */
+.badge{
+  display:inline-block;font-family:var(--disp);font-size:.6rem;letter-spacing:.1em;
+  text-transform:uppercase;padding:.22rem .55rem;border-radius:99px;border:1px solid;
+  margin-bottom:.6rem;
+}
+.badge.live{color:var(--fire3);border-color:var(--fire2)}
+.badge.plan{color:var(--cyan);border-color:var(--cyan-dim)}
+.badge.done{color:#9effa0;border-color:#3f7d41}
+.badge.sale{color:#ffb0e0;border-color:#a0568a}
+.badge.want{color:var(--cyan);border-color:var(--cyan-dim)}
+
+/* ── Hero (home) ──────────────────────────────── */
+.hero{
+  position:relative;text-align:center;padding:3.5rem 1rem 4rem;overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%,rgba(255,138,0,.16),transparent 65%),
+    var(--bg2);
+}
+/* neon grid floor */
+.hero::before{
+  content:"";position:absolute;left:-25%;right:-25%;bottom:0;height:46%;
+  background:
+    linear-gradient(transparent, rgba(94,233,255,.09)),
+    repeating-linear-gradient(90deg,rgba(94,233,255,.22) 0 1px,transparent 1px 70px),
+    repeating-linear-gradient(0deg,rgba(94,233,255,.22) 0 1px,transparent 1px 34px);
+  transform:perspective(320px) rotateX(58deg);
+  transform-origin:bottom center;
+  mask-image:linear-gradient(transparent,#000 35%);
+  -webkit-mask-image:linear-gradient(transparent,#000 35%);
+  pointer-events:none;
+}
+.hero .inner{position:relative;max-width:900px;margin:0 auto}
+.hero img.wordmark{width:min(680px,92%);margin:0 auto 1.6rem;filter:drop-shadow(0 6px 22px rgba(255,138,0,.28))}
+.hero p.tag{font-family:var(--cond);color:var(--dim);font-size:1.15rem;letter-spacing:.14em;text-transform:uppercase}
+.hero .coin{
+  margin-top:2rem;font-family:var(--pixel);font-size:.68rem;color:var(--fire3);
+  letter-spacing:.1em;animation:blink 1.4s steps(1) infinite;
+}
+@keyframes blink{50%{opacity:0}}
+
+/* ── Gallery ──────────────────────────────────── */
+.filters{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.3rem}
+.filters button{
+  font-family:var(--disp);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--panel);border:1px solid var(--line);color:var(--dim);
+  padding:.5rem .9rem;border-radius:99px;cursor:pointer;
+}
+.filters button:hover{border-color:var(--cyan-dim);color:var(--cyan)}
+.filters button.on{color:var(--fire3);border-color:var(--fire2)}
+.masonry{columns:3;column-gap:1rem}
+@media(max-width:900px){.masonry{columns:2}}
+@media(max-width:560px){.masonry{columns:1}}
+.shot{break-inside:avoid;margin-bottom:1rem;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.shot img,.shot video{width:100%;display:block}
+.shot figcaption{padding:.6rem .8rem;font-size:.95rem;color:var(--dim)}
+.shot figcaption b{color:var(--ink);font-weight:600}
+.shot .cat{font-family:var(--disp);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);display:block;margin-top:.25rem}
+.empty{
+  border:1px dashed var(--line);border-radius:12px;padding:3rem 1.5rem;text-align:center;color:var(--dim);
+}
+.empty .px{font-family:var(--pixel);font-size:.7rem;color:var(--cyan);margin-bottom:1rem}
+
+/* ── Spec tables ──────────────────────────────── */
+table.spec{width:100%;border-collapse:collapse;font-size:1rem}
+table.spec th,table.spec td{text-align:left;padding:.55rem .7rem;border-bottom:1px solid var(--line)}
+table.spec th{font-family:var(--disp);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+table.spec td{color:var(--ink)}
+table.spec td.d{color:var(--dim)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+
+/* ── Marquee strip ────────────────────────────── */
+.strip{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--bg2);overflow:hidden;white-space:nowrap;padding:.55rem 0;
+}
+.strip span{
+  display:inline-block;font-family:var(--disp);font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--dim);padding-left:100%;
+  animation:scroll 38s linear infinite;
+}
+@keyframes scroll{to{transform:translateX(-100%)}}
+.strip b{color:var(--fire2);font-weight:700}
+
+/* ── Footer ───────────────────────────────────── */
+footer.site{border-top:1px solid var(--line);background:var(--bg2)}
+.footwrap{max-width:1200px;margin:0 auto;padding:2rem 1.2rem;display:flex;gap:2rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.footwrap img{height:72px;width:auto;opacity:.9}
+.footwrap .links{display:flex;gap:1.1rem;flex-wrap:wrap;font-family:var(--cond);letter-spacing:.06em;text-transform:uppercase;font-size:.85rem}
+.footwrap .fine{color:var(--dim);font-size:.85rem;font-family:var(--cond)}
+
+/* ── Misc ─────────────────────────────────────── */
+.btn{
+  display:inline-block;font-family:var(--disp);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--fire2);color:var(--fire3);padding:.7rem 1.3rem;border-radius:8px;
+}
+.btn:hover{background:rgba(255,138,0,.12);text-decoration:none}
+.btn.cy{border-color:var(--cyan-dim);color:var(--cyan)}
+.btn.cy:hover{background:rgba(94,233,255,.09)}
+.note{
+  border-left:3px solid var(--cyan-dim);background:var(--panel);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;color:var(--dim);font-size:1rem;margin:1rem 0;
+}
+.mascot-float{float:right;width:min(240px,38%);margin:0 0 1rem 1.5rem;filter:drop-shadow(0 8px 24px rgba(255,45,0,.25))}
+@media(max-width:640px){.mascot-float{float:none;margin:0 auto 1.2rem;width:60%}}
