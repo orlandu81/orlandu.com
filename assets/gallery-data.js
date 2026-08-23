@@ -6,6 +6,7 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
+  { type: "image", src: "media/2026/vs-dk-high-scores.jpg", title: "Super Player's table", caption: "VS. Donkey Kong's high score board — all ten slots initialed DK, all ten belong to the house. 2,743,550 on top", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/won-superbrite.jpg", title: "World of Nintendo Superbrite", caption: "The fluorescent icon, lit and dark — the sign that made every kid's heart rate spike at the mall", cat: "signage", date: "2026-08" },
   { type: "image", src: "media/2026/pinball-blacklight.jpg", title: "Blacklight hours", caption: "Rick and Morty and Indiana Jones glowing violet — check the displays: ORLANDU'S ARCADE, in-game", cat: "pinball", date: "2026-08" },
   { type: "image", src: "media/2026/tna-toppers.jpg", title: "Annihilation, accessorized", caption: "The TNA backglass with the full topper set — mushroom cloud, warning beacon, and a synthwave sunset", cat: "pinball", date: "2026-08" },
