@@ -6,6 +6,8 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
+  { type: "image", src: "media/2026/bvm-20e1u-crosshatch.jpg", title: "Calibration hours", caption: "Crosshatch pattern up on the BVM-20E1U, AMS-100 on monitor duty above — the ongoing work of keeping the primary broadcast chassis honest", cat: "projects", date: "2026-08" },
+  { type: "image", src: "media/2026/garage-wide.jpg", title: "Down the garage arcade", caption: "The long view — deck collection overhead, the cabinet row, pinball in the back, and pro monitors wherever they fit", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/d9-smb.jpg", title: "BVM-D9H5J, reporting for duty", caption: "Super Mario Bros. on the 9-inch broadcast reference — currently looking for a new home on the For Sale page", cat: "monitors", date: "2026-08" },
   { type: "image", src: "media/2026/mini-cute.jpg", title: "The Mini Cute", caption: "Capcom's pink candy cab holding court in the game room — Marvel vs. Capcom mini poster on the side, the Sega CD library and figure shelf keeping it company", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/pinball-row-night.jpg", title: "Pinball row, lights out", caption: "Ghostbusters, Rick and Morty, Indiana Jones, and Total Nuclear Annihilation glowing after hours — check the Most Ludicrous Chits champ on the R&M display", cat: "pinball", date: "2026-08" },
