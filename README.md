@@ -32,3 +32,11 @@ Static site for Orlandu's Arcade, hosted on GitHub Pages with the custom domain
   the Trinitron Fleet magazine.
 - **Facts:** collection details come from David; confirm before adding claims.
 - Deploy = push to `main`; Pages serves from the repo root (`.nojekyll` present).
+
+## Architecture notes (post-redesign, Aug 2026)
+- Header/footer/nav injected by `assets/site.js` — edit nav there ONCE; pages carry `<header class="site" data-page="...">` shells.
+- `site.js` also provides the sitewide lightbox: any `<img data-full="...">` opens it. Grid/inline images use `media/thumbs/`, full-size in `media/2026/`.
+- New photo workflow: full-size → media/2026/, ALSO generate an 800px q78 thumb with the same filename → media/thumbs/, then add the GALLERY entry (src points at media/2026/; thumb path is derived).
+- Home page film strip auto-shows the 7 newest gallery images; "Latest" cards are still manual.
+- Stories index: stories.html — add new articles there + a card.
+- Every page has Open Graph tags; per-page cards in media/og/ (1200x630, generated with wordmark overlay). sitemap.xml + robots.txt at root.
