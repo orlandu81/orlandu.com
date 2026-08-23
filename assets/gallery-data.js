@@ -6,14 +6,14 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
-  { type: "image", src: "media/2026/vs-dk-high-scores.jpg", title: "Super Player's table", caption: "VS. Donkey Kong's high score board — all ten slots initialed DK, all ten belong to the house. 2,743,550 on top", cat: "arcade", date: "2026-08" },
+  { type: "image", src: "media/2026/vs-dk-high-scores.jpg", title: "Super Player's table", caption: "VS. Super Mario Bros.' high score board — every slot initialed DK, every run to World 8-4, 2,743,550 on top. <a href='vs-smb.html'>Why the arcade SMB is a different beast →</a>", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/won-superbrite.jpg", title: "World of Nintendo Superbrite", caption: "The fluorescent icon, front and back — the glowing face and the unlit logo side. The sign that made every kid's heart rate spike at the mall", cat: "signage", date: "2026-08" },
   { type: "image", src: "media/2026/pinball-blacklight.jpg", title: "Blacklight hours", caption: "Rick and Morty and Indiana Jones glowing violet — check the displays: ORLANDU'S ARCADE, in-game", cat: "pinball", date: "2026-08" },
   { type: "image", src: "media/2026/tna-toppers.jpg", title: "Annihilation, accessorized", caption: "The TNA backglass with the full topper set — mushroom cloud, warning beacon, and a synthwave sunset", cat: "pinball", date: "2026-08" },
   { type: "image", src: "media/2026/vs-super-mario-bros.jpg", title: "VS. Super Mario Bros.", caption: "The UniSystem doing what it does best, pixel-art invaders keeping watch overhead", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/coke-cooler.jpg", title: "The concession stand", caption: "Glass-bottle Coke cooler under an Orlandu's Arcade topper — Mexican Coke, Pepsi, Fanta, and a lone Squirt for the brave", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/red-tents-pair.jpg", title: "Red Tents, twin engines", caption: "Two VS. DualSystem Red Tent cocktails, back when there were two — the one on the right is still here; its twin moved on to another garage", cat: "arcade", date: "2026-08" },
-  { type: "image", src: "media/2026/donkey-kong-tkg4.jpg", title: "Donkey Kong TKG4", caption: "The four-board legend, marquee lit, 130,300 on the board", cat: "arcade", date: "2026-08" },
+  { type: "image", src: "media/2026/donkey-kong-tkg4.jpg", title: "Donkey Kong", caption: "Blue plywood, made in Japan — marquee lit, 130,300 on the board", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/mario-bros-widebody.jpg", title: "Mario Bros. widebody", caption: "The orange stunner — two players, one sewer, zero excuses", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/mini-cute-mvc.jpg", title: "Mini Cute, main event", caption: "Marvel vs. Capcom on the candy cab, KLH towers flanking, mini poster overhead — free play forever", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/bvm-20e1u-crosshatch.jpg", title: "Calibration hours", caption: "Crosshatch pattern up on the BVM-20E1U, AMS-100 on monitor duty above — the ongoing work of keeping the primary broadcast chassis honest", cat: "projects", date: "2026-08" },
