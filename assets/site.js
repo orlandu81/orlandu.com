@@ -1,0 +1,127 @@
+// ═══════════════════════════════════════════════════════════
+// SITE.JS — Orlandu's Arcade shared chrome + lightbox
+// Header/footer are injected here so nav changes are one edit.
+// Pages carry: <header class="site" data-page="games"></header>
+// and <footer class="site"></footer> plus this script (defer).
+// ═══════════════════════════════════════════════════════════
+(function(){
+  const NAV = [
+    ["index.html",    "Home"],
+    ["games.html",    "Games"],
+    ["consoles.html", "Consoles"],
+    ["monitors.html", "Monitor Fleet"],
+    ["gallery.html",  "Gallery"],
+    ["stories.html",  "Stories"],
+    ["projects.html", "Projects"],
+    ["forsale.html",  "For Sale"],
+    ["wanted.html",   "Wanted"],
+    ["about.html",    "About"]
+  ];
+
+  const header = document.querySelector("header.site");
+  if (header){
+    const here = header.dataset.page || "";
+    header.innerHTML =
+      '<div class="navwrap">' +
+        '<a class="navlogo" href="index.html"><img src="assets/logo-wordmark.png" alt="Orlandu’s Arcade"></a>' +
+        '<button class="burger" aria-label="Menu" aria-expanded="false">☰ MENU</button>' +
+        '<nav class="main">' +
+          NAV.map(([href, label]) =>
+            '<a href="' + href + '"' + (href === here + ".html" || href === here ? ' class="here"' : '') + '>' + label + '</a>'
+          ).join("") +
+        '</nav>' +
+      '</div>';
+    const burger = header.querySelector(".burger");
+    const nav = header.querySelector("nav.main");
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+
+  const footer = document.querySelector("footer.site");
+  if (footer){
+    footer.innerHTML =
+      '<div class="footwrap">' +
+        '<img src="assets/mascot.png" alt="Orlandu’s Arcade mascot">' +
+        '<div class="links">' +
+          '<a href="about.html">About</a>' +
+          '<a href="about.html#contact">Contact</a>' +
+          '<a href="stories.html">Stories</a>' +
+          '<a href="mailto:orlandusarcade@gmail.com">Email</a>' +
+          '<a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a>' +
+          '<a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a>' +
+        '</div>' +
+        '<div class="fine">© 2026 Orlandu’s Arcade™ · San Clemente, CA<br>All logos and characters are trademarks of Orlandu’s Arcade.</div>' +
+      '</div>';
+  }
+
+  // ── Lightbox ─────────────────────────────────────────────
+  // Any <img data-full="..."> opens in the lightbox on click.
+  const lb = document.createElement("div");
+  lb.id = "lightbox";
+  lb.hidden = true;
+  lb.innerHTML =
+    '<button class="lb-close" aria-label="Close">✕</button>' +
+    '<button class="lb-prev" aria-label="Previous">‹</button>' +
+    '<figure><img alt=""><figcaption></figcaption></figure>' +
+    '<button class="lb-next" aria-label="Next">›</button>';
+  document.body.appendChild(lb);
+
+  const lbImg = lb.querySelector("img");
+  const lbCap = lb.querySelector("figcaption");
+  let items = [], idx = 0;
+
+  function visibleItems(){
+    return Array.from(document.querySelectorAll("img[data-full]"))
+      .filter(el => el.offsetParent !== null);
+  }
+  function captionFor(el){
+    const fig = el.closest("figure");
+    const cap = fig && fig.querySelector("figcaption");
+    return cap ? cap.innerHTML : (el.alt || "");
+  }
+  function show(i){
+    idx = (i + items.length) % items.length;
+    const el = items[idx];
+    lbImg.src = el.dataset.full;
+    lbImg.alt = el.alt || "";
+    lbCap.innerHTML = captionFor(el);
+    lb.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function close(){
+    lb.hidden = true;
+    lbImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("click", e => {
+    const img = e.target.closest("img[data-full]");
+    if (img){
+      items = visibleItems();
+      show(items.indexOf(img));
+      return;
+    }
+  });
+  lb.querySelector(".lb-close").addEventListener("click", close);
+  lb.querySelector(".lb-prev").addEventListener("click", e => { e.stopPropagation(); show(idx - 1); });
+  lb.querySelector(".lb-next").addEventListener("click", e => { e.stopPropagation(); show(idx + 1); });
+  lb.addEventListener("click", e => { if (e.target === lb) close(); });
+  document.addEventListener("keydown", e => {
+    if (lb.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(idx - 1);
+    if (e.key === "ArrowRight") show(idx + 1);
+  });
+  // touch swipe
+  let tx = null;
+  lb.addEventListener("touchstart", e => { tx = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener("touchend", e => {
+    if (tx === null) return;
+    const dx = e.changedTouches[0].clientX - tx;
+    if (dx > 50) show(idx - 1);
+    else if (dx < -50) show(idx + 1);
+    tx = null;
+  }, {passive:true});
+})();
