@@ -6,6 +6,9 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
+  { type: "image", src: "media/2026/pinball-row-night.jpg", title: "Pinball row, lights out", caption: "Ghostbusters, Rick and Morty, Indiana Jones, and Total Nuclear Annihilation glowing after hours — check the Most Ludicrous Chits champ on the R&M display", cat: "pinball", date: "2026-08" },
+  { type: "image", src: "media/2026/kb-world-of-nintendo-sign.jpg", title: "Who's the master?", caption: "The fiber optic Kay·Bee / World of Nintendo sign lit up over the game room wall — Sho'nuff approves, Joy-Con and Wiimote racks standing by, the Red Tent below", cat: "signage", date: "2026-08" },
+  { type: "image", src: "media/2026/console-shelf-night.jpg", title: "The console shelf after dark", caption: "Super Mario Bros. glowing on the big PVMs, the shelf lit like a museum case — NES to Dreamcast and the NEC corner", cat: "consoles", date: "2026-08" },
   { type: "image", src: "media/2026/big-blue-side-art.jpg", title: "Big Blue, suited up", caption: "Fresh Capcom side art on the Dynamo Gen 1 — the restoration that started with a PSU rebuild is complete", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/garage-arcade-row.jpg", title: "The garage arcade row", caption: "Mario Bros., Donkey Kong, and the VS. UniSystem under the banner, with the LMD squadron running up top and Big Blue holding down the end", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/bvm-sonic-knuckles.jpg", title: "Sonic & Knuckles, broadcast grade", caption: "The BVM pair over the workbench console shelf, AMS-100s on top — NES, SNES, N64, and an EverDrive-fed Genesis below", cat: "monitors", date: "2026-08" },
