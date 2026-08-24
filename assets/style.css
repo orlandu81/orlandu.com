@@ -160,9 +160,6 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
 .shot img,.shot video{width:100%;display:block}
 .shot figcaption{padding:.6rem .8rem;font-size:.95rem;color:var(--dim)}
 .shot figcaption b{color:var(--ink);font-weight:600}
-/* ── Fleet portraits: uniform crop across mixed orientations ── */
-.fleet img{aspect-ratio:4/3;object-fit:cover;object-position:center top}
-
 /* ── Room tour: portrait video paired with copy ── */
 .tour{display:grid;grid-template-columns:300px 1fr;gap:1rem;align-items:start;margin:1rem 0}
 .tour>.shot{margin-bottom:0}
