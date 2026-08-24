@@ -160,6 +160,16 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
 .shot img,.shot video{width:100%;display:block}
 .shot figcaption{padding:.6rem .8rem;font-size:.95rem;color:var(--dim)}
 .shot figcaption b{color:var(--ink);font-weight:600}
+/* ── Room tour: portrait video paired with copy ── */
+.tour{display:grid;grid-template-columns:300px 1fr;gap:1rem;align-items:start;margin:1rem 0}
+.tour>.shot{margin-bottom:0}
+.tour-copy ul{margin:.65rem 0 0;padding-left:1.1rem}
+.tour-copy li{margin-bottom:.3rem;color:var(--dim)}
+@media(max-width:760px){
+  .tour{grid-template-columns:1fr;justify-items:center}
+  .tour>.shot{max-width:300px;width:100%}
+  .tour-copy{width:100%}
+}
 .shot .cat{font-family:var(--disp);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);display:block;margin-top:.25rem}
 .empty{
   border:1px dashed var(--line);border-radius:12px;padding:3rem 1.5rem;text-align:center;color:var(--dim);
