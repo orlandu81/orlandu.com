@@ -245,9 +245,7 @@ img[data-full]{cursor:zoom-in}
 .filmstrip{
   overflow:hidden;padding:1rem 0;
 }
-.filmstrip .track{display:flex;width:max-content;animation:filmscroll 90s linear infinite}
-.filmstrip:hover .track{animation-play-state:paused}
-@keyframes filmscroll{to{transform:translateX(-50%)}}
+.filmstrip .track{display:flex;width:max-content;will-change:transform}
 .filmstrip a{flex:0 0 auto;margin-right:.6rem;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
 .filmstrip a:hover{border-color:var(--fire2)}
 .filmstrip img{height:170px;width:auto;display:block}

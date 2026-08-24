@@ -64,8 +64,32 @@ document.addEventListener('DOMContentLoaded', function(){
   var track = document.createElement('div');
   track.className = 'track';
   track.innerHTML = html + html; // duplicated for a seamless loop
-  track.style.animationDuration = (pool.length * 4) + 's';
   strip.appendChild(track);
+
+  // JS-driven auto-scroll: reliable on mobile, pauses while touched/hovered
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var offset = 0, last = null, paused = false;
+    var SPEED = 0.045; // px per ms
+    ['pointerenter','touchstart'].forEach(function(ev){
+      strip.addEventListener(ev, function(){ paused = true; }, {passive:true});
+    });
+    ['pointerleave','touchend','touchcancel'].forEach(function(ev){
+      strip.addEventListener(ev, function(){ setTimeout(function(){ paused = false; }, 800); }, {passive:true});
+    });
+    function stepFrame(ts){
+      if (last !== null && !paused){
+        offset += (ts - last) * SPEED;
+        var half = track.scrollWidth / 2;
+        if (half > 0 && offset >= half) offset -= half;
+        track.style.transform = 'translateX(' + (-offset) + 'px)';
+      }
+      last = ts;
+      requestAnimationFrame(stepFrame);
+    }
+    requestAnimationFrame(stepFrame);
+  } else {
+    strip.style.overflowX = 'auto'; // reduced motion: hand-scrollable
+  }
 });
 </script>
 
