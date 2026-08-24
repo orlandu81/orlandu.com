@@ -117,7 +117,9 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
   position:relative;text-align:center;padding:3.5rem 1rem 4rem;overflow:hidden;
   border-bottom:1px solid var(--line);
   background:
-    radial-gradient(ellipse 70% 55% at 50% 0%,rgba(255,138,0,.16),transparent 65%),
+    radial-gradient(ellipse 70% 55% at 50% 0%,rgba(255,138,0,.14),transparent 65%),
+    linear-gradient(180deg,rgba(10,10,18,.55),rgba(10,10,18,.4) 45%,rgba(14,14,26,.88)),
+    url("hero-bg.jpg") center 30%/cover no-repeat,
     var(--bg2);
 }
 /* neon grid floor */
@@ -249,3 +251,26 @@ img[data-full]{cursor:zoom-in}
 .filmstrip img{height:170px;width:auto;display:block}
 
 #lightbox[hidden]{display:none}
+
+
+/* ── Marquee links + pause ────────────────────── */
+.strip a{color:inherit}
+.strip a:hover{color:var(--cyan);text-decoration:none}
+.strip:hover span{animation-play-state:paused}
+
+/* ── Jump chips ───────────────────────────────── */
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:-1rem 0 2rem}
+.chips a{
+  font-family:var(--disp);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--panel);border:1px solid var(--line);color:var(--dim);
+  padding:.45rem .85rem;border-radius:99px;
+}
+.chips a:hover{border-color:var(--cyan-dim);color:var(--cyan);text-decoration:none}
+section[id]{scroll-margin-top:90px}
+
+/* ── Reduced motion ───────────────────────────── */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .strip span{animation:none;padding-left:0;white-space:normal;display:block;padding:.1rem 1.2rem}
+  .hero .coin{animation:none}
+}
