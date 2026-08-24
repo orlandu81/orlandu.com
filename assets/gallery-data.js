@@ -6,6 +6,8 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
+  { type: "image", src: "media/2026/red-tent-teardown.jpg", title: "Red Tent, down to the last screw", caption: "The most intensive restoration in arcade history (this arcade's, anyway) — canopies off, chassis gutted. <a href='red-tent.html'>Read the full story →</a>", cat: "projects", date: "2026-08" },
+  { type: "image", src: "media/2026/red-tent-finished.jpg", title: "The Red Tent, reborn", caption: "Fresh paint, serviced monitors, polished chrome — forty years younger. <a href='red-tent.html'>The restoration story →</a>", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/vs-dk-high-scores.jpg", title: "Super Player's table", caption: "VS. Super Mario Bros.' high score board — every slot initialed DK, every run to World 8-4, 2,743,550 on top. <a href='vs-smb.html'>Why the arcade SMB is a different beast →</a>", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/won-superbrite.jpg", title: "World of Nintendo Superbrite", caption: "The fluorescent icon, front and back — the glowing face and the unlit logo side. The sign that made every kid's heart rate spike at the mall", cat: "signage", date: "2026-08" },
   { type: "image", src: "media/2026/pinball-blacklight.jpg", title: "Blacklight hours", caption: "Rick and Morty and Indiana Jones glowing violet — check the displays: ORLANDU'S ARCADE, in-game", cat: "pinball", date: "2026-08" },
