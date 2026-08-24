@@ -6,6 +6,11 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
+  { type: "image", src: "media/2026/bvm-20e1u.jpg", title: "BVM-20E1U", caption: "The primary broadcast chassis in the garage rack, AMS-100 on top — two BKM slots still open", cat: "monitors" },
+  { type: "image", src: "media/2026/bvm-a14f5u.jpg", title: "BVM-A14F5U", caption: "Fully kitted: all three card slots filled, control panel and keypad flanking the tube", cat: "monitors" },
+  { type: "image", src: "media/2026/pvm-2950q.jpg", title: "PVM-2950Q", caption: "The 29-inch presence in the game room, with the Mario lineup standing guard", cat: "monitors" },
+  { type: "image", src: "media/2026/pvm-20l5.jpg", title: "PVM-20L5", caption: "Late-generation 20-inch multiformat, AMS-100 above and a PS2 below", cat: "monitors" },
+  { type: "image", src: "media/2026/lmd-pair.jpg", title: "The LMD pair", caption: "Two of the LMD squadron side by side, The Last Dragon on both panels", cat: "monitors" },
   { type: "video", src: "media/video/game-room-spin.mp4", poster: "media/2026/game-room-spin-poster.jpg", title: "The game room, one full turn", caption: "A slow spin around the inside room \u2014 the framed PCB wall, Super Mario Bros. on the PVMs, the Mega CD library under the Kay\u00b7Bee World of Nintendo sign, and the Red Tent holding the corner", cat: "consoles" },
   { type: "image", src: "media/2026/mini-cute-crate.jpg", title: "Special delivery from Sweden", caption: "The hand-built crate that carried the Mini Cute across the world — Norwegian Air Shuttle to LAX. <a href='mini-cute.html'>Read the story →</a>", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/red-tent-teardown.jpg", title: "Red Tent, down to the last screw", caption: "The most intensive restoration in arcade history (this arcade's, anyway) — canopies off, chassis gutted. <a href='red-tent.html'>Read the full story →</a>", cat: "projects", date: "2026-08" },
