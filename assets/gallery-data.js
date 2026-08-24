@@ -6,6 +6,7 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
+  { type: "image", src: "media/2026/mini-cute-crate.jpg", title: "Special delivery from Sweden", caption: "The hand-built crate that carried the Mini Cute across the world — Norwegian Air Shuttle to LAX. <a href='mini-cute.html'>Read the story →</a>", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/red-tent-teardown.jpg", title: "Red Tent, down to the last screw", caption: "The most intensive restoration in arcade history (this arcade's, anyway) — canopies off, chassis gutted. <a href='red-tent.html'>Read the full story →</a>", cat: "projects", date: "2026-08" },
   { type: "image", src: "media/2026/red-tent-finished.jpg", title: "The Red Tent, reborn", caption: "Fresh paint, serviced monitors, polished chrome — forty years younger. <a href='red-tent.html'>The restoration story →</a>", cat: "arcade", date: "2026-08" },
   { type: "image", src: "media/2026/vs-dk-high-scores.jpg", title: "Super Player's table", caption: "VS. Super Mario Bros.' high score board — every slot initialed DK, every run to World 8-4, 2,743,550 on top. <a href='vs-smb.html'>Why the arcade SMB is a different beast →</a>", cat: "arcade", date: "2026-08" },
