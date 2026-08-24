@@ -243,12 +243,18 @@ img[data-full]{cursor:zoom-in}
 
 /* ── Home film strip ──────────────────────────── */
 .filmstrip{
-  display:flex;gap:.6rem;overflow-x:auto;padding:1rem 1.2rem;max-width:1200px;margin:0 auto;
-  scrollbar-width:thin;
+  overflow:hidden;padding:1rem 0;
 }
-.filmstrip a{flex:0 0 auto;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.filmstrip .track{display:flex;width:max-content;animation:filmscroll 90s linear infinite}
+.filmstrip:hover .track{animation-play-state:paused}
+@keyframes filmscroll{to{transform:translateX(-50%)}}
+.filmstrip a{flex:0 0 auto;margin-right:.6rem;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
 .filmstrip a:hover{border-color:var(--fire2)}
 .filmstrip img{height:170px;width:auto;display:block}
+@media (prefers-reduced-motion: reduce){
+  .filmstrip{overflow-x:auto}
+  .filmstrip .track{animation:none}
+}
 
 #lightbox[hidden]{display:none}
 

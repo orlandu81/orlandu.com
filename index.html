@@ -51,17 +51,21 @@
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   var strip = document.getElementById('filmstrip');
-  // random 6 images, reshuffled on every page load
+  // whole gallery, shuffled each load, scrolling continuously
   var pool = GALLERY.filter(function(g){ return g.type === 'image'; });
   for (var i = pool.length - 1; i > 0; i--){
     var j = Math.floor(Math.random() * (i + 1));
     var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
   }
-  var latest = pool.slice(0, 6);
-  strip.innerHTML = latest.map(function(g){
+  var html = pool.map(function(g){
     return '<a href="gallery.html" title="' + (g.title||'').replace(/"/g,'&quot;') + '">' +
       '<img src="' + g.src.replace('media/2026/','media/thumbs/') + '" alt="' + (g.title||'').replace(/"/g,'&quot;') + '" loading="lazy"></a>';
   }).join('');
+  var track = document.createElement('div');
+  track.className = 'track';
+  track.innerHTML = html + html; // duplicated for a seamless loop
+  track.style.animationDuration = (pool.length * 4) + 's';
+  strip.appendChild(track);
 });
 </script>
 
