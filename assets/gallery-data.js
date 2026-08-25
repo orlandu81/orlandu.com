@@ -6,6 +6,14 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
+  { type: "image", src: "media/2026/gameroom-corner.jpg", title: "The corner", caption: "World of Nintendo glowing over the game library, the Mini Cute lit and waiting on the right", cat: "misc" },
+  { type: "image", src: "media/2026/pcb-wall.jpg", title: "Boards as paintings", caption: "Nine bare arcade PCBs on acrylic standoffs \u2014 the traces are the artwork", cat: "arcade" },
+  { type: "image", src: "media/2026/sign-racetrack.jpg", title: "The racetrack", caption: "NESM36F fiber optic \u2014 white letters inside the red oval that gives the sign its name", cat: "signage" },
+  { type: "image", src: "media/2026/sign-kaybee.jpg", title: "Kay\u00b7Bee \u00d7 World of Nintendo", caption: "The co-branded fiber optic with both panels lit \u2014 mall-era retail glow, intact", cat: "signage" },
+  { type: "image", src: "media/2026/consoles-handhelds.jpg", title: "The handhelds wall", caption: "Game Gear and Nomad up top, the DMG and the clamshells below, all on acrylic", cat: "consoles" },
+  { type: "image", src: "media/2026/redtent-screen.jpg", title: "Dr. Mario, insert coin", caption: "The restored Red Tent back in service \u2014 toppers on the canopy, instruction card in the window", cat: "arcade" },
+  { type: "image", src: "media/2026/minicute-side.jpg", title: "CAPCOM down the side", caption: "The Mini Cute's full-height side art, Street Fighter II running", cat: "arcade" },
+  { type: "image", src: "media/2026/collectibles-shelf.jpg", title: "The shelf of accomplices", caption: "Gundam, Rick and Morty, and a full Thundercats bench keeping watch over the library", cat: "misc" },
   { type: "image", src: "media/2026/bvm-20e1u.jpg", title: "BVM-20E1U", caption: "The primary broadcast chassis in the garage rack, AMS-100 on top — two BKM slots still open", cat: "monitors" },
   { type: "image", src: "media/2026/bvm-a14f5u.jpg", title: "BVM-A14F5U", caption: "Fully kitted: all three card slots filled, control panel and keypad flanking the tube", cat: "monitors" },
   { type: "image", src: "media/2026/pvm-2950q.jpg", title: "PVM-2950Q", caption: "The 29-inch presence in the game room, with the Mario lineup standing guard", cat: "monitors" },
