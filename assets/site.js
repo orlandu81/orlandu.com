@@ -125,3 +125,44 @@
     tx = null;
   }, {passive:true});
 })();
+
+// ═══════════════════════════════════════════════════════════
+// Autoplay silent videos when they scroll into view.
+// Opt in per element with data-autoplay. Requires muted (browsers
+// block autoplay with sound). Honors prefers-reduced-motion, and
+// never fights a viewer who pressed pause themselves.
+// ═══════════════════════════════════════════════════════════
+(function(){
+  const vids = document.querySelectorAll("video[data-autoplay]");
+  if (!vids.length) return;
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  vids.forEach(v => {
+    v.muted = true;               // belt and braces: autoplay needs it
+    v._autoPausing = false;
+    v._userPaused  = false;
+    // NOTE: the pause event fires asynchronously, so the flag must be
+    // cleared *here* rather than right after calling pause() — otherwise
+    // our own scroll-away pause gets misread as the viewer pausing.
+    v.addEventListener("pause", () => {
+      if (v._autoPausing) v._autoPausing = false;
+      else v._userPaused = true;
+    });
+    v.addEventListener("play", () => { v._userPaused = false; });
+  });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) {
+        if (!v._userPaused) { const p = v.play(); if (p) p.catch(() => {}); }
+      } else if (!v.paused) {
+        v._autoPausing = true;
+        v.pause();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  vids.forEach(v => io.observe(v));
+})();
