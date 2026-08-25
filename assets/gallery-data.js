@@ -6,6 +6,10 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
+  { type: "video", src: "media/video/ams-3-arrival.mp4", poster: "media/2026/ams-3-arrival-poster.jpg", title: "AMS-3, first light", caption: "Twin VU meters awake for the first time in this garage \u2014 the AMS-3 perched on a PVM, sound on. Those are the fans, not the game. <a href='projects.html'>Follow the triage \u2192</a>", cat: "projects" },
+  { type: "image", src: "media/2026/ams-3-pair.jpg", title: "The AMS-3 pair", caption: "Sony's big analog ancestor to the AMS-100 \u2014 two of them, 35\u00a0lbs each, fins out and waiting for the bench", cat: "projects" },
+  { type: "image", src: "media/2026/ams-3-delivery.jpg", title: "Delivery day", caption: "Two boxes on the garage floor, games still running overhead. Nobody warned the floor how heavy these were", cat: "projects" },
+  { type: "image", src: "media/2026/ams-3-heatsinks.jpg", title: "All heatsink", caption: "The back half of an AMS-3 \u2014 Sony gave a speaker the cooling budget of a power amplifier", cat: "monitors" },
   { type: "image", src: "media/2026/big-blue-side-art.jpg", title: "Big Blue, side on", caption: "The Capcom-logo side art that took longer to track down than the electrical work took to do. <a href='big-blue.html'>The full profile \u2192</a>", cat: "arcade" },
   { type: "image", src: "media/2026/gameroom-corner.jpg", title: "The corner", caption: "World of Nintendo glowing over the game library, the Mini Cute lit and waiting on the right", cat: "misc" },
   { type: "image", src: "media/2026/pcb-wall.jpg", title: "Boards as paintings", caption: "Nine bare arcade PCBs on acrylic standoffs \u2014 the traces are the artwork", cat: "arcade" },
