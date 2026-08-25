@@ -27,6 +27,34 @@ Every deploy goes through David's laptop over the device bridge:
 6. Move the bundle to `_to_delete/` (device_bash cannot `rm` in mounted folders).
 7. Back in the container, `git fetch origin main` so `origin/main` stops looking stale.
 
+## Hosting — Vercel, verified
+
+The live host is **Vercel**. Hosting went GitHub Pages -> Netlify -> Vercel; both
+earlier hosts left files behind, so don't infer the host from the repo contents.
+
+As of 2026-08-25, confirmed against `dns.google/resolve`:
+
+    orlandu.com.        A      216.198.79.1                            (Vercel apex)
+    www.orlandu.com.    CNAME  4587a4c2f57710d8.vercel-dns-017.com.    (Vercel)
+    orlandu.com.        NS     ns13/ns14.domaincontrol.com.            (GoDaddy — nameservers never moved)
+
+Netlify's apex IP is `75.2.60.5` and its targets end in `.netlify.app`. Neither
+appears in orlandu.com's DNS. If you think the site is on Netlify, re-run the
+lookups below before acting — do not go by `netlify.toml` or by an old note.
+
+    https://dns.google/resolve?name=orlandu.com&type=A&cd=0
+    https://dns.google/resolve?name=www.orlandu.com&type=CNAME&cd=0
+
+`netlify.toml` is **retained deliberately** as a rollback path, not dead config.
+It is inert while DNS points at Vercel. `vercel.json` is the file actually in
+force — security headers, `/media/*` caching, and the `/index.html` -> `/` redirect.
+Do not delete either one without David saying so.
+
+The old Netlify project still exists and still serves a copy at
+`sensational-cocada-4cbd01.netlify.app`. That hostname resolving is not evidence
+that orlandu.com points there. David is deleting the project; until he does,
+expect it to keep answering.
+
 Vercel auto-deploys `main`; allow ~40s before verifying.
 
 ## Verifying
