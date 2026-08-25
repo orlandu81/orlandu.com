@@ -161,6 +161,15 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
 .shot figcaption{padding:.6rem .8rem;font-size:.95rem;color:var(--dim)}
 .shot figcaption b{color:var(--ink);font-weight:600}
 /* ── Room tour: portrait video paired with copy ── */
+/* -- Work log: a service record, not a story -- */
+.worklog{list-style:none;margin:1.2rem 0 0;padding:0;border-top:1px solid var(--line)}
+.worklog li{
+  padding:.72rem 0;border-bottom:1px solid var(--line);
+  font-size:.97rem;color:var(--dim);line-height:1.55
+}
+.worklog li b{color:var(--ink);font-weight:600}
+.worklog li.open b{color:var(--fire2)}
+
 .tour{display:grid;grid-template-columns:300px 1fr;gap:1rem;align-items:start;margin:1rem 0}
 .tour>.shot{margin-bottom:0}
 .tour-copy ul{margin:.65rem 0 0;padding-left:1.1rem}
