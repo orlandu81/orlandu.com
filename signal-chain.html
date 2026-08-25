@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Signal Chain — Orlandu's Arcade</title>
+<meta name="description" content="How twenty-five consoles reach fifteen Sony professional monitors: the SCART switchers, the BNC cables, the distribution amp, and why there is not a scaler anywhere in the building.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;500;600&family=Barlow+Condensed:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0a0a12">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Orlandu's Arcade">
+<meta property="og:title" content="The Signal Chain — Orlandu's Arcade">
+<meta property="og:description" content="How twenty-five consoles reach fifteen Sony professional monitors: the SCART switchers, the BNC cables, the distribution amp, and why there is not a scaler anywhere in the building.">
+<meta property="og:url" content="https://www.orlandu.com/signal-chain.html">
+<meta property="og:image" content="https://www.orlandu.com/media/og/og-signal-chain.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.orlandu.com/media/og/og-signal-chain.jpg">
+<link rel="canonical" href="https://www.orlandu.com/signal-chain.html">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer></script>
+<style>
+  .chain{margin:1.4rem 0 1.8rem}
+  .lane{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:1rem 1.1rem 1.2rem;margin-bottom:1rem}
+  .lane > h3{font-family:var(--disp);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin:0 0 .15rem}
+  .lane > p.sub{color:var(--dim);font-size:.95rem;margin:0 0 .9rem}
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:.5rem}
+  .node{flex:1 1 150px;min-width:0;border:1px solid var(--line);border-radius:9px;background:var(--panel2);padding:.6rem .7rem}
+  .node b{display:block;font-family:var(--cond);font-size:1.02rem;color:var(--ink);line-height:1.2}
+  .node span{display:block;color:var(--dim);font-size:.86rem;margin-top:.2rem;line-height:1.35}
+  .node.hub{border-color:var(--fire2)}
+  .node.hub b{color:var(--fire3)}
+  .node.out{border-color:#3a3a5c}
+  .arrow{flex:0 0 auto;align-self:center;color:var(--fire2);font-family:var(--mono);font-size:1.05rem;padding:0 .1rem}
+  .stack{display:grid;gap:.4rem;flex:1 1 150px;min-width:0}
+  .stack .node{flex:none}
+  .rule{border-left:3px solid var(--fire2);background:var(--panel);padding:.7rem .9rem;margin:1rem 0;border-radius:0 8px 8px 0}
+  .rule b{color:var(--fire3);font-family:var(--cond);letter-spacing:.02em}
+  @media (max-width:620px){
+    .flow{display:block}
+    .node,.stack{margin-bottom:.4rem}
+    .arrow{display:block;text-align:center;padding:.1rem 0;transform:rotate(90deg)}
+  }
+</style>
+</head>
+<body>
+
+<header class="site" data-page="stories"></header>
+
+<main>
+  <div class="kicker">The Setup</div>
+  <h1 class="page">How the Signal<br>Gets to the Glass</h1>
+  <p class="lede">Twenty-five consoles, fifteen Sony professional monitors, and not one scaler in the building. Here is the actual path a picture takes from a cartridge to a broadcast tube — cable by cable, box by box.</p>
+
+  <p style="margin-bottom:1.1rem">Every article about professional monitors, this site's included, spends its time on <em>why</em>: why RGB beats composite, why a BVM shows you the truth. Almost none of them tell you <em>how</em> — what you actually buy, what plugs into what, and what happens when you try to put eight consoles on two screens. That gap is the reason a lot of people own one PVM and one modded console and still have them sitting in different rooms.</p>
+
+  <p style="margin-bottom:1.1rem">So here is the whole thing, unglamorous parts included. Two rooms, two nearly identical chains, and one deliberate omission that shapes everything else.</p>
+
+  <div class="rule"><b>The house rule:</b> nothing gets processed. No upscaler, no line doubler, no frame buffer — no OSSC, no RetroTINK, no Framemeister anywhere in the signal path. A CRT is the one display that wants exactly what these consoles put out: 240p, 15kHz, analog RGB, warts and all. Every box you insert to "improve" that is a box making decisions on your behalf, and adding a frame or two of lag while it thinks. The whole point of the fleet is to not need one.</div>
+
+  <h2 class="sec">The chain, end to end</h2>
+
+  <div class="chain">
+    <div class="lane">
+      <h3>Game room</h3>
+      <p class="sub">Eight consoles, two big PVMs, one switcher doing all the work.</p>
+      <div class="flow">
+        <div class="node"><b>The consoles</b><span>Saturn, Genesis, SNES, N64, PC&nbsp;Engine and friends — each on its own RGB SCART cable</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="node hub"><b>GSCARTSW v5.2</b><span>8&nbsp;in, 2&nbsp;out. Auto-switching: power on a console and it takes the screen</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="stack">
+          <div class="node out"><b>PVM-2950Q</b><span>29-inch, via SCART&nbsp;&rarr;&nbsp;4&nbsp;BNC</span></div>
+          <div class="node out"><b>PVM-20L5</b><span>20-inch multiformat, same cable type</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lane">
+      <h3>Garage arcade &mdash; the broadcast pair</h3>
+      <p class="sub">The same idea again, in the room where the serious glass lives.</p>
+      <div class="flow">
+        <div class="node"><b>The consoles</b><span>Garage-side machines, RGB SCART again</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="node hub"><b>Second GSCARTSW</b><span>Its own switcher, so neither room borrows from the other</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="stack">
+          <div class="node out"><b>BVM-20E1U</b><span>The primary E-series chassis</span></div>
+          <div class="node out"><b>BVM-A14F5U</b><span>Fully kitted, all three slots filled</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lane">
+      <h3>Garage arcade &mdash; the LMD wall</h3>
+      <p class="sub">A completely separate system, and the one people ask about first.</p>
+      <div class="flow">
+        <div class="node"><b>Receiver + USB stick</b><span>Looping video, plus a PS2 on a switcher when someone wants to play</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="node hub"><b>CE&nbsp;Labs AV901-HD</b><span>1&nbsp;in, 9&nbsp;out component distribution amp &mdash; unity gain, 75&nbsp;ohm</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="node out"><b>The LMD squadron</b><span>Every LMD in the rack showing the same picture at the same instant</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sec">The switcher is the whole trick</h2>
+
+  <p style="margin-bottom:1.1rem">The single component that makes a collection this size usable is the <b>GSCARTSW</b> — an eight-input, two-output RGB SCART switcher, and there is one in each room. Eight consoles stay permanently plugged in. It auto-switches: power on the Saturn and the Saturn takes the screen, no button, no menu, no crawling behind a rack. That sounds like a convenience feature. It is actually the difference between a collection you play and a collection you look at.</p>
+
+  <p style="margin-bottom:1.1rem">Two outputs, two monitors, one per screen. That is why each room has its own switcher rather than one big one feeding the house — a second unit is cheaper than the cable run, and it means the garage never has to wait for the game room.</p>
+
+  <div class="rule"><b>If you are building your own:</b> buy the switcher before you buy the second console. Everyone does this in the wrong order — they accumulate machines, run out of inputs, and end up swapping cables until they stop bothering. A good auto-switcher is the thing that keeps hardware in rotation.</div>
+
+  <h2 class="sec">SCART goes in, BNC comes out</h2>
+
+  <p style="margin-bottom:1.1rem">Here is the join that trips people up. The console world speaks <b>SCART</b> — a fat European connector carrying RGB and audio in one plug. The Sony professional world speaks <b>BNC</b> — individual coaxial connectors, one per signal, twist-locked, because a broadcast engineer is not interested in a cable that can fall out. A PVM has no SCART socket and never will.</p>
+
+  <p style="margin-bottom:1.1rem">The bridge is a <b>SCART to 4&nbsp;BNC breakout cable</b> — red, green, blue and sync on four BNCs, with an audio pair broken out alongside. The ones in use here are Wookieewin builds, in both male and female SCART variants depending on which end of the chain they land on. That single cable type is what makes the whole collection possible; without it the two halves of this hobby simply do not connect.</p>
+
+  <p style="margin-bottom:1.1rem">Sync goes straight through. No stripper, no LM1881, no sync-on-green workaround — the composite sync riding on the SCART cable goes into the monitor's sync BNC as-is, and these monitors lock onto it without complaint. Professional Sony gear is far less fussy about sync than internet folklore suggests.</p>
+
+  <h2 class="sec">The audio nobody plans for</h2>
+
+  <p style="margin-bottom:1.1rem">The AMS-100s sitting on top of the monitors are not decoration. They are fed from the same breakout cables — the audio pair that comes off the SCART side, running into the audio monitor rather than into the CRT's small internal speaker. It is the correct period arrangement, it is how a real edit bay was laid out, and it sounds dramatically better than any CRT speaker ever did.</p>
+
+  <p style="margin-bottom:1.1rem">This is the part most home setups skip, and it is worth not skipping. You go to enormous trouble to get the video signal pristine, then listen to it through a two-inch driver behind a metal grille. The audio path deserves the same attention as the video one.</p>
+
+  <h2 class="sec">The wall is a different animal</h2>
+
+  <p style="margin-bottom:1.1rem">The LMD rack does not run on any of the above. It is component video, not RGB SCART, and it is fed from a single source through a <b>CE Labs AV901-HD</b> distribution amplifier — one input, nine outputs, unity gain into 75&nbsp;ohm terminations. A distribution amp is not a splitter; a passive splitter halves your signal every time it divides, and by the ninth monitor there would be nothing left. A DA buffers and re-drives, so the last screen in the chain looks like the first.</p>
+
+  <p style="margin-bottom:1.1rem">What feeds it is deliberately mundane: a receiver playing video off a USB stick, with a PS2 switchable in when someone wants to actually play something. The effect is the point — every LMD in the rack showing the same frame at the same instant, which is precisely what these monitors did in the machine rooms they came from.</p>
+
+  <h2 class="sec">What it costs you</h2>
+
+  <p style="margin-bottom:1.1rem">Honesty about the trade: this setup is analog end to end, which means it is fussy in ways a modern one is not. Cables are specific and mostly not available at retail. Every console needs the right RGB cable for that console, and some of them need modding before they output RGB at all — the NES never did officially, which is why the top loader here carries an NESRGB board. Nothing here will ever appear on a flat panel without adding exactly the kind of box this setup refuses to use.</p>
+
+  <p style="margin-bottom:1.1rem">What you get in return is a picture with nothing between the console and the tube, and a room where you press a power button and a game is on screen a second later. For a collection meant to be played rather than displayed, that trade has never once looked like the wrong one.</p>
+
+  <p class="note">Curious what the monitors on the other end of these cables actually are? <a href="pvm-vs-bvm.html">PVM vs. BVM</a> covers the difference, and <a href="monitors.html">the fleet roster</a> lists every unit. The consoles doing the sending are on <a href="consoles.html">the consoles page</a>.</p>
+
+  <p style="margin-top:2rem"><a href="stories.html">&larr; More stories</a> &nbsp;·&nbsp; <a href="monitors.html">Meet the fleet &rarr;</a></p>
+</main>
+
+<footer class="site"></footer>
+
+</body>
+</html>
