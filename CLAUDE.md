@@ -95,6 +95,11 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
 - **Never publish a fault on a machine David has sold.** Condition notes are for what he still
   owns. The AMS-3 that left had a specific defect; it was written up, and he asked for it removed
   (2026-08-26). Say only that a unit moved on.
+- **The gallery is a curated showcase, not an archive.** Bench and workbench snapshots stay on
+  their editorial or project page and do NOT get a gallery entry. David pulled all seven AMS-3
+  images/clips from it (2026-08-26): "they aren't that professional." The bar is his lit,
+  composed machine photography. Note the home filmstrip draws from gallery images, so a
+  gallery entry also puts a photo on the front page.
 - Don't imply a current count from a photo of a past state — say "on arrival" or "since moved on".
 
 ## The vault
