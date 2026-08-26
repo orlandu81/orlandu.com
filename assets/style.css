@@ -111,6 +111,33 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
 .badge.done{color:#9effa0;border-color:#3f7d41}
 .badge.sale{color:#ffb0e0;border-color:#a0568a}
 .badge.want{color:var(--cyan);border-color:var(--cyan-dim)}
+.badge.new{
+  color:#06121a;background:var(--cyan);border-color:var(--cyan);
+  font-weight:800;box-shadow:0 0 14px rgba(94,233,255,.35);
+}
+
+/* featured card — the newest story, pulled to the top of stories.html */
+.card.featured{
+  border-color:var(--cyan-dim);
+  background:linear-gradient(180deg,#16162e,var(--panel));
+  box-shadow:0 0 0 1px rgba(94,233,255,.16),0 0 30px rgba(94,233,255,.10);
+  padding:1.5rem 1.6rem 1.4rem 1.8rem;
+}
+.card.featured::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--cyan),var(--cyan-dim));
+}
+.card.featured:hover{
+  border-color:var(--cyan);
+  box-shadow:0 0 0 1px rgba(94,233,255,.3),0 0 40px rgba(94,233,255,.16);
+}
+.card.featured .badge{margin-right:.45rem}
+.card.featured h3{font-size:1.35rem;margin-top:.15rem}
+.card.featured p{font-size:1.08rem;max-width:70ch}
+@media(max-width:520px){
+  .card.featured{padding:1.2rem 1.1rem 1.1rem 1.3rem}
+  .card.featured h3{font-size:1.15rem}
+}
 
 /* ── Hero (home) ──────────────────────────────── */
 .hero{
