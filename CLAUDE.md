@@ -118,9 +118,8 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
 
 ## Sold items
 
-David settled this on 2026-08-26, when the AMS-100 sold: *"you can do the removal and put it
-in the in memoriam section, i like that idea."* The rule is **the sales page is present tense;
-the collection page carries the memory.**
+Settled with David on 2026-08-26 when the AMS-100 sold. The rule is **the sales page is present
+tense; the collection page carries the memory — and most departures don't earn a memory at all.**
 
 - **`forsale.html` — the card comes OUT the moment it sells.** No SOLD badge, no "recently
   sold" archive section. The eBay buttons point at a seller *search*, not an `/itm/` link, so
@@ -128,34 +127,33 @@ the collection page carries the memory.**
   for. A wall of SOLD badges is also sales-floor scarcity theater and off-voice here — the
   page's lede ("years of seller history") and the eBay store link already carry the track
   record. And it ages badly: six months of badges and the page is mostly things nobody can buy.
-- **The departed item gets an entry in an "In memoriam" section on the page it belonged to** —
-  the collection page, not the sales page. Two exist and they share a shape:
+- **The bar for an "In memoriam" entry is high, and the AMS-100 is the worked example of
+  failing it.** A section was built for it on `monitors.html` and David had it taken straight
+  back out (`0df6c08` -> reverted). Before building one, the item should be *singular* — a
+  machine with a history here — not one interchangeable unit out of a set of five. A catalog
+  listing photo is also the wrong register next to his lit, in-room photography. **When in
+  doubt, a departure gets a clause in existing prose, not a section.** `monitors.html` carries
+  exactly that: a one-line `p.note` under the roster table naming the departed BVM-14F5U.
+- **The one real memoriam section is on `games.html`** — cabinets, pins and signage, sixteen
+  shots, "machines that passed through on their way to someone else's story". Shape:
   `<section id="memoriam">` -> `<h2 class="sec">In memoriam <small>...</small></h2>` -> a
-  `div.grid c3` of `figure.shot`, captions as `<b>Name</b> &mdash; one short line`.
-  - `games.html` — cabinets, pins and signage: "machines that passed through on their way to
-    someone else's story". Sixteen shots. **They stay FULL COLOR** — grayscale/fade has been
-    proposed twice and declined twice.
-  - `monitors.html` — added 2026-08-26 in `0df6c08`: "hardware that passed through on its way
-    to someone else's rack". Its lede absorbed the old floating one-liner about the departed
-    BVM-14F5U, which has no photo and so lives in that sentence; give it a figure if a shot
-    ever turns up.
-  - `consoles.html` has **no** memoriam section yet and the Sega CD Model 2 is already marked
-    SOLD in its roster. Obvious place to extend the pattern — not yet raised with David.
-- **Photos: `alumni-<slug>.jpg`** in both `media/thumbs/` and `media/2026/`. When a listing
-  becomes an alumnus, **`git mv` the `sale-*` files to `alumni-*`** — don't copy. A rename is a
-  new URL, so the CDN-cache rule above is satisfied and no orphaned `sale-*` file is left behind.
-- **Not every departure earns a figure.** One unit out of a set of identical ones may only rate
-  a clause in the section lede. The AMS-100 got a figure because a usable photo existed and the
-  new section was otherwise empty.
-- **Keep it a memorial, not a ledger.** Sixteen cabinets over years reads as history; thirty
-  monitors would read as inventory churn. If a memoriam section gets long, prune it back to the
-  items that actually had a life here rather than letting it accumulate.
+  `div.grid c3` of `figure.shot`, captions as `<b>Name</b> &mdash; one short line`. **They stay
+  FULL COLOR** — grayscale/fade has been proposed twice and declined twice. Don't clone this
+  section onto another page without asking him first; that's the mistake that got reverted.
+- **If something does earn an entry, photos are `alumni-<slug>.jpg`** in both `media/thumbs/`
+  and `media/2026/`, and you **`git mv` the `sale-*` files** rather than copying — a rename is
+  a new URL, so the CDN-cache rule above is satisfied and no orphan is left behind.
+- **Keep it a memorial, not a ledger.** Sixteen cabinets over years reads as history; a section
+  that accumulates every departure reads as inventory churn.
 
-**The sweep when something sells:** remove the `forsale.html` card -> add the memoriam entry and
-`git mv` the photo -> check the **FOR SALE marquee segment in `index.html`**, which names items
-individually, so a named item must be swapped out -> grep for counts that included the sold unit
--> grep for anything else linking at the listing. Same discipline as the dangling-photo sweep:
-a removal is not done until the copy around it is checked.
+**The sweep when something sells:** remove the `forsale.html` card -> check the **FOR SALE
+marquee segment in `index.html`**, which names items individually, so a named item must be
+swapped out -> grep for counts that included the sold unit -> grep for anything else linking at
+the listing. Same discipline as the dangling-photo sweep: a removal is not done until the copy
+around it is checked.
+
+`media/2026/alumni-ams-100.jpg` and its thumb are currently **unreferenced** — the old listing
+photo, kept in case the AMS-100 monograph wants it. Not an oversight.
 
 ## The vault
 
