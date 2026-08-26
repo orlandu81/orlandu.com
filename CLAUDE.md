@@ -95,6 +95,15 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
 - **Never publish a fault on a machine David has sold.** Condition notes are for what he still
   owns. The AMS-3 that left had a specific defect; it was written up, and he asked for it removed
   (2026-08-26). Say only that a unit moved on.
+- **Nothing wider than ~2.2:1 belongs in the home filmstrip.** At 170px tall a 3.9:1 sign renders
+  as a 660px slab. index.html now measures each strip image on load and hides anything over
+  2.2:1 — panoramas stay in the gallery masonry, which handles them fine. Don't "fix" a wide
+  photo with object-fit:cover; it cuts the ends off signs.
+- Gallery audit 2026-08-26 (43 -> 39): removed the Mini Cute shipping crate, the Red Tent
+  teardown, the BVM-20E1U crosshatch and the AMS-100 bench lineup — all process/bench shots that
+  live on their own story or project page. Kept but FLAGGED as the weakest entries: the four
+  fleet portraits with dark screens and window reflections (bvm-20e1u, bvm-a14f5u, pvm-2950q,
+  pvm-20l5) and big-blue-side-art. Screens-on reshoots would lift all five.
 - **The gallery is a curated showcase, not an archive.** Bench and workbench snapshots stay on
   their editorial or project page and do NOT get a gallery entry. David pulled all seven AMS-3
   images/clips from it (2026-08-26): "they aren't that professional." The bar is his lit,
