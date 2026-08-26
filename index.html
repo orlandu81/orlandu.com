@@ -62,10 +62,22 @@ document.addEventListener('DOMContentLoaded', function(){
     return '<a href="gallery.html" title="' + (g.title||'').replace(/"/g,'&quot;') + '">' +
       '<img src="' + g.src.replace('media/2026/','media/thumbs/') + '" alt="' + (g.title||'').replace(/"/g,'&quot;') + '" loading="lazy"></a>';
   }).join('');
+  // Panoramic shots (lit signs, monitor racks) become long slabs at strip height —
+  // fine in the gallery's masonry, wrong here. Drop anything wider than 2.2:1.
+  var MAX_STRIP_AR = 2.2;
   var track = document.createElement('div');
   track.className = 'track';
   track.innerHTML = html + html; // duplicated for a seamless loop
   strip.appendChild(track);
+  track.querySelectorAll('img').forEach(function(img){
+    var check = function(){
+      if (img.naturalWidth && img.naturalHeight &&
+          img.naturalWidth / img.naturalHeight > MAX_STRIP_AR) {
+        img.parentNode.style.display = 'none';   // track width is re-measured each frame
+      }
+    };
+    if (img.complete) check(); else img.addEventListener('load', check, {once:true});
+  });
 
   // JS-driven auto-scroll: reliable on mobile, pauses while touched/hovered
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
