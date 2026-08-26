@@ -176,7 +176,8 @@
         const i = document.createElement('img');
         i.src = g.src.replace('media/2026/', 'media/thumbs/');
         i.dataset.full = g.src;
-        i.alt = g.title || ''; i.loading = 'lazy';
+        i.alt = g.title || ''; i.loading = 'lazy'; i.decoding = 'async';
+        if (g.w && g.h){ i.width = g.w; i.height = g.h; }
         fig.appendChild(i);
       }
       const cap = document.createElement('figcaption');

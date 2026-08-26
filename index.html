@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   var html = pool.map(function(g){
     return '<a href="gallery.html" title="' + (g.title||'').replace(/"/g,'&quot;') + '">' +
-      '<img src="' + g.src.replace('media/2026/','media/thumbs/') + '" alt="' + (g.title||'').replace(/"/g,'&quot;') + '" loading="lazy"></a>';
+      '<img src="' + g.src.replace('media/2026/','media/thumbs/') + '" alt="' + (g.title||'').replace(/"/g,'&quot;') + '" loading="lazy" decoding="async"' + (g.w ? ' width="' + g.w + '" height="' + g.h + '"' : '') + '></a>';
   }).join('');
   // Panoramic shots (lit signs, monitor racks) become long slabs at strip height —
   // fine in the gallery's masonry, wrong here. Drop anything wider than 2.2:1.
