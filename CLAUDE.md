@@ -92,6 +92,10 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
 - Machine profiles carry a **Work log** (`ul.worklog`). Source entries from
   `vault.html` on David's device, not by asking him. Skip trivial repairs.
 - No date stamps like "August 2026" in page copy.
+- **Never publish a fault on a machine David has sold.** Condition notes are for what he still
+  owns. The AMS-3 that left had a specific defect; it was written up, and he asked for it removed
+  (2026-08-26). Say only that a unit moved on.
+- Don't imply a current count from a photo of a past state — say "on arrival" or "since moved on".
 
 ## The vault
 
