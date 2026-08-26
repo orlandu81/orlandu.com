@@ -1,0 +1,43 @@
+# Orlandu's Arcade
+
+> A private arcade and working collection in San Clemente, California: arcade cabinets, pinball
+> machines, RGB-modded retro consoles, and a fleet of Sony professional broadcast monitors
+> (PVM, BVM, LMD). Everything runs — cabinets get their power supplies rebuilt, pinball mechs
+> get restored, and monitors get calibrated the way Sony intended. Run by "orlandu81", a
+> long-standing identity on the KLOV / Museum of the Game and Arcade-Projects forums.
+
+## The collection
+
+- [The Games](https://www.orlandu.com/games.html): arcade cabinets, the pinball row, and vintage Nintendo retail signage.
+- [The Consoles](https://www.orlandu.com/consoles.html): Nintendo, Sega, NEC and Sony hardware, most of it RGB-modded.
+- [The Monitor Fleet](https://www.orlandu.com/monitors.html): the Sony PVM, BVM and LMD roster, model by model.
+- [Gallery](https://www.orlandu.com/gallery.html): photos and video from the garage arcade and the game room.
+
+## Machines
+
+- [Big Blue](https://www.orlandu.com/big-blue.html): a Dynamo showcase cabinet running a Darksoft CPS-2 multi in a Jasen's Customs case.
+- [The Mini Cute](https://www.orlandu.com/mini-cute.html): Capcom's smallest candy cab, running CPS1 on a Darksoft multi.
+- [The Red Tent](https://www.orlandu.com/red-tent.html): Nintendo's VS. DualSystem cocktail, and the restoration behind it.
+- [Nintendo VS. UniSystem](https://www.orlandu.com/vs-unisystem.html)
+- [Donkey Kong](https://www.orlandu.com/donkey-kong.html): the blue plywood upright made in Japan.
+- [Mario Bros. Widebody](https://www.orlandu.com/mario-bros.html)
+- [Indiana Jones: The Pinball Adventure](https://www.orlandu.com/indiana-jones.html) (Williams)
+- [Total Nuclear Annihilation](https://www.orlandu.com/tna.html) (Spooky Pinball)
+- [Ghostbusters Premium](https://www.orlandu.com/ghostbusters.html) (Stern)
+- [Rick and Morty Blood Sucker Edition](https://www.orlandu.com/rick-and-morty.html) (Spooky Pinball)
+
+## Writing
+
+- [Stories index](https://www.orlandu.com/stories.html)
+- [Ancestor and Descendant](https://www.orlandu.com/ams-3-vs-ams-100.html): Sony's AMS-3 and AMS-100 audio monitors compared.
+- [Trinitron Fleet, Vol. 1](https://www.orlandu.com/trinitron-fleet-vol1.html): a field guide to the Sony pro monitors here.
+- [The Signal Chain](https://www.orlandu.com/signal-chain.html): how the consoles reach the glass — SCART switchers, BNC runs, a distribution amp, and no scaler.
+- [PVM vs. BVM](https://www.orlandu.com/pvm-vs-bvm.html): how Sony's professional monitor lines differ.
+- [VS. Super Mario Bros.](https://www.orlandu.com/vs-smb.html): why the arcade version is harder than the NES game.
+- [Projects](https://www.orlandu.com/projects.html): the bench log — what's being repaired right now.
+
+## Trading
+
+- [For Sale](https://www.orlandu.com/forsale.html): monitors, arcade hardware and collectibles currently listed.
+- [Wanted](https://www.orlandu.com/wanted.html): PlayChoice-10 toppers, VS. marquees, Sony BKM input cards, consumer CRTs.
+- [About and contact](https://www.orlandu.com/about.html): orlandusarcade@gmail.com

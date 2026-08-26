@@ -44,7 +44,7 @@ body::after{
 
 a{color:var(--cyan);text-decoration:none}
 a:hover{text-decoration:underline}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 
 /* ── Header / nav ─────────────────────────────── */
 header.site{
@@ -163,6 +163,7 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
   pointer-events:none;
 }
 .hero .inner{position:relative;max-width:900px;margin:0 auto}
+.hero .wordmark-h1{margin:0;padding:0;line-height:0;font-size:0}
 .hero img.wordmark{width:min(680px,92%);margin:0 auto 1.6rem;filter:drop-shadow(0 6px 22px rgba(255,138,0,.28))}
 .hero p.tag{font-family:var(--cond);color:var(--dim);font-size:1.15rem;letter-spacing:.14em;text-transform:uppercase}
 .hero .coin{

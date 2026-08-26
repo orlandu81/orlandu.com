@@ -1,28 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.orlandu.com/</loc></url>
-  <url><loc>https://www.orlandu.com/games.html</loc></url>
-  <url><loc>https://www.orlandu.com/consoles.html</loc></url>
-  <url><loc>https://www.orlandu.com/monitors.html</loc></url>
-  <url><loc>https://www.orlandu.com/gallery.html</loc></url>
-  <url><loc>https://www.orlandu.com/stories.html</loc></url>
-  <url><loc>https://www.orlandu.com/projects.html</loc></url>
-  <url><loc>https://www.orlandu.com/forsale.html</loc></url>
-  <url><loc>https://www.orlandu.com/wanted.html</loc></url>
-  <url><loc>https://www.orlandu.com/about.html</loc></url>
-  <url><loc>https://www.orlandu.com/vs-smb.html</loc></url>
-  <url><loc>https://www.orlandu.com/trinitron-fleet-vol1.html</loc></url>
-  <url><loc>https://www.orlandu.com/red-tent.html</loc></url>
-  <url><loc>https://www.orlandu.com/big-blue.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.orlandu.com/pvm-vs-bvm.html</loc></url>
-  <url><loc>https://www.orlandu.com/signal-chain.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.orlandu.com/mini-cute.html</loc></url>
-  <url><loc>https://www.orlandu.com/donkey-kong.html</loc></url>
-  <url><loc>https://www.orlandu.com/mario-bros.html</loc></url>
-  <url><loc>https://www.orlandu.com/vs-unisystem.html</loc></url>
-  <url><loc>https://www.orlandu.com/indiana-jones.html</loc></url>
-  <url><loc>https://www.orlandu.com/tna.html</loc></url>
-  <url><loc>https://www.orlandu.com/ghostbusters.html</loc></url>
-  <url><loc>https://www.orlandu.com/rick-and-morty.html</loc></url>
-  <url><loc>https://www.orlandu.com/ams-3-vs-ams-100.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.orlandu.com/about.html</loc>
+    <lastmod>2026-08-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/ams-3-vs-ams-100.html</loc>
+    <lastmod>2026-08-26</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ams-size-front-v2.jpg</image:loc><image:title>Sony AMS-100 stacked on top of a Sony AMS-3, front panels facing out, showing the AMS-3 is roughly twice as tall</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ams-size-profile.jpg</image:loc><image:title>Profile view of the two units stacked, showing the AMS-3&#x27;s deep heatsink fins against the AMS-100&#x27;s shallow flat chassis</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ams-size-rear-v2.jpg</image:loc><image:title>Rear panels of both units: the AMS-100 with SDI and digital audio inputs and option card slots, the AMS-3 with six XLR connectors and external speaker outputs</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/big-blue.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-portrait.jpg</image:loc><image:title>The Dynamo Big Blue cabinet head on, marquee lit, Marvel vs. Capcom on screen, granite control panel</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-screen.jpg</image:loc><image:title>Marvel vs. Capcom attract mode running on the Big Blue cabinet monitor</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-marquee.jpg</image:loc><image:title>Close-up of the Marvel vs. Capcom marquee showing Captain America, Spider-Man, Chun-Li and Ryu, the machine switched off</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-control-panel.jpg</image:loc><image:title>The granite-pattern control panel with two joysticks, two six-button layouts, an instruction card and a Capcom badge</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-arrival.jpg</image:loc><image:title>The Big Blue cabinet wrapped in plastic stretch film, standing on the garage floor the day it was delivered</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-psu-dirty.jpg</image:loc><image:title>The switching power supply as removed from the cabinet, every component and wire buried under thick felted dust</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-psu-cleaned.jpg</image:loc><image:title>The same power supply after being blown out with compressed air, the circuit board and components now visible</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-side-art.jpg</image:loc><image:title>The Dynamo Big Blue seen from the front left, the yellow Capcom logo decal running down the side of the cabinet</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-interior-rear.jpg</image:loc><image:title>The Big Blue cabinet with its back panel removed, showing the monitor chassis, the Capcom board case, the power supply and the wiring loom</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-interior-coindoor.jpg</image:loc><image:title>The interior of the Big Blue cabinet viewed through the coin door, showing the transformer, wiring harness and amplifier board</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/consoles.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-nes-toploader.jpg</image:loc><image:title>Nintendo Entertainment System top loader, the NES-101 redesign, on a plain white background</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-snes.jpg</image:loc><image:title>Super Nintendo Entertainment System seen from the front, purple power and reset switches and both controller ports</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-n64.jpg</image:loc><image:title>Nintendo 64 seen from the front, all four controller ports and the cartridge slot on top</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-gamecube.jpg</image:loc><image:title>Black Nintendo GameCube seen from the front, four controller ports and the memory card slots below</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-saturn.jpg</image:loc><image:title>Sega Saturn seen from the front, disc lid closed and both controller ports visible</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-dreamcast.jpg</image:loc><image:title>Sega Dreamcast seen from the front, swirl logo on the disc lid and four controller ports</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-duo-r.jpg</image:loc><image:title>NEC PC Engine Duo-R in white, the CD-ROM and HuCard combo unit, seen from the front</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-ps2.jpg</image:loc><image:title>Sony PlayStation 2 Slim seen along its front edge, showing how thin the redesign is</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/console-shelf-night.jpg</image:loc><image:title>Lit display shelf of retro consoles at night with two Sony PVM monitors showing Super Mario Bros above</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-handhelds.jpg</image:loc><image:title>Wall-mounted acrylic shelves holding Sega Game Gear and Nomad units, a Game Boy DMG, a Game Boy Advance and a New 3DS XL</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/donkey-kong.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/dk-portrait.jpg</image:loc><image:title>Nintendo Donkey Kong upright cabinet in blue plywood, marquee lit, in the garage arcade</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/dk-screen.jpg</image:loc><image:title>The Donkey Kong screen mid-game showing the girder stage, barrels rolling, score on the board</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/dk-detail.jpg</image:loc><image:title>Close view of the Donkey Kong cabinet side art showing Donkey Kong, Pauline and Mario on the blue cabinet</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/forsale.html</loc>
+    <lastmod>2026-08-26</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/d9-smb.jpg</image:loc><image:title>Sony BVM-D9H5J broadcast monitor displaying the Super Mario Bros. title screen</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sale-magical-chase.jpg</image:loc><image:title>Magical Chase for TurboGrafx-16 in a protective display case</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sale-earthbound-guide.jpg</image:loc><image:title>Official Nintendo EarthBound Player&#x27;s Guide</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sale-ac-d9h.jpg</image:loc><image:title>Sony AC-D9H power supply rear panel, made in Japan</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sale-psvr2.jpg</image:loc><image:title>PlayStation VR2 headset on a charging stand</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sale-double-dragon-marquee.jpg</image:loc><image:title>Nintendo Double Dragon arcade marquee with green dragons on red, 1988 Technos Japan</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sale-pro-wrestling-marquee.jpg</image:loc><image:title>Nintendo NEW GAME! Pro Wrestling marquee insert on Nintendo logo pattern</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/gallery.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-side-art.jpg</image:loc><image:title>Big Blue, side on</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/gameroom-corner.jpg</image:loc><image:title>The corner</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/pcb-wall.jpg</image:loc><image:title>Boards as paintings</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-racetrack-glow.jpg</image:loc><image:title>The racetrack</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-kaybee.jpg</image:loc><image:title>Kay\u00b7Bee \u00d7 World of Nintendo</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-handhelds.jpg</image:loc><image:title>The handhelds wall</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-screen.jpg</image:loc><image:title>Dr. Mario, insert coin</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/collectibles-shelf.jpg</image:loc><image:title>The shelf of accomplices</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-20e1u.jpg</image:loc><image:title>BVM-20E1U</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-a14f5u.jpg</image:loc><image:title>BVM-A14F5U</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/pvm-2950q.jpg</image:loc><image:title>PVM-2950Q</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/pvm-20l5.jpg</image:loc><image:title>PVM-20L5</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/red-tent-finished.jpg</image:loc><image:title>The Red Tent, reborn</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vs-dk-high-scores.jpg</image:loc><image:title>Super Player&#x27;s table</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/won-superbrite.jpg</image:loc><image:title>World of Nintendo Superbrite</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/pinball-blacklight.jpg</image:loc><image:title>Blacklight hours</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/tna-toppers.jpg</image:loc><image:title>Annihilation, accessorized</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vs-super-mario-bros.jpg</image:loc><image:title>VS. Super Mario Bros.</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/coke-cooler.jpg</image:loc><image:title>The concession stand</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/red-tents-pair.jpg</image:loc><image:title>Red Tents, twin engines</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mario-bros-widebody.jpg</image:loc><image:title>Mario Bros. widebody</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute-mvc.jpg</image:loc><image:title>Mini Cute, main event</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/garage-wide.jpg</image:loc><image:title>Down the garage arcade</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/d9-smb.jpg</image:loc><image:title>BVM-D9H5J, reporting for duty</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute.jpg</image:loc><image:title>The Mini Cute</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/pinball-row-night.jpg</image:loc><image:title>Pinball row, lights out</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/kb-world-of-nintendo-sign.jpg</image:loc><image:title>Who&#x27;s the master?</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/console-shelf-night.jpg</image:loc><image:title>The console shelf after dark</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-sonic-knuckles.jpg</image:loc><image:title>Sonic &amp; Knuckles, broadcast grade</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/game-room.jpg</image:loc><image:title>The game room</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/games.html</loc>
+    <lastmod>2026-08-26</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-portrait.jpg</image:loc><image:title>Dynamo Big Blue arcade cabinet in blue with Capcom side art and a Marvel vs. Capcom marquee</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/unisystem-portrait.jpg</image:loc><image:title>Nintendo VS. UniSystem dedicated arcade cabinet with the VS. Super Mario Bros. marquee lit</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/dk-portrait.jpg</image:loc><image:title>Nintendo Donkey Kong upright in blue plywood, marquee lit</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mariobros-portrait.jpg</image:loc><image:title>Nintendo Mario Bros. widebody arcade cabinet, marquee lit</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ij-portrait.jpg</image:loc><image:title>Williams Indiana Jones widebody pinball machine, backbox lit</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/tna-portrait.jpg</image:loc><image:title>Total Nuclear Annihilation pinball machine by Spooky Pinball with its full topper set</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-portrait.jpg</image:loc><image:title>Stern Ghostbusters Premium pinball machine, backbox and topper lit</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/rickmorty-portrait.jpg</image:loc><image:title>Spooky Pinball Rick and Morty Blood Sucker Edition pinball machine, backbox lit</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/pinball-row-night.jpg</image:loc><image:title>Four pinball machines glowing at night: Ghostbusters, Rick and Morty, Indiana Jones, and Total Nuclear Annihilation</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute.jpg</image:loc><image:title>The pink Capcom Mini Cute candy cabinet in the game room, CAPCOM down the pink side panel</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-screen.jpg</image:loc><image:title>The Red Tent cocktail head on, red canopy with three game toppers and Dr. Mario on the screen</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/game-room.jpg</image:loc><image:title>The game room: framed arcade PCBs on the wall, a lit console shelf, Super Mario Bros. on two Sony PVMs, and an Eames lounge chair</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/pcb-wall.jpg</image:loc><image:title>Nine bare arcade printed circuit boards mounted on clear acrylic standoffs against a yellow wall</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/gameroom-library.jpg</image:loc><image:title>Floor to ceiling shelves of boxed games beside a lit Nintendo sign, with a red cocktail cabinet in the foreground</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/gameroom-corner.jpg</image:loc><image:title>Game room corner with the World of Nintendo sign glowing over the game library and the Mini Cute cabinet lit at right</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-kaybee.jpg</image:loc><image:title>Fiber optic Kay-Bee and World of Nintendo sign lit up, blue Kay-Bee panel beside the red Nintendo oval</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-superbrite.jpg</image:loc><image:title>World of Nintendo Superbrite sign lit head on, yellow World of over the red Nintendo oval</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-racetrack-glow.jpg</image:loc><image:title>Fiber optic Nintendo racetrack sign, white lettering inside a red bulb-outlined oval on black</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/kb-world-of-nintendo-sign.jpg</image:loc><image:title>Illuminated fiber optic Kay-Bee World of Nintendo sign above a TV and controller wall racks</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/won-superbrite.jpg</image:loc><image:title>World of Nintendo Superbrite sign shown from the front with glowing letters and from the back with the unlit logo</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-neo-geo-mvs.jpg</image:loc><image:title>Red SNK Neo Geo MVS arcade cabinet running Metal Slug</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-banzai-run.jpg</image:loc><image:title>Williams Banzai Run pinball machine</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-smb-mushroom-world.jpg</image:loc><image:title>Gottlieb Super Mario Bros. Mushroom World pinball machine</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-armwrestling-punchout.jpg</image:loc><image:title>Nintendo Arm Wrestling and Super Punch-Out arcade cabinets side by side</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-armwrestling-restoration.jpg</image:loc><image:title>Before and after restoration of the Nintendo Arm Wrestling cabinet, from bare black cab to finished artwork</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-helifire-radarscope.jpg</image:loc><image:title>Nintendo HeliFire and Radar Scope arcade cabinets side by side</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-punchout-playchoice-row.jpg</image:loc><image:title>Two Punch-Out arcade cabinets and two PlayChoice-10 cabinets in a garage</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-playchoice-countertops.jpg</image:loc><image:title>Two Nintendo PlayChoice counter-top units showing their channel select menus</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-playchoice-upright.jpg</image:loc><image:title>Nintendo PlayChoice-10 upright cabinet running Mike Tyson&#x27;s Punch-Out</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-nintendo-super-system.jpg</image:loc><image:title>Nintendo Super System arcade cabinet running Donkey Kong Country</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-sega-blast-city.jpg</image:loc><image:title>Sega Blast City candy cabinet with Street Fighter II marquee running Vampire Savior</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-food-fight.jpg</image:loc><image:title>Atari Food Fight arcade cabinet with full side art, high score table on screen</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-nintendo-neon-sign.jpg</image:loc><image:title>Nintendo neon sign glowing red on hanging chains</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-r-type.jpg</image:loc><image:title>Nintendo R-Type arcade cabinet with side art</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-dk-junior.jpg</image:loc><image:title>Donkey Kong Junior arcade cabinet in orange</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-smb-pinball.jpg</image:loc><image:title>Gottlieb Super Mario Bros. pinball machine in blue</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/ghostbusters.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-portrait.jpg</image:loc><image:title>Stern Ghostbusters Premium pinball machine with the backbox and TV-style topper lit</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-playfield.jpg</image:loc><image:title>The Ghostbusters Premium playfield lit in pink and purple, showing the ramps and Zombie Yeti artwork</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/</loc>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/indiana-jones.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ij-portrait.jpg</image:loc><image:title>Williams Indiana Jones: The Pinball Adventure widebody pinball machine, backbox lit, in the garage arcade</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ij-backglass.jpg</image:loc><image:title>The Indiana Jones pinball translite showing Indiana Jones, Marion and the cast, lit from behind</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ij-playfield.jpg</image:loc><image:title>The Indiana Jones pinball playfield lit up, showing the ramps, mine cart and center idol</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/mario-bros.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mariobros-portrait.jpg</image:loc><image:title>Nintendo Mario Bros. widebody arcade cabinet, marquee lit, in the garage arcade</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mariobros-context.jpg</image:loc><image:title>The Mario Bros. widebody cabinet beside the glass-bottle Coca-Cola cooler in the garage arcade</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mariobros-screen.jpg</image:loc><image:title>The Mario Bros. screen mid-game with both control panels visible, showing the four-platform sewer level</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/mini-cute.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute-crate.jpg</image:loc><image:title>Hand-built plywood shipping crate standing in the garage with FRAGILE labels and hand-written dimensions</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute-crate-label.jpg</image:loc><image:title>Crate side with FRAGILE sign, Norwegian Air Shuttle sticker, and a Cleared U.S. Customs at LAX sticker</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute-crate-open.jpg</image:loc><image:title>Opened crate revealing the Mini Cute wrapped in cardboard and plastic film inside the plywood frame</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute-arrival.jpg</image:loc><image:title>The pink Capcom Mini Cute unwrapped in the garage, running a Capcom fighter on its screen</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute.jpg</image:loc><image:title>Pink Capcom Mini Cute candy cabinet in the game room beside shelves of games and figures</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/minicute-portrait.jpg</image:loc><image:title>Capcom Mini Cute candy cabinet head on, Street Fighter II on the screen and a Capcom poster above</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/minicute-side.jpg</image:loc><image:title>The Mini Cute from the side showing the full-height CAPCOM side art, Street Fighter II on the screen</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/minicute-screen.jpg</image:loc><image:title>Close-up of the Mini Cute screen showing the Street Fighter II Hyper Fighting title with FREE PLAY below it</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/monitors.html</loc>
+    <lastmod>2026-08-26</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-20e1u.jpg</image:loc><image:title>Sony BVM-20E1U broadcast monitor in the garage rack with an AMS-100 audio monitor speaker on top</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-a14f5u.jpg</image:loc><image:title>Sony BVM-A14F5U broadcast monitor with its full control panel and an AMS-100 speaker above</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/pvm-2950q.jpg</image:loc><image:title>Sony PVM-2950Q 29-inch Trinitron production monitor on a white shelf with Mario figures on top</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/lmd-rack.jpg</image:loc><image:title>Three Sony LMD professional LCD monitors side by side, all showing the same cartoon frame</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/pvm-20l5.jpg</image:loc><image:title>Sony PVM-20L5 multiformat Trinitron monitor with an AMS-100 speaker above and a PS2 on the shelf below</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-sonic-knuckles.jpg</image:loc><image:title>Two Sony BVM broadcast monitors showing Sonic and Knuckles, with AMS-100 speakers on top and a console shelf below</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ams-100-lineup.jpg</image:loc><image:title>Seven Sony AMS-100 audio monitor speakers lined up on a wooden bench</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/projects.html</loc>
+    <lastmod>2026-08-26</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ams-3-delivery.jpg</image:loc><image:title>Two large shipping boxes on the garage floor in front of the workbench, with two Sony monitors running games above</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ams-3-pair.jpg</image:loc><image:title>Two Sony AMS-3 audio monitor speakers side by side, showing their deep black heatsink fins</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ams-3-heatsinks.jpg</image:loc><image:title>Rear view of a Sony AMS-3 showing full-width heatsink fins running down both sides of the chassis</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ams-100-lineup.jpg</image:loc><image:title>Seven Sony AMS-100 audio monitor speakers stacked on a workbench, front panels facing out</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-20e1u-crosshatch.jpg</image:loc><image:title>Sony BVM-20E1U broadcast monitor displaying a crosshatch calibration pattern with an AMS-100 speaker on top</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/garage-wide.jpg</image:loc><image:title>The garage arcade mid-project: cabinets, pro monitors on the floor, decks overhead, and work in progress everywhere</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-psu-dirty.jpg</image:loc><image:title>The Big Blue switching power supply as removed, buried under years of dust</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/pvm-vs-bvm.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-sonic-knuckles.jpg</image:loc><image:title>Sonic and Knuckles running on two Sony BVM broadcast monitors above a console shelf</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/red-tent.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/red-tent-as-found.jpg</image:loc><image:title>The Red Tent as found: faded and scuffed red canopy, worn paint, on its chrome stand</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/red-tent-wear.jpg</image:loc><image:title>Close-up of paint wear and scratches on the Red Tent canopy and base before restoration</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/red-tent-teardown.jpg</image:loc><image:title>Red Tent completely disassembled: canopy shells on the garage floor, chassis stripped, monitor and boards laid out</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/red-tent-rebuild.jpg</image:loc><image:title>Red Tent mid-reassembly with freshly painted red canopy frame and the game board on its slide-out tray</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/red-tent-finished.jpg</image:loc><image:title>Fully restored Red Tent with gleaming red canopy, clean black base, and polished chrome legs</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-screen.jpg</image:loc><image:title>The restored Red Tent with Dr. Mario on screen, a VS. Super Mario Bros. instruction card beside it and three game toppers on the canopy</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-channels.jpg</image:loc><image:title>The Red Tent showing a channel select menu listing Baseball Stars, Dragon Warrior, Ninja Gaiden and more, with Contra, Castlevania and Ninja Gaiden toppers above</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/rick-and-morty.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/rickmorty-portrait.jpg</image:loc><image:title>Spooky Pinball Rick and Morty Blood Sucker Edition pinball machine with the backbox lit in the game room</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/rickmorty-playfield.jpg</image:loc><image:title>The Rick and Morty pinball playfield lit in green and gold, showing the portal and ramps</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/signal-chain.html</loc>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/stories.html</loc>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/tna.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/tna-portrait.jpg</image:loc><image:title>Total Nuclear Annihilation pinball machine by Spooky Pinball, lit in blue and purple, with the full topper set</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/tna-playfield.jpg</image:loc><image:title>The Total Nuclear Annihilation playfield lit in red, showing the reactor targets and drop targets</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/trinitron-fleet-vol1.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/fleet/5307e927c8.webp</image:loc><image:title>PVM-2950Q</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/fleet/4da9853661.webp</image:loc><image:title>PVM-20L5</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/fleet/545d7bc047.webp</image:loc><image:title>BVM-20E1U</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/fleet/08822b46cc.webp</image:loc><image:title>BVM-A14F5U</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/fleet/b4133f839b.webp</image:loc><image:title>BVM-D9H5J</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/fleet/85acf6f16b.webp</image:loc><image:title>The Confidence Wall</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/vs-smb.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/unisystem-screen.jpg</image:loc><image:title>The VS. Super Mario Bros. title screen running on the Nintendo UniSystem cabinet, control panel below</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vs-dk-high-scores.jpg</image:loc><image:title>VS. Super Mario Bros. Super Player&#x27;s high score table, all ten entries initialed DK, all reaching world 8-4</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/vs-unisystem.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/unisystem-portrait.jpg</image:loc><image:title>Nintendo VS. UniSystem dedicated arcade cabinet with the VS. Super Mario Bros. marquee lit</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/unisystem-screen.jpg</image:loc><image:title>The VS. Super Mario Bros. title screen on the UniSystem monitor with the control panel below</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/wanted.html</loc>
+    <lastmod>2026-08-24</lastmod>
+  </url>
 </urlset>
