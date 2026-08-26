@@ -166,3 +166,41 @@
 
   vids.forEach(v => io.observe(v));
 })();
+
+/* ── Marquee speed ────────────────────────────────────────────────
+   The CSS duration is a fallback. A fixed duration means a fixed
+   time for a full loop, so the ticker speeds up every time a segment
+   is added to the strip. Measure the content and set the duration
+   from a target reading speed instead, so adding copy makes the loop
+   longer rather than faster.
+   Travel distance == the span's own offsetWidth, because the keyframe
+   is translateX(-100%) and padding-left:100% is part of that width. */
+(function () {
+  const TARGET_PX_PER_SEC = 75;   // comfortable read for .7rem letterspaced caps
+  const MIN_S = 20, MAX_S = 300;
+
+  const span = document.querySelector(".strip span");
+  if (!span) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  let applied = null;
+  function setSpeed() {
+    const w = span.offsetWidth;
+    if (!w) return;
+    const dur = Math.min(MAX_S, Math.max(MIN_S, w / TARGET_PX_PER_SEC));
+    const val = dur.toFixed(1) + "s";
+    if (val === applied) return;          // avoid restarting the animation needlessly
+    applied = val;
+    span.style.animationDuration = val;
+  }
+
+  setSpeed();
+  // Web fonts land after first paint and change the text width.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(setSpeed);
+
+  let t;
+  window.addEventListener("resize", () => {
+    clearTimeout(t);
+    t = setTimeout(setSpeed, 250);
+  });
+})();

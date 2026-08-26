@@ -201,7 +201,10 @@ table.spec td.d{color:var(--dim)}
 .strip span{
   display:inline-block;font-family:var(--disp);font-size:.7rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--dim);padding-left:100%;
-  animation:scroll 38s linear infinite;
+  /* Duration is a fallback only. site.js measures the actual content width and
+     sets animation-duration so the ticker holds a constant reading speed no
+     matter how many segments get added. Do not hard-code a duration here. */
+  animation:scroll 90s linear infinite;
 }
 @keyframes scroll{to{transform:translateX(-100%)}}
 .strip b{color:var(--fire2);font-weight:700}
