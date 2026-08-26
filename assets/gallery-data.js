@@ -9,7 +9,7 @@ const GALLERY = [
   { type: "image", src: "media/2026/big-blue-side-art.jpg", title: "Big Blue, side on", caption: "The Capcom-logo side art that took longer to track down than the electrical work took to do. <a href='big-blue.html'>The full profile \u2192</a>", cat: "arcade" },
   { type: "image", src: "media/2026/gameroom-corner.jpg", title: "The corner", caption: "World of Nintendo glowing over the game library, the Mini Cute lit and waiting on the right", cat: "misc" },
   { type: "image", src: "media/2026/pcb-wall.jpg", title: "Boards as paintings", caption: "Nine bare arcade PCBs on acrylic standoffs \u2014 the traces are the artwork", cat: "arcade" },
-  { type: "image", src: "media/2026/sign-racetrack.jpg", title: "The racetrack", caption: "NESM36F fiber optic \u2014 white letters inside the red oval that gives the sign its name", cat: "signage" },
+  { type: "image", src: "media/2026/sign-racetrack-glow.jpg", title: "The racetrack", caption: "NESM36F fiber optic \u2014 white letters inside the red oval that gives the sign its name", cat: "signage" },
   { type: "image", src: "media/2026/sign-kaybee.jpg", title: "Kay\u00b7Bee \u00d7 World of Nintendo", caption: "The co-branded fiber optic with both panels lit \u2014 mall-era retail glow, intact", cat: "signage" },
   { type: "image", src: "media/2026/consoles-handhelds.jpg", title: "The handhelds wall", caption: "Game Gear and Nomad up top, the DMG and the clamshells below, all on acrylic", cat: "consoles" },
   { type: "image", src: "media/2026/redtent-screen.jpg", title: "Dr. Mario, insert coin", caption: "The restored Red Tent back in service \u2014 toppers on the canopy, instruction card in the window", cat: "arcade" },
