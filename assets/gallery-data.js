@@ -6,13 +6,6 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
-  { type: "image", src: "media/2026/ams-size-profile.jpg", title: "Thirty years, in profile", caption: "An AMS-100 sitting on an AMS-3. One is a flat plate; the other is a wall of heatsink. <a href='ams-3-vs-ams-100.html'>The full comparison \u2192</a>", cat: "monitors" },
-  { type: "image", src: "media/2026/ams-size-front.jpg", title: "Ancestor and descendant", caption: "Bar graphs and a keypad on the AMS-100 above; analog VU needles and two big knobs on the AMS-3 below \u2014 the same job, engineered a generation apart", cat: "monitors" },
-  { type: "image", src: "media/2026/ams-size-rear.jpg", title: "Back to back", caption: "SDI and digital audio on the AMS-100; six XLRs, impedance switches and external speaker outputs on the AMS-3", cat: "monitors" },
-  { type: "video", src: "media/video/ams-3-arrival.mp4", poster: "media/2026/ams-3-arrival-poster.jpg", title: "AMS-3, first light", caption: "Twin VU meters awake for the first time in this garage \u2014 the AMS-3 perched on a PVM, sound on. Those are the fans, not the game. <a href='projects.html'>Follow the triage \u2192</a>", cat: "projects" },
-  { type: "image", src: "media/2026/ams-3-pair.jpg", title: "The AMS-3 pair, on arrival", caption: "Sony's big analog ancestor to the AMS-100 \u2014 both units as they landed, 35\u00a0lbs each, fins out and waiting for the bench. One has since moved on", cat: "projects" },
-  { type: "image", src: "media/2026/ams-3-delivery.jpg", title: "Delivery day", caption: "Two boxes on the garage floor, games still running overhead. Nobody warned the floor how heavy these were", cat: "projects" },
-  { type: "image", src: "media/2026/ams-3-heatsinks.jpg", title: "All heatsink", caption: "The back half of an AMS-3 \u2014 Sony gave a speaker the cooling budget of a power amplifier", cat: "monitors" },
   { type: "image", src: "media/2026/big-blue-side-art.jpg", title: "Big Blue, side on", caption: "The Capcom-logo side art that took longer to track down than the electrical work took to do. <a href='big-blue.html'>The full profile \u2192</a>", cat: "arcade" },
   { type: "image", src: "media/2026/gameroom-corner.jpg", title: "The corner", caption: "World of Nintendo glowing over the game library, the Mini Cute lit and waiting on the right", cat: "misc" },
   { type: "image", src: "media/2026/pcb-wall.jpg", title: "Boards as paintings", caption: "Nine bare arcade PCBs on acrylic standoffs \u2014 the traces are the artwork", cat: "arcade" },
