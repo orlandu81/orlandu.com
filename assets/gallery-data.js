@@ -6,7 +6,7 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
-  { type: "image", src: "media/2026/ams-size-profile.jpg", title: "Thirty years, in profile", caption: "An AMS-100 sitting on an AMS-3. One is a flat plate; the other is a wall of heatsink. <a href='projects.html'>The full comparison \u2192</a>", cat: "monitors" },
+  { type: "image", src: "media/2026/ams-size-profile.jpg", title: "Thirty years, in profile", caption: "An AMS-100 sitting on an AMS-3. One is a flat plate; the other is a wall of heatsink. <a href='ams-3-vs-ams-100.html'>The full comparison \u2192</a>", cat: "monitors" },
   { type: "image", src: "media/2026/ams-size-front.jpg", title: "Ancestor and descendant", caption: "Bar graphs and a keypad on the AMS-100 above; analog VU needles and two big knobs on the AMS-3 below \u2014 the same job, engineered a generation apart", cat: "monitors" },
   { type: "image", src: "media/2026/ams-size-rear.jpg", title: "Back to back", caption: "SDI and digital audio on the AMS-100; six XLRs, impedance switches and external speaker outputs on the AMS-3", cat: "monitors" },
   { type: "video", src: "media/video/ams-3-arrival.mp4", poster: "media/2026/ams-3-arrival-poster.jpg", title: "AMS-3, first light", caption: "Twin VU meters awake for the first time in this garage \u2014 the AMS-3 perched on a PVM, sound on. Those are the fans, not the game. <a href='projects.html'>Follow the triage \u2192</a>", cat: "projects" },
