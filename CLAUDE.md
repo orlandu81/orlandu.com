@@ -109,6 +109,11 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   images/clips from it (2026-08-26): "they aren't that professional." The bar is his lit,
   composed machine photography. Note the home filmstrip draws from gallery images, so a
   gallery entry also puts a photo on the front page.
+- **Never hard-code the marquee's animation duration.** A fixed duration means a fixed
+  time per loop, so the ticker accelerates every time a segment is added to the copy —
+  it had crept to ~196 px/s on desktop before David caught it (2026-08-26). `site.js`
+  measures `.strip span` and sets `animation-duration` from a 75 px/s target. The value
+  in `style.css` is a fallback only. Same class of fix as the filmstrip's rAF scroller.
 - Don't imply a current count from a photo of a past state — say "on arrival" or "since moved on".
 
 ## The vault
