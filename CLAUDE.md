@@ -114,6 +114,13 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
 
 ## Content rules David has set
 
+- **Location is "Orange County, California" — never the specific city.** David had the
+  site swept from "San Clemente" to "Orange County" on 2026-08-27 (commit below). This
+  covers body copy, meta/OG/Twitter descriptions, the JSON-LD `description` on every
+  page, the footer in `assets/site.js`, `llms.txt`, the `assets/style.css` header
+  comment, and the Trinitron Fleet colophon. Do not reintroduce the city name anywhere,
+  including in new pages, alt text or commit messages. "Southern California" in prose is
+  fine.
 - US spelling. No "centre", no "grey".
 - Don't repeat a photo across editorial pages — each shot gets one home. The gallery
   is the exception: it's the curated index and may draw from anywhere.
