@@ -94,7 +94,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/games.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-portrait.jpg</image:loc><image:title>Dynamo Big Blue arcade cabinet in blue with Capcom side art and a Marvel vs. Capcom marquee</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/unisystem-portrait.jpg</image:loc><image:title>Nintendo VS. UniSystem dedicated arcade cabinet with the VS. Super Mario Bros. marquee lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/dk-portrait.jpg</image:loc><image:title>Nintendo Donkey Kong upright in blue plywood, marquee lit</image:title></image:image>
@@ -107,11 +107,6 @@
     <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute.jpg</image:loc><image:title>The pink Capcom Mini Cute candy cabinet in the game room, CAPCOM down the pink side panel</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-screen.jpg</image:loc><image:title>The Red Tent cocktail head on, red canopy with three game toppers and Dr. Mario on the screen</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/game-room.jpg</image:loc><image:title>The game room: framed arcade PCBs on the wall, a lit console shelf, Super Mario Bros. on two Sony PVMs, and an Eames lounge chair</image:title></image:image>
-    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-kaybee.jpg</image:loc><image:title>Fiber optic Kay-Bee and World of Nintendo sign lit up, blue Kay-Bee panel beside the red Nintendo oval</image:title></image:image>
-    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-superbrite.jpg</image:loc><image:title>World of Nintendo Superbrite sign lit head on, yellow World of over the red Nintendo oval</image:title></image:image>
-    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-racetrack-glow.jpg</image:loc><image:title>Fiber optic Nintendo racetrack sign, white lettering inside a red bulb-outlined oval on black</image:title></image:image>
-    <image:image><image:loc>https://www.orlandu.com/media/2026/kb-world-of-nintendo-sign.jpg</image:loc><image:title>Illuminated fiber optic Kay-Bee World of Nintendo sign above a TV and controller wall racks</image:title></image:image>
-    <image:image><image:loc>https://www.orlandu.com/media/2026/won-superbrite.jpg</image:loc><image:title>World of Nintendo Superbrite sign shown from the front with glowing letters and from the back with the unlit logo</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-neo-geo-mvs.jpg</image:loc><image:title>Red SNK Neo Geo MVS arcade cabinet running Metal Slug</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-banzai-run.jpg</image:loc><image:title>Williams Banzai Run pinball machine</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-smb-mushroom-world.jpg</image:loc><image:title>Gottlieb Super Mario Bros. Mushroom World pinball machine</image:title></image:image>
@@ -253,5 +248,32 @@
   <url>
     <loc>https://www.orlandu.com/wanted.html</loc>
     <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/signage.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-kaybee.jpg</image:loc><image:title>Fiber optic Kay-Bee and World of Nintendo sign lit up, blue Kay-Bee panel beside the red Nintendo oval</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-superbrite.jpg</image:loc><image:title>World of Nintendo Superbrite sign lit head on, yellow World of over the red Nintendo oval</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-racetrack-glow.jpg</image:loc><image:title>Fiber optic Nintendo racetrack sign, white lettering inside a red bulb-outlined oval on black</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/kb-world-of-nintendo-sign.jpg</image:loc><image:title>Illuminated fiber optic Kay-Bee World of Nintendo sign above a TV and controller wall racks</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/won-superbrite.jpg</image:loc><image:title>World of Nintendo Superbrite sign shown from the front with glowing letters and from the back with the unlit logo</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-baseball.jpg</image:loc><image:title>Nintendo VS. Baseball instruction card, red and white, with batting and pitching control diagrams</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-golf.jpg</image:loc><image:title>Nintendo VS. Golf instruction card with stroke play and match play scoring tables</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-tennis.jpg</image:loc><image:title>Nintendo VS. Tennis instruction card showing the controller diagram and game select buttons</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-soccer.jpg</image:loc><image:title>Nintendo VS. Soccer instruction card with offense and defense control flowcharts</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-pinball.jpg</image:loc><image:title>Nintendo VS. Pinball instruction card with a miniature playfield diagram in the corner</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-ice-climber.jpg</image:loc><image:title>Nintendo VS. Ice Climber instruction card with two printed screenshots and the enemy list</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-mach-rider.jpg</image:loc><image:title>Nintendo VS. Mach Rider instruction card with a motorcycle rider illustration and control diagram</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-excitebike.jpg</image:loc><image:title>Nintendo VS. Excitebike instruction card, yellow and blue, with twelve panels of riding instructions</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-hogans-alley.jpg</image:loc><image:title>Nintendo VS. Hogan&#x27;s Alley instruction card, orange, with gangster and civilian target faces</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-gumshoe.jpg</image:loc><image:title>Nintendo VS. Gumshoe instruction card, a full cartoon of Mr. Stevenson chasing balloons</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-super-mario-bros.jpg</image:loc><image:title>Nintendo VS. Super Mario Bros. instruction card with hand-drawn Mario artwork and control diagrams</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-castlevania.jpg</image:loc><image:title>Nintendo VS. Castlevania instruction card with a sepia illustration of Simon Belmont cracking his whip</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-goonies.jpg</image:loc><image:title>Nintendo VS. The Goonies instruction card, red and white, with a skull illustration and how to play list</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-top-gun.jpg</image:loc><image:title>Nintendo VS. Top Gun instruction card, navy and white, with dive and climb joystick diagram</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-sky-kid.jpg</image:loc><image:title>Nintendo VS. Sky Kid instruction card, bright yellow, with the Sky Kid logo and a biplane</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-rbi-baseball.jpg</image:loc><image:title>Nintendo VS. R.B.I. Baseball instruction card, green, with Atari Games and MLB Players Association marks</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-tko-boxing.jpg</image:loc><image:title>Nintendo VS. T.K.O. Boxing instruction card, black, with the Data East logo and a boxer illustration</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/vscard-playchoice-10.jpg</image:loc><image:title>Nintendo PlayChoice instruction card, black, explaining the channel select menu and ten game selection</image:title></image:image>
   </url>
 </urlset>
