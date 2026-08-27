@@ -29,6 +29,7 @@
 ## Writing
 
 - [Stories index](https://www.orlandu.com/stories.html)
+- [Sony AMS-100: A Technical Monograph](https://www.orlandu.com/ams-100-monograph.html): the first documentation of Sony's AMS-100 audio monitor speaker and its BKAM option boards — design, registry of documented units, service internals, and market record.
 - [Ancestor and Descendant](https://www.orlandu.com/ams-3-vs-ams-100.html): Sony's AMS-3 and AMS-100 audio monitors compared.
 - [Trinitron Fleet, Vol. 1](https://www.orlandu.com/trinitron-fleet-vol1.html): a field guide to the Sony pro monitors here.
 - [The Signal Chain](https://www.orlandu.com/signal-chain.html): how the consoles reach the glass — SCART switchers, BNC runs, a distribution amp, and no scaler.
