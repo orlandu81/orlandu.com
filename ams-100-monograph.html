@@ -39,7 +39,8 @@
   .mbody > .conf,
   .mbody > .srcs,
   .mbody > h3.sub,
-  .mbody > h4.sub2{max-width:74ch}
+  .mbody > h4.sub2,
+  .mbody > .cite{max-width:74ch}
   .mbody p{margin-bottom:1.05rem}
   .mbody ul,.mbody ol{margin:0 0 1.1rem 1.2rem}
   .mbody li{margin-bottom:.45rem;color:var(--dim)}
@@ -85,6 +86,15 @@
   .dl .meta{color:var(--dim);font-size:.98rem}
   table.spec td small{color:var(--dim)}
   .withheld{color:var(--dim);font-style:italic}
+  .cite{
+    background:var(--bg2);border:1px solid var(--line);border-radius:10px;
+    padding:.9rem 1.1rem;margin:.7rem 0 1.4rem;font-family:var(--mono);
+    font-size:.88rem;line-height:1.65;color:var(--ink);overflow-x:auto;
+  }
+  .cite .lbl{
+    display:block;font-family:var(--disp);font-size:.6rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--cyan-dim);margin-bottom:.45rem;
+  }
   section[id],.mbody [id]{scroll-margin-top:96px}
 </style>
 <script type="application/ld+json">
@@ -212,6 +222,12 @@
     {"@type": "Product", "name": "Sony BKAM-103 SDI De-embedder Board"},
     {"@type": "Product", "name": "Sony AMS-3 Audio Monitor Speaker"}
    ],
+   "copyrightYear": 2026,
+   "copyrightHolder": {
+    "@id": "https://www.orlandu.com/#person"
+   },
+   "creditText": "David (\"Orlandu81\"), Orlandu's Arcade",
+   "isAccessibleForFree": true,
    "image": "https://www.orlandu.com/media/og/og-ams.jpg"
   }
  ]
@@ -228,7 +244,7 @@
   <p class="lede">A technical monograph. The AMS-100 has no written history &mdash; no retrospectives, no teardowns, no collector references. This is the primary literature: the frame, its option-board system, a registry of documented units, the service internals, and what the market record actually contains.</p>
 
   <div class="dl">
-    <a class="btn cy" href="media/ams-100-monograph.pdf" download>Download the PDF</a>
+    <a class="btn cy" href="media/ams-100-monograph.pdf?v=2" download>Download the PDF</a>
     <span class="meta">The typeset edition &mdash; seven sections, six appendices, complete source and evidence record.</span>
   </div>
 
@@ -1226,9 +1242,29 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     The author's rulings of July&ndash;August 2026 closing the research program; the open-item lines formerly carried by Sections 1&ndash;7 and Appendices A&ndash;E, as consolidated and closed; Sony Installation Manual <span class="tag">[IM]</span> and Maintenance Manual <span class="tag">[MM]</span> for the manual-coverage statements cited; Appendix D for every record referenced.</div>
   </section>
 
+  <section id="rights" class="mbody">
+    <h2 class="sec">Rights &amp; citation</h2>
+    <p>&copy; 2026 David (&ldquo;Orlandu81&rdquo;), Orlandu&rsquo;s Arcade. <strong>All rights reserved.</strong> This monograph is original research: the registry, the board-provenance chains, the market ledger and the plate log are the product of this project&rsquo;s own hardware, records and correspondence, and they exist nowhere else.</p>
+    <p><strong>Quoting with attribution is welcome.</strong> Cite a section, quote a table, link to it, argue with it &mdash; that is what primary literature is for, and the section anchors here are stable so a deep link will keep working. What is not permitted is republishing the work in whole or in substantial part, on another site or inside another document, with or without credit. If you want to reproduce more than a short passage, or translate it, ask first: <a href="mailto:orlandusarcade@gmail.com">orlandusarcade@gmail.com</a>.</p>
+    <p>The same applies to the PDF. It carries this notice in its own metadata, so a copy that travels on its own still says where it came from.</p>
+
+    <h3 class="sub">How to cite this</h3>
+    <div class="cite">
+      <span class="lbl">Full citation</span>
+      David (&ldquo;Orlandu81&rdquo;). <em>Sony AMS-100 Audio Monitor Speaker: A Technical Monograph.</em><br>
+      Orlandu&rsquo;s Arcade, 2026. https://www.orlandu.com/ams-100-monograph.html
+    </div>
+    <div class="cite">
+      <span class="lbl">Short form, for a forum post</span>
+      Orlandu81, AMS-100 monograph, &sect;4.4 &mdash;<br>
+      https://www.orlandu.com/ams-100-monograph.html#s44
+    </div>
+    <p>If you hold an AMS-100, a BKAM board, or an AMS-3 that is not in this record &mdash; or a copy of the Operation Manual, which remains unlocated &mdash; the record is closed but the interest is not. <a href="mailto:orlandusarcade@gmail.com">Get in touch</a>.</p>
+  </section>
+
   <section class="mbody">
     <div class="dl">
-      <a class="btn cy" href="media/ams-100-monograph.pdf" download>Download the PDF</a>
+      <a class="btn cy" href="media/ams-100-monograph.pdf?v=2" download>Download the PDF</a>
       <span class="meta">The typeset edition, with the full contents, plate log, and evidence record.</span>
     </div>
     <p style="margin-top:1.5rem">
