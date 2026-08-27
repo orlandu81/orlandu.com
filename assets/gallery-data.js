@@ -6,6 +6,7 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
+  { type: "image", src: "media/2026/topper-rad-racer.jpg", title: "Rad Racer, found", caption: "An original 1988 PlayChoice-10 topper, still wearing its NEW starburst \u2014 the first item ever crossed off the <a href='wanted.html'>hunt list</a>", cat: "signage" , w: 800, h: 405 },
   { type: "image", src: "media/2026/big-blue-side-art.jpg", title: "Big Blue, side on", caption: "The Capcom-logo side art that took longer to track down than the electrical work took to do. <a href='big-blue.html'>The full profile \u2192</a>", cat: "arcade" , w: 800, h: 1067 },
   { type: "image", src: "media/2026/gameroom-corner.jpg", title: "The corner", caption: "World of Nintendo glowing over the game library, the Mini Cute lit and waiting on the right", cat: "misc" , w: 800, h: 1086 },
   { type: "image", src: "media/2026/pcb-wall.jpg", title: "Boards as paintings", caption: "Nine bare arcade PCBs on acrylic standoffs \u2014 the traces are the artwork", cat: "arcade" , w: 800, h: 712 },
