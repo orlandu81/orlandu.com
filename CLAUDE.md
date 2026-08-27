@@ -27,6 +27,38 @@ Every deploy goes through David's laptop over the device bridge:
 6. Move the bundle to `_to_delete/` (device_bash cannot `rm` in mounted folders).
 7. Back in the container, `git fetch origin main` so `origin/main` stops looking stale.
 
+### A rejected push means another session is live — merge, never force
+
+David runs more than one Claude chat against this repo. Twice now a second session
+has been mid-task on the same files (2026-08-26, 2026-08-27), and on 2026-08-27 it
+had **17 unpushed commits** — the AMS-100 monograph, the PVM-20L5 guide, the whole
+structured-data and sitemap pass. A force-push at that moment would have destroyed
+all of it.
+
+So: `! [rejected]` is not an error to get past. It is the signal that someone else's
+work is on `origin` and yours is not the only version.
+
+**Never `git push --force` or `--force-with-lease` to this repo.** There is no
+situation in this workflow that calls for it. If you think there is, stop and ask David.
+
+When a push is rejected:
+
+1. `git fetch <remote> main` and **read `git log --oneline HEAD..FETCH_HEAD`** before
+   touching anything. Find out what they did.
+2. If it merges cleanly, merge and push. Say what came in when you report back.
+3. **If it conflicts, throw away your version, not theirs.** `git merge --abort`,
+   `git reset --hard FETCH_HEAD`, then redo your edit against their current file.
+   Resolving a conflict by hand risks reverting their work invisibly; redoing a small
+   edit on top of the newer file cannot. This is what happened with the Magical Chase
+   removal — the second session had rewritten `forsale.html` with JSON-LD `Product`
+   nodes that a stale conflict resolution would have silently mangled.
+4. Re-check your assumptions against the merged file. The first Magical Chase attempt
+   swapped the marquee to name the Sony AMS-100 — which the other session had already
+   removed as sold. A stale edit is not just a merge problem; the *content* goes wrong too.
+
+Prefer small, quickly-deployed commits over batching a session's work into one push —
+a narrow diff is a narrow collision.
+
 ## Hosting — Vercel, verified
 
 The live host is **Vercel**. Hosting went GitHub Pages -> Netlify -> Vercel; both
