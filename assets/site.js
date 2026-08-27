@@ -52,7 +52,7 @@
           '<a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a>' +
           '<a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a>' +
         '</div>' +
-        '<div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>All logos and characters are trademarks of Orlandu’s Arcade.</div>' +
+        '<div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>Photography © Orlandu’s Arcade. Game logos and characters are the property of their respective owners.</div>' +
       '</div>';
   }
 
