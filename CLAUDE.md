@@ -204,6 +204,23 @@ around it is checked.
 `media/2026/alumni-ams-100.jpg` and its thumb are currently **unreferenced** — the old listing
 photo, kept in case the AMS-100 monograph wants it. Not an oversight.
 
+**Watermarks: For Sale photos only.** The six photos on `forsale.html` carry a
+`© orlandu.com` mark, bottom-right, at 4.2% of the short edge (white 80% over a soft dark
+shadow). **Nothing else on the site is watermarked and nothing else should be** — the
+editorial and gallery photography is the reason people stay, and a mark across it costs
+more than it protects. Regenerate a mark with the same recipe if a new sale photo is added.
+The scope is deliberate, not partial work.
+
+**`sale-bvm-d9h5j.jpg` is a deliberate duplicate of `d9-smb.jpg`** — the D9H5J shot is also a
+gallery image, so the watermarked copy got its own filename and `d9-smb.jpg` stays clean for
+the gallery. **When the D9H5J sells, delete `media/{2026,thumbs}/sale-bvm-d9h5j.jpg`** (both
+sizes) along with the card; `d9-smb.jpg` and its gallery entry stay. This is the one place
+`git mv` is wrong — the source file is still in use elsewhere.
+
+**Overwriting a file in `media/` needs `?v=N` on its `<img>` refs** — `vercel.json` gives
+`/media/*` `s-maxage=86400`, so the CDN serves the old bytes for a day otherwise. Leave
+JSON-LD `image` URLs unversioned.
+
 ## The vault
 
 `vault.html` lives on David's device (not in this repo) — 1,283 inventory items.
