@@ -114,13 +114,23 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
 
 ## Content rules David has set
 
-- **Location is "Orange County, California" — never the specific city.** David had the
-  site swept from "San Clemente" to "Orange County" on 2026-08-27 (commit below). This
+- **Location is "Orange County, California" — never the specific city. This is a
+  PRIVACY rule, not a style preference** (David, 2026-08-27): the arcade is in his home,
+  and the site is a public inventory of valuable machines. Do not narrow the location by
+  any route — not a city, neighborhood, nearby landmark, cross street, ZIP, school,
+  named local business, or a photo that shows a house number or street sign. The site was
+  swept from the old city name on 2026-08-27 (commit below). This
   covers body copy, meta/OG/Twitter descriptions, the JSON-LD `description` on every
   page, the footer in `assets/site.js`, `llms.txt`, the `assets/style.css` header
   comment, and the Trinitron Fleet colophon. Do not reintroduce the city name anywhere,
   including in new pages, alt text or commit messages. "Southern California" in prose is
   fine.
+- **Strip location metadata from every media file.** His iPhone HEIC/MOV originals carry
+  GPS. The normal pipeline already removes it — Pillow does not copy EXIF unless asked,
+  and ffmpeg drops the QuickTime location tags on re-encode — so never commit an original
+  camera file straight into `media/`, and never add `exif=` when saving. Audited
+  2026-08-27: 282 images and both videos in the repo carry zero GPS and zero camera or
+  owner EXIF. Re-check after any bulk media add.
 - US spelling. No "centre", no "grey".
 - Don't repeat a photo across editorial pages — each shot gets one home. The gallery
   is the exception: it's the curated index and may draw from anywhere.
