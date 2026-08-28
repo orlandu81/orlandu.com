@@ -322,6 +322,17 @@ img[data-full]{cursor:zoom-in}
 .chips a:hover{border-color:var(--cyan-dim);color:var(--cyan);text-decoration:none}
 section[id]{scroll-margin-top:90px}
 
+/* ── Machine prev/next ──────────────────── */
+.machnav{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;border-top:1px solid var(--line);padding-top:1.5rem;margin-top:1rem}
+.machnav .mn{display:block;color:inherit;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem}
+.machnav .mn:hover{border-color:var(--cyan-dim);text-decoration:none}
+.machnav .mnl{display:block;font-family:var(--disp);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:.3rem}
+.machnav .mn b{font-family:var(--disp);font-size:.92rem;letter-spacing:.03em;color:var(--ink)}
+.machnav .mn.next{text-align:right}
+.machnav .mn.all{text-align:center}
+.machnav .mn:hover .mnl{color:var(--cyan)}
+@media(max-width:640px){.machnav{grid-template-columns:1fr 1fr}.machnav .mn.all{display:none}}
+
 /* ── Reduced motion ───────────────────────────── */
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}

@@ -198,6 +198,23 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   in `style.css` is a fallback only. Same class of fix as the filmstrip's rAF scroller.
 - Don't imply a current count from a photo of a past state — say "on arrival" or "since moved on".
 
+### Content David has declined (2026-08-28)
+
+- **No sourcing/channel content.** David: "financial pathways are not something I'm
+  interested in sharing with the public. They need to figure that out on their own and
+  not use my channels." No Japan-pipeline story, no content about where or how he
+  sources; the monitors.html Beyond Video teaser card for it was removed the same day.
+- **No failures/regrets editorial** — same ruling. The site does not publish his misses.
+- **No composite-video screenshots on his monitors**: "composite is just gross. I would
+  never put a picture that ugly on my monitors." Any comparison piece uses RGB material.
+- **No RSS feed** — declined.
+- **The fleet count is FOURTEEN units across nine models (LMD-9050 ×2)** as of the same
+  date — swept across index, monitors, stories, signal-chain, pvm-vs-bvm, and Trinitron
+  Fleet Vol. 1 (static fleet stats AND the `UNITS` array in its JS).
+- **Machine pages carry a prev/next chain** (`nav.machnav`, styled in style.css)
+  mirroring games.html order: uprights → pinball → game room, looping. Adding or
+  removing a machine page means re-linking its two neighbors.
+
 ## Sold items
 
 Settled with David on 2026-08-26 when the AMS-100 sold. The rule is **the sales page is present
