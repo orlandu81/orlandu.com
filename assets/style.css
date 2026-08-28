@@ -139,6 +139,11 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
   .card.featured h3{font-size:1.15rem}
 }
 
+/* story-card thumbnails (stories.html) */
+.card .cthumb{width:calc(100% + 2.4rem);max-width:none;margin:-1.1rem -1.2rem .95rem;aspect-ratio:21/9;object-fit:cover;border-bottom:1px solid var(--line)}
+.card.featured .cthumb{width:calc(100% + 3.4rem);margin:-1.5rem -1.6rem 1.1rem -1.8rem;aspect-ratio:3/1}
+@media(max-width:520px){.card.featured .cthumb{width:calc(100% + 2.4rem);margin:-1.2rem -1.1rem .9rem -1.3rem}}
+
 /* ── Hero (home) ──────────────────────────────── */
 .hero{
   position:relative;text-align:center;padding:3.5rem 1rem 4rem;overflow:hidden;

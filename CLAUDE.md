@@ -215,6 +215,31 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   mirroring games.html order: uprights → pinball → game room, looping. Adding or
   removing a machine page means re-linking its two neighbors.
 
+### Approved 2026-08-28: machine accents + story thumbnails + Japan language
+
+- **Every machine page carries an accent palette keyed to its own art**, as a page-scoped
+  `<style>` block ("Machine accent") overriding ONLY `main .kicker`, the `h1.page`
+  gradient, `h2.sec`, and `.card .sub` — links stay cyan, everything else is house style.
+  Palettes (X = kicker/h2/sub; L/M/D = h1 gradient): donkey-kong cab blue
+  #86b8ff/#cfe4ff/#5b9dff/#1e4f9e · mario-bros pipe green #6fdc8c/#baf5c4/#3ecf5e/#137a2e ·
+  vs-unisystem VS. red #ff8f7a/#ffb4a8/#f0503c/#96180c · big-blue Capcom azure
+  #6fc4ff/#bfe6ff/#3fa9ff/#0b5bd0 · indiana-jones adventure gold #eec06a/#ffe2a0/#e8a03c/#9c5210 ·
+  ghostbusters ecto purple #c09aff/#e2ccff/#a86bff/#5a1fae · tna reactor yellow
+  #e3f04a/#f8ffb0/#d8e83a/#7a9e15 · rick-and-morty portal green #a8f26b/#e2ff9e/#7ee94a/#2f9e2f ·
+  red-tent tent red #ff8a8a/#ffb0b0/#e83838/#7e0e0e · mini-cute candy pink
+  #ff9ed0/#ffd0e8/#ff7ac0/#b02878. A new machine page gets a palette from its own art.
+- **Story cards on stories.html carry a photo thumbnail**: `media/story-thumbs/story-<slug>.jpg`,
+  1200×514 (21:9), q82, cropped from the story's OWN media, no wordmark. This is a documented
+  exception to one-photo-one-home — the thumb is navigational chrome, like an OG image.
+  The featured card shows the same file at 3:1 via `object-fit` (`.cthumb` rules in style.css).
+  **A new story needs a new crop**, and the story-thumbs are NOT in sitemap.xml (chrome, not content).
+  The PVM-20L5 thumb is cropped from the flagged weak `pvm-20l5.jpg` — regenerate it when the
+  screens-on reshoot lands. index.html's "Latest" cards deliberately did NOT get thumbnails.
+- **Japan language (David delegated the call):** channel-flavored copy is out — about.html's
+  "sourcing lines that reach all the way to auction houses in Japan" clause was removed. Plain
+  unit provenance stays ("sourced from Japan" on the monitors AMS-100 card). The monograph is
+  untouched — it has its own rulings.
+
 ## Sold items
 
 Settled with David on 2026-08-26 when the AMS-100 sold. The rule is **the sales page is present
