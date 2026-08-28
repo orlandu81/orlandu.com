@@ -136,6 +136,12 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   is the exception: it's the curated index and may draw from anywhere.
 - Don't over-quote a machine's trivia. Most of his cabinets are Japanese; saying so
   once is plenty.
+- **Machine cards on games.html are ordered by YEAR, oldest first**, within their
+  section — `#uprights` and `#pinball` (David, 2026-08-28, commit 3a27624). The year
+  is already printed in each card's `<div class="sub">Maker · YYYY</div>`, so a new
+  card slots in by that number rather than at the end. Same ascending convention as
+  the PlayChoice-10 topper wall. When you reorder, re-read the card copy: "rounds out
+  the lineup" stopped being true when Mario Bros. moved out of last place.
 - Big Blue runs a **Darksoft CPS-2 multi in a Jasen's Customs case** — not a
   Marvel vs. Capcom board.
 - Machine profiles carry a **Work log** (`ul.worklog`). Source entries from
