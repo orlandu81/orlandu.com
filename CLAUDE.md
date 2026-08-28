@@ -125,6 +125,21 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   comment, and the Trinitron Fleet colophon. Do not reintroduce the city name anywhere,
   including in new pages, alt text or commit messages. "Southern California" in prose is
   fine.
+- **No WHICH-ROOM mapping either. Never state which room a specific machine lives in**
+  (David, 2026-08-28: *"the privacy point extends through the whole site"*). A public,
+  itemized map of where each valuable thing sits is the actionable intelligence, so the
+  monitors roster lost its **Room column** (commit 8a852a5), the machine pages lost
+  "running on free play in the garage arcade" from all five meta/OG/Twitter/JSON-LD
+  descriptions, and "in the garage arcade" / "in the game room" came out of alt text,
+  sitemap `<image:title>`s and the per-machine info cards. "The cabinet row" / "the row"
+  replaced "the garage row" in prose. **Keep the sitemap image titles in sync with the
+  alt text they mirror** — they are duplicated in two places each.
+  STILL PRESENT, pending David's call on how far to go: games.html's section headings
+  ("The garage arcade — uprights", "The game room"), its `#gameroom` anchor and lede,
+  the about.html two-room description, the index.html card, signal-chain.html's
+  "Garage arcade" headings, and gallery captions/titles for photos that literally show
+  a garage or the game room. Ask before flattening those — they are the site's voice,
+  not an inventory map.
 - **Strip location metadata from every media file.** His iPhone HEIC/MOV originals carry
   GPS. The normal pipeline already removes it — Pillow does not copy EXIF unless asked,
   and ffmpeg drops the QuickTime location tags on re-encode — so never commit an original
