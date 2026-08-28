@@ -136,12 +136,24 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   is the exception: it's the curated index and may draw from anywhere.
 - Don't over-quote a machine's trivia. Most of his cabinets are Japanese; saying so
   once is plenty.
-- **Machine cards on games.html are ordered by YEAR, oldest first**, within their
-  section — `#uprights` and `#pinball` (David, 2026-08-28, commit 3a27624). The year
+- **Machine and console cards are ordered by YEAR, oldest first**, within their
+  section — games.html `#uprights`, `#pinball` and `#gameroom`, and each maker
+  section on consoles.html (David, 2026-08-28). The year
   is already printed in each card's `<div class="sub">Maker · YYYY</div>`, so a new
   card slots in by that number rather than at the end. Same ascending convention as
   the PlayChoice-10 topper wall. When you reorder, re-read the card copy: "rounds out
   the lineup" stopped being true when Mario Bros. moved out of last place.
+- **consoles.html: ONE CARD PER MODEL. No unit counts, no room locations.**
+  (David, 2026-08-28, commit e918055.) He owns duplicates of several machines; the
+  page lists the model once and never says "×2", "one in each room", "the pair", or
+  which room anything is in. **The room labels were a privacy leak** — the arcade is
+  in his home and the site is a public inventory of valuable hardware, so treat
+  "which room" like any other location detail (see the location rule above).
+  The `sub` line is `YYYY` plus condition/status only — `Modded`, `Restored`,
+  `Out for service`, `JP`. The exception he asked for: **the two New 3DS XLs get
+  separate cards** (Black 2014, SNES Edition 2016) because the units differ.
+  Console years come from the vault where it records one; where it does not, use the
+  North American release year of that specific model.
 - Big Blue runs a **Darksoft CPS-2 multi in a Jasen's Customs case** — not a
   Marvel vs. Capcom board.
 - Machine profiles carry a **Work log** (`ul.worklog`). Source entries from
