@@ -234,7 +234,12 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   The featured card shows the same file at 3:1 via `object-fit` (`.cthumb` rules in style.css).
   **A new story needs a new crop**, and the story-thumbs are NOT in sitemap.xml (chrome, not content).
   The PVM-20L5 thumb is cropped from the flagged weak `pvm-20l5.jpg` — regenerate it when the
-  screens-on reshoot lands. index.html's "Latest" cards deliberately did NOT get thumbnails.
+  screens-on reshoot lands. index.html's "Step inside" cards carry the
+  same treatment via `media/step-thumbs/step-<slug>.jpg` (approved from a mockup the same day);
+  the "Latest" news grid deliberately stays TEXT — a thumb-per-news-item is a forever
+  maintenance tax and the page already opens with two photo bands. **When the D9H5J sells,
+  re-cut `step-forsale.jpg` (it shows SMB on the D9) from something still owned — part of
+  the sold sweep.**
 - **Japan language (David delegated the call):** channel-flavored copy is out — about.html's
   "sourcing lines that reach all the way to auction houses in Japan" clause was removed. Plain
   unit provenance stays ("sourced from Japan" on the monitors AMS-100 card). The monograph is
