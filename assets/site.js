@@ -7,7 +7,7 @@
 (function(){
   const NAV = [
     ["index.html",    "Home"],
-    ["games.html",    "Games"],
+    ["games.html",    "Coin-Op"],
     ["signage.html",  "Signage"],
     ["guide-shelf.html", "Guides"],
     ["consoles.html", "Consoles"],
