@@ -202,7 +202,8 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
 .worklog li b{color:var(--ink);font-weight:600}
 .worklog li.open b{color:var(--fire2)}
 
-.shot .cat{font-family:var(--disp);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);display:block;margin-top:.25rem}
+.shot .cat,
+#lightbox figcaption .cat{font-family:var(--disp);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);display:block;margin-top:.25rem}
 .empty{
   border:1px dashed var(--line);border-radius:12px;padding:3rem 1.5rem;text-align:center;color:var(--dim);
 }
