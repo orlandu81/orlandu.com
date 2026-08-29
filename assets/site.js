@@ -9,6 +9,7 @@
     ["index.html",    "Home"],
     ["games.html",    "Games"],
     ["signage.html",  "Signage"],
+    ["guide-shelf.html", "Guides"],
     ["consoles.html", "Consoles"],
     ["monitors.html", "Monitor Fleet"],
     ["gallery.html",  "Gallery"],
