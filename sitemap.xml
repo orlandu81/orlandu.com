@@ -114,6 +114,17 @@
     <image:image><image:loc>https://www.orlandu.com/media/2026/console-shelf-night.jpg</image:loc><image:title>The console shelf after dark</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-sonic-knuckles.jpg</image:loc><image:title>Sonic &amp; Knuckles, broadcast grade</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/game-room.jpg</image:loc><image:title>The game room</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-duckhunt.jpg</image:loc><image:title>Duck Hunt, Zapper in hand</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-channel-select.jpg</image:loc><image:title>Channel select</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/garage-night.jpg</image:loc><image:title>The garage arcade after dark</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/uprights-night.jpg</image:loc><image:title>Four uprights, lights out</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/cabinet-row-day.jpg</image:loc><image:title>Down the cabinet row</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/game-room-corner.jpg</image:loc><image:title>The game room corner</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/minicute-magical-chase.jpg</image:loc><image:title>Magical Chase on the Mini Cute</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-decks.jpg</image:loc><image:title>Ghostbusters and the deck wall</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/tna-angle.jpg</image:loc><image:title>Total Nuclear Annihilation, lights out</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/pinball-row-day.jpg</image:loc><image:title>Indiana Jones, mid-row</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/console-shelf-day.jpg</image:loc><image:title>The console shelf by day</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/games.html</loc>
@@ -149,6 +160,7 @@
     <lastmod>2026-08-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-portrait.jpg</image:loc><image:title>Stern Ghostbusters Premium pinball machine with the backbox and TV-style topper lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-playfield.jpg</image:loc><image:title>The Ghostbusters Premium playfield lit in pink and purple, showing the ramps and Zombie Yeti artwork</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-decks.jpg</image:loc><image:title>Stern Ghostbusters Premium pinball machine lit beside three Ghostbusters skateboard decks hung on the wall</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/</loc>
@@ -223,7 +235,8 @@
     <image:image><image:loc>https://www.orlandu.com/media/2026/red-tent-rebuild.jpg</image:loc><image:title>Red Tent mid-reassembly with freshly painted red canopy frame and the game board on its slide-out tray</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/red-tent-finished.jpg</image:loc><image:title>Fully restored Red Tent with gleaming red canopy, clean black base, and polished chrome legs</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-screen.jpg</image:loc><image:title>The restored Red Tent with Dr. Mario on screen, a VS. Super Mario Bros. instruction card beside it and three game toppers on the canopy</image:title></image:image>
-    <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-channels.jpg</image:loc><image:title>The Red Tent showing a channel select menu listing Baseball Stars, Dragon Warrior, Ninja Gaiden and more, with Contra, Castlevania and Ninja Gaiden toppers above</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-channel-select.jpg</image:loc><image:title>The Red Tent channel select menu listing ten NES games including Baseball Stars, Dragon Warrior, Final Fantasy, Metroid and VS. Duck Hunt</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-duckhunt.jpg</image:loc><image:title>Playing VS. Duck Hunt on the Red Tent PlayChoice-10 side with the Zapper light gun in hand, and Punch-Out!!, Teenage Mutant Ninja Turtles II and Tecmo Bowl toppers on the canopy above</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/rick-and-morty.html</loc>

@@ -6,6 +6,17 @@
 // Newest entries first.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
+  { type: "image", src: "media/2026/redtent-duckhunt.jpg", title: "Duck Hunt, Zapper in hand", caption: "The PlayChoice-10 side of the Red Tent mid-round, three toppers up on the canopy", cat: "arcade", date: "2026-08" , w: 800, h: 946 },
+  { type: "image", src: "media/2026/redtent-channel-select.jpg", title: "Channel select", caption: "Ten NES titles on one board \u2014 on a PlayChoice the coins buy time, not lives", cat: "arcade", date: "2026-08" , w: 800, h: 600 },
+  { type: "image", src: "media/2026/garage-night.jpg", title: "The garage arcade after dark", caption: "The whole room lit: the cabinet row down one wall, the pinball row down the other", cat: "arcade", date: "2026-08" , w: 800, h: 1028 },
+  { type: "image", src: "media/2026/uprights-night.jpg", title: "Four uprights, lights out", caption: "Mario Bros., Donkey Kong, the VS. UniSystem and Big Blue under the arcade sign", cat: "arcade", date: "2026-08" , w: 800, h: 826 },
+  { type: "image", src: "media/2026/cabinet-row-day.jpg", title: "Down the cabinet row", caption: "The Mario Bros. widebody's side art square to the light", cat: "arcade", date: "2026-08" , w: 800, h: 1200 },
+  { type: "image", src: "media/2026/game-room-corner.jpg", title: "The game room corner", caption: "The fiber-optic Kay\u00b7Bee World of Nintendo sign over the game library, the Red Tent holding the corner", cat: "arcade", date: "2026-08" , w: 800, h: 1067 },
+  { type: "image", src: "media/2026/minicute-magical-chase.jpg", title: "Magical Chase on the Mini Cute", caption: "The pink Capcom candy cab with the TurboGrafx-16 sign above it", cat: "arcade", date: "2026-08" , w: 800, h: 1067 },
+  { type: "image", src: "media/2026/ghostbusters-decks.jpg", title: "Ghostbusters and the deck wall", caption: "The Premium lit beside three Ghostbusters skate decks", cat: "pinball", date: "2026-08" , w: 800, h: 1309 },
+  { type: "image", src: "media/2026/tna-angle.jpg", title: "Total Nuclear Annihilation, lights out", caption: "Danesi's synthwave machine lit end to end", cat: "pinball", date: "2026-08" , w: 800, h: 999 },
+  { type: "image", src: "media/2026/pinball-row-day.jpg", title: "Indiana Jones, mid-row", caption: "The Williams widebody between Rick and Morty and Total Nuclear Annihilation", cat: "pinball", date: "2026-08" , w: 800, h: 1067 },
+  { type: "image", src: "media/2026/console-shelf-day.jpg", title: "The console shelf by day", caption: "Paper Mario on the smaller PVM, Super Mario World on the 29-inch, the shelf lit underneath", cat: "consoles", date: "2026-08" , w: 800, h: 800 },
   { type: "image", src: "media/2026/big-blue-side-art.jpg", title: "Big Blue, side on", caption: "The Capcom-logo side art that took longer to track down than the electrical work took to do. <a href='big-blue.html'>The full profile \u2192</a>", cat: "arcade" , w: 800, h: 1067 },
   { type: "image", src: "media/2026/sign-racetrack-glow.jpg", title: "The racetrack", caption: "NESM36F fiber optic \u2014 white letters inside the red oval that gives the sign its name", cat: "signage" , w: 800, h: 295 },
   { type: "image", src: "media/2026/sign-kaybee.jpg", title: "Kay\u00b7Bee \u00d7 World of Nintendo", caption: "The co-branded fiber optic with both panels lit \u2014 mall-era retail glow, intact", cat: "signage" , w: 800, h: 206 },
