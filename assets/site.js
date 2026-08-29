@@ -11,7 +11,7 @@
     ["signage.html",  "Signage"],
     ["guide-shelf.html", "Guides"],
     ["consoles.html", "Consoles"],
-    ["monitors.html", "Monitor Fleet"],
+    ["monitors.html", "Monitors"],
     ["gallery.html",  "Gallery"],
     ["stories.html",  "Stories"],
     ["projects.html", "Projects"],
