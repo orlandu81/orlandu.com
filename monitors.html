@@ -123,8 +123,25 @@
 }
 </script>
 <style>
-  .fleetgrid .card{break-inside:avoid;margin-bottom:1rem}
-  .fleetgrid .cthumb{aspect-ratio:auto;height:auto}
+  /* Fleet roster — one uniform card, the way the coin-op grid works.
+     Even column counts only, so four tubes never leave an orphan row.
+     4:3 is the tube's own ratio, so every chassis frames the same way. */
+  .grid.fleetgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  @media(max-width:900px){.grid.fleetgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:520px){.grid.fleetgrid{grid-template-columns:1fr}}
+  .fleetgrid .cthumb{aspect-ratio:4/3}
+  .fleetgrid .wide{grid-column:1/-1}
+  .fleetgrid .wide .cthumb{aspect-ratio:800/341}
+  .fleetgrid .lmdlist{display:flex;flex-wrap:wrap;gap:.35rem .9rem;margin-top:.6rem;
+    font-family:var(--cond);font-size:.95rem;color:var(--dim)}
+  .fleetgrid .lmdlist b{color:var(--ink);font-weight:600}
+  /* Two-column blocks stay two columns — a c2 grid goes three-up at this
+     width, which is what left the odd holes on the right of this page. */
+  .grid.beyond{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid.amsshots{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem}
+  @media(max-width:640px){
+    .grid.beyond,.grid.amsshots{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
@@ -147,7 +164,7 @@
 
   <section>
     <h2 class="sec">The fleet roster</h2>
-    <div class="masonry fleetgrid">
+    <div class="grid fleetgrid">
       <div class="card">
         <img class="cthumb" src="media/thumbs/pvm-2950q.jpg?v=5" data-full="media/2026/pvm-2950q.jpg?v=5" alt="Sony PVM-2950Q 29-inch Trinitron production monitor lit at night running Super Mario World, both control strips and the SONY badge in frame" loading="lazy" width="800" height="530">
         <div class="sub">PVM &middot; Production</div>
@@ -172,33 +189,20 @@
         <h3>BVM-A14F5U</h3>
         <p>Fully kitted &mdash; all three card slots filled, control panel and keypad flanking the tube. On screen: <em>Beggar Prince</em>, 2006 &mdash; a brand-new Genesis game a decade after Sega walked away, on the last CRT generation Sony ever built.</p>
       </div>
-      <div class="card">
-        <div class="sub">LMD</div>
-        <h3>LMD-940W</h3>
-        <p>Widescreen 9-inch.</p>
-      </div>
-      <div class="card">
-        <div class="sub">LMD</div>
-        <h3>LMD-9020</h3>
-      </div>
-      <div class="card">
+      <div class="card wide">
         <img class="cthumb" src="media/thumbs/lmd-rack.jpg?v=2" data-full="media/2026/lmd-rack.jpg?v=2" alt="Three Sony LMD professional LCD monitors side by side, all showing the same cartoon frame" loading="lazy" width="800" height="341">
-        <div class="sub">LMD &middot; 5 units</div>
-        <h3>LMD-9030</h3>
-        <p>The rack squadron &mdash; three of them side by side, running the same frame.</p>
-      </div>
-      <div class="card">
-        <div class="sub">LMD &middot; 2 units</div>
-        <h3>LMD-9050</h3>
+        <div class="sub">LMD &middot; Four models &middot; Nine units</div>
+        <h3>The LMD wall</h3>
+        <p>The flat-panel side of the fleet, and the confidence layer behind the tubes &mdash; one shared 8.4-inch chassis family, one manual, one job: keep every signal honest before it reaches glass that matters.</p>
+        <div class="lmdlist"><span><b>LMD-940W</b> &middot; widescreen 9-inch, HDMI to 3G</span><span><b>LMD-9020</b> &middot; the analog corner</span><span><b>LMD-9030 &times;5</b> &middot; the rack squadron</span><span><b>LMD-9050 &times;2</b> &middot; HD-SDI</span></div>
       </div>
     </div>
-    <p class="note" style="margin-top:1rem">How every one of these actually gets a signal &mdash; the switchers, the SCART-to-BNC cables, and the distribution amp behind the LMD wall &mdash; is written up in <a href="signal-chain.html">The Signal Chain</a>.</p>
-  <p class="note">Recently departed: a BVM-14F5U and the nine-inch BVM-D9H5J found new homes. The fleet consolidates so the keepers get the attention they deserve.</p>
+    <p class="note" style="margin-top:1rem">How every one of these actually gets a signal &mdash; the switchers, the SCART-to-BNC cables, and the distribution amp behind the LMD wall &mdash; is written up in <a href="signal-chain.html">The Signal Chain</a>. Recently departed: a BVM-14F5U and the nine-inch BVM-D9H5J found new homes &mdash; the fleet consolidates so the keepers get the attention they deserve.</p>
   </section>
 
   <section>
     <h2 class="sec">Beyond video</h2>
-    <div class="grid c2">
+    <div class="grid c2 beyond">
       <div class="card">
         <div class="sub">Sony AMS-100</div>
         <h3>The audio side of the rack</h3>
@@ -210,15 +214,11 @@
         <p>An AMS-3 — the older, far heavier analog forerunner of the AMS-100, and about twice the machine to look at. It landed untested and wants its volume pots cleaned, so it starts life here on the bench rather than in the rack. <a href="projects.html#bench">Follow it on the bench</a> · <a href="ams-3-vs-ams-100.html">see it next to an AMS-100 →</a></p>
       </div>
     </div>
-    <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
-      <div>
-        <figure class="shot"><img src="media/thumbs/ams-100-lineup.jpg?v=6" data-full="media/2026/ams-100-lineup.jpg?v=6" alt="Seven Sony AMS-100 audio monitor speakers lined up on a wooden bench" loading="lazy" width="800" height="552"><figcaption><b>The AMS-100 lineup</b> — mustered for inspection</figcaption></figure>
-        <figure class="shot"><img src="media/thumbs/ams-rear-pair.jpg" data-full="media/2026/ams-rear-pair.jpg" alt="The rear panels of both units: the AMS-100's SDI and option card slots above the AMS-3's speaker terminals and XLR input bank" loading="lazy" width="800" height="348"><figcaption><b>Around the back</b> — SDI and plug-in cards above, transformer-era terminals below</figcaption></figure>
-      </div>
-      <div>
-        <figure class="shot"><img src="media/thumbs/ams-size-front-v2.jpg?v=2" data-full="media/2026/ams-size-front-v2.jpg?v=2" alt="A Sony AMS-100 audio monitor speaker stacked on top of the much larger Sony AMS-3, both front panels facing out" loading="lazy" width="800" height="310"><figcaption><b>Ancestor and descendant</b> — an AMS-100 riding on an AMS-3. <a href="ams-3-vs-ams-100.html">Stacked, in detail →</a></figcaption></figure>
-        <figure class="shot"><img src="media/thumbs/ams-size-profile.jpg" data-full="media/2026/ams-size-profile.jpg" alt="The same two Sony units from the side, the AMS-3's deep black heatsink fins running beneath the AMS-100's flat lid" loading="lazy" width="800" height="308"><figcaption><b>In profile</b> — the AMS-3's heatsink wall, and where the weight went</figcaption></figure>
-      </div>
+    <div class="grid amsshots">
+      <figure class="shot"><img src="media/thumbs/ams-100-lineup.jpg?v=6" data-full="media/2026/ams-100-lineup.jpg?v=6" alt="Seven Sony AMS-100 audio monitor speakers lined up on a wooden bench" loading="lazy" width="800" height="552"><figcaption><b>The AMS-100 lineup</b> — mustered for inspection</figcaption></figure>
+      <figure class="shot"><img src="media/thumbs/ams-rear-pair.jpg" data-full="media/2026/ams-rear-pair.jpg" alt="The rear panels of both units: the AMS-100's SDI and option card slots above the AMS-3's speaker terminals and XLR input bank" loading="lazy" width="800" height="348"><figcaption><b>Around the back</b> — SDI and plug-in cards above, transformer-era terminals below</figcaption></figure>
+      <figure class="shot"><img src="media/thumbs/ams-size-front-v2.jpg?v=2" data-full="media/2026/ams-size-front-v2.jpg?v=2" alt="A Sony AMS-100 audio monitor speaker stacked on top of the much larger Sony AMS-3, both front panels facing out" loading="lazy" width="800" height="310"><figcaption><b>Ancestor and descendant</b> — an AMS-100 riding on an AMS-3. <a href="ams-3-vs-ams-100.html">Stacked, in detail →</a></figcaption></figure>
+      <figure class="shot"><img src="media/thumbs/ams-size-profile.jpg" data-full="media/2026/ams-size-profile.jpg" alt="The same two Sony units from the side, the AMS-3's deep black heatsink fins running beneath the AMS-100's flat lid" loading="lazy" width="800" height="308"><figcaption><b>In profile</b> — the AMS-3's heatsink wall, and where the weight went</figcaption></figure>
     </div>
   </section>
 </main>

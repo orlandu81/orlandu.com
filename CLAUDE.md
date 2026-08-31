@@ -177,6 +177,24 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
 - **Never publish a fault on a machine David has sold.** Condition notes are for what he still
   owns. The AMS-3 that left had a specific defect; it was written up, and he asked for it removed
   (2026-08-26). Say only that a unit moved on.
+- **A card without a photo cannot share a grid row with one that has a photo.** In an
+  aligned grid the photoless card stretches to match, so it reads as an empty box. This is
+  what made monitors.html look ragged (2026-08-31): four LMD models had no photograph, and
+  the page worked around it with `.masonry` plus a `.cthumb{aspect-ratio:auto}` override, so
+  no two cards lined up. Fixed by giving the roster **one uniform 4:3 thumb** (the tube's own
+  ratio — it frames every chassis without cutting the cabinet) and folding the four LMD
+  models into **one full-width `.card.wide`** carrying the rack photo at its true 800/341 and
+  naming all four models with their counts. David chose that over shooting three new photos.
+  **Nothing was dropped from the roster** — the LMDs are described as the wall they are, the
+  way Trinitron Fleet Vol. 1 treats them.
+- **`.grid.c2` and `.grid.c3` are `auto-fill minmax()`, so the column count follows the
+  viewport, not the class name.** At desktop `c2` is three columns and `c3` is four. A
+  section with two or four items in a `c2` therefore leaves holes on the right — that was
+  the other half of the monitors.html mess ("Beyond video", the AMS photo pair). When a
+  block has a **fixed** number of items, pin the columns explicitly
+  (`grid-template-columns:repeat(N,minmax(0,1fr))` with breakpoints) rather than letting
+  auto-fill orphan the last row. Specificity note: a page-scoped `.fleetgrid{}` loses to
+  `.grid.c2` in style.css — write `.grid.fleetgrid{}` or drop the `c2` class.
 - **Nothing wider than ~2.2:1 belongs in the home filmstrip.** At 170px tall a 3.9:1 sign renders
   as a 660px slab. index.html now measures each strip image on load and hides anything over
   2.2:1 — panoramas stay in the gallery masonry, which handles them fine. Don't "fix" a wide
