@@ -188,11 +188,13 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   `aspect-ratio:7/6` (the geometric mean of the four photos' ratios, so the matting is even),
   two columns, nothing cropped, rows perfectly aligned. **Recropping the source photo is a
   different thing and he asks for it** — `pvm-2950q.jpg` was recut from the
-  `IMG_3926.jpg` master at `(375,12)-(2642,1790)` → 1600×1255 / thumb 800×627, `?v=6`: the
+  `IMG_3926.jpg` master at `(282,12)-(2640,1790)` → 1600×1206 / thumb 800×603, `?v=7`: the
   old frame clipped 113px off the top of the cabinet and carried a slice of a neighbouring
   monitor down each side. The limits on that photo are the **Trinitron badge** (master
-  x≈385) on the left and the **button column** (master x 2533–2634) on the right; crop past
-  either and you are back to removing features. **Verify a "no-crop" layout
+  x≈385) on the left and the **button column** (master x 2533–2634) on the right. A tighter
+  crop into the left cheek was tried and rejected — **cropping one side and not the other
+  reads as crooked**: *"You cut too much off of the left side, now it looks uneven."* Frame
+  a symmetrical object symmetrically; cabinet edge to cabinet edge is the answer. **Verify a "no-crop" layout
   numerically** — measure each rendered box against `naturalWidth/Height` and assert the
   scaled image fits inside it; do not eyeball it.
 - **A card without a photo cannot share a grid row with one that has a photo.** In an

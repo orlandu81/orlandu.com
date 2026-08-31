@@ -26,7 +26,7 @@ const GALLERY = [
   { type: "image", src: "media/2026/collectibles-shelf.jpg", title: "The shelf of accomplices", caption: "Gundam, Rick and Morty, and a full Thundercats bench keeping watch over the library", cat: "misc" , w: 800, h: 1067 },
   { type: "image", src: "media/2026/bvm-20e1u-lit.jpg", title: "BVM-20E1U", caption: "The primary broadcast chassis in the garage rack, AMS-100 on top — two BKM slots still open", cat: "monitors" , w: 800, h: 870 },
   { type: "image", src: "media/2026/bvm-a14f5u-lit.jpg?v=2", title: "BVM-A14F5U", caption: "Fully kitted: all three card slots filled, control panel and keypad flanking the tube", cat: "monitors" , w: 800, h: 603 },
-  { type: "image", src: "media/2026/pvm-2950q.jpg?v=6", title: "PVM-2950Q", caption: "The 29-inch presence in the game room, lit at night with Super Mario World on the tube", cat: "monitors" , w: 800, h: 627 },
+  { type: "image", src: "media/2026/pvm-2950q.jpg?v=7", title: "PVM-2950Q", caption: "The 29-inch presence in the game room, lit at night with Super Mario World on the tube", cat: "monitors" , w: 800, h: 603 },
   { type: "image", src: "media/2026/pvm-20l5.jpg?v=3", title: "PVM-20L5", caption: "Late-generation 20-inch multiformat, AMS-100 on top, Super Mario Sunshine on the tube", cat: "monitors" , w: 800, h: 834 },
   { type: "image", src: "media/2026/dk-portrait.jpg?v=2", title: "Donkey Kong", caption: "Blue plywood &mdash; marquee lit in the garage row", cat: "arcade" , w: 800, h: 1067 },
   { type: "image", src: "media/2026/unisystem-screen.jpg?v=2", title: "VS. Super Mario Bros.", caption: "The dedicated UniSystem in attract mode &mdash; the arcade version, which is not the one you remember", cat: "arcade" , w: 800, h: 600 },
