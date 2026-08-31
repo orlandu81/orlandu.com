@@ -186,7 +186,13 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   **Align with `object-fit:contain` instead** — a uniform plate the whole photo sits inside,
   `background:transparent` so the card's own gradient mats it. monitors.html's roster is
   `aspect-ratio:7/6` (the geometric mean of the four photos' ratios, so the matting is even),
-  two columns, nothing cropped, rows perfectly aligned. **Verify a "no-crop" layout
+  two columns, nothing cropped, rows perfectly aligned. **Recropping the source photo is a
+  different thing and he asks for it** — `pvm-2950q.jpg` was recut from the
+  `IMG_3926.jpg` master at `(375,12)-(2642,1790)` → 1600×1255 / thumb 800×627, `?v=6`: the
+  old frame clipped 113px off the top of the cabinet and carried a slice of a neighbouring
+  monitor down each side. The limits on that photo are the **Trinitron badge** (master
+  x≈385) on the left and the **button column** (master x 2533–2634) on the right; crop past
+  either and you are back to removing features. **Verify a "no-crop" layout
   numerically** — measure each rendered box against `naturalWidth/Height` and assert the
   scaled image fits inside it; do not eyeball it.
 - **A card without a photo cannot share a grid row with one that has a photo.** In an
