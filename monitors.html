@@ -126,12 +126,14 @@
   /* Fleet roster — one uniform card, the way the coin-op grid works.
      Even column counts only, so four tubes never leave an orphan row.
      4:3 is the tube's own ratio, so every chassis frames the same way. */
-  .grid.fleetgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .grid.fleetgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
   @media(max-width:900px){.grid.fleetgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media(max-width:520px){.grid.fleetgrid{grid-template-columns:1fr}}
-  .fleetgrid .cthumb{aspect-ratio:4/3}
+  /* One uniform plate per card, but object-fit:contain — the whole photo
+     shows, nothing is cropped; the card's own ground fills the rest. */
+  .fleetgrid .cthumb{aspect-ratio:7/6;object-fit:contain;background:transparent}
   .fleetgrid .wide{grid-column:1/-1}
-  .fleetgrid .wide .cthumb{aspect-ratio:800/341}
+  .fleetgrid .wide .cthumb{aspect-ratio:800/285}
   .fleetgrid .lmdlist{display:flex;flex-wrap:wrap;gap:.35rem .9rem;margin-top:.6rem;
     font-family:var(--cond);font-size:.95rem;color:var(--dim)}
   .fleetgrid .lmdlist b{color:var(--ink);font-weight:600}
@@ -190,7 +192,7 @@
         <p>Fully kitted &mdash; all three card slots filled, control panel and keypad flanking the tube. On screen: <em>Beggar Prince</em>, 2006 &mdash; a brand-new Genesis game a decade after Sega walked away, on the last CRT generation Sony ever built.</p>
       </div>
       <div class="card wide">
-        <img class="cthumb" src="media/thumbs/lmd-rack.jpg?v=2" data-full="media/2026/lmd-rack.jpg?v=2" alt="Three Sony LMD professional LCD monitors side by side, all showing the same cartoon frame" loading="lazy" width="800" height="341">
+        <img class="cthumb" src="media/thumbs/lmd-rack.jpg?v=3" data-full="media/2026/lmd-rack.jpg?v=3" alt="Three Sony LMD professional LCD monitors side by side, all showing the same cartoon frame" loading="lazy" width="800" height="285">
         <div class="sub">LMD &middot; Four models &middot; Nine units</div>
         <h3>The LMD wall</h3>
         <p>The flat-panel side of the fleet, and the confidence layer behind the tubes &mdash; one shared 8.4-inch chassis family, one manual, one job: keep every signal honest before it reaches glass that matters.</p>
