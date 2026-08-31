@@ -1,7 +1,7 @@
 # orlandu.com — working notes for Claude
 
 Static site for Orlandu's Arcade: a garage arcade + game room, ~10 machines,
-15 Sony professional monitors, ~25 consoles. Owner: David (GitHub `orlandu81`).
+13 Sony professional monitors, ~25 consoles. Owner: David (GitHub `orlandu81`).
 
 No build step. Plain HTML/CSS/JS served from the repo root.
 
@@ -208,9 +208,10 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
 - **No composite-video screenshots on his monitors**: "composite is just gross. I would
   never put a picture that ugly on my monitors." Any comparison piece uses RGB material.
 - **No RSS feed** — declined.
-- **The fleet count is FOURTEEN units across nine models (LMD-9050 ×2)** as of the same
-  date — swept across index, monitors, stories, signal-chain, pvm-vs-bvm, and Trinitron
-  Fleet Vol. 1 (static fleet stats AND the `UNITS` array in its JS).
+- **The fleet count is THIRTEEN units across EIGHT models** — the BVM-D9H5J sold
+  2026-08-31 and came off the roster; LMD-9050 is ×2. Swept across index, monitors,
+  stories, signal-chain, pvm-vs-bvm, and Trinitron Fleet Vol. 1 (fleet stats now
+  380 lb / ≈960 W / 1080 sq in, the `UNITS` array, and the no-JS static mirror).
 - **Machine pages carry a prev/next chain** (`nav.machnav`, styled in style.css)
   mirroring games.html order: uprights → pinball → game room, looping. Adding or
   removing a machine page means re-linking its two neighbors.
@@ -237,9 +238,9 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   screens-on reshoot lands. index.html's "Step inside" cards carry the
   same treatment via `media/step-thumbs/step-<slug>.jpg` (approved from a mockup the same day);
   the "Latest" news grid deliberately stays TEXT — a thumb-per-news-item is a forever
-  maintenance tax and the page already opens with two photo bands. **When the D9H5J sells,
-  re-cut `step-forsale.jpg` (it shows SMB on the D9) from something still owned — part of
-  the sold sweep.**
+  maintenance tax and the page already opens with two photo bands. `step-forsale.jpg` was
+  re-cut from `sale-psvr2.jpg` on 2026-08-31 when the D9H5J sold (crop y 260–774, above the
+  watermark); it was previously SMB on the D9.
 - **Japan language (David delegated the call):** channel-flavored copy is out — about.html's
   "sourcing lines that reach all the way to auction houses in Japan" clause was removed. Plain
   unit provenance stays ("sourced from Japan" on the monitors AMS-100 card). The monograph is
@@ -284,18 +285,21 @@ around it is checked.
 `media/2026/alumni-ams-100.jpg` and its thumb are currently **unreferenced** — the old listing
 photo, kept in case the AMS-100 monograph wants it. Not an oversight.
 
-**Watermarks: For Sale photos only.** The six photos on `forsale.html` carry a
+**Watermarks: For Sale photos only.** The photos on `forsale.html` carry a
 `© orlandu.com` mark, bottom-right, at 4.2% of the short edge (white 80% over a soft dark
 shadow). **Nothing else on the site is watermarked and nothing else should be** — the
 editorial and gallery photography is the reason people stay, and a mark across it costs
 more than it protects. Regenerate a mark with the same recipe if a new sale photo is added.
 The scope is deliberate, not partial work.
 
-**`sale-bvm-d9h5j.jpg` is a deliberate duplicate of `d9-smb.jpg`** — the D9H5J shot is also a
-gallery image, so the watermarked copy got its own filename and `d9-smb.jpg` stays clean for
-the gallery. **When the D9H5J sells, delete `media/{2026,thumbs}/sale-bvm-d9h5j.jpg`** (both
-sizes) along with the card; `d9-smb.jpg` and its gallery entry stay. This is the one place
-`git mv` is wrong — the source file is still in use elsewhere.
+**The BVM-D9H5J sold on 2026-08-31.** Its for-sale card, JSON-LD `Product`, index marquee
+mention, index "Latest" card, monitors.html roster card and its whole Trinitron Fleet Vol. 1
+feature came out; `media/{2026,thumbs}/sale-bvm-d9h5j.jpg`, `media/{2026,thumbs}/bvm-d9h5j.jpg`
+and `media/fleet/b4133f839b.webp` were deleted (the sale copy was a deliberate watermarked
+duplicate, so `git mv` was wrong here). **`d9-smb.jpg` and its gallery entry stay** — only the
+"looking for a new home" clause came off the caption. The departure is recorded exactly once,
+as a clause in the monitors.html `p.note`; there is no memoriam entry and no "recently sold"
+section (see the sales-page rule above).
 
 **Overwriting a file in `media/` needs `?v=N` on its `<img>` refs** — `vercel.json` gives
 `/media/*` `s-maxage=86400`, so the CDN serves the old bytes for a day otherwise. Leave
