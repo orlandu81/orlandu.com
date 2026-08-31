@@ -224,6 +224,15 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   live on their own story or project page. Kept but FLAGGED as the weakest entries: the four
   fleet portraits with dark screens and window reflections (bvm-20e1u, bvm-a14f5u, pvm-2950q,
   pvm-20l5) and big-blue-side-art. Screens-on reshoots would lift all five.
+- **⭐ WHEN SOMETHING SELLS, ITS GALLERY ENTRY COMES OUT TOO** (David, 2026-08-31: *"i see the
+  D9 monitor photo in the gallery scrolling across the main page. Is this an error?"* → *"pull
+  it"*). The older rule said a good shot could stay in the gallery after the machine left; that
+  was wrong in practice, because **the home filmstrip is built from gallery entries, so keeping
+  one puts a departed machine on the front page** — under a present-tense title, in that case
+  "BVM-D9H5J, reporting for duty". The gallery and the filmstrip read as *what is here*.
+  So: remove the `gallery-data.js` entry, its `sitemap.xml` `<image:image>` line, and both
+  image files. **The exception is the `games.html` memoriam**, which works precisely because it
+  is labeled as machines that passed through. Sold-machine photos live there or nowhere.
 - **The gallery is a curated showcase, not an archive.** Bench and workbench snapshots stay on
   their editorial or project page and do NOT get a gallery entry. David pulled all seven AMS-3
   images/clips from it (2026-08-26): "they aren't that professional." The bar is his lit,
@@ -318,7 +327,9 @@ tense; the collection page carries the memory — and most departures don't earn
 `Product` node **and rebuild the `ItemList` from the parsed JSON** -> check the **FOR SALE
 marquee segment in `index.html`**, which names items individually, so a named item must be
 swapped out -> drop the photo's `<image:image>` line from `sitemap.xml` and delete the
-`sale-*` files -> grep for counts that included the sold unit -> grep for anything else
+`sale-*` files -> **remove the item's gallery entry, its sitemap image line and its media
+files** (a gallery entry is also a front-page filmstrip entry) -> grep for counts that
+included the sold unit -> grep for anything else
 linking at the listing, **including the copy on neighbouring cards** (the AC-D9H card said
 "pairs naturally with the D9H5J above"). Same discipline as the dangling-photo sweep: a
 removal is not done until the copy around it is checked.
@@ -345,10 +356,10 @@ The scope is deliberate, not partial work.
 mention, index "Latest" card, monitors.html roster card and its whole Trinitron Fleet Vol. 1
 feature came out; `media/{2026,thumbs}/sale-bvm-d9h5j.jpg`, `media/{2026,thumbs}/bvm-d9h5j.jpg`
 and `media/fleet/b4133f839b.webp` were deleted (the sale copy was a deliberate watermarked
-duplicate, so `git mv` was wrong here). **`d9-smb.jpg` and its gallery entry stay** — only the
-"looking for a new home" clause came off the caption. The departure is recorded exactly once,
-as a clause in the monitors.html `p.note`; there is no memoriam entry and no "recently sold"
-section (see the sales-page rule above).
+duplicate, so `git mv` was wrong here). **`d9-smb.jpg` went too, in a follow-up** — see the
+gallery rule below. The departure is now recorded exactly once, as a clause in the
+monitors.html `p.note`; there is no memoriam entry and no "recently sold" section (see the
+sales-page rule above).
 
 **Overwriting a file in `media/` needs `?v=N` on its `<img>` refs** — `vercel.json` gives
 `/media/*` `s-maxage=86400`, so the CDN serves the old bytes for a day otherwise. Leave
