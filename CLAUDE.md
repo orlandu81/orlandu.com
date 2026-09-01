@@ -233,6 +233,15 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   So: remove the `gallery-data.js` entry, its `sitemap.xml` `<image:image>` line, and both
   image files. **The exception is the `games.html` memoriam**, which works precisely because it
   is labeled as machines that passed through. Sold-machine photos live there or nowhere.
+- **⭐ EVERY PHOTO ON THE SITE MUST BE HIS OWN.** The footer claims *"Photography ©
+  Orlandu's Arcade"*, so a third-party shot in the gallery makes that line false and
+  publishes someone else's work under his name. **`tna-toppers.jpg` ("Annihilation,
+  accessorized") was removed on 2026-08-31** — David: *"I realize now that is not my photo,
+  it is someone elses."* Entry, sitemap line and both image files deleted; gallery 47 → 46.
+  **If a photo's provenance is ever unclear, ask before publishing it**, and if one is
+  identified later, pull it the same way — it is a rights question, not a curation one.
+  (Note: the file stays in git history, and history cannot be rewritten here — this repo
+  forbids force-pushing. It is off the site and off the CDN, which is what matters.)
 - **The gallery is a curated showcase, not an archive.** Bench and workbench snapshots stay on
   their editorial or project page and do NOT get a gallery entry. David pulled all seven AMS-3
   images/clips from it (2026-08-26): "they aren't that professional." The bar is his lit,
