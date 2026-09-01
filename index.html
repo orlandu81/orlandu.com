@@ -103,6 +103,16 @@
  ]
 }
 </script>
+<style>
+/* Index-scoped: reading room columns + the coin easter egg */
+.grid.readroom{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.grid.readroom{grid-template-columns:1fr}}
+.hero .coin{cursor:pointer;-webkit-user-select:none;user-select:none}
+.hero .credits{font-family:"Press Start 2P",monospace;font-size:.62rem;letter-spacing:.22em;color:var(--fire3);margin-top:.55rem;min-height:1.1em;opacity:0;transition:opacity .25s}
+.hero .credits.on{opacity:1}
+@keyframes coinflick{0%{filter:none}25%{filter:brightness(1.65) saturate(1.35)}55%{filter:brightness(.82)}100%{filter:none}}
+.hero.flick{animation:coinflick .3s linear}
+</style>
 </head>
 <body>
 
@@ -246,6 +256,27 @@ document.addEventListener('DOMContentLoaded', function(){
   </section>
 
   <section>
+    <h2 class="sec">The reading room</h2>
+    <div class="grid readroom">
+      <a class="card linked" href="ams-100-monograph.html">
+        <div class="sub">Monograph</div>
+        <h3>The Sony AMS-100 Has No Written History</h3>
+        <p>The primary literature on Sony&rsquo;s modular audio confidence monitor &mdash; the frame, the board system, a registry of documented units, and the market record.</p>
+      </a>
+      <a class="card linked" href="trinitron-fleet-vol1.html">
+        <div class="sub">Magazine</div>
+        <h3>Trinitron Fleet, Vol.&nbsp;1</h3>
+        <p>The interactive magazine on the monitor fleet &mdash; every model with its full spec sheet, the battle of the twenties, and how to speak broadcast.</p>
+      </a>
+      <a class="card linked" href="pvm-20l5-buying-guide.html">
+        <div class="sub">Buyer&rsquo;s Guide</div>
+        <h3>What to Check Before You Buy a PVM-20L5</h3>
+        <p>The geometry grid, judging a tube with no hours counter, what to pay &mdash; and why you should drive to it rather than ship it.</p>
+      </a>
+    </div>
+  </section>
+
+  <section>
     <h2 class="sec">Latest from the arcade</h2>
     <div class="grid c3">
       <div class="card">
@@ -294,5 +325,20 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <footer class="site"></footer>
 
+<script>
+(function(){
+  var coin=document.querySelector(".hero .coin"),hero=document.querySelector(".hero");
+  if(!coin||!hero)return;
+  var out=document.createElement("p");out.className="credits";out.setAttribute("aria-live","polite");
+  coin.parentNode.insertBefore(out,coin.nextSibling);
+  var n=0;
+  coin.addEventListener("click",function(){
+    n++;
+    out.textContent=n<10?"CREDIT "+n:"FREE PLAY \u2014 CREDITS \u221E";
+    out.classList.add("on");
+    hero.classList.remove("flick");void hero.offsetWidth;hero.classList.add("flick");
+  });
+})();
+</script>
 </body>
 </html>
