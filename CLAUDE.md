@@ -320,6 +320,18 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   unit provenance stays ("sourced from Japan" on the monitors AMS-100 card). The monograph is
   untouched — it has its own rulings.
 
+## Listing documented hardware — the provenance link (David approved 2026-09-01)
+
+When a piece of hardware that the site already documents gets listed on `forsale.html`, its
+card links that item's own history on the site — the roster entry, its Trinitron Fleet
+feature, its story or project page. Example shape (the BVM-D9H5J would have carried):
+"This exact unit is documented in Trinitron Fleet Vol. 1 — its full feature, photos and
+service history →". Documented provenance is the one thing no other seller in this hobby
+offers, and it is why two identical units sell for different money. This is an ON-SITE
+practice only — never put orlandu.com links or mentions in the eBay listing itself; eBay's
+links policy prohibits external links AND plain-text site mentions (checked 2026-09-01).
+When the item sells, the provenance link comes out with the card in the normal sweep.
+
 ## Sold items
 
 Settled with David on 2026-08-26 when the AMS-100 sold. The rule is **the sales page is present
