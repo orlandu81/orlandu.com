@@ -111,6 +111,18 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   out of frame. Use `.masonry` (columns) for mixed orientations.
 - David sends edited photos as lowercase `.heic`; leftover uppercase `.HEIC` in the
   same folder are the unedited originals. Compare numerically before assuming.
+- **⭐ `device_stage_files` refuses files newly created in the OneDrive folder** —
+  *"file is hardlinked (nlink > 1)"* — even though the laptop's own shell reports
+  `nlink=1`. It is OneDrive semantics, and `cp`/`cat` copies inherit it, so a fresh
+  intake photo cannot be pulled into the container that way. Files that have sat there
+  for a while stage fine. **The workaround that works: do the conversion ON THE LAPTOP
+  and let the image travel through `origin`.** `pip install pillow-heif
+  --break-system-packages` works there (ImageMagick has a HEIC delegate too), write the
+  finished JPEGs straight into `$HOME/site-repo/media/...`, commit and push from the
+  laptop, then `git fetch` in the container to look at the result. **Push the image
+  under a NEW slug first, unreferenced**, so nothing goes live until the frame has been
+  seen and the copy checked against it — `vs-dk-high-scores-v2.jpg` was done this way
+  (`a51e4af` image, then the references).
 
 ## Content rules David has set
 
