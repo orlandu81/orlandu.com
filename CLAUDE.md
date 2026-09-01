@@ -163,13 +163,19 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   is the exception: it's the curated index and may draw from anywhere.
 - Don't over-quote a machine's trivia. Most of his cabinets are Japanese; saying so
   once is plenty.
-- **Machine and console cards are ordered by YEAR, oldest first**, within their
-  section — games.html `#uprights`, `#pinball` and `#gameroom`, and each maker
-  section on consoles.html (David, 2026-08-28). The year
+- **Machine cards are ordered by YEAR, oldest first**, within their
+  section — games.html `#uprights`, `#pinball` and `#gameroom` (David, 2026-08-28). The year
   is already printed in each card's `<div class="sub">Maker · YYYY</div>`, so a new
   card slots in by that number rather than at the end. Same ascending convention as
   the PlayChoice-10 topper wall. When you reorder, re-read the card copy: "rounds out
   the lineup" stopped being true when Mario Bros. moved out of last place.
+- **consoles.html cards sort by the PLATFORM'S ORIGINAL RELEASE, oldest first, within
+  each maker section — NOT by the revision's own year** (David, 2026-09-01: the NES Top
+  Loader sorts at 1985 because the NES does, ahead of the Game Boy). A revision or
+  portable sorts at its platform family's debut (Nomad/CDX/X'Eye → Genesis; GBA SP →
+  GBA 2001, which puts it before the GameCube); same-family units tie-break by model
+  year. The `sub` still shows the revision's own year, so the visible years are
+  deliberately out of ascending order — do not "fix" the order to match them.
 - **consoles.html: ONE CARD PER MODEL. No unit counts, no room locations.**
   (David, 2026-08-28, commit e918055.) He owns duplicates of several machines; the
   page lists the model once and never says "×2", "one in each room", "the pair", or
