@@ -136,7 +136,7 @@
     <p style="max-width:70ch;margin-bottom:1rem">Orlandu's Arcade is a private arcade and working collection in Orange County, California, spread across two rooms: the garage arcade, where the upright cabinets, the pinball row, and the broadcast monitor racks live, and the game room inside the house, home to the candy cab, the cocktail, and the big PVMs. Between them runs a fleet of Sony professional monitors that most video engineers would recognize before most gamers would.</p>
     <p style="max-width:70ch;margin-bottom:1rem">The philosophy here is simple: everything runs. Cabinets get their power supplies rebuilt, pinball machines get their mechs restored, monitors get calibrated the way Sony intended. This isn't a museum behind glass — it's a garage where the CRTs are warm and the high-score initials still get entered.</p>
     <p style="max-width:70ch;margin-bottom:1rem">The name comes from the handle "orlandu81," a long-standing identity across the KLOV / Museum of the Game forums, Arcade-Projects, and eBay. The mascot — a wandering warrior hauling an arcade cabinet on his back — pretty much sums up the lifestyle.</p>
-    <p style="max-width:70ch">Alongside the collecting there's an active trade in vintage gaming collectibles, arcade hardware, and rare electronics.</p>
+    <p style="max-width:70ch">Alongside the collecting there's an active trade in vintage gaming collectibles, arcade hardware, and rare electronics &mdash; <a href="forsale.html">what's for sale now</a>, and <a href="wanted.html">what the arcade is hunting</a>.</p>
   </section>
 
   <section>
@@ -151,7 +151,7 @@
         <div class="sub">Email · The front door</div>
         <h3>orlandusarcade@gmail.com</h3>
         <p>Questions, offers, leads on the wanted list — email is the primary way to reach the arcade.</p>
-        <p style="margin-top:.7rem"><a href="mailto:orlandusarcade@gmail.com">Send an email →</a></p>
+        <p style="margin-top:.7rem"><a href="mailto:orlandusarcade@gmail.com">Send an email →</a> &nbsp;·&nbsp; <a href="#" id="copymail" data-mail="orlandusarcade@gmail.com">Copy the address</a></p>
       </div>
       <div class="card">
         <div class="sub">eBay</div>
@@ -185,5 +185,22 @@
 
 <footer class="site"></footer>
 
+<script>
+(function(){
+  var b=document.getElementById("copymail");if(!b)return;
+  b.addEventListener("click",function(e){
+    e.preventDefault();
+    var addr=b.getAttribute("data-mail");
+    function done(){b.textContent="Copied \u2713";setTimeout(function(){b.textContent="Copy the address";},2000);}
+    function fallback(){
+      var t=document.createElement("textarea");t.value=addr;document.body.appendChild(t);t.select();
+      try{document.execCommand("copy");done();}catch(err){}
+      document.body.removeChild(t);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(addr).then(done,fallback);}
+    else{fallback();}
+  });
+})();
+</script>
 </body>
 </html>
