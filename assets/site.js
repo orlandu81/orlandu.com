@@ -20,6 +20,22 @@
     ["about.html",    "About"]
   ];
 
+  // Keyboard access: a skip link ahead of the injected chrome.
+  const mainEl = document.querySelector("main");
+  if (mainEl && !mainEl.id) mainEl.id = "main";
+  const skip = document.createElement("a");
+  skip.className = "skip";
+  skip.href = "#main";
+  skip.textContent = "Skip to content";
+  document.body.insertBefore(skip, document.body.firstChild);
+
+  // Vercel Web Analytics (privacy-friendly, cookieless). Counts nothing until
+  // Analytics is enabled on the Vercel project; harmless before that.
+  const va = document.createElement("script");
+  va.defer = true;
+  va.src = "/_vercel/insights/script.js";
+  document.head.appendChild(va);
+
   const header = document.querySelector("header.site");
   if (header){
     const here = header.dataset.page || "";
