@@ -41,7 +41,7 @@
     const here = header.dataset.page || "";
     header.innerHTML =
       '<div class="navwrap">' +
-        '<a class="navlogo" href="index.html"><img src="assets/logo-wordmark.png" alt="Orlandu’s Arcade"></a>' +
+        '<a class="navlogo" href="index.html"><img src="assets/logo-wordmark-nav.webp" alt="Orlandu’s Arcade" width="335" height="132" fetchpriority="high" decoding="async"></a>' +
         '<button class="burger" aria-label="Menu" aria-expanded="false">☰ MENU</button>' +
         '<nav class="main">' +
           NAV.map(([href, label]) =>
@@ -61,7 +61,7 @@
   if (footer){
     footer.innerHTML =
       '<div class="footwrap">' +
-        '<img src="assets/mascot.png" alt="Orlandu’s Arcade mascot">' +
+        '<img src="assets/mascot-foot.webp" alt="Orlandu’s Arcade mascot" width="176" height="216" loading="lazy" decoding="async">' +
         '<div class="links">' +
           '<a href="about.html">About</a>' +
           '<a href="about.html#contact">Contact</a>' +

@@ -141,12 +141,13 @@
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   var strip = document.getElementById('filmstrip');
-  // whole gallery, shuffled each load, scrolling continuously
+  // shuffled each load, scrolling continuously; capped so the home page does not fetch every gallery thumb
   var pool = GALLERY.filter(function(g){ return g.type === 'image'; });
   for (var i = pool.length - 1; i > 0; i--){
     var j = Math.floor(Math.random() * (i + 1));
     var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
   }
+  pool = pool.slice(0, 16); // one loop's worth — the strip used to pull all 45 thumbs
   var html = pool.map(function(g){
     return '<a href="gallery.html" title="' + (g.title||'').replace(/"/g,'&quot;') + '">' +
       '<img src="' + g.src.replace('media/2026/','media/thumbs/') + '" alt="' + (g.title||'').replace(/"/g,'&quot;') + '" loading="lazy" decoding="async"' + (g.w ? ' width="' + g.w + '" height="' + g.h + '"' : '') + '></a>';
