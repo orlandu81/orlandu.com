@@ -222,3 +222,11 @@
     t = setTimeout(setSpeed, 250);
   });
 })();
+
+/* scroll reveal — sections and tiles fade up once as they enter the viewport */
+(function(){
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var els=document.querySelectorAll('main section, .grid > *, .shot, .masonry > *');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:0.05});
+  els.forEach(function(el,i){ if(el.getBoundingClientRect().top>innerHeight){el.classList.add('reveal');io.observe(el);} });
+})();
