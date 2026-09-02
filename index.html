@@ -149,9 +149,12 @@ document.addEventListener('DOMContentLoaded', function(){
     var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
   }
   pool = pool.slice(0, 16); // one loop's worth — the strip used to pull all 45 thumbs
+  // Strip-sized files, not the 800px gallery thumbs: the browser's own reduction to the
+  // 170px strip beat against the scanlines on the lit-CRT shots and made them ripple.
   var html = pool.map(function(g){
+    var base = g.src.replace('media/2026/','media/strip/').replace(/\?.*$/,'').replace(/\.jpg$/,'');
     return '<a href="gallery.html" title="' + (g.title||'').replace(/"/g,'&quot;') + '">' +
-      '<img src="' + g.src.replace('media/2026/','media/thumbs/') + '" alt="' + (g.title||'').replace(/"/g,'&quot;') + '" loading="lazy" decoding="async"' + (g.w ? ' width="' + g.w + '" height="' + g.h + '"' : '') + '></a>';
+      '<img src="' + base + '.jpg" srcset="' + base + '.jpg 1x, ' + base + '-2x.jpg 2x" alt="' + (g.title||'').replace(/"/g,'&quot;') + '" loading="lazy" decoding="async"' + (g.w ? ' width="' + g.w + '" height="' + g.h + '"' : '') + '></a>';
   }).join('');
   // Panoramic shots (lit signs, monitor racks) become long slabs at strip height —
   // fine in the gallery's masonry, wrong here. Drop anything wider than 2.2:1.
