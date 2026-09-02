@@ -3,20 +3,25 @@
    Neon Grid house style · Orange County, CA
    ══════════════════════════════════════════════════════════ */
 /* Self-hosted fonts (latin subsets, from Google Fonts via @fontsource 5.3). Only the faces a page
-   actually uses are downloaded. Add a weight here AND drop its woff2 in assets/fonts/. */
-@font-face{font-family:"Orbitron";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/orbitron-latin-500-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+   actually uses are downloaded. These are exactly the weights the old Google Fonts link served, so
+   nothing re-renders in a different weight; the Trinitron magazine declares its own wider set inline.
+   Add a weight here AND drop its woff2 in assets/fonts/. */
 @font-face{font-family:"Orbitron";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/orbitron-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Orbitron";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/orbitron-latin-700-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 @font-face{font-family:"Orbitron";font-style:normal;font-weight:800;font-display:swap;src:url("fonts/orbitron-latin-800-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Orbitron";font-style:normal;font-weight:900;font-display:swap;src:url("fonts/orbitron-latin-900-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 @font-face{font-family:"Rajdhani";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/rajdhani-latin-400-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 @font-face{font-family:"Rajdhani";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/rajdhani-latin-500-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 @font-face{font-family:"Rajdhani";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/rajdhani-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Rajdhani";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/rajdhani-latin-700-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 @font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/barlow-condensed-latin-400-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 @font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/barlow-condensed-latin-500-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/barlow-condensed-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 @font-face{font-family:"Press Start 2P";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/press-start-2p-latin-400-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 
@@ -67,6 +72,7 @@ img{max-width:100%;height:auto;display:block}
 /* ── Header / nav ─────────────────────────────── */
 header.site{
   position:sticky;top:0;z-index:100;
+  min-height:calc(44px + 1.2rem + 1px); /* reserves the nav's height before site.js injects it — no layout jump */
   background:rgba(10,10,18,.92);backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line);
 }
