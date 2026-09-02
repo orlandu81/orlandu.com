@@ -99,6 +99,16 @@
     const cap = fig && fig.querySelector("figcaption");
     return cap ? cap.innerHTML : (el.alt || "");
   }
+  // Warm the full-size photo before it is asked for: on hover/touch of a thumb, and
+  // for the neighbors once the lightbox is open. Costs nothing on pages nobody clicks.
+  const warmed = new Set();
+  function warm(src){
+    if (!src || warmed.has(src)) return;
+    warmed.add(src);
+    const im = new Image();
+    im.decoding = "async";
+    im.src = src;
+  }
   function show(i){
     idx = (i + items.length) % items.length;
     const el = items[idx];
@@ -107,7 +117,17 @@
     lbCap.innerHTML = captionFor(el);
     lb.hidden = false;
     document.body.style.overflow = "hidden";
+    if (items.length > 1){
+      warm(items[(idx + 1) % items.length].dataset.full);
+      warm(items[(idx - 1 + items.length) % items.length].dataset.full);
+    }
   }
+  const warmOnIntent = e => {
+    const img = e.target.closest && e.target.closest("img[data-full]");
+    if (img) warm(img.dataset.full);
+  };
+  document.addEventListener("pointerenter", warmOnIntent, true);
+  document.addEventListener("touchstart", warmOnIntent, {capture:true, passive:true});
   function close(){
     lb.hidden = true;
     lbImg.src = "";

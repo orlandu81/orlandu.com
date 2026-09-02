@@ -107,6 +107,30 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   pins stale bytes in browsers that already loaded the page. This has bitten twice —
   once truncating a video at 5s, once serving 17 unedited photos for an hour.
   Rename the file, or append `?v=N` to every reference.
+  **Since 2026-09-02 this is enforced by the headers, not just the CDN:** `vercel.json`
+  serves `/media/*` and every image/font under `/assets/` as
+  `max-age=31536000, immutable`, so a browser that has a file keeps it for a year.
+  CSS and JS under `/assets/` get a 5-minute browser TTL instead (they are referenced
+  without `?v=`), so an edit to `style.css`/`site.js` lands within minutes and needs no
+  cache-busting.
+- **Fonts are self-hosted** in `assets/fonts/` (latin woff2 from `@fontsource`), declared at
+  the top of `style.css` with exactly the weights the old Google Fonts link served
+  (Orbitron 600/800, Rajdhani 400/500/600, Barlow Condensed 400/500, Press Start 2P).
+  Nothing loads from googleapis/gstatic any more — do not add the `<link>` back on a new
+  page; copy the `<head>` of an existing one (two font preloads + the nav-logo preload).
+  `trinitron-fleet-vol1.html` and `404.html` are the two exceptions: the magazine declares
+  a wider weight set inline, and 404 uses absolute `/assets/` paths.
+- **Per-page image priority:** each machine/story/guide page preloads its above-the-fold
+  photo (`<link rel="preload" as="image" … fetchpriority="high">` in `<head>`, matching
+  `fetchpriority="high"` on the `<img>`). When that photo changes, change both. Only the
+  first visible photo gets this — preloading a below-the-fold image makes the page slower.
+- The nav logo is `assets/logo-wordmark-nav.webp` (335×132, lossless), the footer mascot
+  `assets/mascot-foot.webp`, the About-page mascot `assets/mascot-about.webp`, the home hero
+  wordmark `assets/logo-wordmark-hero.webp`. The original PNGs stay in the repo for JSON-LD
+  `logo` URLs and as masters; don't wire them back into a page.
+- Story and step thumbs carry an `-800.jpg` sibling and a `srcset`; a new 1200×514 thumb
+  needs its 800×343 sibling (LANCZOS, JPEG q90 progressive) and the same `srcset`/`sizes`
+  as its neighbors. The featured story card keeps the plain 1200 (it renders full width).
 - Don't force `aspect-ratio` + `object-fit:cover` on cabinet photos; it crops subjects
   out of frame. Use `.masonry` (columns) for mixed orientations.
 - David sends edited photos as lowercase `.heic`; leftover uppercase `.HEIC` in the
