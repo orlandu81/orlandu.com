@@ -123,6 +123,7 @@
  ]
 }
 </script>
+<style>.tagbar{font-family:var(--cond);letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;color:var(--fire3);margin:-.6rem 0 1rem}.tagbar a{color:var(--cyan)}</style>
 </head>
 <body>
 
@@ -136,7 +137,8 @@
   </div>
 
 
-  <div class="filters" id="filters">
+  <p class="tagbar" id="tagbar" hidden></p>
+<div class="filters" id="filters">
     <button data-cat="all" class="on">All</button>
     <button data-cat="arcade">Arcade</button>
     <button data-cat="pinball">Pinball</button>
@@ -163,9 +165,14 @@
   const empty = document.getElementById('empty');
   const filters = document.getElementById('filters');
 
+  const tagbar = document.getElementById('tagbar');
+  let activeTag = null;
+
   function render(cat){
     wall.innerHTML = '';
-    const items = GALLERY.filter(g => cat === 'all' || g.cat === cat);
+    const items = GALLERY.filter(g => (cat === 'all' || g.cat === cat) && (!activeTag || (g.tags || []).includes(activeTag)));
+    tagbar.hidden = !activeTag;
+    if (activeTag) tagbar.innerHTML = 'Showing ' + ((typeof TAG_LABELS !== 'undefined' && TAG_LABELS[activeTag]) || activeTag) + ' &mdash; <a href="#" id="cleartag">show everything</a>';
     if (!items.length){ empty.hidden = false; return; }
     empty.hidden = true;
     for (const g of items){
@@ -193,14 +200,37 @@
     }
   }
 
+  function setOn(cat){
+    filters.querySelectorAll('button').forEach(x => x.classList.toggle('on', x.dataset.cat === cat));
+  }
+  // Filter state lives in the hash so a category or a machine tag can be linked to:
+  // gallery.html#pinball, gallery.html#tag=big-blue.
+  function fromHash(){
+    const h = location.hash.replace(/^#/, '');
+    const m = h.match(/^tag=([a-z0-9-]+)$/);
+    activeTag = m ? m[1] : null;
+    const cats = Array.from(filters.querySelectorAll('button')).map(b => b.dataset.cat);
+    const cat = (!m && cats.includes(h)) ? h : 'all';
+    setOn(cat);
+    render(cat);
+  }
   filters.addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
-    filters.querySelectorAll('button').forEach(x => x.classList.remove('on'));
-    b.classList.add('on');
-    render(b.dataset.cat);
+    activeTag = null;
+    const cat = b.dataset.cat;
+    history.replaceState(null, '', cat === 'all' ? location.pathname : '#' + cat);
+    setOn(cat);
+    render(cat);
   });
+  tagbar.addEventListener('click', e => {
+    if (!e.target.closest('#cleartag')) return;
+    e.preventDefault();
+    history.replaceState(null, '', location.pathname);
+    fromHash();
+  });
+  window.addEventListener('hashchange', fromHash);
 
-  render('all');
+  fromHash();
 })();
 </script>
 

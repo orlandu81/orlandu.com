@@ -274,6 +274,11 @@ footer.site{border-top:1px solid var(--line);background:var(--bg2)}
 .footwrap img{height:72px;width:auto;opacity:.9}
 .footwrap .links{display:flex;gap:1.1rem;flex-wrap:wrap;font-family:var(--cond);letter-spacing:.06em;text-transform:uppercase;font-size:.85rem}
 .footwrap .fine{color:var(--dim);font-size:.85rem;font-family:var(--cond)}
+.footwrap .explore{flex-basis:100%;display:grid;gap:.5rem 2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));border-top:1px solid var(--line);padding-top:1.2rem}
+.footwrap .explore div{display:flex;flex-wrap:wrap;gap:.25rem .9rem;font-family:var(--cond);font-size:.88rem;letter-spacing:.03em}
+.footwrap .explore span{flex-basis:100%;font-family:var(--disp);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:.15rem}
+.footwrap .explore a{color:var(--dim)}
+.footwrap .explore a:hover{color:var(--cyan)}
 
 /* ── Misc ─────────────────────────────────────── */
 .btn{
@@ -485,3 +490,36 @@ main.hub h2.sec small{margin-left:auto;text-align:right}
 }
 /* four flagship machines read better two-up than three-and-an-orphan */
 @media(min-width:900px){.grid.quad{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ── Reading time (stories) ──────────────────── */
+.rt{display:inline-block;font-family:var(--cond);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+.card .rt{margin-bottom:.6rem}
+.badge + .rt{margin-left:.5rem}
+div.rt{margin:-.5rem 0 1rem}
+
+/* ── Back to top ─────────────────────────────── */
+.totop{
+  position:fixed;right:1rem;bottom:1rem;z-index:900;
+  font-family:var(--disp);font-size:.62rem;letter-spacing:.12em;
+  background:rgba(19,19,34,.88);border:1px solid var(--line);color:var(--cyan);
+  padding:.55rem .75rem;border-radius:8px;cursor:pointer;
+}
+.totop:hover{border-color:var(--cyan-dim)}
+.totop[hidden]{display:none}
+
+/* ── Print: the guides come out as documents ─── */
+@media print{
+  body{background:#fff;color:#111}
+  header.site,footer.site,.skip,.totop,#lightbox,.machnav,.burger,.chips,.strip,.filmstrip,.hero{display:none!important}
+  main{max-width:none;padding:0}
+  h1.page,main.hub h1.page{background:none;-webkit-background-clip:initial;background-clip:initial;color:#111;filter:none}
+  .kicker,h2.sec,main.hub h2.sec,.card h3,.card .sub{color:#111}
+  main.hub h2.sec::before{display:none}
+  p.lede,.card p,.note,dd,figcaption,.rt{color:#333}
+  .card,.note,.shot{background:none;border-color:#bbb;box-shadow:none;break-inside:avoid}
+  a{color:#111;text-decoration:underline}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+  .pagehead{background:none;margin:0;padding:0}
+  .pagehead::after{display:none}
+  img{max-width:100%;filter:none}
+}

@@ -70,6 +70,22 @@
           '<a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a>' +
           '<a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a>' +
         '</div>' +
+        '<nav class="explore" aria-label="Explore the site">' +
+          '<div><span>Pages</span>' + NAV.slice(1).map(([href, label]) => '<a href="' + href + '">' + label + '</a>').join('') +
+            '<a href="glossary.html">Glossary</a><a href="about.html#faq">FAQ</a></div>' +
+          '<div><span>Reading</span>' +
+            '<a href="crt-field-guide.html">Professional glass in the wild</a>' +
+            '<a href="ams-100-monograph.html">The AMS-100 monograph</a>' +
+            '<a href="pvm-20l5-buying-guide.html">PVM-20L5 buying guide</a>' +
+            '<a href="ams-3-vs-ams-100.html">Ancestor and descendant</a>' +
+            '<a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol. 1</a>' +
+            '<a href="signal-chain.html">The signal chain</a>' +
+            '<a href="vs-smb.html">VS. Super Mario Bros.</a>' +
+            '<a href="pvm-vs-bvm.html">PVM vs. BVM</a>' +
+            '<a href="red-tent.html">The Red Tent</a>' +
+            '<a href="mini-cute.html">The Mini Cute</a>' +
+          '</div>' +
+        '</nav>' +
         '<div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>Photography © Orlandu’s Arcade. Game logos and characters are the property of their respective owners.</div>' +
       '</div>';
   }
@@ -79,6 +95,9 @@
   const lb = document.createElement("div");
   lb.id = "lightbox";
   lb.hidden = true;
+  lb.setAttribute("role", "dialog");
+  lb.setAttribute("aria-modal", "true");
+  lb.setAttribute("aria-label", "Photo viewer");
   lb.innerHTML =
     '<button class="lb-close" aria-label="Close">✕</button>' +
     '<button class="lb-prev" aria-label="Previous">‹</button>' +
@@ -88,7 +107,7 @@
 
   const lbImg = lb.querySelector("img");
   const lbCap = lb.querySelector("figcaption");
-  let items = [], idx = 0;
+  let items = [], idx = 0, opener = null;
 
   function visibleItems(){
     return Array.from(document.querySelectorAll("img[data-full]"))
@@ -115,7 +134,11 @@
     lbImg.src = el.dataset.full;
     lbImg.alt = el.alt || "";
     lbCap.innerHTML = captionFor(el);
-    lb.hidden = false;
+    if (lb.hidden){
+      opener = document.activeElement;
+      lb.hidden = false;
+      lb.querySelector(".lb-close").focus();
+    }
     document.body.style.overflow = "hidden";
     if (items.length > 1){
       warm(items[(idx + 1) % items.length].dataset.full);
@@ -132,6 +155,8 @@
     lb.hidden = true;
     lbImg.src = "";
     document.body.style.overflow = "";
+    if (opener && opener.focus) opener.focus();
+    opener = null;
   }
 
   document.addEventListener("click", e => {
@@ -151,6 +176,14 @@
     if (e.key === "Escape") close();
     if (e.key === "ArrowLeft") show(idx - 1);
     if (e.key === "ArrowRight") show(idx + 1);
+    if (e.key === "Tab"){
+      // keep focus inside the dialog: cycle the three buttons
+      const btns = Array.from(lb.querySelectorAll("button"));
+      const i = btns.indexOf(document.activeElement);
+      const next = e.shiftKey ? (i <= 0 ? btns.length - 1 : i - 1) : (i === -1 || i === btns.length - 1 ? 0 : i + 1);
+      btns[next].focus();
+      e.preventDefault();
+    }
   });
   // touch swipe
   let tx = null;
@@ -249,4 +282,20 @@
   var els=document.querySelectorAll('main section, .grid > *, .shot, .masonry > *');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:0.05});
   els.forEach(function(el,i){ if(el.getBoundingClientRect().top>innerHeight){el.classList.add('reveal');io.observe(el);} });
+})();
+
+/* back to top — appears once the reader is a screen and a half down */
+(function(){
+  var b = document.createElement("button");
+  b.className = "totop"; b.type = "button"; b.hidden = true;
+  b.setAttribute("aria-label", "Back to top"); b.textContent = "\u2191 TOP";
+  b.addEventListener("click", function(){
+    var smooth = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({top: 0, behavior: smooth ? "smooth" : "auto"});
+  });
+  document.body.appendChild(b);
+  var t;
+  function check(){ b.hidden = window.scrollY < innerHeight * 1.5; }
+  window.addEventListener("scroll", function(){ clearTimeout(t); t = setTimeout(check, 80); }, {passive:true});
+  check();
 })();

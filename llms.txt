@@ -40,9 +40,11 @@
 - [PVM-20L5 buying guide](https://www.orlandu.com/pvm-20l5-buying-guide.html): what to check before buying one, what to pay, and why not to ship it.
 - [VS. Super Mario Bros.](https://www.orlandu.com/vs-smb.html): why the arcade version is harder than the NES game.
 - [Projects](https://www.orlandu.com/projects.html): the bench log — what's being repaired right now.
+- [Glossary](https://www.orlandu.com/glossary.html): the arcade and broadcast vocabulary the site uses — JAMMA, CPO, candy cab, NOS, RGB, 240p, SCART, BNC, BKM, TVL, multiscan.
 
 ## Trading
 
 - [For Sale](https://www.orlandu.com/forsale.html): monitors, arcade hardware and collectibles currently listed.
 - [Wanted](https://www.orlandu.com/wanted.html): PlayChoice-10 toppers, VS. marquees, Sony BKM input cards, consumer CRTs.
 - [About and contact](https://www.orlandu.com/about.html): orlandusarcade@gmail.com
+- [FAQ](https://www.orlandu.com/about.html#faq): not open to the public; buys and sells; no repairs for hire; ask before reusing photos.

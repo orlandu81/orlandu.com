@@ -9,9 +9,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="preload" href="/assets/fonts/orbitron-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/rajdhani-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<base href="/">
 <link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/site.js" defer></script>
 </head>
 <body>
+<header class="site" data-page="404"></header>
 <main style="text-align:center;padding-top:5rem">
   <div class="kicker" style="font-size:1rem">GAME OVER</div>
   <h1 class="page" style="margin:1rem 0">404 — Page Not Found</h1>
@@ -19,6 +22,7 @@
   <p class="coin" style="font-family:var(--pixel);font-size:.7rem;color:var(--fire3);animation:blink 1.4s steps(1) infinite;margin-bottom:2.5rem">— CONTINUE? <span id="cd">9</span> —</p>
   <a class="btn" href="/">Insert coin (go home)</a>
 </main>
+<footer class="site"></footer>
 <script>
 (function(){
   var el=document.getElementById("cd");if(!el)return;
