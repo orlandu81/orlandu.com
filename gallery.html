@@ -185,7 +185,13 @@
         fig.appendChild(v);
       } else {
         const i = document.createElement('img');
-        i.src = g.src.replace('media/2026/', 'media/thumbs/');
+        const t = g.src.replace('media/2026/', 'media/thumbs/');
+        const b = t.replace(/\?.*$/, '').replace(/\.jpg$/, '');
+        i.src = t;
+        // Let the browser pick a file near the column width. Handed only the 800px thumb it
+        // reduced by ~2x in the wall, and that beat against the scanlines on the lit-CRT shots.
+        i.srcset = b + '-400.jpg 400w, ' + b + '-600.jpg 600w, ' + t + ' 800w';
+        i.sizes = '(max-width:560px) calc(100vw - 38px), (max-width:900px) calc((100vw - 44px)/2), (max-width:1200px) calc((100vw - 50px)/3), 383px';
         i.dataset.full = g.src;
         i.alt = g.title || ''; i.loading = 'lazy'; i.decoding = 'async';
         if (g.w && g.h){ i.width = g.w; i.height = g.h; }
