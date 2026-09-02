@@ -450,9 +450,14 @@ main.hub .kicker{color:var(--acc)}
 main.hub h1.page{background:linear-gradient(180deg,#fff,var(--acc) 60%,color-mix(in srgb,var(--acc) 55%,#000));-webkit-background-clip:text;background-clip:text}
 main.hub h2.sec{color:var(--acc);font-size:1.35rem;letter-spacing:.1em;display:flex;align-items:baseline;gap:.7rem}
 main.hub h2.sec::before{
-  counter-increment:sec;content:counter(sec,decimal-leading-zero);
+  counter-increment:sec;content:none;
   font-family:var(--disp);font-size:1.6rem;font-weight:800;color:var(--dim);opacity:.38;letter-spacing:0;
 }
+/* The number only earns its place when there is something to count against, so it
+   shows only on pages carrying two or more numbered sections: a section followed by
+   another numbered one, or a section following one. A lone section stays unnumbered. */
+main.hub section:has(~ section h2.sec) h2.sec::before,
+main.hub section:has(h2.sec) ~ section h2.sec::before{content:counter(sec,decimal-leading-zero)}
 main.hub h2.sec small{margin-left:auto;text-align:right}
 @media(max-width:560px){
   .pagehead{margin:-2rem -1.2rem 1.6rem;padding:2rem 1.2rem 1.2rem}
