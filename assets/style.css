@@ -35,11 +35,14 @@ body{
   position:relative;
 }
 
-/* subtle CRT scanlines over everything */
+/* subtle CRT scanlines — kept light so the texture reads as chrome without muting the photography */
 body::after{
   content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
-  background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 3px);
-  opacity:.5;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.10) 0 1px,transparent 1px 4px);
+  opacity:.32;
+}
+@media (prefers-reduced-motion: no-preference){
+  .hero .heroimg{animation:kenburns 32s ease-in-out infinite alternate}
 }
 
 a{color:var(--cyan);text-decoration:none}
@@ -148,12 +151,23 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
 .hero{
   position:relative;text-align:center;padding:3.5rem 1rem 4rem;overflow:hidden;
   border-bottom:1px solid var(--line);
-  background:
-    radial-gradient(ellipse 70% 55% at 50% 0%,rgba(255,138,0,.14),transparent 65%),
-    linear-gradient(180deg,rgba(10,10,18,.55),rgba(10,10,18,.4) 45%,rgba(14,14,26,.88)),
-    url("hero-bg.jpg") center 30%/cover no-repeat,
-    var(--bg2);
+  background:var(--bg2);
 }
+/* The room photo rides its own layer so it can drift; the grid floor sits over it. */
+.hero .heroimg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%,rgba(255,138,0,.12),transparent 62%),
+    linear-gradient(180deg,rgba(10,10,18,.34),rgba(10,10,18,.10) 40%,rgba(14,14,26,.80)),
+    url("hero-bg.jpg") center 30%/cover no-repeat;
+  transform:scale(1.06);transform-origin:60% 40%;
+}
+@keyframes kenburns{
+  from{transform:scale(1.06) translate(0,0)}
+  to{transform:scale(1.14) translate(-1.5%,-1.2%)}
+}
+.hero::before{z-index:1}
+.hero .inner{z-index:2}
 /* neon grid floor */
 .hero::before{
   content:"";position:absolute;left:-25%;right:-25%;bottom:0;height:46%;
