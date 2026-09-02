@@ -434,3 +434,33 @@ main.hub h2.sec small{margin-left:auto;text-align:right}
   main.hub h2.sec::before{font-size:1.25rem}
   main.hub h2.sec small{margin-left:0;text-align:left}
 }
+
+/* ── Gallery photo wall: seamless, captions on hover ── */
+#wall{columns:3;column-gap:6px}
+@media(max-width:900px){#wall{columns:2}}
+@media(max-width:560px){#wall{columns:1}}
+#wall .shot{position:relative;margin:0 0 6px;border:0;border-radius:2px;background:none;overflow:hidden}
+#wall .shot figcaption{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:2.4rem .85rem .75rem;font-size:.92rem;
+  background:linear-gradient(transparent,rgba(6,6,12,.55) 35%,rgba(6,6,12,.94));
+  opacity:0;transform:translateY(10px);pointer-events:none;
+  transition:opacity .25s ease,transform .25s ease;
+}
+#wall .shot:hover figcaption,#wall .shot:focus-within figcaption{opacity:1;transform:none;pointer-events:auto}
+/* a figure holding a video keeps its caption below, clear of the controls */
+#wall .shot:has(video) figcaption{position:static;opacity:1;transform:none;pointer-events:auto;padding:.6rem .8rem;background:var(--panel)}
+@media(hover:none){
+  #wall .shot figcaption{position:static;opacity:1;transform:none;pointer-events:auto;padding:.6rem .8rem;background:var(--panel)}
+}
+@media (prefers-reduced-motion: reduce){
+  #wall .shot figcaption{transition:none}
+}
+/* ── Lightbox: caption beside the image on a wide screen ── */
+@media(min-width:900px){
+  #lightbox figure{flex-direction:row;align-items:center;gap:1.6rem;max-width:94vw}
+  #lightbox img{max-width:calc(94vw - 22rem);max-height:88vh}
+  #lightbox figcaption{flex:0 0 18rem;text-align:left;font-size:1.02rem;padding:0}
+}
+/* four flagship machines read better two-up than three-and-an-orphan */
+@media(min-width:900px){.grid.quad{grid-template-columns:repeat(2,minmax(0,1fr))}}
