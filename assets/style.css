@@ -398,3 +398,39 @@ main.profile h1.page{font-size:clamp(2rem,5.2vw,3.4rem)}
   .reveal{opacity:1;transform:none;transition:none}
   #lightbox,#lightbox figure{animation:none}
 }
+
+/* ── Hub page head: a lit band carrying the page's own accent ── */
+main.hub{--acc:var(--cyan);counter-reset:sec}
+.pagehead{position:relative;overflow:hidden;margin:-2rem -1.2rem 2.2rem;padding:2.6rem 1.2rem 1.5rem;border-bottom:1px solid var(--line)}
+.pagehead::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 55% 130% at 10% 0%,color-mix(in srgb,var(--acc) 18%,transparent),transparent 68%),
+    linear-gradient(180deg,color-mix(in srgb,var(--acc) 7%,transparent),transparent 62%);
+}
+.pagehead::after{
+  content:"";position:absolute;left:-25%;right:-25%;bottom:-1px;height:58%;z-index:0;
+  background:
+    repeating-linear-gradient(90deg,color-mix(in srgb,var(--acc) 22%,transparent) 0 1px,transparent 1px 76px),
+    repeating-linear-gradient(0deg,color-mix(in srgb,var(--acc) 22%,transparent) 0 1px,transparent 1px 30px);
+  transform:perspective(300px) rotateX(62deg);transform-origin:bottom center;
+  mask-image:linear-gradient(transparent,#000 60%);-webkit-mask-image:linear-gradient(transparent,#000 60%);
+  pointer-events:none;
+}
+.pagehead>*{position:relative;z-index:1}
+.pagehead .lede{margin-bottom:0}
+.pagehead .chips{margin:1rem 0 0}
+main.hub .kicker{color:var(--acc)}
+main.hub h1.page{background:linear-gradient(180deg,#fff,var(--acc) 60%,color-mix(in srgb,var(--acc) 55%,#000));-webkit-background-clip:text;background-clip:text}
+main.hub h2.sec{color:var(--acc);font-size:1.35rem;letter-spacing:.1em;display:flex;align-items:baseline;gap:.7rem}
+main.hub h2.sec::before{
+  counter-increment:sec;content:counter(sec,decimal-leading-zero);
+  font-family:var(--disp);font-size:1.6rem;font-weight:800;color:var(--dim);opacity:.38;letter-spacing:0;
+}
+main.hub h2.sec small{margin-left:auto;text-align:right}
+@media(max-width:560px){
+  .pagehead{margin:-2rem -1.2rem 1.6rem;padding:2rem 1.2rem 1.2rem}
+  main.hub h2.sec{font-size:1.1rem}
+  main.hub h2.sec::before{font-size:1.25rem}
+  main.hub h2.sec small{margin-left:0;text-align:left}
+}
