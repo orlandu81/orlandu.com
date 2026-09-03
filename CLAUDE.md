@@ -7,6 +7,25 @@ No build step. Plain HTML/CSS/JS served from the repo root.
 
 ## Deploying — read this first
 
+### ⚠️ ONE PUSH PER SESSION — Deployment Storage is a real meter (2026-09-02)
+
+Vercel warned David at 75% of the Hobby **Deployment Storage** allowance (10 GB-months).
+Every push creates a deployment, and Vercel keeps that deployment's full output — this
+whole repo, ~96 MB, mostly `media/` — for the retention period. The site is not big;
+the problem was ~170 pushes in a week. So, standing rule, David's instruction:
+
+- **Batch a session's edits into ONE commit and ONE push.** Do not push a fix, then a
+  follow-up, then a typo. Stage everything, verify locally, push once at the end.
+- A second push in a session needs a reason (David asked for it live, or the first one
+  was broken). Never push to "see it on the live site" — verify locally with Playwright.
+- The old note that Vercel "can't run out like Netlify" was wrong; it checked the
+  deploy-rate limit and missed this one. Deploys-per-day is still 100 — irrelevant now.
+- The project's Deployment Retention Policy is being set to the shortest option
+  (Settings → Security). Vercel always keeps the last 10 deployments + last 20
+  production ones, so ~2 GB stored is the floor even at zero-length retention.
+- If storage climbs again: re-encode `media/` to WebP (measured 0.69× on a sample),
+  or split `media/` into its own Vercel project so an HTML push deploys ~1 MB.
+
 **This container cannot push to GitHub.** The egress proxy blocks authenticated
 pushes ("builtin injection failed"). Fetches and clones work fine; only pushes fail.
 
