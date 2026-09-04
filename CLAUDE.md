@@ -1,5 +1,12 @@
 # orlandu.com — working notes for Claude
 
+> **BEFORE YOU PUSH ANYTHING — ASK DAVID FIRST.** Every push stores a full ~96 MB copy of
+> the site on Vercel and the Hobby storage allowance is nearly used up. When an edit is
+> ready, do not push it. Ask, as a multiple-choice question: **"Push now, or hold it for
+> the next batch?"** Only push on "now". If he says hold, leave the commit local and say
+> so plainly at the end of the session. Do this every time, including one-line changes,
+> unless he already said "push now" in the request. Full rule under "Deploying" below.
+
 Static site for Orlandu's Arcade: a garage arcade + game room, ~10 machines,
 13 Sony professional monitors, ~25 consoles. Owner: David (GitHub `orlandu81`).
 
