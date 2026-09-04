@@ -180,7 +180,7 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
   background:
     radial-gradient(ellipse 70% 55% at 50% 0%,rgba(255,138,0,.12),transparent 62%),
     linear-gradient(180deg,rgba(10,10,18,.34),rgba(10,10,18,.10) 40%,rgba(14,14,26,.80)),
-    url("hero-bg-lit.jpg") center 30%/cover no-repeat;
+    url("hero-bg.jpg") center 30%/cover no-repeat;
   transform:scale(1.06);transform-origin:60% 40%;
 }
 @keyframes kenburns{
