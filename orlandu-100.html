@@ -1530,17 +1530,6 @@
   window.addEventListener("load", stick);
   window.addEventListener("resize", stick);
 
-  // site.js fades a section in when 5% of it intersects the viewport. The
-  // 11-100 section is many screens tall, so 5% of it can never be on screen at
-  // once and it would sit at opacity 0 forever. Any section taller than the
-  // viewport opts out of the fade; the short ones keep it. Runs on load, which
-  // is after site.js (deferred) has tagged them.
-  window.addEventListener("load", function(){
-    var secs = document.querySelectorAll("main.mag section");
-    Array.prototype.forEach.call(secs, function(s){
-      if (s.getBoundingClientRect().height > window.innerHeight) s.classList.add("in");
-    });
-  });
   var q = document.getElementById("q"),
       count = document.getElementById("count"),
       noresult = document.getElementById("noresult"),

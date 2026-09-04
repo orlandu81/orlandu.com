@@ -277,11 +277,19 @@
   });
 })();
 
-/* scroll reveal — sections and tiles fade up once as they enter the viewport */
+/* scroll reveal — sections and tiles fade up once as they enter the viewport.
+   ⚠ threshold MUST stay 0. IntersectionObserver measures it as a fraction of the
+   TARGET's own area, so a tall element needs 5% of ITSELF on screen — impossible
+   past roughly 20x the viewport height, and the element then sits at opacity 0
+   forever. orlandu-100.html's 11-100 grid is 13,120px at 1280 and 38,950px on a
+   phone; at threshold 0.05 it never faded in on mobile at all, and on desktop it
+   failed whenever the reader arrived by anchor jump rather than by scrolling.
+   Verified 2026-09-04 across all 33 pages at 1280x900 and 390x844: nothing is
+   left untriggered and the fade itself is unchanged. */
 (function(){
   if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var els=document.querySelectorAll('main section, .grid > *, .shot, .masonry > *');
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:0.05});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:0});
   els.forEach(function(el,i){ if(el.getBoundingClientRect().top>innerHeight){el.classList.add('reveal');io.observe(el);} });
 })();
 
