@@ -84,6 +84,7 @@
             '<a href="pvm-vs-bvm.html">PVM vs. BVM</a>' +
             '<a href="red-tent.html">The Red Tent</a>' +
             '<a href="mini-cute.html">The Mini Cute</a>' +
+            '<a href="orlandu-100.html">The Orlandu 100</a>' +
           '</div>' +
         '</nav>' +
         '<div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>Photography © Orlandu’s Arcade. Game logos and characters are the property of their respective owners.</div>' +

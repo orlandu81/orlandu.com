@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Orlandu 100 — Orlandu's Arcade</title>
+<meta name="description" content="One collector&#x27;s hundred favorite films, ranked by head-to-head duel rather than by argument — with Rotten Tomatoes scores, the films this list defends, and the ones the critics won.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="preload" href="assets/fonts/orbitron-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/rajdhani-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#0a0a12">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Orlandu's Arcade">
+<meta property="og:title" content="The Orlandu 100 — Orlandu's Arcade">
+<meta property="og:description" content="One collector&#x27;s hundred favorite films, ranked by head-to-head duel rather than by argument — with Rotten Tomatoes scores, the films this list defends, and the ones the critics won.">
+<meta property="og:url" content="https://www.orlandu.com/orlandu-100.html">
+<meta property="og:image" content="https://www.orlandu.com/media/og/og-orlandu-100.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Orlandu 100 — Orlandu's Arcade">
+<meta name="twitter:description" content="One collector&#x27;s hundred favorite films, ranked by head-to-head duel rather than by argument — with Rotten Tomatoes scores, the films this list defends, and the ones the critics won.">
+<meta name="twitter:image" content="https://www.orlandu.com/media/og/og-orlandu-100.jpg">
+<link rel="canonical" href="https://www.orlandu.com/orlandu-100.html">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
+<style>
+  /* ── The Orlandu 100 — page-scoped magazine layout ──────────────────────
+     Accent is the issue's own gold. Score meters use a validated two-hue
+     categorical pair (critics #d97706 / audience #22a3bd) against the panel
+     surface; both series are direct-labeled, so identity is never color-alone. */
+  main.mag{--acc:#ffc247;--crit:#d97706;--aud:#22a3bd;max-width:1180px}
+  main.mag .lede{max-width:74ch;font-size:1.24rem}
+
+  .statstrip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.6rem;margin:1.6rem 0 0}
+  .statstrip>div{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-top:2px solid var(--acc);border-radius:10px;padding:.65rem .8rem}
+  .statstrip .sl{display:block;font-family:var(--disp);font-size:.54rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--dim)}
+  .statstrip .sv{display:block;font-family:var(--disp);font-size:1.1rem;letter-spacing:.02em;
+    color:var(--ink);margin-top:.3rem;line-height:1.2}
+  @media(max-width:900px){.statstrip{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  @media(max-width:520px){.statstrip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+  /* ── controls ─────────────────────────────────────────────── */
+  .o100c{display:none;position:sticky;top:var(--o100top,74px);z-index:20;
+    background:rgba(10,10,18,.94);backdrop-filter:blur(8px);
+    border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;margin:0 0 2.2rem}
+  .js .o100c{display:block}
+  .o100c .row{display:flex;gap:.45rem;flex-wrap:wrap;align-items:center}
+  .o100c .row + .row{margin-top:.6rem}
+  .o100c label.sr{position:absolute;left:-9999px}
+  .o100c input[type=search]{flex:1 1 240px;min-width:0;background:var(--bg2);color:var(--ink);
+    border:1px solid var(--line);border-radius:8px;padding:.5rem .8rem;font-family:var(--body);
+    font-size:1.02rem}
+  .o100c input[type=search]:focus{outline:none;border-color:var(--cyan-dim)}
+  .o100c .lbl{font-family:var(--disp);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--dim);margin-right:.2rem}
+  .o100c button{background:var(--panel);color:var(--dim);border:1px solid var(--line);border-radius:999px;
+    padding:.3rem .75rem;font-family:var(--cond);font-size:.86rem;letter-spacing:.06em;
+    text-transform:uppercase;cursor:pointer}
+  .o100c button:hover{border-color:var(--cyan-dim);color:var(--cyan)}
+  .o100c button[aria-pressed=true]{color:#101018;background:var(--acc);border-color:var(--acc);font-weight:600}
+  .o100c .count{margin-left:auto;font-family:var(--cond);font-size:.9rem;color:var(--dim);
+    letter-spacing:.04em;text-transform:uppercase}
+
+  /* ── score meters ─────────────────────────────────────────── */
+  .scores{margin:.85rem 0 .8rem;max-width:380px}
+  .mtr{display:grid;grid-template-columns:5.2rem 1fr 2.1rem;align-items:center;gap:.55rem;margin-bottom:.3rem}
+  .mtr .ml{font-family:var(--disp);font-size:.54rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim)}
+  .mtr .mb{display:block;height:8px;background:#1d1d31;border-radius:4px;overflow:hidden}
+  .mtr .mb i{display:block;height:100%;background:var(--crit);border-radius:0 4px 4px 0}
+  .mtr.aud .mb i{background:var(--aud)}
+  .mtr .mv{font-family:var(--disp);font-size:.82rem;color:var(--ink);text-align:right}
+
+  /* ── the top ten ──────────────────────────────────────────── */
+  .big{display:grid;grid-template-columns:7.5rem 1fr;gap:1.6rem;align-items:start;
+    background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-left:3px solid var(--acc);border-radius:14px;padding:1.5rem 1.7rem;margin-bottom:1rem}
+  .big .num{font-family:var(--disp);font-weight:800;font-size:4.6rem;line-height:.9;letter-spacing:-.02em;
+    background:linear-gradient(180deg,#fff,var(--acc) 55%,#a86b12);-webkit-background-clip:text;
+    background-clip:text;color:transparent;text-align:right}
+  .big h3{font-family:var(--disp);font-weight:800;font-size:1.5rem;letter-spacing:.02em;color:var(--ink);
+    line-height:1.2;margin-bottom:.35rem}
+  .big .pitch{font-size:1.1rem;max-width:66ch}
+  @media(max-width:640px){
+    .big{grid-template-columns:1fr;gap:.4rem;padding:1.2rem 1.1rem}
+    .big .num{text-align:left;font-size:3rem}
+    .big h3{font-size:1.25rem}
+  }
+
+  /* ── eleven to one hundred ────────────────────────────────── */
+  .o100g{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1rem}
+  .ent{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-radius:12px;padding:1.05rem 1.2rem}
+  .ent .hd{display:flex;gap:.7rem;align-items:baseline;margin-bottom:.3rem}
+  .ent .num{font-family:var(--disp);font-weight:800;font-size:1.35rem;color:var(--acc);
+    flex:0 0 auto;min-width:2.1rem}
+  .ent h3{font-family:var(--disp);font-size:1rem;letter-spacing:.02em;color:var(--ink);line-height:1.25}
+  .ent .pitch{font-size:1rem}
+
+  /* ── shared entry bits ────────────────────────────────────── */
+  .big .yr,.ent .yr{color:var(--dim);font-weight:400;font-family:var(--cond);font-size:.9em}
+  .meta{font-family:var(--cond);font-size:.92rem;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--fire2);margin-bottom:.15rem}
+  .meta b{color:var(--ink);font-weight:600}
+  .cast{color:var(--dim);font-size:.98rem}
+  .pitch{color:var(--dim)}
+  .fin{margin-top:.6rem;font-family:var(--cond);font-size:.88rem;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--dim)}
+  .fin b{color:var(--ink);font-weight:600}
+  .also{margin-top:.55rem;font-size:.92rem;color:var(--dim);line-height:1.6}
+  .also .al{font-family:var(--disp);font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--dim);margin-right:.45rem}
+  .also .wy{color:var(--dim);font-size:.88em}
+  .dot{color:var(--line)}
+  [hidden]{display:none !important}
+  main.mag section,main.mag [data-r]{scroll-margin-top:calc(var(--o100top,74px) + 8rem)}
+  .noresult{border:1px dashed var(--line);border-radius:12px;padding:1.6rem;text-align:center;color:var(--dim)}
+
+  /* ── outliers ─────────────────────────────────────────────── */
+  .o100t td.rk a{font-family:var(--disp);font-weight:800}
+  .o100t td.n,.o100t th.n{text-align:right;font-family:var(--disp);font-size:.9rem}
+  .o100t .yr{color:var(--dim);font-family:var(--cond)}
+  .nbi{border-left:2px solid var(--line);padding-left:1rem;margin-bottom:1.4rem;max-width:74ch}
+  .nbi h3{font-family:var(--disp);font-size:1rem;color:var(--ink);margin-bottom:.15rem}
+  .nbi .sc{font-family:var(--cond);font-size:.88rem;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--fire2);margin-bottom:.4rem}
+  .nbi p{color:var(--dim)}
+  .colo p{max-width:74ch;margin-bottom:1rem;color:var(--dim)}
+  .colo b{color:var(--ink)}
+  /* The bar is four rows tall on a phone — a fifth of the viewport — so it scrolls
+     away there instead of sticking. */
+  @media(max-width:700px){.js .o100c{position:static}}
+  @media print{.o100c{display:none}}
+</style>
+<script src="assets/site.js" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://www.orlandu.com/#website",
+   "url": "https://www.orlandu.com/",
+   "name": "Orlandu's Arcade",
+   "description": "A private arcade and Sony professional monitor collection in Orange County, California.",
+   "publisher": { "@id": "https://www.orlandu.com/#org" },
+   "inLanguage": "en-US"
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://www.orlandu.com/#org",
+   "name": "Orlandu's Arcade",
+   "url": "https://www.orlandu.com/",
+   "description": "A private arcade and Sony professional monitor collection in Orange County, California.",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.orlandu.com/assets/logo-wordmark.png",
+    "width": 1080,
+    "height": 425
+   },
+   "image": "https://www.orlandu.com/media/og/og-home.jpg",
+   "email": "orlandusarcade@gmail.com",
+   "founder": { "@id": "https://www.orlandu.com/#person" },
+   "sameAs": [
+    "https://www.instagram.com/orlandusarcade/",
+    "https://www.ebay.com/usr/orlandu81",
+    "https://forums.arcade-museum.com/members/orlandu81.67452/",
+    "https://www.arcade-projects.com/members/orlandu81.4521/"
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.orlandu.com/#person",
+   "name": "orlandu81",
+   "alternateName": "Orlandu",
+   "description": "Collector and restorer of arcade cabinets, pinball machines, and Sony professional monitors.",
+   "url": "https://www.orlandu.com/about.html",
+   "email": "orlandusarcade@gmail.com",
+   "sameAs": [
+    "https://forums.arcade-museum.com/members/orlandu81.67452/",
+    "https://www.arcade-projects.com/members/orlandu81.4521/",
+    "https://www.instagram.com/orlandusarcade/"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.orlandu.com/orlandu-100.html#webpage",
+   "url": "https://www.orlandu.com/orlandu-100.html",
+   "name": "The Orlandu 100 — Orlandu's Arcade",
+   "description": "One collector&#x27;s hundred favorite films, ranked by head-to-head duel rather than by argument — with Rotten Tomatoes scores, the films this list defends, and the ones the critics won.",
+   "isPartOf": { "@id": "https://www.orlandu.com/#website" },
+   "about": { "@id": "https://www.orlandu.com/#org" },
+   "inLanguage": "en-US",
+   "primaryImageOfPage": { "@type": "ImageObject", "url": "https://www.orlandu.com/media/og/og-orlandu-100.jpg" },
+   "breadcrumb": { "@id": "https://www.orlandu.com/orlandu-100.html#breadcrumb" }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.orlandu.com/orlandu-100.html#breadcrumb",
+   "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.orlandu.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Stories", "item": "https://www.orlandu.com/stories.html" },
+    { "@type": "ListItem", "position": 3, "name": "The Orlandu 100", "item": "https://www.orlandu.com/orlandu-100.html" }
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://www.orlandu.com/orlandu-100.html#article",
+   "isPartOf": { "@id": "https://www.orlandu.com/orlandu-100.html#webpage" },
+   "mainEntityOfPage": { "@id": "https://www.orlandu.com/orlandu-100.html#webpage" },
+   "headline": "The Orlandu 100",
+   "description": "One collector&#x27;s hundred favorite films, ranked by head-to-head duel rather than by argument — with Rotten Tomatoes scores, the films this list defends, and the ones the critics won.",
+   "author": { "@id": "https://www.orlandu.com/#person" },
+   "publisher": { "@id": "https://www.orlandu.com/#org" },
+   "inLanguage": "en-US",
+   "articleSection": "Stories",
+   "image": "https://www.orlandu.com/media/og/og-orlandu-100.jpg",
+   "mainEntity": { "@id": "https://www.orlandu.com/orlandu-100.html#ranking" }
+  },
+  {
+   "@type": "ItemList",
+   "@id": "https://www.orlandu.com/orlandu-100.html#ranking",
+   "name": "The Orlandu 100",
+   "description": "One collector's hundred favorite films, ranked one to one hundred.",
+   "numberOfItems": 100,
+   "itemListOrder": "https://schema.org/ItemListOrderAscending",
+   "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"The Matrix (1999)"},
+    {"@type":"ListItem","position":2,"name":"Back to the Future (1985)"},
+    {"@type":"ListItem","position":3,"name":"Terminator 2: Judgment Day (1991)"},
+    {"@type":"ListItem","position":4,"name":"Indiana Jones and the Last Crusade (1989)"},
+    {"@type":"ListItem","position":5,"name":"The Dark Knight (2008)"},
+    {"@type":"ListItem","position":6,"name":"Friday (1995)"},
+    {"@type":"ListItem","position":7,"name":"Ghostbusters (1984)"},
+    {"@type":"ListItem","position":8,"name":"The Last Samurai (2003)"},
+    {"@type":"ListItem","position":9,"name":"Inception (2010)"},
+    {"@type":"ListItem","position":10,"name":"Major League (1989)"},
+    {"@type":"ListItem","position":11,"name":"Raiders of the Lost Ark (1981)"},
+    {"@type":"ListItem","position":12,"name":"Superbad (2007)"},
+    {"@type":"ListItem","position":13,"name":"The Last Dragon (1985)"},
+    {"@type":"ListItem","position":14,"name":"True Lies (1994)"},
+    {"@type":"ListItem","position":15,"name":"The Hangover (2009)"},
+    {"@type":"ListItem","position":16,"name":"Anchorman: The Legend of Ron Burgundy (2004)"},
+    {"@type":"ListItem","position":17,"name":"Wall Street (1987)"},
+    {"@type":"ListItem","position":18,"name":"Ready Player One (2018)"},
+    {"@type":"ListItem","position":19,"name":"The Rock (1996)"},
+    {"@type":"ListItem","position":20,"name":"Office Space (1999)"},
+    {"@type":"ListItem","position":21,"name":"Revenge of the Nerds (1984)"},
+    {"@type":"ListItem","position":22,"name":"The Shawshank Redemption (1994)"},
+    {"@type":"ListItem","position":23,"name":"Star Wars: The Empire Strikes Back (1980)"},
+    {"@type":"ListItem","position":24,"name":"The Super Mario Bros. Movie (2023)"},
+    {"@type":"ListItem","position":25,"name":"Ferris Bueller's Day Off (1986)"},
+    {"@type":"ListItem","position":26,"name":"The Godfather Part II (1974)"},
+    {"@type":"ListItem","position":27,"name":"The Dark Knight Rises (2012)"},
+    {"@type":"ListItem","position":28,"name":"Die Hard (1988)"},
+    {"@type":"ListItem","position":29,"name":"The Fugitive (1993)"},
+    {"@type":"ListItem","position":30,"name":"The Usual Suspects (1995)"},
+    {"@type":"ListItem","position":31,"name":"Back to the Future Part II (1989)"},
+    {"@type":"ListItem","position":32,"name":"Back to the Future Part III (1990)"},
+    {"@type":"ListItem","position":33,"name":"Moneyball (2011)"},
+    {"@type":"ListItem","position":34,"name":"Memento (2000)"},
+    {"@type":"ListItem","position":35,"name":"A League of Their Own (1992)"},
+    {"@type":"ListItem","position":36,"name":"Kill Bill: Volume 1 (2003)"},
+    {"@type":"ListItem","position":37,"name":"Monsters University (2013)"},
+    {"@type":"ListItem","position":38,"name":"Rudy (1993)"},
+    {"@type":"ListItem","position":39,"name":"Total Recall (1990)"},
+    {"@type":"ListItem","position":40,"name":"Interstellar (2014)"},
+    {"@type":"ListItem","position":41,"name":"The Fifth Element (1997)"},
+    {"@type":"ListItem","position":42,"name":"Indiana Jones and the Temple of Doom (1984)"},
+    {"@type":"ListItem","position":43,"name":"Batman Begins (2005)"},
+    {"@type":"ListItem","position":44,"name":"Avatar (2009)"},
+    {"@type":"ListItem","position":45,"name":"Bridesmaids (2011)"},
+    {"@type":"ListItem","position":46,"name":"Step Brothers (2008)"},
+    {"@type":"ListItem","position":47,"name":"The 40-Year-Old Virgin (2005)"},
+    {"@type":"ListItem","position":48,"name":"Rocky IV (1985)"},
+    {"@type":"ListItem","position":49,"name":"The Karate Kid (1984)"},
+    {"@type":"ListItem","position":50,"name":"Minority Report (2002)"},
+    {"@type":"ListItem","position":51,"name":"Star Wars: A New Hope (1977)"},
+    {"@type":"ListItem","position":52,"name":"Demolition Man (1993)"},
+    {"@type":"ListItem","position":53,"name":"Inside Out (2015)"},
+    {"@type":"ListItem","position":54,"name":"Forgetting Sarah Marshall (2008)"},
+    {"@type":"ListItem","position":55,"name":"The Martian (2015)"},
+    {"@type":"ListItem","position":56,"name":"Dogma (1999)"},
+    {"@type":"ListItem","position":57,"name":"American Psycho (2000)"},
+    {"@type":"ListItem","position":58,"name":"Barbie (2023)"},
+    {"@type":"ListItem","position":59,"name":"Star Wars: Revenge of the Sith (2005)"},
+    {"@type":"ListItem","position":60,"name":"Everything Everywhere All At Once (2022)"},
+    {"@type":"ListItem","position":61,"name":"Wedding Crashers (2005)"},
+    {"@type":"ListItem","position":62,"name":"Knocked Up (2007)"},
+    {"@type":"ListItem","position":63,"name":"Tommy Boy (1995)"},
+    {"@type":"ListItem","position":64,"name":"The Prestige (2006)"},
+    {"@type":"ListItem","position":65,"name":"The Godfather (1972)"},
+    {"@type":"ListItem","position":66,"name":"The Incredibles (2004)"},
+    {"@type":"ListItem","position":67,"name":"Face/Off (1997)"},
+    {"@type":"ListItem","position":68,"name":"Mallrats (1995)"},
+    {"@type":"ListItem","position":69,"name":"The Social Network (2010)"},
+    {"@type":"ListItem","position":70,"name":"Old School (2003)"},
+    {"@type":"ListItem","position":71,"name":"The Departed (2006)"},
+    {"@type":"ListItem","position":72,"name":"Die Hard: With a Vengeance (1995)"},
+    {"@type":"ListItem","position":73,"name":"Blue Chips (1994)"},
+    {"@type":"ListItem","position":74,"name":"Just Friends (2005)"},
+    {"@type":"ListItem","position":75,"name":"The Bourne Ultimatum (2007)"},
+    {"@type":"ListItem","position":76,"name":"Harold & Kumar Go to White Castle (2004)"},
+    {"@type":"ListItem","position":77,"name":"Groundhog Day (1993)"},
+    {"@type":"ListItem","position":78,"name":"Ace Ventura: Pet Detective (1994)"},
+    {"@type":"ListItem","position":79,"name":"12 Monkeys (1998)"},
+    {"@type":"ListItem","position":80,"name":"Looper (2012)"},
+    {"@type":"ListItem","position":81,"name":"Billy Madison (1995)"},
+    {"@type":"ListItem","position":82,"name":"The Terminator (1984)"},
+    {"@type":"ListItem","position":83,"name":"Superman (2025)"},
+    {"@type":"ListItem","position":84,"name":"Clueless (1995)"},
+    {"@type":"ListItem","position":85,"name":"Top Gun: Maverick (2022)"},
+    {"@type":"ListItem","position":86,"name":"The Matrix Reloaded (2003)"},
+    {"@type":"ListItem","position":87,"name":"Miracle (2004)"},
+    {"@type":"ListItem","position":88,"name":"Austin Powers: International Man of Mystery (1997)"},
+    {"@type":"ListItem","position":89,"name":"Spaceballs (1987)"},
+    {"@type":"ListItem","position":90,"name":"The Legend of Drunken Master (1994)"},
+    {"@type":"ListItem","position":91,"name":"Jackass 3 (2010)"},
+    {"@type":"ListItem","position":92,"name":"The Bad News Bears (1976)"},
+    {"@type":"ListItem","position":93,"name":"Mr. Holland's Opus (1995)"},
+    {"@type":"ListItem","position":94,"name":"Pineapple Express (2008)"},
+    {"@type":"ListItem","position":95,"name":"Goodfellas (1990)"},
+    {"@type":"ListItem","position":96,"name":"Fight Club (1999)"},
+    {"@type":"ListItem","position":97,"name":"Dumb and Dumber (1994)"},
+    {"@type":"ListItem","position":98,"name":"Arthur (1981)"},
+    {"@type":"ListItem","position":99,"name":"Saving Private Ryan (1998)"},
+    {"@type":"ListItem","position":100,"name":"Short Circuit 2 (1988)"}
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<header class="site" data-page="stories"></header>
+
+<main class="hub mag">
+  <div class="pagehead">
+    <div class="kicker">Issue One</div>
+    <h1 class="page">The Orlandu 100</h1>
+    <div class="rt">About 24 min read</div>
+    <p class="lede">One collector's hundred favorite films, ordered by head-to-head duel rather than by argument — every position on this list was won against another film. The scores were pulled from Rotten Tomatoes. Nobody consulted a critic about the order.</p>
+    <div class="statstrip">
+      <div><span class="sl">Ranked</span><span class="sv">100</span></div>
+      <div><span class="sl">Considered</span><span class="sv">580</span></div>
+      <div><span class="sl">Mean critic</span><span class="sv">79</span></div>
+      <div><span class="sl">Mean audience</span><span class="sv">84</span></div>
+      <div><span class="sl">Oldest</span><span class="sv">1972</span></div>
+      <div><span class="sl">Newest</span><span class="sv">2025</span></div>
+    </div>
+    <div class="chips">
+      <a href="#topten">The top ten</a>
+      <a href="#eleven">11&ndash;100</a>
+      <a href="#defense">The defense</a>
+      <a href="#criticswon">Where the critics won</a>
+      <a href="#nobackup">No backup</a>
+      <a href="#splits">The splits</a>
+      <a href="#colophon">Colophon</a>
+    </div>
+  </div>
+
+  <form class="o100c" id="o100c" role="search" aria-label="Filter the hundred">
+    <div class="row">
+      <label class="sr" for="q">Search by title, director or cast</label>
+      <input type="search" id="q" placeholder="Search a title, director or actor…" autocomplete="off">
+      <button type="button" id="reset">Reset</button>
+      <span class="count" id="count" role="status">Showing all 100</span>
+    </div>
+    <div class="row">
+      <span class="lbl">Decade</span>
+      <button type="button" class="dec" data-v="1970" aria-pressed="false">70s</button>
+      <button type="button" class="dec" data-v="1980" aria-pressed="false">80s</button>
+      <button type="button" class="dec" data-v="1990" aria-pressed="false">90s</button>
+      <button type="button" class="dec" data-v="2000" aria-pressed="false">00s</button>
+      <button type="button" class="dec" data-v="2010" aria-pressed="false">10s</button>
+      <button type="button" class="dec" data-v="2020" aria-pressed="false">20s</button>
+      <span class="lbl" style="margin-left:.8rem">Rated</span>
+      <button type="button" class="rate" data-v="G" aria-pressed="false">G</button>
+      <button type="button" class="rate" data-v="PG" aria-pressed="false">PG</button>
+      <button type="button" class="rate" data-v="PG-13" aria-pressed="false">PG-13</button>
+      <button type="button" class="rate" data-v="R" aria-pressed="false">R</button>
+    </div>
+  </form>
+
+  <section id="topten">
+    <h2 class="sec">The top ten <small>The most-tested end of the list</small></h2>
+    <div id="tenwrap">
+      <article class="big" id="f1" data-r="1" data-dec="1990" data-rate="R" data-q="the matrix 1999 the wachowskis keanu reeves laurence fishburne carrie-anne moss">
+        <div class="num">1</div>
+        <div class="body">
+          <h3>The Matrix <span class="yr">1999</span></h3>
+          <p class="meta">R <span class="dot">·</span> 2h 16m <span class="dot">·</span> Directed by <b>The Wachowskis</b></p>
+          <p class="cast">Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss</p>
+          <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:83%"></i></span><span class="mv">83</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:85%"></i></span><span class="mv">85</span></div></div>
+          <p class="pitch">A software engineer discovers the world he lives in is a simulation fed to a sedated humanity, and joins the rebels fighting the machines that built it. It rewrote what an action scene could look like — half the films that followed borrowed its slow-motion gunplay, most of them badly.</p>
+          <p class="fin">Budget <b>$63.0 million</b> <span class="dot">·</span> Worldwide <b>$467.8 million</b></p>
+          <p class="also"><span class="al">See also</span><a href="#f86">#86 The Matrix Reloaded</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f34">#34 Memento</a> <span class="wy">with Carrie-Anne Moss</span></p>
+        </div>
+      </article>
+      <article class="big" id="f2" data-r="2" data-dec="1980" data-rate="PG" data-q="back to the future 1985 robert zemeckis michael j. fox christopher lloyd lea thompson">
+        <div class="num">2</div>
+        <div class="body">
+          <h3>Back to the Future <span class="yr">1985</span></h3>
+          <p class="meta">PG <span class="dot">·</span> 1h 56m <span class="dot">·</span> Directed by <b>Robert Zemeckis</b></p>
+          <p class="cast">Michael J. Fox, Christopher Lloyd, Lea Thompson</p>
+          <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:93%"></i></span><span class="mv">93</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:95%"></i></span><span class="mv">95</span></div></div>
+          <p class="pitch">A teenager is accidentally sent to 1955 in a car his eccentric neighbor converted into a time machine, and has to get his own parents to fall in love before he erases himself from existence. Comedy, science fiction and clockwork plotting locked into one machine with no wasted parts.</p>
+          <p class="fin">Budget <b>$19.0 million</b></p>
+          <p class="also"><span class="al">See also</span><a href="#f31">#31 Back to the Future Part II</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f32">#32 Back to the Future Part III</a> <span class="wy">same director</span></p>
+        </div>
+      </article>
+      <article class="big" id="f3" data-r="3" data-dec="1990" data-rate="R" data-q="terminator 2: judgment day 1991 james cameron arnold schwarzenegger linda hamilton robert patrick">
+        <div class="num">3</div>
+        <div class="body">
+          <h3>Terminator 2: Judgment Day <span class="yr">1991</span></h3>
+          <p class="meta">R <span class="dot">·</span> 2h 17m <span class="dot">·</span> Directed by <b>James Cameron</b></p>
+          <p class="cast">Arnold Schwarzenegger, Linda Hamilton, Robert Patrick</p>
+          <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:90%"></i></span><span class="mv">90</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:95%"></i></span><span class="mv">95</span></div></div>
+          <p class="pitch">An unstoppable android returns from the future — this time to protect the boy it was originally sent to kill, from a newer model that can pour itself through a keyhole. A sequel that spent its record budget on the spectacle and on the mother at the center of it.</p>
+          <p class="fin"></p>
+          <p class="also"><span class="al">See also</span><a href="#f14">#14 True Lies</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f44">#44 Avatar</a> <span class="wy">same director</span></p>
+        </div>
+      </article>
+      <article class="big" id="f4" data-r="4" data-dec="1980" data-rate="PG-13" data-q="indiana jones and the last crusade 1989 steven spielberg harrison ford sean connery denholm elliott">
+        <div class="num">4</div>
+        <div class="body">
+          <h3>Indiana Jones and the Last Crusade <span class="yr">1989</span></h3>
+          <p class="meta">PG-13 <span class="dot">·</span> 2h 07m <span class="dot">·</span> Directed by <b>Steven Spielberg</b></p>
+          <p class="cast">Harrison Ford, Sean Connery, Denholm Elliott</p>
+          <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:84%"></i></span><span class="mv">84</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div></div>
+          <p class="pitch">Indiana Jones goes after the Holy Grail and, more urgently, his estranged medievalist father, who is being held by the Nazis. Sean Connery&#x27;s arrival converts an adventure serial into a comedy about an impossible dad, and the trilogy&#x27;s warmest film is the result.</p>
+          <p class="fin">Budget <b>$48.0 million</b> <span class="dot">·</span> Worldwide <b>$474.2 million</b></p>
+          <p class="also"><span class="al">See also</span><a href="#f11">#11 Raiders of the Lost Ark</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f18">#18 Ready Player One</a> <span class="wy">same director</span></p>
+        </div>
+      </article>
+      <article class="big" id="f5" data-r="5" data-dec="2000" data-rate="PG-13" data-q="the dark knight 2008 christopher nolan christian bale heath ledger michael caine">
+        <div class="num">5</div>
+        <div class="body">
+          <h3>The Dark Knight <span class="yr">2008</span></h3>
+          <p class="meta">PG-13 <span class="dot">·</span> 2h 32m <span class="dot">·</span> Directed by <b>Christopher Nolan</b></p>
+          <p class="cast">Christian Bale, Heath Ledger, Michael Caine</p>
+          <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div></div>
+          <p class="pitch">Batman&#x27;s war on Gotham&#x27;s organized crime draws out an anarchist in clown paint who wants no ransom and no territory — only to prove that anyone can be broken. A crime epic that happens to have a man in a cape in it.</p>
+          <p class="fin">Budget <b>$185.0 million</b> <span class="dot">·</span> Worldwide <b>$1.00 billion</b></p>
+          <p class="also"><span class="al">See also</span><a href="#f9">#9 Inception</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f27">#27 The Dark Knight Rises</a> <span class="wy">same director</span></p>
+        </div>
+      </article>
+      <article class="big" id="f6" data-r="6" data-dec="1990" data-rate="R" data-q="friday 1995 f. gary gray ice cube chris tucker nia long">
+        <div class="num">6</div>
+        <div class="body">
+          <h3>Friday <span class="yr">1995</span></h3>
+          <p class="meta">R <span class="dot">·</span> 1h 31m <span class="dot">·</span> Directed by <b>F. Gary Gray</b></p>
+          <p class="cast">Ice Cube, Chris Tucker, Nia Long</p>
+          <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:77%"></i></span><span class="mv">77</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:91%"></i></span><span class="mv">91</span></div></div>
+          <p class="pitch">Two friends sit on a South Central porch through a single Friday, owing money to a dealer and absorbing whatever the neighborhood sends past them. Almost nothing happens, which is the point, and it became the most quoted comedy of its decade anyway.</p>
+          <p class="fin">Budget <b>$3.5 million</b> <span class="dot">·</span> Worldwide <b>$27.5 million</b></p>
+          <p class="also"><span class="al">See also</span><a href="#f7">#7 Ghostbusters</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f12">#12 Superbad</a> <span class="wy">same lane</span></p>
+        </div>
+      </article>
+      <article class="big" id="f7" data-r="7" data-dec="1980" data-rate="PG" data-q="ghostbusters 1984 ivan reitman bill murray dan aykroyd sigourney weaver">
+        <div class="num">7</div>
+        <div class="body">
+          <h3>Ghostbusters <span class="yr">1984</span></h3>
+          <p class="meta">PG <span class="dot">·</span> 1h 47m <span class="dot">·</span> Directed by <b>Ivan Reitman</b></p>
+          <p class="cast">Bill Murray, Dan Aykroyd, Sigourney Weaver</p>
+          <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:95%"></i></span><span class="mv">95</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:88%"></i></span><span class="mv">88</span></div></div>
+          <p class="pitch">Three academics thrown out of their university start a business catching ghosts in New York and stumble into an apocalypse booked through a Central Park West apartment. Deadpan improvisation wrapped inside a very expensive effects picture, and the balance has never been repeated.</p>
+          <p class="fin">Worldwide <b>$370.0 million</b></p>
+          <p class="also"><span class="al">See also</span><a href="#f77">#77 Groundhog Day</a> <span class="wy">with Bill Murray</span> <span class="dot">·</span> <a href="#f6">#6 Friday</a> <span class="wy">same lane</span></p>
+        </div>
+      </article>
+      <article class="big" id="f8" data-r="8" data-dec="2000" data-rate="R" data-q="the last samurai 2003 edward zwick tom cruise ken watanabe timothy spall">
+        <div class="num">8</div>
+        <div class="body">
+          <h3>The Last Samurai <span class="yr">2003</span></h3>
+          <p class="meta">R <span class="dot">·</span> 2h 34m <span class="dot">·</span> Directed by <b>Edward Zwick</b></p>
+          <p class="cast">Tom Cruise, Ken Watanabe, Timothy Spall</p>
+          <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:65%"></i></span><span class="mv">65</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:83%"></i></span><span class="mv">83</span></div></div>
+          <p class="pitch">A hollowed-out American officer is hired to modernize Japan&#x27;s imperial army, is captured by the samurai he was sent to destroy, and finds a code worth keeping. Big, sincere and deeply unfashionable — a 1950s epic that arrived fifty years late and didn&#x27;t care.</p>
+          <p class="fin">Budget <b>$140.0 million</b> <span class="dot">·</span> Worldwide <b>$456.8 million</b></p>
+          <p class="also"><span class="al">See also</span><a href="#f9">#9 Inception</a> <span class="wy">with Ken Watanabe</span> <span class="dot">·</span> <a href="#f50">#50 Minority Report</a> <span class="wy">with Tom Cruise</span></p>
+        </div>
+      </article>
+      <article class="big" id="f9" data-r="9" data-dec="2010" data-rate="PG-13" data-q="inception 2010 christopher nolan leonardo dicaprio joseph gordon-levitt ken watanabe">
+        <div class="num">9</div>
+        <div class="body">
+          <h3>Inception <span class="yr">2010</span></h3>
+          <p class="meta">PG-13 <span class="dot">·</span> 2h 28m <span class="dot">·</span> Directed by <b>Christopher Nolan</b></p>
+          <p class="cast">Leonardo DiCaprio, Joseph Gordon-Levitt, Ken Watanabe</p>
+          <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:86%"></i></span><span class="mv">86</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:91%"></i></span><span class="mv">91</span></div></div>
+          <p class="pitch">A thief who steals secrets from inside people&#x27;s dreams is hired to plant one instead, which requires a dream within a dream within a dream. A heist movie where the vault is a man&#x27;s subconscious, running on rules it teaches you as it goes.</p>
+          <p class="fin">Budget <b>$160.0 million</b> <span class="dot">·</span> Worldwide <b>$839.0 million</b></p>
+          <p class="also"><span class="al">See also</span><a href="#f5">#5 The Dark Knight</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f27">#27 The Dark Knight Rises</a> <span class="wy">same director</span></p>
+        </div>
+      </article>
+      <article class="big" id="f10" data-r="10" data-dec="1980" data-rate="R" data-q="major league 1989 david s. ward tom berenger charlie sheen corbin bernsen">
+        <div class="num">10</div>
+        <div class="body">
+          <h3>Major League <span class="yr">1989</span></h3>
+          <p class="meta">R <span class="dot">·</span> 1h 46m <span class="dot">·</span> Directed by <b>David S. Ward</b></p>
+          <p class="cast">Tom Berenger, Charlie Sheen, Corbin Bernsen</p>
+          <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:83%"></i></span><span class="mv">83</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:84%"></i></span><span class="mv">84</span></div></div>
+          <p class="pitch">The new owner of the Cleveland Indians assembles the worst roster she can find, hoping to lose badly enough to justify moving the team. The players work out what she&#x27;s doing. A locker-room comedy that treats its losers as company worth keeping.</p>
+          <p class="fin">Budget <b>$11.0 million</b> <span class="dot">·</span> Worldwide <b>$75.0 million</b></p>
+          <p class="also"><span class="al">See also</span><a href="#f17">#17 Wall Street</a> <span class="wy">with Charlie Sheen</span> <span class="dot">·</span> <a href="#f33">#33 Moneyball</a> <span class="wy">same lane</span></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="eleven">
+    <h2 class="sec">Eleven to one hundred <small>Uniform treatment, same rules</small></h2>
+    <div class="o100g" id="restwrap">
+      <article class="ent" id="f11" data-r="11" data-dec="1980" data-rate="PG" data-q="raiders of the lost ark 1981 steven spielberg harrison ford karen allen paul freeman">
+        <div class="hd"><span class="num">11</span>
+          <h3>Raiders of the Lost Ark <span class="yr">1981</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 55m <span class="dot">·</span> Steven Spielberg</p>
+        <p class="cast">Harrison Ford, Karen Allen, Paul Freeman</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:96%"></i></span><span class="mv">96</span></div></div>
+        <p class="pitch">An archaeologist races Nazi agents across three continents in 1936 for the Ark of the Covenant. It is the template every action-adventure since has been measured against, and it moves like it has a train to catch.</p>
+        <p class="fin">Budget <b>$20.0 million</b> <span class="dot">·</span> Worldwide <b>$354.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f4">#4 Indiana Jones and the Last Crusade</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f18">#18 Ready Player One</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f12" data-r="12" data-dec="2000" data-rate="R" data-q="superbad 2007 greg mottola jonah hill michael cera seth rogen">
+        <div class="hd"><span class="num">12</span>
+          <h3>Superbad <span class="yr">2007</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 53m <span class="dot">·</span> Greg Mottola</p>
+        <p class="cast">Jonah Hill, Michael Cera, Seth Rogen</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:88%"></i></span><span class="mv">88</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:87%"></i></span><span class="mv">87</span></div></div>
+        <p class="pitch">Two co-dependent high-school seniors try to buy alcohol for a party on their last weekend before college. Filthy on the surface and unexpectedly tender underneath, about the end of a friendship neither of them will say out loud is ending.</p>
+        <p class="fin">Budget <b>$17.5 million</b> <span class="dot">·</span> Worldwide <b>$169.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f33">#33 Moneyball</a> <span class="wy">with Jonah Hill</span> <span class="dot">·</span> <a href="#f62">#62 Knocked Up</a> <span class="wy">with Seth Rogen</span></p>
+      </article>
+      <article class="ent" id="f13" data-r="13" data-dec="1980" data-rate="PG-13" data-q="the last dragon 1985 michael schultz taimak vanity julius carry">
+        <div class="hd"><span class="num">13</span>
+          <h3>The Last Dragon <span class="yr">1985</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 49m <span class="dot">·</span> Michael Schultz</p>
+        <p class="cast">Taimak, Vanity, Julius Carry</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:57%"></i></span><span class="mv">57</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:86%"></i></span><span class="mv">86</span></div></div>
+        <p class="pitch">A Harlem martial-arts student searching for the final level of mastery takes on a self-crowned Shogun of Harlem while rescuing a video DJ from a record mogul. Motown produced it, and it plays like a kung fu film, a musical and a comic book running at once.</p>
+        <p class="fin">Budget <b>$10.0 million</b> <span class="dot">·</span> Worldwide <b>$33.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f49">#49 The Karate Kid</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f90">#90 The Legend of Drunken Master</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f14" data-r="14" data-dec="1990" data-rate="R" data-q="true lies 1994 james cameron arnold schwarzenegger jamie lee curtis tom arnold">
+        <div class="hd"><span class="num">14</span>
+          <h3>True Lies <span class="yr">1994</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 21m <span class="dot">·</span> James Cameron</p>
+        <p class="cast">Arnold Schwarzenegger, Jamie Lee Curtis, Tom Arnold</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:77%"></i></span><span class="mv">77</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:76%"></i></span><span class="mv">76</span></div></div>
+        <p class="pitch">A wife discovers the dull computer salesman she married is a counter-terrorism agent — right as he begins to suspect her of an affair. A marriage comedy staged with Harrier jets, a nuclear device and a straight face.</p>
+        <p class="fin">Budget <b>$100.0 million</b> <span class="dot">·</span> Worldwide <b>$378.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f3">#3 Terminator 2: Judgment Day</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f44">#44 Avatar</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f15" data-r="15" data-dec="2000" data-rate="R" data-q="the hangover 2009 todd phillips bradley cooper ed helms zach galifianakis">
+        <div class="hd"><span class="num">15</span>
+          <h3>The Hangover <span class="yr">2009</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 39m <span class="dot">·</span> Todd Phillips</p>
+        <p class="cast">Bradley Cooper, Ed Helms, Zach Galifianakis</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:79%"></i></span><span class="mv">79</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:84%"></i></span><span class="mv">84</span></div></div>
+        <p class="pitch">Three friends wake in a wrecked Vegas suite with no memory of the night, a tiger in the bathroom and the groom missing. Structured as a detective story in which the detectives are also the suspects.</p>
+        <p class="fin">Budget <b>$35.0 million</b> <span class="dot">·</span> Worldwide <b>$467.4 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f70">#70 Old School</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f16">#16 Anchorman: The Legend of Ron Burgundy</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f16" data-r="16" data-dec="2000" data-rate="PG-13" data-q="anchorman: the legend of ron burgundy 2004 adam mckay will ferrell christina applegate paul rudd">
+        <div class="hd"><span class="num">16</span>
+          <h3>Anchorman: The Legend of Ron Burgundy <span class="yr">2004</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 35m <span class="dot">·</span> Adam McKay</p>
+        <p class="cast">Will Ferrell, Christina Applegate, Paul Rudd</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:66%"></i></span><span class="mv">66</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:86%"></i></span><span class="mv">86</span></div></div>
+        <p class="pitch">A preening 1970s San Diego news anchor is undone by the arrival of an ambitious female co-anchor. Barely a plot and entirely a delivery system for non sequiturs — quoted more often than most screenplays are read.</p>
+        <p class="fin">Budget <b>$26.0 million</b> <span class="dot">·</span> Worldwide <b>$90.6 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f46">#46 Step Brothers</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f47">#47 The 40-Year-Old Virgin</a> <span class="wy">with Paul Rudd</span></p>
+      </article>
+      <article class="ent" id="f17" data-r="17" data-dec="1980" data-rate="R" data-q="wall street 1987 oliver stone michael douglas charlie sheen daryl hannah">
+        <div class="hd"><span class="num">17</span>
+          <h3>Wall Street <span class="yr">1987</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 05m <span class="dot">·</span> Oliver Stone</p>
+        <p class="cast">Michael Douglas, Charlie Sheen, Daryl Hannah</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:78%"></i></span><span class="mv">78</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:81%"></i></span><span class="mv">81</span></div></div>
+        <p class="pitch">A hungry young broker is taken under the wing of a corporate raider who explains, at length and persuasively, why greed works. Written as a warning and adopted as a career manual by precisely the people it was warning.</p>
+        <p class="fin">Worldwide <b>$43.8 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f10">#10 Major League</a> <span class="wy">with Charlie Sheen</span> <span class="dot">·</span> <a href="#f22">#22 The Shawshank Redemption</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f18" data-r="18" data-dec="2010" data-rate="PG-13" data-q="ready player one 2018 steven spielberg tye sheridan olivia cooke ben mendelsohn">
+        <div class="hd"><span class="num">18</span>
+          <h3>Ready Player One <span class="yr">2018</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 20m <span class="dot">·</span> Steven Spielberg</p>
+        <p class="cast">Tye Sheridan, Olivia Cooke, Ben Mendelsohn</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:71%"></i></span><span class="mv">71</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:77%"></i></span><span class="mv">77</span></div></div>
+        <p class="pitch">In 2045 a teenager hunts an Easter egg hidden inside a global VR world by its late creator, with a corporation racing him for control of it. A treasure hunt built wall-to-wall out of arcade and 1980s pop culture.</p>
+        <p class="fin">Budget <b>$155.0 million</b> <span class="dot">·</span> Worldwide <b>$607.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f11">#11 Raiders of the Lost Ark</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f4">#4 Indiana Jones and the Last Crusade</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f19" data-r="19" data-dec="1990" data-rate="R" data-q="the rock 1996 michael bay sean connery nicolas cage ed harris">
+        <div class="hd"><span class="num">19</span>
+          <h3>The Rock <span class="yr">1996</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 16m <span class="dot">·</span> Michael Bay</p>
+        <p class="cast">Sean Connery, Nicolas Cage, Ed Harris</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:76%"></i></span><span class="mv">76</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:85%"></i></span><span class="mv">85</span></div></div>
+        <p class="pitch">A chemical-weapons specialist and the only man ever to escape Alcatraz break back into it to stop a rogue general holding San Francisco hostage. Bay on his best behavior, carried by two leads playing hard against each other&#x27;s grain.</p>
+        <p class="fin">Budget <b>$75.0 million</b> <span class="dot">·</span> Worldwide <b>$335.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f4">#4 Indiana Jones and the Last Crusade</a> <span class="wy">with Sean Connery</span> <span class="dot">·</span> <a href="#f67">#67 Face/Off</a> <span class="wy">with Nicolas Cage</span></p>
+      </article>
+      <article class="ent" id="f20" data-r="20" data-dec="1990" data-rate="R" data-q="office space 1999 mike judge ron livingston jennifer aniston stephen root">
+        <div class="hd"><span class="num">20</span>
+          <h3>Office Space <span class="yr">1999</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 29m <span class="dot">·</span> Mike Judge</p>
+        <p class="cast">Ron Livingston, Jennifer Aniston, Stephen Root</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:82%"></i></span><span class="mv">82</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:93%"></i></span><span class="mv">93</span></div></div>
+        <p class="pitch">A software drone stops caring, gets promoted for it, and plans a small embezzlement with two friends about to be laid off. It aimed at cubicle life so precisely that it stopped being a comedy and became documentation.</p>
+        <p class="fin">Budget <b>$10.0 million</b> <span class="dot">·</span> Worldwide <b>$12.2 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f21">#21 Revenge of the Nerds</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f16">#16 Anchorman: The Legend of Ron Burgundy</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f21" data-r="21" data-dec="1980" data-rate="R" data-q="revenge of the nerds 1984 jeff kanew robert carradine anthony edwards ted mcginley">
+        <div class="hd"><span class="num">21</span>
+          <h3>Revenge of the Nerds <span class="yr">1984</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 30m <span class="dot">·</span> Jeff Kanew</p>
+        <p class="cast">Robert Carradine, Anthony Edwards, Ted McGinley</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:70%"></i></span><span class="mv">70</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:73%"></i></span><span class="mv">73</span></div></div>
+        <p class="pitch">Freshmen driven off campus by the football fraternity form a house of their own and fight back through the Greek council. A crude 1980s college comedy that also, almost by accident, invented a whole genre of underdog picture.</p>
+        <p class="fin">Worldwide <b>$40.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f20">#20 Office Space</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f16">#16 Anchorman: The Legend of Ron Burgundy</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f22" data-r="22" data-dec="1990" data-rate="R" data-q="the shawshank redemption 1994 frank darabont tim robbins morgan freeman bob gunton">
+        <div class="hd"><span class="num">22</span>
+          <h3>The Shawshank Redemption <span class="yr">1994</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 22m <span class="dot">·</span> Frank Darabont</p>
+        <p class="cast">Tim Robbins, Morgan Freeman, Bob Gunton</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:89%"></i></span><span class="mv">89</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:98%"></i></span><span class="mv">98</span></div></div>
+        <p class="pitch">A banker sentenced to life for a murder he says he did not commit spends decades in a Maine prison, quietly changing the men around him. It flopped in theaters, found its audience on cable, and has never left the top of a public list since.</p>
+        <p class="fin">Budget <b>$25.0 million</b> <span class="dot">·</span> Worldwide <b>$73.3 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f26">#26 The Godfather Part II</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f17">#17 Wall Street</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f23" data-r="23" data-dec="1980" data-rate="PG" data-q="star wars: the empire strikes back 1980 irvin kershner mark hamill harrison ford carrie fisher">
+        <div class="hd"><span class="num">23</span>
+          <h3>Star Wars: The Empire Strikes Back <span class="yr">1980</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 2h 07m <span class="dot">·</span> Irvin Kershner</p>
+        <p class="cast">Mark Hamill, Harrison Ford, Carrie Fisher</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:93%"></i></span><span class="mv">93</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:97%"></i></span><span class="mv">97</span></div></div>
+        <p class="pitch">The rebels are routed, the hero trains with a swamp-dwelling master, and the villain makes an offer in the last reel that reframes everything before it. The one where the good guys lose — which is exactly why it&#x27;s the one people rank first.</p>
+        <p class="fin">Budget <b>$30.5 million</b> <span class="dot">·</span> Worldwide <b>$538.4 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f29">#29 The Fugitive</a> <span class="wy">with Harrison Ford</span> <span class="dot">·</span> <a href="#f11">#11 Raiders of the Lost Ark</a> <span class="wy">with Harrison Ford</span></p>
+      </article>
+      <article class="ent" id="f24" data-r="24" data-dec="2020" data-rate="PG" data-q="the super mario bros. movie 2023 aaron horvath &amp; michael jelenic chris pratt anya taylor-joy charlie day">
+        <div class="hd"><span class="num">24</span>
+          <h3>The Super Mario Bros. Movie <span class="yr">2023</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 32m <span class="dot">·</span> Aaron Horvath &amp; Michael Jelenic</p>
+        <p class="cast">Chris Pratt, Anya Taylor-Joy, Charlie Day</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:59%"></i></span><span class="mv">59</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:95%"></i></span><span class="mv">95</span></div></div>
+        <p class="pitch">A Brooklyn plumber is pulled through a pipe into the Mushroom Kingdom and has to get his brother back from Bowser. Built by people who grew up with the games, and packed with the small details that prove it.</p>
+        <p class="fin">Worldwide <b>$1.36 billion</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f37">#37 Monsters University</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f53">#53 Inside Out</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f25" data-r="25" data-dec="1980" data-rate="PG-13" data-q="ferris bueller&#x27;s day off 1986 john hughes matthew broderick alan ruck mia sara">
+        <div class="hd"><span class="num">25</span>
+          <h3>Ferris Bueller&#x27;s Day Off <span class="yr">1986</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 43m <span class="dot">·</span> John Hughes</p>
+        <p class="cast">Matthew Broderick, Alan Ruck, Mia Sara</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:85%"></i></span><span class="mv">85</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:92%"></i></span><span class="mv">92</span></div></div>
+        <p class="pitch">A high-school senior fakes an illness and takes his best friend and his girlfriend on a day off through Chicago, staying one step ahead of the dean. A hangout comedy that turns to camera to tell you how short all of this is.</p>
+        <p class="fin">Budget <b>$5.0 million</b> <span class="dot">·</span> Worldwide <b>$70.7 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f84">#84 Clueless</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f20">#20 Office Space</a> <span class="wy">skipping out</span></p>
+      </article>
+      <article class="ent" id="f26" data-r="26" data-dec="1970" data-rate="R" data-q="the godfather part ii 1974 francis ford coppola al pacino robert de niro robert duvall">
+        <div class="hd"><span class="num">26</span>
+          <h3>The Godfather Part II <span class="yr">1974</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 3h 22m <span class="dot">·</span> Francis Ford Coppola</p>
+        <p class="cast">Al Pacino, Robert De Niro, Robert Duvall</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:96%"></i></span><span class="mv">96</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:97%"></i></span><span class="mv">97</span></div></div>
+        <p class="pitch">Michael Corleone consolidates the family&#x27;s power through the 1950s while, in flashback, his father builds it from nothing in 1910s New York. Two films braided together, each one quietly explaining what the other cost.</p>
+        <p class="fin">Budget <b>$13.0 million</b> <span class="dot">·</span> Worldwide <b>$93.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f65">#65 The Godfather</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f95">#95 Goodfellas</a> <span class="wy">with Robert De Niro</span></p>
+      </article>
+      <article class="ent" id="f27" data-r="27" data-dec="2010" data-rate="PG-13" data-q="the dark knight rises 2012 christopher nolan christian bale tom hardy anne hathaway">
+        <div class="hd"><span class="num">27</span>
+          <h3>The Dark Knight Rises <span class="yr">2012</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 45m <span class="dot">·</span> Christopher Nolan</p>
+        <p class="cast">Christian Bale, Tom Hardy, Anne Hathaway</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:87%"></i></span><span class="mv">87</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:90%"></i></span><span class="mv">90</span></div></div>
+        <p class="pitch">Eight years retired and physically broken, Bruce Wayne returns to a Gotham held hostage by a masked mercenary with a plan for the city&#x27;s destruction. The heaviest of the three, and the only one interested in ending rather than continuing.</p>
+        <p class="fin">Budget <b>$250.0 million</b> <span class="dot">·</span> Worldwide <b>$1.12 billion</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f34">#34 Memento</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f40">#40 Interstellar</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f28" data-r="28" data-dec="1980" data-rate="R" data-q="die hard 1988 john mctiernan bruce willis alan rickman bonnie bedelia">
+        <div class="hd"><span class="num">28</span>
+          <h3>Die Hard <span class="yr">1988</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 12m <span class="dot">·</span> John McTiernan</p>
+        <p class="cast">Bruce Willis, Alan Rickman, Bonnie Bedelia</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div></div>
+        <p class="pitch">An off-duty New York cop is trapped in a Los Angeles high-rise on Christmas Eve when armed men seize the building. One man, one location, one exceptional villain — and the reason every studio pitch for a decade began &#x27;Die Hard on a...&#x27;.</p>
+        <p class="fin">Budget <b>$28.0 million</b> <span class="dot">·</span> Worldwide <b>$143.7 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f72">#72 Die Hard: With a Vengeance</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f41">#41 The Fifth Element</a> <span class="wy">with Bruce Willis</span></p>
+      </article>
+      <article class="ent" id="f29" data-r="29" data-dec="1990" data-rate="PG-13" data-q="the fugitive 1993 andrew davis harrison ford tommy lee jones sela ward">
+        <div class="hd"><span class="num">29</span>
+          <h3>The Fugitive <span class="yr">1993</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 10m <span class="dot">·</span> Andrew Davis</p>
+        <p class="cast">Harrison Ford, Tommy Lee Jones, Sela Ward</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:96%"></i></span><span class="mv">96</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:89%"></i></span><span class="mv">89</span></div></div>
+        <p class="pitch">A surgeon wrongly convicted of killing his wife escapes a prison-bus wreck and hunts the real killer while a US marshal hunts him. A chase film with two protagonists, neither of whom is wrong.</p>
+        <p class="fin">Budget <b>$44.0 million</b> <span class="dot">·</span> Worldwide <b>$368.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f23">#23 Star Wars: The Empire Strikes Back</a> <span class="wy">with Harrison Ford</span> <span class="dot">·</span> <a href="#f42">#42 Indiana Jones and the Temple of Doom</a> <span class="wy">with Harrison Ford</span></p>
+      </article>
+      <article class="ent" id="f30" data-r="30" data-dec="1990" data-rate="R" data-q="the usual suspects 1995 bryan singer kevin spacey gabriel byrne benicio del toro">
+        <div class="hd"><span class="num">30</span>
+          <h3>The Usual Suspects <span class="yr">1995</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 45m <span class="dot">·</span> Bryan Singer</p>
+        <p class="cast">Kevin Spacey, Gabriel Byrne, Benicio del Toro</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:87%"></i></span><span class="mv">87</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:96%"></i></span><span class="mv">96</span></div></div>
+        <p class="pitch">Five criminals meet in a police lineup, pull a job together, and end up tangled with a legendary crime figure nobody can prove exists. The whole thing is narrated in flashback by the only survivor, which is worth keeping in mind.</p>
+        <p class="fin">Budget <b>$6.0 million</b> <span class="dot">·</span> Worldwide <b>$66.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f26">#26 The Godfather Part II</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f34">#34 Memento</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f31" data-r="31" data-dec="1980" data-rate="PG" data-q="back to the future part ii 1989 robert zemeckis michael j. fox christopher lloyd lea thompson">
+        <div class="hd"><span class="num">31</span>
+          <h3>Back to the Future Part II <span class="yr">1989</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 47m <span class="dot">·</span> Robert Zemeckis</p>
+        <p class="cast">Michael J. Fox, Christopher Lloyd, Lea Thompson</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:63%"></i></span><span class="mv">63</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:86%"></i></span><span class="mv">86</span></div></div>
+        <p class="pitch">The sequel jumps to 2015, then doubles back into its own first film&#x27;s 1955 from a second angle. Denser and darker than the original, and the alternate-1985 stretch is genuinely bleak.</p>
+        <p class="fin">Budget <b>$40.0 million</b> <span class="dot">·</span> Worldwide <b>$333.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f32">#32 Back to the Future Part III</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f2">#2 Back to the Future</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f32" data-r="32" data-dec="1990" data-rate="PG" data-q="back to the future part iii 1990 robert zemeckis michael j. fox christopher lloyd mary steenburgen">
+        <div class="hd"><span class="num">32</span>
+          <h3>Back to the Future Part III <span class="yr">1990</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 2h 00m <span class="dot">·</span> Robert Zemeckis</p>
+        <p class="cast">Michael J. Fox, Christopher Lloyd, Mary Steenburgen</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:79%"></i></span><span class="mv">79</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:78%"></i></span><span class="mv">78</span></div></div>
+        <p class="pitch">Marty travels to 1885 to rescue Doc, who has fallen in love with the local schoolteacher and stopped wanting to leave. The trilogy closes as a western — slower, warmer and more settled than either film before it.</p>
+        <p class="fin">Budget <b>$40.0 million</b> <span class="dot">·</span> Worldwide <b>$245.1 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f31">#31 Back to the Future Part II</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f2">#2 Back to the Future</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f33" data-r="33" data-dec="2010" data-rate="PG-13" data-q="moneyball 2011 bennett miller brad pitt jonah hill philip seymour hoffman">
+        <div class="hd"><span class="num">33</span>
+          <h3>Moneyball <span class="yr">2011</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 13m <span class="dot">·</span> Bennett Miller</p>
+        <p class="cast">Brad Pitt, Jonah Hill, Philip Seymour Hoffman</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:86%"></i></span><span class="mv">86</span></div></div>
+        <p class="pitch">The general manager of a broke Oakland A&#x27;s rebuilds his roster around statistics every other team ignores. A sports film consisting almost entirely of arguments in offices, and far better than that sounds.</p>
+        <p class="fin">Budget <b>$50.0 million</b> <span class="dot">·</span> Worldwide <b>$110.2 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f12">#12 Superbad</a> <span class="wy">with Jonah Hill</span> <span class="dot">·</span> <a href="#f79">#79 12 Monkeys</a> <span class="wy">with Brad Pitt</span></p>
+      </article>
+      <article class="ent" id="f34" data-r="34" data-dec="2000" data-rate="R" data-q="memento 2000 christopher nolan guy pearce carrie-anne moss joe pantoliano">
+        <div class="hd"><span class="num">34</span>
+          <h3>Memento <span class="yr">2000</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 56m <span class="dot">·</span> Christopher Nolan</p>
+        <p class="cast">Guy Pearce, Carrie-Anne Moss, Joe Pantoliano</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div></div>
+        <p class="pitch">A man who cannot form new memories hunts his wife&#x27;s killer using Polaroids, notes and tattoos. The story runs backwards, so at every moment you know exactly as little as he does.</p>
+        <p class="fin">Worldwide <b>$40.1 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f40">#40 Interstellar</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f27">#27 The Dark Knight Rises</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f35" data-r="35" data-dec="1990" data-rate="PG" data-q="a league of their own 1992 penny marshall tom hanks geena davis madonna">
+        <div class="hd"><span class="num">35</span>
+          <h3>A League of Their Own <span class="yr">1992</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 2h 06m <span class="dot">·</span> Penny Marshall</p>
+        <p class="cast">Tom Hanks, Geena Davis, Madonna</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:82%"></i></span><span class="mv">82</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:84%"></i></span><span class="mv">84</span></div></div>
+        <p class="pitch">The women&#x27;s professional baseball league formed while the men were at war, seen through two competitive sisters and their perpetually drunk manager. Very funny for most of its length, and quietly devastating by the end.</p>
+        <p class="fin">Budget <b>$40.0 million</b> <span class="dot">·</span> Worldwide <b>$132.4 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f33">#33 Moneyball</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f38">#38 Rudy</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f36" data-r="36" data-dec="2000" data-rate="R" data-q="kill bill: volume 1 2003 quentin tarantino uma thurman lucy liu vivica a. fox">
+        <div class="hd"><span class="num">36</span>
+          <h3>Kill Bill: Volume 1 <span class="yr">2003</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 51m <span class="dot">·</span> Quentin Tarantino</p>
+        <p class="cast">Uma Thurman, Lucy Liu, Vivica A. Fox</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:85%"></i></span><span class="mv">85</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:81%"></i></span><span class="mv">81</span></div></div>
+        <p class="pitch">An assassin left for dead at her own wedding wakes from a coma and begins working through the list of people responsible. A revenge film assembled out of samurai pictures, spaghetti westerns and anime, with the seams left showing on purpose.</p>
+        <p class="fin">Budget <b>$30.0 million</b> <span class="dot">·</span> Worldwide <b>$180.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f29">#29 The Fugitive</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f43">#43 Batman Begins</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f37" data-r="37" data-dec="2010" data-rate="G" data-q="monsters university 2013 dan scanlon billy crystal john goodman steve buscemi">
+        <div class="hd"><span class="num">37</span>
+          <h3>Monsters University <span class="yr">2013</span></h3></div>
+        <p class="meta">G <span class="dot">·</span> 1h 42m <span class="dot">·</span> Dan Scanlon</p>
+        <p class="cast">Billy Crystal, John Goodman, Steve Buscemi</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:80%"></i></span><span class="mv">80</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:81%"></i></span><span class="mv">81</span></div></div>
+        <p class="pitch">A prequel to Monsters, Inc.: how a mismatched pair met at university, washed out of the scare program, and got good anyway. Cheerfully, unusually honest about not being naturally gifted at the thing you want.</p>
+        <p class="fin">Budget <b>$200.0 million</b> <span class="dot">·</span> Worldwide <b>$743.6 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f24">#24 The Super Mario Bros. Movie</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f53">#53 Inside Out</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f38" data-r="38" data-dec="1990" data-rate="PG" data-q="rudy 1993 david anspaugh sean astin jon favreau ned beatty">
+        <div class="hd"><span class="num">38</span>
+          <h3>Rudy <span class="yr">1993</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 53m <span class="dot">·</span> David Anspaugh</p>
+        <p class="cast">Sean Astin, Jon Favreau, Ned Beatty</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:80%"></i></span><span class="mv">80</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:90%"></i></span><span class="mv">90</span></div></div>
+        <p class="pitch">An undersized kid with poor grades spends years clawing his way onto Notre Dame&#x27;s football team for a single play. The purest example of the genre — even people who resist it concede that the last five minutes work.</p>
+        <p class="fin">Budget <b>$13.0 million</b> <span class="dot">·</span> Worldwide <b>$22.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f35">#35 A League of Their Own</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f33">#33 Moneyball</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f39" data-r="39" data-dec="1990" data-rate="R" data-q="total recall 1990 paul verhoeven arnold schwarzenegger rachel ticotin sharon stone">
+        <div class="hd"><span class="num">39</span>
+          <h3>Total Recall <span class="yr">1990</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 49m <span class="dot">·</span> Paul Verhoeven</p>
+        <p class="cast">Arnold Schwarzenegger, Rachel Ticotin, Sharon Stone</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:80%"></i></span><span class="mv">80</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:79%"></i></span><span class="mv">79</span></div></div>
+        <p class="pitch">A construction worker buys an implanted memory of a Mars holiday and wakes with the reflexes of a covert agent, unsure which of his lives is real. Verhoeven builds a genuine philosophical puzzle inside an extremely violent action movie.</p>
+        <p class="fin">Worldwide <b>$261.4 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f14">#14 True Lies</a> <span class="wy">with Arnold Schwarzenegger</span> <span class="dot">·</span> <a href="#f3">#3 Terminator 2: Judgment Day</a> <span class="wy">with Arnold Schwarzenegger</span></p>
+      </article>
+      <article class="ent" id="f40" data-r="40" data-dec="2010" data-rate="PG-13" data-q="interstellar 2014 christopher nolan matthew mcconaughey anne hathaway jessica chastain">
+        <div class="hd"><span class="num">40</span>
+          <h3>Interstellar <span class="yr">2014</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 45m <span class="dot">·</span> Christopher Nolan</p>
+        <p class="cast">Matthew McConaughey, Anne Hathaway, Jessica Chastain</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:73%"></i></span><span class="mv">73</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:87%"></i></span><span class="mv">87</span></div></div>
+        <p class="pitch">With Earth&#x27;s crops failing, a former pilot leaves his children to fly through a wormhole in search of a habitable world. Hard-science spectacle wrapped tightly around a father and a daughter separated by relativity.</p>
+        <p class="fin">Budget <b>$165.0 million</b> <span class="dot">·</span> Worldwide <b>$774.7 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f43">#43 Batman Begins</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f34">#34 Memento</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f41" data-r="41" data-dec="1990" data-rate="PG-13" data-q="the fifth element 1997 luc besson bruce willis milla jovovich gary oldman">
+        <div class="hd"><span class="num">41</span>
+          <h3>The Fifth Element <span class="yr">1997</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 07m <span class="dot">·</span> Luc Besson</p>
+        <p class="cast">Bruce Willis, Milla Jovovich, Gary Oldman</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:70%"></i></span><span class="mv">70</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:87%"></i></span><span class="mv">87</span></div></div>
+        <p class="pitch">A New York cab driver in the 23rd century catches a red-haired woman falling through his roof and turns out to be the last obstacle standing between the universe and cosmic evil. Designed by French comic artists and dressed by Gaultier — nothing else looks like it.</p>
+        <p class="fin">Budget <b>$90.0 million</b> <span class="dot">·</span> Worldwide <b>$263.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f28">#28 Die Hard</a> <span class="wy">with Bruce Willis</span> <span class="dot">·</span> <a href="#f72">#72 Die Hard: With a Vengeance</a> <span class="wy">with Bruce Willis</span></p>
+      </article>
+      <article class="ent" id="f42" data-r="42" data-dec="1980" data-rate="PG" data-q="indiana jones and the temple of doom 1984 steven spielberg harrison ford kate capshaw ke huy quan">
+        <div class="hd"><span class="num">42</span>
+          <h3>Indiana Jones and the Temple of Doom <span class="yr">1984</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 58m <span class="dot">·</span> Steven Spielberg</p>
+        <p class="cast">Harrison Ford, Kate Capshaw, Ke Huy Quan</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:77%"></i></span><span class="mv">77</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:82%"></i></span><span class="mv">82</span></div></div>
+        <p class="pitch">A prequel in which Indy is dragged into a village&#x27;s stolen sacred stone and the child-slavery cult beneath a palace. Darker and stranger than the films either side of it, and the direct reason the PG-13 rating exists.</p>
+        <p class="fin">Budget <b>$28.0 million</b> <span class="dot">·</span> Worldwide <b>$333.1 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f50">#50 Minority Report</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f18">#18 Ready Player One</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f43" data-r="43" data-dec="2000" data-rate="PG-13" data-q="batman begins 2005 christopher nolan christian bale michael caine liam neeson">
+        <div class="hd"><span class="num">43</span>
+          <h3>Batman Begins <span class="yr">2005</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 20m <span class="dot">·</span> Christopher Nolan</p>
+        <p class="cast">Christian Bale, Michael Caine, Liam Neeson</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:85%"></i></span><span class="mv">85</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div></div>
+        <p class="pitch">The origin done properly: an orphaned heir trains abroad with a shadowy order, comes home, and builds the costume piece by piece. Grounded enough that every superhero film after it had to answer for its own physics.</p>
+        <p class="fin">Budget <b>$150.0 million</b> <span class="dot">·</span> Worldwide <b>$375.4 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f40">#40 Interstellar</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f34">#34 Memento</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f44" data-r="44" data-dec="2000" data-rate="PG-13" data-q="avatar 2009 james cameron sam worthington zoe saldana stephen lang">
+        <div class="hd"><span class="num">44</span>
+          <h3>Avatar <span class="yr">2009</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 43m <span class="dot">·</span> James Cameron</p>
+        <p class="cast">Sam Worthington, Zoe Saldana, Stephen Lang</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:81%"></i></span><span class="mv">81</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:82%"></i></span><span class="mv">82</span></div></div>
+        <p class="pitch">A paraplegic marine pilots an alien body on a moon being strip-mined for ore, and changes sides. The story is familiar on purpose; the reason to see it was the world, and the world made it the highest-grossing film ever made.</p>
+        <p class="fin">Budget <b>$237.0 million</b> <span class="dot">·</span> Worldwide <b>$2.92 billion</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f14">#14 True Lies</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f82">#82 The Terminator</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f45" data-r="45" data-dec="2010" data-rate="R" data-q="bridesmaids 2011 paul feig kristen wiig maya rudolph melissa mccarthy">
+        <div class="hd"><span class="num">45</span>
+          <h3>Bridesmaids <span class="yr">2011</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 05m <span class="dot">·</span> Paul Feig</p>
+        <p class="cast">Kristen Wiig, Maya Rudolph, Melissa McCarthy</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:89%"></i></span><span class="mv">89</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:76%"></i></span><span class="mv">76</span></div></div>
+        <p class="pitch">A woman whose own life is collapsing is made maid of honor and finds herself competing with the bride&#x27;s polished new friend. The studio comedy that finally let women be as ugly and as funny as men had been for thirty years.</p>
+        <p class="fin">Budget <b>$32.5 million</b> <span class="dot">·</span> Worldwide <b>$289.2 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f46">#46 Step Brothers</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f47">#47 The 40-Year-Old Virgin</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f46" data-r="46" data-dec="2000" data-rate="R" data-q="step brothers 2008 adam mckay will ferrell john c. reilly richard jenkins">
+        <div class="hd"><span class="num">46</span>
+          <h3>Step Brothers <span class="yr">2008</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 35m <span class="dot">·</span> Adam McKay</p>
+        <p class="cast">Will Ferrell, John C. Reilly, Richard Jenkins</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:54%"></i></span><span class="mv">54</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:69%"></i></span><span class="mv">69</span></div></div>
+        <p class="pitch">Two arrested-development forty-year-olds become stepbrothers when their parents marry, and declare war before becoming best friends. Committed to its own stupidity with a rigor that turned it into a permanent source of quotations.</p>
+        <p class="fin">Budget <b>$65.0 million</b> <span class="dot">·</span> Worldwide <b>$128.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f16">#16 Anchorman: The Legend of Ron Burgundy</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f70">#70 Old School</a> <span class="wy">with Will Ferrell</span></p>
+      </article>
+      <article class="ent" id="f47" data-r="47" data-dec="2000" data-rate="R" data-q="the 40-year-old virgin 2005 judd apatow steve carell catherine keener paul rudd">
+        <div class="hd"><span class="num">47</span>
+          <h3>The 40-Year-Old Virgin <span class="yr">2005</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 56m <span class="dot">·</span> Judd Apatow</p>
+        <p class="cast">Steve Carell, Catherine Keener, Paul Rudd</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:85%"></i></span><span class="mv">85</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:84%"></i></span><span class="mv">84</span></div></div>
+        <p class="pitch">An electronics-store employee&#x27;s colleagues discover his secret and make a group project of him. Crude on the surface, unusually kind underneath, and the film that set the house style for a decade of American comedy.</p>
+        <p class="fin">Budget <b>$26.0 million</b> <span class="dot">·</span> Worldwide <b>$177.4 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f62">#62 Knocked Up</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f16">#16 Anchorman: The Legend of Ron Burgundy</a> <span class="wy">with Paul Rudd</span></p>
+      </article>
+      <article class="ent" id="f48" data-r="48" data-dec="1980" data-rate="PG" data-q="rocky iv 1985 sylvester stallone sylvester stallone dolph lundgren talia shire">
+        <div class="hd"><span class="num">48</span>
+          <h3>Rocky IV <span class="yr">1985</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 31m <span class="dot">·</span> Sylvester Stallone</p>
+        <p class="cast">Sylvester Stallone, Dolph Lundgren, Talia Shire</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:38%"></i></span><span class="mv">38</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:82%"></i></span><span class="mv">82</span></div></div>
+        <p class="pitch">Rocky fights a Soviet super-athlete who killed his friend in the ring, training in a Siberian barn against a laboratory full of machines. The least plausible and most rewatched entry in the series — a montage with a film attached.</p>
+        <p class="fin">Budget <b>$28.0 million</b> <span class="dot">·</span> Worldwide <b>$300.5 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f52">#52 Demolition Man</a> <span class="wy">with Sylvester Stallone</span> <span class="dot">·</span> <a href="#f38">#38 Rudy</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f49" data-r="49" data-dec="1980" data-rate="PG" data-q="the karate kid 1984 john g. avildsen ralph macchio pat morita elisabeth shue">
+        <div class="hd"><span class="num">49</span>
+          <h3>The Karate Kid <span class="yr">1984</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 2h 06m <span class="dot">·</span> John G. Avildsen</p>
+        <p class="cast">Ralph Macchio, Pat Morita, Elisabeth Shue</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:81%"></i></span><span class="mv">81</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:83%"></i></span><span class="mv">83</span></div></div>
+        <p class="pitch">A transplanted teenager bullied by a dojo full of rich kids is trained by his apartment building&#x27;s handyman, who turns out to know a great deal more than he lets on. The chores-as-training conceit is now cultural shorthand everywhere.</p>
+        <p class="fin">Budget <b>$8.0 million</b> <span class="dot">·</span> Worldwide <b>$130.8 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f13">#13 The Last Dragon</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f90">#90 The Legend of Drunken Master</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f50" data-r="50" data-dec="2000" data-rate="PG-13" data-q="minority report 2002 steven spielberg tom cruise colin farrell samantha morton">
+        <div class="hd"><span class="num">50</span>
+          <h3>Minority Report <span class="yr">2002</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 25m <span class="dot">·</span> Steven Spielberg</p>
+        <p class="cast">Tom Cruise, Colin Farrell, Samantha Morton</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:89%"></i></span><span class="mv">89</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:80%"></i></span><span class="mv">80</span></div></div>
+        <p class="pitch">In 2054 a detective who arrests people for murders they have not committed yet is named by the system as a future killer himself. A chase film wrapped around a genuinely uneasy argument about predictive justice.</p>
+        <p class="fin">Budget <b>$102.0 million</b> <span class="dot">·</span> Worldwide <b>$358.4 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f42">#42 Indiana Jones and the Temple of Doom</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f18">#18 Ready Player One</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f51" data-r="51" data-dec="1970" data-rate="PG" data-q="star wars: a new hope 1977 george lucas mark hamill harrison ford carrie fisher">
+        <div class="hd"><span class="num">51</span>
+          <h3>Star Wars: A New Hope <span class="yr">1977</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 2h 01m <span class="dot">·</span> George Lucas</p>
+        <p class="cast">Mark Hamill, Harrison Ford, Carrie Fisher</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:93%"></i></span><span class="mv">93</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:96%"></i></span><span class="mv">96</span></div></div>
+        <p class="pitch">A farm boy on a desert planet joins a rebellion, rescues a princess and attacks a moon-sized battle station. The one that started all of it, and still the most self-contained thing in the franchise.</p>
+        <p class="fin">Budget <b>$11.0 million</b> <span class="dot">·</span> Worldwide <b>$775.4 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f59">#59 Star Wars: Revenge of the Sith</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f42">#42 Indiana Jones and the Temple of Doom</a> <span class="wy">with Harrison Ford</span></p>
+      </article>
+      <article class="ent" id="f52" data-r="52" data-dec="1990" data-rate="R" data-q="demolition man 1993 marco brambilla sylvester stallone wesley snipes sandra bullock">
+        <div class="hd"><span class="num">52</span>
+          <h3>Demolition Man <span class="yr">1993</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 54m <span class="dot">·</span> Marco Brambilla</p>
+        <p class="cast">Sylvester Stallone, Wesley Snipes, Sandra Bullock</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:67%"></i></span><span class="mv">67</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:67%"></i></span><span class="mv">67</span></div></div>
+        <p class="pitch">A 1990s cop and the criminal he was cryogenically frozen alongside thaw out in a sanitized, non-violent 2032 that has no idea what to do with either of them. A satire of enforced politeness hiding inside a Stallone vehicle.</p>
+        <p class="fin">Budget <b>$77.0 million</b> <span class="dot">·</span> Worldwide <b>$159.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f48">#48 Rocky IV</a> <span class="wy">with Sylvester Stallone</span> <span class="dot">·</span> <a href="#f51">#51 Star Wars: A New Hope</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f53" data-r="53" data-dec="2010" data-rate="PG" data-q="inside out 2015 pete docter amy poehler phyllis smith richard kind">
+        <div class="hd"><span class="num">53</span>
+          <h3>Inside Out <span class="yr">2015</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 36m <span class="dot">·</span> Pete Docter</p>
+        <p class="cast">Amy Poehler, Phyllis Smith, Richard Kind</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:98%"></i></span><span class="mv">98</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:89%"></i></span><span class="mv">89</span></div></div>
+        <p class="pitch">Inside the head of an eleven-year-old, five emotions run a control room, and the system fails when her family moves across the country. Pixar&#x27;s cleverest structure and its single most useful film for explaining feelings to a child.</p>
+        <p class="fin">Budget <b>$175.0 million</b> <span class="dot">·</span> Worldwide <b>$858.8 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f66">#66 The Incredibles</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f37">#37 Monsters University</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f54" data-r="54" data-dec="2000" data-rate="R" data-q="forgetting sarah marshall 2008 nicholas stoller jason segel kristen bell mila kunis">
+        <div class="hd"><span class="num">54</span>
+          <h3>Forgetting Sarah Marshall <span class="yr">2008</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 52m <span class="dot">·</span> Nicholas Stoller</p>
+        <p class="cast">Jason Segel, Kristen Bell, Mila Kunis</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:84%"></i></span><span class="mv">84</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:76%"></i></span><span class="mv">76</span></div></div>
+        <p class="pitch">A composer dumped by his television-star girlfriend books a recovery trip to Hawaii and finds her there with her new rock-star boyfriend. Funnier and considerably sadder than the premise suggests.</p>
+        <p class="fin">Budget <b>$30.0 million</b> <span class="dot">·</span> Worldwide <b>$105.8 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f56">#56 Dogma</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f58">#58 Barbie</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f55" data-r="55" data-dec="2010" data-rate="PG-13" data-q="the martian 2015 ridley scott matt damon jessica chastain jeff daniels">
+        <div class="hd"><span class="num">55</span>
+          <h3>The Martian <span class="yr">2015</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 22m <span class="dot">·</span> Ridley Scott</p>
+        <p class="cast">Matt Damon, Jessica Chastain, Jeff Daniels</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:91%"></i></span><span class="mv">91</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:91%"></i></span><span class="mv">91</span></div></div>
+        <p class="pitch">An astronaut left behind on Mars has to grow food and signal home while NASA argues about whether it can reach him. A problem-solving picture — relentlessly competent, and far more cheerful than its situation.</p>
+        <p class="fin">Budget <b>$108.0 million</b> <span class="dot">·</span> Worldwide <b>$630.6 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f56">#56 Dogma</a> <span class="wy">with Matt Damon</span> <span class="dot">·</span> <a href="#f40">#40 Interstellar</a> <span class="wy">with Jessica Chastain</span></p>
+      </article>
+      <article class="ent" id="f56" data-r="56" data-dec="1990" data-rate="R" data-q="dogma 1999 kevin smith ben affleck matt damon linda fiorentino">
+        <div class="hd"><span class="num">56</span>
+          <h3>Dogma <span class="yr">1999</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 10m <span class="dot">·</span> Kevin Smith</p>
+        <p class="cast">Ben Affleck, Matt Damon, Linda Fiorentino</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:72%"></i></span><span class="mv">72</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:85%"></i></span><span class="mv">85</span></div></div>
+        <p class="pitch">Two fallen angels find a doctrinal loophole that would let them back into heaven and unmake creation in the process. Kevin Smith arguing at length with his own Catholicism, with fart jokes.</p>
+        <p class="fin">Budget <b>$10.0 million</b> <span class="dot">·</span> Worldwide <b>$45.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f68">#68 Mallrats</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f55">#55 The Martian</a> <span class="wy">with Matt Damon</span></p>
+      </article>
+      <article class="ent" id="f57" data-r="57" data-dec="2000" data-rate="R" data-q="american psycho 2000 mary harron christian bale willem dafoe jared leto">
+        <div class="hd"><span class="num">57</span>
+          <h3>American Psycho <span class="yr">2000</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 42m <span class="dot">·</span> Mary Harron</p>
+        <p class="cast">Christian Bale, Willem Dafoe, Jared Leto</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:69%"></i></span><span class="mv">69</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:85%"></i></span><span class="mv">85</span></div></div>
+        <p class="pitch">A Manhattan investment banker obsessed with business cards and skincare narrates his own murders — or possibly imagines all of them. A satire of 1980s status played absolutely straight, which is exactly why it lands.</p>
+        <p class="fin">Budget <b>$7.0 million</b> <span class="dot">·</span> Worldwide <b>$34.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f64">#64 The Prestige</a> <span class="wy">with Christian Bale</span> <span class="dot">·</span> <a href="#f43">#43 Batman Begins</a> <span class="wy">with Christian Bale</span></p>
+      </article>
+      <article class="ent" id="f58" data-r="58" data-dec="2020" data-rate="PG-13" data-q="barbie 2023 greta gerwig margot robbie ryan gosling america ferrera">
+        <div class="hd"><span class="num">58</span>
+          <h3>Barbie <span class="yr">2023</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 54m <span class="dot">·</span> Greta Gerwig</p>
+        <p class="cast">Margot Robbie, Ryan Gosling, America Ferrera</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:88%"></i></span><span class="mv">88</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:83%"></i></span><span class="mv">83</span></div></div>
+        <p class="pitch">Barbie leaves the pink perfection of Barbieland for the real world and has an existential crisis, while Ken discovers patriarchy and brings it home with him. A toy commercial that mutated into a very strange studio comedy.</p>
+        <p class="fin">Budget <b>$145.0 million</b> <span class="dot">·</span> Worldwide <b>$1.45 billion</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f56">#56 Dogma</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f61">#61 Wedding Crashers</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f59" data-r="59" data-dec="2000" data-rate="PG-13" data-q="star wars: revenge of the sith 2005 george lucas ewan mcgregor hayden christensen ian mcdiarmid">
+        <div class="hd"><span class="num">59</span>
+          <h3>Star Wars: Revenge of the Sith <span class="yr">2005</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 20m <span class="dot">·</span> George Lucas</p>
+        <p class="cast">Ewan McGregor, Hayden Christensen, Ian McDiarmid</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:79%"></i></span><span class="mv">79</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:66%"></i></span><span class="mv">66</span></div></div>
+        <p class="pitch">The prequel trilogy&#x27;s endgame: the fall, the betrayal, the suit. The darkest of the six, and the only one of the three that absolutely had to land.</p>
+        <p class="fin">Budget <b>$113.0 million</b> <span class="dot">·</span> Worldwide <b>$895.7 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f51">#51 Star Wars: A New Hope</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f60">#60 Everything Everywhere All At Once</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f60" data-r="60" data-dec="2020" data-rate="R" data-q="everything everywhere all at once 2022 daniel kwan &amp; daniel scheinert michelle yeoh ke huy quan stephanie hsu">
+        <div class="hd"><span class="num">60</span>
+          <h3>Everything Everywhere All At Once <span class="yr">2022</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 12m <span class="dot">·</span> Daniel Kwan &amp; Daniel Scheinert</p>
+        <p class="cast">Michelle Yeoh, Ke Huy Quan, Stephanie Hsu</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:93%"></i></span><span class="mv">93</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:79%"></i></span><span class="mv">79</span></div></div>
+        <p class="pitch">A laundromat owner buried in an IRS audit learns she can borrow the skills of every version of herself across the multiverse. Chaotic, exhausting and completely sincere — the family drama underneath is why it works.</p>
+        <p class="fin">Worldwide <b>$143.4 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f42">#42 Indiana Jones and the Temple of Doom</a> <span class="wy">with Ke Huy Quan</span> <span class="dot">·</span> <a href="#f59">#59 Star Wars: Revenge of the Sith</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f61" data-r="61" data-dec="2000" data-rate="R" data-q="wedding crashers 2005 david dobkin owen wilson vince vaughn christopher walken">
+        <div class="hd"><span class="num">61</span>
+          <h3>Wedding Crashers <span class="yr">2005</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 59m <span class="dot">·</span> David Dobkin</p>
+        <p class="cast">Owen Wilson, Vince Vaughn, Christopher Walken</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:75%"></i></span><span class="mv">75</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:70%"></i></span><span class="mv">70</span></div></div>
+        <p class="pitch">Two friends who gatecrash weddings for the open bar and the guests break their own rules at a cabinet secretary&#x27;s daughter&#x27;s wedding. The first act is a montage; what follows is a surprisingly conventional romance.</p>
+        <p class="fin">Budget <b>$40.0 million</b> <span class="dot">·</span> Worldwide <b>$288.5 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f70">#70 Old School</a> <span class="wy">with Vince Vaughn</span> <span class="dot">·</span> <a href="#f62">#62 Knocked Up</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f62" data-r="62" data-dec="2000" data-rate="R" data-q="knocked up 2007 judd apatow seth rogen katherine heigl paul rudd">
+        <div class="hd"><span class="num">62</span>
+          <h3>Knocked Up <span class="yr">2007</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 09m <span class="dot">·</span> Judd Apatow</p>
+        <p class="cast">Seth Rogen, Katherine Heigl, Paul Rudd</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:90%"></i></span><span class="mv">90</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:83%"></i></span><span class="mv">83</span></div></div>
+        <p class="pitch">A one-night stand between a slacker and a rising television producer results in a pregnancy neither of them planned. Apatow&#x27;s most fully realized film about men who need to grow up and the women waiting on it.</p>
+        <p class="fin">Budget <b>$25.0 million</b> <span class="dot">·</span> Worldwide <b>$219.1 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f47">#47 The 40-Year-Old Virgin</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f84">#84 Clueless</a> <span class="wy">with Paul Rudd</span></p>
+      </article>
+      <article class="ent" id="f63" data-r="63" data-dec="1990" data-rate="PG-13" data-q="tommy boy 1995 peter segal chris farley david spade brian dennehy">
+        <div class="hd"><span class="num">63</span>
+          <h3>Tommy Boy <span class="yr">1995</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 37m <span class="dot">·</span> Peter Segal</p>
+        <p class="cast">Chris Farley, David Spade, Brian Dennehy</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:40%"></i></span><span class="mv">40</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:90%"></i></span><span class="mv">90</span></div></div>
+        <p class="pitch">A dim heir has to save the family auto-parts business with his late father&#x27;s sardonic assistant riding shotgun. A road comedy that is entirely Farley and Spade, which turns out to be plenty.</p>
+        <p class="fin">Budget <b>$20.0 million</b> <span class="dot">·</span> Worldwide <b>$32.7 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f62">#62 Knocked Up</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f61">#61 Wedding Crashers</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f64" data-r="64" data-dec="2000" data-rate="PG-13" data-q="the prestige 2006 christopher nolan hugh jackman christian bale michael caine">
+        <div class="hd"><span class="num">64</span>
+          <h3>The Prestige <span class="yr">2006</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 10m <span class="dot">·</span> Christopher Nolan</p>
+        <p class="cast">Hugh Jackman, Christian Bale, Michael Caine</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:77%"></i></span><span class="mv">77</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:92%"></i></span><span class="mv">92</span></div></div>
+        <p class="pitch">Two Victorian stage magicians destroy each other over a vanishing-man trick. A film about obsession and what a trick actually costs, structured as a trick itself.</p>
+        <p class="fin">Worldwide <b>$109.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f43">#43 Batman Begins</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f40">#40 Interstellar</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f65" data-r="65" data-dec="1970" data-rate="R" data-q="the godfather 1972 francis ford coppola marlon brando al pacino james caan">
+        <div class="hd"><span class="num">65</span>
+          <h3>The Godfather <span class="yr">1972</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 57m <span class="dot">·</span> Francis Ford Coppola</p>
+        <p class="cast">Marlon Brando, Al Pacino, James Caan</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:97%"></i></span><span class="mv">97</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:98%"></i></span><span class="mv">98</span></div></div>
+        <p class="pitch">A decorated war hero determined to stay clear of his family&#x27;s crime business is pulled into it by an assassination attempt on his father. The standard against which American film is measured, and it has not moved.</p>
+        <p class="fin">Budget <b>$6.5 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f26">#26 The Godfather Part II</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f64">#64 The Prestige</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f66" data-r="66" data-dec="2000" data-rate="PG" data-q="the incredibles 2004 brad bird craig t. nelson holly hunter samuel l. jackson">
+        <div class="hd"><span class="num">66</span>
+          <h3>The Incredibles <span class="yr">2004</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 55m <span class="dot">·</span> Brad Bird</p>
+        <p class="cast">Craig T. Nelson, Holly Hunter, Samuel L. Jackson</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:97%"></i></span><span class="mv">97</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:75%"></i></span><span class="mv">75</span></div></div>
+        <p class="pitch">A family of retired superheroes forced into suburban anonymity is pulled back out by a villain with an old grudge. A Bond film about a marriage, animated, with the best character design Pixar ever did.</p>
+        <p class="fin">Worldwide <b>$631.6 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f72">#72 Die Hard: With a Vengeance</a> <span class="wy">with Samuel L. Jackson</span> <span class="dot">·</span> <a href="#f53">#53 Inside Out</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f67" data-r="67" data-dec="1990" data-rate="R" data-q="face/off 1997 john woo john travolta nicolas cage joan allen">
+        <div class="hd"><span class="num">67</span>
+          <h3>Face/Off <span class="yr">1997</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 18m <span class="dot">·</span> John Woo</p>
+        <p class="cast">John Travolta, Nicolas Cage, Joan Allen</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:93%"></i></span><span class="mv">93</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:82%"></i></span><span class="mv">82</span></div></div>
+        <p class="pitch">An FBI agent and the terrorist who killed his son surgically exchange faces and have to live as each other. Absurd on paper, executed with total conviction by two actors doing feature-length impressions of one another.</p>
+        <p class="fin">Budget <b>$80.0 million</b> <span class="dot">·</span> Worldwide <b>$245.7 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f19">#19 The Rock</a> <span class="wy">with Nicolas Cage</span> <span class="dot">·</span> <a href="#f72">#72 Die Hard: With a Vengeance</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f68" data-r="68" data-dec="1990" data-rate="R" data-q="mallrats 1995 kevin smith jason lee jeremy london shannen doherty">
+        <div class="hd"><span class="num">68</span>
+          <h3>Mallrats <span class="yr">1995</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 35m <span class="dot">·</span> Kevin Smith</p>
+        <p class="cast">Jason Lee, Jeremy London, Shannen Doherty</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:58%"></i></span><span class="mv">58</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:82%"></i></span><span class="mv">82</span></div></div>
+        <p class="pitch">Two dumped guys spend a day at the mall trying to win their girlfriends back. Savaged on release, then adopted wholesale — the most comic-book-brained thing its director ever made.</p>
+        <p class="fin">Budget <b>$6.1 million</b> <span class="dot">·</span> Worldwide <b>$2.1 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f56">#56 Dogma</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f70">#70 Old School</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f69" data-r="69" data-dec="2010" data-rate="PG-13" data-q="the social network 2010 david fincher jesse eisenberg andrew garfield justin timberlake">
+        <div class="hd"><span class="num">69</span>
+          <h3>The Social Network <span class="yr">2010</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 00m <span class="dot">·</span> David Fincher</p>
+        <p class="cast">Jesse Eisenberg, Andrew Garfield, Justin Timberlake</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:96%"></i></span><span class="mv">96</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:87%"></i></span><span class="mv">87</span></div></div>
+        <p class="pitch">The founding of Facebook, told through the depositions of the lawsuits that followed it. Talky, propulsive and finally about how much ambition costs in friends.</p>
+        <p class="fin">Budget <b>$40.0 million</b> <span class="dot">·</span> Worldwide <b>$224.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f96">#96 Fight Club</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f71">#71 The Departed</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f70" data-r="70" data-dec="2000" data-rate="R" data-q="old school 2003 todd phillips luke wilson will ferrell vince vaughn">
+        <div class="hd"><span class="num">70</span>
+          <h3>Old School <span class="yr">2003</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 30m <span class="dot">·</span> Todd Phillips</p>
+        <p class="cast">Luke Wilson, Will Ferrell, Vince Vaughn</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:60%"></i></span><span class="mv">60</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:86%"></i></span><span class="mv">86</span></div></div>
+        <p class="pitch">Three men in their thirties start a fraternity at their old college to escape their adult lives. Ferrell&#x27;s streaking sequence alone paid for the ticket, and the rest is better than it needed to be.</p>
+        <p class="fin">Budget <b>$24.0 million</b> <span class="dot">·</span> Worldwide <b>$87.1 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f15">#15 The Hangover</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f61">#61 Wedding Crashers</a> <span class="wy">with Vince Vaughn</span></p>
+      </article>
+      <article class="ent" id="f71" data-r="71" data-dec="2000" data-rate="R" data-q="the departed 2006 martin scorsese leonardo dicaprio matt damon jack nicholson">
+        <div class="hd"><span class="num">71</span>
+          <h3>The Departed <span class="yr">2006</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 32m <span class="dot">·</span> Martin Scorsese</p>
+        <p class="cast">Leonardo DiCaprio, Matt Damon, Jack Nicholson</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:91%"></i></span><span class="mv">91</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div></div>
+        <p class="pitch">An undercover cop inside the Boston mob and a mob plant inside the police hunt each other without knowing who they are looking for. Scorsese&#x27;s most purely entertaining crime picture, and the one that finally won him the Oscar.</p>
+        <p class="fin">Budget <b>$90.0 million</b> <span class="dot">·</span> Worldwide <b>$291.5 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f95">#95 Goodfellas</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f75">#75 The Bourne Ultimatum</a> <span class="wy">with Matt Damon</span></p>
+      </article>
+      <article class="ent" id="f72" data-r="72" data-dec="1990" data-rate="R" data-q="die hard: with a vengeance 1995 john mctiernan bruce willis samuel l. jackson jeremy irons">
+        <div class="hd"><span class="num">72</span>
+          <h3>Die Hard: With a Vengeance <span class="yr">1995</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 08m <span class="dot">·</span> John McTiernan</p>
+        <p class="cast">Bruce Willis, Samuel L. Jackson, Jeremy Irons</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:60%"></i></span><span class="mv">60</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:83%"></i></span><span class="mv">83</span></div></div>
+        <p class="pitch">A bomber forces a suspended McClane and a reluctant Harlem shop owner through a citywide game of riddles. The one that leaves the building — a buddy movie at full speed through New York.</p>
+        <p class="fin">Budget <b>$90.0 million</b> <span class="dot">·</span> Worldwide <b>$366.1 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f28">#28 Die Hard</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f66">#66 The Incredibles</a> <span class="wy">with Samuel L. Jackson</span></p>
+      </article>
+      <article class="ent" id="f73" data-r="73" data-dec="1990" data-rate="PG-13" data-q="blue chips 1994 william friedkin nick nolte shaquille o&#x27;neal penny hardaway">
+        <div class="hd"><span class="num">73</span>
+          <h3>Blue Chips <span class="yr">1994</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 48m <span class="dot">·</span> William Friedkin</p>
+        <p class="cast">Nick Nolte, Shaquille O&#x27;Neal, Penny Hardaway</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:41%"></i></span><span class="mv">41</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:51%"></i></span><span class="mv">51</span></div></div>
+        <p class="pitch">A college basketball coach who has never cheated starts paying recruits to save his program. Cast with actual NBA players and unusually serious about what the corruption costs the kids inside it.</p>
+        <p class="fin">Budget <b>$35.0 million</b> <span class="dot">·</span> Worldwide <b>$26.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f87">#87 Miracle</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f92">#92 The Bad News Bears</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f74" data-r="74" data-dec="2000" data-rate="PG-13" data-q="just friends 2005 roger kumble ryan reynolds amy smart anna faris">
+        <div class="hd"><span class="num">74</span>
+          <h3>Just Friends <span class="yr">2005</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 34m <span class="dot">·</span> Roger Kumble</p>
+        <p class="cast">Ryan Reynolds, Amy Smart, Anna Faris</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:43%"></i></span><span class="mv">43</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:71%"></i></span><span class="mv">71</span></div></div>
+        <p class="pitch">A once-overweight man, now rich and slick, goes home for Christmas and reverts entirely in front of the woman who friend-zoned him. Reynolds playing a fool rather than the smoothest man in the room.</p>
+        <p class="fin">Worldwide <b>$50.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f76">#76 Harold &amp; Kumar Go to White Castle</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f77">#77 Groundhog Day</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f75" data-r="75" data-dec="2000" data-rate="PG-13" data-q="the bourne ultimatum 2007 paul greengrass matt damon julia stiles david strathairn">
+        <div class="hd"><span class="num">75</span>
+          <h3>The Bourne Ultimatum <span class="yr">2007</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 55m <span class="dot">·</span> Paul Greengrass</p>
+        <p class="cast">Matt Damon, Julia Stiles, David Strathairn</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:92%"></i></span><span class="mv">92</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:91%"></i></span><span class="mv">91</span></div></div>
+        <p class="pitch">The amnesiac assassin finally closes in on the people who made him. The handheld chase filmmaking here was imitated for a decade and rarely equalled.</p>
+        <p class="fin">Worldwide <b>$444.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f71">#71 The Departed</a> <span class="wy">with Matt Damon</span> <span class="dot">·</span> <a href="#f56">#56 Dogma</a> <span class="wy">with Matt Damon</span></p>
+      </article>
+      <article class="ent" id="f76" data-r="76" data-dec="2000" data-rate="R" data-q="harold &amp; kumar go to white castle 2004 danny leiner john cho kal penn neil patrick harris">
+        <div class="hd"><span class="num">76</span>
+          <h3>Harold &amp; Kumar Go to White Castle <span class="yr">2004</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 28m <span class="dot">·</span> Danny Leiner</p>
+        <p class="cast">John Cho, Kal Penn, Neil Patrick Harris</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:75%"></i></span><span class="mv">75</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:80%"></i></span><span class="mv">80</span></div></div>
+        <p class="pitch">Two roommates get high and drive all night in search of hamburgers. A stoner comedy that also, quietly, became the first mainstream American comedy built around two Asian-American leads.</p>
+        <p class="fin">Budget <b>$9.0 million</b> <span class="dot">·</span> Worldwide <b>$23.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f77">#77 Groundhog Day</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f74">#74 Just Friends</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f77" data-r="77" data-dec="1990" data-rate="PG" data-q="groundhog day 1993 harold ramis bill murray andie macdowell chris elliott">
+        <div class="hd"><span class="num">77</span>
+          <h3>Groundhog Day <span class="yr">1993</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 36m <span class="dot">·</span> Harold Ramis</p>
+        <p class="cast">Bill Murray, Andie MacDowell, Chris Elliott</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:93%"></i></span><span class="mv">93</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:88%"></i></span><span class="mv">88</span></div></div>
+        <p class="pitch">A cynical weatherman relives the same small-town February 2nd until he becomes someone worth being. It never once explains the rule, which is precisely why it functions as a parable.</p>
+        <p class="fin">Worldwide <b>$105.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f7">#7 Ghostbusters</a> <span class="wy">with Bill Murray</span> <span class="dot">·</span> <a href="#f76">#76 Harold &amp; Kumar Go to White Castle</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f78" data-r="78" data-dec="1990" data-rate="PG-13" data-q="ace ventura: pet detective 1994 tom shadyac jim carrey courteney cox sean young">
+        <div class="hd"><span class="num">78</span>
+          <h3>Ace Ventura: Pet Detective <span class="yr">1994</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 26m <span class="dot">·</span> Tom Shadyac</p>
+        <p class="cast">Jim Carrey, Courteney Cox, Sean Young</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:48%"></i></span><span class="mv">48</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:57%"></i></span><span class="mv">57</span></div></div>
+        <p class="pitch">A pet detective with no volume control hunts a stolen dolphin mascot. Carrey turned fully loose for the first time — you either find it unbearable or formative, and there is no third group.</p>
+        <p class="fin">Budget <b>$15.0 million</b> <span class="dot">·</span> Worldwide <b>$107.2 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f97">#97 Dumb and Dumber</a> <span class="wy">with Jim Carrey</span> <span class="dot">·</span> <a href="#f77">#77 Groundhog Day</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f79" data-r="79" data-dec="1990" data-rate="R" data-q="12 monkeys 1998 terry gilliam bruce willis brad pitt madeleine stowe">
+        <div class="hd"><span class="num">79</span>
+          <h3>12 Monkeys <span class="yr">1998</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 11m <span class="dot">·</span> Terry Gilliam</p>
+        <p class="cast">Bruce Willis, Brad Pitt, Madeleine Stowe</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:88%"></i></span><span class="mv">88</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:88%"></i></span><span class="mv">88</span></div></div>
+        <p class="pitch">A prisoner is sent back from a plague-ruined future to find the source of the virus and cannot tell whether he is sane. Gilliam&#x27;s grimy time-travel puzzle, expanded from a French short film made of still photographs.</p>
+        <p class="fin">Budget <b>$29.0 million</b> <span class="dot">·</span> Worldwide <b>$168.8 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f80">#80 Looper</a> <span class="wy">with Bruce Willis</span> <span class="dot">·</span> <a href="#f72">#72 Die Hard: With a Vengeance</a> <span class="wy">with Bruce Willis</span></p>
+      </article>
+      <article class="ent" id="f80" data-r="80" data-dec="2010" data-rate="R" data-q="looper 2012 rian johnson joseph gordon-levitt bruce willis emily blunt">
+        <div class="hd"><span class="num">80</span>
+          <h3>Looper <span class="yr">2012</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 59m <span class="dot">·</span> Rian Johnson</p>
+        <p class="cast">Joseph Gordon-Levitt, Bruce Willis, Emily Blunt</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:93%"></i></span><span class="mv">93</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:82%"></i></span><span class="mv">82</span></div></div>
+        <p class="pitch">Mob hitmen in 2044 execute people sent back from the future, until one of them is sent his own older self. Smart, small-scale science fiction that becomes something else entirely at the halfway point.</p>
+        <p class="fin">Budget <b>$30.0 million</b> <span class="dot">·</span> Worldwide <b>$176.5 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f79">#79 12 Monkeys</a> <span class="wy">with Bruce Willis</span> <span class="dot">·</span> <a href="#f72">#72 Die Hard: With a Vengeance</a> <span class="wy">with Bruce Willis</span></p>
+      </article>
+      <article class="ent" id="f81" data-r="81" data-dec="1990" data-rate="PG-13" data-q="billy madison 1995 tamra davis adam sandler bradley whitford bridgette wilson">
+        <div class="hd"><span class="num">81</span>
+          <h3>Billy Madison <span class="yr">1995</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 29m <span class="dot">·</span> Tamra Davis</p>
+        <p class="cast">Adam Sandler, Bradley Whitford, Bridgette Wilson</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:40%"></i></span><span class="mv">40</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:79%"></i></span><span class="mv">79</span></div></div>
+        <p class="pitch">A hotel heir has to repeat all twelve grades in twenty-four weeks to inherit his father&#x27;s company. Sandler&#x27;s first lead — anarchic, cheap and endlessly quotable by anyone who was the right age.</p>
+        <p class="fin">Budget <b>$10.0 million</b> <span class="dot">·</span> Worldwide <b>$26.4 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f78">#78 Ace Ventura: Pet Detective</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f77">#77 Groundhog Day</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f82" data-r="82" data-dec="1980" data-rate="R" data-q="the terminator 1984 james cameron arnold schwarzenegger linda hamilton michael biehn">
+        <div class="hd"><span class="num">82</span>
+          <h3>The Terminator <span class="yr">1984</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 47m <span class="dot">·</span> James Cameron</p>
+        <p class="cast">Arnold Schwarzenegger, Linda Hamilton, Michael Biehn</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:90%"></i></span><span class="mv">90</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:89%"></i></span><span class="mv">89</span></div></div>
+        <p class="pitch">A cyborg arrives from 2029 to kill the woman whose unborn son will lead the resistance. A lean, mean, low-budget chase picture made before the franchise got expensive and started explaining itself.</p>
+        <p class="fin">Budget <b>$6.4 million</b> <span class="dot">·</span> Worldwide <b>$78.3 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f44">#44 Avatar</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f14">#14 True Lies</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f83" data-r="83" data-dec="2020" data-rate="PG-13" data-q="superman 2025 james gunn david corenswet rachel brosnahan nicholas hoult">
+        <div class="hd"><span class="num">83</span>
+          <h3>Superman <span class="yr">2025</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 09m <span class="dot">·</span> James Gunn</p>
+        <p class="cast">David Corenswet, Rachel Brosnahan, Nicholas Hoult</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:83%"></i></span><span class="mv">83</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:90%"></i></span><span class="mv">90</span></div></div>
+        <p class="pitch">Gunn&#x27;s reset: Superman already established, already exhausted, defending his choices to a world that has decided to mistrust him. Bright, dense and entirely unembarrassed about being a comic book.</p>
+        <p class="fin">Budget <b>$225.0 million</b> <span class="dot">·</span> Worldwide <b>$618.7 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f85">#85 Top Gun: Maverick</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f75">#75 The Bourne Ultimatum</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f84" data-r="84" data-dec="1990" data-rate="PG-13" data-q="clueless 1995 amy heckerling alicia silverstone paul rudd stacey dash">
+        <div class="hd"><span class="num">84</span>
+          <h3>Clueless <span class="yr">1995</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 37m <span class="dot">·</span> Amy Heckerling</p>
+        <p class="cast">Alicia Silverstone, Paul Rudd, Stacey Dash</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:82%"></i></span><span class="mv">82</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:76%"></i></span><span class="mv">76</span></div></div>
+        <p class="pitch">A wealthy Beverly Hills teenager plays matchmaker for everyone around her and completely misreads her own heart. Jane Austen&#x27;s Emma relocated to Rodeo Drive, and one of the sharpest teen comedies ever written.</p>
+        <p class="fin">Budget <b>$12.0 million</b> <span class="dot">·</span> Worldwide <b>$88.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f62">#62 Knocked Up</a> <span class="wy">with Paul Rudd</span> <span class="dot">·</span> <a href="#f47">#47 The 40-Year-Old Virgin</a> <span class="wy">with Paul Rudd</span></p>
+      </article>
+      <article class="ent" id="f85" data-r="85" data-dec="2020" data-rate="PG-13" data-q="top gun: maverick 2022 joseph kosinski tom cruise miles teller jennifer connelly">
+        <div class="hd"><span class="num">85</span>
+          <h3>Top Gun: Maverick <span class="yr">2022</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 2h 10m <span class="dot">·</span> Joseph Kosinski</p>
+        <p class="cast">Tom Cruise, Miles Teller, Jennifer Connelly</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:96%"></i></span><span class="mv">96</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:99%"></i></span><span class="mv">99</span></div></div>
+        <p class="pitch">Thirty-six years on, Maverick trains the pilots for a mission nobody expects to survive — one of them his dead friend&#x27;s son. Real aircraft, real G-forces, and the rare legacy sequel that improves on the film it continues.</p>
+        <p class="fin">Budget <b>$177.0 million</b> <span class="dot">·</span> Worldwide <b>$1.50 billion</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f50">#50 Minority Report</a> <span class="wy">with Tom Cruise</span> <span class="dot">·</span> <a href="#f8">#8 The Last Samurai</a> <span class="wy">with Tom Cruise</span></p>
+      </article>
+      <article class="ent" id="f86" data-r="86" data-dec="2000" data-rate="R" data-q="the matrix reloaded 2003 the wachowskis keanu reeves laurence fishburne carrie-anne moss">
+        <div class="hd"><span class="num">86</span>
+          <h3>The Matrix Reloaded <span class="yr">2003</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 18m <span class="dot">·</span> The Wachowskis</p>
+        <p class="cast">Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:74%"></i></span><span class="mv">74</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:72%"></i></span><span class="mv">72</span></div></div>
+        <p class="pitch">Zion prepares for a machine assault while Neo hunts the Keymaker, and the freeway chase runs fourteen minutes on a mile of purpose-built road. Denser and chattier than the original, and the last great practical-stunt showcase of its era.</p>
+        <p class="fin">Budget <b>$150.0 million</b> <span class="dot">·</span> Worldwide <b>$741.8 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f1">#1 The Matrix</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f34">#34 Memento</a> <span class="wy">with Carrie-Anne Moss</span></p>
+      </article>
+      <article class="ent" id="f87" data-r="87" data-dec="2000" data-rate="PG" data-q="miracle 2004 gavin o&#x27;connor kurt russell patricia clarkson noah emmerich">
+        <div class="hd"><span class="num">87</span>
+          <h3>Miracle <span class="yr">2004</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 2h 15m <span class="dot">·</span> Gavin O&#x27;Connor</p>
+        <p class="cast">Kurt Russell, Patricia Clarkson, Noah Emmerich</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:80%"></i></span><span class="mv">80</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:90%"></i></span><span class="mv">90</span></div></div>
+        <p class="pitch">The 1980 US Olympic hockey team, assembled and drilled by a coach nobody liked, beats the Soviets. A sports film far more interested in conditioning and systems than in speeches.</p>
+        <p class="fin">Budget <b>$28.0 million</b> <span class="dot">·</span> Worldwide <b>$64.5 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f92">#92 The Bad News Bears</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f93">#93 Mr. Holland&#x27;s Opus</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f88" data-r="88" data-dec="1990" data-rate="PG-13" data-q="austin powers: international man of mystery 1997 jay roach mike myers elizabeth hurley michael york">
+        <div class="hd"><span class="num">88</span>
+          <h3>Austin Powers: International Man of Mystery <span class="yr">1997</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 29m <span class="dot">·</span> Jay Roach</p>
+        <p class="cast">Mike Myers, Elizabeth Hurley, Michael York</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:72%"></i></span><span class="mv">72</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:77%"></i></span><span class="mv">77</span></div></div>
+        <p class="pitch">A 1960s British spy is unfrozen in the 1990s to stop his nemesis and discovers his entire personality is obsolete. A Bond parody that ended up bigger than most actual Bond films of its decade.</p>
+        <p class="fin">Budget <b>$18.0 million</b> <span class="dot">·</span> Worldwide <b>$67.8 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f89">#89 Spaceballs</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f91">#91 Jackass 3</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f89" data-r="89" data-dec="1980" data-rate="PG" data-q="spaceballs 1987 mel brooks bill pullman john candy rick moranis">
+        <div class="hd"><span class="num">89</span>
+          <h3>Spaceballs <span class="yr">1987</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 36m <span class="dot">·</span> Mel Brooks</p>
+        <p class="cast">Bill Pullman, John Candy, Rick Moranis</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:53%"></i></span><span class="mv">53</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:83%"></i></span><span class="mv">83</span></div></div>
+        <p class="pitch">Mel Brooks aims at Star Wars and hits merchandising, sequels and the entire apparatus around them. Uneven, cheap-looking and completely unkillable.</p>
+        <p class="fin">Budget <b>$25.5 million</b> <span class="dot">·</span> Worldwide <b>$40.3 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f88">#88 Austin Powers: International Man of Mystery</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f91">#91 Jackass 3</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f90" data-r="90" data-dec="1990" data-rate="R" data-q="the legend of drunken master 1994 lau kar-leung jackie chan anita mui ti lung">
+        <div class="hd"><span class="num">90</span>
+          <h3>The Legend of Drunken Master <span class="yr">1994</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 42m <span class="dot">·</span> Lau Kar-leung</p>
+        <p class="cast">Jackie Chan, Anita Mui, Ti Lung</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:85%"></i></span><span class="mv">85</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:88%"></i></span><span class="mv">88</span></div></div>
+        <p class="pitch">Jackie Chan&#x27;s drunken-boxing master takes on a foreign syndicate smuggling Chinese artifacts out of the country. The closing factory fight is routinely named one of the greatest ever staged, and he did it himself.</p>
+        <p class="fin">Worldwide <b>$34.3 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f49">#49 The Karate Kid</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f13">#13 The Last Dragon</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f91" data-r="91" data-dec="2010" data-rate="R" data-q="jackass 3 2010 jeff tremaine johnny knoxville bam margera steve-o">
+        <div class="hd"><span class="num">91</span>
+          <h3>Jackass 3 <span class="yr">2010</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 34m <span class="dot">·</span> Jeff Tremaine</p>
+        <p class="cast">Johnny Knoxville, Bam Margera, Steve-O</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:67%"></i></span><span class="mv">67</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:69%"></i></span><span class="mv">69</span></div></div>
+        <p class="pitch">The crew return, in 3D, for stunts and pranks with no narrative whatsoever. Shot on high-speed cameras that rendered the abuse weirdly, genuinely beautiful.</p>
+        <p class="fin">Budget <b>$20.0 million</b> <span class="dot">·</span> Worldwide <b>$171.7 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f89">#89 Spaceballs</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f88">#88 Austin Powers: International Man of Mystery</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f92" data-r="92" data-dec="1970" data-rate="PG" data-q="the bad news bears 1976 michael ritchie walter matthau tatum o&#x27;neal vic morrow">
+        <div class="hd"><span class="num">92</span>
+          <h3>The Bad News Bears <span class="yr">1976</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 42m <span class="dot">·</span> Michael Ritchie</p>
+        <p class="cast">Walter Matthau, Tatum O&#x27;Neal, Vic Morrow</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:90%"></i></span><span class="mv">90</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:80%"></i></span><span class="mv">80</span></div></div>
+        <p class="pitch">A drunk ex-minor-leaguer coaches a hopeless Little League team of misfits. Sour, profane and considerably tougher than any of the family sports films it went on to spawn.</p>
+        <p class="fin">Budget <b>$9.0 million</b> <span class="dot">·</span> Worldwide <b>$42.3 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f93">#93 Mr. Holland&#x27;s Opus</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f87">#87 Miracle</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f93" data-r="93" data-dec="1990" data-rate="PG" data-q="mr. holland&#x27;s opus 1995 stephen herek richard dreyfuss glenne headly jay thomas">
+        <div class="hd"><span class="num">93</span>
+          <h3>Mr. Holland&#x27;s Opus <span class="yr">1995</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 2h 22m <span class="dot">·</span> Stephen Herek</p>
+        <p class="cast">Richard Dreyfuss, Glenne Headly, Jay Thomas</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:76%"></i></span><span class="mv">76</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:84%"></i></span><span class="mv">84</span></div></div>
+        <p class="pitch">A composer takes a teaching job to fund the symphony he means to write, and looks up thirty years later. A long, unashamedly emotional film about the career you got instead of the one you planned.</p>
+        <p class="fin">Worldwide <b>$106.3 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f92">#92 The Bad News Bears</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f87">#87 Miracle</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f94" data-r="94" data-dec="2000" data-rate="R" data-q="pineapple express 2008 david gordon green seth rogen james franco danny mcbride">
+        <div class="hd"><span class="num">94</span>
+          <h3>Pineapple Express <span class="yr">2008</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 1h 52m <span class="dot">·</span> David Gordon Green</p>
+        <p class="cast">Seth Rogen, James Franco, Danny McBride</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:68%"></i></span><span class="mv">68</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:73%"></i></span><span class="mv">73</span></div></div>
+        <p class="pitch">A process server and his dealer witness a murder and go on the run over a rare strain of weed. A stoner comedy that turns into an actual action film in its third act and never announces the change.</p>
+        <p class="fin">Budget <b>$26.0 million</b> <span class="dot">·</span> Worldwide <b>$102.4 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f62">#62 Knocked Up</a> <span class="wy">with Seth Rogen</span> <span class="dot">·</span> <a href="#f12">#12 Superbad</a> <span class="wy">with Seth Rogen</span></p>
+      </article>
+      <article class="ent" id="f95" data-r="95" data-dec="1990" data-rate="R" data-q="goodfellas 1990 martin scorsese ray liotta robert de niro joe pesci">
+        <div class="hd"><span class="num">95</span>
+          <h3>Goodfellas <span class="yr">1990</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 26m <span class="dot">·</span> Martin Scorsese</p>
+        <p class="cast">Ray Liotta, Robert De Niro, Joe Pesci</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:93%"></i></span><span class="mv">93</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:97%"></i></span><span class="mv">97</span></div></div>
+        <p class="pitch">Thirty years inside the New York mob, from a kid parking cars to a paranoid wreck with a helicopter overhead. Kinetic, funny and cold — the benchmark for crime narration ever since.</p>
+        <p class="fin">Budget <b>$25.0 million</b> <span class="dot">·</span> Worldwide <b>$47.1 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f71">#71 The Departed</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f26">#26 The Godfather Part II</a> <span class="wy">with Robert De Niro</span></p>
+      </article>
+      <article class="ent" id="f96" data-r="96" data-dec="1990" data-rate="R" data-q="fight club 1999 david fincher edward norton brad pitt helena bonham carter">
+        <div class="hd"><span class="num">96</span>
+          <h3>Fight Club <span class="yr">1999</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 19m <span class="dot">·</span> David Fincher</p>
+        <p class="cast">Edward Norton, Brad Pitt, Helena Bonham Carter</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:81%"></i></span><span class="mv">81</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:96%"></i></span><span class="mv">96</span></div></div>
+        <p class="pitch">An insomniac office worker and a soap salesman start a bare-knuckle club that grows into something much larger. Comprehensively misread by a good portion of the people who love it.</p>
+        <p class="fin">Budget <b>$63.0 million</b> <span class="dot">·</span> Worldwide <b>$100.9 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f69">#69 The Social Network</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f79">#79 12 Monkeys</a> <span class="wy">with Brad Pitt</span></p>
+      </article>
+      <article class="ent" id="f97" data-r="97" data-dec="1990" data-rate="PG-13" data-q="dumb and dumber 1994 peter farrelly jim carrey jeff daniels lauren holly">
+        <div class="hd"><span class="num">97</span>
+          <h3>Dumb and Dumber <span class="yr">1994</span></h3></div>
+        <p class="meta">PG-13 <span class="dot">·</span> 1h 46m <span class="dot">·</span> Peter Farrelly</p>
+        <p class="cast">Jim Carrey, Jeff Daniels, Lauren Holly</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:69%"></i></span><span class="mv">69</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:84%"></i></span><span class="mv">84</span></div></div>
+        <p class="pitch">Two idiots drive a briefcase of ransom money across the country to return it to a woman one of them has decided he loves. Carrey and Daniels at total commitment, and the purest thing the Farrellys made.</p>
+        <p class="fin">Budget <b>$17.0 million</b> <span class="dot">·</span> Worldwide <b>$247.3 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f78">#78 Ace Ventura: Pet Detective</a> <span class="wy">with Jim Carrey</span> <span class="dot">·</span> <a href="#f55">#55 The Martian</a> <span class="wy">with Jeff Daniels</span></p>
+      </article>
+      <article class="ent" id="f98" data-r="98" data-dec="1980" data-rate="PG" data-q="arthur 1981 steve gordon dudley moore liza minnelli john gielgud">
+        <div class="hd"><span class="num">98</span>
+          <h3>Arthur <span class="yr">1981</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 37m <span class="dot">·</span> Steve Gordon</p>
+        <p class="cast">Dudley Moore, Liza Minnelli, John Gielgud</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:86%"></i></span><span class="mv">86</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:77%"></i></span><span class="mv">77</span></div></div>
+        <p class="pitch">A drunken New York millionaire must marry a woman he does not love or forfeit his fortune, and falls for a waitress instead. Gielgud&#x27;s acid valet won the Oscar and steals every scene he is in.</p>
+        
+        <p class="also"><span class="al">See also</span><a href="#f97">#97 Dumb and Dumber</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f94">#94 Pineapple Express</a> <span class="wy">same lane</span></p>
+      </article>
+      <article class="ent" id="f99" data-r="99" data-dec="1990" data-rate="R" data-q="saving private ryan 1998 steven spielberg tom hanks edward burns matt damon">
+        <div class="hd"><span class="num">99</span>
+          <h3>Saving Private Ryan <span class="yr">1998</span></h3></div>
+        <p class="meta">R <span class="dot">·</span> 2h 49m <span class="dot">·</span> Steven Spielberg</p>
+        <p class="cast">Tom Hanks, Edward Burns, Matt Damon</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:94%"></i></span><span class="mv">94</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:95%"></i></span><span class="mv">95</span></div></div>
+        <p class="pitch">After three brothers are killed in the same week, a squad is sent behind enemy lines in Normandy to pull the fourth out alive. It opens with twenty-four minutes of Omaha Beach that changed how war has been filmed ever since, and then asks quietly whether eight men are worth one.</p>
+        <p class="fin">Worldwide <b>$481.8 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f50">#50 Minority Report</a> <span class="wy">same director</span> <span class="dot">·</span> <a href="#f42">#42 Indiana Jones and the Temple of Doom</a> <span class="wy">same director</span></p>
+      </article>
+      <article class="ent" id="f100" data-r="100" data-dec="1980" data-rate="PG" data-q="short circuit 2 1988 kenneth johnson fisher stevens michael mckean cynthia gibb">
+        <div class="hd"><span class="num">100</span>
+          <h3>Short Circuit 2 <span class="yr">1988</span></h3></div>
+        <p class="meta">PG <span class="dot">·</span> 1h 50m <span class="dot">·</span> Kenneth Johnson</p>
+        <p class="cast">Fisher Stevens, Michael McKean, Cynthia Gibb</p>
+        <div class="scores"><div class="mtr"><span class="ml">Critics</span><span class="mb"><i style="width:43%"></i></span><span class="mv">43</span></div><div class="mtr aud"><span class="ml">Audience</span><span class="mb"><i style="width:54%"></i></span><span class="mv">54</span></div></div>
+        <p class="pitch">The military robot from the first film, now fully sentient, is conned into a toy-manufacturing scheme in the city. A children&#x27;s sequel with a strange streak of melancholy running under it.</p>
+        <p class="fin">Budget <b>$15.0 million</b></p>
+        <p class="also"><span class="al">See also</span><a href="#f86">#86 The Matrix Reloaded</a> <span class="wy">same lane</span> <span class="dot">·</span> <a href="#f82">#82 The Terminator</a> <span class="wy">same lane</span></p>
+      </article>
+    </div>
+    <div class="noresult" id="noresult" hidden>Nothing on the hundred matches that. <button type="button" class="btn cy" id="reset2" style="margin-left:.6rem">Clear the filters</button></div>
+  </section>
+
+  <section id="defense">
+    <h2 class="sec">The defense <small>Placed high here, received coolly out there</small></h2>
+    <p class="lede" style="font-size:1.08rem">Where this list and the critical consensus part company. The gap between a film's position on this list and its Tomatometer, largest first.</p>
+    <div class="tablewrap"><table class="spec o100t"><thead><tr><th>Rank</th><th>Film</th><th class="n">Critics</th><th class="n">Audience</th></tr></thead>
+        <tbody><tr><td class="rk"><a href="#f13">13</a></td><td>The Last Dragon <span class="yr">1985</span></td><td class="n">57</td><td class="n">86</td></tr>
+        <tr><td class="rk"><a href="#f8">8</a></td><td>The Last Samurai <span class="yr">2003</span></td><td class="n">65</td><td class="n">83</td></tr>
+        <tr><td class="rk"><a href="#f16">16</a></td><td>Anchorman: The Legend of Ron Burgundy <span class="yr">2004</span></td><td class="n">66</td><td class="n">86</td></tr>
+        <tr><td class="rk"><a href="#f6">6</a></td><td>Friday <span class="yr">1995</span></td><td class="n">77</td><td class="n">91</td></tr>
+        <tr><td class="rk"><a href="#f24">24</a></td><td>The Super Mario Bros. Movie <span class="yr">2023</span></td><td class="n">59</td><td class="n">95</td></tr>
+        <tr><td class="rk"><a href="#f1">1</a></td><td>The Matrix <span class="yr">1999</span></td><td class="n">83</td><td class="n">85</td></tr>
+        <tr><td class="rk"><a href="#f48">48</a></td><td>Rocky IV <span class="yr">1985</span></td><td class="n">38</td><td class="n">82</td></tr>
+        <tr><td class="rk"><a href="#f4">4</a></td><td>Indiana Jones and the Last Crusade <span class="yr">1989</span></td><td class="n">84</td><td class="n">94</td></tr></tbody></table></div>
+  </section>
+
+  <section id="criticswon">
+    <h2 class="sec">Where the critics won <small>Rated 90 or better, ranked in the bottom quarter</small></h2>
+    <p class="lede" style="font-size:1.08rem">Not a slight — every film here beat 480 others to get on the list at all.</p>
+    <div class="tablewrap"><table class="spec o100t"><thead><tr><th>Rank</th><th>Film</th><th class="n">Critics</th><th class="n">Audience</th></tr></thead>
+        <tbody><tr><td class="rk"><a href="#f85">85</a></td><td>Top Gun: Maverick <span class="yr">2022</span></td><td class="n">96</td><td class="n">99</td></tr>
+        <tr><td class="rk"><a href="#f99">99</a></td><td>Saving Private Ryan <span class="yr">1998</span></td><td class="n">94</td><td class="n">95</td></tr>
+        <tr><td class="rk"><a href="#f77">77</a></td><td>Groundhog Day <span class="yr">1993</span></td><td class="n">93</td><td class="n">88</td></tr>
+        <tr><td class="rk"><a href="#f80">80</a></td><td>Looper <span class="yr">2012</span></td><td class="n">93</td><td class="n">82</td></tr>
+        <tr><td class="rk"><a href="#f95">95</a></td><td>Goodfellas <span class="yr">1990</span></td><td class="n">93</td><td class="n">97</td></tr>
+        <tr><td class="rk"><a href="#f75">75</a></td><td>The Bourne Ultimatum <span class="yr">2007</span></td><td class="n">92</td><td class="n">91</td></tr>
+        <tr><td class="rk"><a href="#f82">82</a></td><td>The Terminator <span class="yr">1984</span></td><td class="n">90</td><td class="n">89</td></tr>
+        <tr><td class="rk"><a href="#f92">92</a></td><td>The Bad News Bears <span class="yr">1976</span></td><td class="n">90</td><td class="n">80</td></tr></tbody></table></div>
+  </section>
+
+  <section id="nobackup">
+    <h2 class="sec">No backup <small>Six films where neither score cracks 70</small></h2>
+    <p class="lede" style="font-size:1.08rem">The defense above is about critics. This one is about everybody. Not a critics-versus-crowd split — just nobody else in the room. Their average across both meters is 57, against 82 for the list as a whole.</p>
+    
+    <div class="nbi">
+      <h3><a href="#f46">#46 Step Brothers</a> <span class="yr">(2008)</span></h3>
+      <p class="sc">54 critics / 69 audience</p>
+      <p>The lowest-scored Ferrell picture in the issue and the highest-placed film in this group by a distance. The only one of the six inside the top half of the list.</p>
+    </div>
+    <div class="nbi">
+      <h3><a href="#f52">#52 Demolition Man</a> <span class="yr">(1993)</span></h3>
+      <p class="sc">67 critics / 67 audience</p>
+      <p>Dead even at 67 and 67 — the most agreed-upon film on this page. Critics and audiences independently arrived at &ldquo;fine,&rdquo; and only this list argues otherwise.</p>
+    </div>
+    <div class="nbi">
+      <h3><a href="#f73">#73 Blue Chips</a> <span class="yr">(1994)</span></h3>
+      <p class="sc">41 critics / 51 audience</p>
+      <p>The lowest-scored film anywhere on this hundred, from both directions at once. It cast real NBA players and treated the payoffs as a moral problem rather than a joke, which is precisely what made it a hard sell to everybody.</p>
+    </div>
+    <div class="nbi">
+      <h3><a href="#f78">#78 Ace Ventura: Pet Detective</a> <span class="yr">(1994)</span></h3>
+      <p class="sc">48 critics / 57 audience</p>
+      <p>Split the audience almost as hard as it split the critics — the rare comedy where the crowd broke too. You either found Carrey formative at the right age or unwatchable at any age, and there has never been a middle.</p>
+    </div>
+    <div class="nbi">
+      <h3><a href="#f91">#91 Jackass 3</a> <span class="yr">(2010)</span></h3>
+      <p class="sc">67 critics / 69 audience</p>
+      <p>Scored in the sixties by people who knew exactly what they had bought a ticket for. Not a misfire so much as a form no rating system was ever built to measure.</p>
+    </div>
+    <div class="nbi">
+      <h3><a href="#f100">#100 Short Circuit 2</a> <span class="yr">(1988)</span></h3>
+      <p class="sc">43 critics / 54 audience</p>
+      <p>Rated lower than anything else in the issue and parked at one hundred, where it can do the least damage. A sequel to a film that did not make the list at all, which makes it the most purely personal entry here.</p>
+    </div>
+  </section>
+
+  <section id="splits">
+    <h2 class="sec">Audiences agreed. Critics didn't. <small>The ten widest splits in the issue</small></h2>
+    <p class="lede" style="font-size:1.08rem">Across all hundred films this list correlates with the audience score at 0.29 and with the critic score at 0.17 — weak either way, but consistently closer to the crowd. These ten are where that shows.</p>
+    <div class="tablewrap"><table class="spec o100t"><thead><tr><th>Rank</th><th>Film</th><th class="n">Critics</th><th class="n">Audience</th><th class="n">Gap</th></tr></thead>
+        <tbody><tr><td class="rk"><a href="#f63">63</a></td><td>Tommy Boy <span class="yr">1995</span></td><td class="n">40</td><td class="n">90</td><td class="n">+50</td></tr>
+        <tr><td class="rk"><a href="#f48">48</a></td><td>Rocky IV <span class="yr">1985</span></td><td class="n">38</td><td class="n">82</td><td class="n">+44</td></tr>
+        <tr><td class="rk"><a href="#f81">81</a></td><td>Billy Madison <span class="yr">1995</span></td><td class="n">40</td><td class="n">79</td><td class="n">+39</td></tr>
+        <tr><td class="rk"><a href="#f24">24</a></td><td>The Super Mario Bros. Movie <span class="yr">2023</span></td><td class="n">59</td><td class="n">95</td><td class="n">+36</td></tr>
+        <tr><td class="rk"><a href="#f89">89</a></td><td>Spaceballs <span class="yr">1987</span></td><td class="n">53</td><td class="n">83</td><td class="n">+30</td></tr>
+        <tr><td class="rk"><a href="#f13">13</a></td><td>The Last Dragon <span class="yr">1985</span></td><td class="n">57</td><td class="n">86</td><td class="n">+29</td></tr>
+        <tr><td class="rk"><a href="#f74">74</a></td><td>Just Friends <span class="yr">2005</span></td><td class="n">43</td><td class="n">71</td><td class="n">+28</td></tr>
+        <tr><td class="rk"><a href="#f70">70</a></td><td>Old School <span class="yr">2003</span></td><td class="n">60</td><td class="n">86</td><td class="n">+26</td></tr>
+        <tr><td class="rk"><a href="#f68">68</a></td><td>Mallrats <span class="yr">1995</span></td><td class="n">58</td><td class="n">82</td><td class="n">+24</td></tr>
+        <tr><td class="rk"><a href="#f31">31</a></td><td>Back to the Future Part II <span class="yr">1989</span></td><td class="n">63</td><td class="n">86</td><td class="n">+23</td></tr></tbody></table></div>
+  </section>
+
+  <section id="colophon" class="colo">
+    <h2 class="sec">Colophon <small>How the order was made, and what to distrust</small></h2>
+    <p><b>How the order was made.</b> 418 films from a personal library export and 162 more from a second ballot were cut to 240 keepers, sorted into bands, then ranked inside each band by direct head-to-head comparison — merge sort, one duel at a time. A final pass of 18 duels repaired the joints between bands, where the ranking was weakest. Everything below the hundredth place was cut.</p>
+    <p><b>What to distrust.</b> The sort never re-tests a comparison, so one fast call can carry a film several places. Treat a gap of two or three positions as noise and a gap of twenty as real. The top eight are the most tested and the most trustworthy.</p>
+    <p><b>Sources and dates.</b> Critic and audience scores, MPAA ratings and runtimes come from Rotten Tomatoes, fetched September 4, 2026 — audience scores drift, so these are a snapshot. Directors, casts, budgets and worldwide grosses come from Wikipedia and Box Office Mojo. 17 budgets and 5 gross figures are omitted where sources give only a range or no figure at all; nothing here is estimated. Grosses include later re-releases.</p>
+    <p><b>The ranking is Orlandu's.</b> The synopses are editorial and deliberately avoid spoiling the films that turn on a reveal.</p>
+    <p class="note">This one is off the usual beat — no CRTs, no coin doors. It is here because a hundred films ranked by duel is the same instinct as a shelf of monitors ranked by measurement: the argument is settled by comparison, not by opinion.</p>
+  </section>
+
+  <p style="margin-top:1.2rem"><a class="btn cy" href="stories.html">← More stories</a> &nbsp; <a class="btn" href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol. 1 →</a></p>
+</main>
+
+<footer class="site"></footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add("js");
+  var form = document.getElementById("o100c");
+  if (!form) return;
+
+  // The shared nav wraps to a second row at some widths, so the sticky offset is
+  // measured rather than assumed. site.js reserves the height before it injects.
+  function stick(){
+    var h = document.querySelector("header.site");
+    document.documentElement.style.setProperty("--o100top", (h ? h.offsetHeight : 74) + "px");
+  }
+  stick();
+  window.addEventListener("load", stick);
+  window.addEventListener("resize", stick);
+
+  // site.js fades a section in when 5% of it intersects the viewport. The
+  // 11-100 section is many screens tall, so 5% of it can never be on screen at
+  // once and it would sit at opacity 0 forever. Any section taller than the
+  // viewport opts out of the fade; the short ones keep it. Runs on load, which
+  // is after site.js (deferred) has tagged them.
+  window.addEventListener("load", function(){
+    var secs = document.querySelectorAll("main.mag section");
+    Array.prototype.forEach.call(secs, function(s){
+      if (s.getBoundingClientRect().height > window.innerHeight) s.classList.add("in");
+    });
+  });
+  var q = document.getElementById("q"),
+      count = document.getElementById("count"),
+      noresult = document.getElementById("noresult"),
+      ten = document.getElementById("topten"),
+      items = Array.prototype.slice.call(document.querySelectorAll("[data-r]")),
+      decs = [], rates = [];
+
+  function apply(){
+    var term = q.value.trim().toLowerCase(), shown = 0, tenShown = 0;
+    items.forEach(function(el){
+      var ok = (!decs.length || decs.indexOf(el.dataset.dec) > -1)
+            && (!rates.length || rates.indexOf(el.dataset.rate) > -1)
+            && (!term || el.dataset.q.indexOf(term) > -1);
+      el.hidden = !ok;
+      if (ok){ shown++; if (+el.dataset.r <= 10) tenShown++; }
+    });
+    ten.hidden = tenShown === 0;
+    noresult.hidden = shown !== 0;
+    count.textContent = shown === 100 ? "Showing all 100" : "Showing " + shown + " of 100";
+  }
+
+  function toggle(btn, list){
+    var v = btn.dataset.v, i = list.indexOf(v), on = i === -1;
+    if (on) list.push(v); else list.splice(i, 1);
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    apply();
+  }
+
+  form.querySelectorAll("button.dec").forEach(function(b){
+    b.addEventListener("click", function(){ toggle(b, decs); });
+  });
+  form.querySelectorAll("button.rate").forEach(function(b){
+    b.addEventListener("click", function(){ toggle(b, rates); });
+  });
+  q.addEventListener("input", apply);
+  form.addEventListener("submit", function(e){ e.preventDefault(); });
+
+  function reset(){
+    q.value = ""; decs.length = 0; rates.length = 0;
+    form.querySelectorAll("button[aria-pressed]").forEach(function(b){
+      b.setAttribute("aria-pressed", "false");
+    });
+    apply();
+  }
+  document.getElementById("reset").addEventListener("click", reset);
+  document.getElementById("reset2").addEventListener("click", reset);
+
+  // A deep link like #f86 must survive an active filter.
+  window.addEventListener("hashchange", function(){
+    var el = document.querySelector(window.location.hash);
+    if (el && el.hidden){ reset(); el.scrollIntoView(); }
+  });
+})();
+</script>
+
+</body>
+</html>

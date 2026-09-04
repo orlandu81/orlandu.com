@@ -39,6 +39,7 @@
 - [How to Spot Professional Glass in the Wild](https://www.orlandu.com/crt-field-guide.html): recognizing a Sony professional monitor in a thrift store or surplus auction.
 - [PVM-20L5 buying guide](https://www.orlandu.com/pvm-20l5-buying-guide.html): what to check before buying one, what to pay, and why not to ship it.
 - [VS. Super Mario Bros.](https://www.orlandu.com/vs-smb.html): why the arcade version is harder than the NES game.
+- [The Orlandu 100](https://www.orlandu.com/orlandu-100.html): a hundred favorite films ranked by head-to-head duel, with Rotten Tomatoes scores, the outliers this list defends, and the method behind the order. Not about the arcade.
 - [Projects](https://www.orlandu.com/projects.html): the bench log — what's being repaired right now.
 - [Glossary](https://www.orlandu.com/glossary.html): the arcade and broadcast vocabulary the site uses — JAMMA, CPO, candy cab, NOS, RGB, 240p, SCART, BNC, BKM, TVL, multiscan.
 
