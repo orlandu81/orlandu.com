@@ -6,7 +6,7 @@
 // ═══════════════════════════════════════════════════════════
 (function(){
   const NAV = [
-    ["index.html",    "Home"],
+    ["/",             "Home"],
     ["games.html",    "Coin-Op"],
     ["monitors.html", "Monitors"],
     ["consoles.html", "Consoles"],
@@ -41,11 +41,11 @@
     const here = header.dataset.page || "";
     header.innerHTML =
       '<div class="navwrap">' +
-        '<a class="navlogo" href="index.html"><img src="assets/logo-wordmark-nav.webp" alt="Orlandu’s Arcade" width="335" height="132" fetchpriority="high" decoding="async"></a>' +
+        '<a class="navlogo" href="/"><img src="assets/logo-wordmark-nav.webp" alt="Orlandu’s Arcade" width="335" height="132" fetchpriority="high" decoding="async"></a>' +
         '<button class="burger" aria-label="Menu" aria-expanded="false">☰ MENU</button>' +
         '<nav class="main">' +
           NAV.map(([href, label]) =>
-            '<a href="' + href + '"' + (href === here + ".html" || href === here ? ' class="here"' : '') + '>' + label + '</a>'
+            '<a href="' + href + '"' + (href === here + ".html" || href === here || (href === "/" && here === "index") ? ' class="here"' : '') + '>' + label + '</a>'
           ).join("") +
         '</nav>' +
       '</div>';
