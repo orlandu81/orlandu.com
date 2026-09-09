@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.orlandu.com/about.html</loc>
     <lastmod>2026-08-26</lastmod>
+    <video:video><video:thumbnail_loc>https://www.orlandu.com/media/2026/game-room-spin-poster.jpg</video:thumbnail_loc><video:title>The game room, one full turn</video:title><video:description>A 33-second spin around the inside room — the framed PCB wall, Super Mario Bros. on the PVMs, the fiber-optic Kay·Bee World of Nintendo sign, and the Mini Cute and Red Tent holding their corners.</video:description><video:content_loc>https://www.orlandu.com/media/video/game-room-spin-v2.mp4</video:content_loc></video:video>
   </url>
   <url>
     <loc>https://www.orlandu.com/ams-100-monograph.html</loc>
@@ -14,6 +16,7 @@
     <image:image><image:loc>https://www.orlandu.com/media/2026/ams-size-front-v2.jpg</image:loc><image:title>Sony AMS-100 stacked on top of a Sony AMS-3, front panels facing out, showing the AMS-3 is roughly twice as tall</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ams-size-profile.jpg</image:loc><image:title>Profile view of the two units stacked, showing the AMS-3&#x27;s deep heatsink fins against the AMS-100&#x27;s shallow flat chassis</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ams-size-rear-v2.jpg</image:loc><image:title>Rear panels of both units: the AMS-100 with SDI and digital audio inputs and option card slots, the AMS-3 with six XLR connectors and external speaker outputs</image:title></image:image>
+    <video:video><video:thumbnail_loc>https://www.orlandu.com/media/2026/ams-3-pots-cleaned-poster.jpg</video:thumbnail_loc><video:title>The AMS-3 after the pot cleaning</video:title><video:description>The SP LEVEL pots quiet again and both VU needles moving, with the AMS-3 riding on top of the BVM-20E1U.</video:description><video:content_loc>https://www.orlandu.com/media/video/ams-3-pots-cleaned.mp4</video:content_loc></video:video>
   </url>
   <url>
     <loc>https://www.orlandu.com/big-blue.html</loc>
@@ -101,9 +104,17 @@
   <url>
     <loc>https://www.orlandu.com/gallery.html</loc>
     <lastmod>2026-08-26</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-portrait.jpg</image:loc><image:title>Big Blue, suited up</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/dk-portrait.jpg</image:loc><image:title>Donkey Kong, blue plywood</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-playfield.jpg</image:loc><image:title>Ghostbusters playfield</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/ij-playfield.jpg</image:loc><image:title>Indiana Jones playfield</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/lmd-rack.jpg</image:loc><image:title>The LMD squadron</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/minicute-side.jpg</image:loc><image:title>The Mini Cute, side on</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/tna-playfield.jpg</image:loc><image:title>Total Nuclear Annihilation playfield</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/unisystem-screen.jpg</image:loc><image:title>The VS. UniSystem screen</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-side-art.jpg</image:loc><image:title>Big Blue, side on</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/sign-racetrack-glow.jpg</image:loc><image:title>The racetrack</image:title></image:image>
-    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-kaybee.jpg</image:loc><image:title>Kay\u00b7Bee \u00d7 World of Nintendo</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/sign-kaybee.jpg</image:loc><image:title>Kay·Bee × World of Nintendo</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-handhelds.jpg</image:loc><image:title>The handhelds wall</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-screen.jpg</image:loc><image:title>Dr. Mario, insert coin</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/collectibles-shelf.jpg</image:loc><image:title>The shelf of accomplices</image:title></image:image>
@@ -138,6 +149,7 @@
     <image:image><image:loc>https://www.orlandu.com/media/2026/tna-angle.jpg</image:loc><image:title>Total Nuclear Annihilation, lights out</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pinball-row-day.jpg</image:loc><image:title>Indiana Jones, mid-row</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/console-shelf-day.jpg</image:loc><image:title>The console shelf by day</image:title></image:image>
+    <video:video><video:thumbnail_loc>https://www.orlandu.com/media/2026/game-room-spin-poster.jpg</video:thumbnail_loc><video:title>The game room, one full turn</video:title><video:description>A slow spin around the inside room — the framed PCB wall, Super Mario Bros. on the PVMs, the Mega CD library under the Kay·Bee World of Nintendo sign, and the Red Tent holding the corner.</video:description><video:content_loc>https://www.orlandu.com/media/video/game-room-spin-v2.mp4</video:content_loc></video:video>
   </url>
   <url>
     <loc>https://www.orlandu.com/games.html</loc>
@@ -150,7 +162,7 @@
     <image:image><image:loc>https://www.orlandu.com/media/2026/tna-portrait.jpg</image:loc><image:title>Total Nuclear Annihilation pinball machine by Spooky Pinball with its full topper set</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-portrait.jpg</image:loc><image:title>Stern Ghostbusters Premium pinball machine, backbox and topper lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/rickmorty-portrait.jpg</image:loc><image:title>Spooky Pinball Rick and Morty Blood Sucker Edition pinball machine, backbox lit</image:title></image:image>
-    <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute.jpg</image:loc><image:title>The pink Capcom Mini Cute candy cabinet in the game room, CAPCOM down the pink side panel</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/minicute-portrait.jpg</image:loc><image:title>The pink Capcom Mini Cute candy cabinet head on at night, Street Fighter II lit on its screen</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-excitebike.jpg</image:loc><image:title>The restored Red Tent cocktail seen at an angle, VS. Excitebike on the screen and three PlayChoice-10 toppers displayed on the canopy</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-marvel-vs-capcom.jpg</image:loc><image:title>Marvel vs. Capcom: Clash of Super Heroes upright arcade cabinet with full-wrap side art and a lit marquee</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-neo-geo-mvs.jpg</image:loc><image:title>Red SNK Neo Geo MVS arcade cabinet running Metal Slug</image:title></image:image>
@@ -227,6 +239,7 @@
     <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-20e1u-crosshatch.jpg</image:loc><image:title>Sony BVM-20E1U broadcast monitor displaying a crosshatch calibration pattern with an AMS-100 speaker on top</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/garage-wide.jpg</image:loc><image:title>The garage arcade mid-project: cabinets, pro monitors on the floor, decks overhead, and work in progress everywhere</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-psu-dirty.jpg</image:loc><image:title>The Big Blue switching power supply as removed, buried under years of dust</image:title></image:image>
+    <video:video><video:thumbnail_loc>https://www.orlandu.com/media/2026/ams-3-pots-cleaned-poster.jpg</video:thumbnail_loc><video:title>The AMS-3 after the pot cleaning</video:title><video:description>Both needles moving and the pots quiet, with the can of DeoxIT still on the shelf behind it — the AMS-3 doing the work.</video:description><video:content_loc>https://www.orlandu.com/media/video/ams-3-pots-cleaned.mp4</video:content_loc></video:video>
   </url>
   <url>
     <loc>https://www.orlandu.com/pvm-20l5-buying-guide.html</loc>
@@ -241,6 +254,7 @@
   <url>
     <loc>https://www.orlandu.com/red-tent.html</loc>
     <lastmod>2026-09-09</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-excitebike.jpg</image:loc><image:title>The restored Red Tent cocktail seen at an angle, VS. Excitebike on the screen and three PlayChoice-10 toppers displayed on the canopy</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/red-tent-as-found.jpg</image:loc><image:title>The Red Tent as found: faded and scuffed red canopy, worn paint, on its chrome stand</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/red-tent-wear.jpg</image:loc><image:title>Close-up of paint wear and scratches on the Red Tent canopy and base before restoration</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/red-tent-teardown.jpg</image:loc><image:title>Red Tent completely disassembled: canopy shells on the garage floor, chassis stripped, monitor and boards laid out</image:title></image:image>
