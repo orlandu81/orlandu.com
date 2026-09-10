@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Orlandu 50 — Orlandu's Arcade</title>
+<meta name="description" content="Fifty favorite console games, ranked by head-to-head duel rather than by argument — with one rule above all others: every game on the list was beaten. Plus the ten that were not, and have no excuse.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="preload" href="assets/fonts/orbitron-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/rajdhani-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#0a0a12">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Orlandu's Arcade">
+<meta property="og:title" content="The Orlandu 50 — Orlandu's Arcade">
+<meta property="og:description" content="Fifty favorite console games, ranked by head-to-head duel rather than by argument — with one rule above all others: every game on the list was beaten. Plus the ten that were not, and have no excuse.">
+<meta property="og:url" content="https://www.orlandu.com/orlandu-50-games.html">
+<meta property="og:image" content="https://www.orlandu.com/media/og/og-orlandu-50-games.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Orlandu 50 — Orlandu's Arcade">
+<meta name="twitter:description" content="Fifty favorite console games, ranked by head-to-head duel rather than by argument — with one rule above all others: every game on the list was beaten. Plus the ten that were not, and have no excuse.">
+<meta name="twitter:image" content="https://www.orlandu.com/media/og/og-orlandu-50-games.jpg">
+<link rel="canonical" href="https://www.orlandu.com/orlandu-50-games.html">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
+<style>
+  /* ── The Orlandu 50 — page-scoped magazine layout ──────────────────────
+     Same chrome as Issue One (orlandu-100.html). Accent is the issue's own
+     green: this list's organizing idea is a finished game, not a scored one,
+     so there are no score meters here and no borrowed critic numbers. */
+  main.mag{--acc:#3ddc84;--shame:#ff6b57;max-width:1180px}
+  main.mag .lede{max-width:74ch;font-size:1.24rem}
+
+  .statstrip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.6rem;margin:1.6rem 0 0}
+  .statstrip>div{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-top:2px solid var(--acc);border-radius:10px;padding:.65rem .8rem}
+  .statstrip .sl{display:block;font-family:var(--disp);font-size:.54rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--dim)}
+  .statstrip .sv{display:block;font-family:var(--disp);font-size:1.1rem;letter-spacing:.02em;
+    color:var(--ink);margin-top:.3rem;line-height:1.2}
+  @media(max-width:900px){.statstrip{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  @media(max-width:520px){.statstrip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+  /* ── controls ─────────────────────────────────────────────── */
+  .o50c{display:none;position:sticky;top:var(--o50top,74px);z-index:20;
+    background:rgba(10,10,18,.94);backdrop-filter:blur(8px);
+    border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;margin:0 0 2.2rem}
+  .js .o50c{display:block}
+  .o50c .row{display:flex;gap:.45rem;flex-wrap:wrap;align-items:center}
+  .o50c .row + .row{margin-top:.6rem}
+  .o50c label.sr{position:absolute;left:-9999px}
+  .o50c input[type=search]{flex:1 1 240px;min-width:0;background:var(--bg2);color:var(--ink);
+    border:1px solid var(--line);border-radius:8px;padding:.5rem .8rem;font-family:var(--body);
+    font-size:1.02rem}
+  .o50c input[type=search]:focus{outline:none;border-color:var(--cyan-dim)}
+  .o50c .lbl{font-family:var(--disp);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--dim);margin-right:.2rem}
+  .o50c button{background:var(--panel);color:var(--dim);border:1px solid var(--line);border-radius:999px;
+    padding:.3rem .75rem;font-family:var(--cond);font-size:.86rem;letter-spacing:.06em;
+    text-transform:uppercase;cursor:pointer}
+  .o50c button:hover{border-color:var(--cyan-dim);color:var(--cyan)}
+  .o50c button[aria-pressed=true]{color:#101018;background:var(--acc);border-color:var(--acc);font-weight:600}
+  .o50c .count{margin-left:auto;font-family:var(--cond);font-size:.9rem;color:var(--dim);
+    letter-spacing:.04em;text-transform:uppercase}
+
+  /* ── the top ten ──────────────────────────────────────────── */
+  .big{display:grid;grid-template-columns:7.5rem 1fr;gap:1.6rem;align-items:start;
+    background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-left:3px solid var(--acc);border-radius:14px;padding:1.5rem 1.7rem;margin-bottom:1rem}
+  .big .num{font-family:var(--disp);font-weight:800;font-size:4.6rem;line-height:.9;letter-spacing:-.02em;
+    background:linear-gradient(180deg,#fff,var(--acc) 55%,#1c7a48);-webkit-background-clip:text;
+    background-clip:text;color:transparent;text-align:right}
+  .big h3{font-family:var(--disp);font-weight:800;font-size:1.5rem;letter-spacing:.02em;color:var(--ink);
+    line-height:1.2;margin-bottom:.35rem}
+  .big .pitch{font-size:1.1rem;max-width:66ch}
+  @media(max-width:640px){
+    .big{grid-template-columns:1fr;gap:.4rem;padding:1.2rem 1.1rem}
+    .big .num{text-align:left;font-size:3rem}
+    .big h3{font-size:1.25rem}
+  }
+
+  /* ── eleven to fifty ──────────────────────────────────────── */
+  .o50g{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1rem}
+  .ent{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-radius:12px;padding:1.05rem 1.2rem}
+  .ent .hd{display:flex;gap:.7rem;align-items:baseline;margin-bottom:.3rem}
+  .ent .num{font-family:var(--disp);font-weight:800;font-size:1.35rem;color:var(--acc);
+    flex:0 0 auto;min-width:2.1rem}
+  .ent h3{font-family:var(--disp);font-size:1rem;letter-spacing:.02em;color:var(--ink);line-height:1.25}
+  .ent .pitch{font-size:1rem}
+
+  /* ── shared entry bits ────────────────────────────────────── */
+  .big .yr,.ent .yr,.nbi .yr{color:var(--dim);font-weight:400;font-family:var(--cond);font-size:.9em}
+  .meta{font-family:var(--cond);font-size:.92rem;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--fire2);margin-bottom:.15rem}
+  .meta b{color:var(--ink);font-weight:600}
+  .pitch{color:var(--dim)}
+  .dot{color:var(--line)}
+  [hidden]{display:none !important}
+  /* Issue One hardcoded 8rem here. This bar is three rows (search / decade / platform)
+     and the platform row wraps, so the offset is measured, not assumed — otherwise a
+     section heading or a #fN deep link lands behind the bar. */
+  main.mag section,main.mag [data-r]{scroll-margin-top:calc(var(--o50top,74px) + var(--o50bar,9rem) + 1.25rem)}
+  .noresult{border:1px dashed var(--line);border-radius:12px;padding:1.6rem;text-align:center;color:var(--dim)}
+
+  /* ── the shelf of shame ───────────────────────────────────── */
+  .shameg{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1rem 1.6rem}
+  .nbi{border-left:2px solid var(--shame);padding-left:1rem;max-width:74ch}
+  .nbi h3{font-family:var(--disp);font-size:1rem;color:var(--ink);margin-bottom:.15rem}
+  .nbi .sc{font-family:var(--cond);font-size:.88rem;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--shame);margin-bottom:.4rem}
+  .nbi p{color:var(--dim)}
+
+  /* ── findings + colophon ──────────────────────────────────── */
+  .finds{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+  .find{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-top:2px solid var(--acc);border-radius:12px;padding:1.05rem 1.2rem}
+  .find h3{font-family:var(--disp);font-size:.98rem;color:var(--ink);margin-bottom:.3rem}
+  .find p{color:var(--dim);font-size:1rem}
+  .colo p{max-width:74ch;margin-bottom:1rem;color:var(--dim)}
+  .colo b{color:var(--ink)}
+  /* The bar is three rows tall on a phone, so it scrolls away there instead of sticking. */
+  @media(max-width:700px){.js .o50c{position:static}}
+  @media print{.o50c{display:none}}
+</style>
+<script src="assets/site.js" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://www.orlandu.com/#website",
+   "url": "https://www.orlandu.com/",
+   "name": "Orlandu's Arcade",
+   "description": "A private arcade and Sony professional monitor collection in Orange County, California.",
+   "publisher": { "@id": "https://www.orlandu.com/#org" },
+   "inLanguage": "en-US"
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://www.orlandu.com/#org",
+   "name": "Orlandu's Arcade",
+   "url": "https://www.orlandu.com/",
+   "description": "A private arcade and Sony professional monitor collection in Orange County, California.",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.orlandu.com/assets/logo-wordmark.png",
+    "width": 1080,
+    "height": 425
+   },
+   "image": "https://www.orlandu.com/media/og/og-home.jpg",
+   "email": "orlandusarcade@gmail.com",
+   "founder": { "@id": "https://www.orlandu.com/#person" },
+   "sameAs": [
+    "https://www.instagram.com/orlandusarcade/",
+    "https://www.ebay.com/usr/orlandu81",
+    "https://forums.arcade-museum.com/members/orlandu81.67452/",
+    "https://www.arcade-projects.com/members/orlandu81.4521/"
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.orlandu.com/#person",
+   "name": "orlandu81",
+   "alternateName": "Orlandu",
+   "description": "Collector and restorer of arcade cabinets, pinball machines, and Sony professional monitors.",
+   "url": "https://www.orlandu.com/about.html",
+   "email": "orlandusarcade@gmail.com",
+   "sameAs": [
+    "https://forums.arcade-museum.com/members/orlandu81.67452/",
+    "https://www.arcade-projects.com/members/orlandu81.4521/",
+    "https://www.instagram.com/orlandusarcade/"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.orlandu.com/orlandu-50-games.html#webpage",
+   "url": "https://www.orlandu.com/orlandu-50-games.html",
+   "name": "The Orlandu 50 — Orlandu's Arcade",
+   "description": "Fifty favorite console games, ranked by head-to-head duel rather than by argument \u2014 with one rule above all others: every game on the list was beaten. Plus the ten that were not, and have no excuse.",
+   "isPartOf": { "@id": "https://www.orlandu.com/#website" },
+   "about": { "@id": "https://www.orlandu.com/#org" },
+   "inLanguage": "en-US",
+   "primaryImageOfPage": { "@type": "ImageObject", "url": "https://www.orlandu.com/media/og/og-orlandu-50-games.jpg" },
+   "breadcrumb": { "@id": "https://www.orlandu.com/orlandu-50-games.html#breadcrumb" }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.orlandu.com/orlandu-50-games.html#breadcrumb",
+   "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.orlandu.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Stories", "item": "https://www.orlandu.com/stories.html" },
+    { "@type": "ListItem", "position": 3, "name": "The Orlandu 50", "item": "https://www.orlandu.com/orlandu-50-games.html" }
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://www.orlandu.com/orlandu-50-games.html#article",
+   "isPartOf": { "@id": "https://www.orlandu.com/orlandu-50-games.html#webpage" },
+   "mainEntityOfPage": { "@id": "https://www.orlandu.com/orlandu-50-games.html#webpage" },
+   "headline": "The Orlandu 50",
+   "description": "Fifty favorite console games, ranked by head-to-head duel rather than by argument \u2014 with one rule above all others: every game on the list was beaten. Plus the ten that were not, and have no excuse.",
+   "author": { "@id": "https://www.orlandu.com/#person" },
+   "publisher": { "@id": "https://www.orlandu.com/#org" },
+   "inLanguage": "en-US",
+   "articleSection": "Stories",
+   "image": "https://www.orlandu.com/media/og/og-orlandu-50-games.jpg",
+   "mainEntity": { "@id": "https://www.orlandu.com/orlandu-50-games.html#ranking" }
+  },
+  {
+   "@type": "ItemList",
+   "@id": "https://www.orlandu.com/orlandu-50-games.html#ranking",
+   "name": "The Orlandu 50",
+   "description": "Fifty favorite console games, ranked one to fifty.",
+   "numberOfItems": 50,
+   "itemListOrder": "https://schema.org/ItemListOrderAscending",
+   "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Zelda Link to the Past (Super Nintendo, 1992)"},
+    {"@type":"ListItem","position":2,"name":"Super Mario World (Super Nintendo, 1991)"},
+    {"@type":"ListItem","position":3,"name":"Final Fantasy II (Super Nintendo, 1991)"},
+    {"@type":"ListItem","position":4,"name":"Final Fantasy III (Super Nintendo, 1994)"},
+    {"@type":"ListItem","position":5,"name":"Super Metroid (Super Nintendo, 1994)"},
+    {"@type":"ListItem","position":6,"name":"The Last of Us Part II Remastered (PlayStation 5, 2024)"},
+    {"@type":"ListItem","position":7,"name":"Legend of Zelda (NES, 1987)"},
+    {"@type":"ListItem","position":8,"name":"Super Mario Odyssey (Nintendo Switch, 2017)"},
+    {"@type":"ListItem","position":9,"name":"Super Mario Bros 3 (NES, 1990)"},
+    {"@type":"ListItem","position":10,"name":"Super Mario 64 (Nintendo 64, 1996)"},
+    {"@type":"ListItem","position":11,"name":"Zelda: Tears Of the Kingdom (Nintendo Switch, 2023)"},
+    {"@type":"ListItem","position":12,"name":"Mega Man 2 (NES, 1989)"},
+    {"@type":"ListItem","position":13,"name":"Super Mario Bros (NES, 1985)"},
+    {"@type":"ListItem","position":14,"name":"Ghost Of Tsushima: Director's Cut (PlayStation 5, 2021)"},
+    {"@type":"ListItem","position":15,"name":"ToeJam and Earl (Sega Genesis, 1991)"},
+    {"@type":"ListItem","position":16,"name":"Donkey Kong Country (Super Nintendo, 1994)"},
+    {"@type":"ListItem","position":17,"name":"Mike Tyson's Punch-Out (NES, 1987)"},
+    {"@type":"ListItem","position":18,"name":"The Last of Us Part I (PlayStation 5, 2022)"},
+    {"@type":"ListItem","position":19,"name":"Ninja Gaiden (NES, 1989)"},
+    {"@type":"ListItem","position":20,"name":"Zelda Ocarina of Time (Nintendo 64, 1998)"},
+    {"@type":"ListItem","position":21,"name":"Shadowgate (NES, 1989)"},
+    {"@type":"ListItem","position":22,"name":"Bonk 2 Bonk's Revenge (TurboGrafx-16, 1991)"},
+    {"@type":"ListItem","position":23,"name":"Zelda A Link Between Worlds (Nintendo 3DS, 2013)"},
+    {"@type":"ListItem","position":24,"name":"Secret of Mana (Super Nintendo, 1993)"},
+    {"@type":"ListItem","position":25,"name":"007 GoldenEye (Nintendo 64, 1997)"},
+    {"@type":"ListItem","position":26,"name":"Jackie Chan's Action Kung Fu (TurboGrafx-16, 1990)"},
+    {"@type":"ListItem","position":27,"name":"Sonic the Hedgehog 2 (Sega Genesis, 1992)"},
+    {"@type":"ListItem","position":28,"name":"Contra (NES, 1988)"},
+    {"@type":"ListItem","position":29,"name":"R.C. Pro-AM (NES, 1988)"},
+    {"@type":"ListItem","position":30,"name":"Zelda II The Adventure of Link (NES, 1988)"},
+    {"@type":"ListItem","position":31,"name":"Final Fantasy VII (PlayStation, 1997)"},
+    {"@type":"ListItem","position":32,"name":"Castlevania (NES, 1986)"},
+    {"@type":"ListItem","position":33,"name":"Metroid Dread (Nintendo Switch, 2021)"},
+    {"@type":"ListItem","position":34,"name":"Super Mario Bros 2 (NES, 1988)"},
+    {"@type":"ListItem","position":35,"name":"Terminator (Sega CD, 1993)"},
+    {"@type":"ListItem","position":36,"name":"EarthBound (Super Nintendo, 1995)"},
+    {"@type":"ListItem","position":37,"name":"Final Fantasy Tactics (PlayStation, 1997)"},
+    {"@type":"ListItem","position":38,"name":"NHL 94 (Sega Genesis, 1993)"},
+    {"@type":"ListItem","position":39,"name":"Super Mario Kart (Super Nintendo, 1992)"},
+    {"@type":"ListItem","position":40,"name":"Duck Tales (NES, 1989)"},
+    {"@type":"ListItem","position":41,"name":"Military Madness (TurboGrafx-16, 1989)"},
+    {"@type":"ListItem","position":42,"name":"Baseball Stars (NES, 1989)"},
+    {"@type":"ListItem","position":43,"name":"Sunset Riders (Super Nintendo, 1993)"},
+    {"@type":"ListItem","position":44,"name":"Space MegaForce (Super Nintendo, 1992)"},
+    {"@type":"ListItem","position":45,"name":"Tecmo Bowl (NES, 1989)"},
+    {"@type":"ListItem","position":46,"name":"Mario Kart 8 Deluxe (Nintendo Switch, 2017)"},
+    {"@type":"ListItem","position":47,"name":"Final Fantasy X (PlayStation 2, 2001)"},
+    {"@type":"ListItem","position":48,"name":"Tenchu Fatal Shadows (PlayStation 2, 2005)"},
+    {"@type":"ListItem","position":49,"name":"Metroid (NES, 1986)"},
+    {"@type":"ListItem","position":50,"name":"Zelda Breath of the Wild (Nintendo Switch, 2017)"}
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<header class="site" data-page="stories"></header>
+
+<main class="hub mag">
+  <div class="pagehead">
+    <div class="kicker">Issue Two</div>
+    <h1 class="page">The Orlandu 50</h1>
+    <div class="rt">About 13 min read</div>
+    <p class="lede">Fifty favorite console games, ordered by head-to-head duel rather than by argument — every position on this list was won against another game. One rule sits above the rest: it had to be beaten. Not admired, not owned for years, not started twice. Finished.</p>
+    <div class="statstrip">
+      <div><span class="sl">Ranked</span><span class="sv">50</span></div>
+      <div><span class="sl">Beaten</span><span class="sv">130</span></div>
+      <div><span class="sl">Duels</span><span class="sv">350</span></div>
+      <div><span class="sl">Platforms</span><span class="sv">11</span></div>
+      <div><span class="sl">Oldest</span><span class="sv">1985</span></div>
+      <div><span class="sl">Newest</span><span class="sv">2024</span></div>
+    </div>
+    <div class="chips">
+      <a href="#topten">The top ten</a>
+      <a href="#eleven">11–50</a>
+      <a href="#shame">The Shelf of Shame</a>
+      <a href="#findings">What the list says</a>
+      <a href="#colophon">Colophon</a>
+    </div>
+  </div>
+
+  <form class="o50c" id="o50c" role="search" aria-label="Filter the fifty">
+    <div class="row">
+      <label class="sr" for="q">Search by title or platform</label>
+      <input type="search" id="q" placeholder="Search a title or a platform…" autocomplete="off">
+      <button type="button" id="reset">Reset</button>
+      <span class="count" id="count" role="status">Showing all 50</span>
+    </div>
+    <div class="row">
+      <span class="lbl">Decade</span>
+      <button type="button" class="dec" data-v="1980" aria-pressed="false">80s</button>
+      <button type="button" class="dec" data-v="1990" aria-pressed="false">90s</button>
+      <button type="button" class="dec" data-v="2000" aria-pressed="false">00s</button>
+      <button type="button" class="dec" data-v="2010" aria-pressed="false">10s</button>
+      <button type="button" class="dec" data-v="2020" aria-pressed="false">20s</button>
+    </div>
+    <div class="row">
+      <span class="lbl">Platform</span>
+      <button type="button" class="plat" data-v="NES" aria-pressed="false">NES</button>
+      <button type="button" class="plat" data-v="Nintendo 3DS" aria-pressed="false">Nintendo 3DS</button>
+      <button type="button" class="plat" data-v="Nintendo 64" aria-pressed="false">Nintendo 64</button>
+      <button type="button" class="plat" data-v="Nintendo Switch" aria-pressed="false">Nintendo Switch</button>
+      <button type="button" class="plat" data-v="PlayStation" aria-pressed="false">PlayStation</button>
+      <button type="button" class="plat" data-v="PlayStation 2" aria-pressed="false">PlayStation 2</button>
+      <button type="button" class="plat" data-v="PlayStation 5" aria-pressed="false">PlayStation 5</button>
+      <button type="button" class="plat" data-v="Sega CD" aria-pressed="false">Sega CD</button>
+      <button type="button" class="plat" data-v="Sega Genesis" aria-pressed="false">Sega Genesis</button>
+      <button type="button" class="plat" data-v="Super Nintendo" aria-pressed="false">Super Nintendo</button>
+      <button type="button" class="plat" data-v="TurboGrafx-16" aria-pressed="false">TurboGrafx-16</button>
+    </div>
+  </form>
+
+  <section id="topten">
+    <h2 class="sec">The top ten <small>The most-tested end of the list</small></h2>
+    <div id="tenwrap">
+      <article class="big" id="f1" data-r="1" data-dec="1990" data-plat="Super Nintendo" data-q="zelda link to the past super nintendo 1992">
+        <div class="num">1</div>
+        <div class="body">
+          <h3>Zelda Link to the Past <span class="yr">1992</span></h3>
+          <p class="meta"><b>Super Nintendo</b></p>
+          <p class="pitch">The one every overhead adventure since has been measured against, and the reason the light world/dark world trick still gets copied. Nothing in it is wasted — every screen either hides something or teaches you how to find it.</p>
+        </div>
+      </article>
+      <article class="big" id="f2" data-r="2" data-dec="1990" data-plat="Super Nintendo" data-q="super mario world super nintendo 1991">
+        <div class="num">2</div>
+        <div class="body">
+          <h3>Super Mario World <span class="yr">1991</span></h3>
+          <p class="meta"><b>Super Nintendo</b></p>
+          <p class="pitch">Ninety-six exits, and the game never once explains that number to you. It is the most generous platformer ever built: secrets stacked on secrets, and a cape that turns mastery into flight.</p>
+        </div>
+      </article>
+      <article class="big" id="f3" data-r="3" data-dec="1990" data-plat="Super Nintendo" data-q="final fantasy ii super nintendo 1991">
+        <div class="num">3</div>
+        <div class="body">
+          <h3>Final Fantasy II <span class="yr">1991</span></h3>
+          <p class="meta"><b>Super Nintendo</b></p>
+          <p class="pitch">Released everywhere else as IV, and the first RPG that treated its cast as people who could betray you, die, and mean it. The Zeromus fight is where a generation learned what a final boss was supposed to feel like.</p>
+        </div>
+      </article>
+      <article class="big" id="f4" data-r="4" data-dec="1990" data-plat="Super Nintendo" data-q="final fantasy iii super nintendo 1994">
+        <div class="num">4</div>
+        <div class="body">
+          <h3>Final Fantasy III <span class="yr">1994</span></h3>
+          <p class="meta"><b>Super Nintendo</b></p>
+          <p class="pitch">Released everywhere else as VI. Fourteen playable characters and no single hero, an opera scene it had no business pulling off, and the rare RPG where the villain actually wins halfway through.</p>
+        </div>
+      </article>
+      <article class="big" id="f5" data-r="5" data-dec="1990" data-plat="Super Nintendo" data-q="super metroid super nintendo 1994">
+        <div class="num">5</div>
+        <div class="body">
+          <h3>Super Metroid <span class="yr">1994</span></h3>
+          <p class="meta"><b>Super Nintendo</b></p>
+          <p class="pitch">Still the cleanest lesson in teaching without text: every door, every ledge, every dead end tells you what you are missing. Forty years of games have borrowed its map and not its restraint.</p>
+        </div>
+      </article>
+      <article class="big" id="f6" data-r="6" data-dec="2020" data-plat="PlayStation 5" data-q="the last of us part ii remastered playstation 5 2024">
+        <div class="num">6</div>
+        <div class="body">
+          <h3>The Last of Us Part II Remastered <span class="yr">2024</span></h3>
+          <p class="meta"><b>PlayStation 5</b></p>
+          <p class="pitch">The most uncomfortable game on this list, deliberately. It spends twenty hours making you complicit and then hands you the other side of it, and the ranking reflects that it is impossible to shake.</p>
+        </div>
+      </article>
+      <article class="big" id="f7" data-r="7" data-dec="1980" data-plat="NES" data-q="legend of zelda nes 1987">
+        <div class="num">7</div>
+        <div class="body">
+          <h3>Legend of Zelda <span class="yr">1987</span></h3>
+          <p class="meta"><b>NES</b></p>
+          <p class="pitch">The gold cartridge that told you nothing and expected you to find out anyway. It is on this list less for how it plays now than for the fact that it invented the idea of a world you were allowed to be lost in.</p>
+        </div>
+      </article>
+      <article class="big" id="f8" data-r="8" data-dec="2010" data-plat="Nintendo Switch" data-q="super mario odyssey nintendo switch 2017">
+        <div class="num">8</div>
+        <div class="body">
+          <h3>Super Mario Odyssey <span class="yr">2017</span></h3>
+          <p class="meta"><b>Nintendo Switch</b></p>
+          <p class="pitch">The best argument that the 3D Mario formula still had somewhere to go. Capturing enemies turns every level into a toolbox, and the sheer density of moons means it never once feels padded.</p>
+        </div>
+      </article>
+      <article class="big" id="f9" data-r="9" data-dec="1990" data-plat="NES" data-q="super mario bros 3 nes 1990">
+        <div class="num">9</div>
+        <div class="body">
+          <h3>Super Mario Bros 3 <span class="yr">1990</span></h3>
+          <p class="meta"><b>NES</b></p>
+          <p class="pitch">The high-water mark of what the NES could do, and still the tightest set of levels Nintendo has ever shipped. The map screen alone changed what a platformer was allowed to be.</p>
+        </div>
+      </article>
+      <article class="big" id="f10" data-r="10" data-dec="1990" data-plat="Nintendo 64" data-q="super mario 64 nintendo 64 1996">
+        <div class="num">10</div>
+        <div class="body">
+          <h3>Super Mario 64 <span class="yr">1996</span></h3>
+          <p class="meta"><b>Nintendo 64</b></p>
+          <p class="pitch">The hardest thing any game ever did: invent 3D movement that felt right on the first try. Everything since has been a refinement of a control scheme that arrived essentially finished.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="eleven">
+    <h2 class="sec">Eleven to fifty <small>Uniform treatment, same rules</small></h2>
+    <div class="o50g">
+      <article class="ent" id="f11" data-r="11" data-dec="2020" data-plat="Nintendo Switch" data-q="zelda  tears of the kingdom nintendo switch 2023">
+        <div class="hd"><span class="num">11</span><h3>Zelda: Tears Of the Kingdom <span class="yr">2023</span></h3></div>
+        <p class="meta"><b>Nintendo Switch</b></p>
+        <p class="pitch">Takes the world it already built and hands you the tools to break it, which is a stranger and braver move than another new map. Ultrahand is the rare mechanic that makes bad ideas fun.</p>
+      </article>
+      <article class="ent" id="f12" data-r="12" data-dec="1980" data-plat="NES" data-q="mega man 2 nes 1989">
+        <div class="hd"><span class="num">12</span><h3>Mega Man 2 <span class="yr">1989</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">The one where the formula clicked — eight bosses, eight weapons, and a difficulty curve that punishes without cheating. Wily&#x27;s castle is where the NES stopped being polite.</p>
+      </article>
+      <article class="ent" id="f13" data-r="13" data-dec="1980" data-plat="NES" data-q="super mario bros nes 1985">
+        <div class="hd"><span class="num">13</span><h3>Super Mario Bros <span class="yr">1985</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">World 1-1 is the most efficient piece of teaching in the medium: no text, no tutorial, and by the first pipe you understand the entire game. Everything else here owes it something.</p>
+      </article>
+      <article class="ent" id="f14" data-r="14" data-dec="2020" data-plat="PlayStation 5" data-q="ghost of tsushima  director s cut playstation 5 2021">
+        <div class="hd"><span class="num">14</span><h3>Ghost Of Tsushima: Director&#x27;s Cut <span class="yr">2021</span></h3></div>
+        <p class="meta"><b>PlayStation 5</b></p>
+        <p class="pitch">A samurai film that happens to be playable, and the only open world on this list where the wind does the job of a quest marker. The duels are the best one-on-one combat Sucker Punch has written.</p>
+      </article>
+      <article class="ent" id="f15" data-r="15" data-dec="1990" data-plat="Sega Genesis" data-q="toejam and earl sega genesis 1991">
+        <div class="hd"><span class="num">15</span><h3>ToeJam and Earl <span class="yr">1991</span></h3></div>
+        <p class="meta"><b>Sega Genesis</b></p>
+        <p class="pitch">A randomly generated hangout that has almost nothing in common with anything else from 1991, and its ranking here is entirely about how it plays with a second person on the couch.</p>
+      </article>
+      <article class="ent" id="f16" data-r="16" data-dec="1990" data-plat="Super Nintendo" data-q="donkey kong country super nintendo 1994">
+        <div class="hd"><span class="num">16</span><h3>Donkey Kong Country <span class="yr">1994</span></h3></div>
+        <p class="meta"><b>Super Nintendo</b></p>
+        <p class="pitch">The pre-rendered look was the sales pitch, but the reason it lasts is the level design — mine carts, barrel blasts, and a rhythm that keeps escalating for forty stages.</p>
+      </article>
+      <article class="ent" id="f17" data-r="17" data-dec="1980" data-plat="NES" data-q="mike tyson s punch out nes 1987">
+        <div class="hd"><span class="num">17</span><h3>Mike Tyson&#x27;s Punch-Out <span class="yr">1987</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">Not a boxing game, a pattern-recognition game wearing boxing gloves. Every opponent is a puzzle with a tell, and Tyson is the wall that generation measured itself against.</p>
+      </article>
+      <article class="ent" id="f18" data-r="18" data-dec="2020" data-plat="PlayStation 5" data-q="the last of us part i playstation 5 2022">
+        <div class="hd"><span class="num">18</span><h3>The Last of Us Part I <span class="yr">2022</span></h3></div>
+        <p class="meta"><b>PlayStation 5</b></p>
+        <p class="pitch">The one that proved a game could carry a two-hander character story without flinching, and the ending still refuses to let you off the hook. The remake mostly stays out of its own way.</p>
+      </article>
+      <article class="ent" id="f19" data-r="19" data-dec="1980" data-plat="NES" data-q="ninja gaiden nes 1989">
+        <div class="hd"><span class="num">19</span><h3>Ninja Gaiden <span class="yr">1989</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">Brutal in ways that would not survive a modern focus test, and worth every restart. It also brought cinematic cutscenes to the NES, which nobody had thought to ask for.</p>
+      </article>
+      <article class="ent" id="f20" data-r="20" data-dec="1990" data-plat="Nintendo 64" data-q="zelda ocarina of time nintendo 64 1998">
+        <div class="hd"><span class="num">20</span><h3>Zelda Ocarina of Time <span class="yr">1998</span></h3></div>
+        <p class="meta"><b>Nintendo 64</b></p>
+        <p class="pitch">The template for 3D action-adventure: Z-targeting, a world on a day/night clock, and dungeons that still hold up as architecture. It sits here rather than higher because the 2D Zeldas got there first.</p>
+      </article>
+      <article class="ent" id="f21" data-r="21" data-dec="1980" data-plat="NES" data-q="shadowgate nes 1989">
+        <div class="hd"><span class="num">21</span><h3>Shadowgate <span class="yr">1989</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">A point-and-click death trap ported to a console that had no business running it, and the reason a lot of people learned to read a room before touching anything. Almost every choice kills you.</p>
+      </article>
+      <article class="ent" id="f22" data-r="22" data-dec="1990" data-plat="TurboGrafx-16" data-q="bonk 2 bonk s revenge turbografx 16 1991">
+        <div class="hd"><span class="num">22</span><h3>Bonk 2 Bonk&#x27;s Revenge <span class="yr">1991</span></h3></div>
+        <p class="meta"><b>TurboGrafx-16</b></p>
+        <p class="pitch">The sequel that fixed everything the first one fumbled, and the best case for the TurboGrafx as more than a footnote. Headbutting is a genuinely good verb.</p>
+      </article>
+      <article class="ent" id="f23" data-r="23" data-dec="2010" data-plat="Nintendo 3DS" data-q="zelda a link between worlds nintendo 3ds 2013">
+        <div class="hd"><span class="num">23</span><h3>Zelda A Link Between Worlds <span class="yr">2013</span></h3></div>
+        <p class="meta"><b>Nintendo 3DS</b></p>
+        <p class="pitch">The sequel to A Link to the Past that arrived twenty-two years late and earned it. Renting items instead of gating them behind dungeons quietly fixed the series&#x27; oldest structural problem.</p>
+      </article>
+      <article class="ent" id="f24" data-r="24" data-dec="1990" data-plat="Super Nintendo" data-q="secret of mana super nintendo 1993">
+        <div class="hd"><span class="num">24</span><h3>Secret of Mana <span class="yr">1993</span></h3></div>
+        <p class="meta"><b>Super Nintendo</b></p>
+        <p class="pitch">Real-time combat in an era of menus, and the ring system is still one of the cleanest interfaces an RPG ever shipped. Three-player co-op on a couch was the selling point and still is.</p>
+      </article>
+      <article class="ent" id="f25" data-r="25" data-dec="1990" data-plat="Nintendo 64" data-q="007 goldeneye nintendo 64 1997">
+        <div class="hd"><span class="num">25</span><h3>007 GoldenEye <span class="yr">1997</span></h3></div>
+        <p class="meta"><b>Nintendo 64</b></p>
+        <p class="pitch">Invented the console shooter and the split-screen argument that came with it. The single-player campaign holds up worse than the multiplayer, which is how you know how good the multiplayer was.</p>
+      </article>
+      <article class="ent" id="f26" data-r="26" data-dec="1990" data-plat="TurboGrafx-16" data-q="jackie chan s action kung fu turbografx 16 1990">
+        <div class="hd"><span class="num">26</span><h3>Jackie Chan&#x27;s Action Kung Fu <span class="yr">1990</span></h3></div>
+        <p class="meta"><b>TurboGrafx-16</b></p>
+        <p class="pitch">One of the genuinely great platformers on a system most people never owned, and proof that the TurboGrafx library rewards digging. The animation is far past what the hardware suggested.</p>
+      </article>
+      <article class="ent" id="f27" data-r="27" data-dec="1990" data-plat="Sega Genesis" data-q="sonic the hedgehog 2 sega genesis 1992">
+        <div class="hd"><span class="num">27</span><h3>Sonic the Hedgehog 2 <span class="yr">1992</span></h3></div>
+        <p class="meta"><b>Sega Genesis</b></p>
+        <p class="pitch">Where the speed finally had level design worthy of it, and Chemical Plant is still the definitive Sonic stage. The spin dash is one of the great sequel additions.</p>
+      </article>
+      <article class="ent" id="f28" data-r="28" data-dec="1980" data-plat="NES" data-q="contra nes 1988">
+        <div class="hd"><span class="num">28</span><h3>Contra <span class="yr">1988</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">Thirty lives was the joke; the game underneath is a precision run-and-gun that has aged better than almost anything else from 1988. Best played with someone else losing beside you.</p>
+      </article>
+      <article class="ent" id="f29" data-r="29" data-dec="1980" data-plat="NES" data-q="r c  pro am nes 1988">
+        <div class="hd"><span class="num">29</span><h3>R.C. Pro-AM <span class="yr">1988</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">An isometric racer with a rubber-banding blue car years before anyone had a name for that particular cruelty. Rare&#x27;s fingerprints are all over it.</p>
+      </article>
+      <article class="ent" id="f30" data-r="30" data-dec="1980" data-plat="NES" data-q="zelda ii the adventure of link nes 1988">
+        <div class="hd"><span class="num">30</span><h3>Zelda II The Adventure of Link <span class="yr">1988</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">The black sheep, and it is on this list on purpose. Side-scrolling combat with real spacing and commitment, a punishing overworld, and the only Zelda that ever asked you to earn a level.</p>
+      </article>
+      <article class="ent" id="f31" data-r="31" data-dec="1990" data-plat="PlayStation" data-q="final fantasy vii playstation 1997">
+        <div class="hd"><span class="num">31</span><h3>Final Fantasy VII <span class="yr">1997</span></h3></div>
+        <p class="meta"><b>PlayStation</b></p>
+        <p class="pitch">The one that dragged the genre into the mainstream, and the reason a lot of people on this continent found RPGs at all. It ranks here rather than higher because the SNES pair got there with less.</p>
+      </article>
+      <article class="ent" id="f32" data-r="32" data-dec="1980" data-plat="NES" data-q="castlevania nes 1986">
+        <div class="hd"><span class="num">32</span><h3>Castlevania <span class="yr">1986</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">Stiff on purpose. The whip has weight, the stairs are a commitment, and the entire game is about respecting a jump you cannot take back. Block 6 remains a rite of passage.</p>
+      </article>
+      <article class="ent" id="f33" data-r="33" data-dec="2020" data-plat="Nintendo Switch" data-q="metroid dread nintendo switch 2021">
+        <div class="hd"><span class="num">33</span><h3>Metroid Dread <span class="yr">2021</span></h3></div>
+        <p class="meta"><b>Nintendo Switch</b></p>
+        <p class="pitch">The 2D Metroid that finally arrived after nineteen years, and it moves better than any of them. The EMMI sections divide people; the rest is close to flawless.</p>
+      </article>
+      <article class="ent" id="f34" data-r="34" data-dec="1980" data-plat="NES" data-q="super mario bros 2 nes 1988">
+        <div class="hd"><span class="num">34</span><h3>Super Mario Bros 2 <span class="yr">1988</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">Not really a Mario game, and better for it. Four characters with real differences, vegetables instead of stomping, and a dream logic the series never went back to.</p>
+      </article>
+      <article class="ent" id="f35" data-r="35" data-dec="1990" data-plat="Sega CD" data-q="terminator sega cd 1993">
+        <div class="hd"><span class="num">35</span><h3>Terminator <span class="yr">1993</span></h3></div>
+        <p class="meta"><b>Sega CD</b></p>
+        <p class="pitch">The lone Sega CD entry on the list, and it earns the slot on its soundtrack as much as its side-scrolling. Tommy Tallarico&#x27;s score is the best argument the format ever made for itself.</p>
+      </article>
+      <article class="ent" id="f36" data-r="36" data-dec="1990" data-plat="Super Nintendo" data-q="earthbound super nintendo 1995">
+        <div class="hd"><span class="num">36</span><h3>EarthBound <span class="yr">1995</span></h3></div>
+        <p class="meta"><b>Super Nintendo</b></p>
+        <p class="pitch">A JRPG about suburbs, telephones and homesickness, which nobody was asking for and everybody remembers. The rolling HP meter is a mechanic that deserved to be stolen more often.</p>
+      </article>
+      <article class="ent" id="f37" data-r="37" data-dec="1990" data-plat="PlayStation" data-q="final fantasy tactics playstation 1997">
+        <div class="hd"><span class="num">37</span><h3>Final Fantasy Tactics <span class="yr">1997</span></h3></div>
+        <p class="meta"><b>PlayStation</b></p>
+        <p class="pitch">A political drama with a job system attached, and the deepest strategy layer Square ever shipped. The translation is famously rough and the game survives it anyway.</p>
+      </article>
+      <article class="ent" id="f38" data-r="38" data-dec="1990" data-plat="Sega Genesis" data-q="nhl 94 sega genesis 1993">
+        <div class="hd"><span class="num">38</span><h3>NHL 94 <span class="yr">1993</span></h3></div>
+        <p class="meta"><b>Sega Genesis</b></p>
+        <p class="pitch">The one every hockey game since has been compared to, including by people who do not watch hockey. One-timers, the manual goalie, and an arcade pace nothing has matched.</p>
+      </article>
+      <article class="ent" id="f39" data-r="39" data-dec="1990" data-plat="Super Nintendo" data-q="super mario kart super nintendo 1992">
+        <div class="hd"><span class="num">39</span><h3>Super Mario Kart <span class="yr">1992</span></h3></div>
+        <p class="meta"><b>Super Nintendo</b></p>
+        <p class="pitch">The original, and still the meanest. Mode 7 on a Battle Mode course with one other person is where the entire kart-racing genre started as an argument.</p>
+      </article>
+      <article class="ent" id="f40" data-r="40" data-dec="1980" data-plat="NES" data-q="duck tales nes 1989">
+        <div class="hd"><span class="num">40</span><h3>Duck Tales <span class="yr">1989</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">The pogo cane is one of the best movement verbs on the console, and the Moon theme escaped the game entirely. Capcom&#x27;s licensed run was a small golden age and this is the peak of it.</p>
+      </article>
+      <article class="ent" id="f41" data-r="41" data-dec="1980" data-plat="TurboGrafx-16" data-q="military madness turbografx 16 1989">
+        <div class="hd"><span class="num">41</span><h3>Military Madness <span class="yr">1989</span></h3></div>
+        <p class="meta"><b>TurboGrafx-16</b></p>
+        <p class="pitch">A turn-based hex wargame that is far more approachable than that sounds, and one of the strongest reasons to take the TurboGrafx seriously. Clean rules, deep decisions.</p>
+      </article>
+      <article class="ent" id="f42" data-r="42" data-dec="1980" data-plat="NES" data-q="baseball stars nes 1989">
+        <div class="hd"><span class="num">42</span><h3>Baseball Stars <span class="yr">1989</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">The first console sports game with a persistent, editable league, which is an idea worth more than the box art suggests. Create a team, pay your players, watch them improve.</p>
+      </article>
+      <article class="ent" id="f43" data-r="43" data-dec="1990" data-plat="Super Nintendo" data-q="sunset riders super nintendo 1993">
+        <div class="hd"><span class="num">43</span><h3>Sunset Riders <span class="yr">1993</span></h3></div>
+        <p class="meta"><b>Super Nintendo</b></p>
+        <p class="pitch">An arcade run-and-gun that made the trip home mostly intact, and one of the best two-player games on the SNES. The boss fights have personality the genre usually skips.</p>
+      </article>
+      <article class="ent" id="f44" data-r="44" data-dec="1990" data-plat="Super Nintendo" data-q="space megaforce super nintendo 1992">
+        <div class="hd"><span class="num">44</span><h3>Space MegaForce <span class="yr">1992</span></h3></div>
+        <p class="meta"><b>Super Nintendo</b></p>
+        <p class="pitch">Known as Super Aleste in Japan and one of the finest shooters on the system, with a weapon system deep enough to reward learning it. Criminally overlooked in the US.</p>
+      </article>
+      <article class="ent" id="f45" data-r="45" data-dec="1980" data-plat="NES" data-q="tecmo bowl nes 1989">
+        <div class="hd"><span class="num">45</span><h3>Tecmo Bowl <span class="yr">1989</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">Four plays a team and it still produced more arguments than most modern sports games. Bo Jackson is less a player than a design flaw everyone agreed to enjoy.</p>
+      </article>
+      <article class="ent" id="f46" data-r="46" data-dec="2010" data-plat="Nintendo Switch" data-q="mario kart 8 deluxe nintendo switch 2017">
+        <div class="hd"><span class="num">46</span><h3>Mario Kart 8 Deluxe <span class="yr">2017</span></h3></div>
+        <p class="meta"><b>Nintendo Switch</b></p>
+        <p class="pitch">The most refined the series has ever been, and the track list is absurd after the booster passes. It ranks below the original because refinement is not the same as invention.</p>
+      </article>
+      <article class="ent" id="f47" data-r="47" data-dec="2000" data-plat="PlayStation 2" data-q="final fantasy x playstation 2 2001">
+        <div class="hd"><span class="num">47</span><h3>Final Fantasy X <span class="yr">2001</span></h3></div>
+        <p class="meta"><b>PlayStation 2</b></p>
+        <p class="pitch">The one that swapped the world map for a corridor and got a better story out of the trade. The sphere grid and the conditional turn order both hold up.</p>
+      </article>
+      <article class="ent" id="f48" data-r="48" data-dec="2000" data-plat="PlayStation 2" data-q="tenchu fatal shadows playstation 2 2005">
+        <div class="hd"><span class="num">48</span><h3>Tenchu Fatal Shadows <span class="yr">2005</span></h3></div>
+        <p class="meta"><b>PlayStation 2</b></p>
+        <p class="pitch">Late-series and rougher than its predecessors, but the stealth loop underneath is still the one Tenchu invented before anyone else in 3D. On the list for the series as much as the entry.</p>
+      </article>
+      <article class="ent" id="f49" data-r="49" data-dec="1980" data-plat="NES" data-q="metroid nes 1986">
+        <div class="hd"><span class="num">49</span><h3>Metroid <span class="yr">1986</span></h3></div>
+        <p class="meta"><b>NES</b></p>
+        <p class="pitch">No map, no hand-holding, and a password system that felt like a dare. It is the original of a genre named after it, and it still gets in the way of you enjoying it — which is part of the point.</p>
+      </article>
+      <article class="ent" id="f50" data-r="50" data-dec="2010" data-plat="Nintendo Switch" data-q="zelda breath of the wild nintendo switch 2017">
+        <div class="hd"><span class="num">50</span><h3>Zelda Breath of the Wild <span class="yr">2017</span></h3></div>
+        <p class="meta"><b>Nintendo Switch</b></p>
+        <p class="pitch">Rewrote what an open world could be, then Tears of the Kingdom did it again with better tools. Sitting at the bottom of this fifty is a statement about the sequel, not a knock on this.</p>
+      </article>
+    </div>
+    <div class="noresult" id="noresult" hidden>
+      <p>Nothing on the list matches that.</p>
+      <p style="margin-top:.8rem"><button type="button" id="reset2" style="background:var(--panel);color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:.35rem .9rem;font-family:var(--cond);letter-spacing:.06em;text-transform:uppercase;cursor:pointer">Clear the filters</button></p>
+    </div>
+  </section>
+
+  <section id="shame">
+    <h2 class="sec">The Shelf of Shame <small>Ten with a claim on this list, if only they had been finished</small></h2>
+    <p class="lede" style="font-size:1.06rem;margin-bottom:1.4rem">Eight of these were confessed. Two turned up in an audit, never even flagged — which is its own verdict. Of the eight confessed, seven never survived the first hour. Only one was abandoned in progress, which is somehow the more forgivable crime.</p>
+    <div class="shameg">
+      <div class="nbi">
+        <h3>Castlevania: Symphony of the Night <span class="yr">1997</span></h3>
+        <p class="sc">PlayStation <span class="dot">·</span> barely started</p>
+        <p>The 1986 Castlevania is at 32 on this list, earned the hard way, one committed jump at a time. Its most beloved descendant got about an hour before it was set down. No difficulty excuse available: this is the friendly one.</p>
+      </div>
+      <div class="nbi">
+        <h3>Chrono Trigger <span class="yr">1995</span></h3>
+        <p class="sc">Super Nintendo <span class="dot">·</span> real progress, then drifted</p>
+        <p>The only entry here that was genuinely underway. Final Fantasy II and III sit at 3 and 4, Secret of Mana at 24 — the whole SNES role-playing canon is accounted for except the one most people would have put first. It was going well. That is what makes it worse.</p>
+      </div>
+      <div class="nbi">
+        <h3>Donkey Kong Country 2 <span class="yr">1995</span></h3>
+        <p class="sc">Super Nintendo <span class="dot">·</span> barely started</p>
+        <p>Donkey Kong Country is at 16 for its escalating level design. The sequel is the one that escalates further, and it is widely held to be the better game. It got an hour.</p>
+      </div>
+      <div class="nbi">
+        <h3>Mega Man 3 <span class="yr">1990</span></h3>
+        <p class="sc">NES <span class="dot">·</span> barely started</p>
+        <p>Mega Man 2 is at 12, described on this list as the point where the formula clicked. The very next game adds the slide and Proto Man and was abandoned before the first Robot Master fell.</p>
+      </div>
+      <div class="nbi">
+        <h3>Mega Man X</h3>
+        <p class="sc">Super Nintendo <span class="dot">·</span> barely started</p>
+        <p>The reinvention of the series, and the opening stage is the most-praised tutorial level of its generation. Never got past the neighborhood of it.</p>
+      </div>
+      <div class="nbi">
+        <h3>Metroid Prime</h3>
+        <p class="sc">GameCube <span class="dot">·</span> barely started</p>
+        <p>Three Metroids made the fifty: Super Metroid at 5, Dread at 33, the 1986 original at 49. The fourth is the one everybody insists is the best of them, and the first-person turn simply did not take.</p>
+      </div>
+      <div class="nbi">
+        <h3>Panzer Dragoon Saga <span class="yr">1998</span></h3>
+        <p class="sc">Sega Saturn <span class="dot">·</span> never flagged</p>
+        <p>Not one Saturn game reached this list. Not one. The system&#x27;s defense has always been this — a four-disc role-playing game people still describe as the best reason the machine existed — and it did not come up once, in either direction, until an audit went looking for it.</p>
+      </div>
+      <div class="nbi">
+        <h3>Snatcher <span class="yr">1994</span></h3>
+        <p class="sc">Sega CD <span class="dot">·</span> barely started</p>
+        <p>The Sega CD&#x27;s single representative on the fifty is a Terminator side-scroller. Snatcher is the game the format is actually famous for, the one people write essays about, and it has been started once.</p>
+      </div>
+      <div class="nbi">
+        <h3>Zelda: Majora&#x27;s Mask <span class="yr">2000</span></h3>
+        <p class="sc">Nintendo 64 <span class="dot">·</span> never flagged</p>
+        <p>Seven Zelda games are on this list. This is the one a sizable faction argues is the best of them all, and it did not merit a mention in either column — not beaten, not confessed. The three-day clock ran out without anyone noticing.</p>
+      </div>
+      <div class="nbi">
+        <h3>Zelda: The Wind Waker</h3>
+        <p class="sc">GameCube <span class="dot">·</span> barely started</p>
+        <p>Seven Zelda games are on this list, from number 1 to number 50. Wind Waker is the hole in the middle of that run, and it lost its shot in the opening hour.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="findings">
+    <h2 class="sec">What the list says <small>Read back off the finished order</small></h2>
+    <div class="finds">
+      <div class="find"><h3>The top five is one console</h3><p>Every one of the first five came out on the Super Nintendo, and all five landed between 1991 and 1994. Whatever this list is measuring, it was largely settled in those four years.</p></div>
+      <div class="find"><h3>Two machines carry more than half</h3><p>16 entries are NES and 11 are Super Nintendo — 27 of fifty from two consoles that shared a decade.</p></div>
+      <div class="find"><h3>The nineties win outright</h3><p>39 of the fifty were released before 2000, and only two come from the entire 2000s. The gap is not a shortage of games; it is when the finishing happened.</p></div>
+      <div class="find"><h3>Zelda is the through line</h3><p>7 Zelda games are on the list, from the first position to the fiftieth — more than any other series. 8 carry the Mario name, 5 are Final Fantasy, and 3 are Metroid.</p></div>
+      <div class="find"><h3>Sega CD gets one seat</h3><p>The format's single representative here is a Terminator side-scroller, kept for its soundtrack. The game that format is actually famous for is two sections up, unfinished.</p></div>
+      <div class="find"><h3>The oldest entry is a tutorial</h3><p>Super Mario Bros. sits at 13, and its case is the same one made for it in 1985: World 1-1 teaches the whole game without a word of text.</p></div>
+    </div>
+  </section>
+
+  <section id="colophon" class="colo">
+    <h2 class="sec">Colophon <small>How the order was made, and what to distrust</small></h2>
+    <p><b>How the order was made.</b> The eligible pool was every console game that had actually been beaten — 130 of them, plus four hard games that were carried far enough that calling them unfinished was a technicality. That pool was cut to a 63-game shortlist of real favorites, and the shortlist was ranked by <b>350 head-to-head picks</b>: two games on screen, one question, no scores and no scoring rubric. The picks were turned into an order by a Bradley-Terry fit over the whole comparison log, so an early pick is re-weighted once later picks reveal how strong its opponent really was.</p>
+    <p><b>What to distrust.</b> A rating method never fully settles the games nearest each other. Treat a gap of three positions as noise and a gap of twenty as real. <b>The top ten is the least reliable part of any such ranking</b>, not the most — the games up there are close in the mind that ranked them, which is exactly the condition the math handles worst. Two positions were set by hand rather than by duel: Metroid was pulled up to 49, and Breath of the Wild was pushed down to 50.</p>
+    <p><b>Years and names.</b> Where a game is known by a different number elsewhere, this list uses the name printed on the release it was played on — so Final Fantasy II and Final Fantasy III here are the games sold under those names on the Super Nintendo. Years are first US release. Ocarina of Time appears once for the Nintendo 64 and, separately, the 3DS version was ranked on its own and did not make the fifty.</p>
+    <p><b>No critic scores.</b> Issue One ran Rotten Tomatoes numbers beside every film. There is no equivalent here: aggregate review scores do not exist for most of this list, which is largely pre-1999, and a meter that was blank for thirty-five of fifty entries would have quietly punished the oldest games for the sin of being old. The order is unsourced on purpose.</p>
+    <p><b>The ranking is Orlandu's.</b> The write-ups are editorial.</p>
+    <p class="note">Like Issue One, this is off the usual beat — no CRTs, no coin doors. It is here for the same reason: fifty games ranked by duel is the same instinct as a shelf of monitors ranked by measurement. The argument gets settled by comparison, not by opinion.</p>
+  </section>
+
+  <p style="margin-top:1.2rem"><a class="btn cy" href="stories.html">← More stories</a> &nbsp; <a class="btn" href="orlandu-100.html">The Orlandu 100 →</a></p>
+</main>
+
+<footer class="site"></footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add("js");
+  var form = document.getElementById("o50c");
+  if (!form) return;
+
+  // The shared nav wraps to a second row at some widths, so the sticky offset is
+  // measured rather than assumed. site.js reserves the height before it injects.
+  function stick(){
+    var h = document.querySelector("header.site");
+    var d = document.documentElement;
+    d.style.setProperty("--o50top", (h ? h.offsetHeight : 74) + "px");
+    // The filter bar wraps to a different number of rows at different widths, so its
+    // height is measured too — a section heading must clear both, not just the nav.
+    d.style.setProperty("--o50bar", (form.offsetHeight || 144) + "px");
+  }
+  stick();
+  window.addEventListener("resize", stick);
+  // A page opened straight at #f37 gets its fragment scroll BEFORE the bar has been
+  // measured, so it lands behind the bar. Re-measure once everything is laid out,
+  // then send it to the anchor again.
+  window.addEventListener("load", function(){
+    stick();
+    if (location.hash){
+      var el = document.querySelector(location.hash);
+      if (el) el.scrollIntoView();
+    }
+  });
+
+  var q = document.getElementById("q"),
+      count = document.getElementById("count"),
+      noresult = document.getElementById("noresult"),
+      ten = document.getElementById("topten"),
+      items = Array.prototype.slice.call(document.querySelectorAll("[data-r]")),
+      decs = [], plats = [];
+
+  function apply(){
+    var term = q.value.trim().toLowerCase(), shown = 0, tenShown = 0;
+    items.forEach(function(el){
+      var ok = (!decs.length || decs.indexOf(el.dataset.dec) > -1)
+            && (!plats.length || plats.indexOf(el.dataset.plat) > -1)
+            && (!term || el.dataset.q.indexOf(term) > -1);
+      el.hidden = !ok;
+      if (ok){ shown++; if (+el.dataset.r <= 10) tenShown++; }
+    });
+    ten.hidden = tenShown === 0;
+    noresult.hidden = shown !== 0;
+    count.textContent = shown === 50 ? "Showing all 50" : "Showing " + shown + " of 50";
+  }
+
+  function toggle(btn, list){
+    var v = btn.dataset.v, i = list.indexOf(v), on = i === -1;
+    if (on) list.push(v); else list.splice(i, 1);
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    apply();
+  }
+
+  form.querySelectorAll("button.dec").forEach(function(b){
+    b.addEventListener("click", function(){ toggle(b, decs); });
+  });
+  form.querySelectorAll("button.plat").forEach(function(b){
+    b.addEventListener("click", function(){ toggle(b, plats); });
+  });
+  q.addEventListener("input", apply);
+  form.addEventListener("submit", function(e){ e.preventDefault(); });
+
+  function reset(){
+    q.value = ""; decs.length = 0; plats.length = 0;
+    form.querySelectorAll("button[aria-pressed]").forEach(function(b){
+      b.setAttribute("aria-pressed", "false");
+    });
+    apply();
+  }
+  document.getElementById("reset").addEventListener("click", reset);
+  document.getElementById("reset2").addEventListener("click", reset);
+
+  // A deep link like #f42 must survive an active filter.
+  window.addEventListener("hashchange", function(){
+    var el = document.querySelector(window.location.hash);
+    if (el && el.hidden){ reset(); el.scrollIntoView(); }
+  });
+})();
+</script>
+
+</body>
+</html>
