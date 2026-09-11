@@ -10,6 +10,11 @@
 
 - [Coin-Op Games](https://www.orlandu.com/games.html): arcade cabinets, the pinball row, and the game room.
 - [The Monitor Fleet](https://www.orlandu.com/monitors.html): the Sony PVM, BVM and LMD roster, model by model.
+- [Sony PVM-2950Q](https://www.orlandu.com/pvm-2950q.html): the 29-inch Super Trinitron production monitor — profile, inputs, work log.
+- [Sony PVM-20L5](https://www.orlandu.com/pvm-20l5.html): the multiformat 20-inch PVM — profile, inputs, work log.
+- [Sony BVM-20E1U](https://www.orlandu.com/bvm-20e1u.html): the 1000-TVL 20-inch broadcast monitor — profile, cards, work log.
+- [Sony BVM-A14F5U](https://www.orlandu.com/bvm-a14f5u.html): the last-generation 14-inch BVM — profile, cards, work log.
+- [The LMD wall](https://www.orlandu.com/lmd-wall.html): the four LMD models and nine units behind the tubes.
 - [The Consoles](https://www.orlandu.com/consoles.html): Nintendo, Sega, NEC and Sony hardware, most of it RGB-modded.
 - [The Signage Wall](https://www.orlandu.com/signage.html): Nintendo retail signage, sixteen original PlayChoice-10 arcade toppers, and eighteen VS. instruction cards.
 - [The Strategy Guide Shelf](https://www.orlandu.com/guide-shelf.html): twenty-one official Nintendo Player's Guides, photographed cover by cover.
@@ -42,6 +47,7 @@
 - [The Orlandu 100](https://www.orlandu.com/orlandu-100.html): a hundred favorite films ranked by head-to-head duel, with Rotten Tomatoes scores, the outliers this list defends, and the method behind the order. Not about the arcade.
 - [The Orlandu 50](https://www.orlandu.com/orlandu-50-games.html): fifty favorite console games ranked by head-to-head duel, admitted only if they were actually finished, plus the ten that were not. Not about the arcade.
 - [Projects](https://www.orlandu.com/projects.html): the bench log — what's being repaired right now.
+- [Timeline](https://www.orlandu.com/timeline.html): every machine, console and monitor plotted by release year.
 - [Glossary](https://www.orlandu.com/glossary.html): the arcade and broadcast vocabulary the site uses — JAMMA, CPO, candy cab, NOS, RGB, 240p, SCART, BNC, BKM, TVL, multiscan.
 
 ## Trading

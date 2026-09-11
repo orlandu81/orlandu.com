@@ -180,7 +180,7 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
   background:
     radial-gradient(ellipse 70% 55% at 50% 0%,rgba(255,138,0,.12),transparent 62%),
     linear-gradient(180deg,rgba(10,10,18,.34),rgba(10,10,18,.10) 40%,rgba(14,14,26,.80)),
-    url("hero-bg.jpg") center 30%/cover no-repeat;
+    url("hero-bg.webp") center 30%/cover no-repeat;
   transform:scale(1.06);transform-origin:60% 40%;
 }
 @keyframes kenburns{
@@ -623,3 +623,21 @@ table.spec td.val{color:var(--cyan)}
 table.spec .fam{display:block;font-family:var(--cond);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fire2);font-weight:400}
 .tablewrap+p.note{margin-top:.6rem}
 @media(prefers-reduced-motion:reduce){.readbar i,.linktoast,.resume,button.share,.sbtn{transition:none}}
+
+/* ── Contact form ─────────────────────────────────────────── */
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:.8rem 1rem;max-width:720px;margin-top:1.2rem}
+.cform label{display:flex;flex-direction:column;gap:.3rem;font-family:var(--cond);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.cform label.wide,.cform .cstatus,.cform .cactions{grid-column:1/-1}
+.cform input,.cform textarea{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:.6rem .75rem;font-family:var(--body);font-size:1.05rem;letter-spacing:0;text-transform:none}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--cyan-dim);box-shadow:0 0 0 2px rgba(94,233,255,.15)}
+.cform textarea{min-height:8rem;resize:vertical}
+.cform input[type="file"]{padding:.45rem .6rem;color:var(--dim);font-size:.95rem}
+.cform input[type="file"]::file-selector-button{background:transparent;border:1px solid var(--line);color:var(--cyan);border-radius:6px;padding:.3rem .7rem;margin-right:.7rem;font-family:var(--cond);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.cform .hp{position:absolute;left:-9999px;top:0;height:0;overflow:hidden}
+.cform .cactions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.cform .cactions .alt{color:var(--dim);font-size:.95rem}
+.cform .cstatus{font-family:var(--cond);letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;padding:.5rem .8rem;border-radius:8px;border:1px solid var(--line);color:var(--dim)}
+.cform .cstatus.ok{color:#9effa0;border-color:#3f7d41}
+.cform .cstatus.warn{color:var(--fire3);border-color:var(--fire2)}
+.cform .cstatus[hidden]{display:none}
+@media(max-width:640px){.cform{grid-template-columns:1fr}}

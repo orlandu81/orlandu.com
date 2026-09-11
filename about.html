@@ -125,7 +125,7 @@
    "@id": "https://www.orlandu.com/about.html#video-game-room-spin",
    "name": "Game room spin",
    "description": "A 33-second spin through the game room — the framed PCB wall, Super Mario Bros. on the PVMs, the fiber-optic Kay·Bee World of Nintendo sign, and the Mini Cute and Red Tent holding their corners.",
-   "thumbnailUrl": "https://www.orlandu.com/media/2026/game-room-spin-poster.jpg",
+   "thumbnailUrl": "https://www.orlandu.com/media/2026/game-room-spin-poster.webp",
    "contentUrl": "https://www.orlandu.com/media/video/game-room-spin-v2.mp4",
    "uploadDate": "2026-09-11",
    "duration": "PT0M34S",
@@ -232,7 +232,7 @@
 
   <section>
     <h2 class="sec">Inside the game room <small>one full turn</small></h2>
-    <figure class="shot" style="max-width:300px"><video src="media/video/game-room-spin-v2.mp4" poster="media/2026/game-room-spin-poster.jpg" controls muted loop playsinline preload="metadata" data-autoplay></video><figcaption><b>A 33-second spin</b> — the framed PCB wall, Super Mario Bros. on the PVMs, the fiber-optic Kay&middot;Bee World of Nintendo sign, and the Mini Cute and Red Tent holding their corners</figcaption></figure>
+    <figure class="shot" style="max-width:300px"><video src="media/video/game-room-spin-v2.mp4" poster="media/2026/game-room-spin-poster.webp" controls muted loop playsinline preload="metadata" data-autoplay></video><figcaption><b>A 33-second spin</b> — the framed PCB wall, Super Mario Bros. on the PVMs, the fiber-optic Kay&middot;Bee World of Nintendo sign, and the Mini Cute and Red Tent holding their corners</figcaption></figure>
   </section>
 
   <section id="contact">
@@ -271,6 +271,22 @@
       </div>
     </div>
     <p class="note" style="margin-top:1.2rem">Have something from the <a href="wanted.html">wanted list</a>, or a question about something for sale? Email <a href="mailto:orlandusarcade@gmail.com">orlandusarcade@gmail.com</a> — or reach out via eBay messages or an <a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram DM</a>.</p>
+  </section>
+
+  <section id="write">
+    <h2 class="sec">Write to the arcade <small>lands in the same inbox</small></h2>
+    <p class="lede" style="max-width:66ch">Questions, offers, a lead on something from the hunt list, or a photo of a mystery board you want identified &mdash; this goes straight to the arcade&rsquo;s email. No account, no mail app needed.</p>
+
+    <form class="cform" id="cf" novalidate>
+      <label>Your name<input type="text" name="name" id="cf-name" autocomplete="name" maxlength="120"></label>
+      <label>Your email<input type="email" name="email" id="cf-email" autocomplete="email" maxlength="200" placeholder="so the reply can find you"></label>
+      <label class="wide">Subject<input type="text" name="subject" id="cf-subject" maxlength="160" placeholder="What is it about?"></label>
+      <label class="wide">Message<textarea name="message" id="cf-message" maxlength="6000" required></textarea></label>
+      <label class="wide">Photo, if it helps <span style="text-transform:none;letter-spacing:0">(optional &middot; JPEG, PNG or HEIC)</span><input type="file" name="photo" id="cf-photo" accept="image/*"></label>
+      <label class="hp" aria-hidden="true">Website<input type="text" name="site" tabindex="-1" autocomplete="off"></label>
+      <p class="cstatus" hidden aria-live="polite"></p>
+      <div class="cactions"><button type="submit" class="btn" id="cf-send">Send it &rarr;</button><span class="alt">or email <a href="mailto:orlandusarcade@gmail.com">orlandusarcade@gmail.com</a> directly</span></div>
+    </form>
   </section>
 
   <section id="faq">

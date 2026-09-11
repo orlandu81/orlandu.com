@@ -72,7 +72,7 @@
         '</div>' +
         '<nav class="explore" aria-label="Explore the site">' +
           '<div><span>Pages</span>' + NAV.slice(1).map(([href, label]) => '<a href="' + href + '">' + label + '</a>').join('') +
-            '<a href="glossary.html">Glossary</a><a href="about.html#faq">FAQ</a></div>' +
+            '<a href="glossary.html">Glossary</a><a href="timeline.html">Timeline</a><a href="about.html#faq">FAQ</a></div>' +
           '<div><span>Reading</span>' +
             '<a href="crt-field-guide.html">Professional glass in the wild</a>' +
             '<a href="ams-100-monograph.html">The AMS-100 monograph</a>' +
@@ -835,4 +835,80 @@
   // A page can ask for the dialog on load (404 uses this) or open it from any link to #search.
   if (location.hash === "#search" || document.body.dataset.search === "open") setTimeout(open, 50);
   document.addEventListener("click", function(e){ var a = e.target.closest('a[href="#search"]'); if (a){ e.preventDefault(); open(); } });
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   Contact form (2026-09-11)
+   Any <form class="cform"> posts JSON to /api/contact (a Vercel function relaying
+   through Resend). A photo can ride along (≤3 MB; bigger phone photos are downscaled
+   in the browser first). If the function is not configured yet it answers 503, the
+   form says so and points at the mailto link; the mailto is always there as a fallback.
+   ?subject= in the URL, or a click on any <a data-item>, prefills the subject — that
+   is how the Wanted page's "I have one →" links work.
+   ═══════════════════════════════════════════════════════════ */
+(function(){
+  var forms = document.querySelectorAll("form.cform");
+  if (!forms.length) return;
+  function setSubject(f, s){ var i = f.querySelector('[name="subject"]'); if (i && s){ i.value = s; } }
+  var q = new URLSearchParams(location.search).get("subject");
+  forms.forEach(function(f){ if (q) setSubject(f, q); });
+  document.addEventListener("click", function(e){
+    var a = e.target.closest("a[data-item]"); if (!a) return;
+    var f = document.querySelector("form.cform"); if (!f) return;
+    e.preventDefault();
+    setSubject(f, a.dataset.item);
+    f.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    setTimeout(function(){ var m = f.querySelector('[name="message"]'); if (m) m.focus(); }, 500);
+  });
+  function shrink(file){ // downscale big phone photos so they fit the 3 MB cap
+    return new Promise(function(res){
+      if (file.size <= 2.5 * 1024 * 1024 || !/^image\/(jpeg|png|webp)$/.test(file.type)) return res(null);
+      var img = new Image(), url = URL.createObjectURL(file);
+      img.onload = function(){
+        var s = Math.min(1, 2000 / Math.max(img.width, img.height));
+        var c = document.createElement("canvas"); c.width = Math.round(img.width * s); c.height = Math.round(img.height * s);
+        c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        res({ name: file.name.replace(/\.\w+$/, "") + ".jpg", type: "image/jpeg", data: c.toDataURL("image/jpeg", 0.85) });
+      };
+      img.onerror = function(){ res(null); };
+      img.src = url;
+    });
+  }
+  function readFile(file){
+    return new Promise(function(res, rej){ var r = new FileReader(); r.onload = function(){ res({ name: file.name, type: file.type, data: r.result }); }; r.onerror = rej; r.readAsDataURL(file); });
+  }
+  forms.forEach(function(f){
+    var status = f.querySelector(".cstatus"), btn = f.querySelector('button[type="submit"]');
+    function say(msg, kind){ status.textContent = msg; status.className = "cstatus " + (kind || ""); status.hidden = false; }
+    f.addEventListener("submit", function(e){
+      e.preventDefault();
+      var fd = new FormData(f);
+      var msg = (fd.get("message") || "").trim();
+      if (msg.length < 5){ say("Write a line or two first.", "warn"); f.querySelector('[name="message"]').focus(); return; }
+      var fileInput = f.querySelector('input[type="file"]');
+      var file = fileInput && fileInput.files[0];
+      if (file && file.size > 12 * 1024 * 1024){ say("That photo is over 12 MB — pick a smaller one or send it by email.", "warn"); return; }
+      btn.disabled = true; say("Sending…", "");
+      var body = { name: fd.get("name"), email: fd.get("email"), subject: fd.get("subject"), message: msg, site: fd.get("site") || "" };
+      var prep = file ? shrink(file).then(function(r){ return r || readFile(file); }) : Promise.resolve(null);
+      prep.then(function(photo){
+        if (photo){
+          if (photo.data.length * 0.75 > 3 * 1024 * 1024) throw new Error("photo-too-big");
+          body.photo = photo;
+        }
+        return fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+      }).then(function(r){
+        if (r.ok){ f.reset(); say("Sent. Thanks — replies come from orlandusarcade@gmail.com.", "ok"); btn.disabled = false; return; }
+        return r.json().catch(function(){ return {}; }).then(function(j){ throw new Error(j.error || ("http-" + r.status)); });
+      }).catch(function(err){
+        btn.disabled = false;
+        var k = err && err.message;
+        if (k === "not-configured") say("The form isn't switched on yet — use the email link below instead.", "warn");
+        else if (k === "photo-too-big" || k === "http-413") say("That photo is too large for the form — send it by email instead.", "warn");
+        else if (k === "bad-email") say("That email address doesn't look right.", "warn");
+        else say("Couldn't send just now — the email link below always works.", "warn");
+      });
+    });
+  });
 })();
