@@ -29,9 +29,13 @@
 <style>main.hub{--acc:#ffd400}</style>
 <script src="assets/site.js" defer></script>
 <style>
-  .signstrip{display:grid;gap:.7rem;margin-top:1rem}
-  .signstrip img{width:100%;display:block}
-  .signstrip video{height:auto;cursor:pointer}
+  .signshow{margin-top:2.4rem}
+  .signshow .shot{margin:0 0 1.1rem}
+  .signshow .sub{font-family:var(--cond);color:var(--fire2);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase}
+  .signshow h3{font-size:1.6rem;margin:.1rem 0 .9rem}
+  .signshow .specs{margin:0 0 1.1rem}
+  .signshow p{margin:0 0 .9rem;max-width:62rem}
+  #signs video{height:auto;cursor:pointer}
   .topperwall{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:.9rem;margin-top:1.2rem}
   .topperwall figcaption{padding:.45rem .7rem;font-size:.9rem}
   .topperwall{align-items:start}
@@ -92,30 +96,51 @@
   <section id="signs">
     <h2 class="sec">Nintendo retail signage <small>the store stuff</small></h2>
     <p class="lede">None of this ever ran a game. It hung in a toy store, or over a rental counter, and its whole job was to make a kid stop walking. Three of them survived that job and now light the game room.</p>
-    <div class="grid c3">
-      <div class="card">
-        <div class="sub">Fiber optic</div>
-        <h3>KB Toys co-branded display</h3>
-        <p>Store-glow nostalgia: the fiber optic Nintendo sign that once pulled kids across a mall.</p>
-      </div>
-      <div class="card">
-        <div class="sub">Fluorescent</div>
-        <h3>World of Nintendo Superbrite</h3>
-        <p>The iconic red-and-white World of Nintendo marquee, Superbrite fluorescent version.</p>
-      </div>
-      <div class="card">
-        <div class="sub">NESM36F</div>
-        <h3>NES Racetrack sign</h3>
-        <p>The NES racetrack display, out of the box and on display in the game room.</p>
-      </div>
-    </div>
-    <div class="signstrip">
+    <p>In the late 1980s Nintendo stopped leaving its shelf space to the stores. Under a program it called <b>World of Nintendo</b>, it shipped retailers a complete <em>store within a store</em> &mdash; logo signage, banners, hardware and software displays, playable demo stations &mdash; so its section looked like Nintendo&rsquo;s own, whatever chain it sat in. The lighted signs hung above it all. They were store fixtures, not merchandise &mdash; made to hang until the next display program replaced them.</p>
+
+    <article class="signshow" id="sign-kaybee">
       <figure class="shot"><video src="media/video/sign-kaybee-loop.mp4" poster="media/2026/sign-kaybee-loop-poster.jpg" muted loop playsinline preload="metadata" data-autoplay width="1280" height="320" aria-label="Fiber optic Kay-Bee and World of Nintendo sign lit up, the Kay-Bee letters shifting color and the fibers sparkling beside the red Nintendo oval"></video><figcaption><b>Kay&middot;Bee &times; World of Nintendo</b> — the co-branded fiber optic, both panels lit</figcaption></figure>
-      <figure class="shot"><img src="media/thumbs/sign-superbrite-v2.jpg" data-full="media/2026/sign-superbrite-v2.jpg" alt="World of Nintendo Superbrite sign lit head on, yellow World of over the red Nintendo oval" loading="lazy" width="800" height="342" decoding="async"><figcaption><b>The Superbrite</b> — fluorescent, straight on, no glare</figcaption></figure>
+      <div class="sub">Fiber optic &middot; 1990</div>
+      <h3>Kay&middot;Bee &times; World of Nintendo</h3>
+      <div class="specs">
+        <div><span class="sl">Light</span><span class="sv">Fiber optic, animated</span></div>
+        <div><span class="sl">Made</span><span class="sv">1990</span></div>
+        <div><span class="sl">Part no.</span><span class="sv">M36C</span></div>
+        <div><span class="sl">Size</span><span class="sv">6 ft &times; 18 in</span></div>
+      </div>
+      <p>The one sign in the room that names a store. Kay-Bee Toys started in 1922 as the Kaufman brothers&rsquo; candy wholesale business in Massachusetts &mdash; the name is just their initials, K.B. &mdash; and became the toy store in the mall: 1,324 of them by 1999, the second-largest toy chain in the country. This is the co-branded version of Nintendo&rsquo;s fiber optic sign, six feet of it, with <b>Kay&middot;Bee</b> in points of light beside the World of Nintendo oval. It was made for Kay-Bee stores in 1990.</p>
+      <p>Kay-Bee closed its last stores in early 2009, and its fixtures went with it. Its fiber mechanism still works perfectly: the letters shift color and sparkle through a cycle of about 24 seconds, which is exactly what the loop above shows, start to finish.</p>
+    </article>
+
+    <article class="signshow" id="sign-racetrack">
       <figure class="shot"><video src="media/video/sign-racetrack-loop.mp4" poster="media/2026/sign-racetrack-loop-poster.jpg" muted loop playsinline preload="metadata" data-autoplay width="1280" height="416" aria-label="Fiber optic Nintendo racetrack sign lit up, white lettering inside a red bulb-outlined oval on black, the bulbs cycling through their pattern"></video><figcaption><b>The racetrack</b> — NESM36F, the oval that gives it the name</figcaption></figure>
-    </div>
+      <div class="sub">Fiber optic &middot; NESM36F</div>
+      <h3>The NES Racetrack</h3>
+      <div class="specs">
+        <div><span class="sl">Light</span><span class="sv">Fiber optic, animated</span></div>
+        <div><span class="sl">Part no.</span><span class="sv">NESM36F</span></div>
+        <div><span class="sl">Size</span><span class="sv">About 36 &times; 16 &times; 8 in</span></div>
+        <div><span class="sl">Cycle</span><span class="sv">12 seconds</span></div>
+      </div>
+      <p>Collectors call the Nintendo oval &ldquo;the racetrack,&rdquo; and this sign is nothing but the racetrack: the wordmark in white light, ringed by two red tracks, about 530 points of light in all. Behind the face, a single lamp feeds a bundle of optical fibers, and every point on the face is the end of one fiber. As the sign runs, the letters go from white to red and back, and the pattern repeats exactly every 12 seconds.</p>
+      <p>Out of the box and on display in the game room, with its fiber mechanism still working perfectly.</p>
+    </article>
+
+    <article class="signshow" id="sign-superbrite">
+      <figure class="shot"><img src="media/2026/sign-superbrite-v2.jpg" srcset="media/thumbs/sign-superbrite-v2.jpg 800w, media/2026/sign-superbrite-v2.jpg 1600w" sizes="(max-width:1200px) calc(100vw - 40px), 1160px" data-full="media/2026/sign-superbrite-v2.jpg" alt="World of Nintendo Superbrite sign lit head on, yellow World of over the red Nintendo oval" loading="lazy" width="1600" height="684" decoding="async"><figcaption><b>The Superbrite</b> — fluorescent, straight on, no glare</figcaption></figure>
+      <div class="sub">Fluorescent &middot; Superbrite series</div>
+      <h3>World of Nintendo Superbrite</h3>
+      <div class="specs">
+        <div><span class="sl">Light</span><span class="sv">2 &times; F25T12 fluorescent</span></div>
+        <div><span class="sl">Part no.</span><span class="sv">M36R</span></div>
+        <div><span class="sl">Size</span><span class="sv">About 36 &times; 16 &times; 6 in</span></div>
+        <div><span class="sl">Built by</span><span class="sv">Thomas A. Schutz Co.</span></div>
+      </div>
+      <p>From across a store it reads as neon. There is no neon in it. Two F25T12 fluorescent tubes light the face from behind &mdash; that is the <em>Superbrite</em> idea, the look of a tube sign from ordinary fluorescents. It was built by the Thomas A. Schutz Co. of Morton Grove, Illinois, whose lighted signs also advertised beer brands.</p>
+      <p>The World of Nintendo logo is printed on both sides, but only one side lights. It was most likely made to hang in a window: lit toward the street, still readable from inside the store. This is the full logo in Nintendo&rsquo;s colors, yellow <b>World of</b> over the red oval.</p>
+    </article>
   </section>
-  <script>document.querySelectorAll(".signstrip video").forEach(function(v){v.addEventListener("click",function(){if(v.paused){var p=v.play();if(p)p.catch(function(){})}else v.pause()})})</script>
+  <script>document.querySelectorAll("#signs video").forEach(function(v){v.addEventListener("click",function(){if(v.paused){var p=v.play();if(p)p.catch(function(){})}else v.pause()})})</script>
 
   <section id="toppers">
     <h2 class="sec">The PlayChoice-10 topper wall <small>sixteen originals</small></h2>
