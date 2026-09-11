@@ -125,7 +125,7 @@
 </script>
 <style>.tagbar{font-family:var(--cond);letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;color:var(--fire3);margin:-.6rem 0 1rem}.tagbar a{color:var(--cyan)}</style>
 </head>
-<body>
+<body data-slideshow>
 
 <header class="site" data-page="gallery"></header>
 
@@ -146,6 +146,7 @@
     <button data-cat="monitors">Monitors</button>
     <button data-cat="projects">Projects</button>
     <button data-cat="signage">Signage</button>
+    <button type="button" class="play" id="play" aria-label="Play the current set as a slideshow">▶ Play</button>
   </div>
 
   <div class="masonry" id="wall"></div>
@@ -207,21 +208,31 @@
   }
 
   function setOn(cat){
-    filters.querySelectorAll('button').forEach(x => x.classList.toggle('on', x.dataset.cat === cat));
+    filters.querySelectorAll('button[data-cat]').forEach(x => x.classList.toggle('on', x.dataset.cat === cat));
   }
   // Filter state lives in the hash so a category or a machine tag can be linked to:
   // gallery.html#pinball, gallery.html#tag=big-blue.
+  let autoplay = false;
   function fromHash(){
-    const h = location.hash.replace(/^#/, '');
+    let h = location.hash.replace(/^#/, '');
+    autoplay = /(^|&)play$/.test(h);
+    h = h.replace(/(^|&)play$/, '');
     const m = h.match(/^tag=([a-z0-9-]+)$/);
     activeTag = m ? m[1] : null;
-    const cats = Array.from(filters.querySelectorAll('button')).map(b => b.dataset.cat);
+    const cats = Array.from(filters.querySelectorAll('button[data-cat]')).map(b => b.dataset.cat);
     const cat = (!m && cats.includes(h)) ? h : 'all';
     setOn(cat);
     render(cat);
+    if (autoplay){ autoplay = false; setTimeout(startShow, 150); }
   }
+  // Attract Mode: play whatever the wall is currently showing, in wall order.
+  function startShow(){
+    if (typeof window.orlanduSlideshow !== 'function') return;
+    window.orlanduSlideshow(Array.from(wall.querySelectorAll('img[data-full]')));
+  }
+  document.getElementById('play').addEventListener('click', startShow);
   filters.addEventListener('click', e => {
-    const b = e.target.closest('button'); if (!b) return;
+    const b = e.target.closest('button'); if (!b || b.id === 'play') return;
     activeTag = null;
     const cat = b.dataset.cat;
     history.replaceState(null, '', cat === 'all' ? location.pathname : '#' + cat);

@@ -471,3 +471,45 @@ Useful fields: `upgrades` (list of `{desc, cost, date}`), `conditionNotes`, `not
   https://claude.ai/code/artifact/c4999444-8cc3-49fd-8f52-bf996c268710
 - **The Bench Book** — work-log intake (mostly superseded by the vault):
   https://claude.ai/code/artifact/0f218037-5cbf-469f-a9c1-8832f67ef0a4
+
+## Round-five features (2026-09-11) — what they are and what they obligate
+
+Shipped together from the fifth review (memory: `orlandu-2026-09-11-review5`):
+
+- **Site search** — the magnifier in the header (and the button on 404) opens a dialog over
+  `assets/search-index.js`. **That file is GENERATED: run `python3 tools/build-search-index.py`
+  from the repo root before every push** so new pages, cards, glossary terms and gallery
+  captions are searchable. It indexes published pages only. Magazine/monograph bodies are
+  headings-only by design.
+- **Glossary tooltips** — `assets/glossary-data.js` is generated from `glossary.html` by
+  `python3 tools/build-glossary.py`; rerun it when a term is added or a definition changes.
+  Tooltips run on pages with a reading time (`div.rt`), skipping the glossary, the monograph
+  and the two Orlandu 100/50 issues. First occurrence per page only; aliases and the
+  too-generic SKIP list live in the script.
+- **Section links + Share** — `site.js` gives every `main h2` an id from its text and a hover
+  "#" that copies the deep link; story/guide pages (`.rt`) and machine profiles (`main.profile`)
+  get a Share button under the lede (native share sheet, copy-link fallback). Existing ids are
+  kept, so hand-written anchors still work; renaming a heading changes its generated id.
+- **Reading progress + resume** — pages with `div.rt` get the thin bar under the header and a
+  "Pick up where you left off" pill on a return visit past a third; state is per-browser
+  localStorage (`orl-read:<path>`). The magazine has no site chrome and gets neither.
+- **Lightbox zoom** — wheel/drag, pinch/double-tap, and a 1:1 button; swipe-to-navigate only
+  fires at fit size. Zoom shows the 1600px master at native pixels, so **check a new sale photo
+  for legible serials/asset tags before it goes up** (the privacy note already says so).
+- **Attract Mode slideshow** — gallery only (`<body data-slideshow>`): the ▶ Play chip runs the
+  current set; `gallery.html#play`, `#pinball&play` and `#tag=tna&play` start it on load.
+  Fullscreen where allowed, 5 s per photo, tap or space pauses, cursor hides after 2 s.
+- **Fleet spec table** (`monitors.html#specs`) is condensed from the magazine's `DATA` object —
+  the magazine remains the long-form source; when a spec changes there, change it here too.
+  Sort is client-side (`data-sort`, `data-v`). **Units column mirrors the fleet count sweep.**
+- **Console mod table** (`consoles.html#mods`) lists only consoles whose signal path the site
+  states; handhelds and the bench unit stay off. David confirmed 2026-09-11: BOTH NES units carry
+  an NESRGB, and the Duo-R has an RGB mod plus the region mod.
+- **Structured data** — `VideoObject` nodes on about, signage (×2), projects and
+  ams-3-vs-ams-100 (durations from ffprobe; `uploadDate` is the ship date), and a `FAQPage` on
+  about.html built from the eight confirmed answers. **Editing an FAQ answer means editing the
+  JSON-LD copy too.** A new video needs a VideoObject.
+
+Still to come from that review, in this order, one per session: monitor model pages,
+the WebP `<picture>` pass, the collection timeline (mockup first), the contact form
+(Vercel function + Resend — David's choice).
