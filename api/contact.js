@@ -5,7 +5,7 @@
 // back to the mailto link. `site` is a honeypot — bots fill it, people never see it.
 const TO = "orlandusarcade@gmail.com";
 const FROM = "Orlandu's Arcade <onboarding@resend.dev>"; // free tier: delivers to the account's own verified address only
-const MAX_PHOTO = 3 * 1024 * 1024; // decoded bytes; Vercel caps the whole request at 4.5 MB
+const MAX_PHOTO = 2.5 * 1024 * 1024; // decoded bytes; Vercel caps the whole request at 4.5 MB
 
 module.exports = async (req, res) => {
   res.setHeader("Cache-Control", "no-store");

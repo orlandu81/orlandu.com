@@ -860,18 +860,19 @@
     f.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
     setTimeout(function(){ var m = f.querySelector('[name="message"]'); if (m) m.focus(); }, 500);
   });
-  function shrink(file){ // downscale big phone photos so they fit the 3 MB cap
+  function shrink(file){ // re-encode every decodable photo at ≤1600px so the request stays small
     return new Promise(function(res){
-      if (file.size <= 2.5 * 1024 * 1024 || !/^image\/(jpeg|png|webp)$/.test(file.type)) return res(null);
+      if (!/^image\/(jpeg|png|webp|gif|bmp)$/.test(file.type)) return res(null);
       var img = new Image(), url = URL.createObjectURL(file);
       img.onload = function(){
-        var s = Math.min(1, 2000 / Math.max(img.width, img.height));
+        var s = Math.min(1, 1600 / Math.max(img.width, img.height));
         var c = document.createElement("canvas"); c.width = Math.round(img.width * s); c.height = Math.round(img.height * s);
         c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
         URL.revokeObjectURL(url);
-        res({ name: file.name.replace(/\.\w+$/, "") + ".jpg", type: "image/jpeg", data: c.toDataURL("image/jpeg", 0.85) });
+        try { res({ name: file.name.replace(/\.\w+$/, "") + ".jpg", type: "image/jpeg", data: c.toDataURL("image/jpeg", 0.82) }); }
+        catch (e) { res(null); }
       };
-      img.onerror = function(){ res(null); };
+      img.onerror = function(){ URL.revokeObjectURL(url); res(null); };
       img.src = url;
     });
   }
@@ -880,7 +881,20 @@
   }
   forms.forEach(function(f){
     var status = f.querySelector(".cstatus"), btn = f.querySelector('button[type="submit"]');
-    function say(msg, kind){ status.textContent = msg; status.className = "cstatus " + (kind || ""); status.hidden = false; }
+    function say(msg, kind){
+      status.textContent = msg; status.className = "cstatus " + (kind || ""); status.hidden = false;
+      var r = status.getBoundingClientRect();
+      if (r.top < 0 || r.bottom > innerHeight) status.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    }
+    var fi = f.querySelector('input[type="file"]');
+    if (fi) fi.addEventListener("change", function(){
+      var file = fi.files[0];
+      if (!file){ status.hidden = true; return; }
+      var mb = (file.size / 1048576).toFixed(1);
+      if (!/^image\/(jpeg|png|webp|gif|bmp)$/.test(file.type) && file.size > 2.5 * 1024 * 1024)
+        say("That " + (file.type.replace("image/", "").toUpperCase() || "file") + " is " + mb + " MB and can't be shrunk here — email it instead, or pick a JPEG.", "warn");
+      else say("Attached: " + file.name + " (" + mb + " MB" + (file.size > 1.5 * 1048576 ? ", will be shrunk before sending" : "") + ")", "");
+    });
     f.addEventListener("submit", function(e){
       e.preventDefault();
       var fd = new FormData(f);
@@ -888,13 +902,13 @@
       if (msg.length < 5){ say("Write a line or two first.", "warn"); f.querySelector('[name="message"]').focus(); return; }
       var fileInput = f.querySelector('input[type="file"]');
       var file = fileInput && fileInput.files[0];
-      if (file && file.size > 12 * 1024 * 1024){ say("That photo is over 12 MB — pick a smaller one or send it by email.", "warn"); return; }
+      if (file && file.size > 40 * 1024 * 1024){ say("That photo is over 40 MB — pick a smaller one or send it by email.", "warn"); return; }
       btn.disabled = true; say("Sending…", "");
       var body = { name: fd.get("name"), email: fd.get("email"), subject: fd.get("subject"), message: msg, site: fd.get("site") || "" };
       var prep = file ? shrink(file).then(function(r){ return r || readFile(file); }) : Promise.resolve(null);
       prep.then(function(photo){
         if (photo){
-          if (photo.data.length * 0.75 > 3 * 1024 * 1024) throw new Error("photo-too-big");
+          if (photo.data.length * 0.75 > 2.5 * 1024 * 1024) throw new Error("photo-too-big");
           body.photo = photo;
         }
         return fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
@@ -904,6 +918,7 @@
       }).catch(function(err){
         btn.disabled = false;
         var k = err && err.message;
+        console.error("contact form:", err);
         if (k === "not-configured") say("The form isn't switched on yet — use the email link below instead.", "warn");
         else if (k === "photo-too-big" || k === "http-413") say("That photo is too large for the form — send it by email instead.", "warn");
         else if (k === "bad-email") say("That email address doesn't look right.", "warn");
