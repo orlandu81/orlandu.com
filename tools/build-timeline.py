@@ -46,36 +46,36 @@ MONITORS = [
 ]
 LANES = [("Coin-op", "coinop", COINOP, "#ff8a00"), ("Consoles", "consoles", CONSOLES, "#5ee9ff"), ("Monitors", "monitors", MONITORS, "#9effa0")]
 
-Y0, Y1 = 1979, 2021
-PX = 64  # px per year
-W = (Y1 - Y0 + 1) * PX
 
-def lane_html(title, key, items, color):
-    # stack same-year items downward within the lane
-    rows = {}
-    out = []
-    for name, year, thumb, href in sorted(items, key=lambda x: (x[1], x[0])):
-        k = rows.get(year, 0); rows[year] = k + 1
-        left = (year - Y0) * PX + PX // 2
-        out.append(
-            f'<a class="ti" href="{href}" style="left:{left}px;--row:{k}" data-year="{year}">'
-            f'<img src="{thumb}" alt="" loading="lazy" decoding="async" width="56" height="56">'
-            f'<span class="tl"><b>{html.escape(name)}</b> {year}</span></a>')
-    depth = max(rows.values()) if rows else 1
-    return (f'<div class="lane {key}" style="--acc:{color};--depth:{depth}"><div class="lanehead">{title}</div>'
-            + "".join(out) + "</div>")
-
-years = "".join(f'<span style="left:{(y - Y0) * PX}px">{y}</span>' for y in range(Y0, Y1 + 1) if y % 5 == 0)
-grid = "".join(f'<i style="left:{(y - Y0) * PX}px"></i>' for y in range(Y0, Y1 + 1))
-lanes = "".join(lane_html(*l) for l in LANES)
-
-# plain list for screen readers / no-CSS
-lists = ""
+from collections import defaultdict
+LANE_OF = {}
 for title, key, items, color in LANES:
-    lists += f"<h3>{title}</h3><ul>" + "".join(f'<li><a href="{h}">{html.escape(n)}</a> — {y}</li>' for n, y, t, h in sorted(items, key=lambda x: (x[1], x[0]))) + "</ul>"
+    for it in items: LANE_OF[it] = (title, key, color)
+byyear = defaultdict(list)
+for it in LANE_OF: byyear[it[1]].append(it)
+years = sorted(byyear)
 
-desc = "Every machine, console and monitor in the collection plotted by the year it was released — four decades from the 1981 Donkey Kong to the 2020 Rick and Morty, with the console generations and the Sony monitor eras alongside."
-page = f'''<!DOCTYPE html>
+def card(it):
+    name, year, thumb, href = it
+    title, key, color = LANE_OF[it]
+    return (f'<a class="tc {key}" href="{href}" style="--acc:{color}">'
+            f'<img src="{thumb}" alt="" loading="lazy" decoding="async" width="84" height="84">'
+            f'<span class="tn">{html.escape(name)}</span><span class="tk">{title}</span></a>')
+
+spine = ""
+prev = None
+for y in years:
+    if prev is not None and y - prev >= 3:
+        n = y - prev - 1
+        spine += f'<div class="gap" aria-hidden="true"><span>{n} quiet years</span></div>'
+    items = sorted(byyear[y], key=lambda x: (["coinop", "consoles", "monitors"].index(LANE_OF[x][1]), x[0]))
+    spine += (f'<section class="yr" id="y{y}"><div class="ymark"><b>{y}</b></div>'
+              f'<div class="ycards">{"".join(card(i) for i in items)}</div></section>')
+    prev = y
+
+counts = {key: len(items) for title, key, items, color in LANES}
+desc = "Every machine, console and monitor in the collection, in the order the world first saw them — four decades from the 1981 Donkey Kong to the 2020 Rick and Morty, with the console generations and the Sony monitor eras in between."
+page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -106,30 +106,26 @@ page = f'''<!DOCTYPE html>
 <style>main.hub{{--acc:#ffd400}}</style>
 <script src="assets/site.js" defer></script>
 <style>
-  .tlwrap{{position:relative;overflow-x:auto;overflow-y:hidden;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--panel),var(--bg2));-webkit-overflow-scrolling:touch;scrollbar-color:var(--line) transparent}}
-  .tlinner{{position:relative;width:{W}px;padding:2.2rem 0 .6rem}}
-  .years{{position:relative;height:1.4rem}}
-  .years span{{position:absolute;top:0;transform:translateX(-50%);font-family:var(--disp);font-size:.72rem;letter-spacing:.08em;color:var(--dim)}}
-  .gridl{{position:absolute;inset:2.2rem 0 0 0;pointer-events:none}}
-  .gridl i{{position:absolute;top:0;bottom:0;width:1px;background:rgba(255,255,255,.035)}}
-  .gridl i:nth-child(5n+1){{background:rgba(255,255,255,.09)}}
-  .lane{{position:relative;height:calc(2.2rem + var(--depth) * 78px + 10px);border-top:1px solid var(--line)}}
-  .lanehead{{position:sticky;left:0;display:inline-block;padding:.45rem .9rem;font-family:var(--cond);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);background:linear-gradient(90deg,var(--panel) 70%,transparent);z-index:3;pointer-events:none}}
-  .ti{{position:absolute;top:calc(2.2rem + var(--row) * 78px);transform:translateX(-50%);width:56px;text-decoration:none;color:var(--ink);z-index:2}}
-  .ti img{{width:56px;height:56px;object-fit:cover;border-radius:50%;border:2px solid var(--acc);box-shadow:0 0 0 3px var(--bg),0 6px 18px rgba(0,0,0,.6);transition:transform .18s ease;display:block}}
-  .ti::before{{content:"";position:absolute;left:50%;top:-2.2rem;height:2.2rem;width:1px;background:var(--acc);opacity:.35}}
-  .ti .tl{{position:absolute;left:50%;top:60px;transform:translateX(-50%);white-space:nowrap;font-size:.86rem;line-height:1.15;text-align:center;opacity:0;transition:opacity .15s;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:.25rem .5rem;pointer-events:none;color:var(--dim)}}
-  .ti .tl b{{color:var(--ink);display:block;font-weight:600}}
-  .ti:hover img,.ti:focus-visible img{{transform:scale(1.15)}}
-  .ti:hover .tl,.ti:focus-visible .tl{{opacity:1;z-index:5}}
-  .ti:hover{{z-index:6}}
-  .tlhint{{font-family:var(--cond);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin:.6rem 0 0}}
-  .tllist{{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem 2rem;margin-top:1rem}}
-  .tllist h3{{font-family:var(--cond);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:.4rem}}
-  .tllist ul{{list-style:none;margin:0;padding:0}}
-  .tllist li{{padding:.2rem 0;border-top:1px solid var(--line);font-size:1rem;color:var(--dim)}}
-  @media(prefers-reduced-motion:reduce){{.ti img,.ti .tl{{transition:none}}}}
-  @media(hover:none){{.ti .tl{{opacity:1;font-size:.72rem;top:58px}}.lane{{height:calc(2.2rem + var(--depth) * 96px + 10px)}}.ti{{top:calc(2.2rem + var(--row) * 96px)}}}}
+  .spine{{position:relative;margin:.4rem 0 0;padding-left:5.6rem}}
+  .spine::before{{content:"";position:absolute;left:2.2rem;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--fire2),var(--cyan-dim) 60%,var(--line));opacity:.55}}
+  .yr{{position:relative;padding:.3rem 0 1rem}}
+  .ymark{{position:absolute;left:-5.6rem;top:.55rem;width:4.4rem;text-align:center}}
+  .ymark b{{display:inline-block;font-family:var(--disp);font-weight:800;font-size:.95rem;letter-spacing:.04em;color:var(--fire3);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:.35rem .55rem;min-width:4.2rem;box-shadow:0 0 0 4px var(--bg)}}
+  .ycards{{display:flex;flex-wrap:wrap;gap:.7rem}}
+  .tc{{display:grid;grid-template-columns:84px 1fr;grid-template-rows:auto auto;column-gap:.85rem;align-items:center;align-content:center;width:min(100%,300px);background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:10px;padding:.55rem .8rem .55rem .55rem;color:var(--ink);text-decoration:none;transition:transform .18s ease,border-color .18s ease}}
+  .tc img{{grid-row:1/3;width:84px;height:84px;object-fit:cover;border-radius:8px}}
+  .tc .tn{{font-weight:600;font-size:1.05rem;line-height:1.2;text-wrap:balance}}
+  .tc .tk{{font-family:var(--cond);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-top:.25rem}}
+  .tc:hover,.tc:focus-visible{{transform:translateY(-2px);border-color:var(--acc);text-decoration:none}}
+  .gap{{position:relative;margin:-.4rem 0 1.4rem;font-family:var(--cond);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}}
+  .gap span{{display:inline-block;background:var(--bg);padding:.1rem .4rem;margin-left:-.4rem}}
+  .gap::before{{content:"";position:absolute;left:-3.4rem;top:.55rem;width:2px;height:1.2rem;border-left:2px dashed var(--line)}}
+  .filters .cnt{{opacity:.55;margin-left:.3rem;font-size:.85em}}
+  .spine[data-show="coinop"] .tc:not(.coinop),.spine[data-show="consoles"] .tc:not(.consoles),.spine[data-show="monitors"] .tc:not(.monitors){{display:none}}
+  .spine[data-show] .yr:not(:has(.tc:not([style*="display: none"]))){{}}
+  .yr.empty,.gap.hidden{{display:none}}
+  @media(max-width:560px){{.spine{{padding-left:4.4rem}}.spine::before{{left:1.5rem}}.ymark{{left:-4.4rem;width:3.4rem}}.ymark b{{min-width:0;font-size:.8rem;padding:.3rem .4rem}}.gap::before{{left:-2.7rem}}.tc{{width:100%}}}}
+  @media(prefers-reduced-motion:reduce){{.tc{{transition:none}}}}
 </style>
 <script type="application/ld+json">
 {{
@@ -152,30 +148,44 @@ page = f'''<!DOCTYPE html>
   <div class="pagehead">
     <div class="kicker">The Long View</div>
     <h1 class="page">Forty Years on One Line</h1>
-    <p class="lede">Everything in the collection, placed at the year it was released &mdash; the cabinets and pins in one row, the consoles in another, the Sony monitors in a third. Scroll sideways; tap or hover anything to see what it is, and click through to its page.</p>
+    <p class="lede">Everything in the collection in the order the world first saw it &mdash; the cabinets and pins, the consoles, and the Sony monitors on one line, oldest at the top. Years are release years, not the year each one arrived here. Click anything to open its page.</p>
   </div>
 
   <section>
-    <div class="tlwrap" tabindex="0" aria-label="Timeline, scrolls sideways">
-      <div class="tlinner">
-        <div class="gridl" aria-hidden="true">{grid}</div>
-        <div class="years" aria-hidden="true">{years}</div>
-        {lanes}
-      </div>
+    <div class="filters" id="tlf">
+      <button data-show="all" class="on">All</button>
+      <button data-show="coinop">Coin-op<span class="cnt">{counts["coinop"]}</span></button>
+      <button data-show="consoles">Consoles<span class="cnt">{counts["consoles"]}</span></button>
+      <button data-show="monitors">Monitors<span class="cnt">{counts["monitors"]}</span></button>
     </div>
-    <p class="tlhint">&larr; drag or scroll sideways &rarr; &middot; years are release years, not the year each one arrived here</p>
-  </section>
-
-  <section>
-    <h2 class="sec">The same thing as a list</h2>
-    <div class="tllist">{lists}</div>
+    <div class="spine" id="spine">
+      {spine}
+    </div>
   </section>
 </main>
 
 <footer class="site"></footer>
+<script>
+(function(){{
+  var f = document.getElementById('tlf'), sp = document.getElementById('spine');
+  f.addEventListener('click', function(e){{
+    var b = e.target.closest('button'); if (!b) return;
+    var k = b.dataset.show;
+    f.querySelectorAll('button').forEach(function(x){{ x.classList.toggle('on', x === b); }});
+    if (k === 'all') sp.removeAttribute('data-show'); else sp.setAttribute('data-show', k);
+    // hide years with nothing left in them, and gaps that now sit between two hidden years
+    var yrs = Array.prototype.slice.call(sp.querySelectorAll('.yr'));
+    yrs.forEach(function(y){{ y.classList.toggle('empty', k !== 'all' && !y.querySelector('.tc.' + k)); }});
+    Array.prototype.forEach.call(sp.querySelectorAll('.gap'), function(g){{
+      var n = g.nextElementSibling, p = g.previousElementSibling;
+      g.classList.toggle('hidden', (n && n.classList.contains('empty')) || (p && p.classList.contains('empty')));
+    }});
+  }});
+}})();
+</script>
 
 </body>
 </html>
-'''
+"""
 (root / "timeline.html").write_text(page, encoding="utf-8")
-print("timeline.html written,", W, "px wide")
+print("timeline.html written:", len(years), "years")
