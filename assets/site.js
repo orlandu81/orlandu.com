@@ -72,7 +72,7 @@
         '</div>' +
         '<nav class="explore" aria-label="Explore the site">' +
           '<div><span>Pages</span>' + NAV.slice(1).map(([href, label]) => '<a href="' + href + '">' + label + '</a>').join('') +
-            '<a href="glossary.html">Glossary</a><a href="timeline.html">Timeline</a><a href="about.html#faq">FAQ</a></div>' +
+            '<a href="playchoice-10.html">PlayChoice-10</a><a href="glossary.html">Glossary</a><a href="timeline.html">Timeline</a><a href="about.html#faq">FAQ</a></div>' +
           '<div><span>Reading</span>' +
             '<a href="crt-field-guide.html">Professional glass in the wild</a>' +
             '<a href="ams-100-monograph.html">The AMS-100 monograph</a>' +
