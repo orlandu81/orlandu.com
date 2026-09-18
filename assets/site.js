@@ -682,26 +682,31 @@
         tip.classList.add("up");
       }
     }
+    var shownAt = 0;
     function showTip(el){
       clearTimeout(hideT);
       var g = GLOSSARY[el.dataset.g];
       if (!g) return;
       tip.innerHTML = '<b>' + g.t + '</b><span>' + g.d + '</span><a href="glossary.html#' + el.dataset.g + '">Full glossary →</a>';
+      if (tip.hidden || current !== el) shownAt = Date.now();
       tip.hidden = false;
       current = el;
       place(el);
     }
     function hideTip(){ hideT = setTimeout(function(){ tip.hidden = true; current = null; }, 120); }
-    main.addEventListener("mouseover", function(e){ var el = e.target.closest(".gt"); if (el) showTip(el); });
-    main.addEventListener("mouseout", function(e){ var el = e.target.closest(".gt"); if (el && !tip.matches(":hover")) hideTip(); });
+    var touchedAt = 0;
+    addEventListener("touchstart", function(){ touchedAt = Date.now(); }, { passive: true, capture: true });
+    function fromTouch(){ return Date.now() - touchedAt < 1000; }
+    main.addEventListener("mouseover", function(e){ if (fromTouch()) return; var el = e.target.closest(".gt"); if (el) showTip(el); });
+    main.addEventListener("mouseout", function(e){ if (fromTouch()) return; var el = e.target.closest(".gt"); if (el && !tip.matches(":hover")) hideTip(); });
     tip.addEventListener("mouseenter", function(){ clearTimeout(hideT); });
     tip.addEventListener("mouseleave", hideTip);
-    main.addEventListener("focusin", function(e){ var el = e.target.closest(".gt"); if (el) showTip(el); });
-    main.addEventListener("focusout", function(e){ if (e.target.closest(".gt")) hideTip(); });
+    main.addEventListener("focusin", function(e){ if (fromTouch()) return; var el = e.target.closest(".gt"); if (el) showTip(el); });
+    main.addEventListener("focusout", function(e){ if (fromTouch()) return; if (e.target.closest(".gt")) hideTip(); });
     main.addEventListener("click", function(e){
       var el = e.target.closest(".gt"); if (!el) return;
       e.preventDefault();
-      if (current === el && !tip.hidden){ tip.hidden = true; current = null; } else showTip(el);
+      if (current === el && !tip.hidden && Date.now() - shownAt > 350){ tip.hidden = true; current = null; } else showTip(el);
     });
     main.addEventListener("keydown", function(e){
       var el = e.target.closest(".gt"); if (!el) return;
@@ -709,6 +714,7 @@
       if (e.key === "Escape"){ tip.hidden = true; }
     });
     document.addEventListener("click", function(e){ if (!e.target.closest(".gt, .gtip")) { tip.hidden = true; current = null; } });
+    document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !tip.hidden){ tip.hidden = true; current = null; } });
     addEventListener("resize", function(){ if (current && !tip.hidden) place(current); });
   };
   document.head.appendChild(s);

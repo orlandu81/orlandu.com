@@ -578,6 +578,7 @@ button.share span{margin-right:.3rem}
 .gtip a{font-family:var(--cond);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;align-self:flex-start}
 .gtip::before{content:"";position:absolute;left:1.2rem;top:-6px;width:10px;height:10px;background:var(--panel2);border-left:1px solid var(--cyan-dim);border-top:1px solid var(--cyan-dim);transform:rotate(45deg)}
 .gtip.up::before{top:auto;bottom:-6px;transform:rotate(225deg)}
+.gtip[hidden]{display:none}
 
 /* ── Site search ───────────────────────────────────────────── */
 .sbtn{display:inline-flex;align-items:center;gap:.4rem;background:transparent;border:1px solid var(--line);color:var(--dim);border-radius:999px;padding:.4rem .8rem;font-family:var(--cond);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;margin-left:auto;transition:border-color .2s,color .2s}
