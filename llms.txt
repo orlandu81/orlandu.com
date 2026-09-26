@@ -1,0 +1,59 @@
+# Orlandu's Arcade
+
+> A private arcade and working collection in Orange County, California: arcade cabinets, pinball
+> machines, RGB-modded retro consoles, and a fleet of Sony professional broadcast monitors
+> (PVM, BVM, LMD). Everything runs — cabinets get their power supplies rebuilt, pinball mechs
+> get restored, and monitors get calibrated the way Sony intended. Run by "orlandu81", a
+> long-standing identity on the KLOV / Museum of the Game and Arcade-Projects forums.
+
+## The collection
+
+- [Coin-Op Games](https://www.orlandu.com/games.html): arcade cabinets, the pinball row, and the game room.
+- [The Monitor Fleet](https://www.orlandu.com/monitors.html): the Sony PVM, BVM and LMD roster, model by model.
+- [Sony PVM-2950Q](https://www.orlandu.com/pvm-2950q.html): the 29-inch Super Trinitron production monitor — profile, inputs, work log.
+- [Sony PVM-20L5](https://www.orlandu.com/pvm-20l5.html): the multiformat 20-inch PVM — profile, inputs, work log.
+- [Sony BVM-20E1U](https://www.orlandu.com/bvm-20e1u.html): the 1000-TVL 20-inch broadcast monitor — profile, cards, work log.
+- [Sony BVM-A14F5U](https://www.orlandu.com/bvm-a14f5u.html): the last-generation 14-inch BVM — profile, cards, work log.
+- [The LMD wall](https://www.orlandu.com/lmd-wall.html): the four LMD models and nine units behind the tubes.
+- [The Consoles](https://www.orlandu.com/consoles.html): Nintendo, Sega, NEC and Sony hardware, most of it RGB-modded.
+- [The Signage Wall](https://www.orlandu.com/signage.html): Nintendo retail signage, nineteen original PlayChoice-10 arcade toppers, and eighteen VS. instruction cards.
+- [The PlayChoice-10 Cart Wall](https://www.orlandu.com/playchoice-10.html): fifty-two PlayChoice-10 game boards photographed board by board, plus ten conversions and custom builds with the story of each.
+- [The Strategy Guide Shelf](https://www.orlandu.com/guide-shelf.html): twenty-one official Nintendo Player's Guides, photographed cover by cover.
+- [Gallery](https://www.orlandu.com/gallery.html): photos and video from the garage arcade and the game room.
+
+## Machines
+
+- [Big Blue](https://www.orlandu.com/big-blue.html): a Dynamo showcase cabinet running a Darksoft CPS-2 multi in a Jasen's Customs case.
+- [The Mini Cute](https://www.orlandu.com/mini-cute.html): Capcom's smallest candy cab, running CPS1 on a Darksoft multi.
+- [The Red Tent](https://www.orlandu.com/red-tent.html): Nintendo's VS. DualSystem cocktail, and the restoration behind it.
+- [Nintendo VS. UniSystem](https://www.orlandu.com/vs-unisystem.html)
+- [Donkey Kong](https://www.orlandu.com/donkey-kong.html): the blue plywood upright made in Japan.
+- [Mario Bros. Widebody](https://www.orlandu.com/mario-bros.html)
+- [Indiana Jones: The Pinball Adventure](https://www.orlandu.com/indiana-jones.html) (Williams)
+- [Total Nuclear Annihilation](https://www.orlandu.com/tna.html) (Spooky Pinball)
+- [Ghostbusters Premium](https://www.orlandu.com/ghostbusters.html) (Stern)
+- [Rick and Morty Blood Sucker Edition](https://www.orlandu.com/rick-and-morty.html) (Spooky Pinball)
+
+## Writing
+
+- [Stories index](https://www.orlandu.com/stories.html)
+- [Sony AMS-100: A Technical Monograph](https://www.orlandu.com/ams-100-monograph.html): the first documentation of Sony's AMS-100 audio monitor speaker and its BKAM option boards — design, registry of documented units, service internals, and market record.
+- [Ancestor and Descendant](https://www.orlandu.com/ams-3-vs-ams-100.html): Sony's AMS-3 and AMS-100 audio monitors compared.
+- [Trinitron Fleet, Vol. 1](https://www.orlandu.com/trinitron-fleet-vol1.html): a field guide to the Sony pro monitors here.
+- [The Signal Chain](https://www.orlandu.com/signal-chain.html): how the consoles reach the glass — SCART switchers, BNC runs, a distribution amp, and no scaler.
+- [PVM vs. BVM](https://www.orlandu.com/pvm-vs-bvm.html): how Sony's professional monitor lines differ.
+- [How to Spot Professional Glass in the Wild](https://www.orlandu.com/crt-field-guide.html): recognizing a Sony professional monitor in a thrift store or surplus auction.
+- [PVM-20L5 buying guide](https://www.orlandu.com/pvm-20l5-buying-guide.html): what to check before buying one, what to pay, and why not to ship it.
+- [VS. Super Mario Bros.](https://www.orlandu.com/vs-smb.html): why the arcade version is harder than the NES game.
+- [The Orlandu 100](https://www.orlandu.com/orlandu-100.html): a hundred favorite films ranked by head-to-head duel, with Rotten Tomatoes scores, the outliers this list defends, and the method behind the order. Not about the arcade.
+- [The Orlandu 50](https://www.orlandu.com/orlandu-50-games.html): fifty favorite console games ranked by head-to-head duel, admitted only if they were actually finished, plus the ten that were not. Not about the arcade.
+- [Projects](https://www.orlandu.com/projects.html): the bench log — what's being repaired right now.
+- [Timeline](https://www.orlandu.com/timeline.html): every machine, console and monitor plotted by release year.
+- [Glossary](https://www.orlandu.com/glossary.html): the arcade and broadcast vocabulary the site uses — JAMMA, CPO, candy cab, NOS, RGB, 240p, SCART, BNC, BKM, TVL, multiscan.
+
+## Trading
+
+- [For Sale](https://www.orlandu.com/forsale.html): monitors, arcade hardware and collectibles currently listed.
+- [Wanted](https://www.orlandu.com/wanted.html): PlayChoice-10 toppers, VS. marquees, Sony BKM input cards, consumer CRTs.
+- [About and contact](https://www.orlandu.com/about.html): orlandusarcade@gmail.com
+- [FAQ](https://www.orlandu.com/about.html#faq): not open to the public; buys and sells; no repairs for hire; ask before reusing photos.

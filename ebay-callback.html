@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eBay sign-in – Orlandu's Arcade</title>
+<style>
+  body { margin: 0; background: #0b0b10; color: #eee; font: 16px/1.5 system-ui, sans-serif;
+         display: flex; min-height: 100vh; align-items: center; justify-content: center; }
+  main { max-width: 640px; padding: 32px; }
+  h1 { font-size: 22px; margin: 0 0 12px; color: #6cf; }
+  code { display: block; word-break: break-all; background: #16161f; border: 1px solid #333;
+         border-radius: 8px; padding: 14px; margin: 14px 0; font-size: 14px; color: #ffd75e; }
+  button { background: #3a7bff; color: #fff; border: 0; border-radius: 8px; padding: 10px 18px;
+           font-size: 15px; cursor: pointer; }
+  p.small { color: #999; font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>eBay sign-in complete</h1>
+  <p id="msg">Copy this code and paste it into the Tidbyt setup window on the laptop:</p>
+  <code id="code">…</code>
+  <button id="copy">Copy code</button>
+  <p class="small">This page only shows the code eBay just handed back; nothing is stored here.</p>
+</main>
+<script>
+  const q = new URLSearchParams(location.search);
+  const code = q.get("code");
+  const el = document.getElementById("code");
+  if (code) {
+    el.textContent = code;
+  } else {
+    document.getElementById("msg").textContent =
+      "No code arrived. eBay said: " + (q.get("error_description") || q.get("error") || "nothing") +
+      ". Close this and run the setup again.";
+    el.textContent = "—";
+    document.getElementById("copy").style.display = "none";
+  }
+  document.getElementById("copy").onclick = async () => {
+    try { await navigator.clipboard.writeText(code); document.getElementById("copy").textContent = "Copied"; }
+    catch (e) { el.focus(); }
+  };
+</script>
+</body>
+</html>

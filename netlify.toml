@@ -1,0 +1,20 @@
+# Orlandu's Arcade — plain static site, no build step.
+# Everything is served straight from the repo root.
+
+[build]
+  publish = "."
+  command = ""
+
+# 404.html at the publish root is picked up automatically.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Long-cache the fingerprint-free media; HTML stays fresh.
+[[headers]]
+  for = "/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

@@ -1,0 +1,552 @@
+# orlandu.com — working notes for Claude
+
+> **BEFORE YOU PUSH ANYTHING — ASK DAVID FIRST.** Every push stores a full ~96 MB copy of
+> the site on Vercel and the Hobby storage allowance is nearly used up. When an edit is
+> ready, do not push it. Ask, as a multiple-choice question: **"Push now, or hold it for
+> the next batch?"** Only push on "now". If he says hold, leave the commit local and say
+> so plainly at the end of the session. Do this every time, including one-line changes,
+> unless he already said "push now" in the request. Full rule under "Deploying" below.
+
+Static site for Orlandu's Arcade: a garage arcade + game room, ~10 machines,
+13 Sony professional monitors, ~25 consoles. Owner: David (GitHub `orlandu81`).
+
+No build step. Plain HTML/CSS/JS served from the repo root.
+
+## Deploying — read this first
+
+### ⚠️ ONE PUSH PER SESSION — Deployment Storage is a real meter (2026-09-02)
+
+Vercel warned David at 75% of the Hobby **Deployment Storage** allowance (10 GB-months).
+Every push creates a deployment, and Vercel keeps that deployment's full output — this
+whole repo, ~96 MB, mostly `media/` — for the retention period. The site is not big;
+the problem was ~170 pushes in a week. So, standing rule, David's instruction:
+
+- **Batch a session's edits into ONE commit and ONE push.** Do not push a fix, then a
+  follow-up, then a typo. Stage everything, verify locally, push once at the end.
+- A second push in a session needs a reason (David asked for it live, or the first one
+  was broken). Never push to "see it on the live site" — verify locally with Playwright.
+- The old note that Vercel "can't run out like Netlify" was wrong; it checked the
+  deploy-rate limit and missed this one. Deploys-per-day is still 100 — irrelevant now.
+- The project's Deployment Retention Policy is being set to the shortest option
+  (Settings → Security). Vercel always keeps the last 10 deployments + last 20
+  production ones, so ~2 GB stored is the floor even at zero-length retention.
+- If storage climbs again: re-encode `media/` to WebP (measured 0.69× on a sample),
+  or split `media/` into its own Vercel project so an HTML push deploys ~1 MB.
+
+**This container cannot push to GitHub.** The egress proxy blocks authenticated
+pushes ("builtin injection failed"). Fetches and clones work fine; only pushes fail.
+
+Every deploy goes through David's laptop over the device bridge:
+
+1. Commit in the container clone.
+2. `git bundle create /tmp/x.bundle <last-pushed-sha>..main` — an *incremental*
+   bundle. A full-history bundle is ~62 MB and too big to send.
+3. `SendUserFile` the bundle, then `device_commit_files` it into the connected
+   folder (`C:\Users\david\OneDrive\Kempner Docs LAST BACKUP 5.24.2025\Desktop\orlandu.com`).
+   `~/mnt/...` paths are rejected — use the full Windows path.
+4. On the device, in `$HOME/site-repo`:
+   `git fetch <bundle> main:incoming && git merge --ff-only incoming`
+5. Push with the token: the file `github-token.txt` in the connected folder is a
+   *note* with the token embedded in prose, so extract it —
+   `grep -o 'gh[pousr]_[A-Za-z0-9_]\{20,\}' github-token.txt | head -1` — and push to
+   `https://x-access-token:$T@github.com/orlandu81/orlandu.com.git`. Never echo the token.
+6. Move the bundle to `_to_delete/` (device_bash cannot `rm` in mounted folders).
+7. Back in the container, `git fetch origin main` so `origin/main` stops looking stale.
+
+### A rejected push means another session is live — merge, never force
+
+David runs more than one Claude chat against this repo. Twice now a second session
+has been mid-task on the same files (2026-08-26, 2026-08-27), and on 2026-08-27 it
+had **17 unpushed commits** — the AMS-100 monograph, the PVM-20L5 guide, the whole
+structured-data and sitemap pass. A force-push at that moment would have destroyed
+all of it.
+
+So: `! [rejected]` is not an error to get past. It is the signal that someone else's
+work is on `origin` and yours is not the only version.
+
+**Never `git push --force` or `--force-with-lease` to this repo.** There is no
+situation in this workflow that calls for it. If you think there is, stop and ask David.
+
+When a push is rejected:
+
+1. `git fetch <remote> main` and **read `git log --oneline HEAD..FETCH_HEAD`** before
+   touching anything. Find out what they did.
+2. If it merges cleanly, merge and push. Say what came in when you report back.
+3. **If it conflicts, throw away your version, not theirs.** `git merge --abort`,
+   `git reset --hard FETCH_HEAD`, then redo your edit against their current file.
+   Resolving a conflict by hand risks reverting their work invisibly; redoing a small
+   edit on top of the newer file cannot. This is what happened with the Magical Chase
+   removal — the second session had rewritten `forsale.html` with JSON-LD `Product`
+   nodes that a stale conflict resolution would have silently mangled.
+4. Re-check your assumptions against the merged file. The first Magical Chase attempt
+   swapped the marquee to name the Sony AMS-100 — which the other session had already
+   removed as sold. A stale edit is not just a merge problem; the *content* goes wrong too.
+
+Prefer small, quickly-deployed commits over batching a session's work into one push —
+a narrow diff is a narrow collision.
+
+## Hosting — Vercel, verified
+
+The live host is **Vercel**. Hosting went GitHub Pages -> Netlify -> Vercel; both
+earlier hosts left files behind, so don't infer the host from the repo contents.
+
+As of 2026-08-25, confirmed against `dns.google/resolve`:
+
+    orlandu.com.        A      216.198.79.1                            (Vercel apex)
+    www.orlandu.com.    CNAME  4587a4c2f57710d8.vercel-dns-017.com.    (Vercel)
+    orlandu.com.        NS     ns13/ns14.domaincontrol.com.            (GoDaddy — nameservers never moved)
+
+Netlify's apex IP is `75.2.60.5` and its targets end in `.netlify.app`. Neither
+appears in orlandu.com's DNS. If you think the site is on Netlify, re-run the
+lookups below before acting — do not go by `netlify.toml` or by an old note.
+
+    https://dns.google/resolve?name=orlandu.com&type=A&cd=0
+    https://dns.google/resolve?name=www.orlandu.com&type=CNAME&cd=0
+
+`netlify.toml` is **retained deliberately** as a rollback path, not dead config.
+It is inert while DNS points at Vercel. `vercel.json` is the file actually in
+force — security headers, `/media/*` caching, and the `/index.html` -> `/` redirect.
+Do not delete either one without David saying so.
+
+The old Netlify project still exists and still serves a copy at
+`sensational-cocada-4cbd01.netlify.app`. That hostname resolving is not evidence
+that orlandu.com points there. David is deleting the project; until he does,
+expect it to keep answering.
+
+Vercel auto-deploys `main`; allow ~40s before verifying.
+
+## Verifying
+
+- `curl` to orlandu.com from this container fails (403 CONNECT tunnel) — use **WebFetch**.
+- WebFetch caches 15 min per URL; append a throwaway query param to bust it.
+- `gallery.html` renders client-side, so WebFetch sees the empty state.
+  Verify the gallery by fetching `assets/gallery-data.js` directly.
+- Certificate checks: SSL Labs via WebFetch. `openssl s_client` from here returns the
+  proxy's own cert, not the site's. A page loading is not proof the cert is valid.
+- DNS: `https://dns.google/resolve?name=<host>&type=<type>&cd=0`.
+
+## Media
+
+- Full size: `media/2026/`, longest side ≤1600px, q82. Thumbs: `media/thumbs/`, **800px wide**.
+- HEIC needs `pillow-heif`; always run `ImageOps.exif_transpose` or photos land rotated.
+- **Never replace a media file in place.** `/media/*` is CDN-cached; an in-place swap
+  pins stale bytes in browsers that already loaded the page. This has bitten twice —
+  once truncating a video at 5s, once serving 17 unedited photos for an hour.
+  Rename the file, or append `?v=N` to every reference.
+  **Since 2026-09-02 this is enforced by the headers, not just the CDN:** `vercel.json`
+  serves `/media/*` and every image/font under `/assets/` as
+  `max-age=31536000, immutable`, so a browser that has a file keeps it for a year.
+  CSS and JS under `/assets/` get a 5-minute browser TTL instead (they are referenced
+  without `?v=`), so an edit to `style.css`/`site.js` lands within minutes and needs no
+  cache-busting.
+- **Fonts are self-hosted** in `assets/fonts/` (latin woff2 from `@fontsource`), declared at
+  the top of `style.css` with exactly the weights the old Google Fonts link served
+  (Orbitron 600/800, Rajdhani 400/500/600, Barlow Condensed 400/500, Press Start 2P).
+  Nothing loads from googleapis/gstatic any more — do not add the `<link>` back on a new
+  page; copy the `<head>` of an existing one (two font preloads + the nav-logo preload).
+  `trinitron-fleet-vol1.html` and `404.html` are the two exceptions: the magazine declares
+  a wider weight set inline, and 404 uses absolute `/assets/` paths.
+- **Per-page image priority:** each machine/story/guide page preloads its above-the-fold
+  photo (`<link rel="preload" as="image" … fetchpriority="high">` in `<head>`, matching
+  `fetchpriority="high"` on the `<img>`). When that photo changes, change both. Only the
+  first visible photo gets this — preloading a below-the-fold image makes the page slower.
+- The nav logo is `assets/logo-wordmark-nav.webp` (335×132, lossless), the footer mascot
+  `assets/mascot-foot.webp`, the About-page mascot `assets/mascot-about.webp`, the home hero
+  wordmark `assets/logo-wordmark-hero.webp`. The original PNGs stay in the repo for JSON-LD
+  `logo` URLs and as masters; don't wire them back into a page.
+- Story and step thumbs carry an `-800.jpg` sibling and a `srcset`; a new 1200×514 thumb
+  needs its 800×343 sibling (LANCZOS, JPEG q90 progressive) and the same `srcset`/`sizes`
+  as its neighbors. The featured story card keeps the plain 1200 (it renders full width).
+- Don't force `aspect-ratio` + `object-fit:cover` on cabinet photos; it crops subjects
+  out of frame. Use `.masonry` (columns) for mixed orientations.
+- David sends edited photos as lowercase `.heic`; leftover uppercase `.HEIC` in the
+  same folder are the unedited originals. Compare numerically before assuming.
+- **⭐ `device_stage_files` refuses files newly created in the OneDrive folder** —
+  *"file is hardlinked (nlink > 1)"* — even though the laptop's own shell reports
+  `nlink=1`. It is OneDrive semantics, and `cp`/`cat` copies inherit it, so a fresh
+  intake photo cannot be pulled into the container that way. Files that have sat there
+  for a while stage fine. **The workaround that works: do the conversion ON THE LAPTOP
+  and let the image travel through `origin`.** `pip install pillow-heif
+  --break-system-packages` works there (ImageMagick has a HEIC delegate too), write the
+  finished JPEGs straight into `$HOME/site-repo/media/...`, commit and push from the
+  laptop, then `git fetch` in the container to look at the result. **Push the image
+  under a NEW slug first, unreferenced**, so nothing goes live until the frame has been
+  seen and the copy checked against it — `vs-dk-high-scores-v2.jpg` was done this way
+  (`a51e4af` image, then the references).
+
+## Content rules David has set
+
+- **Location is "Orange County, California" — never the specific city. This is a
+  PRIVACY rule, not a style preference** (David, 2026-08-27): the arcade is in his home,
+  and the site is a public inventory of valuable machines. Do not narrow the location by
+  any route — not a city, neighborhood, nearby landmark, cross street, ZIP, school,
+  named local business, or a photo that shows a house number or street sign. The site was
+  swept from the old city name on 2026-08-27 (commit below). This
+  covers body copy, meta/OG/Twitter descriptions, the JSON-LD `description` on every
+  page, the footer in `assets/site.js`, `llms.txt`, the `assets/style.css` header
+  comment, and the Trinitron Fleet colophon. Do not reintroduce the city name anywhere,
+  including in new pages, alt text or commit messages. "Southern California" in prose is
+  fine.
+- **No WHICH-ROOM mapping either. Never state which room a specific machine lives in**
+  (David, 2026-08-28: *"the privacy point extends through the whole site"*). A public,
+  itemized map of where each valuable thing sits is the actionable intelligence, so the
+  monitors roster lost its **Room column** (commit 8a852a5), the machine pages lost
+  "running on free play in the garage arcade" from all five meta/OG/Twitter/JSON-LD
+  descriptions, and "in the garage arcade" / "in the game room" came out of alt text,
+  sitemap `<image:title>`s and the per-machine info cards. "The cabinet row" / "the row"
+  replaced "the garage row" in prose. **Keep the sitemap image titles in sync with the
+  alt text they mirror** — they are duplicated in two places each.
+  STILL PRESENT, pending David's call on how far to go: games.html's section headings
+  ("The garage arcade — uprights", "The game room"), its `#gameroom` anchor and lede,
+  the about.html two-room description, the index.html card, signal-chain.html's
+  "Garage arcade" headings, and gallery captions/titles for photos that literally show
+  a garage or the game room. Ask before flattening those — they are the site's voice,
+  not an inventory map.
+- **Strip location metadata from every media file.** His iPhone HEIC/MOV originals carry
+  GPS. The normal pipeline already removes it — Pillow does not copy EXIF unless asked,
+  and ffmpeg drops the QuickTime location tags on re-encode — so never commit an original
+  camera file straight into `media/`, and never add `exif=` when saving. Audited
+  2026-08-27: 282 images and both videos in the repo carry zero GPS and zero camera or
+  owner EXIF. Re-check after any bulk media add.
+- US spelling. No "centre", no "grey".
+- Don't repeat a photo across editorial pages — each shot gets one home. The gallery
+  is the exception: it's the curated index and may draw from anywhere.
+- Don't over-quote a machine's trivia. Most of his cabinets are Japanese; saying so
+  once is plenty.
+- **Machine cards are ordered by YEAR, oldest first**, within their
+  section — games.html `#uprights`, `#pinball` and `#gameroom` (David, 2026-08-28). The year
+  is already printed in each card's `<div class="sub">Maker · YYYY</div>`, so a new
+  card slots in by that number rather than at the end. Same ascending convention as
+  the PlayChoice-10 topper wall. When you reorder, re-read the card copy: "rounds out
+  the lineup" stopped being true when Mario Bros. moved out of last place.
+- **consoles.html cards sort by the PLATFORM'S ORIGINAL RELEASE, oldest first, within
+  each maker section — NOT by the revision's own year** (David, 2026-09-01: the NES Top
+  Loader sorts at 1985 because the NES does, ahead of the Game Boy). A revision or
+  portable sorts at its platform family's debut (Nomad/CDX/X'Eye → Genesis; GBA SP →
+  GBA 2001, which puts it before the GameCube); same-family units tie-break by model
+  year. The `sub` still shows the revision's own year, so the visible years are
+  deliberately out of ascending order — do not "fix" the order to match them.
+- **consoles.html: ONE CARD PER MODEL. No unit counts, no room locations.**
+  (David, 2026-08-28, commit e918055.) He owns duplicates of several machines; the
+  page lists the model once and never says "×2", "one in each room", "the pair", or
+  which room anything is in. **The room labels were a privacy leak** — the arcade is
+  in his home and the site is a public inventory of valuable hardware, so treat
+  "which room" like any other location detail (see the location rule above).
+  The `sub` line is `YYYY` plus condition/status only — `Modded`, `Restored`,
+  `Out for service`, `JP`. The exception he asked for: **the two New 3DS XLs get
+  separate cards** (Black 2014, SNES Edition 2016) because the units differ.
+  Console years come from the vault where it records one; where it does not, use the
+  North American release year of that specific model.
+- Big Blue runs a **Darksoft CPS-2 multi in a Jasen's Customs case** — not a
+  Marvel vs. Capcom board.
+- Machine profiles carry a **Work log** (`ul.worklog`). Source entries from
+  `vault.html` on David's device, not by asking him. Skip trivial repairs.
+- No date stamps like "August 2026" in page copy.
+- **Never publish a fault on a machine David has sold.** Condition notes are for what he still
+  owns. The AMS-3 that left had a specific defect; it was written up, and he asked for it removed
+  (2026-08-26). Say only that a unit moved on.
+- **⭐ NEVER CROP HIS MONITOR PHOTOS TO MAKE A LAYOUT LINE UP.** David, 2026-08-31, on a
+  roster rebuilt with uniform 4:3 `object-fit:cover` thumbs: *"I don't like how you cropped
+  out all the good features of each CRT — don't crop them more than they were cropped last
+  time."* The control panels, keypads, the AMS-100 riding on top, the SONY badge — that is
+  the *subject*, not background to trim. This is the same rule as the existing
+  cabinet-photo one, and it now has a worked example: an aligned grid is not worth a crop.
+  **Align with `object-fit:contain` instead** — a uniform plate the whole photo sits inside,
+  `background:transparent` so the card's own gradient mats it. monitors.html's roster is
+  `aspect-ratio:7/6` (the geometric mean of the four photos' ratios, so the matting is even),
+  two columns, nothing cropped, rows perfectly aligned. **Recropping the source photo is a
+  different thing and he asks for it** — `pvm-2950q.jpg` was recut from the
+  `IMG_3926.jpg` master at `(282,12)-(2640,1790)` → 1600×1206 / thumb 800×603, `?v=7`: the
+  old frame clipped 113px off the top of the cabinet and carried a slice of a neighbouring
+  monitor down each side. The limits on that photo are the **Trinitron badge** (master
+  x≈385) on the left and the **button column** (master x 2533–2634) on the right. A tighter
+  crop into the left cheek was tried and rejected — **cropping one side and not the other
+  reads as crooked**: *"You cut too much off of the left side, now it looks uneven."* Frame
+  a symmetrical object symmetrically; cabinet edge to cabinet edge is the answer. **Verify a "no-crop" layout
+  numerically** — measure each rendered box against `naturalWidth/Height` and assert the
+  scaled image fits inside it; do not eyeball it.
+- **A card without a photo cannot share a grid row with one that has a photo.** In an
+  aligned grid the photoless card stretches to match, so it reads as an empty box. That was
+  the other half of the monitors.html mess: four LMD models had no photograph, and the page
+  worked around it with `.masonry` plus a `.cthumb{aspect-ratio:auto}` override, so no two
+  cards lined up. The four LMD models now fold into **one full-width `.card.wide`** on the
+  rack photo, naming all four models with their counts — David chose that over shooting
+  three new photos, and **nothing was dropped from the roster**. He asked for that one photo
+  to be **cropped on top** (ceiling, shelf and a wall disc above the monitors):
+  `lmd-rack.jpg` is now `(0,105)-(1500,640)` of the old master → 1500×535, thumb 800×285,
+  all refs at `?v=3` — **including the gallery's**, which shares the file.
+- **`.grid.c2` and `.grid.c3` are `auto-fill minmax()`, so the column count follows the
+  viewport, not the class name.** At desktop `c2` is three columns and `c3` is four. A
+  section with two or four items in a `c2` therefore leaves holes on the right — that was
+  the other half of the monitors.html mess ("Beyond video", the AMS photo pair). When a
+  block has a **fixed** number of items, pin the columns explicitly
+  (`grid-template-columns:repeat(N,minmax(0,1fr))` with breakpoints) rather than letting
+  auto-fill orphan the last row. Specificity note: a page-scoped `.fleetgrid{}` loses to
+  `.grid.c2` in style.css — write `.grid.fleetgrid{}` or drop the `c2` class.
+- **Nothing wider than ~2.2:1 belongs in the home filmstrip.** At 170px tall a 3.9:1 sign renders
+  as a 660px slab. index.html now measures each strip image on load and hides anything over
+  2.2:1 — panoramas stay in the gallery masonry, which handles them fine. Don't "fix" a wide
+  photo with object-fit:cover; it cuts the ends off signs.
+- Gallery audit 2026-08-26 (43 -> 39): removed the Mini Cute shipping crate, the Red Tent
+  teardown, the BVM-20E1U crosshatch and the AMS-100 bench lineup — all process/bench shots that
+  live on their own story or project page. Kept but FLAGGED as the weakest entries: the four
+  fleet portraits with dark screens and window reflections (bvm-20e1u, bvm-a14f5u, pvm-2950q,
+  pvm-20l5) and big-blue-side-art. Screens-on reshoots would lift all five.
+- **⭐ WHEN SOMETHING SELLS, ITS GALLERY ENTRY COMES OUT TOO** (David, 2026-08-31: *"i see the
+  D9 monitor photo in the gallery scrolling across the main page. Is this an error?"* → *"pull
+  it"*). The older rule said a good shot could stay in the gallery after the machine left; that
+  was wrong in practice, because **the home filmstrip is built from gallery entries, so keeping
+  one puts a departed machine on the front page** — under a present-tense title, in that case
+  "BVM-D9H5J, reporting for duty". The gallery and the filmstrip read as *what is here*.
+  So: remove the `gallery-data.js` entry, its `sitemap.xml` `<image:image>` line, and both
+  image files. **The exception is the `games.html` memoriam**, which works precisely because it
+  is labeled as machines that passed through. Sold-machine photos live there or nowhere.
+- **⭐ EVERY PHOTO ON THE SITE MUST BE HIS OWN.** The footer claims *"Photography ©
+  Orlandu's Arcade"*, so a third-party shot in the gallery makes that line false and
+  publishes someone else's work under his name. **`tna-toppers.jpg` ("Annihilation,
+  accessorized") was removed on 2026-08-31** — David: *"I realize now that is not my photo,
+  it is someone elses."* Entry, sitemap line and both image files deleted; gallery 47 → 46.
+  **If a photo's provenance is ever unclear, ask before publishing it**, and if one is
+  identified later, pull it the same way — it is a rights question, not a curation one.
+  (Note: the file stays in git history, and history cannot be rewritten here — this repo
+  forbids force-pushing. It is off the site and off the CDN, which is what matters.)
+- **The gallery is a curated showcase, not an archive.** Bench and workbench snapshots stay on
+  their editorial or project page and do NOT get a gallery entry. David pulled all seven AMS-3
+  images/clips from it (2026-08-26): "they aren't that professional." The bar is his lit,
+  composed machine photography. Note the home filmstrip draws from gallery images, so a
+  gallery entry also puts a photo on the front page.
+- **Never hard-code the marquee's animation duration.** A fixed duration means a fixed
+  time per loop, so the ticker accelerates every time a segment is added to the copy —
+  it had crept to ~196 px/s on desktop before David caught it (2026-08-26). `site.js`
+  measures `.strip span` and sets `animation-duration` from a 75 px/s target. The value
+  in `style.css` is a fallback only. Same class of fix as the filmstrip's rAF scroller.
+- Don't imply a current count from a photo of a past state — say "on arrival" or "since moved on".
+
+### Content David has declined (2026-08-28)
+
+- **No sourcing/channel content.** David: "financial pathways are not something I'm
+  interested in sharing with the public. They need to figure that out on their own and
+  not use my channels." No Japan-pipeline story, no content about where or how he
+  sources; the monitors.html Beyond Video teaser card for it was removed the same day.
+- **No failures/regrets editorial** — same ruling. The site does not publish his misses.
+- **No composite-video screenshots on his monitors**: "composite is just gross. I would
+  never put a picture that ugly on my monitors." Any comparison piece uses RGB material.
+- **No RSS feed** — declined.
+- **The fleet count is THIRTEEN units across EIGHT models** — the BVM-D9H5J sold
+  2026-08-31 and came off the roster; LMD-9050 is ×2. Swept across index, monitors,
+  stories, signal-chain, pvm-vs-bvm, and Trinitron Fleet Vol. 1 (fleet stats now
+  380 lb / ≈960 W / 1080 sq in, the `UNITS` array, and the no-JS static mirror).
+- **Machine pages carry a prev/next chain** (`nav.machnav`, styled in style.css)
+  mirroring games.html order: uprights → pinball → game room, looping. Adding or
+  removing a machine page means re-linking its two neighbors.
+
+### Approved 2026-08-28: machine accents + story thumbnails + Japan language
+
+- **Every machine page carries an accent palette keyed to its own art**, as a page-scoped
+  `<style>` block ("Machine accent") overriding ONLY `main .kicker`, the `h1.page`
+  gradient, `h2.sec`, and `.card .sub` — links stay cyan, everything else is house style.
+  Palettes (X = kicker/h2/sub; L/M/D = h1 gradient): donkey-kong cab blue
+  #86b8ff/#cfe4ff/#5b9dff/#1e4f9e · mario-bros pipe green #6fdc8c/#baf5c4/#3ecf5e/#137a2e ·
+  vs-unisystem VS. red #ff8f7a/#ffb4a8/#f0503c/#96180c · big-blue Capcom azure
+  #6fc4ff/#bfe6ff/#3fa9ff/#0b5bd0 · indiana-jones adventure gold #eec06a/#ffe2a0/#e8a03c/#9c5210 ·
+  ghostbusters ecto purple #c09aff/#e2ccff/#a86bff/#5a1fae · tna reactor yellow
+  #e3f04a/#f8ffb0/#d8e83a/#7a9e15 · rick-and-morty portal green #a8f26b/#e2ff9e/#7ee94a/#2f9e2f ·
+  red-tent tent red #ff8a8a/#ffb0b0/#e83838/#7e0e0e · mini-cute candy pink
+  #ff9ed0/#ffd0e8/#ff7ac0/#b02878. A new machine page gets a palette from its own art.
+- **Story cards on stories.html carry a photo thumbnail**: `media/story-thumbs/story-<slug>.jpg`,
+  1200×514 (21:9), q82, cropped from the story's OWN media, no wordmark. This is a documented
+  exception to one-photo-one-home — the thumb is navigational chrome, like an OG image.
+  The featured card shows the same file at 3:1 via `object-fit` (`.cthumb` rules in style.css).
+  **A new story needs a new crop**, and the story-thumbs are NOT in sitemap.xml (chrome, not content).
+  The PVM-20L5 thumb is cropped from the flagged weak `pvm-20l5.jpg` — regenerate it when the
+  screens-on reshoot lands. index.html's "Step inside" cards carry the
+  same treatment via `media/step-thumbs/step-<slug>.jpg` (approved from a mockup the same day);
+  the "Latest" news grid deliberately stays TEXT — a thumb-per-news-item is a forever
+  maintenance tax and the page already opens with two photo bands. `step-forsale.jpg` was
+  re-cut from `sale-psvr2.jpg` on 2026-08-31 when the D9H5J sold (crop y 260–774, above the
+  watermark); it was previously SMB on the D9.
+- **Japan language (David delegated the call):** channel-flavored copy is out — about.html's
+  "sourcing lines that reach all the way to auction houses in Japan" clause was removed. Plain
+  unit provenance stays ("sourced from Japan" on the monitors AMS-100 card). The monograph is
+  untouched — it has its own rulings.
+
+## Listing documented hardware — the provenance link (David approved 2026-09-01)
+
+When a piece of hardware that the site already documents gets listed on `forsale.html`, its
+card links that item's own history on the site — the roster entry, its Trinitron Fleet
+feature, its story or project page. Example shape (the BVM-D9H5J would have carried):
+"This exact unit is documented in Trinitron Fleet Vol. 1 — its full feature, photos and
+service history →". Documented provenance is the one thing no other seller in this hobby
+offers, and it is why two identical units sell for different money. This is an ON-SITE
+practice only — never put orlandu.com links or mentions in the eBay listing itself; eBay's
+links policy prohibits external links AND plain-text site mentions (checked 2026-09-01).
+When the item sells, the provenance link comes out with the card in the normal sweep.
+
+## Sold items
+
+Settled with David on 2026-08-26 when the AMS-100 sold. The rule is **the sales page is present
+tense; the collection page carries the memory — and most departures don't earn a memory at all.**
+
+- **`forsale.html` — the card comes OUT the moment it sells.** No SOLD badge, no "recently
+  sold" archive section. The eBay buttons point at a seller *search*, not an `/itm/` link, so
+  a SOLD card walks a live buyer into a search that no longer contains the thing they clicked
+  for. A wall of SOLD badges is also sales-floor scarcity theater and off-voice here — the
+  page's lede ("years of seller history") and the eBay store link already carry the track
+  record. And it ages badly: six months of badges and the page is mostly things nobody can buy.
+- **The bar for an "In memoriam" entry is high, and the AMS-100 is the worked example of
+  failing it.** A section was built for it on `monitors.html` and David had it taken straight
+  back out (`0df6c08` -> reverted). Before building one, the item should be *singular* — a
+  machine with a history here — not one interchangeable unit out of a set of five. A catalog
+  listing photo is also the wrong register next to his lit, in-room photography. **When in
+  doubt, a departure gets a clause in existing prose, not a section.** `monitors.html` carries
+  exactly that: a one-line `p.note` under the roster table naming the departed BVM-14F5U.
+- **The one real memoriam section is on `games.html`** — cabinets, pins and signage, sixteen
+  shots, "machines that passed through on their way to someone else's story". Shape:
+  `<section id="memoriam">` -> `<h2 class="sec">In memoriam <small>...</small></h2>` -> a
+  `div.grid c3` of `figure.shot`, captions as `<b>Name</b> &mdash; one short line`. **They stay
+  FULL COLOR** — grayscale/fade has been proposed twice and declined twice. Don't clone this
+  section onto another page without asking him first; that's the mistake that got reverted.
+- **If something does earn an entry, photos are `alumni-<slug>.jpg`** in both `media/thumbs/`
+  and `media/2026/`, and you **`git mv` the `sale-*` files** rather than copying — a rename is
+  a new URL, so the CDN-cache rule above is satisfied and no orphan is left behind.
+- **Keep it a memorial, not a ledger.** Sixteen cabinets over years reads as history; a section
+  that accumulates every departure reads as inventory churn.
+
+**The sweep when something sells:** remove the `forsale.html` card -> remove its JSON-LD
+`Product` node **and rebuild the `ItemList` from the parsed JSON** -> check the **FOR SALE
+marquee segment in `index.html`**, which names items individually, so a named item must be
+swapped out -> drop the photo's `<image:image>` line from `sitemap.xml` and delete the
+`sale-*` files -> **remove the item's gallery entry, its sitemap image line and its media
+files** (a gallery entry is also a front-page filmstrip entry) -> grep for counts that
+included the sold unit -> grep for anything else
+linking at the listing, **including the copy on neighbouring cards** (the AC-D9H card said
+"pairs naturally with the D9H5J above"). Same discipline as the dangling-photo sweep: a
+removal is not done until the copy around it is checked.
+
+**Do NOT renumber the `#productN` @ids by string replacement.** That was tried when the
+D9H5J sold and it silently left the `ItemList` pointing at `#product1` twice with the PSVR2
+unreferenced — the page rendered perfectly and the JSON still parsed, so nothing caught it
+until the next sale. Parse the `ld+json` block, drop the node, re-`@id` the products in
+order, rebuild `itemListElement` and `numberOfItems` from that list, and assert every
+referenced `@id` resolves to exactly one node in the graph. Re-serializing normalizes a few
+`\uXXXX` escapes to literal characters; that is fine, the file is UTF-8.
+
+`media/2026/alumni-ams-100.jpg` and its thumb are currently **unreferenced** — the old listing
+photo, kept in case the AMS-100 monograph wants it. Not an oversight.
+
+**Watermarks: For Sale photos only.** The photos on `forsale.html` carry a
+`© orlandu.com` mark, bottom-right, at 4.2% of the short edge (white 80% over a soft dark
+shadow). **Nothing else on the site is watermarked and nothing else should be** — the
+editorial and gallery photography is the reason people stay, and a mark across it costs
+more than it protects. Regenerate a mark with the same recipe if a new sale photo is added.
+The scope is deliberate, not partial work.
+
+**The BVM-D9H5J sold on 2026-08-31.** Its for-sale card, JSON-LD `Product`, index marquee
+mention, index "Latest" card, monitors.html roster card and its whole Trinitron Fleet Vol. 1
+feature came out; `media/{2026,thumbs}/sale-bvm-d9h5j.jpg`, `media/{2026,thumbs}/bvm-d9h5j.jpg`
+and `media/fleet/b4133f839b.webp` were deleted (the sale copy was a deliberate watermarked
+duplicate, so `git mv` was wrong here). **`d9-smb.jpg` went too, in a follow-up** — see the
+gallery rule below. The departure is now recorded exactly once, as a clause in the
+monitors.html `p.note`; there is no memoriam entry and no "recently sold" section (see the
+sales-page rule above).
+
+**Overwriting a file in `media/` needs `?v=N` on its `<img>` refs** — `vercel.json` gives
+`/media/*` `s-maxage=86400`, so the CDN serves the old bytes for a day otherwise. Leave
+JSON-LD `image` URLs unversioned.
+
+## The vault
+
+`vault.html` lives on David's device (not in this repo) — 1,283 inventory items.
+JSON sits between `/*VAULT_DATA_START*/` and `/*VAULT_DATA_END*/`, prefixed `items = [`:
+
+    blob = re.sub(r'^items\s*=\s*', '', m.group(1).strip()).rstrip().rstrip(';')
+    data = json.loads(blob)
+
+Useful fields: `upgrades` (list of `{desc, cost, date}`), `conditionNotes`, `notes`,
+`lastServiced`, `originality`.
+
+## Planning artifacts
+
+- **Attract Mode** — photo audit, placement plan, 34-shot intake tracker:
+  https://claude.ai/code/artifact/c4999444-8cc3-49fd-8f52-bf996c268710
+- **The Bench Book** — work-log intake (mostly superseded by the vault):
+  https://claude.ai/code/artifact/0f218037-5cbf-469f-a9c1-8832f67ef0a4
+
+## Round-five features (2026-09-11) — what they are and what they obligate
+
+Shipped together from the fifth review (memory: `orlandu-2026-09-11-review5`):
+
+- **Site search** — the magnifier in the header (and the button on 404) opens a dialog over
+  `assets/search-index.js`. **That file is GENERATED: run `python3 tools/build-search-index.py`
+  from the repo root before every push** so new pages, cards, glossary terms and gallery
+  captions are searchable. It indexes published pages only. Magazine/monograph bodies are
+  headings-only by design.
+- **Glossary tooltips** — `assets/glossary-data.js` is generated from `glossary.html` by
+  `python3 tools/build-glossary.py`; rerun it when a term is added or a definition changes.
+  Tooltips run on pages with a reading time (`div.rt`), skipping the glossary, the monograph
+  and the two Orlandu 100/50 issues. First occurrence per page only; aliases and the
+  too-generic SKIP list live in the script.
+- **Section links + Share** — `site.js` gives every `main h2` an id from its text and a hover
+  "#" that copies the deep link; story/guide pages (`.rt`) and machine profiles (`main.profile`)
+  get a Share button under the lede (native share sheet, copy-link fallback). Existing ids are
+  kept, so hand-written anchors still work; renaming a heading changes its generated id.
+- **Reading progress + resume** — pages with `div.rt` get the thin bar under the header and a
+  "Pick up where you left off" pill on a return visit past a third; state is per-browser
+  localStorage (`orl-read:<path>`). The magazine has no site chrome and gets neither.
+- **Lightbox zoom** — wheel/drag, pinch/double-tap, and a 1:1 button; swipe-to-navigate only
+  fires at fit size. Zoom shows the 1600px master at native pixels, so **check a new sale photo
+  for legible serials/asset tags before it goes up** (the privacy note already says so).
+- **Attract Mode slideshow** — gallery only (`<body data-slideshow>`): the ▶ Play chip runs the
+  current set; `gallery.html#play`, `#pinball&play` and `#tag=tna&play` start it on load.
+  Fullscreen where allowed, 5 s per photo, tap or space pauses, cursor hides after 2 s.
+- **Fleet spec table** (`monitors.html#specs`) is condensed from the magazine's `DATA` object —
+  the magazine remains the long-form source; when a spec changes there, change it here too.
+  Sort is client-side (`data-sort`, `data-v`). **Units column mirrors the fleet count sweep.**
+- **Console mod table** (`consoles.html#mods`) lists only consoles whose signal path the site
+  states; handhelds and the bench unit stay off. David confirmed 2026-09-11: BOTH NES units carry
+  an NESRGB, and the Duo-R has an RGB mod plus the region mod.
+- **Structured data** — `VideoObject` nodes on about, signage (×2), projects and
+  ams-3-vs-ams-100 (durations from ffprobe; `uploadDate` is the ship date), and a `FAQPage` on
+  about.html built from the eight confirmed answers. **Editing an FAQ answer means editing the
+  JSON-LD copy too.** A new video needs a VideoObject.
+
+Still to come from that review, in this order, one per session: monitor model pages,
+the WebP `<picture>` pass, the collection timeline (mockup first), the contact form
+(Vercel function + Resend — David's choice).
+
+## Round-five, part two (2026-09-11) — the four big ones
+
+- **PHOTOS ARE WEBP NOW.** `tools/convert-webp.py` converted every `media/**/*.jpg` (except
+  `media/og/`, which stays JPEG for social scrapers) and `assets/hero-bg.jpg` to `.webp` under
+  the same basename, rewrote 961 references, and deleted the JPEGs (91.5 → 63.2 MB). **New photos
+  are saved as .webp directly** — Pillow `im.save(p, "WEBP", quality=82, method=6)`, never with
+  `exif=`. The gallery srcset builder, the home filmstrip builder and `style.css` now build
+  `.webp` names; the `-400/-600/-800/-2x` sibling convention is unchanged. Thumb/full/strip/OG
+  rules in the Media section still apply — only the extension changed. Don't run the converter
+  again; it is kept for the record.
+- **Monitor profile pages** — `pvm-2950q.html`, `pvm-20l5.html`, `bvm-20e1u.html`,
+  `bvm-a14f5u.html`, `lmd-wall.html` (the four LMD models share one page, like the magazine).
+  Same chrome as machine profiles (`main.profile`, accent `<style>`, `nav.machnav` looping in
+  roster order, center cell → monitors.html). Body copy is the magazine's COPY object verbatim;
+  the inputs list is condensed from its DATA table; work logs from the vault (David 2026-09-11:
+  **name SavonPat on the A14F5U service**; **the 20L5's slot holds a BKM-129X** — magazine copy
+  and both spec tables corrected). Each page links its Vol. 1 feature, `gallery.html#tag=<slug>`
+  (tags + TAG_LABELS added to the four monitor gallery entries), and the 20L5 links its buying
+  guide. Roster cards and the spec-table model names now link the profiles. OG cards
+  `media/og/og-<slug>.jpg` cut from the hero photo + wordmark. **A new monitor page means
+  re-linking its two chain neighbors, a sitemap block, an llms.txt line, and a timeline entry.**
+- **Timeline** — `timeline.html` is GENERATED by `tools/build-timeline.py` from three lists of
+  (name, RELEASE year, thumb, href). **Release years only, never acquisition dates.** Years come
+  from the cards; when a card's year or thumb changes, edit the list and rerun. Linked from the
+  footer Explore row and an index Latest card; in sitemap + llms.txt.
+- **Contact form** — `api/contact.js` (Vercel Node function, no dependencies) relays to
+  orlandusarcade@gmail.com through Resend's REST API from `onboarding@resend.dev`; needs
+  `RESEND_API_KEY` in the Vercel project env (David added it 2026-09-11, Secret). Free tier
+  delivers only to the account's own verified address, which is the point. Forms
+  (`form.cform`) live on about.html#write and wanted.html#have-one; the 24 "I have one →" links
+  are now `<a href="#have-one" data-item="…">` and prefill the subject; the mailto stays beside
+  the Send button as the permanent fallback. Honeypot field `site`; photos ≤3 MB after an
+  in-browser downscale; the function answers 503 `not-configured` if the key is missing and the
+  page says so. `vercel.json` needs no change — `/api/*` is served by the function automatically.
+- The home Latest grid dropped its two oldest cards (IJ cold-boot chase, Trinitron Fleet Vol. 1)
+  for the monitor-pages and timeline cards; still 9.
