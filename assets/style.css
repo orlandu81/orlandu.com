@@ -642,3 +642,134 @@ table.spec .fam{display:block;font-family:var(--cond);font-size:.75rem;letter-sp
 .cform .cstatus.warn{color:var(--fire3);border-color:var(--fire2)}
 .cform .cstatus[hidden]{display:none}
 @media(max-width:640px){.cform{grid-template-columns:1fr}}
+
+/* ══════════════════════════════════════════════════════════
+   Round six (2026-09-25) — ten stylistic changes
+   ══════════════════════════════════════════════════════════ */
+
+/* ── 1. Reading pages: a centered column with a sticky table of contents ──
+   main.reading = the long-form articles that are neither hub nor profile
+   (buying guide, field guide, ams-3, pvm-vs-bvm, vs-smb). The head block spans
+   the full measure; everything else sits in a 72ch column; the TOC (built by
+   site.js when a page has three or more h2s) rides a rail on the right. */
+main.reading{display:grid;grid-template-columns:minmax(0,72ch) 15rem;column-gap:3.5rem;justify-content:center;align-items:start}
+main.reading>*{grid-column:1;min-width:0}
+main.reading>.kicker,main.reading>.rt,main.reading>h1.page,main.reading>p.lede,main.reading>.machnav{grid-column:1/-1}
+main.reading>section{max-width:none!important}
+main.reading section>p{margin-bottom:1.1rem}
+main.reading>.toc{grid-column:2;grid-row:span 400;align-self:stretch}
+main.reading:not(:has(>.toc)){grid-template-columns:minmax(0,72ch)}
+.toc .tocin{position:sticky;top:64px}
+.toc .tl{font-family:var(--disp);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:.6rem}
+.toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+.toc li{margin:0}
+.toc a{display:block;padding:.32rem .85rem;margin-left:-1px;border-left:2px solid transparent;font-family:var(--cond);font-size:.95rem;letter-spacing:.03em;color:var(--dim);line-height:1.3;transition:color .15s,border-color .15s}
+.toc a:hover{color:var(--ink);text-decoration:none}
+.toc a.on{color:var(--cyan);border-left-color:var(--cyan)}
+@media(max-width:1000px){
+  main.reading{display:block}
+  main.reading>section{max-width:72ch!important}
+  main.reading>p.lede{max-width:62ch}
+  .toc{margin:-.6rem 0 2rem;max-width:72ch}
+  .toc .tocin{position:static;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.9rem 1rem .6rem}
+  .toc ol{border:0;display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}
+  .toc a{padding:.28rem 0;margin:0;border:0}
+  .toc a.on{color:var(--dim)}
+}
+@media(max-width:560px){.toc ol{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.toc a{transition:none}}
+
+/* ── 2. Text tables stack on a phone instead of pushing the page sideways ── */
+table.spec.stack{min-width:0}
+@media(max-width:640px){
+  table.spec.stack,table.spec.stack tbody,table.spec.stack tr,table.spec.stack td{display:block;width:100%}
+  table.spec.stack thead{display:none}
+  table.spec.stack tr{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:.5rem .85rem;margin-bottom:.7rem}
+  table.spec.stack td{border:0;padding:.3rem 0;white-space:normal}
+  table.spec.stack td::before{content:attr(data-l);display:block;font-family:var(--cond);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+  table.spec.stack td:first-child{position:static;box-shadow:none;background:none;font-family:var(--disp);font-size:.9rem;color:var(--ink)}
+  table.spec.stack td:first-child::before{display:none}
+}
+
+/* ── 3. Home on a phone: "Step inside" goes two-across, thumb and title only ── */
+@media(max-width:700px){
+  .grid.steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+  .grid.steps .card{padding:.7rem .75rem .8rem}
+  .grid.steps .card .cthumb{width:calc(100% + 1.5rem);margin:-.7rem -.75rem .6rem;aspect-ratio:16/10}
+  .grid.steps .card .sub{font-size:.68rem;margin-bottom:.25rem}
+  .grid.steps .card h3{font-size:.8rem;line-height:1.3;margin:0}
+  .grid.steps .card p{display:none}
+  .grid.steps .card:last-child:nth-child(odd){grid-column:1/-1}
+  .grid.steps .card:last-child:nth-child(odd) .cthumb{aspect-ratio:21/9}
+}
+
+/* ── 4. Profile on a phone: the name comes before the photo ── */
+@media(max-width:860px){
+  .phero{gap:0}
+  .phero .pbody{display:contents}
+  .phero .pbody>.kicker,.phero .pbody>h1.page,.phero .pbody>p.lede{order:-1}
+  .phero .pbody>p.lede{margin-bottom:1.3rem}
+  .phero .pshot{margin:0 0 1.6rem}
+}
+
+/* ── 5. The header shrinks to one row once the reader is scrolling ── */
+@media(min-width:761px){
+  header.site .navlogo img,header.site .navwrap,nav.main a,header.site .sbtn{transition:height .25s ease,padding .25s ease,font-size .25s ease}
+  header.site.compact{min-height:0}
+  header.site.compact .navwrap{padding:.3rem 1.2rem;flex-wrap:nowrap;gap:.6rem}
+  header.site.compact .navlogo img{height:30px}
+  header.site.compact nav.main{margin-left:auto;flex-wrap:nowrap}
+  header.site.compact nav.main a{font-size:.62rem;padding:.42rem .5rem;letter-spacing:.05em}
+  header.site.compact .sbtn{margin-left:0;padding:.32rem .6rem;font-size:.75rem}
+}
+@media(prefers-reduced-motion:reduce){header.site .navlogo img,header.site .navwrap,nav.main a,header.site .sbtn{transition:none}}
+
+/* ── 6. Home "Latest": a two-column ledger instead of a wall of cards ── */
+.ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 3rem;border-top:1px solid var(--line)}
+.ledger .card{display:grid;grid-template-columns:6.4rem minmax(0,1fr);gap:.15rem 1rem;align-items:start;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:.95rem 0 1rem;overflow:visible}
+.ledger .card .badge{grid-row:1/3;margin:.2rem 0 0;justify-self:start}
+.ledger .card h3{font-size:.98rem;margin-bottom:.2rem}
+.ledger .card p{font-size:.97rem;line-height:1.5}
+.ledger .card:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.ledger .card:hover h3{color:var(--cyan)}
+@media(max-width:760px){.ledger{grid-template-columns:1fr}}
+@media(max-width:400px){.ledger .card{grid-template-columns:1fr}.ledger .card .badge{grid-row:auto;margin-bottom:.35rem}}
+
+/* ── 7. Profile "at a glance" rows replace the bottom card trio; share moves ──*/
+dl.glance{margin:1.5rem 0;padding:0;border-top:1px solid var(--line)}
+dl.glance>div{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:.2rem 1rem;padding:.62rem 0;border-bottom:1px solid var(--line)}
+dl.glance dt{font-family:var(--cond);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);padding-top:.2rem}
+dl.glance dd{margin:0;color:var(--dim);font-size:1rem;line-height:1.5}
+dl.glance dd b{font-family:var(--disp);font-size:.88rem;letter-spacing:.02em;color:var(--ink);font-weight:600}
+@media(max-width:480px){dl.glance>div{grid-template-columns:1fr;gap:.1rem}}
+div.rt{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
+div.rt button.share{padding:.2rem .7rem;font-size:.78rem}
+.sharerow.end{display:flex;justify-content:flex-end;margin:1.2rem 0 .4rem}
+.sharerow.end button.share{font-size:.8rem}
+
+/* ── 8. Page-to-page crossfade; the machine photo carries across ── */
+@media (prefers-reduced-motion: no-preference){
+  @view-transition{navigation:auto}
+}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.22s}
+::view-transition-group(*){animation-duration:.32s}
+
+/* ── 9. Pull quotes and stat rows for the long-form pages ── */
+.pull{margin:1.9rem 0;padding:.3rem 0 .3rem 1.3rem;border-left:3px solid var(--fire2);font-family:var(--disp);font-weight:600;font-size:1.18rem;line-height:1.45;letter-spacing:.01em;color:var(--ink)}
+.pull::before{content:"\201C";color:var(--fire2);margin-right:.1em}
+.pull::after{content:"\201D";color:var(--fire2);margin-left:.05em}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin:1.7rem 0}
+.stats>div{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-top:2px solid var(--cyan-dim);border-radius:10px;padding:.8rem .9rem .7rem}
+.stats .n{display:block;font-family:var(--disp);font-weight:800;font-size:1.35rem;letter-spacing:.02em;line-height:1.15;color:var(--cyan);font-variant-numeric:tabular-nums}
+.stats .l{display:block;font-family:var(--cond);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:.35rem}
+@media(max-width:560px){.stats{grid-template-columns:1fr}.pull{font-size:1.06rem}}
+@media print{.pull{border-color:#999;color:#111}.stats>div{border-color:#bbb;background:none}.stats .n{color:#111}.toc{display:none}}
+
+/* ── 10. The phone menu grouped into clusters ── */
+nav.main .ng{display:none}
+@media(max-width:760px){
+  nav.main.open{display:grid;grid-template-columns:1fr 1fr;gap:0 .6rem}
+  nav.main a{border-top:1px solid var(--line)}
+  nav.main a.full,nav.main .ng{grid-column:1/-1}
+  nav.main .ng{display:block;font-family:var(--pixel);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fire2);padding:1rem .7rem .35rem}
+}

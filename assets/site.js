@@ -19,6 +19,8 @@
     ["wanted.html",   "Wanted"],
     ["about.html",    "About"]
   ];
+  // Phone menu only (CSS hides these on wide screens): the cluster a link opens.
+  const GROUPS = { "games.html": "The collection", "stories.html": "Reading", "forsale.html": "Trading" };
 
   // Keyboard access: a skip link ahead of the injected chrome.
   const mainEl = document.querySelector("main");
@@ -45,7 +47,8 @@
         '<button class="burger" aria-label="Menu" aria-expanded="false">☰ MENU</button>' +
         '<nav class="main">' +
           NAV.map(([href, label]) =>
-            '<a href="' + href + '"' + (href === here + ".html" || href === here || (href === "/" && here === "index") ? ' class="here"' : '') + '>' + label + '</a>'
+            (GROUPS[href] ? '<span class="ng" aria-hidden="true">' + GROUPS[href] + '</span>' : '') +
+            '<a href="' + href + '" class="' + ((href === here + ".html" || href === here || (href === "/" && here === "index")) ? 'here' : '') + ((href === "/" || href === "about.html") ? ' full' : '') + '">' + label + '</a>'
           ).join("") +
         '</nav>' +
       '</div>';
@@ -55,6 +58,16 @@
       const open = nav.classList.toggle("open");
       burger.setAttribute("aria-expanded", open ? "true" : "false");
     });
+    // The two-row header collapses to one row once the reader is scrolling
+    // (hysteresis so the threshold never flickers); it grows back near the top.
+    let compact = false;
+    const compactCheck = () => {
+      const y = window.scrollY;
+      if (!compact && y > 80){ compact = true; header.classList.add("compact"); }
+      else if (compact && y < 20){ compact = false; header.classList.remove("compact"); }
+    };
+    window.addEventListener("scroll", compactCheck, {passive:true});
+    compactCheck();
   }
 
   const footer = document.querySelector("footer.site");
@@ -525,9 +538,50 @@
       else copy(data.url).then(function(){ toast("Link copied", b); });
     });
     row.appendChild(b);
-    var lede = h1.nextElementSibling && h1.nextElementSibling.classList.contains("lede") ? h1.nextElementSibling : null;
-    (lede || h1).insertAdjacentElement("afterend", row);
+    var rt = main.querySelector("div.rt");
+    var mn = main.querySelector("nav.machnav");
+    if (rt && !main.classList.contains("hub")){ rt.appendChild(b); row = null; }   // byline: "9 min read · Share"
+    else if (main.classList.contains("profile")){ row.classList.add("end"); (mn || main).insertAdjacentElement(mn ? "beforebegin" : "beforeend", row); }
+    else {
+      var lede = h1.nextElementSibling && h1.nextElementSibling.classList.contains("lede") ? h1.nextElementSibling : null;
+      (lede || h1).insertAdjacentElement("afterend", row);
+    }
   }
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   Table of contents (2026-09-25)
+   Long-form pages (main.reading) with three or more h2s get a sticky rail on a
+   wide screen and a "Jump to" box under the lede on a narrow one. Built from the
+   ids the section-links pass just assigned, so nothing is hand-maintained.
+   ═══════════════════════════════════════════════════════════ */
+(function(){
+  var main = document.querySelector("main.reading");
+  if (!main) return;
+  var hs = Array.prototype.slice.call(main.querySelectorAll("h2[id]")).filter(function(h){ return !h.closest("nav, .machnav"); });
+  if (hs.length < 3) return;
+  var aside = document.createElement("aside");
+  aside.className = "toc"; aside.setAttribute("aria-label", "In this guide");
+  var inner = document.createElement("div"); inner.className = "tocin";
+  inner.innerHTML = '<div class="tl">In this guide</div>';
+  var ol = document.createElement("ol");
+  var links = hs.map(function(h){
+    var li = document.createElement("li"), a = document.createElement("a");
+    a.href = "#" + h.id;
+    a.textContent = h.textContent.replace(/#\s*$/, "").replace(/\s+/g, " ").trim();
+    li.appendChild(a); ol.appendChild(li); return a;
+  });
+  inner.appendChild(ol); aside.appendChild(inner);
+  var after = main.querySelector("p.lede") || main.querySelector("h1");
+  after.insertAdjacentElement("afterend", aside);
+  var t;
+  function mark(){
+    var best = -1;
+    for (var i = 0; i < hs.length; i++){ if (hs[i].getBoundingClientRect().top < innerHeight * 0.4) best = i; }
+    links.forEach(function(a, i){ a.classList.toggle("on", i === best); });
+  }
+  addEventListener("scroll", function(){ clearTimeout(t); t = setTimeout(mark, 60); }, { passive: true });
+  mark();
 })();
 
 /* ═══════════════════════════════════════════════════════════
