@@ -715,7 +715,8 @@ table.spec.stack{min-width:0}
 /* ── 5. The header shrinks to one row once the reader is scrolling ── */
 @media(min-width:761px){
   header.site .navlogo img,header.site .navwrap,nav.main a,header.site .sbtn{transition:height .25s ease,padding .25s ease,font-size .25s ease}
-  header.site.compact{min-height:0}
+  header.site{overflow-anchor:none}
+header.site.compact{min-height:0}
   header.site.compact .navwrap{padding:.3rem 1.2rem;flex-wrap:nowrap;gap:.6rem}
   header.site.compact .navlogo img{height:30px}
   header.site.compact nav.main{margin-left:auto;flex-wrap:nowrap}

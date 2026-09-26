@@ -58,13 +58,16 @@
       const open = nav.classList.toggle("open");
       burger.setAttribute("aria-expanded", open ? "true" : "false");
     });
-    // The two-row header collapses to one row once the reader is scrolling
-    // (hysteresis so the threshold never flickers); it grows back near the top.
+    // The two-row header collapses to one row once the reader is scrolling and
+    // grows back near the top. The collapse shortens the header by ~75px, and the
+    // browser's scroll anchoring then pulls scrollY back by that much to keep the
+    // content still — so the two thresholds must sit further apart than the height
+    // change, or the header flips forever at one scroll position (2026-09-26).
     let compact = false;
     const compactCheck = () => {
       const y = window.scrollY;
-      if (!compact && y > 80){ compact = true; header.classList.add("compact"); }
-      else if (compact && y < 20){ compact = false; header.classList.remove("compact"); }
+      if (!compact && y > 220){ compact = true; header.classList.add("compact"); }
+      else if (compact && y < 40){ compact = false; header.classList.remove("compact"); }
     };
     window.addEventListener("scroll", compactCheck, {passive:true});
     compactCheck();
