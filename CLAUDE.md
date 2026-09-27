@@ -412,8 +412,7 @@ tense; the collection page carries the memory — and most departures don't earn
 - **Keep it a memorial, not a ledger.** Sixteen cabinets over years reads as history; a section
   that accumulates every departure reads as inventory churn.
 
-**The sweep when something sells:** remove the `forsale.html` card -> remove its JSON-LD
-`Product` node **and rebuild the `ItemList` from the parsed JSON** -> check the **FOR SALE
+**The sweep when something sells:** remove the `forsale.html` card -> check the **FOR SALE
 marquee segment in `index.html`**, which names items individually, so a named item must be
 swapped out -> drop the photo's `<image:image>` line from `sitemap.xml` and delete the
 `sale-*` files -> **remove the item's gallery entry, its sitemap image line and its media
@@ -423,13 +422,12 @@ linking at the listing, **including the copy on neighbouring cards** (the AC-D9H
 "pairs naturally with the D9H5J above"). Same discipline as the dangling-photo sweep: a
 removal is not done until the copy around it is checked.
 
-**Do NOT renumber the `#productN` @ids by string replacement.** That was tried when the
-D9H5J sold and it silently left the `ItemList` pointing at `#product1` twice with the PSVR2
-unreferenced — the page rendered perfectly and the JSON still parsed, so nothing caught it
-until the next sale. Parse the `ld+json` block, drop the node, re-`@id` the products in
-order, rebuild `itemListElement` and `numberOfItems` from that list, and assert every
-referenced `@id` resolves to exactly one node in the graph. Re-serializing normalizes a few
-`\uXXXX` escapes to literal characters; that is fine, the file is UTF-8.
+**`forsale.html` carries NO `Product` / `Offer` / `ItemList` JSON-LD (David, 2026-09-27).** It was
+removed after Search Console flagged Merchant listings (missing `hasMerchantReturnPolicy`,
+`shippingDetails`) and Product snippets (missing `aggregateRating`, `review`) warnings. The
+buying happens on eBay, there are no product reviews to mark up, and fabricated ones break
+Google's rules. The page keeps its WebSite/Organization/Person/CollectionPage/BreadcrumbList nodes.
+**Do not add product markup back** when a new card is listed.
 
 `media/2026/alumni-ams-100.jpg` and its thumb are currently **unreferenced** — the old listing
 photo, kept in case the AMS-100 monograph wants it. Not an oversight.
