@@ -18,7 +18,7 @@ EXCLUDE = {"404.html", "ebay-callback.html", "tesla-callback.html"}
 HEADINGS_ONLY = {"ams-100-monograph.html", "trinitron-fleet-vol1.html", "orlandu-100.html", "orlandu-50-games.html"}
 KIND = {
     "index.html": "Home", "games.html": "Coin-Op", "monitors.html": "Monitors", "consoles.html": "Consoles",
-    "signage.html": "Signage", "guide-shelf.html": "Guides", "gallery.html": "Gallery", "stories.html": "Stories",
+    "signage.html": "Signage", "guide-shelf.html": "Guides", "spinning-tops.html": "Tops", "gallery.html": "Gallery", "stories.html": "Stories",
     "projects.html": "Projects", "forsale.html": "For Sale", "wanted.html": "Wanted", "about.html": "About",
     "glossary.html": "Glossary", "trinitron-fleet-vol1.html": "Magazine", "ams-100-monograph.html": "Monograph",
     "orlandu-100.html": "Magazine", "orlandu-50-games.html": "Magazine",
