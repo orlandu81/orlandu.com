@@ -774,3 +774,44 @@ nav.main .ng{display:none}
   nav.main a.full,nav.main .ng{grid-column:1/-1}
   nav.main .ng{display:block;font-family:var(--pixel);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fire2);padding:1rem .7rem .35rem}
 }
+
+/* ── 11. The Collection menu: the seven collection pages fold behind one nav item ── */
+.coll{display:flex}
+.collbtn{
+  font-family:var(--disp);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--dim);padding:.55rem .7rem;border-radius:6px;white-space:nowrap;
+  background:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;
+}
+.collbtn::after{content:"";width:.38rem;height:.38rem;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-.15rem) rotate(45deg);transition:transform .2s ease}
+.collbtn:hover,header.site.collopen .collbtn{color:var(--cyan);background:var(--panel)}
+.collbtn.here{color:var(--fire3);background:var(--panel)}
+header.site.collopen .collbtn::after{transform:translateY(.1rem) rotate(-135deg)}
+.collbtn:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.collpanel{
+  position:absolute;left:0;right:0;top:100%;z-index:99;
+  background:var(--bg2);
+  border-bottom:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.55);
+  visibility:hidden;opacity:0;transform:translateY(-6px);transition:opacity .16s ease,transform .16s ease,visibility 0s linear .16s;
+}
+header.site.collopen .collpanel{visibility:visible;opacity:1;transform:none;transition:opacity .16s ease,transform .16s ease}
+.collgrid{max-width:1200px;margin:0 auto;padding:1rem 1.2rem 1.2rem;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.8rem}
+.collgrid .ct{display:flex;flex-direction:column;gap:.45rem;padding:.4rem;border-radius:9px;border:1px solid transparent;color:var(--dim);text-decoration:none}
+.collgrid .ct img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:6px;border:1px solid var(--line);filter:saturate(.85) brightness(.9);transition:filter .15s ease}
+.collgrid .ct span{font-family:var(--disp);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;padding:0 .15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.collgrid .ct:hover,.collgrid .ct:focus-visible{background:var(--panel);border-color:var(--line);color:var(--cyan);text-decoration:none}
+.collgrid .ct:hover img,.collgrid .ct:focus-visible img{filter:none}
+.collgrid .ct.here{color:var(--fire3)}
+.collgrid .ct.here img{border-color:var(--fire2);filter:none}
+@media(min-width:761px) and (max-width:1060px){.collgrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.collpanel,.collbtn::after,.collgrid .ct img{transition:none}}
+/* Phone: no dropdown. The collection pages list inline under their cluster label, as before. */
+@media(max-width:760px){
+  .coll,.collpanel,.collgrid{display:contents}
+  .collbtn{display:none}
+  .collpanel{position:static;visibility:visible;opacity:1;transform:none;box-shadow:none;border:0;background:none;backdrop-filter:none}
+  .collgrid .ct{display:block;padding:.7rem .7rem;border:0;border-top:1px solid var(--line);border-radius:0;font-family:var(--disp);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+  .collgrid .ct img{display:none}
+  .collgrid .ct span{font-size:inherit;padding:0}
+  .collgrid .ct.here{color:var(--fire3);background:var(--panel)}
+}
+header.site.compact .collbtn{font-size:.62rem;padding:.42rem .5rem;letter-spacing:.05em}

@@ -10,8 +10,10 @@
     ["games.html",    "Coin-Op"],
     ["monitors.html", "Monitors"],
     ["consoles.html", "Consoles"],
+    ["playchoice-10.html", "PlayChoice-10"],
     ["signage.html",  "Signage"],
     ["guide-shelf.html", "Guides"],
+    ["spinning-tops.html", "Spinning Tops"],
     ["gallery.html",  "Gallery"],
     ["stories.html",  "Stories"],
     ["projects.html", "Projects"],
@@ -19,6 +21,12 @@
     ["wanted.html",   "Wanted"],
     ["about.html",    "About"]
   ];
+  // Wide screens fold these into the "Collection" menu; each tile shows its step thumb.
+  const COLLECTION = {
+    "games.html": "step-games", "monitors.html": "step-monitors", "consoles.html": "step-consoles",
+    "playchoice-10.html": "step-playchoice-10", "signage.html": "step-signage",
+    "guide-shelf.html": "step-guides", "spinning-tops.html": "step-spinning-tops"
+  };
   // Phone menu only (CSS hides these on wide screens): the cluster a link opens.
   const GROUPS = { "games.html": "The collection", "stories.html": "Reading", "forsale.html": "Trading" };
 
@@ -41,15 +49,28 @@
   const header = document.querySelector("header.site");
   if (header){
     const here = header.dataset.page || "";
+    const isHere = href => href === here + ".html" || href === here || (href === "/" && here === "index");
+    const link = ([href, label]) =>
+      (GROUPS[href] && !COLLECTION[href] ? '<span class="ng" aria-hidden="true">' + GROUPS[href] + '</span>' : '') +
+      '<a href="' + href + '" class="' + (isHere(href) ? 'here' : '') + ((href === "/" || href === "about.html") ? ' full' : '') + '">' + label + '</a>';
+    const coll = NAV.filter(([href]) => COLLECTION[href]);
+    const collHere = coll.some(([href]) => isHere(href));
+    const tile = ([href, label]) =>
+      '<a href="' + href + '" class="ct' + (isHere(href) ? ' here' : '') + '"' + (isHere(href) ? ' aria-current="page"' : '') + '>' +
+        '<img src="media/step-thumbs/' + COLLECTION[href] + '-800.webp" alt="" width="800" height="343" loading="lazy" decoding="async">' +
+        '<span>' + label + '</span></a>';
     header.innerHTML =
       '<div class="navwrap">' +
         '<a class="navlogo" href="/"><img src="assets/logo-wordmark-nav.webp" alt="Orlandu’s Arcade" width="335" height="132" fetchpriority="high" decoding="async"></a>' +
         '<button class="burger" aria-label="Menu" aria-expanded="false">☰ MENU</button>' +
         '<nav class="main">' +
-          NAV.map(([href, label]) =>
-            (GROUPS[href] ? '<span class="ng" aria-hidden="true">' + GROUPS[href] + '</span>' : '') +
-            '<a href="' + href + '" class="' + ((href === here + ".html" || href === here || (href === "/" && here === "index")) ? 'here' : '') + ((href === "/" || href === "about.html") ? ' full' : '') + '">' + label + '</a>'
-          ).join("") +
+          link(NAV[0]) +
+          '<div class="coll">' +
+            '<button type="button" class="collbtn' + (collHere ? ' here' : '') + '" aria-expanded="false" aria-controls="collpanel">Collection</button>' +
+            '<div class="collpanel" id="collpanel"><span class="ng" aria-hidden="true">' + GROUPS["games.html"] + '</span>' +
+              '<div class="collgrid">' + coll.map(tile).join("") + '</div></div>' +
+          '</div>' +
+          NAV.slice(1).filter(([href]) => !COLLECTION[href]).map(link).join("") +
         '</nav>' +
       '</div>';
     const burger = header.querySelector(".burger");
@@ -58,6 +79,29 @@
       const open = nav.classList.toggle("open");
       burger.setAttribute("aria-expanded", open ? "true" : "false");
     });
+    // The Collection menu: click or tap toggles it; a mouse opens it on hover.
+    const collWrap = header.querySelector(".coll");
+    const collBtn = header.querySelector(".collbtn");
+    let collTimer = 0, hoverOpened = 0;
+    const setColl = open => {
+      clearTimeout(collTimer);
+      header.classList.toggle("collopen", open);
+      collBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    // A mouse that hovered the menu open and then clicks means "open", not "close".
+    collBtn.addEventListener("click", () => {
+      const open = header.classList.contains("collopen");
+      setColl(open && Date.now() - hoverOpened < 600 ? true : !open);
+    });
+    if (window.matchMedia("(hover:hover) and (pointer:fine)").matches){
+      collWrap.addEventListener("mouseenter", () => { if (!header.classList.contains("collopen")) hoverOpened = Date.now(); setColl(true); });
+      collWrap.addEventListener("mouseleave", () => { collTimer = setTimeout(() => setColl(false), 180); });
+    }
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape" && header.classList.contains("collopen")){ setColl(false); collBtn.focus(); }
+    });
+    document.addEventListener("click", e => { if (!collWrap.contains(e.target)) setColl(false); });
+    collWrap.addEventListener("focusout", e => { if (!collWrap.contains(e.relatedTarget)) setColl(false); });
     // The two-row header collapses to one row once the reader is scrolling and
     // grows back near the top. The collapse shortens the header by ~75px, and the
     // browser's scroll anchoring then pulls scrollY back by that much to keep the
@@ -88,7 +132,7 @@
         '</div>' +
         '<nav class="explore" aria-label="Explore the site">' +
           '<div><span>Pages</span>' + NAV.slice(1).map(([href, label]) => '<a href="' + href + '">' + label + '</a>').join('') +
-            '<a href="playchoice-10.html">PlayChoice-10</a><a href="spinning-tops.html">Spinning Tops</a><a href="glossary.html">Glossary</a><a href="timeline.html">Timeline</a><a href="about.html#faq">FAQ</a></div>' +
+            '<a href="glossary.html">Glossary</a><a href="timeline.html">Timeline</a><a href="about.html#faq">FAQ</a></div>' +
           '<div><span>Reading</span>' +
             '<a href="crt-field-guide.html">Professional glass in the wild</a>' +
             '<a href="ams-100-monograph.html">The AMS-100 monograph</a>' +
