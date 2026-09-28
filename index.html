@@ -26,10 +26,10 @@
 <meta name="twitter:image" content="https://www.orlandu.com/media/og/og-home.jpg">
 <link rel="canonical" href="https://www.orlandu.com/">
 <link rel="preload" as="image" href="assets/hero-bg.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=ed39aca0">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
 <link rel="preload" as="image" href="assets/logo-wordmark-hero-v2.webp" fetchpriority="high">
-<script src="assets/site.js" defer></script>
+<script src="assets/site.js?v=4af01516" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -117,7 +117,7 @@
 .grid.readroom{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:900px){.grid.readroom{grid-template-columns:1fr}}
 .hero .coin{cursor:pointer;-webkit-user-select:none;user-select:none}
-.hero .credits{font-family:"Press Start 2P",monospace;font-size:.62rem;letter-spacing:.22em;color:var(--fire3);margin-top:.55rem;min-height:1.1em;opacity:0;transition:opacity .25s}
+.hero .credits{font-family:"Press Start 2P","Press Start 2P Fallback",monospace;font-size:.62rem;letter-spacing:.22em;color:var(--fire3);margin-top:.55rem;min-height:1.1em;opacity:0;transition:opacity .25s}
 .hero .credits.on{opacity:1}
 @keyframes coinflick{0%{filter:none}25%{filter:brightness(1.65) saturate(1.35)}55%{filter:brightness(.82)}100%{filter:none}}
 .hero.flick{animation:coinflick .3s linear}
@@ -146,7 +146,7 @@
 </span></div>
 
 <div class="filmstrip" id="filmstrip"></div>
-<script src="assets/gallery-data.js"></script>
+<script src="assets/gallery-data.js?v=9c38c545"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   var strip = document.getElementById('filmstrip');
@@ -159,10 +159,10 @@ document.addEventListener('DOMContentLoaded', function(){
   pool = pool.slice(0, 16); // one loop's worth — the strip used to pull all 45 thumbs
   // Strip-sized files, not the 800px gallery thumbs: the browser's own reduction to the
   // 170px strip beat against the scanlines on the lit-CRT shots and made them ripple.
-  var html = pool.map(function(g){
+  var html = pool.map(function(g, k){
     var base = g.src.replace('media/2026/','media/strip/').replace(/\?.*$/,'').replace(/\.webp$/,'');
     return '<a href="gallery.html" title="' + (g.title||'').replace(/"/g,'&quot;') + '">' +
-      '<img src="' + base + '.webp" srcset="' + base + '.webp 1x, ' + base + '-2x.webp 2x" alt="' + (g.title||'').replace(/"/g,'&quot;') + '" loading="lazy" decoding="async"' + (g.w ? ' width="' + g.w + '" height="' + g.h + '"' : '') + '></a>';
+      '<img src="' + base + '.webp" srcset="' + base + '.webp 1x, ' + base + '-2x.webp 2x" alt="' + (g.title||'').replace(/"/g,'&quot;') + '" loading="' + (k < 6 ? 'eager' : 'lazy') + '" decoding="async"' + (g.w ? ' width="' + g.w + '" height="' + g.h + '"' : '') + '></a>';
   }).join('');
   // Panoramic shots (lit signs, monitor racks) become long slabs at strip height —
   // fine in the gallery's masonry, wrong here. Drop anything wider than 2.2:1.

@@ -3,16 +3,16 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.orlandu.com/about.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <video:video><video:thumbnail_loc>https://www.orlandu.com/media/2026/game-room-spin-poster.webp</video:thumbnail_loc><video:title>The game room, one full turn</video:title><video:description>A 33-second spin around the inside room — the framed PCB wall, Super Mario Bros. on the PVMs, the fiber-optic Kay·Bee World of Nintendo sign, and the Mini Cute and Red Tent holding their corners.</video:description><video:content_loc>https://www.orlandu.com/media/video/game-room-spin-v2.mp4</video:content_loc></video:video>
   </url>
   <url>
     <loc>https://www.orlandu.com/ams-100-monograph.html</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/ams-3-vs-ams-100.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ams-size-front-v2.webp</image:loc><image:title>Sony AMS-100 stacked on top of a Sony AMS-3, front panels facing out, showing the AMS-3 is roughly twice as tall</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ams-size-profile.webp</image:loc><image:title>Profile view of the two units stacked, showing the AMS-3&#x27;s deep heatsink fins against the AMS-100&#x27;s shallow flat chassis</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ams-size-rear-v2.webp</image:loc><image:title>Rear panels of both units: the AMS-100 with SDI and digital audio inputs and option card slots, the AMS-3 with six XLR connectors and external speaker outputs</image:title></image:image>
@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/big-blue.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-portrait.webp</image:loc><image:title>The Dynamo Big Blue cabinet head on, marquee lit, Marvel vs. Capcom on screen, granite control panel</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-screen.webp</image:loc><image:title>Marvel vs. Capcom attract mode running on the Big Blue cabinet monitor</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-marquee.webp</image:loc><image:title>Close-up of the Marvel vs. Capcom marquee showing Captain America, Spider-Man, Chun-Li and Ryu, the machine switched off</image:title></image:image>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/crt-field-guide.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/glossary.html</loc>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/guide-shelf.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/guide-chrono-trigger.webp</image:loc><image:title>Cover of the Nintendo Player's Guide for Chrono Trigger, a red-haired swordsman on a cream field</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/guide-donkey-kong-country.webp</image:loc><image:title>Cover of the Nintendo Player's Guide for Donkey Kong Country, a rendered gorilla filling the frame</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/guide-donkey-kong-country-2.webp</image:loc><image:title>Cover of the Nintendo Player's Guide for Donkey Kong Country 2, Diddy and Dixie Kong beside a wooden crate</image:title></image:image>
@@ -131,7 +131,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/consoles.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-nes-toploader.webp</image:loc><image:title>Nintendo Entertainment System top loader, the NES-101 redesign, with its red power switch</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-snes.webp</image:loc><image:title>Super Nintendo Entertainment System seen from the front, purple power and reset switches and both controller ports</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-n64.webp</image:loc><image:title>Nintendo 64 seen from the front, all four controller ports and the cartridge slot on top</image:title></image:image>
@@ -152,7 +152,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/donkey-kong.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/dk-portrait.webp</image:loc><image:title>Nintendo Donkey Kong upright cabinet in blue plywood, marquee lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/dk-screen.webp</image:loc><image:title>The Donkey Kong screen mid-game showing the girder stage, barrels rolling, score on the board</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/dk-detail.webp</image:loc><image:title>Close view of the Donkey Kong cabinet side art showing Donkey Kong, Pauline and Mario on the blue cabinet</image:title></image:image>
@@ -166,7 +166,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/gallery.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-portrait.webp</image:loc><image:title>Big Blue, suited up</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/dk-portrait.webp</image:loc><image:title>Donkey Kong, blue plywood</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-playfield.webp</image:loc><image:title>Ghostbusters playfield</image:title></image:image>
@@ -216,7 +216,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/games.html</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/big-blue-portrait.webp</image:loc><image:title>Dynamo Big Blue arcade cabinet in blue with Capcom side art and a Marvel vs. Capcom marquee</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/unisystem-portrait.webp</image:loc><image:title>Nintendo VS. UniSystem dedicated arcade cabinet with the VS. Super Mario Bros. marquee lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/dk-portrait.webp</image:loc><image:title>Nintendo Donkey Kong upright in blue plywood, marquee lit</image:title></image:image>
@@ -246,32 +246,32 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/ghostbusters.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-portrait.webp</image:loc><image:title>Stern Ghostbusters Premium pinball machine with the backbox and TV-style topper lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-playfield.webp</image:loc><image:title>The Ghostbusters Premium playfield lit in pink and purple, showing the ramps and Zombie Yeti artwork</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ghostbusters-decks.webp</image:loc><image:title>Stern Ghostbusters Premium pinball machine lit beside three skateboard decks hung on the wall</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-27</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/indiana-jones.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ij-portrait.webp</image:loc><image:title>Williams Indiana Jones: The Pinball Adventure widebody pinball machine, backbox lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ij-backglass.webp</image:loc><image:title>The Indiana Jones pinball translite showing Indiana Jones, Marion and the cast, lit from behind</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ij-playfield.webp</image:loc><image:title>The Indiana Jones pinball playfield lit up, showing the ramps, mine cart and center idol</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/mario-bros.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/mariobros-portrait.webp</image:loc><image:title>Nintendo Mario Bros. widebody arcade cabinet, marquee lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/mariobros-context.webp</image:loc><image:title>The Mario Bros. widebody cabinet beside the glass-bottle Coca-Cola cooler</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/mariobros-screen.webp</image:loc><image:title>The Mario Bros. screen mid-game with the full-width control panel below it, showing the four-platform sewer level</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/mini-cute.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute-crate.webp</image:loc><image:title>Hand-built plywood shipping crate standing in the garage with FRAGILE labels and hand-written dimensions</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute-crate-label.webp</image:loc><image:title>Crate side with FRAGILE sign, Norwegian Air Shuttle sticker, and a Cleared U.S. Customs at LAX sticker</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/mini-cute-crate-open.webp</image:loc><image:title>Opened crate revealing the Mini Cute wrapped in cardboard and plastic film inside the plywood frame</image:title></image:image>
@@ -283,27 +283,27 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/pvm-2950q.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pvm-2950q.webp</image:loc><image:title>Sony PVM-2950Q 29-inch Trinitron production monitor lit at night running Super Mario World</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/pvm-20l5.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pvm-20l5.webp</image:loc><image:title>Sony PVM-20L5 multiformat Trinitron monitor lit and running Super Mario Sunshine, an AMS-100 on top</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/bvm-20e1u.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-20e1u-lit.webp</image:loc><image:title>Sony BVM-20E1U broadcast monitor lit in its rack, with an AMS-100 audio monitor speaker on top</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/bvm-a14f5u.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-a14f5u-lit.webp</image:loc><image:title>Sony BVM-A14F5U broadcast monitor with its full control panel and an AMS-100 speaker above</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/lmd-wall.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/lmd-rack.webp</image:loc><image:title>Three Sony LMD professional LCD monitors side by side, all showing the same cartoon frame</image:title></image:image>
   </url>
   <url>
@@ -312,7 +312,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/monitors.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-20e1u-lit.webp</image:loc><image:title>Sony BVM-20E1U broadcast monitor lit in its rack, with an AMS-100 audio monitor speaker on top</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-a14f5u-lit.webp</image:loc><image:title>Sony BVM-A14F5U broadcast monitor with its full control panel and an AMS-100 speaker above</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pvm-2950q.webp</image:loc><image:title>Sony PVM-2950Q 29-inch Trinitron production monitor lit at night running Super Mario World</image:title></image:image>
@@ -325,7 +325,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/projects.html</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ams-3-heatsinks.webp</image:loc><image:title>Rear view of a Sony AMS-3 showing full-width heatsink fins running down both sides of the chassis</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ams-100-lineup.webp</image:loc><image:title>Seven Sony AMS-100 audio monitor speakers stacked on a workbench, front panels facing out</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-20e1u-crosshatch.webp</image:loc><image:title>Sony BVM-20E1U broadcast monitor displaying a crosshatch calibration pattern with an AMS-100 speaker on top</image:title></image:image>
@@ -335,12 +335,12 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/pvm-20l5-buying-guide.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pvm-20l5.webp</image:loc><image:title>Sony PVM-20L5 professional monitor lit and running Super Mario Sunshine, an AMS-100 audio monitor on top</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/pvm-vs-bvm.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-sonic-knuckles.webp</image:loc><image:title>Sonic and Knuckles running on two Sony BVM broadcast monitors, an AMS-100 audio monitor riding on top of each</image:title></image:image>
   </url>
   <url>
@@ -358,17 +358,17 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/rick-and-morty.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/rickmorty-portrait.webp</image:loc><image:title>Spooky Pinball Rick and Morty Blood Sucker Edition pinball machine with the backbox lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/rickmorty-playfield.webp</image:loc><image:title>The Rick and Morty pinball playfield lit in green and gold, showing the portal and ramps</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/signal-chain.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/stories.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-27</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/orlandu-100.html</loc>
@@ -380,13 +380,13 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/tna.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/tna-portrait.webp</image:loc><image:title>Total Nuclear Annihilation pinball machine by Spooky Pinball, lit in blue and purple, with the full topper set</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/tna-playfield.webp</image:loc><image:title>The Total Nuclear Annihilation playfield lit in red, showing the reactor targets and drop targets</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/trinitron-fleet-vol1.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/fleet/5307e927c8.webp</image:loc><image:title>PVM-2950Q</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/fleet/4da9853661.webp</image:loc><image:title>PVM-20L5</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/fleet/545d7bc047.webp</image:loc><image:title>BVM-20E1U</image:title></image:image>
@@ -395,19 +395,19 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/vs-smb.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/unisystem-screen.webp</image:loc><image:title>The VS. Super Mario Bros. title screen running on the Nintendo UniSystem cabinet, control panel below</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/vs-dk-high-scores-v2.webp</image:loc><image:title>VS. Super Mario Bros. Super Player&#x27;s high score table, all ten entries initialed DK, all reaching world 8-4</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/vs-unisystem.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/unisystem-portrait.webp</image:loc><image:title>Nintendo VS. UniSystem dedicated arcade cabinet with the VS. Super Mario Bros. marquee lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/unisystem-screen.webp</image:loc><image:title>The VS. Super Mario Bros. title screen on the UniSystem monitor with the control panel below</image:title></image:image>
   </url>
   <url>
     <loc>https://www.orlandu.com/wanted.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/playchoice-10.html</loc>

@@ -14,6 +14,27 @@ No build step. Plain HTML/CSS/JS served from the repo root.
 
 ## Deploying — read this first
 
+### Before every push, run these four, in this order (2026-09-27)
+
+```
+python3 tools/build-timeline.py      # only if a timeline thumb/year changed; it rewrites timeline.html
+python3 tools/build-search-index.py  # assets/search-index.js is generated
+python3 tools/stamp-assets.py        # ?v=<hash> on every style.css / site.js / gallery-data.js reference
+python3 tools/update-lastmod.py      # sitemap <lastmod> = the day each page's <main> content last changed
+```
+`stamp-assets.py` exists because `assets/*.css|js` are served stale-while-revalidate for a week:
+without it a returning visitor gets new HTML with an old stylesheet or script. Any generator that
+writes a page (the timeline tool, the magazine `build_page.py` scripts) emits bare references, so
+stamp AFTER generating. `update-lastmod.py` needs full history (`git fetch --unshallow`) — run it
+in a full clone, not the depth-20 deploy clone. It ignores head-only edits and re-stamps on purpose.
+
+**Fonts:** `style.css` defines metric-matched `"… Fallback"` faces (Arial/Liberation/Roboto scaled
+with `size-adjust` + ascent/descent overrides) second in each font stack, so text doesn't reflow
+when the web font arrives. Page-level `font-family` declarations must keep the fallback in the
+stack too. **First-screen images:** the first photos on a page are NOT `loading="lazy"` and the
+top one carries `fetchpriority="high"`; gallery.html and the home filmstrip make their first six
+eager in JS. Keep that when adding a new page.
+
 ### ⚠️ ONE PUSH PER SESSION — Deployment Storage is a real meter (2026-09-02)
 
 Vercel warned David at 75% of the Hobby **Deployment Storage** allowance (10 GB-months).
