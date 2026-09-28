@@ -57,7 +57,7 @@
     const collHere = coll.some(([href]) => isHere(href));
     const tile = ([href, label]) =>
       '<a href="' + href + '" class="ct' + (isHere(href) ? ' here' : '') + '"' + (isHere(href) ? ' aria-current="page"' : '') + '>' +
-        '<img src="media/step-thumbs/' + COLLECTION[href] + '-800.webp" alt="" width="800" height="343" loading="lazy" decoding="async">' +
+        '<img data-srcset="media/step-thumbs/' + COLLECTION[href] + '-320.webp 320w, media/step-thumbs/' + COLLECTION[href] + '-640.webp 640w" sizes="(max-width:1060px) 25vw, 150px" alt="" width="320" height="137" decoding="async">' +
         '<span>' + label + '</span></a>';
     header.innerHTML =
       '<div class="navwrap">' +
@@ -83,7 +83,10 @@
     const collWrap = header.querySelector(".coll");
     const collBtn = header.querySelector(".collbtn");
     let collTimer = 0, hoverOpened = 0;
+    // The tiles' thumbnails load on first open, not with every page (they were 286 KB).
+    const collThumbs = () => header.querySelectorAll(".collgrid img[data-srcset]").forEach(i => { i.srcset = i.dataset.srcset; i.removeAttribute("data-srcset"); });
     const setColl = open => {
+      if (open) collThumbs();
       clearTimeout(collTimer);
       header.classList.toggle("collopen", open);
       collBtn.setAttribute("aria-expanded", open ? "true" : "false");
@@ -94,6 +97,7 @@
       setColl(open && Date.now() - hoverOpened < 600 ? true : !open);
     });
     if (window.matchMedia("(hover:hover) and (pointer:fine)").matches){
+      collBtn.addEventListener("pointerenter", collThumbs, {once:true});
       collWrap.addEventListener("mouseenter", () => { if (!header.classList.contains("collopen")) hoverOpened = Date.now(); setColl(true); });
       collWrap.addEventListener("mouseleave", () => { collTimer = setTimeout(() => setColl(false), 180); });
     }

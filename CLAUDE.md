@@ -154,6 +154,14 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   `assets/mascot-foot.webp`, the About-page mascot `assets/mascot-about.webp`, the home hero
   wordmark `assets/logo-wordmark-hero.webp`. The original PNGs stay in the repo for JSON-LD
   `logo` URLs and as masters; don't wire them back into a page.
+- **The Collection menu** (desktop nav, `assets/site.js` `COLLECTION` map) shows the seven
+  collection pages as tiles. Its thumbnails are `step-<slug>-320.webp` + `-640.webp`, cut
+  from the 1200 step thumb, and load only when the menu first opens (`data-srcset`). When a
+  step thumb changes, regenerate both and RENAME the slug (e.g. `step-signage-v2`) — the JS
+  string cannot carry a `?v=`. The home "Step inside" grid mirrors the nav: twelve cards,
+  nav order, four rows of three (2026-09-27).
+- **An 800px sibling carries the same `?v=N` as its 1200** — a bumped 1200 with a bare
+  `-800` left the sold EarthBound guide in some browsers' caches (fixed 2026-09-27).
 - Story and step thumbs carry an `-800.jpg` sibling and a `srcset`; a new 1200×514 thumb
   needs its 800×343 sibling (LANCZOS, JPEG q90 progressive) and the same `srcset`/`sizes`
   as its neighbors. The featured story card keeps the plain 1200 (it renders full width).
