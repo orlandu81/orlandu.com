@@ -55,11 +55,24 @@ byyear = defaultdict(list)
 for it in LANE_OF: byyear[it[1]].append(it)
 years = sorted(byyear)
 
+def small(thumb):
+    """The cards show 84x84 (object-fit:cover). Serve a 252px center-square copy (3x) instead
+    of the 800px thumb; it keeps the source's ?v so a re-cut source re-cuts this too."""
+    from PIL import Image
+    path, _, q = thumb.partition("?")
+    out = "media/timeline/" + path.rsplit("/", 1)[1]
+    im = Image.open(root / path).convert("RGB")
+    w, h = im.size; s = min(w, h)
+    im = im.crop(((w - s) // 2, (h - s) // 2, (w - s) // 2 + s, (h - s) // 2 + s)).resize((252, 252), Image.LANCZOS)
+    (root / "media/timeline").mkdir(exist_ok=True)
+    im.save(root / out, "WEBP", quality=82, method=6)
+    return out + ("?" + q if q else "")
+
 def card(it):
     name, year, thumb, href = it
     title, key, color = LANE_OF[it]
     return (f'<a class="tc {key}" href="{href}" style="--acc:{color}">'
-            f'<img src="{thumb}" alt="" loading="lazy" decoding="async" width="84" height="84">'
+            f'<img src="{small(thumb)}" alt="" loading="lazy" decoding="async" width="84" height="84">'
             f'<span class="tn">{html.escape(name)}</span><span class="tk">{title}</span></a>')
 
 spine = ""
@@ -74,7 +87,7 @@ for y in years:
     prev = y
 
 counts = {key: len(items) for title, key, items, color in LANES}
-desc = "Every machine, console and monitor in the collection, in the order the world first saw them — four decades from the 1981 Donkey Kong to the 2020 Rick and Morty, with the console generations and the Sony monitor eras in between."
+desc = "Every machine, console and monitor in the collection, in the order the world first saw them, from the 1981 Donkey Kong to the 2020 Rick and Morty."
 page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>

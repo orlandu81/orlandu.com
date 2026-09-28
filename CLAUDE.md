@@ -152,7 +152,7 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   first visible photo gets this — preloading a below-the-fold image makes the page slower.
 - The nav logo is `assets/logo-wordmark-nav.webp` (335×132, lossless), the footer mascot
   `assets/mascot-foot.webp`, the About-page mascot `assets/mascot-about.webp`, the home hero
-  wordmark `assets/logo-wordmark-hero.webp`. The original PNGs stay in the repo for JSON-LD
+  wordmark `assets/logo-wordmark-hero-v2.webp` (lossy q95 + lossless alpha from `logo-wordmark.png`, 83 KB; the lossless one was 253 KB and the heaviest file on the home page — 2026-09-27). The original PNGs stay in the repo for JSON-LD
   `logo` URLs and as masters; don't wire them back into a page.
 - **The Collection menu** (desktop nav, `assets/site.js` `COLLECTION` map) shows the seven
   collection pages as tiles. Its thumbnails are `step-<slug>-320.webp` + `-640.webp`, cut
@@ -160,6 +160,10 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   step thumb changes, regenerate both and RENAME the slug (e.g. `step-signage-v2`) — the JS
   string cannot carry a `?v=`. The home "Step inside" grid mirrors the nav: twelve cards,
   nav order, four rows of three (2026-09-27).
+- **Home "Step inside" `sizes`** is `(max-width:700px) calc(73vw - 38px), …` — on phones the cards
+  are two across with a 16:10 cover crop, so the slot needs ~1.46× its width; "100vw" made
+  phones fetch the 1200s. **Timeline** cards are 84×84: `tools/build-timeline.py` cuts a 252px
+  square into `media/timeline/` from each thumb (keeping its `?v`), so rerun it after a re-cut.
 - **An 800px sibling carries the same `?v=N` as its 1200** — a bumped 1200 with a bare
   `-800` left the sold EarthBound guide in some browsers' caches (fixed 2026-09-27).
 - Story and step thumbs carry an `-800.jpg` sibling and a `srcset`; a new 1200×514 thumb
