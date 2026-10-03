@@ -297,6 +297,7 @@ footer.site{border-top:1px solid var(--line);background:var(--bg2)}
   border:1px solid var(--fire2);color:var(--fire3);padding:.7rem 1.3rem;border-radius:8px;
 }
 .btn:hover{background:rgba(255,138,0,.12);text-decoration:none}
+button.btn{background:transparent;cursor:pointer}
 .btn.cy{border-color:var(--cyan-dim);color:var(--cyan)}
 .btn.cy:hover{background:rgba(94,233,255,.09)}
 .note{
@@ -630,13 +631,17 @@ table.spec tbody tr:last-child td{border-bottom:0}
 table.spec tbody tr:hover td{background:rgba(94,233,255,.04)}
 table.spec td:first-child,table.spec th:first-child{position:sticky;left:0;background:var(--panel);font-weight:600;white-space:nowrap;box-shadow:1px 0 0 var(--line)}
 table.spec thead th:first-child{background:var(--panel2);z-index:2}
-table.spec td.na{color:var(--dim);opacity:.6}
+table.spec td.na{color:var(--dim)}
 table.spec td.val{color:var(--cyan)}
 table.spec .fam{display:block;font-family:var(--cond);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fire2);font-weight:400}
 .tablewrap+p.note{margin-top:.6rem}
 @media(prefers-reduced-motion:reduce){.readbar i,.linktoast,.resume,button.share,.sbtn{transition:none}}
 
 /* ── Contact form ─────────────────────────────────────────── */
+main p a:not(.btn),main li a:not(.btn),main dd a:not(.btn),main figcaption a:not(.btn){text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;text-decoration-color:rgba(94,233,255,.45)}
+main p a:not(.btn):hover,main li a:not(.btn):hover,main dd a:not(.btn):hover,main figcaption a:not(.btn):hover{text-decoration-color:currentColor}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(max-width:700px){footer.site a{display:inline-block;padding-block:.3rem}}
 .cform{display:grid;grid-template-columns:1fr 1fr;gap:.8rem 1rem;max-width:720px;margin-top:1.2rem}
 .cform label{display:flex;flex-direction:column;gap:.3rem;font-family:var(--cond);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
 .cform label.wide,.cform .cstatus,.cform .cactions{grid-column:1/-1}

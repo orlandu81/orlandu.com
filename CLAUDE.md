@@ -581,3 +581,31 @@ the WebP `<picture>` pass, the collection timeline (mockup first), the contact f
   page says so. `vercel.json` needs no change — `/api/*` is served by the function automatically.
 - The home Latest grid dropped its two oldest cards (IJ cold-boot chase, Trinitron Fleet Vol. 1)
   for the monitor-pages and timeline cards; still 9.
+
+## Console profile pages + the Oct 2 audit (2026-10-02)
+
+- **Six console profiles** — `nes-top-loader.html`, `nintendo-64.html`, `gba-sp.html`, `genesis-cdx.html`,
+  `pc-engine-duo-r.html`, `ps2-slim.html`. David chose these six because each has real work to describe (a mod,
+  a repair or a signal path); **the other consoles stay card-only — don't build a page that would be mostly
+  generic platform history.** Same chrome as the monitor profiles (`main.profile`, page-scoped accent `<style>`,
+  `nav.machnav` looping in consoles.html order, center cell → consoles.html), OG cards `media/og/og-<slug>.jpg`
+  (the whole 4:3 photo on its own white ground, wordmark bottom-left). Their consoles.html cards carry
+  "The full profile →"; the timeline links them. A new console page = card link + sitemap block + llms line +
+  timeline href + re-link the two chain neighbors.
+- **The PS2 Slim is NOT modded** (David): the MemCard Pro 2 / FMCB / OPL setup needs no change to the console.
+  Its card sub is just "2004".
+- **Console years are North American release years** where the Vault had a Japan year (David, 10/2): SNES 1991,
+  Turbo Express 1990, New 3DS XL Black 2015. The PC Engine Duo-R is **1993** (its own release; 1991 was the Duo).
+- **Timeline cards without a photo** use a lettered tile (`.tph`): a CONSOLES tuple gets `None` for the thumb and
+  a fifth element, the short label. Added that way: NES Front Loader 1985, Genesis Model 1 1989, TurboGrafx-16
+  1989, JVC X'Eye 1994.
+- **Facts David settled in the audit** (don't re-raise): TNA is 2017 and its CE upgrades are the *Classic*
+  Edition package he installed himself; the Superbrite has three F25T12 tubes; both N64s are RGB-modded; one
+  switcher per room; the Mini Cute is "fully original"; LMD-9020 is SD only, the LMD-9030 takes HD over analog
+  component, both are 640×480 panels; the LMD-940W has no analog component input (HDMI + SDI); BVM-A14F5U has
+  the BKM-68X clone and the BKM-62HS installed, **no BKM-61D** (one slot open); BVM-20E1U has only the BKM-21D
+  installed (three slots open), owns a BKM-24N and a BKM-20D on the shelf, and was built June 2007; the AMS-3 is
+  in storage; Ghostbusters' Spike 1 board is a spare, not fitted.
+- **`button.btn` needs `background:transparent`** — a `<button>` picks up the browser's light-gray fill otherwise
+  (the contact-form Send buttons were unreadable until 10/2). Body-text links carry a thin underline
+  (style.css `main p a:not(.btn)` …); `.sr-only` exists for invisible headings that keep heading order intact.

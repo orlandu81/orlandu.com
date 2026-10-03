@@ -21,20 +21,25 @@ COINOP = [
     ("Rick and Morty", 2020, "media/thumbs/rickmorty-portrait.webp?v=2", "rick-and-morty.html"),
 ]
 CONSOLES = [
+    # thumb None = no photograph yet; the card shows a lettered tile instead (tph)
+    ("NES Front Loader", 1985, None, "consoles.html", "NES"),
     ("Game Boy", 1989, "media/thumbs/consoles-gameboy-dmg.webp", "consoles.html"),
-    ("Turbo Express", 1989, "media/thumbs/consoles-turbo-express.webp", "consoles.html"),
-    ("Super Nintendo", 1990, "media/thumbs/consoles-snes.webp?v=2", "consoles.html"),
-    ("PC Engine Duo-R", 1991, "media/thumbs/consoles-duo-r.webp?v=2", "consoles.html"),
-    ("NES Top Loader", 1993, "media/thumbs/consoles-nes-toploader.webp?v=2", "consoles.html"),
-    ("Genesis CDX", 1994, "media/thumbs/consoles-genesis-cdx.webp", "consoles.html"),
+    ("Genesis Model 1", 1989, None, "consoles.html", "MD"),
+    ("TurboGrafx-16", 1989, None, "consoles.html", "TG16"),
+    ("Turbo Express", 1990, "media/thumbs/consoles-turbo-express.webp", "consoles.html"),
+    ("Super Nintendo", 1991, "media/thumbs/consoles-snes.webp?v=2", "consoles.html"),
+    ("NES Top Loader", 1993, "media/thumbs/consoles-nes-toploader.webp?v=2", "nes-top-loader.html"),
+    ("PC Engine Duo-R", 1993, "media/thumbs/consoles-duo-r.webp?v=2", "pc-engine-duo-r.html"),
+    ("Genesis CDX", 1994, "media/thumbs/consoles-genesis-cdx.webp", "genesis-cdx.html"),
+    ("JVC X'Eye", 1994, None, "consoles.html", "X'EYE"),
     ("Nomad", 1995, "media/thumbs/consoles-nomad.webp", "consoles.html"),
     ("Saturn", 1995, "media/thumbs/consoles-saturn.webp?v=2", "consoles.html"),
-    ("Nintendo 64", 1996, "media/thumbs/consoles-n64.webp?v=2", "consoles.html"),
+    ("Nintendo 64", 1996, "media/thumbs/consoles-n64.webp?v=2", "nintendo-64.html"),
     ("Dreamcast", 1999, "media/thumbs/consoles-dreamcast.webp?v=2", "consoles.html"),
     ("GameCube", 2001, "media/thumbs/consoles-gamecube.webp?v=2", "consoles.html"),
-    ("Game Boy Advance SP", 2003, "media/thumbs/consoles-gba-sp.webp", "consoles.html"),
-    ("PlayStation 2", 2004, "media/thumbs/consoles-ps2.webp?v=2", "consoles.html"),
-    ("New 3DS XL", 2014, "media/thumbs/consoles-3ds-black.webp", "consoles.html"),
+    ("Game Boy Advance SP", 2003, "media/thumbs/consoles-gba-sp.webp", "gba-sp.html"),
+    ("PlayStation 2", 2004, "media/thumbs/consoles-ps2.webp?v=2", "ps2-slim.html"),
+    ("New 3DS XL", 2015, "media/thumbs/consoles-3ds-black.webp", "consoles.html"),
     ("New 3DS XL — SNES Edition", 2016, "media/thumbs/consoles-3ds-snes.webp", "consoles.html"),
 ]
 MONITORS = [
@@ -69,10 +74,12 @@ def small(thumb):
     return out + ("?" + q if q else "")
 
 def card(it):
-    name, year, thumb, href = it
+    name, year, thumb, href = it[:4]
     title, key, color = LANE_OF[it]
+    pic = (f'<img src="{small(thumb)}" alt="" loading="lazy" decoding="async" width="84" height="84">' if thumb
+           else f'<span class="tph" aria-hidden="true">{html.escape(it[4])}</span>')
     return (f'<a class="tc {key}" href="{href}" style="--acc:{color}">'
-            f'<img src="{small(thumb)}" alt="" loading="lazy" decoding="async" width="84" height="84">'
+            f'{pic}'
             f'<span class="tn">{html.escape(name)}</span><span class="tk">{title}</span></a>')
 
 spine = ""
@@ -127,13 +134,14 @@ page = f"""<!DOCTYPE html>
   .ycards{{display:flex;flex-wrap:wrap;gap:.7rem}}
   .tc{{display:grid;grid-template-columns:84px 1fr;grid-template-rows:auto auto;column-gap:.85rem;align-items:center;align-content:center;width:min(100%,300px);background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:10px;padding:.55rem .8rem .55rem .55rem;color:var(--ink);text-decoration:none;transition:transform .18s ease,border-color .18s ease}}
   .tc img{{grid-row:1/3;width:84px;height:84px;object-fit:cover;border-radius:8px}}
+  .tc .tph{{grid-row:1/3;width:84px;height:84px;border-radius:8px;border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:800;font-size:.8rem;letter-spacing:.06em;color:var(--acc);background:var(--bg)}}
   .tc .tn{{font-weight:600;font-size:1.05rem;line-height:1.2;text-wrap:balance}}
   .tc .tk{{font-family:var(--cond);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-top:.25rem}}
   .tc:hover,.tc:focus-visible{{transform:translateY(-2px);border-color:var(--acc);text-decoration:none}}
   .gap{{position:relative;margin:-.4rem 0 1.4rem;font-family:var(--cond);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}}
   .gap span{{display:inline-block;background:var(--bg);padding:.1rem .4rem;margin-left:-.4rem}}
   .gap::before{{content:"";position:absolute;left:-3.4rem;top:.55rem;width:2px;height:1.2rem;border-left:2px dashed var(--line)}}
-  .filters .cnt{{opacity:.55;margin-left:.3rem;font-size:.85em}}
+  .filters .cnt{{opacity:.8;margin-left:.3rem;font-size:.85em}}
   .spine[data-show="coinop"] .tc:not(.coinop),.spine[data-show="consoles"] .tc:not(.consoles),.spine[data-show="monitors"] .tc:not(.monitors){{display:none}}
   .spine[data-show] .yr:not(:has(.tc:not([style*="display: none"]))){{}}
   .yr.empty,.gap.hidden{{display:none}}
