@@ -609,3 +609,13 @@ the WebP `<picture>` pass, the collection timeline (mockup first), the contact f
 - **`button.btn` needs `background:transparent`** — a `<button>` picks up the browser's light-gray fill otherwise
   (the contact-form Send buttons were unreadable until 10/2). Body-text links carry a thin underline
   (style.css `main p a:not(.btn)` …); `.sr-only` exists for invisible headings that keep heading order intact.
+- **Oct 4 accessibility pass** (axe-core 4.13, every page at 390 and 1280, motion reduced): the magazine pages'
+  filter box is `id="mq"` — **never `id="q"`, which is the sitewide search dialog's input** (site.js). If a magazine
+  `build_page.py` regenerates orlandu-100 / orlandu-50-games, carry `mq` into it. Scrolling `.tablewrap`s (monograph,
+  consoles) and the monograph's `pre.chain` carry `tabindex="0"` so a keyboard can scroll them on a phone — give a
+  new scrolling table the same. Blank corner `<th>`s get an `.sr-only` label. The home hero, marquee and filmstrip
+  sit outside `<main>` on purpose (full bleed), so each carries `role="region"` + `aria-label`. trinitron-fleet's
+  `div.doc` is `role="main"`. **axe's color-contrast results are false positives unless the scroll-reveal has
+  finished** — run it with `reduced_motion='reduce'`; with that, the site has zero contrast failures. Known and
+  left alone: the trinitron "← orlandu.com" pill sits outside a landmark; tesla-callback.html (noindex) has one
+  low-contrast line.

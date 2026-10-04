@@ -308,8 +308,8 @@
 
   <form class="o50c" id="o50c" role="search" aria-label="Filter the fifty">
     <div class="row">
-      <label class="sr" for="q">Search by title or platform</label>
-      <input type="search" id="q" placeholder="Search a title or a platform…" autocomplete="off">
+      <label class="sr" for="mq">Search by title or platform</label>
+      <input type="search" id="mq" placeholder="Search a title or a platform…" autocomplete="off">
       <button type="button" id="reset">Reset</button>
       <span class="count" id="count" role="status">Showing all 50</span>
     </div>
@@ -746,7 +746,7 @@
     }
   });
 
-  var q = document.getElementById("q"),
+  var q = document.getElementById("mq"),
       count = document.getElementById("count"),
       noresult = document.getElementById("noresult"),
       ten = document.getElementById("topten"),

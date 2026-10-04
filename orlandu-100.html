@@ -370,8 +370,8 @@
 
   <form class="o100c" id="o100c" role="search" aria-label="Filter the hundred">
     <div class="row">
-      <label class="sr" for="q">Search by title, director or cast</label>
-      <input type="search" id="q" placeholder="Search a title, director or actor…" autocomplete="off">
+      <label class="sr" for="mq">Search by title, director or cast</label>
+      <input type="search" id="mq" placeholder="Search a title, director or actor…" autocomplete="off">
       <button type="button" id="reset">Reset</button>
       <span class="count" id="count" role="status">Showing all 100</span>
     </div>
@@ -1534,7 +1534,7 @@
   window.addEventListener("load", stick);
   window.addEventListener("resize", stick);
 
-  var q = document.getElementById("q"),
+  var q = document.getElementById("mq"),
       count = document.getElementById("count"),
       noresult = document.getElementById("noresult"),
       ten = document.getElementById("topten"),

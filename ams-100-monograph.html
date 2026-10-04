@@ -96,6 +96,10 @@
     text-transform:uppercase;color:var(--cyan-dim);margin-bottom:.45rem;
   }
   section[id],.mbody [id]{scroll-margin-top:96px}
+.conf a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;text-decoration-color:rgba(94,233,255,.45)}
+.conf a:hover{text-decoration-color:currentColor}
+.tablewrap:focus,pre.chain:focus{outline:none}
+.tablewrap:focus-visible,pre.chain:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 </style>
 <script type="application/ld+json">
 {
@@ -393,7 +397,7 @@
 
     <h3 class="sub" id="s32">3.2 &nbsp;BKAM-101 &mdash; analog input board</h3>
     <p><b>I/O:</b> 2 channels, balanced analog audio on XLR-3-31 (in) with XLR-3-32 loop positions; the maintenance manual confirms the pairs (CN1/CN2, CN21/CN22) are wired as true loop-throughs.</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Switch</th><th>Function</th><th>Factory setting</th><th>Accessibility</th></tr></thead>
       <tbody>
         <tr><td>S1 / S21</td><td class="d">600&nbsp;&Omega; input termination ON/OFF, ch 1 / ch 2</td><td class="d">&mdash;</td><td class="d">Module panel &mdash; legended ON/OFF beside each channel's XLR pair, operable in situ <span class="tag">[author]</span></td></tr>
@@ -412,7 +416,7 @@
     <h3 class="sub" id="s34">3.4 &nbsp;BKAM-103 &mdash; SDI de-embedder board</h3>
     <p><b>I/O:</b> serial digital video in and out on 75&nbsp;&Omega; BNC &mdash; the manual's connector table confirms both SDI IN and SDI OUT, i.e. a loop-through <span class="tag">[IM]</span> &mdash; with de-embedding of up to 16 audio channels from the SDI stream <span class="tag">[dealer for the stated count; the 4-group &times; 4-channel architecture below is manual-derived and consistent with it]</span>. The loop-through matters operationally: the board could be inserted in-line in a live video path, monitoring audio without terminating the feed, rather than requiring a dedicated dead-end output from a router. Like the BKAM-102, the board carries a green rear LED (D104) indicating SDI input lock <span class="tag">[MM]</span>.</p>
     <p><b>Internal identity and switches:</b> board silkscreen <strong>SDI-43</strong> <span class="tag">[IM]</span>, author-verified on hardware with Sony assembly part 1-673-876-11 and stock code S06-091A <span class="tag">[author photo; corroborating the EXT-01 photo-tier readings, &sect;4.5.1]</span>. Documented switches <span class="tag">[IM]</span> &mdash; all three, unlike the 101's termination pair and the 102's S101, genuinely internal: mid-board, board removal required <span class="tag">[author photo]</span>:</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Switch</th><th>Function</th><th>Factory setting</th><th>Accessibility</th></tr></thead>
       <tbody>
         <tr><td>S101</td><td class="d">Free-run adjustment</td><td class="d">OFF</td><td class="d">Internal (silkscreen FREE RUN) <span class="tag">[author]</span></td></tr>
@@ -445,7 +449,7 @@
     <p>The registry comprises <strong>seven AMS-100 frames</strong> acquired by the author in 2026 through two supply channels: a UAE electronics recycler (two frames, one package) and a Japan electronics recycler (five frames). Three frames have since been sold. Sold frames keep their full entries, marked sold: the registry is a record of documented units, not a current inventory, and a board whose chain ends at a sale is still a documented board. Every generalization drawn from the registry carries its caveat &mdash; n&nbsp;=&nbsp;7 &mdash; and externally documented units (<a href="#s45">&sect;4.5</a>) stand behind a scope wall and do not move that n.</p>
     <p>Frames are identified throughout this monograph by frame serial. The record numbers used during drafting (R-1 &hellip; R-7) are mapped to frame serials once, in <a href="#d">Appendix D</a>, and appear nowhere else in the text; the author's private record identifiers are not published. Transaction figures, dates, and counterparties are withheld from publication in every form by standing ruling (&sect;1.1); each acquisition and sale recorded here is nonetheless a confirmed event documented in the author's private record.</p>
     <p><b>Registry of record (2026).</b> Board identifiers are five-digit Sony PCB serials where read, seven-digit barcode-class labels (&sect;4.4) for the two UAE-package BKAM-103s, and the bare type designation where a board's serial is unread.</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Frame</th><th>Channel</th><th>As-surfaced</th><th>Current</th><th>Status</th></tr></thead>
       <tbody>
         <tr><td>10010</td><td class="d">UAE electronics recycler (package with 11341)</td><td class="d">103 (0105241) + blank</td><td class="d">101 (10505) + 101</td><td class="d">held</td></tr>
@@ -461,7 +465,7 @@
 
     <h3 class="sub" id="s42">4.2 &nbsp;Board provenance</h3>
     <p>Boards move between frames in this registry, so board histories are recorded as chains rather than locations. <strong>Twelve boards</strong> have passed through the author's hands: nine arrived in frames, three came as a loose lot, and none has been purchased loose otherwise.</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Board</th><th>Type</th><th>Identifier</th><th>Chain</th><th>Disposition</th></tr></thead>
       <tbody>
         <tr><td>103</td><td class="d">BKAM-103</td><td class="d">label 0105241</td><td class="d">UAE recycler &rarr; 10010 (as-surfaced, sealed) &rarr; author stock &rarr; 12793</td><td class="d">installed, 12793</td></tr>
@@ -531,7 +535,7 @@
 
     <h3 class="sub" id="s52">5.2 &nbsp;The signal path</h3>
     <p>The chain below describes the installation's last 102-fed point, frame 12793 (&sect;5.3), as it ran until that frame converted to analog. <strong>No monitor point in this installation is 102-fed today.</strong> The chain is recorded in full regardless: it is the documented form of the substitute path &sect;3.6 identifies for anyone who cannot reach BKAM-101 supply, and every reading and caution below was taken on working hardware while it ran.</p>
-<pre class="chain">analog program source (console / video source audio)
+<pre class="chain" tabindex="0">analog program source (console / video source audio)
         &#9474; unbalanced consumer analog, RCA / 3.5 mm
         &#9660;
 Biaze A/D converter (consumer; RCA/3.5 mm in &rarr;
@@ -598,7 +602,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
 
     <h3 class="sub" id="s62">6.2 &nbsp;Maintenance modes and error codes</h3>
     <p>The frame's HD64180ZR CPU (&sect;6.4) gives the AMS-100 a small but genuine self-test and configuration layer, entered by holding front-panel button combinations while switching POWER on <span class="tag">[MM]</span>:</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Buttons held at power-on</th><th>Mode</th></tr></thead>
       <tbody>
         <tr><td>GP4 + CH-R3</td><td class="d">SLOT status output (STS-A/STS-B, REMOTE pins 14/15) set to <em>level</em> type</td></tr>
@@ -609,7 +613,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     </table></div>
     <p>The STS modes configure the REMOTE connector's SLOT status output (&sect;2.5, <a href="#b">Appendix B</a>): the manual states the type selection for the status signal of the SLOT A/B select button, output on pins 14/15 &mdash; either a continuous level mirroring the select state, or a 500&nbsp;ms active-low pulse on change <span class="tag">[MM &sect;1-5-1]</span>. Whether the remaining STS lines (the channel- and group-select status pairs) share the configured type is unstated in the MM &mdash; open, resolvable by the Operation Manual or a bench probe. This remains the one piece of persistent configuration that lives in the frame rather than on a board switch, and it is invisible without either this manual or a logic probe on the D-sub &mdash; worth recording during hardware intake if remote integration is ever attempted.</p>
     <p><b>Error blink codes.</b> At self-test failure the frame reports faults by blinking front-panel indicators at a 200&nbsp;ms rate; the manual maps each pattern to a specific frame IC <span class="tag">[MM]</span>:</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Blinking indicator(s)</th><th>Fault</th><th>Implicated IC (as printed)</th></tr></thead>
       <tbody>
         <tr><td>GP1 + SLOT</td><td class="d">Board hardware error</td><td class="d">&mdash;</td></tr>
@@ -637,7 +641,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
 
     <h3 class="sub" id="s64">6.4 &nbsp;Boards, semiconductors, and parts</h3>
     <p><b>Frame board set.</b> The frame comprises five boards <span class="tag">[MM]</span>:</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Board</th><th>Function</th><th>Notable components</th></tr></thead>
       <tbody>
         <tr><td>AU-265</td><td class="d">Main board: CPU, analog switching, power amplifier, monitor-output drivers</td><td class="d">CPU HD64180ZR (8-bit); slot select IC202/203; monitor drivers IC204/205; speaker amp IC201 = TA8200AH/TA8216H (dual designation as recorded in the parts data)</td></tr>
@@ -650,7 +654,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     <p>The power supply is a switching regulator, and the two internal speakers carry Sony part number 1-529-353-11 <span class="tag">[MM]</span> &mdash; the reference for any future driver replacement.</p>
     <p><b>Option-board silicon.</b> The digital boards' decode chains, cited functionally in Sections 3 and 5, are: <b>BKAM-102</b> &mdash; CS8412 AES/EBU receiver into an AK4320 D/A; <b>BKAM-103</b> &mdash; CXB1342R serial decoder, CXD8280AQ time-base expansion performing the group de-embed, into the same AK4320 D/A <span class="tag">[MM]</span>. The shared D/A part is one more expression of the common &minus;10&nbsp;dBs output plane.</p>
     <p><b>Board identity from hardware.</b> The EXT-01 intake produced the first open-board photographs of any BKAM module <span class="tag">[contributor photo, EXT-01]</span>; the author's own boards put author-verified hardware of all three documented board types on the record <span class="tag">[author photo]</span> &mdash; including the BKAM-101, whose internals had never been documented at any tier. Corroborated against <span class="tag">[MM]</span>: the AL-42, DAC-37, and SDI-43 board designations, all read directly from PCBs in the author's hands, and the CS8412 AES/EBU receiver physically sighted (package CS8412-CS, on both the EXT-01 board and the author's board). Board provenance and placements are given in &sect;4.2; the identity record stands:</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Board</th><th>Sony assembly part no.</th><th>PCB stock code</th><th>CPLD complement (Sony firmware label)</th><th>Example / tier</th></tr></thead>
       <tbody>
         <tr><td>BKAM-101 (AL-42)</td><td class="d">1-673-874-11</td><td class="d">S04-378T</td><td class="d">none &mdash; analog board; op-amp complement JRC 4560DD &times;2 (IC1/IC2), A5201A &times;2 (IC3/IC4)</td><td class="d">s/n 10505 <span class="tag">[author]</span> &mdash; first identity record for this board type anywhere</td></tr>
@@ -668,7 +672,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     </ol>
     <p>Neither divergence is adopted as a production-history finding until its weak side is re-verified; both are recorded so that neither reading silently overwrites the other <span class="tag">[flag-don't-reconcile, per standing project rule]</span>; no re-verification is scheduled &mdash; both readings stand as recorded (<a href="#f">Appendix F</a>). The &copy;SONY99 marks remain firmware copyright years: a floor, not a manufacture date. The manufacture-dating reading proper &mdash; board production ran at least into 1999 <span class="tag">[EXT-01 component codes]</span> &mdash; is carried in &sect;1.5 and unchanged; two 2000-family date-code candidates from the author's boards (an IC code on the 101, an oscillator code on the 103) are held in the facts file, deliberately unadopted &mdash; no code-format ruling or board sweep is scheduled <span class="tag">[author photo; not adopted &mdash; &sect;1.5, Appendix F]</span>. <em>Scope caveats:</em> n&nbsp;=&nbsp;1 (101, author) / n&nbsp;=&nbsp;2 (102, 103 &mdash; one author + one contributor each); part numbers verified stable across two examples per digital board type; stock codes demonstrated not stable.</p>
     <p><b>Protection &mdash; IC links.</b> Each board carries IC-link fuses (PS-numbered), with part numbers distinct by board family <span class="tag">[MM]</span>:</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Board</th><th>IC links</th><th>Sony part no.</th></tr></thead>
       <tbody>
         <tr><td>BKAM-101</td><td class="d">PS101, PS102</td><td class="d">1-533-984-11</td></tr>
@@ -692,7 +696,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
 
     <h3 class="sub" id="s72">7.2 &nbsp;The ledger</h3>
     <h4 class="sub2">Confirmed solds</h4>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Date</th><th>Item</th><th>Configuration / detail</th><th>Price</th><th>Channel</th></tr></thead>
       <tbody>
         <tr><td>2026</td><td class="d">AMS-100 frame 11341 &mdash; author purchase</td><td class="d">1&times; BKAM-103 only</td><td class="withheld">confirmed &mdash; figure withheld</td><td class="d">UAE electronics recycler</td></tr>
@@ -712,7 +716,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     <p>The US hi-fi entry is footnote-grade: its sold-out listing proves one unit moved through a US hi-fi channel around 2017 (photo timestamps), but with no price it contributes an existence datum only. The frame 11353 purchase is the ledger's only row to carry a listing-tier configuration claim through to hardware verification; it came back clean (&sect;4.3).</p>
 
     <h4 class="sub2">Listing records (neither asks nor solds)</h4>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Observed</th><th>Item</th><th>Posted price</th><th>Status</th></tr></thead>
       <tbody>
         <tr><td>July 2026 sweep (listing and sale dates unknown)</td><td class="d">Loose BKAM-101 &mdash; &ldquo;Analog Audio Module&rdquo;</td><td class="d">&yen;13,200 incl. tax</td><td class="d">page marked SOLD OUT, under-negotiation badge &mdash; <span class="tag">[dealer listing, sold out at listed price; not a confirmed transaction]</span> &mdash; a Tokyo used-broadcast dealer</td></tr>
@@ -721,7 +725,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     <p>This single row is the only BKAM-101 price datum of any kind known to this project (<a href="#s74">&sect;7.4</a>). The posted price is a dealer's exact, publishable figure; whether a sale completed, when, and at what final price are unknown.</p>
 
     <h4 class="sub2">Asks (not solds)</h4>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Observed</th><th>Item</th><th>Price</th><th>Status</th></tr></thead>
       <tbody>
         <tr><td>July 2026</td><td class="d">AMS-100, one eBay listing (US-visible), third party</td><td class="d">$999.99</td><td class="d">ask as observed July 2026; not re-observed</td></tr>
@@ -782,7 +786,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     <p><em>Source discipline:</em> neither service manual contains a published specifications table <span class="tag">[IM][MM]</span>, so every figure below carries its provenance: <span class="tag">[IM]</span> Installation Manual, <span class="tag">[MM]</span> Maintenance Manual (including alignment specifications, which serve as de facto electrical specs), <span class="tag">[author]</span> hardware-verified on registry units, <span class="tag">[dealer &mdash; unverified]</span> resting solely on dealer listings (a broadcast-equipment dealer, identity in the project record) which only the Operation Manual could verify &mdash; that manual is not located and the search is closed (&sect;2.8), so every such cell stands permanently at this tier. Figures are collected here from Sections 2, 3, and 6; this appendix restates, it does not re-derive. <em>Coverage:</em> the frame and the three option boards documented by Sony's 1999 service literature. A fourth, later HD-SDI board is attested by a single photograph (&sect;3.1) <span class="tag">[social-media photo, unverified]</span>; its model number is unread (published BKAM-10&#9646;) and nothing is known of it beyond its panel legend, so no table is provided for it.</p>
 
     <h3 class="sub">A.1 &nbsp;Frame &mdash; general</h3>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Item</th><th>Value</th><th>Source</th></tr></thead>
       <tbody>
         <tr><td>Model</td><td class="d">AMS-100 Audio Monitor Speaker</td><td class="d">plate <span class="tag">[author]</span></td></tr>
@@ -800,7 +804,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     </table></div>
 
     <h3 class="sub">A.2 &nbsp;Frame &mdash; monitoring path</h3>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Item</th><th>Value</th><th>Source</th></tr></thead>
       <tbody>
         <tr><td>Internal speakers</td><td class="d">2&nbsp;W + 2&nbsp;W stereo</td><td class="d"><span class="tag">[dealer &mdash; unverified]</span></td></tr>
@@ -817,7 +821,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     </table></div>
 
     <h3 class="sub">A.3 &nbsp;BKAM-101 &mdash; analog input board (AL-42)</h3>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Item</th><th>Value</th><th>Source</th></tr></thead>
       <tbody>
         <tr><td>Sony assembly part no. / stock code</td><td class="d">1-673-874-11 / S04-378T</td><td class="d"><span class="tag">[author, July 2026 intake &mdash; s/n 10505]</span></td></tr>
@@ -835,7 +839,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     </table></div>
 
     <h3 class="sub">A.4 &nbsp;BKAM-102 &mdash; AES/EBU digital input board (DAC-37)</h3>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Item</th><th>Value</th><th>Source</th></tr></thead>
       <tbody>
         <tr><td>Sony assembly part no. / stock codes</td><td class="d">1-673-875-11 / S92-042A and S96-547A (two examples, codes differ &mdash; &sect;6.4)</td><td class="d"><span class="tag">[author, s/n 10099]</span>; <span class="tag">[contributor photo, EXT-01, s/n 10016]</span></td></tr>
@@ -851,7 +855,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     </table></div>
 
     <h3 class="sub">A.5 &nbsp;BKAM-103 &mdash; SDI de-embedder board (SDI-43)</h3>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Item</th><th>Value</th><th>Source</th></tr></thead>
       <tbody>
         <tr><td>Sony assembly part no. / stock codes</td><td class="d">1-673-876-11 / S94-510A and S06-091A (two examples, codes differ &mdash; &sect;6.4)</td><td class="d"><span class="tag">[author, s/n 10631]</span>; <span class="tag">[contributor photo, EXT-01, s/n 10130]</span></td></tr>
@@ -869,7 +873,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     </table></div>
 
     <h3 class="sub">A.6 &nbsp;Frame board set</h3>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Board</th><th>Function</th><th>Notable components</th><th>Source</th></tr></thead>
       <tbody>
         <tr><td>AU-265</td><td class="d">main: CPU, slot switching, amplification, monitor drivers</td><td class="d">HD64180ZR CPU; IC202/203 slot select; IC204/205 monitor drivers; IC201 speaker amp (TA8200AH/TA8216H, dual designation as recorded)</td><td class="d"><span class="tag">[MM]</span></td></tr>
@@ -893,7 +897,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     <p>Rear-panel REMOTE: female D-sub 25-pin <span class="tag">[IM; MM &sect;1-6 corroborates]</span>. Carries the frame's two balanced monitor-output channels and the full remote select/status interface (&sect;2.5). No dedicated Sony remote panel accessory for this connector has been identified <span class="tag">[confidence: absence of evidence only, &sect;2.5]</span>.</p>
 
     <h3 class="sub">B.2 &nbsp;Signal complement</h3>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Signal</th><th>Direction</th><th>Function</th><th>Source</th></tr></thead>
       <tbody>
         <tr><td>MONITOR OUT 1 (hot / cold / gnd)</td><td class="d">out</td><td class="d">monitor channel 1, balanced, +4&nbsp;dBm nominal</td><td class="d"><span class="tag">[IM][MM]</span></td></tr>
@@ -919,7 +923,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
 
     <h3 class="sub">B.4 &nbsp;Pin assignment <span class="tag">[IM &mdash; transcribed verbatim]</span></h3>
     <p>Transcribed pin-for-pin from the Installation Manual's &sect;1-5 pin-assignment table (D-sub 25-pin, female; the IM's external-view drawing orients the connector with pins 13&rarr;1 on the upper row and 25&rarr;14 on the lower) <span class="tag">[IM]</span>. Signal names are reproduced as printed, including the IM's own punctuation inconsistencies (e.g., &ldquo;REM-CH.SELECT&rdquo; vs &ldquo;STS-CH. SELECT&rdquo;); no name has been normalized.</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Pin</th><th>Signal</th><th>Pin</th><th>Signal</th></tr></thead>
       <tbody>
         <tr><td>1</td><td class="d">REM-A IN</td><td>14</td><td class="d">STS-A OUT</td></tr>
@@ -941,8 +945,8 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
 
     <h4 class="sub2">B.4.1 &nbsp;Select-code truth table <span class="tag">[MM &mdash; transcribed verbatim]</span></h4>
     <p>Transcribed from the Maintenance Manual &sect;1-6, footnote &ldquo;(*1)&rdquo; to the REMOTE pin-assignment table <span class="tag">[MM]</span>:</p>
-    <div class="tablewrap"><table class="spec">
-      <thead><tr><th>&nbsp;</th><th>CH/GP1</th><th>CH/GP2</th><th>CH/GP3</th><th>CH/GP4</th></tr></thead>
+    <div class="tablewrap" tabindex="0"><table class="spec">
+      <thead><tr><th><span class="sr-only">Select line</span></th><th>CH/GP1</th><th>CH/GP2</th><th>CH/GP3</th><th>CH/GP4</th></tr></thead>
       <tbody>
         <tr><td>SEL-1</td><td class="d">H</td><td class="d">L</td><td class="d">H</td><td class="d">L</td></tr>
         <tr><td>SEL-2</td><td class="d">H</td><td class="d">H</td><td class="d">L</td><td class="d">L</td></tr>
@@ -968,7 +972,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
 
     <h3 class="sub">Plate log</h3>
     <p>The log is the mapping of record between plate number, source, and holding. Plate numbers are stable: withdrawn and image-less entries are retained, not renumbered, so that plate references across Sections 1, 4 and 6 and Appendices A, D, and E remain valid.</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Plate</th><th>Source</th><th>Subject</th><th>Date</th><th>Tier</th><th>Holding</th></tr></thead>
       <tbody>
         <tr><td>C-1</td><td class="d">author photograph (project record)</td><td class="d">11341 (upper) + 12793 (lower), rears</td><td class="d">&mdash;</td><td class="d">[author]</td><td class="d">withdrawn (author ruling, August 2026)</td></tr>
@@ -1045,7 +1049,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     <h2 class="sec">Appendix D <small>Sources and Evidence Record</small></h2>
 
     <h3 class="sub">D.1 &nbsp;Primary Sony documentation</h3>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Document</th><th>Identity</th><th>Status</th><th>Obtained</th></tr></thead>
       <tbody>
         <tr><td>Installation Manual <span class="tag">[IM]</span></td><td class="d">AMS-100/BKAM-101/102/103, 1st Edition, part no. 3-202-309-01, &copy;1999 Sony Corporation B&amp;P Systems Company, printed Japan 1999-02; trilingual safety matter; J and E versions</td><td class="d">in hand</td><td class="d">July 2026, pdf.textfiles.com STARIN manuals mirror</td></tr>
@@ -1078,7 +1082,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
 
     <h3 class="sub">D.3 &nbsp;Transaction and provenance records</h3>
     <p><b>Identifier mapping.</b> The monograph identifies frames by frame serial. The record numbers used during drafting (R-1 &hellip; R-7, in order of entry to the registry) map to frame serials as follows; this table is the only place they appear. The author's private record uses its own identifiers, which are not published.</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Frame serial</th><th>Record no.</th><th>Channel</th></tr></thead>
       <tbody>
         <tr><td>11341</td><td class="d">R-1</td><td class="d">UAE electronics recycler (package with 10010)</td></tr>
@@ -1137,8 +1141,8 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
 
     <h3 class="sub" id="e2">E.2 &nbsp;The documented units &mdash; two market variants</h3>
     <p>The four units divide cleanly into two groups, and the division is the appendix's principal finding. It was not visible when only the contributor pair was documented.</p>
-    <div class="tablewrap"><table class="spec">
-      <thead><tr><th>&nbsp;</th><th>Unit a</th><th>Unit b</th><th>Unit c</th><th>Unit d</th></tr></thead>
+    <div class="tablewrap" tabindex="0"><table class="spec">
+      <thead><tr><th><span class="sr-only">Attribute</span></th><th>Unit a</th><th>Unit b</th><th>Unit c</th><th>Unit d</th></tr></thead>
       <tbody>
         <tr><td>Serial</td><td class="d">10685</td><td class="d">11558</td><td class="d">20087</td><td class="d">20144</td></tr>
         <tr><td>Model-plate part</td><td class="d">2-356-601-01</td><td class="d">identical</td><td class="d">2-356-602-02</td><td class="d">identical</td></tr>
@@ -1164,7 +1168,7 @@ AMS-100 frame &mdash; slot select &rarr; internal speakers,
     <p><b>Format.</b> 2RU rack unit &mdash; twice the AMS-100's height &mdash; with two internal speakers behind metal grilles flanking a central meter block, and a measured mass of 35&nbsp;lb (&asymp;&nbsp;15.9&nbsp;kg) on the export units <span class="tag">[author, measured]</span>. This is the project's only weight figure for any product of the family: the corresponding AMS-100 measurement is declined by standing ruling (A.1), and the two figures should not be read against one another as a like-for-like comparison. The &#12477;&#12491;&#12540;&#26666;&#24335;&#20250;&#31038; plate text and 100&nbsp;V-only rating mark the contributor units as Japan-domestic; the author's units are marked for four supply voltages (E.2). On both variants the 150&nbsp;W rating is matched by a prominent finned heatsink running the chassis side <span class="tag">[contributor photo, EXT-01]</span>: a substantially larger amplifier stage than the successor's (the AMS-100 draws 25&nbsp;W <span class="tag">[IM]</span>), and the readiest explanation of the mass.</p>
     <p><b>Front panel.</b> POWER rocker with separate indicator window; two illuminated analog VU meters (&minus;20 to +3 scale with a percentage-modulation scale beneath, red segment above 0) labeled INPUT LEVEL L/R; two rotary SP LEVEL pots (0&ndash;10 scale), one per channel; the legend AUDIO MONITOR SPEAKER AMS-3 across the meter block. <strong>No input selection of any kind</strong> &mdash; what the rear receives is what the speakers monitor. Panel finish on the export units is light gray <span class="tag">[author photo, plate C-37]</span>.</p>
     <p><b>Rear panel.</b> Fixed, analog-only I/O, identical in complement across both variants:</p>
-    <div class="tablewrap"><table class="spec">
+    <div class="tablewrap" tabindex="0"><table class="spec">
       <thead><tr><th>Facility</th><th>Detail</th></tr></thead>
       <tbody>
         <tr><td>Inputs, per channel</td><td class="d">XLR-32F (male) + XLR-31F (female) pair, ITT Cannon &mdash; true loop-through</td></tr>
