@@ -462,6 +462,18 @@ buying happens on eBay, there are no product reviews to mark up, and fabricated 
 Google's rules. The page keeps its WebSite/Organization/Person/CollectionPage/BreadcrumbList nodes.
 **Do not add product markup back** when a new card is listed.
 
+**No `Product` type anywhere on the site, not even nested (2026-10-05).** Google validates every
+`Product` node it finds, including ones inside an Article's `about`, and flags any without
+`offers`/`review`/`aggregateRating` as a critical Product-snippets error. `ams-100-monograph.html`
+listed the AMS-100, BKAM boards and AMS-3 as `about` Products; they are now `"@type": "Thing"`.
+Use `Thing` for "this page is about X".
+
+**Every `ImageObject` carries five rights fields (2026-09-25, `creditText` added 2026-10-05):**
+`creator` (Organization "Orlandu's Arcade"), `copyrightNotice` "© Orlandu's Arcade",
+`creditText` "Orlandu's Arcade", and `license` + `acquireLicensePage` → `about.html#photo-use`.
+Search Console reports a missing `creditText` under Image Metadata. Copy all five onto any new
+ImageObject (page `primaryImageOfPage`, the Organization logo).
+
 `media/2026/alumni-ams-100.jpg` and its thumb are currently **unreferenced** — the old listing
 photo, kept in case the AMS-100 monograph wants it. Not an oversight.
 
