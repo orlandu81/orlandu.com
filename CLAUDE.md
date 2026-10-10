@@ -155,6 +155,7 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
 - Certificate checks: SSL Labs via WebFetch. `openssl s_client` from here returns the
   proxy's own cert, not the site's. A page loading is not proof the cert is valid.
 - DNS: `https://dns.google/resolve?name=<host>&type=<type>&cd=0`.
+- **Search-engine verification files at the root, never delete:** `7984e193fb220a08e3d0a7abd9711dcd.txt` (IndexNow key) and `BingSiteAuth.xml` (Bing Webmaster Tools, added 2026-10-09; the site is registered there as https://www.orlandu.com under David's Google sign-in).
 
 ## Media
 
