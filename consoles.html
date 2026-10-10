@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="assets/style.css?v=1a05faa8">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
 <style>main.hub{--acc:#a86bff}</style>
-<script src="assets/site.js?v=c471f5dc" defer></script>
+<script src="assets/site.js?v=2ede5104" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -51,7 +51,10 @@
    "description": "A private arcade and Sony professional monitor collection in Orange County, California.",
    "logo": {
     "@type": "ImageObject",
-    "creator": {"@type": "Organization", "name": "Orlandu's Arcade"},
+    "creator": {
+     "@type": "Organization",
+     "name": "Orlandu's Arcade"
+    },
     "copyrightNotice": "© Orlandu's Arcade",
     "creditText": "Orlandu's Arcade",
     "license": "https://www.orlandu.com/about.html#photo-use",
@@ -101,7 +104,10 @@
    "inLanguage": "en-US",
    "primaryImageOfPage": {
     "@type": "ImageObject",
-    "creator": {"@type": "Organization", "name": "Orlandu's Arcade"},
+    "creator": {
+     "@type": "Organization",
+     "name": "Orlandu's Arcade"
+    },
     "copyrightNotice": "© Orlandu's Arcade",
     "creditText": "Orlandu's Arcade",
     "license": "https://www.orlandu.com/about.html#photo-use",
@@ -127,6 +133,42 @@
      "position": 2,
      "name": "The Consoles",
      "item": "https://www.orlandu.com/consoles.html"
+    }
+   ]
+  },
+  {
+   "@type": "Dataset",
+   "@id": "https://www.orlandu.com/consoles.html#dataset",
+   "name": "How each console at Orlandu's Arcade reaches a Sony professional monitor",
+   "description": "For each console whose signal path the site states: the modification (if any), the video output it uses, and the cable chain from console to a Sony PVM or BVM — NES, Super Nintendo, Nintendo 64, GameCube, Genesis, Genesis CDX, Saturn, PC Engine Duo-R, PlayStation 2.",
+   "url": "https://www.orlandu.com/consoles.html#mods",
+   "license": "https://creativecommons.org/licenses/by/4.0/",
+   "isAccessibleForFree": true,
+   "creator": {
+    "@id": "https://www.orlandu.com/#org"
+   },
+   "publisher": {
+    "@id": "https://www.orlandu.com/#org"
+   },
+   "inLanguage": "en-US",
+   "keywords": [
+    "retro consoles",
+    "RGB",
+    "SCART",
+    "BNC",
+    "Sony PVM",
+    "video output"
+   ],
+   "distribution": [
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://www.orlandu.com/data/console-video-out.json"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "text/csv",
+     "contentUrl": "https://www.orlandu.com/data/console-video-out.csv"
     }
    ]
   }
@@ -295,12 +337,13 @@
       </tbody>
     </table>
     </div>
+    <p class="note">This table as open data: <a href="data/console-video-out.json">JSON</a> &middot; <a href="data/console-video-out.csv">CSV</a> &mdash; CC BY 4.0, credit Orlandu&rsquo;s Arcade.</p>
     <p class="note">Handhelds, the unit on the bench, and anything that does not run through the RGB chain are left off. &ldquo;Switcher&rdquo; is the GSCARTSW in each room; &ldquo;breakout&rdquo; is the SCART&nbsp;to&nbsp;4&nbsp;BNC cable. The whole path, box by box, is in <a href="signal-chain.html">The Signal Chain</a>. Nintendo&rsquo;s official Player&rsquo;s Guides have <a href="guide-shelf.html">a shelf of their own</a>.</p>
   </section>
 
 </main>
 
-<footer class="site"><div class="footwrap"><img src="assets/mascot-foot.webp" alt="Orlandu’s Arcade mascot" width="176" height="216" loading="lazy" decoding="async"><div class="links"><a href="about.html">About</a><a href="about.html#contact">Contact</a><a href="stories.html">Stories</a><a href="mailto:orlandusarcade@gmail.com">Email</a><a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a><a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a></div><nav class="explore" aria-label="Explore the site"><div><span>Pages</span><a href="games.html">Coin-Op</a><a href="monitors.html">Monitors</a><a href="consoles.html">Consoles</a><a href="playchoice-10.html">PlayChoice-10</a><a href="signage.html">Signage</a><a href="guide-shelf.html">Guides</a><a href="spinning-tops.html">Spinning Tops</a><a href="gallery.html">Gallery</a><a href="stories.html">Stories</a><a href="projects.html">Projects</a><a href="forsale.html">For Sale</a><a href="wanted.html">Wanted</a><a href="about.html">About</a><a href="glossary.html">Glossary</a><a href="timeline.html">Timeline</a><a href="about.html#faq">FAQ</a></div><div><span>Reading</span><a href="crt-field-guide.html">Professional glass in the wild</a><a href="ams-100-monograph.html">The AMS-100 monograph</a><a href="pvm-20l5-buying-guide.html">PVM-20L5 buying guide</a><a href="ams-3-vs-ams-100.html">Ancestor and descendant</a><a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol. 1</a><a href="signal-chain.html">The signal chain</a><a href="connect-console-to-pvm.html">Console to PVM, cable by cable</a><a href="vs-smb.html">VS. Super Mario Bros.</a><a href="pvm-vs-bvm.html">PVM vs. BVM</a><a href="red-tent.html">The Red Tent</a><a href="mini-cute.html">The Mini Cute</a><a href="orlandu-100.html">The Orlandu 100</a></div></nav><div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>Photography © Orlandu’s Arcade. Game logos and characters are the property of their respective owners.</div></div></footer>
+<footer class="site"><div class="footwrap"><img src="assets/mascot-foot.webp" alt="Orlandu’s Arcade mascot" width="176" height="216" loading="lazy" decoding="async"><div class="links"><a href="about.html">About</a><a href="about.html#contact">Contact</a><a href="stories.html">Stories</a><a href="mailto:orlandusarcade@gmail.com">Email</a><a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a><a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a></div><nav class="explore" aria-label="Explore the site"><div><span>Pages</span><a href="games.html">Coin-Op</a><a href="monitors.html">Monitors</a><a href="consoles.html">Consoles</a><a href="playchoice-10.html">PlayChoice-10</a><a href="signage.html">Signage</a><a href="guide-shelf.html">Guides</a><a href="spinning-tops.html">Spinning Tops</a><a href="gallery.html">Gallery</a><a href="stories.html">Stories</a><a href="projects.html">Projects</a><a href="forsale.html">For Sale</a><a href="wanted.html">Wanted</a><a href="about.html">About</a><a href="glossary.html">Glossary</a><a href="timeline.html">Timeline</a><a href="about.html#faq">FAQ</a><a href="mcp.html">For AI agents</a></div><div><span>Reading</span><a href="crt-field-guide.html">Professional glass in the wild</a><a href="ams-100-monograph.html">The AMS-100 monograph</a><a href="pvm-20l5-buying-guide.html">PVM-20L5 buying guide</a><a href="ams-3-vs-ams-100.html">Ancestor and descendant</a><a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol. 1</a><a href="signal-chain.html">The signal chain</a><a href="connect-console-to-pvm.html">Console to PVM, cable by cable</a><a href="vs-smb.html">VS. Super Mario Bros.</a><a href="pvm-vs-bvm.html">PVM vs. BVM</a><a href="red-tent.html">The Red Tent</a><a href="mini-cute.html">The Mini Cute</a><a href="orlandu-100.html">The Orlandu 100</a></div></nav><div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>Photography © Orlandu’s Arcade. Game logos and characters are the property of their respective owners.</div></div></footer>
 
 </body>
 </html>

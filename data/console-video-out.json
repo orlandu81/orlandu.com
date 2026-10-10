@@ -1,0 +1,69 @@
+{
+ "dataset": "How each console at Orlandu's Arcade reaches a Sony professional monitor",
+ "description": "For each console whose signal path the site states: the modification (if any), the video output it uses, and the chain from console to monitor.",
+ "source": "https://www.orlandu.com/consoles.html#mods",
+ "columns": {
+  "console": "Console",
+  "work_done": "Work done",
+  "video_out": "Video out",
+  "into_the_chain": "Into the chain"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "credit": "Orlandu's Arcade (https://www.orlandu.com)",
+ "rows": [
+  {
+   "console": "NES Front Loader · Top Loader",
+   "work_done": "NESRGB board in each",
+   "video_out": "RGB (modded)",
+   "into_the_chain": "RGB SCART → switcher → breakout → PVM / BVM"
+  },
+  {
+   "console": "Super Nintendo",
+   "work_done": "Stock",
+   "video_out": "RGB (native)",
+   "into_the_chain": "RGB SCART → switcher → breakout → PVM / BVM"
+  },
+  {
+   "console": "Nintendo 64",
+   "work_done": "RGB upgrade",
+   "video_out": "RGB (modded)",
+   "into_the_chain": "RGB SCART → switcher → breakout → PVM / BVM"
+  },
+  {
+   "console": "GameCube",
+   "work_done": "Stock",
+   "video_out": "Component, OEM cable",
+   "into_the_chain": "Component input, no switcher in the path"
+  },
+  {
+   "console": "Genesis Model 1",
+   "work_done": "HDG S-Video and stereo output jacks",
+   "video_out": "RGB (native) · S-Video added",
+   "into_the_chain": "RGB SCART → switcher → breakout → PVM / BVM"
+  },
+  {
+   "console": "Genesis CDX",
+   "work_done": "New laser lens",
+   "video_out": "RGB (native)",
+   "into_the_chain": "RGB SCART → switcher → breakout → PVM / BVM"
+  },
+  {
+   "console": "Saturn",
+   "work_done": "Stock",
+   "video_out": "RGB (native)",
+   "into_the_chain": "RGB SCART → switcher → breakout → PVM / BVM"
+  },
+  {
+   "console": "PC Engine Duo-R",
+   "work_done": "Region mod · RGB mod",
+   "video_out": "RGB (modded)",
+   "into_the_chain": "RGB SCART → switcher → breakout → PVM / BVM"
+  },
+  {
+   "console": "PlayStation 2 Slim",
+   "work_done": "MemCard Pro 2 with FMCB/OPL",
+   "video_out": "Component",
+   "into_the_chain": "Switcher → distribution amp → the LMD wall"
+  }
+ ]
+}

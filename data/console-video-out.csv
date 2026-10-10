@@ -1,0 +1,10 @@
+console,work_done,video_out,into_the_chain
+NES Front Loader · Top Loader,NESRGB board in each,RGB (modded),RGB SCART → switcher → breakout → PVM / BVM
+Super Nintendo,Stock,RGB (native),RGB SCART → switcher → breakout → PVM / BVM
+Nintendo 64,RGB upgrade,RGB (modded),RGB SCART → switcher → breakout → PVM / BVM
+GameCube,Stock,"Component, OEM cable","Component input, no switcher in the path"
+Genesis Model 1,HDG S-Video and stereo output jacks,RGB (native) · S-Video added,RGB SCART → switcher → breakout → PVM / BVM
+Genesis CDX,New laser lens,RGB (native),RGB SCART → switcher → breakout → PVM / BVM
+Saturn,Stock,RGB (native),RGB SCART → switcher → breakout → PVM / BVM
+PC Engine Duo-R,Region mod · RGB mod,RGB (modded),RGB SCART → switcher → breakout → PVM / BVM
+PlayStation 2 Slim,MemCard Pro 2 with FMCB/OPL,Component,Switcher → distribution amp → the LMD wall

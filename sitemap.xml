@@ -7,6 +7,10 @@
     <video:video><video:thumbnail_loc>https://www.orlandu.com/media/2026/game-room-spin-poster.webp</video:thumbnail_loc><video:title>The game room, one full turn</video:title><video:description>A 33-second spin around the inside room — the framed PCB wall, Super Mario Bros. on the PVMs, the fiber-optic Kay·Bee World of Nintendo sign, and the Mini Cute and Red Tent holding their corners.</video:description><video:content_loc>https://www.orlandu.com/media/video/game-room-spin-v2.mp4</video:content_loc></video:video>
   </url>
   <url>
+    <loc>https://www.orlandu.com/mcp.html</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
     <loc>https://www.orlandu.com/ams-100-monograph.html</loc>
     <lastmod>2026-10-04</lastmod>
   </url>
@@ -138,7 +142,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/consoles.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-nes-toploader.webp</image:loc><image:title>Nintendo Entertainment System top loader, the NES-101 redesign, with its red power switch</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-snes.webp</image:loc><image:title>Super Nintendo Entertainment System seen from the front, purple power and reset switches and both controller ports</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-n64.webp</image:loc><image:title>Nintendo 64 seen from the front, all four controller ports and the cartridge slot on top</image:title></image:image>
@@ -349,7 +353,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/monitors.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-20e1u-lit.webp</image:loc><image:title>Sony BVM-20E1U broadcast monitor lit in its rack, with an AMS-100 audio monitor speaker on top</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-a14f5u-lit.webp</image:loc><image:title>Sony BVM-A14F5U broadcast monitor with its full control panel and an AMS-100 speaker above</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pvm-2950q.webp</image:loc><image:title>Sony PVM-2950Q 29-inch Trinitron production monitor lit at night running Super Mario World</image:title></image:image>
@@ -448,7 +452,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/playchoice-10.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pc10-cart-1942.webp</image:loc><image:title>Nintendo PlayChoice-10 game board for 1942, component side</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pc10-cart-balloon-fight.webp</image:loc><image:title>Nintendo PlayChoice-10 game board for Balloon Fight, component side</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pc10-cart-baseball.webp</image:loc><image:title>Nintendo PlayChoice-10 game board for Baseball, component side</image:title></image:image>

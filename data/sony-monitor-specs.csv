@@ -1,0 +1,9 @@
+model,family,display,size,resolution,formats,hd,rgb_component,sd_sdi,hd_sdi_3g,option_slots,weight,era,units,profile_url
+PVM-2950Q,PVM · CRT,Super Trinitron CRT,"29"" (27"" viewable)",600 TVL,NTSC / PAL / SECAM,No,RGB (BNC),—,—,None,115 lb,1991–1996,1,https://www.orlandu.com/pvm-2950q.html
+PVM-20L5,PVM · CRT,HR Trinitron CRT,"20"" (19"" viewable)",800 TVL,"240p–1080i, 720p",Yes,"RGB / component, loop-through",Optional card,Optional card,1 (BKM-129X fitted),≈73 lb,2002–2007,1,https://www.orlandu.com/pvm-20l5.html
+BVM-20E1U,BVM · CRT,HR Trinitron CRT (E-grade tube),"20"" (19"" viewable)",1000 TVL,"240p, 480i, 576i",No,RGB / component (fixed) + slots,Optional card,—,4 + fixed input,≈85 lb,1995–2002,1,https://www.orlandu.com/bvm-20e1u.html
+BVM-A14F5U,BVM · CRT,HR Trinitron CRT,"14"" (13"" viewable)",800 TVL,"240p–1080i, 720p, 24PsF",Yes,Via BKM-68X,Via BKM-61D,Via BKM-62HS,3,≈48 lb,2003–2007,1,https://www.orlandu.com/bvm-a14f5u.html
+LMD-940W,LMD · LCD,TFT LCD (super-wide aperture),"9"" wide",800×480 WVGA,SD + HD to 1080p,Yes,—,Standard,3G-SDI + HDMI,None,≈4.4 lb,2011–,1,https://www.orlandu.com/lmd-wall.html
+LMD-9020,LMD · LCD,TFT LCD,"8.4""",640×480 VGA,SD,No,Component + RGB,—,—,None,≈6.6 lb,2005–2011,1,https://www.orlandu.com/lmd-wall.html
+LMD-9030,LMD · LCD,TFT LCD,"8.4""",640×480 VGA,SD + HD (component),Yes,Component + RGB,Standard,—,None,≈6.8 lb,2005–2011,5,https://www.orlandu.com/lmd-wall.html
+LMD-9050,LMD · LCD,TFT LCD,"8.4""",1024×768 XGA,SD + HD,Yes,Component + RGB,Standard,HD-SDI,None,≈7.1 lb,2005–2011,2,https://www.orlandu.com/lmd-wall.html

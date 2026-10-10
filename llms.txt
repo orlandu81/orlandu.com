@@ -6,6 +6,12 @@
 > get restored, and monitors get calibrated the way Sony intended. Run by "orlandu81", a
 > long-standing identity on the KLOV / Museum of the Game and Arcade-Projects forums.
 
+## For agents
+
+- [Full text in one file](https://www.orlandu.com/llms-full.txt): every page as Markdown, about 74,000 words.
+- [MCP server](https://www.orlandu.com/api/mcp): read-only tools — search the site, read a page, Sony monitor specs, the PlayChoice-10 library, console video out. How to connect: https://www.orlandu.com/mcp.html
+- [Open datasets, CC BY 4.0](https://www.orlandu.com/mcp.html#the-datasets): sony-monitor-specs, playchoice-10-library, console-video-out as JSON and CSV under https://www.orlandu.com/data/
+
 ## The collection
 
 - [Coin-Op Games](https://www.orlandu.com/games.html): arcade cabinets, the pinball row, and the game room.

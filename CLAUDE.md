@@ -14,15 +14,18 @@ No build step. Plain HTML/CSS/JS served from the repo root.
 
 ## Deploying — read this first
 
-### Before every push, run these four, in this order (2026-09-27)
+### Before every push, run these, in this order (2026-09-27; list grown since)
 
 ```
 python3 tools/build-timeline.py      # only if a timeline thumb/year changed; it rewrites timeline.html
+python3 tools/build-llms-full.py     # llms-full.txt + data/pages.json (what the MCP server reads); also refreshes the word count on mcp.html/llms.txt
 python3 tools/build-search-index.py  # assets/search-index.js is generated
+python3 tools/build-datasets.py      # data/*.json|csv from the fleet table, the PC-10 wall, the console table; data/search-index.json (after the index)
 python3 tools/stamp-assets.py        # ?v=<hash> on every style.css / site.js / gallery-data.js reference
 python3 tools/update-lastmod.py      # sitemap <lastmod> = the day each page's <main> content last changed
 python3 tools/build-static-footer.py # only if the footer block or NAV in site.js changed; re-renders the static footer copy
 ```
+
 **The footer is pre-rendered into every page's `<footer class="site">` shell (2026-10-09)** so crawlers
 that don't run JavaScript (Bing's secondary crawl, GPTBot/ClaudeBot/PerplexityBot) see the full
 internal-link set in raw HTML. site.js still overwrites it at runtime with the identical string.
@@ -655,3 +658,17 @@ the WebP `<picture>` pass, the collection timeline (mockup first), the contact f
   finished** — run it with `reduced_motion='reduce'`; with that, the site has zero contrast failures. Known and
   left alone: the trinitron "← orlandu.com" pill sits outside a landmark; tesla-callback.html (noindex) has one
   low-contrast line.
+
+## The AI channel (2026-10-10)
+
+David asked for "AI-to-AI marketing" that stays organic. What exists: `llms.txt` (index), `llms-full.txt` (every page as
+Markdown, ~73k words, generated), `data/` (three CC BY 4.0 datasets as JSON+CSV, generated; each owning page carries a
+schema.org `Dataset` node and a one-line download note), `api/mcp.js` (a read-only MCP server, Streamable HTTP,
+stateless, no dependencies — six tools over `data/pages.json`, `data/search-index.json` and the datasets; test it with
+`node` and mock req/res, see the 10-10 session notes) and `mcp.html` (the human page: what it is, how to connect it, the
+datasets, the rules; footer "For AI agents", home Latest card, llms.txt "For agents" block, sitemap). `vercel.json`
+serves `/data/*` and the llms files with CORS. The datasets are CC BY; the prose and photos stay © — keep that line
+wherever a dataset is mentioned. The BKM card reference is NOT in the server until David has corrected the draft
+(Project doc `claude/bkm-card-reference-draft.md`). David also approved a Wikidata item for the AMS-100 only, citing the
+monograph — not yet created; it needs his Wikidata login in the browser pane. No prompt-injection text for assistants,
+ever — that is the kind of "AI marketing" that gets a site demoted.
