@@ -1,34 +1,23 @@
 # orlandu.com — Orlandu's Arcade
 
-Static site for Orlandu's Arcade, hosted on GitHub Pages with the custom domain
-`www.orlandu.com` (see `CNAME`). Maintained by Claude on David's behalf.
+**Live site: https://www.orlandu.com**
 
-## Structure
+Orlandu's Arcade is a private arcade and working collection in Orange County, California:
+arcade cabinets, pinball machines, RGB-modded retro consoles, and a fleet of Sony
+professional broadcast monitors (PVM, BVM, LMD), all documented machine by machine —
+profiles, work logs, buying guides, a glossary, and the Sony AMS-100 monograph.
 
-- `index.html` — home (hero, section cards, "latest" feed)
-- `games.html` — arcade cabinets, pinball, Nintendo signage, console library
-- `monitors.html` — Sony pro monitor fleet roster + link to the magazine
-- `gallery.html` — photo/video wall, driven by `assets/gallery-data.js`
-- `projects.html` — bench queue / planned / completed
-- `forsale.html` — current eBay listings
-- `wanted.html` — the hunt list
-- `about.html` — story + contact links
-- `trinitron-fleet-vol1.html` — the self-contained Trinitron Fleet magazine
-- `404.html` — game over screen
-- `assets/` — `style.css` (house style), logos, favicons, `gallery-data.js`
-- `media/` — gallery photos/videos, organized as `media/YYYY/filename`
+## How it's built
 
-## Maintenance notes (for Claude)
+- Plain HTML, CSS and JavaScript — no build step, no framework. Served from the repo root.
+- Hosted on **Vercel**, which auto-deploys `main`. `vercel.json` holds the headers and redirects.
+- Shared header, footer, nav, site search and lightbox come from `assets/site.js`;
+  the house style is `assets/style.css`.
+- `tools/` holds the pre-push generators (search index, asset stamps, sitemap lastmod,
+  timeline, glossary data). `CLAUDE.md` is the maintainer's working notes.
+- `sitemap.xml`, `robots.txt` and `llms.txt` describe the site to crawlers.
 
-- **Adding media David sends:** compress images to ~1600px wide JPEG (quality ~82),
-  drop into `media/YYYY/`, add an entry at the TOP of the `GALLERY` array in
-  `assets/gallery-data.js` with a title/caption/category, and update the
-  "Latest from the arcade" cards on `index.html` if noteworthy. Videos: keep under
-  ~90MB (GitHub hard limit 100MB); H.264 MP4; consider a poster frame.
-- **Placeholders:** links marked `data-placeholder` (eBay store, eBay listing,
-  Instagram, KLOV profile) still need real URLs from David.
-- **Style:** colors/fonts are CSS variables at the top of `assets/style.css`.
-  Fire gradient + cyan = from the logo. Keep the Neon Grid look consistent with
-  the Trinitron Fleet magazine.
-- **Facts:** collection details come from David; confirm before adding claims.
-- Deploy = push to `main`; Pages serves from the repo root (`.nojekyll` present).
+## Rights
+
+Photography © Orlandu's Arcade. Game logos and characters are the property of their
+respective owners. Reuse of photos: see https://www.orlandu.com/about.html#photo-use

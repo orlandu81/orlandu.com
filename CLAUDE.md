@@ -21,12 +21,22 @@ python3 tools/build-timeline.py      # only if a timeline thumb/year changed; it
 python3 tools/build-search-index.py  # assets/search-index.js is generated
 python3 tools/stamp-assets.py        # ?v=<hash> on every style.css / site.js / gallery-data.js reference
 python3 tools/update-lastmod.py      # sitemap <lastmod> = the day each page's <main> content last changed
+python3 tools/build-static-footer.py # only if the footer block or NAV in site.js changed; re-renders the static footer copy
 ```
+**The footer is pre-rendered into every page's `<footer class="site">` shell (2026-10-09)** so crawlers
+that don't run JavaScript (Bing's secondary crawl, GPTBot/ClaudeBot/PerplexityBot) see the full
+internal-link set in raw HTML. site.js still overwrites it at runtime with the identical string.
+Don't hand-edit the static copy — change site.js and run the tool; it asserts the two match.
 `stamp-assets.py` exists because `assets/*.css|js` are served stale-while-revalidate for a week:
 without it a returning visitor gets new HTML with an old stylesheet or script. Any generator that
 writes a page (the timeline tool, the magazine `build_page.py` scripts) emits bare references, so
 stamp AFTER generating. `update-lastmod.py` needs full history (`git fetch --unshallow`) — run it
 in a full clone, not the depth-20 deploy clone. It ignores head-only edits and re-stamps on purpose.
+
+**Titles (2026-10-09):** `<title>` front-loads the searchable term and spells out what the page
+holds — "Sony BVM-20E1U: Specs, BKM Cards & Work Log — Orlandu's Arcade", "Nintendo 64 RGB Mod: Signal
+Path & Work Log — …" — at 58–65 characters. `og:title` stays the short form. The site search shows
+the H1, not the title, so a long title costs nothing there. A new profile page follows the same shape.
 
 **Fonts:** `style.css` defines metric-matched `"… Fallback"` faces (Arial/Liberation/Roboto scaled
 with `size-adjust` + ascent/descent overrides) second in each font stack, so text doesn't reflow
