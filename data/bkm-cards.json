@@ -1,0 +1,281 @@
+{
+ "dataset": "Sony BKM option cards — model, function, compatible monitors",
+ "description": "Every Sony BKM option card documented for the CRT-era BVM-D, BVM-E/F/G, BVM-A, PVM-L5 and PVM-L2 monitors, plus the LCD-era boards and the controllers: Sony's name for the card, what it does, which chassis it fits, and the Sony document each row rests on.",
+ "source": "https://www.orlandu.com/bkm-cards.html",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "credit": "Orlandu's Arcade (https://www.orlandu.com)",
+ "rows": [
+  {
+   "model": "BKM-20D",
+   "family": "BVM-E/F/G and 20–32-inch BVM-D",
+   "sony_name": "SDI 4:2:2 Decoder Adaptor",
+   "function": "Three serial-digital inputs with active loop-through plus three analog inputs; decodes 4:2:2 component SDI (525/625). Composite on its analog BNCs is decoded only if a decoder card (21D, 24N, 25P, 26M or 27T) sits in another slot.",
+   "fits": "BVM-E, F and G; BVM-D20F1, D24E1W, D32E1W",
+   "sources": "Sony, BKM-20D/21D/22X/24N/25P/26M/27T/28X Installation Manual (BVM D, E, F and G series); Sony, BVM-D Series brochure"
+  },
+  {
+   "model": "BKM-21D",
+   "family": "BVM-E/F/G and 20–32-inch BVM-D",
+   "sony_name": "SDI Multi Decoder Adaptor",
+   "function": "Same input set; decodes 4:2:2 component SDI, 4fsc composite SDI (NTSC and PAL) and analog composite NTSC/PAL. Needs monitor software 1.40 or later in an E-series chassis, 1.10 in a G-series, 1.20 in a D32E1W.",
+   "fits": "BVM-20E1/14E1/14E5, 20F1/14F1/14F5, 20G1/14G1/14G5, D32E1W, D24E1W, D20F1",
+   "sources": "Sony, BKM-20D/21D/22X/24N/25P/26M/27T/28X Installation Manual (BVM D, E, F and G series); Sony, BVM-D Series brochure"
+  },
+  {
+   "model": "BKM-22X",
+   "family": "BVM-E/F/G and 20–32-inch BVM-D",
+   "sony_name": "SDI Input Expansion Adaptor",
+   "function": "Three SDI inputs with active loop-through plus three analog inputs; no decoder of its own, so it needs a 20D or 21D in another slot. Only one 22X per decoder card.",
+   "fits": "Same family",
+   "sources": "Sony, BKM-20D/21D/22X/24N/25P/26M/27T/28X Installation Manual (BVM D, E, F and G series); Sony, BVM-D Series brochure"
+  },
+  {
+   "model": "BKM-24N",
+   "family": "BVM-E/F/G and 20–32-inch BVM-D",
+   "sony_name": "NTSC Decoder Adaptor",
+   "function": "Six analog BNCs, high-impedance with loop-through; decodes composite NTSC and Y/C (S-Video) NTSC.",
+   "fits": "Same family",
+   "sources": "Sony, BKM-20D/21D/22X/24N/25P/26M/27T/28X Installation Manual (BVM D, E, F and G series); Sony, BVM-D Series brochure"
+  },
+  {
+   "model": "BKM-25P",
+   "family": "BVM-E/F/G and 20–32-inch BVM-D",
+   "sony_name": "PAL Decoder Adaptor",
+   "function": "Same hardware; composite PAL and Y/C PAL.",
+   "fits": "Same family",
+   "sources": "Sony, BKM-20D/21D/22X/24N/25P/26M/27T/28X Installation Manual (BVM D, E, F and G series); Sony, BVM-D Series brochure"
+  },
+  {
+   "model": "BKM-26M",
+   "family": "BVM-E/F/G and 20–32-inch BVM-D",
+   "sony_name": "PAL-M Decoder Adaptor",
+   "function": "Same hardware; composite PAL-M and Y/C PAL-M (the Brazilian standard).",
+   "fits": "Same family",
+   "sources": "Sony, BKM-20D/21D/22X/24N/25P/26M/27T/28X Installation Manual (BVM D, E, F and G series); Sony, BVM-D Series brochure"
+  },
+  {
+   "model": "BKM-27T",
+   "family": "BVM-E/F/G and 20–32-inch BVM-D",
+   "sony_name": "Tri-Standard Decoder Adaptor",
+   "function": "Same hardware; composite NTSC, PAL and SECAM plus Y/C.",
+   "fits": "Same family",
+   "sources": "Sony, BKM-20D/21D/22X/24N/25P/26M/27T/28X Installation Manual (BVM D, E, F and G series); Sony, BVM-D Series brochure"
+  },
+  {
+   "model": "BKM-28X",
+   "family": "BVM-E/F/G and 20–32-inch BVM-D",
+   "sony_name": "Analog Input Expansion Adaptor",
+   "function": "Six analog BNCs with loop-through; adds inputs only, no decoder.",
+   "fits": "Same family",
+   "sources": "Sony, BKM-20D/21D/22X/24N/25P/26M/27T/28X Installation Manual (BVM D, E, F and G series); Sony, BVM-D Series brochure"
+  },
+  {
+   "model": "BKM-41HD",
+   "family": "BVM-E/F/G and 20–32-inch BVM-D",
+   "sony_name": "HD SDI Input Adaptor",
+   "function": "One HD serial-digital input.",
+   "fits": "BVM-D32E1W, D24E1W, D20F1 per Sony; an E/F fit is not documented",
+   "sources": "Sony, BVM-D Series brochure"
+  },
+  {
+   "model": "BKM-42HD",
+   "family": "BVM-E/F/G and 20–32-inch BVM-D",
+   "sony_name": "HD SDI Input Adaptor",
+   "function": "Two HD serial-digital inputs.",
+   "fits": "BVM-D32E1W, D24E1W, D20F1 per Sony; an E/F fit is not documented",
+   "sources": "Sony, BVM-D Series brochure"
+  },
+  {
+   "model": "BKM-48X",
+   "family": "BVM-E/F/G and 20–32-inch BVM-D",
+   "sony_name": "HD Analog Input Expansion Adaptor",
+   "function": "Six analog inputs for HD analog signals.",
+   "fits": "BVM-D32E1W, D24E1W, D20F1 per Sony; ConsoleMods lists it for the 20E1U without a source",
+   "sources": "Sony, BVM-D Series brochure; ConsoleMods wiki, BVM-20E1U"
+  },
+  {
+   "model": "BKM-120D",
+   "family": "9/14-inch BVM-D, PVM-L5, PVM-L2",
+   "sony_name": "SDI 4:2:2 Decoder Adaptor (L5 brochure); SDI 4:2:2 Input Adaptor (D and L2 brochures)",
+   "function": "Two D-1 serial-digital inputs with two active loop-through outputs; embedded audio not supported.",
+   "fits": "BVM-D14H1/D14H5/D9H1/D9H5; PVM-20L5/14L5; PVM-20L2/14L2/9L2",
+   "sources": "Sony, BVM-D Series brochure; Sony, PVM-20L5 / PVM-14L5 brochure; Sony, PVM-L2 Series brochure (2003)"
+  },
+  {
+   "model": "BKM-127W",
+   "family": "9/14-inch BVM-D, PVM-L5, PVM-L2",
+   "sony_name": "NTSC/PAL Input Adaptor",
+   "function": "Two analog composite BNCs with loop-through and automatic 75 Ω termination, a Y/C input, and a digital three-line comb filter.",
+   "fits": "BVM-D14/D9 per Sony; not listed in the L5 or L2 brochures",
+   "sources": "Sony, BVM-D Series brochure"
+  },
+  {
+   "model": "BKM-129X",
+   "family": "9/14-inch BVM-D, PVM-L5, PVM-L2",
+   "sony_name": "Analog Component Input Adaptor",
+   "function": "One analog component input (Y/R-Y/B-Y or RGB) with loop-through, plus external-sync loop-through. The card most collectors want: it is the RGB input for a 20L5.",
+   "fits": "BVM-D14/D9 (supplied as standard); PVM-20L5/14L5; PVM-20L2/14L2/9L2 (the 9L2 needs it for any component input)",
+   "sources": "Sony, BVM-D Series brochure; Sony, PVM-20L5 / PVM-14L5 brochure; Sony, PVM-L2 Series brochure (2003)"
+  },
+  {
+   "model": "BKM-142HD",
+   "family": "9/14-inch BVM-D, PVM-L5, PVM-L2",
+   "sony_name": "HD SDI Input Adaptor",
+   "function": "Two HD-SDI inputs and one monitor output; 1080/24PsF, 1080/50i, 1035/60i, 1080/60i, 720/60p. HD only — it does not scale SD.",
+   "fits": "BVM-D14/D9; PVM-20L5/14L5",
+   "sources": "Sony, BVM-D Series brochure; Sony, PVM-20L5 / PVM-14L5 brochure; shmups.system11.org, “PVM Addon Cards, are they universal?” (2023)"
+  },
+  {
+   "model": "BKM-150CP",
+   "family": "9/14-inch BVM-D, PVM-L5, PVM-L2",
+   "sony_name": "SDTI-CP/SDI Input Adaptor (L2); SDI with Audio Decoder Adaptor (L5)",
+   "function": "Two SDTI-CP/SD-SDI inputs with two loop-through outputs; MPEG-2 4:2:2P@ML decode; two analog audio outputs.",
+   "fits": "PVM-20L5/14L5; PVM-20L2/14L2/9L2",
+   "sources": "Sony, PVM-20L5 / PVM-14L5 brochure; Sony, PVM-L2 Series brochure (2003)"
+  },
+  {
+   "model": "BKM-155DV",
+   "family": "9/14-inch BVM-D, PVM-L5, PVM-L2",
+   "sony_name": "DV Input Adaptor (L2); IEEE 1394 i.LINK Input Adaptor (L5)",
+   "function": "Two six-pin DV connectors in and out; two analog audio outputs.",
+   "fits": "PVM-L5; PVM-L2",
+   "sources": "Sony, PVM-20L5 / PVM-14L5 brochure; Sony, PVM-L2 Series brochure (2003)"
+  },
+  {
+   "model": "BKM-126M",
+   "family": "9/14-inch BVM-D, PVM-L5, PVM-L2",
+   "sony_name": "PAL-M Input Adaptor",
+   "function": "Two analog composite PAL-M inputs with two loop-through outputs; Brazilian market.",
+   "fits": "PVM-L2 per Sony; an L5 or D fit is not documented",
+   "sources": "Sony, PVM-L2 Series brochure (2003)"
+  },
+  {
+   "model": "BKM-61D",
+   "family": "BVM-A",
+   "sony_name": "SDI/Analog Multi Input Adaptor",
+   "function": "SD-SDI plus analog composite, Y/C (NTSC, PAL, PAL-M), analog component (Y/R-Y/B-Y or GBR) and SD digital component/composite (D1/D2).",
+   "fits": "All four BVM-A models",
+   "sources": "Sony, BVM-A Series brochure (SONY51450); Sony Electronics bulletins 05-0584 and 05-0585, November 15, 2005"
+  },
+  {
+   "model": "BKM-62HS",
+   "family": "BVM-A",
+   "sony_name": "HD SDI/SDI Input Adaptor",
+   "function": "HD-SDI and SD-SDI, auto-detected; dual-link 4:4:4 (SMPTE 372M) in GBR or Y/PB/PR.",
+   "fits": "All four BVM-A models",
+   "sources": "Sony, BVM-A Series brochure (SONY51450); Sony Electronics bulletins 05-0584 and 05-0585, November 15, 2005"
+  },
+  {
+   "model": "BKM-68X",
+   "family": "BVM-A",
+   "sony_name": "Analog Component Input Adaptor",
+   "function": "Analog component, SD and HD, as Y/PB/PR or GBR; one input and one loop-through output. The console-RGB card for a BVM-A; a modern clone of it exists and is what the A14F5U here runs.",
+   "fits": "All four BVM-A models",
+   "sources": "Sony, BVM-A Series brochure (SONY51450); Sony Electronics bulletins 05-0584 and 05-0585, November 15, 2005; ConsoleMods wiki, BKM-68X and BKM-10R"
+  },
+  {
+   "model": "BKM-220D",
+   "family": "LCD/OLED era",
+   "sony_name": "SD-SDI 4:2:2 Input Adaptor",
+   "function": "Two SD-SDI BNCs.",
+   "fits": "LMD-51 series per Sony",
+   "sources": "Sony, Professional Monitor Line-up — Optional Accessories"
+  },
+  {
+   "model": "BKM-227W",
+   "family": "LCD/OLED era",
+   "sony_name": "NTSC/PAL Input Adaptor",
+   "function": "One composite BNC and one Y/C mini-DIN.",
+   "fits": "LMD-51 series per Sony",
+   "sources": "Sony, Professional Monitor Line-up — Optional Accessories"
+  },
+  {
+   "model": "BKM-229X",
+   "family": "LCD/OLED era",
+   "sony_name": "Analog Component Adaptor",
+   "function": "Three RGB/component BNCs plus one external-sync BNC.",
+   "fits": "LMD-51 series per Sony",
+   "sources": "Sony, Professional Monitor Line-up — Optional Accessories"
+  },
+  {
+   "model": "BKM-243HS",
+   "family": "LCD/OLED era",
+   "sony_name": "HD/SD-SDI Input Adaptor",
+   "function": "Two HD/SD-SDI BNCs. Does not fit a CRT PVM.",
+   "fits": "LMD-51 series; the later OLED and LCD BVMs and LMDs",
+   "sources": "Sony, Professional Monitor Line-up — Optional Accessories; Sony Professional, BKM-243HS product page; shmups.system11.org, “PVM Addon Cards, are they universal?” (2023)"
+  },
+  {
+   "model": "BKM-244CC",
+   "family": "LCD/OLED era",
+   "sony_name": "HD/SD-SDI Closed Caption Adaptor",
+   "function": "Two HD/SD-SDI BNCs with EIA-708 caption decoding.",
+   "fits": "LMD-51 series per Sony",
+   "sources": "Sony, Professional Monitor Line-up — Optional Accessories"
+  },
+  {
+   "model": "BKM-250TG",
+   "family": "LCD/OLED era",
+   "sony_name": "3G/HD/SD-SDI Input Adaptor",
+   "function": "3G-SDI, single-link 4:4:4 RGB, 1080/60p, with loop-through.",
+   "fits": "LMD-51 series per Sony; dealers list it for BVM-L and PVM-L",
+   "sources": "Sony, Professional Monitor Line-up — Optional Accessories; Expandore (Sony dealer), LMD accessories"
+  },
+  {
+   "model": "BKM-341HS",
+   "family": "LCD/OLED era",
+   "sony_name": "HD/SD-SDI Input Adaptor",
+   "function": "One HD/SD-SDI BNC.",
+   "fits": "LMD-30 and LMD-10 series per Sony",
+   "sources": "Sony, Professional Monitor Line-up — Optional Accessories"
+  },
+  {
+   "model": "BKM-10R",
+   "family": "Controllers and accessories",
+   "sony_name": "Monitor control unit",
+   "function": "Rack-width remote; RS-422 over a DE-9 cable, powered by the monitor; controls one monitor or a daisy chain. The one on the BVM-20E1U here.",
+   "fits": "BVM-E/F and BVM-D; not BVM-A",
+   "sources": "ConsoleMods wiki, BVM-20E1U; ConsoleMods wiki, BKM-68X and BKM-10R; crtdatabase.com, Sony BKM controllers"
+  },
+  {
+   "model": "BKM-11R",
+   "family": "Controllers and accessories",
+   "sony_name": "Monitor control unit",
+   "function": "The small handheld controller that plugs into the monitor's front.",
+   "fits": "BVM-D and earlier",
+   "sources": "ConsoleMods wiki, BVM-20E1U; crtdatabase.com, Sony BKM controllers"
+  },
+  {
+   "model": "BKM-15R",
+   "family": "Controllers and accessories",
+   "sony_name": "Monitor control unit",
+   "function": "The BVM-A generation's controller.",
+   "fits": "BVM-A",
+   "sources": "Sony Electronics bulletins 05-0584 and 05-0585, November 15, 2005"
+  },
+  {
+   "model": "BKM-14L",
+   "family": "Controllers and accessories",
+   "sony_name": "Auto set-up probe",
+   "function": "Screen-mounted probe for the BVM-A's automatic white-balance and alignment routine.",
+   "fits": "BVM-A",
+   "sources": "Sony Electronics bulletins 05-0584 and 05-0585, November 15, 2005"
+  },
+  {
+   "model": "BKM-35H / 36H",
+   "family": "Controllers and accessories",
+   "sony_name": "Control-unit attachment kits",
+   "function": "Mount a control unit to the monitor.",
+   "fits": "BVM-A",
+   "sources": "Sony Electronics bulletins 05-0584 and 05-0585, November 15, 2005"
+  },
+  {
+   "model": "BKM-30E14 / 30E20",
+   "family": "Controllers and accessories",
+   "sony_name": "Rack-mount kits",
+   "function": "Rack rails for the 14-inch and 20-inch BVM-A.",
+   "fits": "BVM-A",
+   "sources": "Sony Electronics bulletins 05-0584 and 05-0585, November 15, 2005"
+  }
+ ]
+}

@@ -147,6 +147,7 @@
             '<a href="connect-console-to-pvm.html">Console to PVM, cable by cable</a>' +
             '<a href="vs-smb.html">VS. Super Mario Bros.</a>' +
             '<a href="pvm-vs-bvm.html">PVM vs. BVM</a>' +
+            '<a href="bkm-cards.html">BKM card reference</a>' +
             '<a href="red-tent.html">The Red Tent</a>' +
             '<a href="mini-cute.html">The Mini Cute</a>' +
             '<a href="orlandu-100.html">The Orlandu 100</a>' +

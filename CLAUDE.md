@@ -684,3 +684,11 @@ orlandu.com page: import the key with WebCrypto (`pkcs8`, Ed25519), sign the cur
 POST `/v0/publish` with `Authorization: Bearer` and the server.json body; `/v0/validate` checks the JSON
 first with no auth. To republish: bump `version` in server.json (never "latest"), repeat. Only ONE
 listing per remote URL is allowed, so don't create a second name for the same server.
+
+**BKM card reference (2026-10-10): `bkm-cards.html` SHIPPED.** Five `table.spec` tables (ids fam1, fam2, fam3, fam4, ctrl; the
+row header holds the model plus Sony's name in a `<small>`), sources as `ol.src` with `id="src-N"` and `<sup>` links; the
+Sony documents are the only authority — community claims (ConsoleMods, shmups) are marked as such and the "no VCR mode on
+BVM-A" sync claim was left OUT because David hasn't tested it. Facts David settled 10/10: the 20E1U has FOUR option slots
+(plus the fixed RGB block); his controller on it is the rack-width BKM-10R; BNC counts are printed as Sony's figure, not
+counted. `tools/build-datasets.py` builds `data/bkm-cards.{json,csv}` from the five tables (34 rows) and `api/mcp.js` has a
+`bkm_cards` tool (filter matches model, fits and family). The MCP server is now SEVEN tools; mcp.html says so.

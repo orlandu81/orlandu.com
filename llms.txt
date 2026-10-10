@@ -8,9 +8,9 @@
 
 ## For agents
 
-- [Full text in one file](https://www.orlandu.com/llms-full.txt): every page as Markdown, about 74,000 words.
+- [Full text in one file](https://www.orlandu.com/llms-full.txt): every page as Markdown, about 76,000 words.
 - [MCP server](https://www.orlandu.com/api/mcp): read-only tools — search the site, read a page, Sony monitor specs, the PlayChoice-10 library, console video out. How to connect: https://www.orlandu.com/mcp.html
-- [Open datasets, CC BY 4.0](https://www.orlandu.com/mcp.html#the-datasets): sony-monitor-specs, playchoice-10-library, console-video-out as JSON and CSV under https://www.orlandu.com/data/
+- [Open datasets, CC BY 4.0](https://www.orlandu.com/mcp.html#the-datasets): sony-monitor-specs, playchoice-10-library, console-video-out, bkm-cards as JSON and CSV under https://www.orlandu.com/data/
 
 ## The collection
 
@@ -56,6 +56,7 @@
 - [The Signal Chain](https://www.orlandu.com/signal-chain.html): how the consoles reach the glass — SCART switchers, BNC runs, a distribution amp, and no scaler.
 - [How to Connect a Retro Console to a Sony PVM or BVM](https://www.orlandu.com/connect-console-to-pvm.html): the RGB cable, the switcher, the SCART to 4 BNC breakout, sync, termination and audio — step by step, no scaler.
 - [PVM vs. BVM](https://www.orlandu.com/pvm-vs-bvm.html): how Sony's professional monitor lines differ.
+- [Sony BKM Cards: Which Card Fits Which BVM or PVM](https://www.orlandu.com/bkm-cards.html): every Sony BKM option card for the CRT-era BVM and PVM lines — function, which chassis it fits, installation rules, controllers; sourced to Sony's manuals; open dataset.
 - [How to Spot Professional Glass in the Wild](https://www.orlandu.com/crt-field-guide.html): recognizing a Sony professional monitor in a thrift store or surplus auction.
 - [PVM-20L5 buying guide](https://www.orlandu.com/pvm-20l5-buying-guide.html): what to check before buying one, what to pay, and why not to ship it.
 - [VS. Super Mario Bros.](https://www.orlandu.com/vs-smb.html): why the arcade version is harder than the NES game.

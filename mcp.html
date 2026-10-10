@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Use orlandu.com From Your AI Assistant — Orlandu's Arcade</title>
-<meta name="description" content="An MCP server, llms.txt, a full-text file and three open datasets let Claude, ChatGPT, Cursor or any agent search the arcade's site, read its pages and query its Sony monitor specs.">
+<meta name="description" content="An MCP server, llms.txt, a full-text file and four open datasets let Claude, ChatGPT, Cursor or any agent search the arcade's site, read its pages and query its Sony monitor specs.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
@@ -14,21 +14,21 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Orlandu's Arcade">
 <meta property="og:title" content="Use orlandu.com From Your AI Assistant — Orlandu's Arcade">
-<meta property="og:description" content="An MCP server, llms.txt, a full-text file and three open datasets let Claude, ChatGPT, Cursor or any agent search the arcade's site, read its pages and query its Sony monitor specs.">
+<meta property="og:description" content="An MCP server, llms.txt, a full-text file and four open datasets let Claude, ChatGPT, Cursor or any agent search the arcade's site, read its pages and query its Sony monitor specs.">
 <meta property="og:url" content="https://www.orlandu.com/mcp.html">
 <meta property="og:image" content="https://www.orlandu.com/media/og/og-mcp.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Use orlandu.com From Your AI Assistant — Orlandu's Arcade">
-<meta name="twitter:description" content="An MCP server, llms.txt, a full-text file and three open datasets let Claude, ChatGPT, Cursor or any agent search the arcade's site, read its pages and query its Sony monitor specs.">
+<meta name="twitter:description" content="An MCP server, llms.txt, a full-text file and four open datasets let Claude, ChatGPT, Cursor or any agent search the arcade's site, read its pages and query its Sony monitor specs.">
 <meta name="twitter:image" content="https://www.orlandu.com/media/og/og-mcp.jpg">
 <link rel="canonical" href="https://www.orlandu.com/mcp.html">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms-full.txt" title="Full text of this site for AI assistants">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms.txt" title="Site index for AI assistants">
 <link rel="stylesheet" href="assets/style.css?v=1a05faa8">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
-<script src="assets/site.js?v=2ede5104" defer></script>
+<script src="assets/site.js?v=6d71ebfc" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -95,7 +95,7 @@
    "@id": "https://www.orlandu.com/mcp.html#webpage",
    "url": "https://www.orlandu.com/mcp.html",
    "name": "Use orlandu.com From Your AI Assistant — Orlandu's Arcade",
-   "description": "An MCP server, llms.txt, a full-text file and three open datasets let Claude, ChatGPT, Cursor or any agent search the arcade's site, read its pages and query its Sony monitor specs.",
+   "description": "An MCP server, llms.txt, a full-text file and four open datasets let Claude, ChatGPT, Cursor or any agent search the arcade's site, read its pages and query its Sony monitor specs.",
    "isPartOf": {
     "@id": "https://www.orlandu.com/#website"
    },
@@ -142,7 +142,7 @@
    "@id": "https://www.orlandu.com/mcp.html#api",
    "name": "Orlandu's Arcade MCP server",
    "url": "https://www.orlandu.com/api/mcp",
-   "description": "A read-only Model Context Protocol server (Streamable HTTP, no authentication) with six tools: full-text search of orlandu.com, read a page as Markdown, list pages, Sony monitor specifications, the PlayChoice-10 library, and console video-output paths.",
+   "description": "A read-only Model Context Protocol server (Streamable HTTP, no authentication) with seven tools: full-text search of orlandu.com, read a page as Markdown, list pages, Sony monitor specifications, the PlayChoice-10 library, Sony BKM option cards, and console video-output paths.",
    "documentation": "https://www.orlandu.com/mcp.html",
    "termsOfService": "https://www.orlandu.com/mcp.html#the-rules",
    "provider": {
@@ -172,20 +172,21 @@
     <h2 class="sec">Three ways in</h2>
     <ul>
       <li><strong>llms.txt</strong> — a one-page index of the site for agents: <a href="llms.txt">https://www.orlandu.com/llms.txt</a></li>
-      <li><strong>llms-full.txt</strong> — the whole site's text in one Markdown file, about 74,000 words, for an agent that wants to read everything at once: <a href="llms-full.txt">https://www.orlandu.com/llms-full.txt</a></li>
+      <li><strong>llms-full.txt</strong> — the whole site's text in one Markdown file, about 76,000 words, for an agent that wants to read everything at once: <a href="llms-full.txt">https://www.orlandu.com/llms-full.txt</a></li>
       <li><strong>The MCP server</strong> — tools an agent can call: <code>https://www.orlandu.com/api/mcp</code></li>
     </ul>
   </section>
 
   <section>
     <h2 class="sec">The MCP server</h2>
-    <p>Endpoint <code>https://www.orlandu.com/api/mcp</code> — Streamable HTTP transport, read-only, no authentication. Six tools:</p>
+    <p>Endpoint <code>https://www.orlandu.com/api/mcp</code> — Streamable HTTP transport, read-only, no authentication. Seven tools:</p>
     <ul>
       <li><code>search_orlandu</code> — full-text search over every page, card, glossary term and gallery caption</li>
       <li><code>read_orlandu_page</code> — one page as Markdown</li>
       <li><code>list_orlandu_pages</code> — every page with its description</li>
       <li><code>sony_monitor_specs</code> — the fleet spec table, filterable by model</li>
       <li><code>playchoice_10_library</code> — the fifty-two PlayChoice-10 games, each with its board photo</li>
+      <li><code>bkm_cards</code> — every Sony BKM option card and which monitor it fits</li>
       <li><code>console_video_out</code> — how each console reaches the glass</li>
     </ul>
     <p>It answers from the published pages only, and it is rebuilt with every update to the site.</p>
@@ -202,13 +203,14 @@
 
   <section>
     <h2 class="sec">The datasets</h2>
-    <p>Three tables from the site as open data, CC BY 4.0 — use them, credit Orlandu's Arcade.</p>
+    <p>Four tables from the site as open data, CC BY 4.0 — use them, credit Orlandu's Arcade.</p>
     <div class="tablewrap dsets" tabindex="0">
     <table class="spec">
       <thead><tr><th scope="col">Dataset</th><th scope="col">What's in it</th><th scope="col">Files</th></tr></thead>
       <tbody>
         <tr><th scope="row">Sony monitor specs</th><td>Eight models, thirteen columns: display, size, resolution, formats, inputs, option slots, weight, era — the <a href="monitors.html#specs">fleet table</a></td><td><a href="data/sony-monitor-specs.json">JSON</a> · <a href="data/sony-monitor-specs.csv">CSV</a></td></tr>
         <tr><th scope="row">PlayChoice-10 library</th><td>The fifty-two games Nintendo released, each with a photo of its original board — <a href="playchoice-10.html">the cart wall</a></td><td><a href="data/playchoice-10-library.json">JSON</a> · <a href="data/playchoice-10-library.csv">CSV</a></td></tr>
+        <tr><th scope="row">Sony BKM cards</th><td>Thirty-four option cards and controllers across the BVM-D, E/F/G, A and LCD-era lines: what each does, which chassis it fits, the Sony source — <a href="bkm-cards.html">the reference</a></td><td><a href="data/bkm-cards.json">JSON</a> · <a href="data/bkm-cards.csv">CSV</a></td></tr>
         <tr><th scope="row">Console video out</th><td>Nine consoles: the modification, the video output, the chain to the monitor — <a href="consoles.html#mods">the console table</a></td><td><a href="data/console-video-out.json">JSON</a> · <a href="data/console-video-out.csv">CSV</a></td></tr>
       </tbody>
     </table>
@@ -224,7 +226,7 @@
   <p style="margin-top:1.2rem"><a class="btn cy" href="about.html">About the arcade →</a> &nbsp; <a class="btn" href="glossary.html">The glossary →</a> &nbsp; <a class="btn" href="stories.html">Stories →</a></p>
 </main>
 
-<footer class="site"><div class="footwrap"><img src="assets/mascot-foot.webp" alt="Orlandu’s Arcade mascot" width="176" height="216" loading="lazy" decoding="async"><div class="links"><a href="about.html">About</a><a href="about.html#contact">Contact</a><a href="stories.html">Stories</a><a href="mailto:orlandusarcade@gmail.com">Email</a><a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a><a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a></div><nav class="explore" aria-label="Explore the site"><div><span>Pages</span><a href="games.html">Coin-Op</a><a href="monitors.html">Monitors</a><a href="consoles.html">Consoles</a><a href="playchoice-10.html">PlayChoice-10</a><a href="signage.html">Signage</a><a href="guide-shelf.html">Guides</a><a href="spinning-tops.html">Spinning Tops</a><a href="gallery.html">Gallery</a><a href="stories.html">Stories</a><a href="projects.html">Projects</a><a href="forsale.html">For Sale</a><a href="wanted.html">Wanted</a><a href="about.html">About</a><a href="glossary.html">Glossary</a><a href="timeline.html">Timeline</a><a href="about.html#faq">FAQ</a><a href="mcp.html">For AI agents</a></div><div><span>Reading</span><a href="crt-field-guide.html">Professional glass in the wild</a><a href="ams-100-monograph.html">The AMS-100 monograph</a><a href="pvm-20l5-buying-guide.html">PVM-20L5 buying guide</a><a href="ams-3-vs-ams-100.html">Ancestor and descendant</a><a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol. 1</a><a href="signal-chain.html">The signal chain</a><a href="connect-console-to-pvm.html">Console to PVM, cable by cable</a><a href="vs-smb.html">VS. Super Mario Bros.</a><a href="pvm-vs-bvm.html">PVM vs. BVM</a><a href="red-tent.html">The Red Tent</a><a href="mini-cute.html">The Mini Cute</a><a href="orlandu-100.html">The Orlandu 100</a></div></nav><div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>Photography © Orlandu’s Arcade. Game logos and characters are the property of their respective owners.</div></div></footer>
+<footer class="site"><div class="footwrap"><img src="assets/mascot-foot.webp" alt="Orlandu’s Arcade mascot" width="176" height="216" loading="lazy" decoding="async"><div class="links"><a href="about.html">About</a><a href="about.html#contact">Contact</a><a href="stories.html">Stories</a><a href="mailto:orlandusarcade@gmail.com">Email</a><a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a><a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a></div><nav class="explore" aria-label="Explore the site"><div><span>Pages</span><a href="games.html">Coin-Op</a><a href="monitors.html">Monitors</a><a href="consoles.html">Consoles</a><a href="playchoice-10.html">PlayChoice-10</a><a href="signage.html">Signage</a><a href="guide-shelf.html">Guides</a><a href="spinning-tops.html">Spinning Tops</a><a href="gallery.html">Gallery</a><a href="stories.html">Stories</a><a href="projects.html">Projects</a><a href="forsale.html">For Sale</a><a href="wanted.html">Wanted</a><a href="about.html">About</a><a href="glossary.html">Glossary</a><a href="timeline.html">Timeline</a><a href="about.html#faq">FAQ</a><a href="mcp.html">For AI agents</a></div><div><span>Reading</span><a href="crt-field-guide.html">Professional glass in the wild</a><a href="ams-100-monograph.html">The AMS-100 monograph</a><a href="pvm-20l5-buying-guide.html">PVM-20L5 buying guide</a><a href="ams-3-vs-ams-100.html">Ancestor and descendant</a><a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol. 1</a><a href="signal-chain.html">The signal chain</a><a href="connect-console-to-pvm.html">Console to PVM, cable by cable</a><a href="vs-smb.html">VS. Super Mario Bros.</a><a href="pvm-vs-bvm.html">PVM vs. BVM</a><a href="bkm-cards.html">BKM card reference</a><a href="red-tent.html">The Red Tent</a><a href="mini-cute.html">The Mini Cute</a><a href="orlandu-100.html">The Orlandu 100</a></div></nav><div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>Photography © Orlandu’s Arcade. Game logos and characters are the property of their respective owners.</div></div></footer>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 // Vercel serverless function, Node runtime, no dependencies. POST JSON-RPC 2.0 to /api/mcp.
 //
 // Lets any MCP-capable assistant or agent (Claude, ChatGPT, Cursor, Copilot, Claude Code…) use the
-// site as a tool: search it, read a page as text, and query the open datasets. Everything served
+// site as a tool: search it, read a page as text, and query the open datasets (seven tools). Everything served
 // here is already public on the site; the data files are generated before each push by
 // tools/build-llms-full.py and tools/build-datasets.py. Human instructions live at /mcp.html.
 //
@@ -15,6 +15,7 @@ const INDEX = require("../data/search-index.json");
 const MONITORS = require("../data/sony-monitor-specs.json");
 const PC10 = require("../data/playchoice-10-library.json");
 const CONSOLES = require("../data/console-video-out.json");
+const BKM = require("../data/bkm-cards.json");
 
 const SITE = "https://www.orlandu.com/";
 const SERVER = { name: "orlandu-arcade", title: "Orlandu's Arcade", version: "1.0.0" };
@@ -56,6 +57,12 @@ const TOOLS = [
     title: "PlayChoice-10 library",
     description: "The 52 games Nintendo released for the PlayChoice-10 arcade system, each with a photo of its original game board. Dataset CC BY 4.0.",
     inputSchema: { type: "object", properties: {} },
+  },
+  {
+    name: "bkm_cards",
+    title: "Sony BKM option cards",
+    description: "Every Sony BKM option card for the CRT-era BVM and PVM monitors: Sony's name, what it does, which chassis it fits, and the Sony source. Optional filter matched against the card model AND the Fits column, e.g. 'BKM-129X', 'PVM-20L5' or 'BVM-A'. Dataset CC BY 4.0.",
+    inputSchema: { type: "object", properties: { query: { type: "string", description: "Substring of a card model or a monitor model; omit for all" } } },
   },
   {
     name: "console_video_out",
@@ -142,6 +149,11 @@ function callTool(name, args) {
       return json({ dataset: PC10.dataset, source: PC10.source, license: PC10.license, credit: PC10.credit, count: PC10.rows.length, rows: PC10.rows });
     case "console_video_out":
       return json(rows(CONSOLES, "console", args.console));
+    case "bkm_cards": {
+      const f = norm(args.query);
+      const out = f ? BKM.rows.filter(r => norm(r.model).includes(f) || norm(r.fits).includes(f) || norm(r.family).includes(f)) : BKM.rows;
+      return json({ dataset: BKM.dataset, source: BKM.source, license: BKM.license, credit: BKM.credit, count: out.length, rows: out });
+    }
     default:
       throw rpcError(-32602, `Unknown tool: ${name}`);
   }

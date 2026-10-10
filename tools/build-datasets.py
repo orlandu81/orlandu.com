@@ -8,6 +8,7 @@ Datasets (CC BY 4.0, credit "Orlandu's Arcade"; the photos they link to stay © 
   data/sony-monitor-specs.{json,csv}     — monitors.html#specs, the fleet spec table
   data/playchoice-10-library.{json,csv}  — playchoice-10.html#carts, the 52 boards on the wall
   data/console-video-out.{json,csv}      — consoles.html#mods, how each console reaches the glass
+  data/bkm-cards.{json,csv}              — bkm-cards.html, every Sony BKM option card and what it fits
   data/search-index.json                 — assets/search-index.js as JSON (not a dataset; for the MCP server)
 The page that owns each table carries a schema.org Dataset node pointing at these files.
 """
@@ -79,6 +80,23 @@ write("console-video-out", {
     "dataset": "How each console at Orlandu's Arcade reaches a Sony professional monitor",
     "description": "For each console whose signal path the site states: the modification (if any), the video output it uses, and the chain from console to monitor.",
     "source": SITE + "consoles.html#mods", "columns": dict(zip(ckeys, head))}, crows, ckeys)
+
+# ── BKM option cards (bkm-cards.html, the five tables) ──
+src = (root / "bkm-cards.html").read_text(encoding="utf-8")
+FAM = {"fam1": "BVM-E/F/G and 20–32-inch BVM-D", "fam2": "9/14-inch BVM-D, PVM-L5, PVM-L2", "fam3": "BVM-A", "fam4": "LCD/OLED era", "ctrl": "Controllers and accessories"}
+SRC = [text(li) for li in re.findall(r'<li id="src-\d+">(.*?)</li>', src, re.S)]
+brows = []
+for tid, fam in FAM.items():
+    head, rows = table_rows(src, tid)
+    for cells in rows:
+        srcs = [SRC[int(n) - 1].replace(" — source", "") for n in re.findall(r"#src-(\d+)", cells[3])]
+        name = re.search(r"<small>(.*?)</small>", cells[0], re.S)
+        brows.append({"model": text(re.sub(r"<small>.*?</small>", "", cells[0], flags=re.S)), "family": fam, "sony_name": text(name.group(1)) if name else "", "function": text(re.sub(r"<sup>.*?</sup>", "", cells[1])), "fits": text(cells[2]), "sources": "; ".join(srcs)})
+assert len(brows) >= 30, len(brows)
+write("bkm-cards", {
+    "dataset": "Sony BKM option cards — model, function, compatible monitors",
+    "description": "Every Sony BKM option card documented for the CRT-era BVM-D, BVM-E/F/G, BVM-A, PVM-L5 and PVM-L2 monitors, plus the LCD-era boards and the controllers: Sony's name for the card, what it does, which chassis it fits, and the Sony document each row rests on.",
+    "source": SITE + "bkm-cards.html"}, brows, ["model", "family", "sony_name", "function", "fits", "sources"])
 
 # ── Search index as JSON (for api/mcp.js) ──
 js = (root / "assets/search-index.js").read_text(encoding="utf-8")

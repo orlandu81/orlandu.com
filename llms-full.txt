@@ -93,11 +93,16 @@ The geometry grid, judging a tube with no hours counter, what to pay — and why
  (https://www.orlandu.com/pvm-20l5-buying-guide.html)
 
 ## Latest from the arcade
+ New reference
+
+### Every Sony BKM card, and which monitor it fits
+
+Three physical families, not one: the 2x decoders for the BVM-E/F/G and big D-series, the 1xx cards for the small D-series and the PVM-L5/L2 slot, and the BVM-A boards. What each does, the installation rules, the controllers — sourced to Sony. The reference → (https://www.orlandu.com/bkm-cards.html)
  New
 
 ### Ask your AI assistant about the arcade
 
-An MCP server, a full-text file and three open datasets let Claude, ChatGPT, Cursor or any agent search the site, read a page and query the monitor specs — no key, no scraping. How to connect it → (https://www.orlandu.com/mcp.html)
+An MCP server, a full-text file and four open datasets let Claude, ChatGPT, Cursor or any agent search the site, read a page and query the monitor specs — no key, no scraping. How to connect it → (https://www.orlandu.com/mcp.html)
  New how-to
 
 ### Console to PVM, cable by cable
@@ -133,11 +138,6 @@ An original 1989 PlayChoice-10 topper — Rare’s jet shooter, printed for Milt
 ### The Orlandu 100
 
 A hundred favorite films ranked by head-to-head duel — no CRTs, no coin doors, just the same instinct pointed somewhere else. Read the issue → (https://www.orlandu.com/orlandu-100.html)
- Published
-
-### Spotting professional glass in the wild
-
-How to tell a Sony professional monitor from a heavy old TV at a thrift store or estate sale — and what to check before you haul it home. Read the field guide → (https://www.orlandu.com/crt-field-guide.html)
 
 ---
 
@@ -384,7 +384,7 @@ The flat-panel side of the fleet, and the confidence layer behind the tubes — 
 
 The full profile → (https://www.orlandu.com/lmd-wall.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f4)
 
-How every one of these actually gets a signal — the switchers, the SCART-to-BNC cables, and the distribution amp behind the LMD wall — is written up in The Signal Chain (https://www.orlandu.com/signal-chain.html); the vocabulary — TVL, multiscan, BKM, loop-through — is in the glossary (https://www.orlandu.com/glossary.html). Recently departed: a BVM-14F5U and the nine-inch BVM-D9H5J found new homes — the fleet consolidates so the keepers get the attention they deserve.
+How every one of these actually gets a signal — the switchers, the SCART-to-BNC cables, and the distribution amp behind the LMD wall — is written up in The Signal Chain (https://www.orlandu.com/signal-chain.html); the vocabulary — TVL, multiscan, BKM, loop-through — is in the glossary (https://www.orlandu.com/glossary.html); which BKM card fits which monitor is in the BKM card reference (https://www.orlandu.com/bkm-cards.html). Recently departed: a BVM-14F5U and the nine-inch BVM-D9H5J found new homes — the fleet consolidates so the keepers get the attention they deserve.
 
 ## The fleet, side by side
 
@@ -616,7 +616,7 @@ What has been done to it since it arrived.
 
 - **BKM-21D SDI multi decoder installed** — SDI 4:2:2 and 4fsc in and out, plus analog composite, in one of the four option slots.
 - **BKM-24N on the shelf** — The NTSC decoder for composite and Y/C, owned and ready.
-- **BKM-20D on the shelf** — The second SDI decoder, owned and ready; the hunt for the E/F-series decoder cards continues on the wanted list (https://www.orlandu.com/wanted.html).
+- **BKM-20D on the shelf** — The second SDI decoder, owned and ready; the hunt for the E/F-series decoder cards continues on the wanted list (https://www.orlandu.com/wanted.html); every card in the family is in the BKM card reference (https://www.orlandu.com/bkm-cards.html).
 
 - **Family**: **Sony BVM** — HR Trinitron CRT (E-grade tube)
 - **Era**: **1995–2002** — Native scan — the definitive large-format 240p display; razor scanline definition at 1000 TVL
@@ -4574,7 +4574,7 @@ Yes — direct RGB is the point of both. A PVM carries RGB/component BNCs on its
 
 ### What are BKM cards?
 
-Sony's plug-in input boards for BVMs, and for the single option slot on late PVMs: decoders for composite and S-Video, SDI and HD-SDI inputs, analog RGB and component. A BVM is only as useful as the cards in it, which is why the hunt for them has a standing entry on the wanted list (https://www.orlandu.com/wanted.html). (Glossary → (https://www.orlandu.com/glossary.html#bkm))
+Sony's plug-in input boards for BVMs, and for the single option slot on late PVMs: decoders for composite and S-Video, SDI and HD-SDI inputs, analog RGB and component. A BVM is only as useful as the cards in it, which is why the hunt for them has a standing entry on the wanted list (https://www.orlandu.com/wanted.html). Which card fits which monitor is its own reference page → (https://www.orlandu.com/bkm-cards.html)
 
 ### Which Sony professional monitor should a collector buy first?
 
@@ -4583,6 +4583,149 @@ From this garage, the PVM-20L5: 800 TV lines, multiscan from 240p to 1080i, one 
 Sitting on professional Sony gear you don't want to freight across the country? The arcade buys — and when the fleet consolidates, departures land on the For Sale page (https://www.orlandu.com/forsale.html). Email orlandusarcade@gmail.com.
 
 How to cite: Orlandu’s Arcade (“Orlandu81”), *PVM vs. BVM: Sony's Pro Monitors Explained*, orlandu.com, 2026, https://www.orlandu.com/pvm-vs-bvm.html
+
+---
+
+# Sony BKM Cards: Which Card Fits Which BVM or PVM
+
+URL: https://www.orlandu.com/bkm-cards.html
+
+Every Sony BKM option card for the CRT-era BVM and PVM monitors: what each card does, which chassis it fits, the installation rules and the controllers, sourced from Sony's own manuals.
+
+Reference
+
+# Sony BKM Cards: Which Card Fits Which Monitor
+
+A Sony broadcast monitor is only as useful as the option cards in it, and the cards are sold by model number with no hint of which chassis they fit. This is the table that was missing: every BKM card Sony documented for the CRT-era BVM and PVM lines, what it does, where it goes, and the installation rules — from Sony's own manuals and brochures, with the source on every row.
+
+## Three families, not one
+
+The common shorthand — “BVM-D takes the 1xx cards, BVM-E takes the 2x cards” — is half right. Sony's CRT-era cards fall into three physical families, and the split runs through the middle of the D series:
+
+- **The 2x decoders and expanders** (BKM-20D through 28X, plus 41HD, 42HD and 48X) fit the BVM-E, F and G *and* the 20-, 24- and 32-inch BVM-D (D20F1, D24E1W, D32E1W).
+- **The 1xx cards** (BKM-120D, 127W, 129X, 142HD, 150CP, 155DV, 126M) fit the 9- and 14-inch BVM-D (D9H1, D9H5, D14H1, D14H5) and the single option slot on the PVM-L5 and PVM-L2.
+- **The BVM-A boards** (BKM-61D, 62HS, 68X) fit the BVM-A only. Sony's own words: “The BVM-A Series input boards are not compatible with other earlier BVM Series monitors.”3
+
+So a D14H5U and a D20F1U, two monitors from the same brochure, take different cards. Check the family before the model number.
+
+## Family 1 — BVM-E, F, G and the 20–32" BVM-D
+
+The chassis: the D32E1W, D24E1W and D20F1 carry analog component (Y/PB/PR and GBR) in and out plus four option slots.2 The E and F series carry a fixed RGB/component input block plus four option slots — the BVM-20E1U here has four.9 Sony's installation rules for the whole family, from the manual:1 fit cards starting from the right-hand slot; install the BKM-20D or 21D last; a card or blank panel in the slot to the right of a 20D/21D can damage its shield fingers; one decoder card decodes signals arriving on any input card, because the cards share the monitor's internal bus; and only one BKM-22X may be fitted alongside a 20D/21D.
+
+| Card | What it does | Fits | Source |
+|---|---|---|---|
+| BKM-20D SDI 4:2:2 Decoder Adaptor | Three serial-digital inputs with active loop-through plus three analog inputs; decodes 4:2:2 component SDI (525/625). Composite on its analog BNCs is decoded only if a decoder card (21D, 24N, 25P, 26M or 27T) sits in another slot. | BVM-E, F and G; BVM-D20F1, D24E1W, D32E1W | 1 2 |
+| BKM-21D SDI Multi Decoder Adaptor | Same input set; decodes 4:2:2 component SDI, 4fsc composite SDI (NTSC and PAL) and analog composite NTSC/PAL. Needs monitor software 1.40 or later in an E-series chassis, 1.10 in a G-series, 1.20 in a D32E1W. | BVM-20E1/14E1/14E5, 20F1/14F1/14F5, 20G1/14G1/14G5, D32E1W, D24E1W, D20F1 | 1 2 |
+| BKM-22X SDI Input Expansion Adaptor | Three SDI inputs with active loop-through plus three analog inputs; no decoder of its own, so it needs a 20D or 21D in another slot. Only one 22X per decoder card. | Same family | 1 2 |
+| BKM-24N NTSC Decoder Adaptor | Six analog BNCs, high-impedance with loop-through; decodes composite NTSC and Y/C (S-Video) NTSC. | Same family | 1 2 |
+| BKM-25P PAL Decoder Adaptor | Same hardware; composite PAL and Y/C PAL. | Same family | 1 2 |
+| BKM-26M PAL-M Decoder Adaptor | Same hardware; composite PAL-M and Y/C PAL-M (the Brazilian standard). | Same family | 1 2 |
+| BKM-27T Tri-Standard Decoder Adaptor | Same hardware; composite NTSC, PAL and SECAM plus Y/C. | Same family | 1 2 |
+| BKM-28X Analog Input Expansion Adaptor | Six analog BNCs with loop-through; adds inputs only, no decoder. | Same family | 1 2 |
+| BKM-41HD HD SDI Input Adaptor | One HD serial-digital input. | BVM-D32E1W, D24E1W, D20F1 per Sony; an E/F fit is not documented | 2 |
+| BKM-42HD HD SDI Input Adaptor | Two HD serial-digital inputs. | BVM-D32E1W, D24E1W, D20F1 per Sony; an E/F fit is not documented | 2 |
+| BKM-48X HD Analog Input Expansion Adaptor | Six analog inputs for HD analog signals. | BVM-D32E1W, D24E1W, D20F1 per Sony; ConsoleMods lists it for the 20E1U without a source | 2 9 |
+
+“Three digital plus three analog” for the 20D, 21D and 22X is what both Sony sources print; the physical BNC count on the plate is not confirmed here.
+
+## Family 2 — 9" and 14" BVM-D, PVM-L5 and PVM-L2
+
+The chassis: the BVM-D14H1, D14H5, D9H1 and D9H5 have three slots, with the BKM-129X supplied as standard.2 The PVM-20L5 and 14L5 have one option slot behind built-in composite, Y/C and RGB/component inputs (“the Y/C input has priority over the composite input”).5 The PVM-20L2, 14L2 and 9L2 have one slot, and the 9L2 needs the BKM-129X for any component input at all.6
+
+| Card | What it does | Fits | Source |
+|---|---|---|---|
+| BKM-120D SDI 4:2:2 Decoder Adaptor (L5 brochure); SDI 4:2:2 Input Adaptor (D and L2 brochures) | Two D-1 serial-digital inputs with two active loop-through outputs; embedded audio not supported. | BVM-D14H1/D14H5/D9H1/D9H5; PVM-20L5/14L5; PVM-20L2/14L2/9L2 | 2 5 6 |
+| BKM-127W NTSC/PAL Input Adaptor | Two analog composite BNCs with loop-through and automatic 75 Ω termination, a Y/C input, and a digital three-line comb filter. | BVM-D14/D9 per Sony; not listed in the L5 or L2 brochures | 2 |
+| BKM-129X Analog Component Input Adaptor | One analog component input (Y/R-Y/B-Y or RGB) with loop-through, plus external-sync loop-through. The card most collectors want: it is the RGB input for a 20L5. | BVM-D14/D9 (supplied as standard); PVM-20L5/14L5; PVM-20L2/14L2/9L2 (the 9L2 needs it for any component input) | 2 5 6 |
+| BKM-142HD HD SDI Input Adaptor | Two HD-SDI inputs and one monitor output; 1080/24PsF, 1080/50i, 1035/60i, 1080/60i, 720/60p. HD only — it does not scale SD. | BVM-D14/D9; PVM-20L5/14L5 | 2 5 12 |
+| BKM-150CP SDTI-CP/SDI Input Adaptor (L2); SDI with Audio Decoder Adaptor (L5) | Two SDTI-CP/SD-SDI inputs with two loop-through outputs; MPEG-2 4:2:2P@ML decode; two analog audio outputs. | PVM-20L5/14L5; PVM-20L2/14L2/9L2 | 5 6 |
+| BKM-155DV DV Input Adaptor (L2); IEEE 1394 i.LINK Input Adaptor (L5) | Two six-pin DV connectors in and out; two analog audio outputs. | PVM-L5; PVM-L2 | 5 6 |
+| BKM-126M PAL-M Input Adaptor | Two analog composite PAL-M inputs with two loop-through outputs; Brazilian market. | PVM-L2 per Sony; an L5 or D fit is not documented | 6 |
+
+Sony's own brochures disagree on some front-plate names — the BKM-120D is a “Decoder Adaptor” in the L5 brochure and an “Input Adaptor” in the D and L2 brochures; the 155DV is “DV” in one and “i.LINK” in the other. Both names are given where they differ.
+
+## Family 3 — BVM-A
+
+The chassis: the BVM-A14F5U, A20F1U, A24E1WU and A32E1WU each have three input-board slots and no standard inputs; the boards install in any slot and any combination, all four models share the same boards, and none of them fit an earlier BVM.3 4 Sony's brochure and bulletins list exactly three boards — there is no BKM-63, 64 or 66.
+
+| Card | What it does | Fits | Source |
+|---|---|---|---|
+| BKM-61D SDI/Analog Multi Input Adaptor | SD-SDI plus analog composite, Y/C (NTSC, PAL, PAL-M), analog component (Y/R-Y/B-Y or GBR) and SD digital component/composite (D1/D2). | All four BVM-A models | 3 4 |
+| BKM-62HS HD SDI/SDI Input Adaptor | HD-SDI and SD-SDI, auto-detected; dual-link 4:4:4 (SMPTE 372M) in GBR or Y/PB/PR. | All four BVM-A models | 3 4 |
+| BKM-68X Analog Component Input Adaptor | Analog component, SD and HD, as Y/PB/PR or GBR; one input and one loop-through output. The console-RGB card for a BVM-A; a modern clone of it exists and is what the A14F5U here runs. | All four BVM-A models | 3 4 10 |
+
+## Family 4 — the LCD and OLED era, briefly
+
+The later boards are a different physical format again and are outside this collection's CRT focus, but they turn up in the same searches. Sony's line-up brochure prints compatibility only as “for LMD-51 series” or “for LMD-30/10 series,” so the Fits column here is as narrow as the source.7
+
+| Card | What it does | Fits | Source |
+|---|---|---|---|
+| BKM-220D SD-SDI 4:2:2 Input Adaptor | Two SD-SDI BNCs. | LMD-51 series per Sony | 7 |
+| BKM-227W NTSC/PAL Input Adaptor | One composite BNC and one Y/C mini-DIN. | LMD-51 series per Sony | 7 |
+| BKM-229X Analog Component Adaptor | Three RGB/component BNCs plus one external-sync BNC. | LMD-51 series per Sony | 7 |
+| BKM-243HS HD/SD-SDI Input Adaptor | Two HD/SD-SDI BNCs. Does not fit a CRT PVM. | LMD-51 series; the later OLED and LCD BVMs and LMDs | 7 8 12 |
+| BKM-244CC HD/SD-SDI Closed Caption Adaptor | Two HD/SD-SDI BNCs with EIA-708 caption decoding. | LMD-51 series per Sony | 7 |
+| BKM-250TG 3G/HD/SD-SDI Input Adaptor | 3G-SDI, single-link 4:4:4 RGB, 1080/60p, with loop-through. | LMD-51 series per Sony; dealers list it for BVM-L and PVM-L | 7 11 |
+| BKM-341HS HD/SD-SDI Input Adaptor | One HD/SD-SDI BNC. | LMD-30 and LMD-10 series per Sony | 7 |
+
+## Controllers and accessories
+
+| Model | Details | Fits | Source |
+|---|---|---|---|
+| BKM-10R Monitor control unit | Rack-width remote; RS-422 over a DE-9 cable, powered by the monitor; controls one monitor or a daisy chain. The one on the BVM-20E1U here. | BVM-E/F and BVM-D; not BVM-A | 9 10 13 |
+| BKM-11R Monitor control unit | The small handheld controller that plugs into the monitor's front. | BVM-D and earlier | 9 13 |
+| BKM-15R Monitor control unit | The BVM-A generation's controller. | BVM-A | 4 |
+| BKM-14L Auto set-up probe | Screen-mounted probe for the BVM-A's automatic white-balance and alignment routine. | BVM-A | 4 |
+| BKM-35H / 36H Control-unit attachment kits | Mount a control unit to the monitor. | BVM-A | 4 |
+| BKM-30E14 / 30E20 Rack-mount kits | Rack rails for the 14-inch and 20-inch BVM-A. | BVM-A | 4 |
+
+## In this collection
+
+Three of the families are on the floor here, which is how this table got checked against real plates. The BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html) has a BKM-21D fitted in one of its four slots, a BKM-24N and a BKM-20D on the shelf waiting for the right moment, and a BKM-10R controller wired to it. The BVM-A14F5U (https://www.orlandu.com/bvm-a14f5u.html) runs a BKM-62HS and a BKM-68X clone with one slot open. The PVM-20L5 (https://www.orlandu.com/pvm-20l5.html) has its BKM-129X. The E/F decoder cards still missing are on the wanted list (https://www.orlandu.com/wanted.html); how the cards get a signal is in The Signal Chain (https://www.orlandu.com/signal-chain.html).
+
+## Quick answers
+
+### Which BKM card gives a PVM-20L5 an RGB input?
+
+The BKM-129X — one analog component input, Y/R-Y/B-Y or RGB, with loop-through. It fits the 20L5 and 14L5, the whole PVM-L2 series, and the 9- and 14-inch BVM-D, where Sony supplied it as standard. The 20L5 here has one fitted.
+
+### Do BKM cards fit every Sony monitor?
+
+No. There are three physical families for the CRT era: the 2x-series decoders fit the BVM-E, F and G and the 20-, 24- and 32-inch BVM-D; the 1xx series fits the 9- and 14-inch BVM-D and the single slot on the PVM-L5 and L2; and the BVM-A takes only its own three boards. The LCD-era boards (BKM-2xx and 3xx) are a fourth family again.
+
+### What does a BVM-20E1U need to show a console?
+
+Nothing extra for RGB — the fixed input block takes it. Composite needs a decoder card (BKM-21D, 24N, 25P, 26M or 27T) and S-Video needs the 24N, 25P, 26M or 27T. The 20E1U here has a BKM-21D in one of its four slots, with a BKM-24N and a BKM-20D on the shelf.
+
+### Which cards does a BVM-A14F5U take?
+
+Only the BVM-A boards: BKM-61D (SDI plus every analog standard-definition input), BKM-62HS (HD-SDI and SD-SDI) and BKM-68X (analog component and RGB, SD and HD). Sony states the BVM-A boards are not compatible with earlier BVM series. The A14F5U here runs a 62HS and a 68X clone, with one slot open.
+
+### Is there an order to installing the E/F cards?
+
+Yes, per Sony's manual: fit cards starting from the right-hand slot, install the BKM-20D or 21D last, never put a card or a blank panel in the slot to the right of a 20D/21D (it can damage the shield fingers), and fit at most one BKM-22X per decoder card. One decoder card decodes signals arriving on any input card, because they share the monitor's internal bus.
+
+## Sources
+
+Every row cites the Sony document it comes from; the two community sources (ConsoleMods, the shmups thread) are marked as such in the table. Where a brochure is the only source for a fit, the Fits column says “per Sony” and no wider claim is made.
+
+1. Sony, *BKM-20D/21D/22X/24N/25P/26M/27T/28X Installation Manual* (BVM D, E, F and G series) — source (https://consolemods.org/wiki/images/a/a9/BKM-20DBKM-21DBKM-22XBKM-24NBKM-25PBKM-26MBKM-27TBKM-28X.pdf)
+2. Sony, *BVM-D Series* brochure — source (https://archive.org/download/bvm_dseries/bvm_dseries.pdf)
+3. Sony, *BVM-A Series* brochure (SONY51450) — source (https://consolemods.org/wiki/images/6/6d/SONY51450_BVMA.pdf)
+4. Sony Electronics bulletins 05-0584 and 05-0585, November 15, 2005 — source (https://consolemods.org/wiki/images/8/87/050584.doc.pdf)
+5. Sony, *PVM-20L5 / PVM-14L5* brochure — source (https://consolemods.org/wiki/images/c/c1/Sony_PVM-20L5_PVM-14L5_Brochure.pdf)
+6. Sony, *PVM-L2 Series* brochure (2003) — source (https://archive.org/download/sony_PVM-L2_2003/PVM-L2_2003.pdf)
+7. Sony, *Professional Monitor Line-up — Optional Accessories* — source (https://www.manualowl.com/m/Sony/LMD1751W/Manual/374711)
+8. Sony Professional, BKM-243HS product page — source (https://pro.sony/en_KH/products/option-boards-and-modules/bkm-243hs)
+9. ConsoleMods wiki, BVM-20E1U — source (https://consolemods.org/wiki/CRT:BVM-20E1U)
+10. ConsoleMods wiki, BKM-68X and BKM-10R — source (https://consolemods.org/wiki/CRT:BKM-68X)
+11. Expandore (Sony dealer), LMD accessories — source (https://expandore.com/sony/Monitor/LCD_Monitor/Acc_5.htm)
+12. shmups.system11.org, “PVM Addon Cards, are they universal?” (2023) — source (https://shmups.system11.org/viewtopic.php?p=1515727)
+13. crtdatabase.com, Sony BKM controllers — source (https://crtdatabase.com/crts/sony/sony-bkm-controllers)
+
+This table as open data: JSON (https://www.orlandu.com/data/bkm-cards.json) · CSV (https://www.orlandu.com/data/bkm-cards.csv) — CC BY 4.0, credit Orlandu’s Arcade. For AI agents → (https://www.orlandu.com/mcp.html)
+
+How to cite: Orlandu’s Arcade (“Orlandu81”), *Sony BKM Cards: Which Card Fits Which BVM or PVM*, orlandu.com, 2026, https://www.orlandu.com/bkm-cards.html
 
 ---
 
@@ -5416,7 +5559,7 @@ Questions, offers, a lead on something from the hunt list, or a photo of a myste
 
 URL: https://www.orlandu.com/mcp.html
 
-An MCP server, llms.txt, a full-text file and three open datasets let Claude, ChatGPT, Cursor or any agent search the arcade's site, read its pages and query its Sony monitor specs.
+An MCP server, llms.txt, a full-text file and four open datasets let Claude, ChatGPT, Cursor or any agent search the arcade's site, read its pages and query its Sony monitor specs.
 
 For AI Agents
 
@@ -5427,18 +5570,19 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 74,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 76,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server
 
-Endpoint https://www.orlandu.com/api/mcp — Streamable HTTP transport, read-only, no authentication. Six tools:
+Endpoint https://www.orlandu.com/api/mcp — Streamable HTTP transport, read-only, no authentication. Seven tools:
 
 - search_orlandu — full-text search over every page, card, glossary term and gallery caption
 - read_orlandu_page — one page as Markdown
 - list_orlandu_pages — every page with its description
 - sony_monitor_specs — the fleet spec table, filterable by model
 - playchoice_10_library — the fifty-two PlayChoice-10 games, each with its board photo
+- bkm_cards — every Sony BKM option card and which monitor it fits
 - console_video_out — how each console reaches the glass
 
 It answers from the published pages only, and it is rebuilt with every update to the site.
@@ -5461,12 +5605,13 @@ In Claude it goes in as a custom connector with that URL; ChatGPT and most other
 
 ## The datasets
 
-Three tables from the site as open data, CC BY 4.0 — use them, credit Orlandu's Arcade.
+Four tables from the site as open data, CC BY 4.0 — use them, credit Orlandu's Arcade.
 
 | Dataset | What's in it | Files |
 |---|---|---|
 | Sony monitor specs | Eight models, thirteen columns: display, size, resolution, formats, inputs, option slots, weight, era — the fleet table (https://www.orlandu.com/monitors.html#specs) | JSON (https://www.orlandu.com/data/sony-monitor-specs.json) · CSV (https://www.orlandu.com/data/sony-monitor-specs.csv) |
 | PlayChoice-10 library | The fifty-two games Nintendo released, each with a photo of its original board — the cart wall (https://www.orlandu.com/playchoice-10.html) | JSON (https://www.orlandu.com/data/playchoice-10-library.json) · CSV (https://www.orlandu.com/data/playchoice-10-library.csv) |
+| Sony BKM cards | Thirty-four option cards and controllers across the BVM-D, E/F/G, A and LCD-era lines: what each does, which chassis it fits, the Sony source — the reference (https://www.orlandu.com/bkm-cards.html) | JSON (https://www.orlandu.com/data/bkm-cards.json) · CSV (https://www.orlandu.com/data/bkm-cards.csv) |
 | Console video out | Nine consoles: the modification, the video output, the chain to the monitor — the console table (https://www.orlandu.com/consoles.html#mods) | JSON (https://www.orlandu.com/data/console-video-out.json) · CSV (https://www.orlandu.com/data/console-video-out.csv) |
 
 The photos the datasets link to stay © Orlandu's Arcade.
