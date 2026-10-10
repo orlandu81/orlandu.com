@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.orlandu/arcade",
+  "title": "Orlandu's Arcade",
+  "description": "Read-only tools for orlandu.com: site search, pages, Sony PVM/BVM specs, PlayChoice-10 library.",
+  "version": "1.0.0",
+  "websiteUrl": "https://www.orlandu.com/mcp.html",
+  "repository": {
+    "url": "https://github.com/orlandu81/orlandu.com",
+    "source": "github",
+    "subfolder": "api"
+  },
+  "icons": [
+    {
+      "src": "https://www.orlandu.com/assets/favicon-192.png",
+      "sizes": ["192x192"],
+      "mimeType": "image/png"
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.orlandu.com/api/mcp"
+    }
+  ]
+}

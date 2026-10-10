@@ -672,3 +672,15 @@ wherever a dataset is mentioned. The BKM card reference is NOT in the server unt
 (Project doc `claude/bkm-card-reference-draft.md`). David also approved a Wikidata item for the AMS-100 only, citing the
 monograph — not yet created; it needs his Wikidata login in the browser pane. No prompt-injection text for assistants,
 ever — that is the kind of "AI marketing" that gets a site demoted.
+
+**MCP Registry listing (2026-10-10): `com.orlandu/arcade` is PUBLISHED** in the official registry
+(registry.modelcontextprotocol.io), version 1.0.0, from `server.json` at the repo root. The namespace is
+DNS-verified: a TXT record at the orlandu.com apex (`v=MCPv1; k=ed25519; p=…`, next to the Google
+verification TXT in GoDaddy) — never delete it. The matching private key is `mcp-registry-key.pem` in
+David's connected orlandu.com folder (next to github-token.txt; NOT in the repo). The registry API host is
+blocked from this container and from the device shell, so publishing is done from the BROWSER PANE on an
+orlandu.com page: import the key with WebCrypto (`pkcs8`, Ed25519), sign the current RFC3339 timestamp
+(±15 s window), POST `/v0/auth/dns` {domain, timestamp, signed_timestamp(hex)} → registry_token, then
+POST `/v0/publish` with `Authorization: Bearer` and the server.json body; `/v0/validate` checks the JSON
+first with no auth. To republish: bump `version` in server.json (never "latest"), repeat. Only ONE
+listing per remote URL is allowed, so don't create a second name for the same server.
