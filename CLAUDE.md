@@ -38,6 +38,19 @@ holds — "Sony BVM-20E1U: Specs, BKM Cards & Work Log — Orlandu's Arcade", "N
 Path & Work Log — …" — at 58–65 characters. `og:title` stays the short form. The site search shows
 the H1, not the title, so a long title costs nothing there. A new profile page follows the same shape.
 
+**Quick answers (2026-10-09/10):** the pvm-20l5-buying-guide, pvm-vs-bvm, crt-field-guide, mini-cute,
+vs-unisystem and connect-console-to-pvm pages end with an `h2.sec` "Quick answers" + a single-column
+`.grid` of `.card`s (h3 question, p answer) — plain content, deliberately NO FAQPage schema (Google
+stopped showing FAQ rich results for non-government sites in 2023). Answers come from the page's own
+facts, no prices (David dropped the 20L5 price Q&A). pvm-vs-bvm.html also carries an 8-row
+`table.spec#pvmbvm` side-by-side. `connect-console-to-pvm.html` (How-To, in the story chain between
+pvm-vs-bvm and crt-field-guide) carries two claims David confirmed 10/10 that are not elsewhere on the
+site: 75 Ω termination on the last/only monitor on a loop-through line, and setting the input to RGB on
+a monitor whose BNCs take RGB or component (the 20L5). Its thumb/OG are cut from the BVM pair photo
+(chrome exception; the page has no media of its own). `media/pvm-20l5-checklist.pdf` is in the sitemap
+WITHOUT a `<lastmod>` on purpose — `tools/update-lastmod.py` reads every loc with a lastmod as UTF-8 text
+and would choke on the PDF.
+
 **Fonts:** `style.css` defines metric-matched `"… Fallback"` faces (Arial/Liberation/Roboto scaled
 with `size-adjust` + ascent/descent overrides) second in each font stack, so text doesn't reflow
 when the web font arrives. Page-level `font-family` declarations must keep the fallback in the

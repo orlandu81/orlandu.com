@@ -144,6 +144,7 @@
             '<a href="ams-3-vs-ams-100.html">Ancestor and descendant</a>' +
             '<a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol. 1</a>' +
             '<a href="signal-chain.html">The signal chain</a>' +
+            '<a href="connect-console-to-pvm.html">Console to PVM, cable by cable</a>' +
             '<a href="vs-smb.html">VS. Super Mario Bros.</a>' +
             '<a href="pvm-vs-bvm.html">PVM vs. BVM</a>' +
             '<a href="red-tent.html">The Red Tent</a>' +

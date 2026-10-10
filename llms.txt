@@ -48,6 +48,7 @@
 - [Ancestor and Descendant](https://www.orlandu.com/ams-3-vs-ams-100.html): Sony's AMS-3 and AMS-100 audio monitors compared.
 - [Trinitron Fleet, Vol. 1](https://www.orlandu.com/trinitron-fleet-vol1.html): a field guide to the Sony pro monitors here.
 - [The Signal Chain](https://www.orlandu.com/signal-chain.html): how the consoles reach the glass — SCART switchers, BNC runs, a distribution amp, and no scaler.
+- [How to Connect a Retro Console to a Sony PVM or BVM](https://www.orlandu.com/connect-console-to-pvm.html): the RGB cable, the switcher, the SCART to 4 BNC breakout, sync, termination and audio — step by step, no scaler.
 - [PVM vs. BVM](https://www.orlandu.com/pvm-vs-bvm.html): how Sony's professional monitor lines differ.
 - [How to Spot Professional Glass in the Wild](https://www.orlandu.com/crt-field-guide.html): recognizing a Sony professional monitor in a thrift store or surplus auction.
 - [PVM-20L5 buying guide](https://www.orlandu.com/pvm-20l5-buying-guide.html): what to check before buying one, what to pay, and why not to ship it.
