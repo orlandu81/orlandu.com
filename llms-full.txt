@@ -240,7 +240,7 @@ The rarer sit-down side of the VS. family — the distinctive red-canopy cocktai
 
 The only candy-style cabinet in the collection, and it's the one that matters: Capcom's compact Mini Cute in the pink variant. The full profile → (https://www.orlandu.com/mini-cute.html)
 
-The game room also hosts the big PVMs — the 29-inch PVM-2950Q and the PVM-20L5. Meet the fleet → (https://www.orlandu.com/monitors.html)
+The game room also hosts the big PVMs — the 29-inch PVM-2950Q (https://www.orlandu.com/pvm-2950q.html) and the PVM-20L5. Meet the fleet → (https://www.orlandu.com/monitors.html)
 
 ## In memoriam machines that passed through on their way to someone else's story
 
@@ -533,7 +533,7 @@ The party trick is range. This is a true multiscan machine, locking anything fro
 
 At 800 TVL on SMPTE-C phosphors the picture is broadcast-honest. Colors sit precisely where the mastering engineer put them, and 240p sources take on that etched, dimensional quality only a fine-pitch HR Trinitron delivers — the look people chase for years and then refuse to give up.
 
-The practical genius runs deeper. Inputs arrive in pairs with loop-throughs, so it drops into any chain without ceremony, and its one option slot carries a BKM-129X for SCART, VGA and RGB. Even the flyback is shared with the 14L5 and a BVM cousin, the kind of deep parts commonality that keeps a legend alive across decades. Kings age well when the bloodline runs deep.
+The practical genius runs deeper. Inputs arrive in pairs with loop-throughs, so it drops into any chain without ceremony, and its one option slot carries a BKM-129X (https://www.orlandu.com/bkm-cards.html) for SCART, VGA and RGB. Even the flyback is shared with the 14L5 and a BVM cousin, the kind of deep parts commonality that keeps a legend alive across decades. Kings age well when the bloodline runs deep.
 
 > One monitor that speaks every era of video fluently — the bridge from 240p to HD.
 
@@ -653,7 +653,7 @@ It behaves like something from a later century. Beam landing correction and digi
 
 It was born to work in packs. Ethernet remote, addressing for a wall of thirty-two units, a control system designed for facilities that ran monitors the way server rooms run racks. In a home bay, all that engineering distills to one thing: total, casual command over a reference-grade picture.
 
-And this one is nearly there. Two of the three option slots are filled: HD-SDI, and an analog board that adds SCART, component and VGA beyond anything the factory ever offered. The third slot, for a BKM-61D and its SD-SDI and S-Video inputs, is still open.
+And this one is nearly there. Two of the three option slots are filled: HD-SDI, and an analog board that adds SCART, component and VGA beyond anything the factory ever offered. The third slot, for a BKM-61D (https://www.orlandu.com/bkm-cards.html) and its SD-SDI and S-Video inputs, is still open.
 
 > The master-grade CRT, perfected at the exact moment it became art.
 
@@ -1708,7 +1708,7 @@ The Japanese Super Mario Bros. 2, out on the Famicom Disk System in 1986 and tur
 
 ### VS. Duck Hunt
 
-The arcade Duck Hunt is not the console one. The VS. build runs its rounds in sequence and finishes on a bonus stage the home version never had — the same kind of gap that separates VS. Super Mario Bros. from the game everyone grew up on. This custom board carries both versions.
+The arcade Duck Hunt is not the console one. The VS. build runs its rounds in sequence and finishes on a bonus stage the home version never had — the same kind of gap that separates VS. Super Mario Bros. (https://www.orlandu.com/vs-smb.html) from the game everyone grew up on. This custom board carries both versions.
 
 [Photo: Zelda II: The Adventure of Link on a converted PlayChoice-10 board with save battery]
 
@@ -2285,7 +2285,7 @@ More photos of Big Blue in the gallery → (https://www.orlandu.com/gallery.html
 
 Sources & further reading: Museum of the Game — Marvel vs. Capcom (https://www.arcade-museum.com/Videogame/marvel-vs-capcom-clash-of-super-heroes)
 
-Big Blue anchors the end of the row, next to the VS. UniSystem, Donkey Kong, and the Mario Bros. widebody. See the whole lineup → (https://www.orlandu.com/games.html)
+Big Blue anchors the end of the row, next to the VS. UniSystem, Donkey Kong (https://www.orlandu.com/donkey-kong.html), and the Mario Bros. widebody. See the whole lineup → (https://www.orlandu.com/games.html)
 
 ---
 
@@ -2419,7 +2419,7 @@ When the second restoration wrapped, the collection held two perfect Red Tents �
 
 ***Channel select** — ten games on one board, and the coins buy time instead of lives*
 
-Today the surviving Tent runs VS. Excitebike on one side. The other side holds something genuinely rare: an official Nintendo PlayChoice-10 conversion kit. Starting in 1988, Nintendo sold kits to convert its own aging cabinets — Donkey Kong, Donkey Kong Jr., Popeye, and VS. machines — into PlayChoice-10s, its "ten games in one cabinet" system. The PlayChoice flipped the arcade formula on its head: instead of buying lives, your coins bought *time*. Feed the machine, and a countdown starts; press the channel-select buttons and you can hop between up to ten interchangeable NES game cards mid-session — finish a Super Mario Bros. run, flip to Excitebike, all on the same quarter's clock. The games themselves lived on swappable ROM cards, which is why operators loved it and why Nintendo could keep a single cabinet fresh for years. Full PlayChoice cabinets survive in fair numbers; the official conversion kits, sold loose to operators and mostly used up decades ago, almost never do. Having one installed in a Red Tent makes this machine a double rarity — one table, two eras of Nintendo's arcade thinking, facing opposite directions.
+Today the surviving Tent runs VS. Excitebike on one side. The other side holds something genuinely rare: an official Nintendo PlayChoice-10 (https://www.orlandu.com/playchoice-10.html) conversion kit. Starting in 1988, Nintendo sold kits to convert its own aging cabinets — Donkey Kong, Donkey Kong Jr., Popeye, and VS. machines — into PlayChoice-10s, its "ten games in one cabinet" system. The PlayChoice flipped the arcade formula on its head: instead of buying lives, your coins bought *time*. Feed the machine, and a countdown starts; press the channel-select buttons and you can hop between up to ten interchangeable NES game cards mid-session — finish a Super Mario Bros. run, flip to Excitebike, all on the same quarter's clock. The games themselves lived on swappable ROM cards, which is why operators loved it and why Nintendo could keep a single cabinet fresh for years. Full PlayChoice cabinets survive in fair numbers; the official conversion kits, sold loose to operators and mostly used up decades ago, almost never do. Having one installed in a Red Tent makes this machine a double rarity — one table, two eras of Nintendo's arcade thinking, facing opposite directions.
 
 [Photo: Playing VS. Duck Hunt on the Red Tent PlayChoice-10 side with the Zapper light gun in hand, and three PlayChoice-10 toppers on the canopy above]
 
@@ -2524,7 +2524,7 @@ More photos of the VS. UniSystem in the gallery → (https://www.orlandu.com/gal
 
 Sources & further reading: Museum of the Game — VS. Super Mario Bros. (https://www.arcade-museum.com/Videogame/vs-super-mario-bros) · Super Mario Wiki (https://www.mariowiki.com/VS._Super_Mario_Bros.)
 
-The UniSystem sits in the cabinet row with Donkey Kong, the Mario Bros. widebody and Big Blue. See the whole lineup → (https://www.orlandu.com/games.html)
+The UniSystem sits in the cabinet row with Donkey Kong (https://www.orlandu.com/donkey-kong.html), the Mario Bros. widebody and Big Blue. See the whole lineup → (https://www.orlandu.com/games.html)
 
 ---
 
@@ -2547,7 +2547,7 @@ Blue plywood. The machine that started Nintendo's arcade legend, and most collec
 
 Before Nintendo was a household name in America it was a Japanese company with a warehouse of unsold cabinets and one last idea. Donkey Kong was that idea: a carpenter, a barrel-throwing ape, and a girl on a girder. It rescued the company, it introduced the character who would carry it for the next forty years, and it did both by being a genuinely brilliant game rather than a lucky one.
 
-This one is blue plywood — the construction collectors look for. It sits between the VS. UniSystem and the Mario Bros. widebody, marquee lit, on free play. It also has a trick: a switcher fitted with an original Donkey Kong Jr. board, so the same cabinet plays both games. Nintendo's own sequel, in the cabinet it belongs in, without swapping anything.
+This one is blue plywood — the construction collectors look for. It sits between the VS. UniSystem (https://www.orlandu.com/vs-unisystem.html) and the Mario Bros. widebody, marquee lit, on free play. It also has a trick: a switcher fitted with an original Donkey Kong Jr. board, so the same cabinet plays both games. Nintendo's own sequel, in the cabinet it belongs in, without swapping anything.
 
 ## What it looks like running
 
@@ -2576,7 +2576,7 @@ More photos of Donkey Kong in the gallery → (https://www.orlandu.com/gallery.h
 
 Sources & further reading: Museum of the Game — Donkey Kong (https://www.arcade-museum.com/Videogame/donkey-kong)
 
-Donkey Kong sits in the cabinet row alongside the VS. UniSystem, the Mario Bros. widebody and Big Blue. See the whole lineup → (https://www.orlandu.com/games.html)
+Donkey Kong sits in the cabinet row alongside the VS. UniSystem, the Mario Bros. widebody and Big Blue (https://www.orlandu.com/big-blue.html). See the whole lineup → (https://www.orlandu.com/games.html)
 
 ---
 
@@ -2632,7 +2632,7 @@ The Mario Bros. widebody anchors one end of the row, with Donkey Kong and the VS
 
 ---
 
-# Indiana Jones: The Pinball Adventure (Williams)
+# Indiana Jones: The Pinball Adventure
 
 URL: https://www.orlandu.com/indiana-jones.html
 
@@ -2691,7 +2691,7 @@ More photos of Indiana Jones in the gallery → (https://www.orlandu.com/gallery
 
 Sources & further reading: IPDB — Indiana Jones: The Pinball Adventure (https://www.ipdb.org/machine.cgi?id=1267) · Wikipedia (https://en.wikipedia.org/wiki/Indiana_Jones:_The_Pinball_Adventure)
 
-Indiana Jones sits in the pinball row with Total Nuclear Annihilation, Ghostbusters and Rick and Morty. See the row → (https://www.orlandu.com/games.html#pinball)
+Indiana Jones sits in the pinball row with Total Nuclear Annihilation (https://www.orlandu.com/tna.html), Ghostbusters and Rick and Morty (https://www.orlandu.com/rick-and-morty.html). See the row → (https://www.orlandu.com/games.html#pinball)
 
 ---
 
@@ -2742,7 +2742,7 @@ More photos of Total Nuclear Annihilation in the gallery → (https://www.orland
 
 Sources & further reading: IPDB — Total Nuclear Annihilation (https://www.ipdb.org/machine.cgi?id=6444) · Pinside game archive (https://pinside.com/pinball/machine/total-nuclear-annihilation)
 
-TNA sits in the pinball row with Indiana Jones, Ghostbusters and Rick and Morty. See the row → (https://www.orlandu.com/games.html#pinball)
+TNA sits in the pinball row with Indiana Jones (https://www.orlandu.com/indiana-jones.html), Ghostbusters and Rick and Morty. See the row → (https://www.orlandu.com/games.html#pinball)
 
 ---
 
@@ -2802,7 +2802,7 @@ More photos of Ghostbusters in the gallery → (https://www.orlandu.com/gallery.
 
 Sources & further reading: IPDB — Ghostbusters (Premium) (https://www.ipdb.org/machine.cgi?id=6333) · Wikipedia (https://en.wikipedia.org/wiki/Ghostbusters_(pinball))
 
-Ghostbusters sits in the pinball row with Indiana Jones, Total Nuclear Annihilation and Rick and Morty. See the row → (https://www.orlandu.com/games.html#pinball)
+Ghostbusters sits in the pinball row with Indiana Jones, Total Nuclear Annihilation and Rick and Morty (https://www.orlandu.com/rick-and-morty.html). See the row → (https://www.orlandu.com/games.html#pinball)
 
 ---
 
@@ -2846,7 +2846,7 @@ More photos of Rick and Morty in the gallery → (https://www.orlandu.com/galler
 
 Sources & further reading: Pinside game archive — Rick and Morty (Blood Sucker Edition) (https://pinside.com/pinball/machine/rick-and-morty-blood-suckers-edition)
 
-Rick and Morty sits in the pinball row with Indiana Jones, Total Nuclear Annihilation and Ghostbusters. See the row → (https://www.orlandu.com/games.html#pinball)
+Rick and Morty sits in the pinball row with Indiana Jones (https://www.orlandu.com/indiana-jones.html), Total Nuclear Annihilation and Ghostbusters (https://www.orlandu.com/ghostbusters.html). See the row → (https://www.orlandu.com/games.html#pinball)
 
 ---
 
@@ -4095,7 +4095,7 @@ If you hold an AMS-100, a BKAM board, or an AMS-3 that is not in this record —
 
 ---
 
-# Sony AMS-3 vs. AMS-100: Ancestor and Descendant
+# Sony AMS-3 vs. AMS-100: Ancestor & Descendant
 
 URL: https://www.orlandu.com/ams-3-vs-ams-100.html
 
@@ -4348,7 +4348,7 @@ The full 28-line comparison table is omitted from the printed issue to keep it t
 
 ---
 
-# The Signal Chain: Consoles to Sony Pro Monitors
+# Signal Chain: Consoles to Sony Pro Monitors
 
 URL: https://www.orlandu.com/signal-chain.html
 
@@ -4417,7 +4417,7 @@ That is deliberate. A cabinet that has been opened up and re-plumbed into a mode
 
 ## What it costs you
 
-Honesty about the trade: this setup is analog end to end, which means it is fussy in ways a modern one is not. Cables are specific and mostly not available at retail. Every console needs the right RGB cable for that console, and some of them need modding before they output RGB at all — the NES never did officially, which is why the top loader here carries an NESRGB board. Nothing here will ever appear on a flat panel without adding exactly the kind of box this setup refuses to use.
+Honesty about the trade: this setup is analog end to end, which means it is fussy in ways a modern one is not. Cables are specific and mostly not available at retail. Every console needs the right RGB cable for that console, and some of them need modding before they output RGB at all — the NES never did officially, which is why the top loader (https://www.orlandu.com/nes-top-loader.html) here carries an NESRGB board. Nothing here will ever appear on a flat panel without adding exactly the kind of box this setup refuses to use.
 
 What you get in return is a picture with nothing between the console and the tube, and a room where you press a power button and a game is on screen a second later. For a collection meant to be played rather than displayed, that trade has never once looked like the wrong one.
 
@@ -4427,7 +4427,7 @@ Curious what the monitors on the other end of these cables actually are? PVM vs.
 
 ---
 
-# How to Connect a Retro Console to a Sony PVM or BVM
+# How to Connect a Console to a Sony PVM or BVM
 
 URL: https://www.orlandu.com/connect-console-to-pvm.html
 
@@ -4477,7 +4477,7 @@ The bridge is a SCART to 4 BNC breakout cable: red, green, blue and sync on four
 
 Sync goes straight through — the composite sync riding the SCART cable into the sync BNC as-is, no stripper, no LM1881, no sync-on-green workaround. These monitors lock onto it without complaint; professional Sony gear is far less fussy about sync than internet folklore suggests.
 
-Two things to set on the monitor. Professional inputs loop through to feed the next monitor in a chain, so the last monitor on the line — or the only one — needs its 75 Ω termination switched on, or the picture washes out. And on a monitor whose BNCs accept both RGB and component, the PVM-20L5 among them, the input has to be told it is looking at RGB.
+Two things to set on the monitor. Professional inputs loop through to feed the next monitor in a chain, so the last monitor on the line — or the only one — needs its 75 Ω termination switched on, or the picture washes out. And on a monitor whose BNCs accept both RGB and component, the PVM-20L5 (https://www.orlandu.com/pvm-20l5.html) among them, the input has to be told it is looking at RGB.
 
 ## 5. Component sources skip the switcher
 
@@ -4503,7 +4503,7 @@ Not in this experience. Composite sync goes from the SCART cable straight into t
 
 ### Which consoles output RGB without a mod?
 
-Of the ones here: the Super Nintendo, the Genesis, the Genesis CDX and the Saturn. The NES, the Nintendo 64 and the PC Engine needed boards.
+Of the ones here: the Super Nintendo, the Genesis, the Genesis CDX (https://www.orlandu.com/genesis-cdx.html) and the Saturn. The NES, the Nintendo 64 (https://www.orlandu.com/nintendo-64.html) and the PC Engine needed boards.
 
 ### Will a BVM take the same cables?
 
@@ -4586,11 +4586,11 @@ How to cite: Orlandu’s Arcade (“Orlandu81”), *PVM vs. BVM: Sony's Pro Moni
 
 ---
 
-# Sony BKM Cards: Which Card Fits Which BVM or PVM
+# Sony BKM Cards: Which Fits Which BVM or PVM
 
 URL: https://www.orlandu.com/bkm-cards.html
 
-Every Sony BKM option card for the CRT-era BVM and PVM monitors: what each card does, which chassis it fits, the installation rules and the controllers, sourced from Sony's own manuals.
+Every Sony BKM option card for CRT-era BVM and PVM monitors: what each card does, which chassis it fits, installation rules and controllers, from Sony's own manuals.
 
 Reference
 
@@ -4743,7 +4743,7 @@ The best screens ever pointed at a video game are still out there — in estate 
 
 ## Read the badge first
 
-A consumer set shouts TRINITRON across its face. A professional monitor states a model number, in small type, and lets you do the math: PVM-2030, BVM-14F5U, LMD-9050. The letters are the family — **PVM** for Professional Video Monitor, **BVM** for Broadcast Video Monitor, **LMD** for the flat-panel generation that followed — and the leading digits are usually the tube size. A PVM-20L5 is a twenty-inch; a BVM-14F5U is a fourteen.
+A consumer set shouts TRINITRON across its face. A professional monitor states a model number, in small type, and lets you do the math: PVM-2030, BVM-14F5U, LMD-9050 (https://www.orlandu.com/lmd-wall.html). The letters are the family — **PVM** for Professional Video Monitor, **BVM** for Broadcast Video Monitor, **LMD** for the flat-panel generation that followed — and the leading digits are usually the tube size. A PVM-20L5 (https://www.orlandu.com/pvm-20l5.html) is a twenty-inch; a BVM-14F5U is a fourteen.
 
 If the thing in front of you has a tuner, it’s a TV. If it has a button labeled LINE or RGB, keep reading.
 
@@ -4818,7 +4818,7 @@ Buyer's Guide
 
 Ask around the hobby long enough and the same monitor keeps coming back. Here is what actually matters when you are standing in front of one — and what to do about the fact that you probably should not ship it.
 
-The PVM-20L5 arrived at the end of Sony's production-monitor line with three decades of Trinitron lessons folded into it, and the reputation it earned has not faded. The case for it is not nostalgia. It is range. This is a true multiscan chassis, locking anything from about 15 to 33.75 kHz: a Super Nintendo at 240p, a DVD player at 480p, a broadcast feed at 1080i — same glass, same effortless lock, no option card required. At 800 TV lines on a fine-pitch HR Trinitron tube with SMPTE-C phosphors, the picture is broadcast-honest. One monitor that speaks every era of video fluently is a rare thing, and it is why this one plays the bridge in this collection.
+The PVM-20L5 (https://www.orlandu.com/pvm-20l5.html) arrived at the end of Sony's production-monitor line with three decades of Trinitron lessons folded into it, and the reputation it earned has not faded. The case for it is not nostalgia. It is range. This is a true multiscan chassis, locking anything from about 15 to 33.75 kHz: a Super Nintendo at 240p, a DVD player at 480p, a broadcast feed at 1080i — same glass, same effortless lock, no option card required. At 800 TV lines on a fine-pitch HR Trinitron tube with SMPTE-C phosphors, the picture is broadcast-honest. One monitor that speaks every era of video fluently is a rare thing, and it is why this one plays the bridge in this collection.
  15–33.75 kHzScan range800 TV linesHR Trinitron, SMPTE-C73 lbA two-person lift
 
 It is also twenty-odd years old, weighs about seventy-three pounds, and there is no warranty department left to call. So before money changes hands, here is the sweep.
@@ -4922,7 +4922,7 @@ It borrows the parts of the broadcast playbook that matter — a BKM option slot
 
 ### Which BKM card does the PVM-20L5 take?
 
-One option slot, from the same modular BKM family the BVMs use. The unit here runs a BKM-129X, which adds SCART, VGA and RGB. A monitor sold with the right card is worth more than the same monitor plus that card bought separately — the cards are their own hunt.
+One option slot, from the same modular BKM family the BVMs use. The unit here runs a BKM-129X (https://www.orlandu.com/bkm-cards.html), which adds SCART, VGA and RGB. A monitor sold with the right card is worth more than the same monitor plus that card bought separately — the cards are their own hunt.
 
 ### Can a PVM-20L5 be shipped?
 
@@ -5235,7 +5235,7 @@ The collection consolidates over time — duplicates and departures get listed s
 
 ### Baseball Stars
 
-The NES baseball game people still play. It arrived in 1989, late enough that far fewer boards shipped than the mid-decade titles. Tested and working, fully original: every Nintendo marking reads B9, with no rework anywhere. Needs a PlayChoice-10 motherboard — it won’t run in an NES.
+The NES baseball game people still play. It arrived in 1989, late enough that far fewer boards shipped than the mid-decade titles. Tested and working, fully original: every Nintendo marking reads B9, with no rework anywhere. Needs a PlayChoice-10 (https://www.orlandu.com/playchoice-10.html) motherboard — it won’t run in an NES.
 
 [Photo: Captain Skyhawk PlayChoice-10 game board, component side above and solder side below]
 
@@ -5405,7 +5405,7 @@ I have one →
 
 ## Sony BKM input cards for the BVM-20E1U (E/F-series)
 
-The primary broadcast monitor here, a BVM-20E1U, runs with three of its input slots open — and on a BVM, the slots are the inputs: each BKM board teaches the monitor another signal format, and the right cards finish the machine. These five are the ones still wanted. Cards from a decommissioned station or an old equipment drawer are exactly what this hunt looks like — the bench item (https://www.orlandu.com/projects.html) has the background. Not sure which card you have? The model number is printed on the card’s rear bracket, and the BVM operation manual (https://www.manualslib.com/manual/262577/Sony-Trinitron-Bvm-20f1u-Bvm-20f1e-Bvm-20e1u-Bvm-20e1e-Bvm-14f1u-Bvm-14f1e-Bvm-14e1u-Bvm-14e1e-Bvm-14f5u-Bvm-14f5e-Bvm-14e5.html) lists every adaptor that fits this chassis.
+The primary broadcast monitor here, a BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html), runs with three of its input slots open — and on a BVM, the slots are the inputs: each BKM board teaches the monitor another signal format, and the right cards finish the machine. These five are the ones still wanted. Cards from a decommissioned station or an old equipment drawer are exactly what this hunt looks like — the bench item (https://www.orlandu.com/projects.html) has the background. Not sure which card you have? The model number is printed on the card’s rear bracket, and the BVM operation manual (https://www.manualslib.com/manual/262577/Sony-Trinitron-Bvm-20f1u-Bvm-20f1e-Bvm-20e1u-Bvm-20e1e-Bvm-14f1u-Bvm-14f1e-Bvm-14e1u-Bvm-14e1e-Bvm-14f5u-Bvm-14f5e-Bvm-14e5.html) lists every adaptor that fits this chassis.
  Wanted
 
 ### BKM-22X
@@ -5551,7 +5551,7 @@ Questions, offers, a lead on something from the hunt list, or a photo of a myste
 
 URL: https://www.orlandu.com/mcp.html
 
-An MCP server, llms.txt, a full-text file and four open datasets let Claude, ChatGPT, Cursor or any agent search the arcade's site, read its pages and query its Sony monitor specs.
+An MCP server, llms.txt, a full-text file and open datasets let Claude, ChatGPT, Cursor or any agent search the site, read its pages and query Sony monitor specs.
 
 For AI Agents
 
