@@ -2,13 +2,14 @@
 // GALLERY DATA — Orlandu's Arcade
 // To add media: drop the file in /media/ and add an entry here.
 // type: "image" | "video"
+// video entries: src is the H.264 master; .av1.mp4 / .hevc.mp4 siblings are implied, and av1/hevc hold their codecs= types (tools/encode-video.sh prints them)
 // cat:  "arcade" | "pinball" | "consoles" | "monitors" | "projects" | "signage" | "misc"
 // tags: optional machine slugs (e.g. "big-blue") — gallery.html#tag=<slug> shows only
 //       those entries, and each machine profile links its own tag. Site-wide TAG_LABELS
 //       below names them; a new slug needs a label there.
 // Order is a deliberate spread, not chronological: no two shots of the same
 // subject sit within six entries of each other, so the wall never stacks a
-// run of Red Tents or PVMs together. Add an entry where its neighbours are a
+// run of Red Tents or PVMs together. Add an entry where its neighbors are a
 // different subject rather than at the top.
 // ═══════════════════════════════════════════════════════════
 const GALLERY = [
@@ -43,7 +44,7 @@ const GALLERY = [
   { type: "image", src: "media/2026/console-shelf-day.webp", title: "The console shelf by day", caption: "Paper Mario on the smaller PVM, Super Mario World on the 29-inch, the shelf lit underneath. <a href='consoles.html'>The consoles \u2192</a>", cat: "consoles", date: "2026-08" , w: 800, h: 800 },
   { type: "image", src: "media/2026/tna-playfield.webp?v=2", title: "Reactor lit", caption: "Total Nuclear Annihilation mid-game &mdash; the tempo climbs with every reactor you clear. <a href='tna.html'>The full profile \u2192</a>", tags: ["tna"], cat: "pinball" , w: 800, h: 1067 },
   { type: "image", src: "media/2026/vs-dk-high-scores-v2.webp", title: "Super Player's table", caption: "VS. Super Mario Bros.' high score board — every slot initialed DK, every run to World 8-4, 2,743,550 on top. <a href='vs-smb.html'>Why the arcade SMB is a different beast →</a>", tags: ["vs-unisystem"], cat: "arcade", date: "2026-08" , w: 800, h: 704 },
-  { type: "video", src: "media/video/game-room-spin-v2.mp4", poster: "media/2026/game-room-spin-poster.webp", title: "The game room, one full turn", caption: "A slow spin around the inside room \u2014 the framed PCB wall, Super Mario Bros. on the PVMs, the Sega CD library under the Kay\u00b7Bee World of Nintendo sign, and the Red Tent holding the corner", cat: "consoles" },
+  { type: "video", src: "media/video/game-room-spin-v2.mp4", av1: 'video/mp4; codecs="av01.0.05M.08"', hevc: 'video/mp4; codecs="hvc1.1.6.L93.90"', poster: "media/2026/game-room-spin-poster.webp", title: "The game room, one full turn", caption: "A slow spin around the inside room \u2014 the framed PCB wall, Super Mario Bros. on the PVMs, the Sega CD library under the Kay\u00b7Bee World of Nintendo sign, and the Red Tent holding the corner", cat: "consoles" },
   { type: "image", src: "media/2026/pinball-row-day.webp", title: "Indiana Jones, mid-row", caption: "The Williams widebody between Rick and Morty and Total Nuclear Annihilation. <a href='indiana-jones.html'>The full profile \u2192</a>", tags: ["indiana-jones", "tna", "rick-and-morty"], cat: "pinball", date: "2026-08" , w: 800, h: 1067 },
   { type: "image", src: "media/2026/bvm-a14f5u-lit.webp?v=2", title: "BVM-A14F5U", caption: "Two of three card slots filled, control panel and keypad flanking the tube. <a href='monitors.html'>The fleet \u2192</a>", tags: ["bvm-a14f5u"], cat: "monitors" , w: 800, h: 603 },
   { type: "image", src: "media/2026/redtent-channel-select.webp", title: "Channel select", caption: "Ten NES titles on one board \u2014 on a PlayChoice the coins buy time, not lives. <a href='red-tent.html'>The Red Tent \u2192</a>", tags: ["red-tent"], cat: "arcade", date: "2026-08" , w: 800, h: 600 },

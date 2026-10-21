@@ -73,31 +73,81 @@ const TOOLS = [
 ];
 
 // ── tool implementations ──
-const norm = s => String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "");
-const tokens = q => norm(q).split(/[^a-z0-9.+-]+/).filter(t => t.length > 1);
+// Matching rules shared with the header search in assets/site.js (keep the two in step; tools/eval-search.mjs
+// scores both against tools/search-battery.json): hyphens, periods and apostrophes are dropped before comparing,
+// so "pvm 20l5", "pvm-20l5" and "PVM20L5" all find PVM-20L5 and "players guide" finds "Player's Guide"; filler
+// words (what/is/how/to…) are ignored; a run-together token ("donkeykong", "15khz") can match a title or heading
+// with its spaces removed; a token that matches nothing anywhere is retried as a one-letter typo of a title/heading
+// word ("playchoise", "trinatron"); and a few hobby abbreviations expand (n64, snes, pc10, smb, tna).
+const STOP = new Set(["a", "an", "the", "is", "are", "was", "what", "whats", "which", "how", "do", "does", "to", "of", "for", "in", "on", "and", "or", "my", "your", "with", "it", "i", "can", "about", "me", "any", "some"]);
+const ALIAS = { n64: "nintendo 64", snes: "super nintendo", nes: "nintendo entertainment system", gba: "game boy advance", gb: "game boy", ps2: "playstation 2", pce: "pc engine", tg16: "turbografx", pc10: "playchoice 10", smb: "super mario bros", dk: "donkey kong", tna: "total nuclear annihilation", ij: "indiana jones", mvc: "marvel vs capcom", cps2: "cps 2", cps1: "cps 1", crt: "tube", lcd: "panel", vs: "vs" };
+const norm = s => String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/[\u2019'.-]/g, "");
+const compact = s => norm(s).replace(/[^a-z0-9]/g, "");
+const tokens = q => { const all = norm(q).split(/[^a-z0-9]+/).filter(t => t.length > 1); const kept = all.filter(t => !STOP.has(t)); return kept.length ? kept : all; };
+const forms = raw => { // the spellings of one query token that count as a hit: as typed, singular, verb stem, abbreviation expansion
+  const out = [raw];
+  if (raw.length > 3 && !raw.endsWith("ss") && raw.endsWith("s")) out.push(raw.slice(0, -1));
+  if (raw.length > 5 && raw.endsWith("ing")) out.push(raw.slice(0, -3));
+  if (ALIAS[raw] && ALIAS[raw] !== raw) out.push(ALIAS[raw]);
+  return out;
+};
+
+let PREP = null, VOCAB = null;
+function prep() {
+  if (PREP) return PREP;
+  PREP = INDEX.map(e => {
+    const slug = String(e.u).toLowerCase().replace(/\.html$/, "").split("#")[0].split(/[^a-z0-9]+/).filter(Boolean);
+    return { e, t: norm(e.t), tt: norm(e.tt), h: norm(e.h), s: norm(e.s), b: norm(e.b), k: norm(e.k), tc: compact(e.t), hc: compact(e.h), u: slug.concat(slug.length > 1 ? [slug.join("")] : []) };
+  });
+  VOCAB = new Set();
+  for (const p of PREP) for (const w of (p.t + " " + p.tt + " " + p.h + " " + p.u.join(" ")).split(/[^a-z]+/)) if (w.length >= 4) VOCAB.add(w);
+  return PREP;
+}
+function edits1(a, b) { // true when a and b differ by one substitution, insertion, deletion or adjacent swap
+  if (a === b) return false;
+  const la = a.length, lb = b.length;
+  if (Math.abs(la - lb) > 1) return false;
+  let i = 0; while (i < la && i < lb && a[i] === b[i]) i++;
+  if (la === lb) return a.slice(i + 1) === b.slice(i + 1) || (a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2));
+  return la > lb ? a.slice(i + 1) === b.slice(i) : a.slice(i) === b.slice(i + 1);
+}
+function typo(tok) {
+  if (tok.length < 5 || !/^[a-z]+$/.test(tok)) return null;
+  for (const w of VOCAB) if (edits1(tok, w)) return w;
+  return null;
+}
+const hitsAnywhere = (P, raw) => forms(raw).some(f => P.some(p => p.t.includes(f) || p.tt.includes(f) || p.h.includes(f) || p.b.includes(f) || p.tc.includes(f) || p.hc.includes(f) || p.u.includes(f)));
+
+function scoreEntry(p, tok) { // one query token against one index entry; the best of the token's forms counts
+  let best = 0;
+  for (const f of forms(tok)) {
+    let v = 0;
+    if (p.t.includes(f) || (f.length > 3 && p.tc.includes(f))) v += 20;
+    else if (p.tt.includes(f)) v += 15; // the page <title> where it differs from the H1 ("PVM vs. BVM: …")
+    if (p.u.includes(f)) v += 10; // slug words: "gba sp" → gba-sp.html, "pvm20l5" → the joined slug
+    if (p.h.includes(f) || (f.length > 3 && p.hc.includes(f))) v += 5;
+    if (p.k.includes(f)) v += 6; // the kind label: "glossary", "console", "project"
+    if (p.s.includes(f)) v += 3;
+    const n = p.b.split(f).length - 1;
+    if (n) v += Math.min(n, 3);
+    if (v > best) best = v;
+  }
+  return best;
+}
 
 function search(query, limit) {
-  const toks = tokens(query);
+  const P = prep();
+  let toks = tokens(query);
   if (!toks.length) return [];
+  toks = toks.map(raw => (hitsAnywhere(P, raw) ? raw : (typo(raw) || raw)));
+  const phrase = norm(query).trim().replace(/\s+/g, " ");
   const scored = [];
-  for (const e of INDEX) {
-    const t = norm(e.t), h = norm(e.h), s = norm(e.s), b = norm(e.b), u = norm(e.u).replace(/\.html$/, "").replace(/-/g, " ");
+  for (const p of P) {
     let score = 0, hits = 0;
-    for (const raw of toks) {
-      const tok = raw.length > 3 && !raw.endsWith("ss") ? raw.replace(/s$/, "") : raw; // "toppers" finds "topper"
-      let v = 0;
-      if (t.includes(tok)) v += 20;
-      if (u.split(" ").includes(tok)) v += 10; // slug words: "gba sp" → gba-sp.html
-      if (h.includes(tok)) v += 5;
-      if (s.includes(tok)) v += 3;
-      const n = b.split(tok).length - 1;
-      if (n) v += Math.min(n, 3);
-      if (v) hits++;
-      score += v;
-    }
-    const phrase = norm(query).trim();
-    if (phrase.length > 3 && (t.includes(phrase) || h.includes(phrase) || b.includes(phrase))) score += 10;
-    if (hits === toks.length || (toks.length > 2 && hits >= toks.length - 1)) scored.push([score + (e.w || 0), e]);
+    for (const tok of toks) { const v = scoreEntry(p, tok); if (v) hits++; score += v; }
+    if (toks.length > 1 && phrase.length > 3 && (p.t.includes(phrase) || p.h.includes(phrase) || p.b.includes(phrase))) score += 10;
+    if (phrase === p.t) score += 8; // the exact title (a tie-breaker, not enough to lift a photo over its profile page)
+    if (hits === toks.length || (toks.length > 2 && hits >= toks.length - 1)) scored.push([score + (p.e.w || 0), p.e]);
   }
   scored.sort((a, b) => b[0] - a[0]);
   return scored.slice(0, limit).map(([score, e]) => {
@@ -113,7 +163,8 @@ function search(query, limit) {
 
 function findPage(ref) {
   const r = String(ref || "").trim().toLowerCase();
-  const slug = r.replace(/^https?:\/\/(www\.)?orlandu\.com\//, "").replace(/^\//, "").replace(/\.html$/, "").split("#")[0].split("?")[0];
+  // strip the fragment/query FIRST, or ".html#section" and ".html?x" never lose their extension
+  const slug = r.split("#")[0].split("?")[0].replace(/^https?:\/\/(www\.)?orlandu\.com\//, "").replace(/^\//, "").replace(/\.html$/, "");
   return PAGES.find(p => p.slug === slug || p.url.toLowerCase() === r || (slug === "" && p.slug === "home") || (slug === "index" && p.slug === "home"));
 }
 
@@ -134,6 +185,7 @@ function callTool(name, args) {
       return text(hits.map((h, i) => `${i + 1}. ${h.title} (${h.kind})\n   ${h.url}\n   ${h.snippet}`).join("\n\n"));
     }
     case "read_orlandu_page": {
+      if (typeof args.page !== "string") throw rpcError(-32602, "page (string) is required — a slug or URL; use list_orlandu_pages for slugs");
       const p = findPage(args.page);
       if (!p) throw rpcError(-32602, `No page matches "${args.page}". Use list_orlandu_pages for slugs.`);
       const max = Math.min(Math.max(parseInt(args.max_chars, 10) || 60000, 1000), 200000);
@@ -151,7 +203,8 @@ function callTool(name, args) {
       return json(rows(CONSOLES, "console", args.console));
     case "bkm_cards": {
       const f = norm(args.query);
-      const out = f ? BKM.rows.filter(r => norm(r.model).includes(f) || norm(r.fits).includes(f) || norm(r.family).includes(f)) : BKM.rows;
+      // Substring match on model, Fits and family — but a Fits that says "not BVM-A" must not answer "BVM-A".
+      const out = f ? BKM.rows.filter(r => norm(r.model).includes(f) || norm(r.family).includes(f) || (norm(r.fits).includes(f) && !norm(r.fits).includes("not " + f))) : BKM.rows;
       return json({ dataset: BKM.dataset, source: BKM.source, license: BKM.license, credit: BKM.credit, count: out.length, rows: out });
     }
     default:

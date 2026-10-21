@@ -24,6 +24,8 @@ python3 tools/build-datasets.py      # data/*.json|csv from the fleet table, the
 python3 tools/stamp-assets.py        # ?v=<hash> on every style.css / site.js / gallery-data.js reference
 python3 tools/update-lastmod.py      # sitemap <lastmod> = the day each page's <main> content last changed
 python3 tools/build-static-footer.py # only if the footer block or NAV in site.js changed; re-renders the static footer copy
+node tools/test-mcp.mjs              # 200+ contract checks on api/mcp.js (transport, every tool, bad input) — must print "0 failed"
+node tools/eval-search.mjs           # search quality: 218 queries vs both search paths; top-1 should stay ≥ 90 %, top-3 ≥ 97 %
 ```
 
 **The footer is pre-rendered into every page's `<footer class="site">` shell (2026-10-09)** so crawlers
@@ -187,6 +189,19 @@ Vercel auto-deploys `main`; allow ~40s before verifying.
   CSS and JS under `/assets/` get a 5-minute browser TTL instead (they are referenced
   without `?v=`), so an edit to `style.css`/`site.js` lands within minutes and needs no
   cache-busting.
+- **Video is three encodes per clip (2026-10-20).** Every `<video>` carries three `<source>`s in
+  this order: `<clip>.av1.mp4` (SVT-AV1, 8-bit yuv420p), `<clip>.hevc.mp4` (x265, `hvc1` tag so
+  Safari recognizes it), then the original H.264 `<clip>.mp4` last. Each `<source>` has a
+  `type='video/mp4; codecs="…"'` read from the actual file so a browser skips what it can't decode
+  without downloading it. `tools/encode-video.sh media/video/<clip>.mp4` makes both siblings,
+  prints size + SSIM against the H.264 (keep SSIM ≥ 0.97; AV1 crf 40–50 and HEVC crf 30 were
+  transparent on the four clips at 1:1), and prints the three `<source>` lines. The H.264 file stays
+  canonical: it is the `contentUrl` in every VideoObject, the `video:content_loc` in sitemap.xml,
+  and the only file older browsers see — never change those to the AV1. The gallery builder in
+  `gallery.html` adds the two siblings itself from the entry's `src`, with the codecs types in the
+  entry's `av1` / `hevc` fields (`assets/gallery-data.js`). New names, never in place: `/media/*` is
+  immutable-cached. HEVC playback was not verified here (Linux Chromium has no HEVC decoder);
+  Safari is expected to take it, and falls to H.264 if not.
 - **Fonts are self-hosted** in `assets/fonts/` (latin woff2 from `@fontsource`), declared at
   the top of `style.css` with exactly the weights the old Google Fonts link served
   (Orbitron 600/800, Rajdhani 400/500/600, Barlow Condensed 400/500, Press Start 2P).
@@ -672,6 +687,29 @@ wherever a dataset is mentioned. The BKM card reference is NOT in the server unt
 (Project doc `claude/bkm-card-reference-draft.md`). David also approved a Wikidata item for the AMS-100 only, citing the
 monograph — not yet created; it needs his Wikidata login in the browser pane. No prompt-injection text for assistants,
 ever — that is the kind of "AI marketing" that gets a site demoted.
+
+**Search ranking (2026-10-20) — one set of rules in TWO places: `search()` in `api/mcp.js` and the
+`/* search-score:start … end */` block in `assets/site.js`. Change both or neither.** `tools/eval-search.mjs`
+lifts the site.js block out verbatim and runs `tools/search-battery.json` (218 real-world queries with their
+intended page) against both; `tools/test-mcp.mjs` is the server's contract test. Both are in the pre-push list.
+The rules: hyphens, periods and apostrophes are dropped before comparing (so "pvm 20l5" = "pvm-20l5" = "PVM20L5",
+"players guide" finds "Player's Guide", "cps2" finds "CPS-2"); filler words (what/is/how/to/for…) are ignored;
+a token also counts in its singular ("toppers"), verb stem ("buying"→"buy") and abbreviation form (n64, snes, nes,
+gba, ps2, pce, tg16, pc10, smb, dk, tna, ij, cps1/2 — the `ALIAS` map); a run-together token ("donkeykong", "15khz")
+can match a title/heading with its spaces removed; a token that matches nothing anywhere is retried as a one-letter
+typo of any title/heading word ("playchoise", "trinatron"). Slug words score (gba-sp.html answers "gba sp"), so do
+the kind label ("glossary", "console") and the lede. The index carries `w` rank weights set by the builder:
+profiles, stories and guides (main.profile or a reading time) and the Coin-Op/Monitors hubs 10, other pages 6,
+glossary 5, cards 4, FAQ 3, photos 2 — a model number must find its profile page before the gallery photo of it.
+Pages whose `<title>` differs from the H1 carry it as `tt`, scored a notch below the H1 (the H1 of pvm-vs-bvm is
+editorial; the `<title>` says "PVM vs. BVM"). The dialog still displays the H1. MCP weights: H1 20 / `tt` 15 /
+slug 10 / kind 6 / heading 5 / lede 3 / body ≤3 / multi-word phrase +10 / exact title +8; the header keeps its
+40-24-16 title scheme (exact 32) plus the same extras. Measured 2026-10-20 on the battery: MCP top-1 77→93 %,
+top-3 89→99 %; header 67→93 % and 83→98 %, zero top-3 regressions on the MCP side. Known leftovers: "ebay"/"buy"
+rank For Sale second; "bkm-10r" answers the 20E1U profile (which uses one) above bkm-cards. `bkm_cards` no longer
+returns a row whose Fits says "not <query>" (the BKM-10R for "BVM-A"); `read_orlandu_page` now rejects a missing
+`page` instead of silently returning the home page, and resolves `….html#section` / `….html?x` URLs.
+`build-search-index.py` also decodes `\uXXXX` in gallery titles — "Kay\u00b7Bee" had been showing raw in the dialog.
 
 **MCP Registry listing (2026-10-10): `com.orlandu/arcade` is PUBLISHED** in the official registry
 (registry.modelcontextprotocol.io), version 1.0.0, from `server.json` at the repo root. The namespace is

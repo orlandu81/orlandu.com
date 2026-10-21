@@ -547,14 +547,22 @@
     setTimeout(function(){ t.classList.add("out"); }, 1400);
     setTimeout(function(){ t.remove(); }, 1800);
   }
-  function copy(text){
-    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+  // The async Clipboard API is refused in some embedded browsers and under a strict
+  // permissions policy (2026-10-20 QA sweep); fall through to the textarea copy so a
+  // denied write never surfaces as an unhandled rejection with no feedback.
+  function legacyCopy(text){
     return new Promise(function(res, rej){
       var ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.left = "-9999px";
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand("copy"); res(); } catch(e){ rej(e); }
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch(e){}
       ta.remove();
+      ok ? res() : rej(new Error("copy-denied"));
     });
+  }
+  function copy(text){
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text).catch(function(){ return legacyCopy(text); });
+    return legacyCopy(text);
   }
   var used = {};
   Array.prototype.forEach.call(main.querySelectorAll("h2"), function(h){
@@ -588,7 +596,7 @@
     b.addEventListener("click", function(){
       var data = { title: document.title, url: location.origin + location.pathname };
       if (navigator.share){ navigator.share(data).catch(function(){}); }
-      else copy(data.url).then(function(){ toast("Link copied", b); });
+      else copy(data.url).then(function(){ toast("Link copied", b); }, function(){ toast("Copy blocked \u2014 the address bar has the link", b); });
     });
     row.appendChild(b);
     var rt = main.querySelector("div.rt");
@@ -876,7 +884,90 @@
     dlg.hidden = true; document.body.style.overflow = "";
     if (opener && opener.focus) opener.focus();
   }
-  function norm(s){ return (s || "").toLowerCase().replace(/[’']/g, "'"); }
+  /* search-score:start — the ranking, mirrored in api/mcp.js (keep the two in step; tools/eval-search.mjs
+     lifts this block out verbatim and scores it against tools/search-battery.json, so edit only between the
+     start/end marks and keep rank(q) as the entry point).
+     Hyphens, periods and apostrophes are dropped before comparing ("pvm 20l5" = "pvm-20l5" = "PVM20L5",
+     "players" finds "Player's"); filler words are ignored; a run-together word ("donkeykong") can match a title
+     with its spaces removed; a word that matches nothing is retried as a one-letter typo of a title/heading word;
+     and a few hobby abbreviations expand (n64, snes, pc10, smb, tna). */
+  var STOP = {a:1,an:1,the:1,is:1,are:1,was:1,what:1,whats:1,which:1,how:1,"do":1,does:1,to:1,of:1,"for":1,"in":1,on:1,and:1,or:1,my:1,your:1,"with":1,it:1,i:1,can:1,about:1,me:1,any:1,some:1};
+  var ALIAS = {n64:"nintendo 64",snes:"super nintendo",nes:"nintendo entertainment system",gba:"game boy advance",gb:"game boy",ps2:"playstation 2",pce:"pc engine",tg16:"turbografx",pc10:"playchoice 10",smb:"super mario bros",dk:"donkey kong",tna:"total nuclear annihilation",ij:"indiana jones",mvc:"marvel vs capcom",cps2:"cps 2",cps1:"cps 1",crt:"tube",lcd:"panel"};
+  function norm(s){ return (s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/[’'.-]/g, ""); }
+  function compact(s){ return norm(s).replace(/[^a-z0-9]/g, ""); }
+  function forms(raw){
+    var out = [raw];
+    if (raw.length > 3 && raw.slice(-2) !== "ss" && raw.slice(-1) === "s") out.push(raw.slice(0, -1));
+    if (raw.length > 5 && raw.slice(-3) === "ing") out.push(raw.slice(0, -3));
+    if (ALIAS[raw]) out.push(ALIAS[raw]);
+    return out;
+  }
+  var PREP = null, VOCAB = null;
+  function prep(){
+    if (PREP) return PREP;
+    PREP = INDEX.map(function(e){
+      var slug = String(e.u).toLowerCase().replace(/\.html$/, "").split("#")[0].split(/[^a-z0-9]+/).filter(Boolean);
+      if (slug.length > 1) slug.push(slug.join(""));
+      return { e: e, t: norm(e.t), tt: norm(e.tt), h: norm(e.h), s: norm(e.s), b: norm(e.b), k: norm(e.k), tc: compact(e.t), hc: compact(e.h), u: slug };
+    });
+    VOCAB = {};
+    PREP.forEach(function(p){ (p.t + " " + p.tt + " " + p.h + " " + p.u.join(" ")).split(/[^a-z]+/).forEach(function(w){ if (w.length >= 4) VOCAB[w] = 1; }); });
+    return PREP;
+  }
+  function edits1(a, b){
+    if (a === b) return false;
+    var la = a.length, lb = b.length;
+    if (Math.abs(la - lb) > 1) return false;
+    var i = 0; while (i < la && i < lb && a[i] === b[i]) i++;
+    if (la === lb) return a.slice(i + 1) === b.slice(i + 1) || (a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2));
+    return la > lb ? a.slice(i + 1) === b.slice(i) : a.slice(i) === b.slice(i + 1);
+  }
+  function typo(tok){
+    if (tok.length < 5 || !/^[a-z]+$/.test(tok)) return null;
+    for (var w in VOCAB) if (edits1(tok, w)) return w;
+    return null;
+  }
+  function hitsAnywhere(P, raw){
+    return forms(raw).some(function(f){ return P.some(function(p){ return p.t.indexOf(f) >= 0 || p.tt.indexOf(f) >= 0 || p.h.indexOf(f) >= 0 || p.b.indexOf(f) >= 0 || p.tc.indexOf(f) >= 0 || p.hc.indexOf(f) >= 0 || p.u.indexOf(f) >= 0; }); });
+  }
+  function scoreEntry(p, tok){
+    var best = 0;
+    forms(tok).forEach(function(f){
+      var v = 0;
+      if (p.t.indexOf(f) >= 0) v += p.t === f ? 32 : (p.t.indexOf(f) === 0 ? 24 : 16);
+      else if (f.length > 3 && p.tc.indexOf(f) >= 0) v += 16;
+      else if (p.tt.indexOf(f) >= 0) v += 12; // the page <title> where it differs from the H1 ("PVM vs. BVM: …")
+      if (p.u.indexOf(f) >= 0) v += 10;
+      if (p.h.indexOf(f) >= 0 || (f.length > 3 && p.hc.indexOf(f) >= 0)) v += 8;
+      if (p.k.indexOf(f) >= 0) v += 6;
+      if (p.s.indexOf(f) >= 0) v += 4;
+      var n = p.b.split(f).length - 1;
+      if (n) v += Math.min(n, 3);
+      if (v > best) best = v;
+    });
+    return best;
+  }
+  function rank(input){
+    var q = norm(input).trim();
+    if (q.length < 2) return null;
+    var P = prep();
+    var all = q.split(/[^a-z0-9]+/).filter(function(t){ return t.length > 1; });
+    var toks = all.filter(function(t){ return !STOP[t]; });
+    if (!toks.length) toks = all;
+    if (!toks.length) return [];
+    toks = toks.map(function(raw){ return hitsAnywhere(P, raw) ? raw : (typo(raw) || raw); });
+    var phrase = q.replace(/\s+/g, " ");
+    var scored = [];
+    P.forEach(function(p){
+      var score = 0, hits = 0;
+      toks.forEach(function(tok){ var v = scoreEntry(p, tok); if (v) hits++; score += v; });
+      if (toks.length > 1 && phrase.length > 3 && (p.t.indexOf(phrase) >= 0 || p.h.indexOf(phrase) >= 0 || p.b.indexOf(phrase) >= 0)) score += 10;
+      if (hits === toks.length || (toks.length > 2 && hits >= toks.length - 1)) scored.push({ e: p.e, s: score + (p.e.w || 0), words: toks });
+    });
+    scored.sort(function(a, b){ return b.s - a.s; });
+    return scored;
+  }
+  /* search-score:end */
   function esc(s){ return s.replace(/[&<>]/g, function(c){ return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); }
   function hl(text, words){
     var out = esc(text);
@@ -887,27 +978,11 @@
     return out;
   }
   function run(){
-    var q = norm(input.value).trim();
     res.innerHTML = "";
-    if (q.length < 2){ hint.hidden = false; return; }
+    var scored = rank(input.value);
+    if (scored === null){ hint.hidden = false; return; }
     hint.hidden = true;
-    var words = q.split(/\s+/).filter(Boolean);
-    var scored = [];
-    INDEX.forEach(function(e){
-      var t = norm(e.t), h = norm(e.h), b = norm(e.b), k = norm(e.k);
-      var score = 0, all = true;
-      words.forEach(function(w){
-        var hit = 0;
-        if (t.indexOf(w) >= 0) hit += t === w ? 40 : (t.indexOf(w) === 0 ? 24 : 16);
-        if (h.indexOf(w) >= 0) hit += 8;
-        if (k.indexOf(w) >= 0) hit += 6;
-        if (b.indexOf(w) >= 0) hit += 3;
-        if (!hit) all = false;
-        score += hit;
-      });
-      if (all) scored.push({ e: e, s: score + (e.w || 0) });
-    });
-    scored.sort(function(a, b){ return b.s - a.s; });
+    var words = scored.length ? scored[0].words : norm(input.value).trim().split(/\s+/);
     scored.slice(0, 12).forEach(function(x){
       var e = x.e, li = document.createElement("li");
       var snippet = e.s || "";
