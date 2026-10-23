@@ -19,8 +19,8 @@ async function appToken(id, secret) {
     headers: { "Content-Type": "application/x-www-form-urlencoded", Authorization: "Basic " + Buffer.from(id + ":" + secret).toString("base64") },
     body: "grant_type=client_credentials&scope=" + encodeURIComponent("https://api.ebay.com/oauth/api_scope"),
   });
-  if (!r.ok) throw new Error("token " + r.status);
-  const j = await r.json();
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) { const e = new Error("token " + r.status); e.detail = { status: r.status, error: j.error || null, description: j.error_description || null }; throw e; }
   tokenCache = { value: j.access_token, until: Date.now() + Math.max(60, (j.expires_in || 7200) - 120) * 1000 };
   return tokenCache.value;
 }
@@ -37,7 +37,7 @@ module.exports = async (req, res) => {
 
   let token;
   try { token = await appToken(id, secret); }
-  catch (e) { res.setHeader("Cache-Control", "no-store"); res.status(502).json({ ok: false, error: "token" }); return; }
+  catch (e) { res.setHeader("Cache-Control", "no-store"); res.status(502).json({ ok: false, error: "token", ebay: e.detail || { message: String(e.message || e) } }); return; }
 
   const items = {}; let seller = null;
   await Promise.all(ids.map(async (itemId) => {
