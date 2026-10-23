@@ -93,6 +93,21 @@ The geometry grid, judging a tube with no hours counter, what to pay — and why
  (https://www.orlandu.com/pvm-20l5-buying-guide.html)
 
 ## Latest from the arcade
+ New tool
+
+### Through the mask
+
+Every tube in the fleet simulated from its own numbers — scan-line gap, grille pitch, center resolution — two side by side, with a slider that walks you from the glass to the couch. See through it → (https://www.orlandu.com/through-the-mask.html)
+ New tool
+
+### Will it connect?
+
+Pick any console and any monitor in the fleet: the cable chain step by step, the sync and termination rules, which BKM card it needs, and a plain verdict. Ask it → (https://www.orlandu.com/will-it-connect.html)
+ New tool
+
+### Operate a BKM-10R
+
+The control unit a BVM-20E1U cannot live without, button by button and menu by menu, with Sony’s own description of what each one does. Press something → (https://www.orlandu.com/bkm-10r.html)
  New reference
 
 ### What a Sony model number says
@@ -112,7 +127,7 @@ Three physical families, not one: the 2x decoders for the BVM-E/F/G and big D-se
 
 ### Ask your AI assistant about the arcade
 
-An MCP server, a full-text file and four open datasets let Claude, ChatGPT, Cursor or any agent search the site, read a page and query the monitor specs — no key, no scraping. How to connect it → (https://www.orlandu.com/mcp.html)
+An MCP server, a full-text file and five open datasets let Claude, ChatGPT, Cursor or any agent search the site, read a page and query the monitor specs — no key, no scraping. How to connect it → (https://www.orlandu.com/mcp.html)
  New how-to
 
 ### Console to PVM, cable by cable
@@ -123,21 +138,6 @@ What actually plugs into what to get a retro console onto a Sony professional mo
 ### The spinning top wall
 
 Sixty Foreverspin tops photographed off their bases — thirty-five metals from 6 g magnesium to 60 g tungsten, plus twenty-five mystery tops and limited editions. See the wall → (https://www.orlandu.com/spinning-tops.html)
- New page
-
-### The PlayChoice-10 cart wall
-
-The whole PlayChoice-10 library, board by board, plus ten conversions and custom builds with the story of each — and what the bare green PCB and its two-letter code actually tell you. See the cart wall → (https://www.orlandu.com/playchoice-10.html)
- New pages
-
-### Every monitor gets its own page
-
-The PVM-2950Q, PVM-20L5, BVM-20E1U, BVM-A14F5U and the LMD wall each get a full profile — the feature, the inputs and cards, and the work log. Start at the roster → (https://www.orlandu.com/monitors.html)
- New page
-
-### Forty years on one line
-
-Every machine, console and monitor plotted by the year it was released — scroll down from the 1981 Donkey Kong to the 2020 Rick and Morty. See the timeline → (https://www.orlandu.com/timeline.html)
 
 ---
 
@@ -397,6 +397,8 @@ Front and side elevations from the dimensions Sony prints in each model’s broc
 Every model in the collection on one sheet — tube or panel, size, resolution, what formats it locks to, which inputs it carries and which need a BKM card. Pick any two to compare — the rows that differ light up. Click a column heading to sort; each model name opens its own profile page; the long-form spec table and its sources live in Trinitron Fleet, Vol. 1 (https://www.orlandu.com/trinitron-fleet-vol1.html).
  Comparevs
 
+See these two through the mask — scan lines, grille and resolution simulated from the same numbers → (https://www.orlandu.com/through-the-mask.html)
+
 | Model | Display | Size | Resolution | Formats | HD | RGB / component | SD-SDI | HD-SDI / 3G | Option slots | Weight | Dimensions | Era | Units |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | PVM-2950Q (https://www.orlandu.com/pvm-2950q.html)PVM · CRT | Super Trinitron CRT | 29" (27" viewable) | 600 TVL | NTSC / PAL / SECAM | No | RGB (BNC) | — | — | None | 115 lb | 687 × 538 × 529 mm | 1991–1996 | 1 |
@@ -614,7 +616,7 @@ Sightings are rare enough to count as events. A sound example surfaces perhaps o
 - **SD-SDI**: Optional (BKM-20D/21D — both owned)
 - **HD-SDI**: None
 - **Option slots**: 4 + fixed RGB input — full E/F 8-card family
-- **Control**: Built-in panel; IC memory card; ISR/RS-485; optional BKM-10R remote
+- **Control**: No controls on the chassis — a BKM-10R Monitor Control Unit over D-sub 9 (operate one → (https://www.orlandu.com/bkm-10r.html)); IC memory card; RS-485 loop
 - **Weight**: 82 lb (37 kg, Sony spec)
 
 ## Work log
@@ -4593,6 +4595,85 @@ How to cite: Orlandu’s Arcade (“Orlandu81”), *PVM vs. BVM: Sony's Pro Moni
 
 ---
 
+# Operate a Sony BKM-10R: Every Button and Menu of the BVM Control Unit
+
+URL: https://www.orlandu.com/bkm-10r.html
+
+An interactive Sony BKM-10R Monitor Control Unit driving a BVM-20E1U: press every button, turn the knobs, walk Sony's whole menu tree — with Sony's own description of what each one does.
+
+Tool · built from Sony’s operation manual
+
+# Operate a BKM-10R
+
+A BVM whose model number ends in 1 is a display unit: it has no controls of its own, and without a Monitor Control Unit there is no way to adjust it. This is that unit — the rack-width BKM-10R, driving the BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html). Every button does what Sony says it does, the knobs turn, and the MENU button opens Sony’s whole menu tree. Press anything; the panel on the right quotes the manual.
+ Monitor **BVM-20E1U**Channel **1**Input **RGB (fixed)**Scan **4:3 normal**
+
+### BKM-10R Monitor Control Unit
+
+Rack width, 1U, 424 × 44 × 157 mm, 1.4 kg. Powered by the monitor over one D-sub 9-pin cable; controls up to 32 monitors on an RS-485 loop.
+
+“Each of the Function buttons has a Shift On function as well as a Shift Off function. Shift On: use the function indicated below the Function button. Shift Off: use the function indicated above.”
+ Sony, BVM-E/F operation manual, pp. 1-41 to 1-44 Memory cardBKM-12Y
+slot Shift Function Menu Power · Degauss Channel Manual50505050
+
+Orange LED: function onGreen LED: knob liveKeypad: CH 1–9 direct; 0 then two digits for 10–99; 91–95 are Sony’s test patternsDrag a knob up or down, or focus it and use the arrow keys
+
+## What the picture is doing
+
+The picture is a 240p test frame drawn in the browser, not a photograph of the 20E1U, and the effects are illustrations of what each control changes: UNDERSCAN pulls the raster in so the blanking edges show; H DELAY and V DELAY shift the raster so the sync intervals land on screen; BLUE ONLY and the R, G, B keys cut guns; MONO drops chroma; APT sharpens; 16:9 letterboxes the 4:3 tube; SAFE AREA draws the action-safe box; DEGAUSS throws the picture for a moment the way a tube does. Channels 91 to 95 call up PLUGE, 20 % gray, 100 % white, a five-step gray scale and crosshatch, which is what Sony assigns them. The menu tree follows Sony’s numbering — 100 CONTROL PRESET ADJ through 900 STATUS — and most leaves are shown rather than functional; the ones that toggle do toggle.
+
+Everything quoted is from Sony’s *BVM-14E1/14E5/14F1/14F5/20E1/20F1, BKM-10R Operation and Maintenance Manual*, read in full; the three Shift-Off labels UNDERSCAN, H DELAY and V DELAY were garbled in the scan and are placed from the REMOTE function list and the panel layout. The handheld BKM-11R is a separate, smaller unit and is not modeled here. Which controllers fit which chassis is on the BKM reference (https://www.orlandu.com/bkm-cards.html); why the 1 in BVM-20E**1**U means this unit is needed is on the model-number page (https://www.orlandu.com/sony-model-numbers.html).
+
+---
+
+# Will It Connect? Any Retro Console to Any Sony PVM, BVM or LMD
+
+URL: https://www.orlandu.com/will-it-connect.html
+
+Pick a console and a Sony professional monitor: the exact cable chain, the sync and termination rules, which BKM card it needs if any, and a plain verdict — from the hardware on the bench.
+
+Tool · from the hardware on the bench
+
+# Will it connect?
+
+Pick a console and a monitor. You get the exact chain the arcade would use — cable, switcher, breakout, input — the sync and termination rules, which BKM card the monitor needs if it needs one, and a plain answer. The consoles the arcade owns are marked with what is actually done to them; the rest are described from their published outputs and the usual modifications. The long version is the how-to, Console to PVM, cable by cable (https://www.orlandu.com/connect-console-to-pvm.html).
+ Console Monitor
+
+## The rules behind the answer
+
+A 15 kHz RGB signal — 240p and 480i — is what every CRT here was built for, so it ranks first whenever the console can produce it. Component carries 480p and HD only into the multiformat monitors: the PVM-20L5, the BVM-A14F5U through its BKM-68X, and the LMD-9030 and 9050. The BVM-20E1U and PVM-2950Q are standard-definition by design; a 480p-capable console still connects, it just runs at 480i. S-Video and composite are listed because they exist, not because the arcade uses them. The LMD-940W has no analog input at all, so anything older than HDMI needs a converter in front of it. Sync rides the composite-sync line of the SCART cable; a monitor whose BNCs take RGB or component is set to RGB; and the last, or only, monitor on a loop-through line is terminated at 75 Ω.
+
+The rules are open data: connect.json (https://www.orlandu.com/data/connect.json), CC BY 4.0, credit Orlandu’s Arcade; the planner itself is one small script (https://www.orlandu.com/assets/connect-plan.js), and an AI assistant can call it as the plan_connection tool on the MCP server (https://www.orlandu.com/mcp.html). Which card fits which chassis is on the BKM reference (https://www.orlandu.com/bkm-cards.html); what each monitor accepts is on the fleet table (https://www.orlandu.com/monitors.html#specs).
+
+---
+
+# Sony CRT Simulator: Every Tube in the Fleet, Through the Mask
+
+URL: https://www.orlandu.com/through-the-mask.html
+
+A spec-driven simulation of each Sony PVM, BVM and LMD in the collection — scan lines, aperture-grille pitch, resolution and viewing distance — two side by side, from the glass to the couch.
+
+Tool · spec-driven, not a photograph
+
+# Through the Mask
+
+Every tube in the fleet, modeled from its own numbers — picture height, 240 scan lines, center resolution, aperture-grille pitch. Pick two, choose what to put on them, then pull back from the glass to the couch and watch the differences appear and vanish the way they do in the room. The real thing is on the fleet page (https://www.orlandu.com/monitors.html); the specs behind every frame are on the side-by-side table (https://www.orlandu.com/monitors.html#specs).
+ Left Right Source Distance Window
+
+## A
+**1 mm
+
+## B
+**1 mm
+
+## What is modeled, and what is not
+
+Scan lines are placed 240 to the viewable height, so the gap between them is Sony’s picture height divided by 240 — 1.21 mm on a 20-inch tube, 1.71 mm on the 2950Q. Horizontal softness comes from the center-resolution spec: TV lines over a width equal to the picture height, so 1000 TVL on the BVM-20E1U resolves a 0.29 mm element where the 2950Q’s 600 TVL resolves 0.69 mm. The aperture grille is drawn at the pitch Sony states where it states one — 0.25 mm on the E and F tubes from the E/F manual, 0.7–0.85 mm on the 2950Q from its brochure; the PVM-20L5 has no published figure and is drawn at the 0.25 mm class its HR tube belongs to. The LCDs are drawn as their actual pixel grids — 640×480 on the 9020 and 9030, 1024×768 on the 9050, 800×480 on the 940W — with 240p scaled by nearest neighbor, which is an assumption about Sony’s scaler, not a fact; the 9050’s 3.2× fractional scale is why its text shows uneven pixel widths. Beam bloom, gamma, the damper wires and the eye’s one-arcminute limit are approximations. Nothing here is a photograph of these monitors; the gallery (https://www.orlandu.com/gallery.html#tag=bvm-20e1u) has those.
+
+Numbers from the fleet spec table (https://www.orlandu.com/monitors.html#specs) and Sony’s documents; what each letter on a Sony badge means is on the model-number page (https://www.orlandu.com/sony-model-numbers.html). Links from the compare mode land here with the two models preselected.
+
+---
+
 # Sony PVM, BVM & LMD Model Numbers Decoded
 
 URL: https://www.orlandu.com/sony-model-numbers.html
@@ -5779,12 +5860,12 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 80,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 81,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server
 
-Endpoint https://www.orlandu.com/api/mcp — Streamable HTTP transport, read-only, no authentication. Seven tools:
+Endpoint https://www.orlandu.com/api/mcp — Streamable HTTP transport, read-only, no authentication. Eight tools:
 
 - search_orlandu — full-text search over every page, card, glossary term and gallery caption
 - read_orlandu_page — one page as Markdown
@@ -5793,6 +5874,7 @@ Endpoint https://www.orlandu.com/api/mcp — Streamable HTTP transport, read-onl
 - playchoice_10_library — the fifty-two PlayChoice-10 games, each with its board photo
 - bkm_cards — every Sony BKM option card and which monitor it fits
 - console_video_out — how each console reaches the glass
+- plan_connection — any console to any monitor in the fleet: the chain, the rules, the verdict
 
 It answers from the published pages only, and it is rebuilt with every update to the site.
 
@@ -5814,14 +5896,15 @@ In Claude it goes in as a custom connector with that URL; ChatGPT and most other
 
 ## The datasets
 
-Four tables from the site as open data, CC BY 4.0 — use them, credit Orlandu's Arcade.
+Five tables from the site as open data, CC BY 4.0 — use them, credit Orlandu's Arcade.
 
 | Dataset | What's in it | Files |
 |---|---|---|
-| Sony monitor specs | Eight models, thirteen columns: display, size, resolution, formats, inputs, option slots, weight, era — the fleet table (https://www.orlandu.com/monitors.html#specs) | JSON (https://www.orlandu.com/data/sony-monitor-specs.json) · CSV (https://www.orlandu.com/data/sony-monitor-specs.csv) |
+| Sony monitor specs | Eight models, fourteen columns: display, size, resolution, formats, inputs, option slots, weight, dimensions, era — the fleet table (https://www.orlandu.com/monitors.html#specs) | JSON (https://www.orlandu.com/data/sony-monitor-specs.json) · CSV (https://www.orlandu.com/data/sony-monitor-specs.csv) |
 | PlayChoice-10 library | The fifty-two games Nintendo released, each with a photo of its original board — the cart wall (https://www.orlandu.com/playchoice-10.html) | JSON (https://www.orlandu.com/data/playchoice-10-library.json) · CSV (https://www.orlandu.com/data/playchoice-10-library.csv) |
 | Sony BKM cards | Thirty-four option cards and controllers across the BVM-D, E/F/G, A and LCD-era lines: what each does, which chassis it fits, the Sony source — the reference (https://www.orlandu.com/bkm-cards.html) | JSON (https://www.orlandu.com/data/bkm-cards.json) · CSV (https://www.orlandu.com/data/bkm-cards.csv) |
 | Console video out | Nine consoles: the modification, the video output, the chain to the monitor — the console table (https://www.orlandu.com/consoles.html#mods) | JSON (https://www.orlandu.com/data/console-video-out.json) · CSV (https://www.orlandu.com/data/console-video-out.csv) |
+| Will it connect? rules | Seventeen consoles, eight monitors, seven signal types: what each console puts out and how, what each monitor accepts and through which card, and the cable chain per signal — the planner (https://www.orlandu.com/will-it-connect.html) | JSON (https://www.orlandu.com/data/connect.json) |
 
 The photos the datasets link to stay © Orlandu's Arcade.
 

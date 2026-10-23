@@ -776,3 +776,37 @@ photo-dependent work; 6 waits for his BKM card photos).
   footer Reading row (site.js + static footer), home Latest (added this + a "compare / to scale" card; dropped the
   Captain Skyhawk and Orlandu 100 cards, still 9), bkm-cards lede link, pvm-vs-bvm "decoded here" link. Not in the
   story chain (reference page, like bkm-cards). No dataset node — a `sony-model-codes` dataset is a future option.
+
+## Review eight (2026-10-22) — the four tools and the eBay function
+
+David asked for five ideas that "blow me away" after review seven read as "just ok"; he took four to build and
+asked for Catalog mock pages first (the fifth). Rulings and the mock are in Project doc `claude/review-8-2026-10-22.md`.
+
+- **`through-the-mask.html` — the tube simulator** (`main.hub`, WebGL). Each monitor is modeled from Sony's figures in
+  the page's `M` array: viewable w/h mm, TVL, grille pitch (0.25 E/F from the manual; 2950Q 0.78 from its brochure;
+  **20L5 has no Sony pitch — 0.25 class, marked `est`**), damper wires; LCDs by pixel grid with nearest-neighbor 240p.
+  Scan lines at h/240, horizontal spot from TVL, eye blur from the distance slider (1 arcmin). It is a model, not a
+  photo, and the page says so. `?a=MODEL&b=MODEL` preselects; monitors.html's compare mode links here with the pair.
+  OG card is a render of the simulation itself. The tabled macro photo series is its ground truth if it ever happens.
+- **`will-it-connect.html` — the connection planner.** Rules in **`data/connect.json`** (hand-authored, CC BY; signals,
+  chains, 8 monitors' inputs with `ok / card / converter` states and the card name, 17 consoles' outputs with
+  `ok / mod / region`); logic in **`assets/connect-plan.js`** (UMD, one copy for the page and the server). Verdict order:
+  works > needs a card > needs a converter; within that, RGB 15 kHz first. A 480p/HD console on an SD-only monitor
+  falls back to 480i. **The MCP server has an eighth tool, `plan_connection`** — test-mcp is 222 checks, mcp.html says
+  eight tools and five datasets, the fleet-table row says fourteen columns. Consoles outside the collection are
+  described from published outputs and marked by `here: null`; adding one is a JSON entry. No cable brand names.
+- **`bkm-10r.html` — Operate a BKM-10R.** Panel, functions and the whole menu tree from Sony's E/F operation manual
+  (archive.org OCR, read in full). Shift-Off labels UNDERSCAN / H DELAY / V DELAY were garbled in the scan and are
+  placed from the REMOTE function list; the page says so. Keypad is DIRECT mode; CH 91–95 draw Sony's test patterns;
+  PHASE/CHROMA knobs are dead on RGB, as the manual says. The bvm-20e1u.html Control cell now links it.
+- **`api/ebay.js` — the self-cleaning For Sale.** `GET /api/ebay?ids=…` checks each `/itm/` id through the Browse API
+  with a client-credentials app token; `live:false` (404 at eBay, OUT_OF_STOCK, or past itemEndDate) hides the card on
+  forsale.html and removes the named `data-itm` span from the index marquee; the "More on eBay" feedback line reads
+  live `seller.feedbackPercentage` / `feedbackScore` into `data-fb-pct` / `data-fb-score`. **Needs `EBAY_CLIENT_ID` and
+  `EBAY_CLIENT_SECRET` in the Vercel env (David's existing eBay developer app, the one the Tidbyt uses); until then
+  it answers 503 and the page shows every card as written.** Edge cache 30 min. This is a safety net, not the sweep:
+  a sold card still comes out of the HTML in the normal sold sweep. **New sale cards must keep the `/itm/` link and,
+  if named in the marquee, a `data-itm` span.**
+- Home Latest: the three tools are the first three cards; PlayChoice-10 wall, monitor pages and timeline cards dropped
+  (still 9). Footer Reading row and llms.txt carry all three; sitemap blocks added; OG cards cut from
+  bvm-sonic-knuckles (connect) and bvm-20e1u-lit (10R).

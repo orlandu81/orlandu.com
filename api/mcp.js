@@ -2,7 +2,7 @@
 // Vercel serverless function, Node runtime, no dependencies. POST JSON-RPC 2.0 to /api/mcp.
 //
 // Lets any MCP-capable assistant or agent (Claude, ChatGPT, Cursor, Copilot, Claude Code…) use the
-// site as a tool: search it, read a page as text, and query the open datasets (seven tools). Everything served
+// site as a tool: search it, read a page as text, and query the open datasets, plan a console-to-monitor connection (eight tools). Everything served
 // here is already public on the site; the data files are generated before each push by
 // tools/build-llms-full.py and tools/build-datasets.py. Human instructions live at /mcp.html.
 //
@@ -16,6 +16,8 @@ const MONITORS = require("../data/sony-monitor-specs.json");
 const PC10 = require("../data/playchoice-10-library.json");
 const CONSOLES = require("../data/console-video-out.json");
 const BKM = require("../data/bkm-cards.json");
+const CONNECT = require("../data/connect.json");
+const ConnectPlan = require("../assets/connect-plan.js");
 
 const SITE = "https://www.orlandu.com/";
 const SERVER = { name: "orlandu-arcade", title: "Orlandu's Arcade", version: "1.0.0" };
@@ -69,6 +71,12 @@ const TOOLS = [
     title: "Console video out",
     description: "How each retro console in the collection reaches a Sony professional monitor: the modification (if any), the video output used, and the cable chain. Optional console filter, e.g. 'Genesis'. Dataset CC BY 4.0.",
     inputSchema: { type: "object", properties: { console: { type: "string", description: "Substring of a console name; omit for all" } } },
+  },
+  {
+    name: "plan_connection",
+    title: "Will it connect?",
+    description: "Plan the connection from a retro console to one of the Sony monitors in the collection: the best signal the pair shares, the cable chain step by step, sync and 75-ohm termination rules, and whether a BKM card or a converter is needed. Consoles: NES, SNES, N64, GameCube, Genesis, Saturn, PC Engine, PlayStation, PS2, Dreamcast, Xbox, Wii, Neo Geo, Master System. Monitors: PVM-2950Q, PVM-20L5, BVM-20E1U, BVM-A14F5U, LMD-9020/9030/9050/940W. Rules dataset CC BY 4.0.",
+    inputSchema: { type: "object", properties: { console: { type: "string", description: "Console name, e.g. 'Super Nintendo' or 'Dreamcast'" }, monitor: { type: "string", description: "Monitor model, e.g. 'BVM-20E1U'" } }, required: ["console", "monitor"] },
   },
 ];
 
@@ -201,6 +209,12 @@ function callTool(name, args) {
       return json({ dataset: PC10.dataset, source: PC10.source, license: PC10.license, credit: PC10.credit, count: PC10.rows.length, rows: PC10.rows });
     case "console_video_out":
       return json(rows(CONSOLES, "console", args.console));
+    case "plan_connection": {
+      if (typeof args.console !== "string" || typeof args.monitor !== "string") throw rpcError(-32602, "console (string) and monitor (string) are required");
+      const p = ConnectPlan.plan(CONNECT, args.console, args.monitor);
+      if (p.error) throw rpcError(-32602, p.error + (p.consoles ? ". Consoles: " + p.consoles.join(", ") : "") + (p.monitors ? ". Monitors: " + p.monitors.join(", ") : ""));
+      return json({ dataset: CONNECT.dataset, source: CONNECT.source, license: CONNECT.license, credit: CONNECT.credit, plan: p });
+    }
     case "bkm_cards": {
       const f = norm(args.query);
       // Substring match on model, Fits and family — but a Fits that says "not BVM-A" must not answer "BVM-A".

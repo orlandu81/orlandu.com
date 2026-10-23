@@ -166,6 +166,9 @@
             '<a href="pvm-vs-bvm.html">PVM vs. BVM</a>' +
             '<a href="bkm-cards.html">BKM card reference</a>' +
             '<a href="sony-model-numbers.html">Sony model numbers decoded</a>' +
+            '<a href="through-the-mask.html">Through the mask (CRT simulator)</a>' +
+            '<a href="will-it-connect.html">Will it connect?</a>' +
+            '<a href="bkm-10r.html">Operate a BKM-10R</a>' +
             '<a href="red-tent.html">The Red Tent</a>' +
             '<a href="mini-cute.html">The Mini Cute</a>' +
             '<a href="orlandu-100.html">The Orlandu 100</a>' +

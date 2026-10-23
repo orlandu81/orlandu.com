@@ -47,7 +47,7 @@ section("transport");
 {
   const { res, parsed } = await call("GET", undefined);
   ok(res.code === 405, "GET → 405 (got " + res.code + ")");
-  ok(parsed && parsed.ok === false && Array.isArray(parsed.tools) && parsed.tools.length === 7, "GET body is JSON with 7 tool names");
+  ok(parsed && parsed.ok === false && Array.isArray(parsed.tools) && parsed.tools.length === 8, "GET body is JSON with 8 tool names");
   ok(res.headers["allow"] === "POST, OPTIONS", "GET sets Allow");
   ok(res.headers["access-control-allow-origin"] === "*", "CORS origin * on GET");
 }
@@ -89,7 +89,7 @@ section("transport");
 {
   const { parsed } = await call("POST", [rpc("ping"), { jsonrpc: "2.0", method: "notifications/x" }, rpc("tools/list")]);
   ok(Array.isArray(parsed) && parsed.length === 2, "batch drops the notification, answers the two requests");
-  ok(parsed[1].result && parsed[1].result.tools.length === 7, "batch tools/list answered");
+  ok(parsed[1].result && parsed[1].result.tools.length === 8, "batch tools/list answered");
 }
 {
   const { res, parsed } = await call("POST", JSON.stringify(rpc("ping")));
@@ -116,9 +116,9 @@ let TOOLS;
 {
   const { parsed } = await call("POST", rpc("tools/list"));
   TOOLS = parsed.result.tools;
-  ok(TOOLS.length === 7, "tools/list has 7 tools (got " + TOOLS.length + ")");
+  ok(TOOLS.length === 8, "tools/list has 8 tools (got " + TOOLS.length + ")");
   const names = TOOLS.map(t => t.name).sort().join(",");
-  ok(names === "bkm_cards,console_video_out,list_orlandu_pages,playchoice_10_library,read_orlandu_page,search_orlandu,sony_monitor_specs", "tool names: " + names);
+  ok(names === "bkm_cards,console_video_out,list_orlandu_pages,plan_connection,playchoice_10_library,read_orlandu_page,search_orlandu,sony_monitor_specs", "tool names: " + names);
   for (const t of TOOLS) {
     ok(/^[a-z0-9_]+$/.test(t.name), t.name + " name is snake_case");
     ok(typeof t.description === "string" && t.description.length > 40, t.name + " has a description");
@@ -257,6 +257,24 @@ function dsOk(r, label) {
   const gen = dsOk(await tool("console_video_out", { console: "genesis" }), "console_video_out genesis");
   ok(gen.count === 2, "'genesis' → 2 rows (Model 1 + CDX)");
   const nes = dsOk(await tool("console_video_out", { console: "NES" }), "console_video_out NES");
+  // plan_connection
+  {
+    const r = await tool("plan_connection", { console: "Super Nintendo", monitor: "BVM-20E1U" });
+    const j = JSON.parse(r.result.content[0].text);
+    ok(j.plan && j.plan.verdict === "ok" && j.plan.best.signal === "rgb15", "plan_connection SNES→20E1U is RGB, works as-is");
+    ok(Array.isArray(j.plan.best.chain) && j.plan.best.chain.length >= 5, "plan_connection returns the chain steps");
+    const r2 = await tool("plan_connection", { console: "GameCube", monitor: "BVM-20E1U" });
+    const j2 = JSON.parse(r2.result.content[0].text);
+    ok(j2.plan.best.signal === "comp_sd", "plan_connection GameCube→20E1U falls back to 480i component (SD-only monitor)");
+    const r3 = await tool("plan_connection", { console: "Xbox", monitor: "LMD-940W" });
+    const j3 = JSON.parse(r3.result.content[0].text);
+    ok(j3.plan.verdict === "converter", "plan_connection Xbox→940W needs a converter");
+    const r4 = await tool("plan_connection", { console: "dreamcast", monitor: "pvm 20l5" });
+    const j4 = JSON.parse(r4.result.content[0].text);
+    ok(j4.plan.console === "Dreamcast" && j4.plan.monitor === "PVM-20L5", "plan_connection matches loosely spelled names");
+    const bad = await tool("plan_connection", { console: "Atari Jaguar", monitor: "PVM-20L5" });
+    ok(bad.result && bad.result.isError && /Unknown console/.test(bad.result.content[0].text), "plan_connection unknown console → isError with the console list");
+  }
   ok(nes.count >= 1, "'NES' matches the NES row (substring also hits 'Genesis'? count=" + nes.count + ")");
 }
 {

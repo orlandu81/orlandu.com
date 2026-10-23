@@ -1,0 +1,55 @@
+{
+ "dataset": "Will it connect? — console and monitor signal rules behind orlandu.com's connection planner",
+ "description": "The signals each console can put out (stock, by official cable, or by a common modification), the inputs each Sony monitor in the collection accepts (built in, or by BKM option card), and the cable chain the arcade uses for each signal. Consoles outside the collection are described from their published specifications and common modifications, not from units on the bench.",
+ "source": "https://www.orlandu.com/will-it-connect.html",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "credit": "Orlandu's Arcade (https://www.orlandu.com)",
+ "signals": {
+  "rgb15": {"name": "RGB, 15 kHz", "formats": ["240p", "480i", "576i"], "rank": 1},
+  "comp_hd": {"name": "Component (YPbPr), HD", "formats": ["480p", "720p", "1080i"], "rank": 2},
+  "comp_sd": {"name": "Component (YPbPr), SD", "formats": ["480i", "240p"], "rank": 3},
+  "rgb31": {"name": "RGB, 31 kHz (VGA-class 480p)", "formats": ["480p"], "rank": 4},
+  "svideo": {"name": "S-Video (Y/C)", "formats": ["480i", "240p"], "rank": 5},
+  "composite": {"name": "Composite", "formats": ["480i", "240p"], "rank": 6},
+  "hdmi": {"name": "HDMI", "formats": ["480p", "720p", "1080i", "1080p"], "rank": 7}
+ },
+ "chains": {
+  "rgb15": ["RGB SCART cable from the console", "SCART switcher, if more than one console shares the bench", "SCART to 4 BNC breakout cable", "Monitor's RGB BNC inputs; sync rides the composite-sync line", "Set the monitor's input to RGB where its BNCs take RGB or component", "Terminate 75 Ω on the last, or only, monitor on a loop-through line", "Audio from the breakout's audio leads"],
+  "comp_hd": ["Component (Y/Pb/Pr) cable from the console", "RCA-to-BNC adapters", "Monitor's component BNC inputs; set the input to component (YPbPr)", "Terminate 75 Ω on the last, or only, monitor on a loop-through line"],
+  "comp_sd": ["Component (Y/Pb/Pr) cable from the console", "RCA-to-BNC adapters", "Monitor's component BNC inputs; set the input to component (YPbPr)", "Terminate 75 Ω on the last, or only, monitor on a loop-through line"],
+  "rgb31": ["VGA-class 480p output from the console (VGA box or cable)", "Separate H and V sync must be combined to composite sync for a BNC monitor", "Monitor's RGB BNC inputs, multiformat monitors only"],
+  "svideo": ["S-Video cable from the console", "Monitor's Y/C mini-DIN input"],
+  "composite": ["Composite cable from the console", "RCA-to-BNC adapter", "Monitor's VIDEO IN; terminate 75 Ω"],
+  "hdmi": ["HDMI cable from the console", "Monitor's HDMI input"],
+  "converter": ["Analog output from the console (RGB or component)", "An analog-to-HDMI converter or scaler", "Monitor's HDMI input"]
+ },
+ "monitors": [
+  {"id": "PVM-2950Q", "url": "pvm-2950q.html", "hd": false, "inputs": {"rgb15": {"how": "RGB on BNC, built in", "state": "ok"}, "composite": {"how": "LINE inputs, built in", "state": "ok"}, "svideo": {"how": "Y/C input, built in", "state": "ok"}}},
+  {"id": "PVM-20L5", "url": "pvm-20l5.html", "hd": true, "inputs": {"rgb15": {"how": "RGB/component BNC with loop-through, built in; the BKM-129X in its slot is a second one", "state": "ok"}, "comp_sd": {"how": "RGB/component BNC, built in", "state": "ok"}, "comp_hd": {"how": "RGB/component BNC, built in — 480p, 720p, 1080i", "state": "ok"}, "rgb31": {"how": "RGB BNC, multiformat 15–45 kHz; needs composite sync", "state": "ok"}, "composite": {"how": "LINE inputs, built in", "state": "ok"}, "svideo": {"how": "Y/C input, built in", "state": "ok"}}},
+  {"id": "BVM-20E1U", "url": "bvm-20e1u.html", "hd": false, "inputs": {"rgb15": {"how": "Fixed RGB/component block with loop-through", "state": "ok"}, "comp_sd": {"how": "Fixed RGB/component block", "state": "ok"}, "composite": {"how": "Via the BKM-21D decoder, installed", "state": "ok"}, "svideo": {"how": "Via a BKM-24N decoder — owned, on the shelf, not installed", "state": "card", "card": "BKM-24N"}}},
+  {"id": "BVM-A14F5U", "url": "bvm-a14f5u.html", "hd": true, "inputs": {"rgb15": {"how": "Via the BKM-68X analog component/RGB card, installed", "state": "ok"}, "comp_sd": {"how": "Via the BKM-68X, installed", "state": "ok"}, "comp_hd": {"how": "Via the BKM-68X, installed — 480p, 720p, 1080i, 24PsF", "state": "ok"}, "rgb31": {"how": "Via the BKM-68X, multiformat; needs composite sync", "state": "ok"}, "composite": {"how": "Needs a BKM-61D multi-input card — not fitted", "state": "card", "card": "BKM-61D"}, "svideo": {"how": "Needs a BKM-61D multi-input card — not fitted", "state": "card", "card": "BKM-61D"}}},
+  {"id": "LMD-9020", "url": "lmd-wall.html", "hd": false, "inputs": {"rgb15": {"how": "RGB/COMPONENT BNCs, built in", "state": "ok"}, "comp_sd": {"how": "RGB/COMPONENT BNCs, built in", "state": "ok"}, "composite": {"how": "LINE A / LINE B, built in", "state": "ok"}, "svideo": {"how": "LINE A Y/C, built in", "state": "ok"}}},
+  {"id": "LMD-9030", "url": "lmd-wall.html", "hd": true, "inputs": {"rgb15": {"how": "RGB/COMPONENT BNCs, built in", "state": "ok"}, "comp_sd": {"how": "RGB/COMPONENT BNCs, built in", "state": "ok"}, "comp_hd": {"how": "HD over the analog component BNCs, built in", "state": "ok"}, "composite": {"how": "LINE A / LINE B, built in", "state": "ok"}, "svideo": {"how": "LINE A Y/C, built in", "state": "ok"}}},
+  {"id": "LMD-9050", "url": "lmd-wall.html", "hd": true, "inputs": {"rgb15": {"how": "RGB/COMPONENT BNCs, built in", "state": "ok"}, "comp_sd": {"how": "RGB/COMPONENT BNCs, built in", "state": "ok"}, "comp_hd": {"how": "HD over the analog component BNCs, built in", "state": "ok"}, "composite": {"how": "LINE A / LINE B, built in", "state": "ok"}, "svideo": {"how": "LINE A Y/C, built in", "state": "ok"}}},
+  {"id": "LMD-940W", "url": "lmd-wall.html", "hd": true, "inputs": {"hdmi": {"how": "HDMI, built in", "state": "ok"}, "rgb15": {"how": "No analog input — needs a converter to HDMI", "state": "converter"}, "comp_sd": {"how": "No analog input — needs a converter to HDMI", "state": "converter"}, "comp_hd": {"how": "No analog input — needs a converter to HDMI", "state": "converter"}, "composite": {"how": "No analog input — needs a converter to HDMI", "state": "converter"}, "svideo": {"how": "No analog input — needs a converter to HDMI", "state": "converter"}}}
+ ],
+ "consoles": [
+  {"id": "NES (front loader)", "here": "NESRGB board fitted", "outputs": {"rgb15": {"how": "With an NESRGB board (the arcade's unit has one)", "state": "mod"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "NES-101 (top loader)", "here": "NESRGB board fitted", "outputs": {"rgb15": {"how": "With an NESRGB board (the arcade's unit has one)", "state": "mod"}, "composite": {"how": "Stock output is RF only; composite needs an AV mod", "state": "mod"}}},
+  {"id": "Super Nintendo", "here": "Stock", "outputs": {"rgb15": {"how": "Native, with an RGB SCART cable", "state": "ok"}, "svideo": {"how": "Stock", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "Nintendo 64", "here": "RGB upgrade fitted", "outputs": {"rgb15": {"how": "With an RGB mod (the arcade's units have one)", "state": "mod"}, "svideo": {"how": "Stock", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "GameCube", "here": "OEM component cable", "outputs": {"comp_hd": {"how": "480p over the official component cable (digital-port units only)", "state": "ok"}, "comp_sd": {"how": "480i over the official component cable", "state": "ok"}, "rgb15": {"how": "PAL consoles only, with an RGB SCART cable", "state": "region"}, "svideo": {"how": "Stock", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "Genesis Model 1", "here": "RGB native; S-Video jacks added", "outputs": {"rgb15": {"how": "Native, with an RGB SCART cable", "state": "ok"}, "svideo": {"how": "Not stock; the arcade's unit has an added S-Video jack", "state": "mod"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "Genesis CDX", "here": "Stock", "outputs": {"rgb15": {"how": "Native, with an RGB SCART cable", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "Saturn", "here": "Stock", "outputs": {"rgb15": {"how": "Native, with an RGB SCART cable", "state": "ok"}, "svideo": {"how": "Stock", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "PC Engine Duo-R", "here": "RGB mod · region mod", "outputs": {"rgb15": {"how": "With an RGB mod (the arcade's unit has one)", "state": "mod"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "TurboGrafx-16", "here": "Stock", "outputs": {"rgb15": {"how": "With an RGB mod", "state": "mod"}, "composite": {"how": "Stock output is RF; composite needs the expansion-port AV cable or a mod", "state": "mod"}}},
+  {"id": "PlayStation", "here": null, "outputs": {"rgb15": {"how": "Native, with an RGB SCART cable", "state": "ok"}, "svideo": {"how": "Stock", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "PlayStation 2", "here": "MemCard Pro 2 with FMCB/OPL, component to the LMD wall", "outputs": {"rgb15": {"how": "Native, with an RGB SCART cable, for 240p and 480i", "state": "ok"}, "comp_hd": {"how": "480p over component on games that offer it; 1080i on a few", "state": "ok"}, "comp_sd": {"how": "480i and 240p over component", "state": "ok"}, "svideo": {"how": "Stock", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "Dreamcast", "here": null, "outputs": {"rgb31": {"how": "480p through a VGA box, on games that allow it", "state": "ok"}, "rgb15": {"how": "RGB SCART at 15 kHz on games that allow it", "state": "ok"}, "svideo": {"how": "Stock", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "Xbox", "here": null, "outputs": {"comp_hd": {"how": "480p, 720p and 1080i over the official HD AV pack", "state": "ok"}, "comp_sd": {"how": "480i over the HD AV pack", "state": "ok"}, "svideo": {"how": "Stock", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "Wii", "here": null, "outputs": {"comp_hd": {"how": "480p over the official component cable", "state": "ok"}, "comp_sd": {"how": "480i over component", "state": "ok"}, "rgb15": {"how": "PAL consoles only, with an RGB SCART cable", "state": "region"}, "svideo": {"how": "Stock", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "Neo Geo AES", "here": null, "outputs": {"rgb15": {"how": "Native, with an RGB SCART cable", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}},
+  {"id": "Master System", "here": null, "outputs": {"rgb15": {"how": "Native on the Model 1, with an RGB SCART cable", "state": "ok"}, "composite": {"how": "Stock", "state": "ok"}}}
+ ]
+}

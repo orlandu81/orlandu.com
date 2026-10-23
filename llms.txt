@@ -8,9 +8,9 @@
 
 ## For agents
 
-- [Full text in one file](https://www.orlandu.com/llms-full.txt): every page as Markdown, about 80,000 words.
+- [Full text in one file](https://www.orlandu.com/llms-full.txt): every page as Markdown, about 81,000 words.
 - [MCP server](https://www.orlandu.com/api/mcp): read-only tools — search the site, read a page, Sony monitor specs, the PlayChoice-10 library, console video out. How to connect: https://www.orlandu.com/mcp.html
-- [Open datasets, CC BY 4.0](https://www.orlandu.com/mcp.html#the-datasets): sony-monitor-specs, playchoice-10-library, console-video-out, bkm-cards as JSON and CSV under https://www.orlandu.com/data/
+- [Open datasets, CC BY 4.0](https://www.orlandu.com/mcp.html#the-datasets): sony-monitor-specs, playchoice-10-library, console-video-out, bkm-cards as JSON and CSV, connect (the Will-it-connect rules) as JSON under https://www.orlandu.com/data/
 
 ## The collection
 
@@ -56,6 +56,9 @@
 - [The Signal Chain](https://www.orlandu.com/signal-chain.html): how the consoles reach the glass — SCART switchers, BNC runs, a distribution amp, and no scaler.
 - [How to Connect a Retro Console to a Sony PVM or BVM](https://www.orlandu.com/connect-console-to-pvm.html): the RGB cable, the switcher, the SCART to 4 BNC breakout, sync, termination and audio — step by step, no scaler.
 - [PVM vs. BVM](https://www.orlandu.com/pvm-vs-bvm.html): how Sony's professional monitor lines differ.
+- [Operate a BKM-10R](https://www.orlandu.com/bkm-10r.html): an interactive Sony BKM-10R Monitor Control Unit driving the BVM-20E1U — every button, the knobs, and Sony's whole menu tree (100 CONTROL PRESET ADJ to 900 STATUS), each quoted from the E/F operation manual.
+- [Will it connect?](https://www.orlandu.com/will-it-connect.html): pick any retro console and any Sony monitor in the fleet — the best shared signal, the cable chain, sync and termination rules, which BKM card or converter is needed, and a verdict; also the plan_connection MCP tool.
+- [Through the Mask: Sony CRT simulator](https://www.orlandu.com/through-the-mask.html): every monitor in the fleet simulated from its own specs — scan-line gap, aperture-grille pitch, center resolution, LCD pixel grid — two side by side with a viewing-distance slider; a model, not a photograph.
 - [Sony PVM, BVM & LMD Model Numbers Decoded](https://www.orlandu.com/sony-model-numbers.html): what each letter and digit on a Sony monitor badge means — line, size, series letter, display-unit vs stand-alone digit, W, region suffix, BKM card numbers — with Sony-stated readings kept apart from patterns; lineage strips per family.
 - [Sony BKM Cards: Which Card Fits Which BVM or PVM](https://www.orlandu.com/bkm-cards.html): every Sony BKM option card for the CRT-era BVM and PVM lines — function, which chassis it fits, installation rules, controllers; sourced to Sony's manuals; open dataset.
 - [How to Spot Professional Glass in the Wild](https://www.orlandu.com/crt-field-guide.html): recognizing a Sony professional monitor in a thrift store or surplus auction.
