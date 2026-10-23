@@ -164,6 +164,15 @@ expect it to keep answering.
 
 Vercel auto-deploys `main`; allow ~40s before verifying.
 
+**GitHub Pages was DISABLED on the repo 2026-10-20** (it had been building a copy of the site on
+every push that DNS never pointed at, and emailing David when a build failed). `CNAME` is inert.
+
+**Vercel Web Analytics self-traffic opt-out (2026-10-22, site.js):** Hobby has no IP exclusion, so
+every visit from David or from a Claude browser pane counted. Opening any page with
+`?noanalytics=1` once sets `localStorage["orlandu-noanalytics"]="1"` and that browser is never
+counted again (`?noanalytics=0` re-enables; the param is stripped from the URL). When the
+browser pane loads the site in a new profile, open the first page with `?noanalytics=1`.
+
 ## Verifying
 
 - `curl` to orlandu.com from this container fails (403 CONNECT tunnel) — use **WebFetch**.

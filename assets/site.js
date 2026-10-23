@@ -41,10 +41,27 @@
 
   // Vercel Web Analytics (privacy-friendly, cookieless). Counts nothing until
   // Analytics is enabled on the Vercel project; harmless before that.
-  const va = document.createElement("script");
-  va.defer = true;
-  va.src = "/_vercel/insights/script.js";
-  document.head.appendChild(va);
+  // Self-traffic opt-out (2026-10-22): open any page with ?noanalytics=1 once
+  // and that browser is never counted again (?noanalytics=0 re-enables). The
+  // flag lives in localStorage; the script is simply not loaded when it is set.
+  let noAnalytics = false;
+  try {
+    const q = new URLSearchParams(location.search);
+    if (q.has("noanalytics")) {
+      if (q.get("noanalytics") === "0") localStorage.removeItem("orlandu-noanalytics");
+      else localStorage.setItem("orlandu-noanalytics", "1");
+      q.delete("noanalytics");
+      const rest = q.toString();
+      history.replaceState(null, "", location.pathname + (rest ? "?" + rest : "") + location.hash);
+    }
+    noAnalytics = localStorage.getItem("orlandu-noanalytics") === "1";
+  } catch (e) {}
+  if (!noAnalytics) {
+    const va = document.createElement("script");
+    va.defer = true;
+    va.src = "/_vercel/insights/script.js";
+    document.head.appendChild(va);
+  }
 
   const header = document.querySelector("header.site");
   if (header){
