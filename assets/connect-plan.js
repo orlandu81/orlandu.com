@@ -4,8 +4,17 @@
   if (typeof module === "object" && module.exports) module.exports = factory();
   else root.ConnectPlan = factory();
 })(typeof self !== "undefined" ? self : this, function () {
+  // Common short names (the MCP tool's description advertises several of them). Only unambiguous ones:
+  // "nes" means the front loader, "genesis" the Model 1 — the longer names still reach the other units.
+  var ALIAS = { nes: "NES (front loader)", famicom: "NES (front loader)", snes: "Super Nintendo", superfamicom: "Super Nintendo",
+    sfc: "Super Nintendo", n64: "Nintendo 64", gc: "GameCube", gcn: "GameCube", ngc: "GameCube", genesis: "Genesis Model 1",
+    megadrive: "Genesis Model 1", md: "Genesis Model 1", cdx: "Genesis CDX", ps1: "PlayStation", psx: "PlayStation",
+    psone: "PlayStation", ps2: "PlayStation 2", pce: "PC Engine Duo-R", tg16: "TurboGrafx-16", sms: "Master System",
+    aes: "Neo Geo AES", dc: "Dreamcast" };
   function find(list, id) {
     var q = String(id || "").toLowerCase().replace(/[\s\-_.]/g, "");
+    if (!q) return null;
+    if (ALIAS[q]) q = ALIAS[q].toLowerCase().replace(/[\s\-_.]/g, "");
     var exact = list.filter(function (x) { return x.id.toLowerCase().replace(/[\s\-_.]/g, "") === q; });
     if (exact.length) return exact[0];
     var part = list.filter(function (x) { return x.id.toLowerCase().replace(/[\s\-_.]/g, "").indexOf(q) >= 0; });

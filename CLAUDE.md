@@ -59,7 +59,12 @@ and would choke on the PDF.
 **Fonts:** `style.css` defines metric-matched `"… Fallback"` faces (Arial/Liberation/Roboto scaled
 with `size-adjust` + ascent/descent overrides) second in each font stack, so text doesn't reflow
 when the web font arrives. Page-level `font-family` declarations must keep the fallback in the
-stack too. **First-screen images:** the first photos on a page are NOT `loading="lazy"` and the
+stack too. Matched means average width, not every line: a long H1 or lede can still break onto one line
+more or fewer when the font swaps, which is the mobile CLS PageSpeed reports on some long reads (buying
+guide 0.198 live, 10-23). Rajdhani 400 and Orbitron 800 were retuned against the site's own H1/lede/h2
+strings on 10-23 (size-adjust ×1.024 / ×1.008, overrides ÷ the same), which cut swaps that move in-view
+content from 60 to 41 of 250 page×phone-width cases. The only complete fix is `font-display:optional` on
+the display faces — David's call, since a first visit on a slow phone would then show the fallback. **First-screen images:** the first photos on a page are NOT `loading="lazy"` and the
 top one carries `fetchpriority="high"`; gallery.html and the home filmstrip make their first six
 eager in JS. Keep that when adding a new page.
 
@@ -368,8 +373,11 @@ browser pane loads the site in a new profile, open the first page with `?noanaly
   auto-fill orphan the last row. Specificity note: a page-scoped `.fleetgrid{}` loses to
   `.grid.c2` in style.css — write `.grid.fleetgrid{}` or drop the `c2` class.
 - **Nothing wider than ~2.2:1 belongs in the home filmstrip.** At 170px tall a 3.9:1 sign renders
-  as a 660px slab. index.html now measures each strip image on load and hides anything over
-  2.2:1 — panoramas stay in the gallery masonry, which handles them fine. Don't "fix" a wide
+  as a 660px slab. index.html drops anything over 2.2:1 BEFORE building the strip, from the
+  `w`/`h` in `gallery-data.js` (so the file is never fetched and the track never jumps), and
+  still measures each image on load as a backstop — panoramas stay in the gallery masonry,
+  which handles them fine. **A recrop changes a gallery entry's `w`/`h`: update them with the
+  `?v=`** (lmd-rack and minicute-side carried stale pre-recrop sizes until 2026-10-23). Don't "fix" a wide
   photo with object-fit:cover; it cuts the ends off signs.
 - Gallery audit 2026-08-26 (43 -> 39): removed the Mini Cute shipping crate, the Red Tent
   teardown, the BVM-20E1U crosshatch and the AMS-100 bench lineup — all process/bench shots that
@@ -719,6 +727,14 @@ rank For Sale second; "bkm-10r" answers the 20E1U profile (which uses one) above
 returns a row whose Fits says "not <query>" (the BKM-10R for "BVM-A"); `read_orlandu_page` now rejects a missing
 `page` instead of silently returning the home page, and resolves `….html#section` / `….html?x` URLs.
 `build-search-index.py` also decodes `\uXXXX` in gallery titles — "Kay\u00b7Bee" had been showing raw in the dialog.
+**2026-10-23:** the battery grew to 271 (53 queries for sony-model-numbers, through-the-mask, will-it-connect,
+bkm-10r and their overlap with the older guides). The tool pages (kicker "Tool · …") now rank 10 like the guides,
+the `ALIAS` map also expands scanline(s)→"scan line", controller→"control unit", comparison→"compare",
+naming→"model number", and a token ending in "-ate" also tries its root ("simulate" finds "simulator",
+"calibrate" finds "calibration"). New-page queries 68→79 % top-1 on MCP, 64→77 % header; the original 218 held
+(MCP 93/99, header 92/98). The body cap stays at 6,000 characters — 12,000 bought one hit, cost a regression and
+30 KB. Misses left are content, not ranking: the decoder never says "stand for" or "BKM-15R" in its first 6,000
+characters, and will-it-connect never says "planner".
 
 **MCP Registry listing (2026-10-10): `com.orlandu/arcade` is PUBLISHED** in the official registry
 (registry.modelcontextprotocol.io), version 1.0.0, from `server.json` at the repo root. The namespace is

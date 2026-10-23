@@ -69,9 +69,10 @@ for p in sorted(root.glob("*.html")):
     url = "/" if p.name == "index.html" else p.name
     # Rank weight: profiles, stories and guides (main.profile or a reading time) and the three big hubs sit
     # above plain pages, which sit above glossary terms (5), cards (4) and photos (2) — so a model number finds
-    # its profile page before the gallery photo of it, and a hub page before a card on it.
+    # its profile page before the gallery photo of it, and a hub page before a card on it. The interactive tools
+    # (kicker "Tool · …": through-the-mask, will-it-connect, bkm-10r) rank with the guides — they are reference pages.
     profile = bool(re.search(r'<main[^>]*class="[^"]*\bprofile\b', src) or re.search(r'<div class="rt"', body_html))
-    ent = {"u": url, "t": h1t, "k": kind, "s": lede_t[:180], "h": " ".join(heads)[:1200], "b": body[:6000], "w": 10 if (profile or kind in ("Machine", "Monitors", "Coin-Op")) else 6}
+    ent = {"u": url, "t": h1t, "k": kind, "s": lede_t[:180], "h": " ".join(heads)[:1200], "b": body[:6000], "w": 10 if (profile or kind in ("Machine", "Monitors", "Coin-Op") or kind.startswith("Tool")) else 6}
     if title.lower() != h1t.lower():
         ent["tt"] = title  # the <title> front-loads the searchable term ("PVM vs. BVM: …") where the H1 is editorial; scored like the title, never displayed
     entries.append(ent)

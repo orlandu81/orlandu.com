@@ -911,15 +911,16 @@
      Hyphens, periods and apostrophes are dropped before comparing ("pvm 20l5" = "pvm-20l5" = "PVM20L5",
      "players" finds "Player's"); filler words are ignored; a run-together word ("donkeykong") can match a title
      with its spaces removed; a word that matches nothing is retried as a one-letter typo of a title/heading word;
-     and a few hobby abbreviations expand (n64, snes, pc10, smb, tna). */
+     and a few hobby abbreviations and synonyms expand (n64, snes, pc10, smb, tna; scanline, controller). */
   var STOP = {a:1,an:1,the:1,is:1,are:1,was:1,what:1,whats:1,which:1,how:1,"do":1,does:1,to:1,of:1,"for":1,"in":1,on:1,and:1,or:1,my:1,your:1,"with":1,it:1,i:1,can:1,about:1,me:1,any:1,some:1};
-  var ALIAS = {n64:"nintendo 64",snes:"super nintendo",nes:"nintendo entertainment system",gba:"game boy advance",gb:"game boy",ps2:"playstation 2",pce:"pc engine",tg16:"turbografx",pc10:"playchoice 10",smb:"super mario bros",dk:"donkey kong",tna:"total nuclear annihilation",ij:"indiana jones",mvc:"marvel vs capcom",cps2:"cps 2",cps1:"cps 1",crt:"tube",lcd:"panel"};
+  var ALIAS = {n64:"nintendo 64",snes:"super nintendo",nes:"nintendo entertainment system",gba:"game boy advance",gb:"game boy",ps2:"playstation 2",pce:"pc engine",tg16:"turbografx",pc10:"playchoice 10",smb:"super mario bros",dk:"donkey kong",tna:"total nuclear annihilation",ij:"indiana jones",mvc:"marvel vs capcom",cps2:"cps 2",cps1:"cps 1",crt:"tube",lcd:"panel",scanline:"scan line",scanlines:"scan line",controller:"control unit",comparison:"compare",naming:"model number"};
   function norm(s){ return (s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/[’'.-]/g, ""); }
   function compact(s){ return norm(s).replace(/[^a-z0-9]/g, ""); }
   function forms(raw){
     var out = [raw];
     if (raw.length > 3 && raw.slice(-2) !== "ss" && raw.slice(-1) === "s") out.push(raw.slice(0, -1));
     if (raw.length > 5 && raw.slice(-3) === "ing") out.push(raw.slice(0, -3));
+    if (raw.length > 6 && raw.slice(-3) === "ate") out.push(raw.slice(0, -1));
     if (ALIAS[raw]) out.push(ALIAS[raw]);
     return out;
   }

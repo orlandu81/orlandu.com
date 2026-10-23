@@ -88,7 +88,7 @@ const TOOLS = [
 // with its spaces removed; a token that matches nothing anywhere is retried as a one-letter typo of a title/heading
 // word ("playchoise", "trinatron"); and a few hobby abbreviations expand (n64, snes, pc10, smb, tna).
 const STOP = new Set(["a", "an", "the", "is", "are", "was", "what", "whats", "which", "how", "do", "does", "to", "of", "for", "in", "on", "and", "or", "my", "your", "with", "it", "i", "can", "about", "me", "any", "some"]);
-const ALIAS = { n64: "nintendo 64", snes: "super nintendo", nes: "nintendo entertainment system", gba: "game boy advance", gb: "game boy", ps2: "playstation 2", pce: "pc engine", tg16: "turbografx", pc10: "playchoice 10", smb: "super mario bros", dk: "donkey kong", tna: "total nuclear annihilation", ij: "indiana jones", mvc: "marvel vs capcom", cps2: "cps 2", cps1: "cps 1", crt: "tube", lcd: "panel", vs: "vs" };
+const ALIAS = { n64: "nintendo 64", snes: "super nintendo", nes: "nintendo entertainment system", gba: "game boy advance", gb: "game boy", ps2: "playstation 2", pce: "pc engine", tg16: "turbografx", pc10: "playchoice 10", smb: "super mario bros", dk: "donkey kong", tna: "total nuclear annihilation", ij: "indiana jones", mvc: "marvel vs capcom", cps2: "cps 2", cps1: "cps 1", crt: "tube", lcd: "panel", vs: "vs", scanline: "scan line", scanlines: "scan line", controller: "control unit", comparison: "compare", naming: "model number" };
 const norm = s => String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/[\u2019'.-]/g, "");
 const compact = s => norm(s).replace(/[^a-z0-9]/g, "");
 const tokens = q => { const all = norm(q).split(/[^a-z0-9]+/).filter(t => t.length > 1); const kept = all.filter(t => !STOP.has(t)); return kept.length ? kept : all; };
@@ -96,6 +96,7 @@ const forms = raw => { // the spellings of one query token that count as a hit: 
   const out = [raw];
   if (raw.length > 3 && !raw.endsWith("ss") && raw.endsWith("s")) out.push(raw.slice(0, -1));
   if (raw.length > 5 && raw.endsWith("ing")) out.push(raw.slice(0, -3));
+  if (raw.length > 6 && raw.endsWith("ate")) out.push(raw.slice(0, -1)); // "simulate" finds "simulator", "calibrate" finds "calibration"
   if (ALIAS[raw] && ALIAS[raw] !== raw) out.push(ALIAS[raw]);
   return out;
 };

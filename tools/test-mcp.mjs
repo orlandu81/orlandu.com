@@ -274,6 +274,11 @@ function dsOk(r, label) {
     ok(j4.plan.console === "Dreamcast" && j4.plan.monitor === "PVM-20L5", "plan_connection matches loosely spelled names");
     const bad = await tool("plan_connection", { console: "Atari Jaguar", monitor: "PVM-20L5" });
     ok(bad.result && bad.result.isError && /Unknown console/.test(bad.result.content[0].text), "plan_connection unknown console → isError with the console list");
+    // Every console name the tool's description advertises must resolve (SNES, N64, PS2… used to return Unknown console)
+    for (const name of ["NES", "SNES", "N64", "GameCube", "Genesis", "Saturn", "PC Engine", "PlayStation", "PS2", "Dreamcast", "Xbox", "Wii", "Neo Geo", "Master System"]) {
+      const rr = await tool("plan_connection", { console: name, monitor: "PVM-20L5" });
+      ok(rr.result && !rr.result.isError, "plan_connection resolves the advertised name '" + name + "'");
+    }
   }
   ok(nes.count >= 1, "'NES' matches the NES row (substring also hits 'Genesis'? count=" + nes.count + ")");
 }

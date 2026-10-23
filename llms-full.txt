@@ -4643,7 +4643,7 @@ Pick a console and a monitor. You get the exact chain the arcade would use — c
 
 A 15 kHz RGB signal — 240p and 480i — is what every CRT here was built for, so it ranks first whenever the console can produce it. Component carries 480p and HD only into the multiformat monitors: the PVM-20L5, the BVM-A14F5U through its BKM-68X, and the LMD-9030 and 9050. The BVM-20E1U and PVM-2950Q are standard-definition by design; a 480p-capable console still connects, it just runs at 480i. S-Video and composite are listed because they exist, not because the arcade uses them. The LMD-940W has no analog input at all, so anything older than HDMI needs a converter in front of it. Sync rides the composite-sync line of the SCART cable; a monitor whose BNCs take RGB or component is set to RGB; and the last, or only, monitor on a loop-through line is terminated at 75 Ω.
 
-The rules are open data: connect.json (https://www.orlandu.com/data/connect.json), CC BY 4.0, credit Orlandu’s Arcade; the planner itself is one small script (https://www.orlandu.com/assets/connect-plan.js), and an AI assistant can call it as the plan_connection tool on the MCP server (https://www.orlandu.com/mcp.html). Which card fits which chassis is on the BKM reference (https://www.orlandu.com/bkm-cards.html); what each monitor accepts is on the fleet table (https://www.orlandu.com/monitors.html#specs).
+The rules are open data: connect.json (https://www.orlandu.com/data/connect.json), CC BY 4.0, credit Orlandu’s Arcade; the planner itself is one small script (https://www.orlandu.com/assets/connect-plan.js?v=b352fa2c), and an AI assistant can call it as the plan_connection tool on the MCP server (https://www.orlandu.com/mcp.html). Which card fits which chassis is on the BKM reference (https://www.orlandu.com/bkm-cards.html); what each monitor accepts is on the fleet table (https://www.orlandu.com/monitors.html#specs).
 
 ---
 
@@ -5017,7 +5017,7 @@ Every row cites the Sony document it comes from; the two community sources (Cons
 8. Sony Professional, BKM-243HS product page — source (https://pro.sony/en_KH/products/option-boards-and-modules/bkm-243hs)
 9. ConsoleMods wiki, BVM-20E1U — source (https://consolemods.org/wiki/CRT:BVM-20E1U)
 10. ConsoleMods wiki, BKM-68X and BKM-10R — source (https://consolemods.org/wiki/CRT:BKM-68X)
-11. Expandore (Sony dealer), LMD accessories — source (https://expandore.com/sony/Monitor/LCD_Monitor/Acc_5.htm)
+11. Expandore (Sony dealer), LMD accessories — source (archived) (https://web.archive.org/web/20250427101059/https://expandore.com/sony/Monitor/LCD_Monitor/Acc_5.htm)
 12. shmups.system11.org, “PVM Addon Cards, are they universal?” (2023) — source (https://shmups.system11.org/viewtopic.php?p=1515727)
 13. crtdatabase.com, Sony BKM controllers — source (https://crtdatabase.com/crts/sony/sony-bkm-controllers)
 
@@ -5765,7 +5765,7 @@ I have one →
 
 The space-helmet TV. First choice is the French SCART variant; the US NTSC version is of interest too.
 
-What it looks like: The History of TV → (https://www.thehistoryoftv.com/phillips-space-helmet)
+What it looks like: The History of TV (archived) → (https://web.archive.org/web/20230318213043/https://www.thehistoryoftv.com/phillips-space-helmet)
 
 I have one →
 

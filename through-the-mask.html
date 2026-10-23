@@ -26,9 +26,9 @@
 <link rel="canonical" href="https://www.orlandu.com/through-the-mask.html">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms-full.txt" title="Full text of this site for AI assistants">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms.txt" title="Site index for AI assistants">
-<link rel="stylesheet" href="assets/style.css?v=1a05faa8">
+<link rel="stylesheet" href="assets/style.css?v=6b7d2304">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
-<script src="assets/site.js?v=56fac5ef" defer></script>
+<script src="assets/site.js?v=c47f699b" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -186,6 +186,7 @@
   .tube h2 small{font-family:var(--cond);font-weight:500;color:var(--dim);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase}
   .tube h2 .ab{font-family:var(--pixel);font-size:.55rem;color:var(--fire3)}
   .tube.bb h2 .ab{color:var(--cyan)}
+  .nogl{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;margin:0;border-radius:8px;background:#000;border:1px solid #2e2e48;color:var(--dim)}
   canvas.view{width:100%;aspect-ratio:4/3;display:block;border-radius:8px;background:#000;border:1px solid #2e2e48;image-rendering:auto}
   .phys{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.4rem .8rem;margin-top:.7rem}
   .phys div{border-top:1px solid var(--line);padding-top:.35rem}
@@ -237,7 +238,7 @@ const M=[
  {id:'PVM-2950Q',tag:'29" · 600 TVL · Super Trinitron',kind:'crt',w:548,h:411,tvl:600,pitch:0.78,pitchNote:'Sony: 0.7–0.85 mm',wires:2},
  {id:'PVM-20L5',tag:'20" · 800 TVL · HR Trinitron',kind:'crt',w:386,h:290,tvl:800,pitch:0.25,pitchNote:'0.25 mm class (no Sony figure)',wires:2,est:true},
  {id:'BVM-20E1U',tag:'20" · 1000 TVL · E-grade',kind:'crt',w:386,h:290,tvl:1000,pitch:0.25,pitchNote:'Sony E/F manual: 0.25 mm',wires:2},
- {id:'BVM-A14F5U',tag:'14" · 800 TVL · F-grade',kind:'crt',w:264,h:198,tvl:800,pitch:0.25,pitchNote:'Sony E/F manual: 0.25 mm',wires:1},
+ {id:'BVM-A14F5U',tag:'14" · 800 TVL · F-grade',kind:'crt',w:264,h:198,tvl:800,pitch:0.25,pitchNote:'Sony BVM-A14F5U manual: 0.25 mm',wires:1},
  {id:'LMD-9020',tag:'8.4" · 640×480 · TFT',kind:'lcd',w:170.9,h:128.2,px:640,py:480},
  {id:'LMD-9030',tag:'8.4" · 640×480 · TFT',kind:'lcd',w:170.9,h:128.2,px:640,py:480},
  {id:'LMD-9050',tag:'8.4" · 1024×768 · TFT',kind:'lcd',w:170.5,h:127.9,px:1024,py:768},
@@ -339,7 +340,8 @@ function mkGL(canvas){
 const state={a:2,b:0,src:'text',dist:0,win:60};
 (function(){const q=new URLSearchParams(location.search);const f=k=>{const i=M.findIndex(m=>m.id.toLowerCase()===(q.get(k)||'').toLowerCase());return i};const ia=f('a'),ib=f('b');if(ia>=0)state.a=ia;if(ib>=0)state.b=ib;})();
 const views=[{el:document.getElementById('tA'),key:'a'},{el:document.getElementById('tB'),key:'b'}];
-views.forEach(v=>{v.canvas=v.el.querySelector('canvas');v.g=mkGL(v.canvas);});
+views.forEach(v=>{v.canvas=v.el.querySelector('canvas');try{v.g=mkGL(v.canvas);}catch(e){v.g=null;}
+  if(!v.g){const n=document.createElement('p');n.className='nogl';n.textContent='This browser has WebGL turned off, so the simulation cannot draw here. The numbers below still apply.';v.canvas.replaceWith(n);const sb=v.el.querySelector('.scalebar');if(sb)sb.remove();}});
 function phys(m,eye){
   const out=[];
   if(m.kind==='crt'){const ls=m.h/240, el=m.h/m.tvl;
@@ -352,7 +354,9 @@ function render(){
   const eye=state.dist>0? state.dist*10*2.909e-4*0.6 :0;   // 1 arcmin at d cm → mm (×0.6 → sigma)
   const winW=state.win, winH=winW*0.75;
   const texA=views[0].g, texB=views[1].g;
-  views.forEach(v=>{const m=M[state[v.key]]; if(!v.g)return; const {gl,U,tex}=v.g;
+  views.forEach(v=>{const m=M[state[v.key]];
+    if(!v.g){v.el.querySelector('.nm').textContent=m.id;v.el.querySelector('.tg').textContent=m.tag;v.el.querySelector('.phys').innerHTML=phys(m,eye);return;}
+    const {gl,U,tex}=v.g;
     gl.bindTexture(gl.TEXTURE_2D,tex);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,SRC);
     gl.viewport(0,0,v.canvas.width,v.canvas.height);
     gl.uniform1i(U.src,0);gl.uniform2f(U.disp,m.w,m.h);

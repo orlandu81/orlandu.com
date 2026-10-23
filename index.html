@@ -28,10 +28,10 @@
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms-full.txt" title="Full text of this site for AI assistants">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms.txt" title="Site index for AI assistants">
 <link rel="preload" as="image" href="assets/hero-bg.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/style.css?v=1a05faa8">
+<link rel="stylesheet" href="assets/style.css?v=6b7d2304">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
 <link rel="preload" as="image" href="assets/logo-wordmark-hero-v2.webp" fetchpriority="high">
-<script src="assets/site.js?v=56fac5ef" defer></script>
+<script src="assets/site.js?v=c47f699b" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -150,7 +150,7 @@
 </span></div>
 
 <div class="filmstrip" id="filmstrip" role="region" aria-label="From the gallery"></div>
-<script src="assets/gallery-data.js?v=f999076c"></script>
+<script src="assets/gallery-data.js?v=a29e5018"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   var strip = document.getElementById('filmstrip');
@@ -160,6 +160,12 @@ document.addEventListener('DOMContentLoaded', function(){
     var j = Math.floor(Math.random() * (i + 1));
     var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
   }
+  // Panoramic shots (lit signs, monitor racks) become long slabs at strip height —
+  // fine in the gallery's masonry, wrong here. Drop anything wider than 2.2:1, first by the
+  // w/h recorded in gallery-data.js (so it is never fetched and the track never jumps when a
+  // late image is hidden mid-scroll), then by the loaded file's own size as a backstop below.
+  var MAX_STRIP_AR = 2.2;
+  pool = pool.filter(function(g){ return !(g.w && g.h && g.w / g.h > MAX_STRIP_AR); });
   pool = pool.slice(0, 16); // one loop's worth — the strip used to pull all 45 thumbs
   // Strip-sized files, not the 800px gallery thumbs: the browser's own reduction to the
   // 170px strip beat against the scanlines on the lit-CRT shots and made them ripple.
@@ -168,9 +174,6 @@ document.addEventListener('DOMContentLoaded', function(){
     return '<a href="gallery.html" title="' + (g.title||'').replace(/"/g,'&quot;') + '">' +
       '<img src="' + base + '.webp" srcset="' + base + '.webp 1x, ' + base + '-2x.webp 2x" alt="' + (g.title||'').replace(/"/g,'&quot;') + '" loading="' + (k < 6 ? 'eager' : 'lazy') + '" decoding="async"' + (g.w ? ' width="' + g.w + '" height="' + g.h + '"' : '') + '></a>';
   }).join('');
-  // Panoramic shots (lit signs, monitor racks) become long slabs at strip height —
-  // fine in the gallery's masonry, wrong here. Drop anything wider than 2.2:1.
-  var MAX_STRIP_AR = 2.2;
   var track = document.createElement('div');
   track.className = 'track';
   track.innerHTML = html + html; // duplicated for a seamless loop
