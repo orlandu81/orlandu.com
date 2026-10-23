@@ -42,8 +42,8 @@ def write(name, meta, rows, fields):
 # ── Sony monitor specs ──
 src = (root / "monitors.html").read_text(encoding="utf-8")
 head, rows = table_rows(src, "fleettable")
-keys = ["model", "family", "display", "size", "resolution", "formats", "hd", "rgb_component", "sd_sdi", "hd_sdi_3g", "option_slots", "weight", "era", "units", "profile_url"]
-assert len(head) == 13, head
+keys = ["model", "family", "display", "size", "resolution", "formats", "hd", "rgb_component", "sd_sdi", "hd_sdi_3g", "option_slots", "weight", "dimensions", "era", "units", "profile_url"]
+assert len(head) == 14, head
 out = []
 for cells in rows:
     first = cells[0]
@@ -54,8 +54,8 @@ for cells in rows:
     out.append(dict(zip(keys, vals)))
 write("sony-monitor-specs", {
     "dataset": "Sony professional monitors at Orlandu's Arcade — specifications",
-    "description": "Display type, size, resolution, formats, inputs, option slots, weight and era for every Sony PVM, BVM and LMD model in the collection, as published on the fleet page.",
-    "source": SITE + "monitors.html#specs", "columns": {k: h for k, h in zip(keys[2:14], head[1:])}}, out, keys)
+    "description": "Display type, size, resolution, formats, inputs, option slots, weight, dimensions and era for every Sony PVM, BVM and LMD model in the collection, as published on the fleet page.",
+    "source": SITE + "monitors.html#specs", "columns": {k: h for k, h in zip(keys[2:15], head[1:])}}, out, keys)
 
 # ── PlayChoice-10 library (the 52 original boards on the wall) ──
 src = (root / "playchoice-10.html").read_text(encoding="utf-8")

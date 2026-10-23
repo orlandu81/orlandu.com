@@ -95,6 +95,16 @@ The geometry grid, judging a tube with no hours counter, what to pay — and why
 ## Latest from the arcade
  New reference
 
+### What a Sony model number says
+
+PVM-20L5, BVM-D14H5U, BKM-129X — line, size, tube letter, the digit that means “needs a control unit,” and the market suffix, from Sony’s own manuals, with each family drawn as a lineage strip. Decode a badge → (https://www.orlandu.com/sony-model-numbers.html)
+ New on the fleet page
+
+### Compare two monitors, and see them to scale
+
+Pick any two models and the specs that differ light up; above the table, all eight are drawn to Sony’s published dimensions, front and side, with an NES for size. The fleet, to scale → (https://www.orlandu.com/monitors.html#scale)
+ New reference
+
 ### Every Sony BKM card, and which monitor it fits
 
 Three physical families, not one: the 2x decoders for the BVM-E/F/G and big D-series, the 1xx cards for the small D-series and the PVM-L5/L2 slot, and the BVM-A boards. What each does, the installation rules, the controllers — sourced to Sony. The reference → (https://www.orlandu.com/bkm-cards.html)
@@ -128,16 +138,6 @@ The PVM-2950Q, PVM-20L5, BVM-20E1U, BVM-A14F5U and the LMD wall each get a full 
 ### Forty years on one line
 
 Every machine, console and monitor plotted by the year it was released — scroll down from the 1981 Donkey Kong to the 2020 Rick and Morty. See the timeline → (https://www.orlandu.com/timeline.html)
- Found
-
-### Captain Skyhawk comes off the hunt list
-
-An original 1989 PlayChoice-10 topper — Rare’s jet shooter, printed for Milton Bradley and licensed by Nintendo. See it on the topper wall → (https://www.orlandu.com/signage.html#toppers)
- Published
-
-### The Orlandu 100
-
-A hundred favorite films ranked by head-to-head duel — no CRTs, no coin doors, just the same instinct pointed somewhere else. Read the issue → (https://www.orlandu.com/orlandu-100.html)
 
 ---
 
@@ -386,24 +386,31 @@ The full profile → (https://www.orlandu.com/lmd-wall.html) · Feature in Vol. 
 
 How every one of these actually gets a signal — the switchers, the SCART-to-BNC cables, and the distribution amp behind the LMD wall — is written up in The Signal Chain (https://www.orlandu.com/signal-chain.html); the vocabulary — TVL, multiscan, BKM, loop-through — is in the glossary (https://www.orlandu.com/glossary.html); which BKM card fits which monitor is in the BKM card reference (https://www.orlandu.com/bkm-cards.html). Recently departed: a BVM-14F5U and the nine-inch BVM-D9H5J found new homes — the fleet consolidates so the keepers get the attention they deserve.
 
+## The fleet, to scale
+
+Every model drawn to Sony’s published width and height on one floor line, with an NES for size. The side view is the part nobody puts in words: a 20-inch BVM is deeper than it is wide, and the panel that replaced it is seven centimeters thick.
+
+Front and side elevations from the dimensions Sony prints in each model’s brochure or operation manual, without projecting parts. The BVM-A14F5U is drawn as its bezel inside the dashed 19-inch rack frame the U model ships in. The LMD-9020 and 9030 are shown on their supplied stands; the 9050 is one piece.
+
 ## The fleet, side by side
 
-Every model in the collection on one sheet — tube or panel, size, resolution, what formats it locks to, which inputs it carries and which need a BKM card. Click a column heading to sort; each model name opens its own profile page; the long-form spec table and its sources live in Trinitron Fleet, Vol. 1 (https://www.orlandu.com/trinitron-fleet-vol1.html).
+Every model in the collection on one sheet — tube or panel, size, resolution, what formats it locks to, which inputs it carries and which need a BKM card. Pick any two to compare — the rows that differ light up. Click a column heading to sort; each model name opens its own profile page; the long-form spec table and its sources live in Trinitron Fleet, Vol. 1 (https://www.orlandu.com/trinitron-fleet-vol1.html).
+ Comparevs
 
-| Model | Display | Size | Resolution | Formats | HD | RGB / component | SD-SDI | HD-SDI / 3G | Option slots | Weight | Era | Units |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| PVM-2950Q (https://www.orlandu.com/pvm-2950q.html)PVM · CRT | Super Trinitron CRT | 29" (27" viewable) | 600 TVL | NTSC / PAL / SECAM | No | RGB (BNC) | — | — | None | 115 lb | 1991–1996 | 1 |
-| PVM-20L5 (https://www.orlandu.com/pvm-20l5.html)PVM · CRT | HR Trinitron CRT | 20" (19" viewable) | 800 TVL | 240p–1080i, 720p | Yes | RGB / component, loop-through | Optional card | Optional card | 1 (BKM-129X fitted) | ≈73 lb | 2002–2007 | 1 |
-| BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html)BVM · CRT | HR Trinitron CRT (E-grade tube) | 20" (19" viewable) | 1000 TVL | 240p, 480i, 576i | No | RGB / component (fixed) + slots | Optional card | — | 4 + fixed input | ≈85 lb | 1995–2002 | 1 |
-| BVM-A14F5U (https://www.orlandu.com/bvm-a14f5u.html)BVM · CRT | HR Trinitron CRT | 14" (13" viewable) | 800 TVL | 240p–1080i, 720p, 24PsF | Yes | Via BKM-68X | Via BKM-61D | Via BKM-62HS | 3 | ≈48 lb | 2003–2007 | 1 |
-| LMD-940W (https://www.orlandu.com/lmd-wall.html)LMD · LCD | TFT LCD (super-wide aperture) | 9" wide | 800×480 WVGA | SD + HD to 1080p | Yes | — | Standard | 3G-SDI + HDMI | None | ≈4.4 lb | 2011– | 1 |
-| LMD-9020 (https://www.orlandu.com/lmd-wall.html)LMD · LCD | TFT LCD | 8.4" | 640×480 VGA | SD | No | Component + RGB | — | — | None | ≈6.6 lb | 2005–2011 | 1 |
-| LMD-9030 (https://www.orlandu.com/lmd-wall.html)LMD · LCD | TFT LCD | 8.4" | 640×480 VGA | SD + HD (component) | Yes | Component + RGB | Standard | — | None | ≈6.8 lb | 2005–2011 | 5 |
-| LMD-9050 (https://www.orlandu.com/lmd-wall.html)LMD · LCD | TFT LCD | 8.4" | 1024×768 XGA | SD + HD | Yes | Component + RGB | Standard | HD-SDI | None | ≈7.1 lb | 2005–2011 | 2 |
+| Model | Display | Size | Resolution | Formats | HD | RGB / component | SD-SDI | HD-SDI / 3G | Option slots | Weight | Dimensions | Era | Units |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| PVM-2950Q (https://www.orlandu.com/pvm-2950q.html)PVM · CRT | Super Trinitron CRT | 29" (27" viewable) | 600 TVL | NTSC / PAL / SECAM | No | RGB (BNC) | — | — | None | 115 lb | 687 × 538 × 529 mm | 1991–1996 | 1 |
+| PVM-20L5 (https://www.orlandu.com/pvm-20l5.html)PVM · CRT | HR Trinitron CRT | 20" (19" viewable) | 800 TVL | 240p–1080i, 720p | Yes | RGB / component, loop-through | Optional card | Optional card | 1 (BKM-129X fitted) | 68 lb | 452 × 414 × 500 mm | 2002–2007 | 1 |
+| BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html)BVM · CRT | HR Trinitron CRT (E-grade tube) | 20" (19" viewable) | 1000 TVL | 240p, 480i, 576i | No | RGB / component (fixed) + slots | Optional card | — | 4 + fixed input | 82 lb | 444 × 414 × 570 mm | 1995–2002 | 1 |
+| BVM-A14F5U (https://www.orlandu.com/bvm-a14f5u.html)BVM · CRT | HR Trinitron CRT | 14" (13" viewable) | 800 TVL | 240p–1080i, 720p, 24PsF | Yes | Via BKM-68X | Via BKM-61D | Via BKM-62HS | 3 | 57 lb | 482 × 280 × 571 mm | 2003–2007 | 1 |
+| LMD-940W (https://www.orlandu.com/lmd-wall.html)LMD · LCD | TFT LCD (super-wide aperture) | 9" wide | 800×480 WVGA | SD + HD to 1080p | Yes | — | Standard | 3G-SDI + HDMI | None | ≈4.4 lb | 222 × 166 × 70 mm | 2011– | 1 |
+| LMD-9020 (https://www.orlandu.com/lmd-wall.html)LMD · LCD | TFT LCD | 8.4" | 640×480 VGA | SD | No | Component + RGB | — | — | None | ≈6.6 lb | 216 × 230 × 160 mm | 2005–2011 | 1 |
+| LMD-9030 (https://www.orlandu.com/lmd-wall.html)LMD · LCD | TFT LCD | 8.4" | 640×480 VGA | SD + HD (component) | Yes | Component + RGB | Standard | — | None | ≈6.8 lb | 216 × 230 × 160 mm | 2005–2011 | 5 |
+| LMD-9050 (https://www.orlandu.com/lmd-wall.html)LMD · LCD | TFT LCD | 8.4" | 1024×768 XGA | SD + HD | Yes | Component + RGB | Standard | HD-SDI | None | ≈7.1 lb | 216 × 230 × 160 mm | 2005–2011 | 2 |
 
 This table as open data: JSON (https://www.orlandu.com/data/sony-monitor-specs.json) · CSV (https://www.orlandu.com/data/sony-monitor-specs.csv) — CC BY 4.0, credit Orlandu’s Arcade. For AI agents → (https://www.orlandu.com/mcp.html)
 
-Specifications are Sony’s published figures, compiled from operating manuals, brochures and the 2002–2003 line-up guide; weights marked ≈ are approximate. TVL is Sony’s center-resolution spec for the CRTs; the LMDs are fixed-pixel panels, so they list native pixels instead.
+Specifications are Sony’s published figures, compiled from operating manuals, brochures and the 2002–2003 line-up guide; weights marked ≈ are approximate. Dimensions are W × H × D from Sony’s brochures and operation manuals, without projecting parts; the BVM-A14F5U’s width is the 19-inch rack frame the U model ships in. TVL is Sony’s center-resolution spec for the CRTs; the LMDs are fixed-pixel panels, so they list native pixels instead.
 
 ## Beyond video
  Sony AMS-100
@@ -548,7 +555,7 @@ The practical genius runs deeper. Inputs arrive in pairs with loop-throughs, so 
 - **HD-SDI**: Optional (BKM-142HD)
 - **Option slots**: 1 — BKM-129X (SCART / VGA / RGB) installed
 - **Control**: Front panel + OSD; parallel remote
-- **Weight**: ~73 lb
+- **Weight**: 68 lb (31 kg, Sony spec)
 
 ## Work log
 
@@ -608,7 +615,7 @@ Sightings are rare enough to count as events. A sound example surfaces perhaps o
 - **HD-SDI**: None
 - **Option slots**: 4 + fixed RGB input — full E/F 8-card family
 - **Control**: Built-in panel; IC memory card; ISR/RS-485; optional BKM-10R remote
-- **Weight**: ~85 lb est. (spec unverified)
+- **Weight**: 82 lb (37 kg, Sony spec)
 
 ## Work log
 
@@ -668,7 +675,7 @@ And this one is nearly there. Two of the three option slots are filled: HD-SDI, 
 - **HD-SDI**: Via BKM-62HS (installed)
 - **Option slots**: 3 (68X clone + 62HS installed; one open)
 - **Control**: Built-in panel; Ethernet remote; Memory Stick setup save; RS-485 (32 monitors)
-- **Weight**: ~48 lb
+- **Weight**: 57 lb (26 kg, Sony spec)
 
 ## Work log
 
@@ -4179,7 +4186,7 @@ Five LMD-9030s and two LMD-9050s, behaving as one instrument.
 ** 01 PVM-2950Q*29" production* p.402 PVM-20L5*20" multiformat* p.603 BVM-20E1U*20" 1000 TVL flagship* p.8— Battle of the twenties*PVM-20L5 vs BVM-20E1U · head to head* p.1004 BVM-A14F5U*14" master grade* p.1205 The Confidence Wall*LMD support fleet · four models, nine units* p.14— Ask the bay*Letters · and how to speak broadcast* p.16 8Models13Units4CRT4LCD1000Peak TVL28Spec lines
 
 ### Fleet by the numbers
- 380*lb*Fleet weightAll thirteen units on one impossible shelf≈960*W*Everything litEvery screen in the building at once1080*sq in*Total glassViewable area across the whole fleet20*yrs*Engineering spanFrom the 1991 cube to the 2011 panels
+ 381*lb*Fleet weightAll thirteen units on one impossible shelf≈960*W*Everything litEvery screen in the building at once1080*sq in*Total glassViewable area across the whole fleet20*yrs*Engineering spanFrom the 1991 cube to the 2011 panels
 
 ### Three decades of glass
  1968 1980 1990 2000 2010 PVM-2950Q PVM-20L5 BVM-20E1U BVM-A14F5U LMD 90-series Dashed line: Trinitron debuts, 1968 · Bars from each model's production era Trinitron Fleet · Vol.1 · Aug 2026 Trinitron CRT Page 4 01 / 05
@@ -4216,7 +4223,7 @@ One monitor that speaks every era of video fluently — the bridge from 240p to 
 At 800 TVL on SMPTE-C phosphors the picture is broadcast-honest. Colors sit precisely where the mastering engineer put them, and 240p sources take on that etched, dimensional quality only a fine-pitch HR Trinitron delivers — the look people chase for years and then refuse to give up.
 
 The practical genius runs deeper. Inputs arrive in pairs with loop-throughs, so it drops into any chain without ceremony, and its one option slot carries a BKM-129X for SCART, VGA and RGB. Even the flyback is shared with the 14L5 and a BVM cousin, the kind of deep parts commonality that keeps a legend alive across decades. Kings age well when the bloodline runs deep.
- Resolution800 TVLSize (viewable)20" (19" viewable)Horizontal sync range15–33.75 kHz class multiscanGrade / seriesPVM production (top of line)Option slots1 (BKM-120D / 142HD / 150CP / 155DV)Current draw≈1.5 A @ 120 V (180 W per Sony catalog)Weight (approx)~73 lbProduction era~2002–2007 Picture**9Rarity**7Versatility**10Livability**8 THE BENCHMARK. Full specification — all 28 lines DisplayTechnologyHR Trinitron CRTSize (viewable)20" (19" viewable)Grade / seriesPVM production (top of line)Native aspect4:3 (16:9 switch)Resolution800 TVLTube / panel detailFine-pitch HR tube (shared flyback with 14L5 / BVM-D14H5)Phosphors / color scienceSMPTE-CColor temperature6500K / 9300K / user 3200–10000KFormats & syncSupported formats240p, 480i/p, 576i/p, 1035i, 1080i, 720pHorizontal sync range15–33.75 kHz class multiscanHD capableYes (analog + optional digital)240p handlingNative scan, pronounced scanlinesInputs & modularityComposite2× with loop-throughY/C (S-Video)Yes, loop-throughAnalog RGB / component1× RGB/component switchable, loop-throughSD-SDIOptional (BKM-120D)HD-SDI / 3GOptional (BKM-142HD)HDMI—Option slots1 (BKM-120D / 142HD / 150CP / 155DV)Control, power, physicalControl systemFront panel + OSD; parallel remotePowerAC onlyCurrent draw≈1.5 A @ 120 V (180 W per Sony catalog)Rack / mountingOptional rack mountWeight (approx)~73 lbProduction era~2002–2007MarketDesirabilityVery high — often called the king of PVMs; multiformat + 20"Notable quirksEarly-serial D2 boards have 15 kHz H-linearity defectRole in your setupAMS-100 stack; multiformat bridge SD→HD Trinitron Fleet · Vol.1 · Aug 2026 Trinitron CRT Page 8 03 / 05
+ Resolution800 TVLSize (viewable)20" (19" viewable)Horizontal sync range15–33.75 kHz class multiscanGrade / seriesPVM production (top of line)Option slots1 (BKM-120D / 142HD / 150CP / 155DV)Current draw≈1.5 A @ 120 V (180 W per Sony catalog)Weight (approx)68 lb (31 kg, Sony spec)Production era~2002–2007 Picture**9Rarity**7Versatility**10Livability**8 THE BENCHMARK. Full specification — all 28 lines DisplayTechnologyHR Trinitron CRTSize (viewable)20" (19" viewable)Grade / seriesPVM production (top of line)Native aspect4:3 (16:9 switch)Resolution800 TVLTube / panel detailFine-pitch HR tube (shared flyback with 14L5 / BVM-D14H5)Phosphors / color scienceSMPTE-CColor temperature6500K / 9300K / user 3200–10000KFormats & syncSupported formats240p, 480i/p, 576i/p, 1035i, 1080i, 720pHorizontal sync range15–33.75 kHz class multiscanHD capableYes (analog + optional digital)240p handlingNative scan, pronounced scanlinesInputs & modularityComposite2× with loop-throughY/C (S-Video)Yes, loop-throughAnalog RGB / component1× RGB/component switchable, loop-throughSD-SDIOptional (BKM-120D)HD-SDI / 3GOptional (BKM-142HD)HDMI—Option slots1 (BKM-120D / 142HD / 150CP / 155DV)Control, power, physicalControl systemFront panel + OSD; parallel remotePowerAC onlyCurrent draw≈1.5 A @ 120 V (180 W per Sony catalog)Rack / mountingOptional rack mountWeight (approx)68 lb (31 kg, Sony spec)Production era~2002–2007MarketDesirabilityVery high — often called the king of PVMs; multiformat + 20"Notable quirksEarly-serial D2 boards have 15 kHz H-linearity defectRole in your setupAMS-100 stack; multiformat bridge SD→HD Trinitron Fleet · Vol.1 · Aug 2026 Trinitron CRT Page 8 03 / 05
 
 ## BVM-20E1U
  20" 1000 TVL flagship
@@ -4236,7 +4243,7 @@ It is also a machine you get to build. Four option slots wait behind the fixed R
 The hunt is half the point.
 
 Sightings are rare enough to count as events. A sound example surfaces perhaps once a season, then vanishes into someone's climate-controlled bay — which is what grail tier actually means: not extravagance, but patience. This one's patience traces to June 2007 build stock, still holding a picture with no living rival.
- Resolution1000 TVL — highest 4:3 Sony ever made at 20"Size (viewable)20" (19" viewable)Horizontal sync range15 kHz onlyGrade / seriesBVM broadcast, E/F series — highest-resolution gradeOption slots4 + fixed RGB input — full E/F 8-card familyCurrent draw200 W max ≈ 1.7 A @ 120 V (per rear label, AC 100–120 V)Weight (approx)~85 lb est. (spec unverified)Production era~1995–2002 (E/F generation; low-volume E-tube) Picture**10Rarity**10Versatility**8Livability**8 THE GRAIL, PERIOD. Full specification — all 28 lines DisplayTechnologyHR Trinitron CRT (E-grade tube)Size (viewable)20" (19" viewable)Grade / seriesBVM broadcast, E/F series — highest-resolution gradeNative aspect4:3 (16:9 switch)Resolution1000 TVL — highest 4:3 Sony ever made at 20"Tube / panel detailM49LCB22X tube, ~0.25 mm AG pitch (finer than 20F1U's tube)Phosphors / color scienceSMPTE-C (U spec)Color temperatureD65 + user, auto white balance via probeFormats & syncSupported formats240p, 480i, 576i only — strictly SD by designHorizontal sync range15 kHz onlyHD capableNo — never; no HD path exists240p handlingNative scan — the definitive large-format 240p display; razor scanline definition at 1000 TVLInputs & modularityCompositeVia E/F BKM decoder boards — owned BKM-21D covers itY/C (S-Video)Via BKM-24N (owned, on the shelf) or BKM-27TAnalog RGB / component1 fixed RGB/component + slots (fixed input block with loop-through)SD-SDIOptional (BKM-20D/21D — both owned)HD-SDI / 3G—HDMI—Option slots4 + fixed RGB input — full E/F 8-card familyControl, power, physicalControl systemBuilt-in panel; IC memory card; ISR/RS-485; optional BKM-10R remotePowerAC onlyCurrent draw200 W max ≈ 1.7 A @ 120 V (per rear label, AC 100–120 V)Rack / mounting19" EIA rack via MB kit (20" size — not shared with 14" kits)Weight (approx)~85 lb est. (spec unverified)Production era~1995–2002 (E/F generation; low-volume E-tube)MarketDesirabilityGrail tier — only 20" 4:3 1000 TVL Sony ever built; extremely infrequent listingsNotable quirksStrictly SD forever; M49LCB22X tube irreplaceable — protect the glass above all else; baseline tube health check (focus, landing, burn survey) recommended on arrivalRole in your setupFlagship SD reference — maximum-resolution 240p/RGB display; sole E/F-series chassis; full eight-card adaptor family compatible Trinitron Fleet · Vol.1 · Aug 2026 Head to head Page 10
+ Resolution1000 TVL — highest 4:3 Sony ever made at 20"Size (viewable)20" (19" viewable)Horizontal sync range15 kHz onlyGrade / seriesBVM broadcast, E/F series — highest-resolution gradeOption slots4 + fixed RGB input — full E/F 8-card familyCurrent draw200 W max ≈ 1.7 A @ 120 V (per rear label, AC 100–120 V)Weight (approx)82 lb (37 kg, Sony spec)Production era~1995–2002 (E/F generation; low-volume E-tube) Picture**10Rarity**10Versatility**8Livability**8 THE GRAIL, PERIOD. Full specification — all 28 lines DisplayTechnologyHR Trinitron CRT (E-grade tube)Size (viewable)20" (19" viewable)Grade / seriesBVM broadcast, E/F series — highest-resolution gradeNative aspect4:3 (16:9 switch)Resolution1000 TVL — highest 4:3 Sony ever made at 20"Tube / panel detailM49LCB22X tube, ~0.25 mm AG pitch (finer than 20F1U's tube)Phosphors / color scienceSMPTE-C (U spec)Color temperatureD65 + user, auto white balance via probeFormats & syncSupported formats240p, 480i, 576i only — strictly SD by designHorizontal sync range15 kHz onlyHD capableNo — never; no HD path exists240p handlingNative scan — the definitive large-format 240p display; razor scanline definition at 1000 TVLInputs & modularityCompositeVia E/F BKM decoder boards — owned BKM-21D covers itY/C (S-Video)Via BKM-24N (owned, on the shelf) or BKM-27TAnalog RGB / component1 fixed RGB/component + slots (fixed input block with loop-through)SD-SDIOptional (BKM-20D/21D — both owned)HD-SDI / 3G—HDMI—Option slots4 + fixed RGB input — full E/F 8-card familyControl, power, physicalControl systemBuilt-in panel; IC memory card; ISR/RS-485; optional BKM-10R remotePowerAC onlyCurrent draw200 W max ≈ 1.7 A @ 120 V (per rear label, AC 100–120 V)Rack / mounting19" EIA rack via MB kit (20" size — not shared with 14" kits)Weight (approx)82 lb (37 kg, Sony spec)Production era~1995–2002 (E/F generation; low-volume E-tube)MarketDesirabilityGrail tier — only 20" 4:3 1000 TVL Sony ever built; extremely infrequent listingsNotable quirksStrictly SD forever; M49LCB22X tube irreplaceable — protect the glass above all else; baseline tube health check (focus, landing, burn survey) recommended on arrivalRole in your setupFlagship SD reference — maximum-resolution 240p/RGB display; sole E/F-series chassis; full eight-card adaptor family compatible Trinitron Fleet · Vol.1 · Aug 2026 Head to head Page 10
 
 ## Battle of the twenties
 **
@@ -4266,7 +4273,7 @@ The master-grade CRT, perfected at the exact moment it became art.
 It was born to work in packs. Ethernet remote, addressing for a wall of thirty-two units, a control system designed for facilities that ran monitors the way server rooms run racks. In a home bay, all that engineering distills to one thing: total, casual command over a reference-grade picture.
 
 And this one is nearly there. Two of the three option slots are filled: HD-SDI, and an analog board that adds SCART, component and VGA beyond anything the factory ever offered. The third slot, for a BKM-61D and its SD-SDI and S-Video inputs, is still open.
- Resolution800 TVLSize (viewable)14" (13" viewable)Horizontal sync range15–45 kHzGrade / seriesBVM-A broadcast, final CRT generationOption slots3 (68X clone + 62HS installed; one open)Current draw≈1.0–1.5 A @ 120 V est. (110–175 W class; A-series spec unverified)Weight (approx)~48 lbProduction era~2003–2007 Picture**9Rarity**8Versatility**9Livability**8 THE FINALE, PERFECTED. Full specification — all 28 lines DisplayTechnologyHR Trinitron CRTSize (viewable)14" (13" viewable)Grade / seriesBVM-A broadcast, final CRT generationNative aspect4:3 (16:9 switch)Resolution800 TVLTube / panel detail0.25 mm-class AG pitchPhosphors / color scienceSMPTE-C (U spec; EBU on A14F5M)Color temperatureD65 + user, BKM-14L auto probe, digital uniformityFormats & syncSupported formats240p, 480i/p, 576i/p, 720p, 1080i, 1080/24PsFHorizontal sync range15–45 kHzHD capableYes240p handlingNative scanInputs & modularityCompositeVia option boardsY/C (S-Video)Via BKM-61D (slot open)Analog RGB / componentVia BKM-68X (clone installed)SD-SDIVia BKM-61D (slot open)HD-SDI / 3GVia BKM-62HS (installed)HDMI—Option slots3 (68X clone + 62HS installed; one open)Control, power, physicalControl systemBuilt-in panel; Ethernet remote; Memory Stick setup save; RS-485 (32 monitors)PowerAC onlyCurrent draw≈1.0–1.5 A @ 120 V est. (110–175 W class; A-series spec unverified)Rack / mounting19" EIA rack via MB kitWeight (approx)~48 lbProduction era~2003–2007MarketDesirabilityVery high — last-generation 14" multiformat BVMNotable quirksBeam landing correction + digital uniformity; setup portable via Memory StickRole in your setupSD+HD reference; AMS-100 stack Trinitron Fleet · Vol.1 · Aug 2026 LMD support fleet Page 14 05 / 05
+ Resolution800 TVLSize (viewable)14" (13" viewable)Horizontal sync range15–45 kHzGrade / seriesBVM-A broadcast, final CRT generationOption slots3 (68X clone + 62HS installed; one open)Current draw≈1.0–1.5 A @ 120 V est. (110–175 W class; A-series spec unverified)Weight (approx)57 lb (26 kg, Sony spec)Production era~2003–2007 Picture**9Rarity**8Versatility**9Livability**8 THE FINALE, PERFECTED. Full specification — all 28 lines DisplayTechnologyHR Trinitron CRTSize (viewable)14" (13" viewable)Grade / seriesBVM-A broadcast, final CRT generationNative aspect4:3 (16:9 switch)Resolution800 TVLTube / panel detail0.25 mm-class AG pitchPhosphors / color scienceSMPTE-C (U spec; EBU on A14F5M)Color temperatureD65 + user, BKM-14L auto probe, digital uniformityFormats & syncSupported formats240p, 480i/p, 576i/p, 720p, 1080i, 1080/24PsFHorizontal sync range15–45 kHzHD capableYes240p handlingNative scanInputs & modularityCompositeVia option boardsY/C (S-Video)Via BKM-61D (slot open)Analog RGB / componentVia BKM-68X (clone installed)SD-SDIVia BKM-61D (slot open)HD-SDI / 3GVia BKM-62HS (installed)HDMI—Option slots3 (68X clone + 62HS installed; one open)Control, power, physicalControl systemBuilt-in panel; Ethernet remote; Memory Stick setup save; RS-485 (32 monitors)PowerAC onlyCurrent draw≈1.0–1.5 A @ 120 V est. (110–175 W class; A-series spec unverified)Rack / mounting19" EIA rack via MB kitWeight (approx)57 lb (26 kg, Sony spec)Production era~2003–2007MarketDesirabilityVery high — last-generation 14" multiformat BVMNotable quirksBeam landing correction + digital uniformity; setup portable via Memory StickRole in your setupSD+HD reference; AMS-100 stack Trinitron Fleet · Vol.1 · Aug 2026 LMD support fleet Page 14 05 / 05
 
 ## The Confidence Wall
  LMD support fleet · four models, nine units
@@ -4308,7 +4315,7 @@ The full 28-line comparison table is omitted from the printed issue to keep it t
  Set in Orbitron and Rajdhani · Compiled August 2026 · An Orange County production · Best viewed at 15 kHz
 
 ##
-** 01 / 08 PVM-2950Q 29" production crtDisplayTechnologySuper Trinitron CRTSize (viewable)29" (27" viewable)Grade / seriesPVM productionNative aspect4:3 (16:9 mode)Resolution600 TVLTube / panel detailAG pitch 0.7–0.85 mm, 110° deflectionPhosphors / color scienceStandard P22Color temperature3200K / 6500K / 9300KFormats & syncSupported formatsNTSC / PAL / SECAM / NTSC 4.43, auto-selectHorizontal sync range15 kHz onlyHD capableNo240p handlingNative scan, soft scanlines at 600 TVLInputs & modularityComposite2× with loop-throughY/C (S-Video)YesAnalog RGB / componentRGB (BNC)SD-SDI—HD-SDI / 3G—HDMI—Option slotsNone — fixed inputsControl, power, physicalControl systemFront panel + OSD; full digital geometry/convergence in service menuPowerAC onlyCurrent draw3.7 A max @ 100–120 V (165 W typ ≈ 1.4 A)Rack / mountingDesktop cube, stackableWeight (approx)115 lb (52 kg, Sony spec)Production era~1991–1996MarketDesirabilityVery high — largest common PVM, "the cube," freight is the barrierNotable quirksCorner bracket screws back out into the cube chassis; all-digital convergence is best-in-PVM-classRole in your setupBig-screen 240p/consumer-era display 02 / 08 PVM-20L5 20" multiformat crtDisplayTechnologyHR Trinitron CRTSize (viewable)20" (19" viewable)Grade / seriesPVM production (top of line)Native aspect4:3 (16:9 switch)Resolution800 TVLTube / panel detailFine-pitch HR tube (shared flyback with 14L5 / BVM-D14H5)Phosphors / color scienceSMPTE-CColor temperature6500K / 9300K / user 3200–10000KFormats & syncSupported formats240p, 480i/p, 576i/p, 1035i, 1080i, 720pHorizontal sync range15–33.75 kHz class multiscanHD capableYes (analog + optional digital)240p handlingNative scan, pronounced scanlinesInputs & modularityComposite2× with loop-throughY/C (S-Video)Yes, loop-throughAnalog RGB / component1× RGB/component switchable, loop-throughSD-SDIOptional (BKM-120D)HD-SDI / 3GOptional (BKM-142HD)HDMI—Option slots1 (BKM-120D / 142HD / 150CP / 155DV)Control, power, physicalControl systemFront panel + OSD; parallel remotePowerAC onlyCurrent draw≈1.5 A @ 120 V (180 W per Sony catalog)Rack / mountingOptional rack mountWeight (approx)~73 lbProduction era~2002–2007MarketDesirabilityVery high — often called the king of PVMs; multiformat + 20"Notable quirksEarly-serial D2 boards have 15 kHz H-linearity defectRole in your setupAMS-100 stack; multiformat bridge SD→HD 03 / 08 BVM-20E1U 20" 1000 TVL flagship crtDisplayTechnologyHR Trinitron CRT (E-grade tube)Size (viewable)20" (19" viewable)Grade / seriesBVM broadcast, E/F series — highest-resolution gradeNative aspect4:3 (16:9 switch)Resolution1000 TVL — highest 4:3 Sony ever made at 20"Tube / panel detailM49LCB22X tube, ~0.25 mm AG pitch (finer than 20F1U's tube)Phosphors / color scienceSMPTE-C (U spec)Color temperatureD65 + user, auto white balance via probeFormats & syncSupported formats240p, 480i, 576i only — strictly SD by designHorizontal sync range15 kHz onlyHD capableNo — never; no HD path exists240p handlingNative scan — the definitive large-format 240p display; razor scanline definition at 1000 TVLInputs & modularityCompositeVia E/F BKM decoder boards — owned BKM-21D covers itY/C (S-Video)Via BKM-24N (owned, on the shelf) or BKM-27TAnalog RGB / component1 fixed RGB/component + slots (fixed input block with loop-through)SD-SDIOptional (BKM-20D/21D — both owned)HD-SDI / 3G—HDMI—Option slots4 + fixed RGB input — full E/F 8-card familyControl, power, physicalControl systemBuilt-in panel; IC memory card; ISR/RS-485; optional BKM-10R remotePowerAC onlyCurrent draw200 W max ≈ 1.7 A @ 120 V (per rear label, AC 100–120 V)Rack / mounting19" EIA rack via MB kit (20" size — not shared with 14" kits)Weight (approx)~85 lb est. (spec unverified)Production era~1995–2002 (E/F generation; low-volume E-tube)MarketDesirabilityGrail tier — only 20" 4:3 1000 TVL Sony ever built; extremely infrequent listingsNotable quirksStrictly SD forever; M49LCB22X tube irreplaceable — protect the glass above all else; baseline tube health check (focus, landing, burn survey) recommended on arrivalRole in your setupFlagship SD reference — maximum-resolution 240p/RGB display; sole E/F-series chassis; full eight-card adaptor family compatible 04 / 08 BVM-A14F5U 14" master grade crtDisplayTechnologyHR Trinitron CRTSize (viewable)14" (13" viewable)Grade / seriesBVM-A broadcast, final CRT generationNative aspect4:3 (16:9 switch)Resolution800 TVLTube / panel detail0.25 mm-class AG pitchPhosphors / color scienceSMPTE-C (U spec; EBU on A14F5M)Color temperatureD65 + user, BKM-14L auto probe, digital uniformityFormats & syncSupported formats240p, 480i/p, 576i/p, 720p, 1080i, 1080/24PsFHorizontal sync range15–45 kHzHD capableYes240p handlingNative scanInputs & modularityCompositeVia option boardsY/C (S-Video)Via BKM-61D (slot open)Analog RGB / componentVia BKM-68X (clone installed)SD-SDIVia BKM-61D (slot open)HD-SDI / 3GVia BKM-62HS (installed)HDMI—Option slots3 (68X clone + 62HS installed; one open)Control, power, physicalControl systemBuilt-in panel; Ethernet remote; Memory Stick setup save; RS-485 (32 monitors)PowerAC onlyCurrent draw≈1.0–1.5 A @ 120 V est. (110–175 W class; A-series spec unverified)Rack / mounting19" EIA rack via MB kitWeight (approx)~48 lbProduction era~2003–2007MarketDesirabilityVery high — last-generation 14" multiformat BVMNotable quirksBeam landing correction + digital uniformity; setup portable via Memory StickRole in your setupSD+HD reference; AMS-100 stack 05 / 08 LMD-940W 9" wide 3G LCD lcdDisplayTechnologyTFT LCD (super-wide aperture)Size (viewable)9" widescreenGrade / seriesLMD high gradeNative aspect16:9-class WVGAResolution800×480 WVGATube / panel detailAR-coated, removable protection panelPhosphors / color scienceChromaTRU (SMPTE/EBU/ITU emulation), 10-bit processingColor temperature9300K / 6500K / userFormats & syncSupported formatsNearly all SD/HD incl. 1080/50p-60p via 3GHorizontal sync rangeFixed-pixel, native scan modeHD capableYes (3G/HD-SDI, HDMI)240p handlingMotion-adaptive I/P conversionInputs & modularityCompositeYes, in/outY/C (S-Video)NoAnalog RGB / componentNo analog componentSD-SDIStandard (shared BNC)HD-SDI / 3G3G-SDI standard, auto-detectHDMIYesOption slotsNone — all standardControl, power, physicalControl systemFront panel; Ethernet + parallel remote; tally lamp; built-in WFM/audio meterPowerAC 100V / DC 12V / battery adapterCurrent draw≈0.25 A AC (27 W max); ~2.3 A at DC 12 VRack / mounting4U half-rack, MB-531 tilt bracket; 1/4" + 3/8" camera threadsWeight (approx)~4.4 lbProduction era~2011–2010sMarketDesirabilityModerate — 3G + HDMI keeps it in working useNotable quirksSD/HD/3G share one auto-detecting BNC; camera-focus aperture assistRole in your setupModern-source bridge (HDMI/3G) 06 / 08 LMD-9020 8.4" LCD lcdDisplayTechnologyTFT LCDSize (viewable)8.4"Grade / seriesLMD field/utilityNative aspect4:3 (16:9 letterbox)Resolution1024×768 XGATube / panel detailAR-coated protective panelPhosphors / color scienceFactory LCD calibrationColor temperatureHigh / low / userFormats & syncSupported formatsSD analog: 480i/576i, 480p/576p componentHorizontal sync rangeFixed-pixel scalerHD capableNo (SD only)240p handlingScaled/deinterlacedInputs & modularityCompositeYesY/C (S-Video)YesAnalog RGB / componentComponent + RGB (525/625)SD-SDI—HD-SDI / 3G—HDMI—Option slotsNoneControl, power, physicalControl systemFront panel; parallel remotePowerAC / DC / battery adapterCurrent draw≈0.25 A AC est. (~25 W class); ~2 A at DC 12 VRack / mountingHalf-rack, two side-by-sideWeight (approx)~6.6 lbProduction era~2005–2011MarketDesirabilityLow — utility LCDNotable quirksNo SDI at all — verify before deploying in a digital chainRole in your setupUtility/rack fill, analog confidence 07 / 08 LMD-9030 8.4" LCD + SDI lcdDisplayTechnologyTFT LCDSize (viewable)8.4"Grade / seriesLMD field/utilityNative aspect4:3 (16:9 letterbox)Resolution1024×768 XGATube / panel detailAR-coated protective panelPhosphors / color scienceFactory LCD calibrationColor temperatureHigh / low / userFormats & syncSupported formatsSD as 9020 + SD-SDI 480i/576i; HD over analog componentHorizontal sync rangeFixed-pixel scalerHD capableYes (analog component)240p handlingScaled/deinterlacedInputs & modularityCompositeYesY/C (S-Video)YesAnalog RGB / componentComponent + RGB (525/625)SD-SDIStandard, in/outHD-SDI / 3G—HDMI—Option slotsNoneControl, power, physicalControl systemFront panel; parallel remotePowerAC / DC / battery adapterCurrent draw≈0.25 A AC est. (~25 W class); ~2 A at DC 12 VRack / mountingHalf-rack, two side-by-sideWeight (approx)~6.8 lbProduction era~2005–2011MarketDesirabilityLow-moderate — SDI adds field valueNotable quirksSD-SDI only; will not lock to HD feedsRole in your setupSD-SDI confidence wall (5 units) 08 / 08 LMD-9050 8.4" LCD + HD-SDI lcdDisplayTechnologyTFT LCDSize (viewable)8.4"Grade / seriesLMD field/utilityNative aspect4:3 (16:9 letterbox)Resolution1024×768 XGATube / panel detailAR-coated protective panelPhosphors / color scienceFactory LCD calibrationColor temperatureHigh / low / userFormats & syncSupported formatsSD + HD via HD-SDI (720p, 1080i, PsF)Horizontal sync rangeFixed-pixel scalerHD capableYes (HD-SDI)240p handlingScaled/deinterlacedInputs & modularityCompositeYesY/C (S-Video)YesAnalog RGB / componentComponent + RGB (525/625)SD-SDIStandardHD-SDI / 3GHD-SDI standardHDMI—Option slotsNoneControl, power, physicalControl systemFront panel; parallel remotePowerAC / DC / battery adapterCurrent draw≈0.3 A AC est. (~30 W class); ~2.5 A at DC 12 VRack / mountingHalf-rack, two side-by-sideWeight (approx)~7.1 lbProduction era~2005–2011MarketDesirabilityModerate — cheapest small Sony HD-SDI confidence monitorNotable quirksSame chassis family as 9020/9030 — manual covers all threeRole in your setupHD-SDI confidence monitors (2 units)
+** 01 / 08 PVM-2950Q 29" production crtDisplayTechnologySuper Trinitron CRTSize (viewable)29" (27" viewable)Grade / seriesPVM productionNative aspect4:3 (16:9 mode)Resolution600 TVLTube / panel detailAG pitch 0.7–0.85 mm, 110° deflectionPhosphors / color scienceStandard P22Color temperature3200K / 6500K / 9300KFormats & syncSupported formatsNTSC / PAL / SECAM / NTSC 4.43, auto-selectHorizontal sync range15 kHz onlyHD capableNo240p handlingNative scan, soft scanlines at 600 TVLInputs & modularityComposite2× with loop-throughY/C (S-Video)YesAnalog RGB / componentRGB (BNC)SD-SDI—HD-SDI / 3G—HDMI—Option slotsNone — fixed inputsControl, power, physicalControl systemFront panel + OSD; full digital geometry/convergence in service menuPowerAC onlyCurrent draw3.7 A max @ 100–120 V (165 W typ ≈ 1.4 A)Rack / mountingDesktop cube, stackableWeight (approx)115 lb (52 kg, Sony spec)Production era~1991–1996MarketDesirabilityVery high — largest common PVM, "the cube," freight is the barrierNotable quirksCorner bracket screws back out into the cube chassis; all-digital convergence is best-in-PVM-classRole in your setupBig-screen 240p/consumer-era display 02 / 08 PVM-20L5 20" multiformat crtDisplayTechnologyHR Trinitron CRTSize (viewable)20" (19" viewable)Grade / seriesPVM production (top of line)Native aspect4:3 (16:9 switch)Resolution800 TVLTube / panel detailFine-pitch HR tube (shared flyback with 14L5 / BVM-D14H5)Phosphors / color scienceSMPTE-CColor temperature6500K / 9300K / user 3200–10000KFormats & syncSupported formats240p, 480i/p, 576i/p, 1035i, 1080i, 720pHorizontal sync range15–33.75 kHz class multiscanHD capableYes (analog + optional digital)240p handlingNative scan, pronounced scanlinesInputs & modularityComposite2× with loop-throughY/C (S-Video)Yes, loop-throughAnalog RGB / component1× RGB/component switchable, loop-throughSD-SDIOptional (BKM-120D)HD-SDI / 3GOptional (BKM-142HD)HDMI—Option slots1 (BKM-120D / 142HD / 150CP / 155DV)Control, power, physicalControl systemFront panel + OSD; parallel remotePowerAC onlyCurrent draw≈1.5 A @ 120 V (180 W per Sony catalog)Rack / mountingOptional rack mountWeight (approx)68 lb (31 kg, Sony spec)Production era~2002–2007MarketDesirabilityVery high — often called the king of PVMs; multiformat + 20"Notable quirksEarly-serial D2 boards have 15 kHz H-linearity defectRole in your setupAMS-100 stack; multiformat bridge SD→HD 03 / 08 BVM-20E1U 20" 1000 TVL flagship crtDisplayTechnologyHR Trinitron CRT (E-grade tube)Size (viewable)20" (19" viewable)Grade / seriesBVM broadcast, E/F series — highest-resolution gradeNative aspect4:3 (16:9 switch)Resolution1000 TVL — highest 4:3 Sony ever made at 20"Tube / panel detailM49LCB22X tube, ~0.25 mm AG pitch (finer than 20F1U's tube)Phosphors / color scienceSMPTE-C (U spec)Color temperatureD65 + user, auto white balance via probeFormats & syncSupported formats240p, 480i, 576i only — strictly SD by designHorizontal sync range15 kHz onlyHD capableNo — never; no HD path exists240p handlingNative scan — the definitive large-format 240p display; razor scanline definition at 1000 TVLInputs & modularityCompositeVia E/F BKM decoder boards — owned BKM-21D covers itY/C (S-Video)Via BKM-24N (owned, on the shelf) or BKM-27TAnalog RGB / component1 fixed RGB/component + slots (fixed input block with loop-through)SD-SDIOptional (BKM-20D/21D — both owned)HD-SDI / 3G—HDMI—Option slots4 + fixed RGB input — full E/F 8-card familyControl, power, physicalControl systemBuilt-in panel; IC memory card; ISR/RS-485; optional BKM-10R remotePowerAC onlyCurrent draw200 W max ≈ 1.7 A @ 120 V (per rear label, AC 100–120 V)Rack / mounting19" EIA rack via MB kit (20" size — not shared with 14" kits)Weight (approx)82 lb (37 kg, Sony spec)Production era~1995–2002 (E/F generation; low-volume E-tube)MarketDesirabilityGrail tier — only 20" 4:3 1000 TVL Sony ever built; extremely infrequent listingsNotable quirksStrictly SD forever; M49LCB22X tube irreplaceable — protect the glass above all else; baseline tube health check (focus, landing, burn survey) recommended on arrivalRole in your setupFlagship SD reference — maximum-resolution 240p/RGB display; sole E/F-series chassis; full eight-card adaptor family compatible 04 / 08 BVM-A14F5U 14" master grade crtDisplayTechnologyHR Trinitron CRTSize (viewable)14" (13" viewable)Grade / seriesBVM-A broadcast, final CRT generationNative aspect4:3 (16:9 switch)Resolution800 TVLTube / panel detail0.25 mm-class AG pitchPhosphors / color scienceSMPTE-C (U spec; EBU on A14F5M)Color temperatureD65 + user, BKM-14L auto probe, digital uniformityFormats & syncSupported formats240p, 480i/p, 576i/p, 720p, 1080i, 1080/24PsFHorizontal sync range15–45 kHzHD capableYes240p handlingNative scanInputs & modularityCompositeVia option boardsY/C (S-Video)Via BKM-61D (slot open)Analog RGB / componentVia BKM-68X (clone installed)SD-SDIVia BKM-61D (slot open)HD-SDI / 3GVia BKM-62HS (installed)HDMI—Option slots3 (68X clone + 62HS installed; one open)Control, power, physicalControl systemBuilt-in panel; Ethernet remote; Memory Stick setup save; RS-485 (32 monitors)PowerAC onlyCurrent draw≈1.0–1.5 A @ 120 V est. (110–175 W class; A-series spec unverified)Rack / mounting19" EIA rack via MB kitWeight (approx)57 lb (26 kg, Sony spec)Production era~2003–2007MarketDesirabilityVery high — last-generation 14" multiformat BVMNotable quirksBeam landing correction + digital uniformity; setup portable via Memory StickRole in your setupSD+HD reference; AMS-100 stack 05 / 08 LMD-940W 9" wide 3G LCD lcdDisplayTechnologyTFT LCD (super-wide aperture)Size (viewable)9" widescreenGrade / seriesLMD high gradeNative aspect16:9-class WVGAResolution800×480 WVGATube / panel detailAR-coated, removable protection panelPhosphors / color scienceChromaTRU (SMPTE/EBU/ITU emulation), 10-bit processingColor temperature9300K / 6500K / userFormats & syncSupported formatsNearly all SD/HD incl. 1080/50p-60p via 3GHorizontal sync rangeFixed-pixel, native scan modeHD capableYes (3G/HD-SDI, HDMI)240p handlingMotion-adaptive I/P conversionInputs & modularityCompositeYes, in/outY/C (S-Video)NoAnalog RGB / componentNo analog componentSD-SDIStandard (shared BNC)HD-SDI / 3G3G-SDI standard, auto-detectHDMIYesOption slotsNone — all standardControl, power, physicalControl systemFront panel; Ethernet + parallel remote; tally lamp; built-in WFM/audio meterPowerAC 100V / DC 12V / battery adapterCurrent draw≈0.25 A AC (27 W max); ~2.3 A at DC 12 VRack / mounting4U half-rack, MB-531 tilt bracket; 1/4" + 3/8" camera threadsWeight (approx)~4.4 lbProduction era~2011–2010sMarketDesirabilityModerate — 3G + HDMI keeps it in working useNotable quirksSD/HD/3G share one auto-detecting BNC; camera-focus aperture assistRole in your setupModern-source bridge (HDMI/3G) 06 / 08 LMD-9020 8.4" LCD lcdDisplayTechnologyTFT LCDSize (viewable)8.4"Grade / seriesLMD field/utilityNative aspect4:3 (16:9 letterbox)Resolution1024×768 XGATube / panel detailAR-coated protective panelPhosphors / color scienceFactory LCD calibrationColor temperatureHigh / low / userFormats & syncSupported formatsSD analog: 480i/576i, 480p/576p componentHorizontal sync rangeFixed-pixel scalerHD capableNo (SD only)240p handlingScaled/deinterlacedInputs & modularityCompositeYesY/C (S-Video)YesAnalog RGB / componentComponent + RGB (525/625)SD-SDI—HD-SDI / 3G—HDMI—Option slotsNoneControl, power, physicalControl systemFront panel; parallel remotePowerAC / DC / battery adapterCurrent draw≈0.25 A AC est. (~25 W class); ~2 A at DC 12 VRack / mountingHalf-rack, two side-by-sideWeight (approx)~6.6 lbProduction era~2005–2011MarketDesirabilityLow — utility LCDNotable quirksNo SDI at all — verify before deploying in a digital chainRole in your setupUtility/rack fill, analog confidence 07 / 08 LMD-9030 8.4" LCD + SDI lcdDisplayTechnologyTFT LCDSize (viewable)8.4"Grade / seriesLMD field/utilityNative aspect4:3 (16:9 letterbox)Resolution1024×768 XGATube / panel detailAR-coated protective panelPhosphors / color scienceFactory LCD calibrationColor temperatureHigh / low / userFormats & syncSupported formatsSD as 9020 + SD-SDI 480i/576i; HD over analog componentHorizontal sync rangeFixed-pixel scalerHD capableYes (analog component)240p handlingScaled/deinterlacedInputs & modularityCompositeYesY/C (S-Video)YesAnalog RGB / componentComponent + RGB (525/625)SD-SDIStandard, in/outHD-SDI / 3G—HDMI—Option slotsNoneControl, power, physicalControl systemFront panel; parallel remotePowerAC / DC / battery adapterCurrent draw≈0.25 A AC est. (~25 W class); ~2 A at DC 12 VRack / mountingHalf-rack, two side-by-sideWeight (approx)~6.8 lbProduction era~2005–2011MarketDesirabilityLow-moderate — SDI adds field valueNotable quirksSD-SDI only; will not lock to HD feedsRole in your setupSD-SDI confidence wall (5 units) 08 / 08 LMD-9050 8.4" LCD + HD-SDI lcdDisplayTechnologyTFT LCDSize (viewable)8.4"Grade / seriesLMD field/utilityNative aspect4:3 (16:9 letterbox)Resolution1024×768 XGATube / panel detailAR-coated protective panelPhosphors / color scienceFactory LCD calibrationColor temperatureHigh / low / userFormats & syncSupported formatsSD + HD via HD-SDI (720p, 1080i, PsF)Horizontal sync rangeFixed-pixel scalerHD capableYes (HD-SDI)240p handlingScaled/deinterlacedInputs & modularityCompositeYesY/C (S-Video)YesAnalog RGB / componentComponent + RGB (525/625)SD-SDIStandardHD-SDI / 3GHD-SDI standardHDMI—Option slotsNoneControl, power, physicalControl systemFront panel; parallel remotePowerAC / DC / battery adapterCurrent draw≈0.3 A AC est. (~30 W class); ~2.5 A at DC 12 VRack / mountingHalf-rack, two side-by-sideWeight (approx)~7.1 lbProduction era~2005–2011MarketDesirabilityModerate — cheapest small Sony HD-SDI confidence monitorNotable quirksSame chassis family as 9020/9030 — manual covers all threeRole in your setupHD-SDI confidence monitors (2 units)
 
 | | PVM-2950Q29" production | PVM-20L520" multiformat | BVM-20E1U20" 1000 TVL flagship | BVM-A14F5U14" master grade | LMD-940W9" wide 3G LCD | LMD-90208.4" LCD | LMD-90308.4" LCD + SDI | LMD-90508.4" LCD + HD-SDI |
 |---|---|---|---|---|---|---|---|---|
@@ -4339,7 +4346,7 @@ The full 28-line comparison table is omitted from the printed issue to keep it t
 | Power | AC only | AC only | AC only | AC only | AC 100V / DC 12V / battery adapter | AC / DC / battery adapter | AC / DC / battery adapter | AC / DC / battery adapter |
 | Current draw | 3.7 A max @ 100–120 V (165 W typ ≈ 1.4 A) | ≈1.5 A @ 120 V (180 W per Sony catalog) | 200 W max ≈ 1.7 A @ 120 V (per rear label, AC 100–120 V) | ≈1.0–1.5 A @ 120 V est. (110–175 W class; A-series spec unverified) | ≈0.25 A AC (27 W max); ~2.3 A at DC 12 V | ≈0.25 A AC est. (~25 W class); ~2 A at DC 12 V | ≈0.25 A AC est. (~25 W class); ~2 A at DC 12 V | ≈0.3 A AC est. (~30 W class); ~2.5 A at DC 12 V |
 | Rack / mounting | Desktop cube, stackable | Optional rack mount | 19" EIA rack via MB kit (20" size — not shared with 14" kits) | 19" EIA rack via MB kit | 4U half-rack, MB-531 tilt bracket; 1/4" + 3/8" camera threads | Half-rack, two side-by-side | Half-rack, two side-by-side | Half-rack, two side-by-side |
-| Weight (approx) | 115 lb (52 kg, Sony spec) | ~73 lb | ~85 lb est. (spec unverified) | ~48 lb | ~4.4 lb | ~6.6 lb | ~6.8 lb | ~7.1 lb |
+| Weight (approx) | 115 lb (52 kg, Sony spec) | 68 lb (31 kg, Sony spec) | 82 lb (37 kg, Sony spec) | 57 lb (26 kg, Sony spec) | ~4.4 lb | ~6.6 lb | ~6.8 lb | ~7.1 lb |
 | Production era | ~1991–1996 | ~2002–2007 | ~1995–2002 (E/F generation; low-volume E-tube) | ~2003–2007 | ~2011–2010s | ~2005–2011 | ~2005–2011 | ~2005–2011 |
 | Market | | | | | | | | |
 | Desirability | Very high — largest common PVM, "the cube," freight is the barrier | Very high — often called the king of PVMs; multiformat + 20" | Grail tier — only 20" 4:3 1000 TVL Sony ever built; extremely infrequent listings | Very high — last-generation 14" multiformat BVM | Moderate — 3G + HDMI keeps it in working use | Low — utility LCD | Low-moderate — SDI adds field value | Moderate — cheapest small Sony HD-SDI confidence monitor |
@@ -4529,7 +4536,7 @@ Did You Know?
 
 The monitors in this collection weren't made for living rooms. They were made for broadcast engineers — and that's exactly why retro games have never looked better on anything else.
 
-While consumers were buying Trinitrons at the mall, Sony was quietly selling a different class of CRT out the back door — professional monitors, built for television studios, edit bays, and master control rooms, at prices that would have made a Best Buy shopper faint. They came in two main families, and the letters on the badge tell you everything: **PVM**, the Professional Video Monitor, and **BVM**, the Broadcast Video Monitor.
+While consumers were buying Trinitrons at the mall, Sony was quietly selling a different class of CRT out the back door — professional monitors, built for television studios, edit bays, and master control rooms, at prices that would have made a Best Buy shopper faint. They came in two main families, and the letters on the badge tell you everything (decoded here (https://www.orlandu.com/sony-model-numbers.html)): **PVM**, the Professional Video Monitor, and **BVM**, the Broadcast Video Monitor.
 
 The PVM was the workhorse. Studios used them for previewing feeds, hospitals wired them to imaging equipment, security desks stacked them in walls. Compared to a consumer TV, a PVM has a finer aperture grille, far higher line resolution, and — the part that matters most to game collectors — direct RGB input. A consumer TV of the era took a composite signal, a single muddy wire where the colors have already been smeared together. A PVM takes red, green, and blue as separate signals, straight from the console's video chip, nothing lost in translation. Plug a Genesis or a Super Nintendo into one over RGB and the image snaps into focus like someone cleaned a window you didn't know was dirty.
 
@@ -4586,6 +4593,216 @@ How to cite: Orlandu’s Arcade (“Orlandu81”), *PVM vs. BVM: Sony's Pro Moni
 
 ---
 
+# Sony PVM, BVM & LMD Model Numbers Decoded
+
+URL: https://www.orlandu.com/sony-model-numbers.html
+
+What the letters and digits in a Sony PVM, BVM, LMD or BKM model number actually mean — grade, control unit, color systems, region — from Sony's own manuals.
+
+Reference
+
+# Sony Model Numbers Decoded: What the Letters and Digits on a Badge Mean
+
+Sony never published a key to its monitor model numbers. There is no Sony document, in any language, that says “E means this, 5 means that.” What there is instead is thirty years of manuals, brochures and press releases in which the same letters keep landing in the same places — and once you line them up, most of a Sony badge reads like a spec sheet. This page does that lining-up from Sony’s own literature, and says plainly where a reading is Sony’s and where it is a pattern. It sits beside the BKM card reference (https://www.orlandu.com/bkm-cards.html) and PVM vs. BVM (https://www.orlandu.com/pvm-vs-bvm.html): three pages on what the badge tells you.
+
+## There is no official decoder
+
+Sony’s manuals treat the model number as an opaque label. “The model and serial numbers are located at the rear. Record these numbers…” is all the PVM-20L5 operating instructions say about it5, and the LMD-9050/9030/9020 manual opens with the same sentence24. A 2012 thread asking how to read Sony model numbers got the consumer-set prefixes and screen sizes and nothing else; nobody could decode the pro lines12. The one collector attempt at a key cites no Sony source13.
+
+So the honest frame: **the prefix, the size and the region suffix are Sony-documented; the series letter and the grade digit are readable from Sony’s model lists but never defined by Sony; everything else is inference and is labeled as such.** The strips below carry a tag per generation so a reader always knows which is which.
+
+Lit in the fleet, links the profile Sony-documented stated in a Sony document Pattern consistent across Sony’s model lists, never defined Open question no document found yet
+
+## Anatomy of a badge
+
+Three badges, pulled apart. The lit segments are the ones the rest of this page explains.
+ **PVM** line**-** **20** CRT size**L** series**5** tier**BVM** line**-** **D** generation**14** CRT size**H** tube**5** controls built in**U** market**BVM** line**-** **A** generation**24** CRT size**E** tube**1** display unit**W** 16:9**U** market
+
+| Slot | Sony says | Pattern | Example |
+|---|---|---|---|
+| Line | PVM, BVM, LMD are Sony’s catalog headings; BKM is the accessory prefix | — | PVM-20L5 |
+| Generation | BVM-D “DTV ready”; BVM-A “successor to the BVM-D Series”1,2 | Earlier BVMs carry no generation letter | BVM-D14H5U |
+| Size | “Refers to the CRT size,” not the picture1 | Four-digit PVMs fold the size into the first digits | PVM-20L5 · PVM-2950Q |
+| Series / tube | E/F pitch and line count printed in the E/F manual3; M2 vs M4, L1/L2/L5 described per model5,6,16,17 | Sony never says “E means…”; it never reuses a letter for a different tube either | PVM-20L5 · BVM-20E1U |
+| Digit | BVM: 1 = “display unit,” 5 = “stand-alone”1,2,3 | PVM: the tier within a series (M2 < M4, L1 < L2 < L5) | BVM-D14H1U vs D14H5U |
+| W | “16:9 aspect HR Trinitron CRTs … exclusively for the BVM-D32E1WU and BVM-D24E1WU”1 | On LCDs, the widescreen panels | BVM-A24E1WU · LMD-940W |
+| Market | U, E, J named in the manuals’ compliance pages3,23 | No suffix usually means the Japanese or all-areas listing | BVM-20E1U |
+
+## The line: PVM, BVM, LMD, BKM, AMS
+
+| Prefix | What it is | Source |
+|---|---|---|
+| PVM | Sony’s production monitor. Every PVM files under “Professional Monitors” in Sony’s catalogs, and the CCTV catalog carried the security tier. “Professional Video Monitor” is how collectors and this site (https://www.orlandu.com/pvm-vs-bvm.html) expand it; no Sony brochure opened spells the initials out. | 1,4,8 |
+| BVM | The master and reference line — “a full and consistent line of master-grade CRT monitors” in the BVM-A brochure; the D brochure splits it into master monitors (32/24/20) and picture monitors (14/9). “Broadcast Video Monitor” is the collector expansion; Sony’s heading is “Broadcast and Professional Monitors.” | 1,2 |
+| LMD | The professional LCD line, branded LUMA in Sony’s own press material. Sony does not expand “LMD.” | 9,14 |
+| BKM | The prefix on every accessory for BVMs and late PVMs — option boards, control units, probes, memory cards, rack kits. It is an accessory family, not a card prefix; the cards themselves are on the BKM reference (https://www.orlandu.com/bkm-cards.html). | 1,2,3 |
+| AMS | The audio monitor speaker — the plate reads “Audio Monitor Speaker,” per the monograph (https://www.orlandu.com/ams-100-monograph.html), which has its own rulings and is not repeated here. | 15 |
+
+## Size: the number is the CRT, not the picture
+
+Sony’s footnote on every brochure: *“32”, 24”, 20”, 14” and 9” refer to the CRT size. For viewable area, measured diagonally, please refer to the specifications.”*1 A 20L5 is a 19-inch picture; a 14F5U is 13⅛ inches; the 29-inch PVM-2950Q shows 271,2,7. Two-digit sizes are the rule from the D series on; the four-digit PVMs (1354, 1944, 2950, 8045) fold the size into the leading digits and use the rest as the model within that size — a pattern across every four-digit PVM in Sony’s catalogs4,10,11. The LMD line does the same with a trailing zero: 9050, 9020, 9030 are 9-inch; 2030W, 2050W, 2450W are 20 and 249,14. Drawn to Sony’s dimensions, the whole fleet is on the monitors page (https://www.orlandu.com/monitors.html#scale).
+
+## The series letter, by family
+
+This is where the badge turns into a spec sheet. Sony never defines the letter, but it never reuses one for a different tube either. Each strip runs oldest to newest; lit models are in the fleet.
+
+### PVMProduction monitors
+**Q series**1980s – mid 1990sPVM-1354QPVM-1910QPVM-1944QPVM-2950Q (https://www.orlandu.com/pvm-2950q.html)
+
+Four color systems — NTSC, PAL, SECAM and NTSC 4.43 — in Sony’s own words on every Q manual. Standard Trinitron, 350–600 TV lines.
+*Sony-documented***M series**1997PVM-14M2UPVM-14M4UPVM-20M2UPVM-20M4U
+
+M2 is a 600-line Trinitron with a dark-tint tube; M4 is the HR Trinitron at 800 lines with SMPTE-C phosphors.
+*Sony-documented***N series**2000s · securityPVM-14N6UPVM-20N6U
+
+500 TV lines in a metal cabinet, sold through the CCTV catalog.
+*Sony-documented***L series**2002 – 2007PVM-9L1PVM-14L1PVM-20L1PVM-9L2PVM-14L2PVM-20L2PVM-14L5PVM-20L5 (https://www.orlandu.com/pvm-20l5.html)
+
+L1 is the entry 600-line set; L2 adds an option slot; L5 is the multiformat HR Trinitron, 800-plus lines, 15–45 kHz.
+*Sony-documented*
+
+**Reading the PVM digit:** within a series the digit is the tier — M2 below M4, L1 below L2 below L5 — and Sony’s brochures state the tube difference each time5,6,16,17. It is not a year and not a revision. Two more PVM markers: the Japan-market L5 carried a leading D (PVM-D20L5J), and a second D before the J marked a built-in SD/HD-SDI decoder (PVM-D20L5DJ)18; MD on an M2 or L2 is the medical variant of the same chassis, which Olympus also rebadged19.
+
+### BVMBroadcast and master monitors
+**E / F generation**1990sBVM-14E1BVM-14E5BVM-14F1BVM-14F5BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html)BVM-20F1
+
+The tube letter follows the size: E is the finer grille, F the step down. The digit after it: 1 = display unit that needs a BKM-10R, 5 = controls built in.
+*Sony-documented***G generation**late 1990sBVM-14G1BVM-14G5BVM-20G1
+
+Controlled from the same BKM-10R system as the E and F. No Sony document opened so far gives the G tube’s pitch or line count.
+*Open question***D generation**1999 – 2000BVM-D9H1BVM-D9H5BVM-D14H1BVM-D14H5BVM-D20F1BVM-D24E1WBVM-D32E1W
+
+“DTV ready,” multiformat 15.6–45 kHz. H marks the picture-monitor tube; W marks a 16:9 CRT.
+*Sony-documented***A generation**2003 – 2008BVM-A14F5U (https://www.orlandu.com/bvm-a14f5u.html)BVM-A20F1BVM-A24E1WBVM-A32E1W
+
+Sony’s successor to the D: Ethernet control, and BKM-6x cards that fit nothing earlier.
+*Sony-documented*
+
+The E/F/G/A letters sit in two places and mean two things. **Before the size** they are the generation: D, then A. **After the size** they are the tube, and Sony’s E/F manual prints the table that defines it3:
+
+| Model | Aperture grille pitch | Center resolution |
+|---|---|---|
+| BVM-14E1 / 14E5 | 0.22 mm | 900 TV lines |
+| BVM-14F1 / 14F5 | 0.25 mm | 800 TV lines |
+| BVM-20E1 | 0.25 mm | 1000 TV lines |
+| BVM-20F1 | 0.30 mm | 900 TV lines |
+
+So E is the finer tube and F the step down: at the same size, E beats F by a hundred lines3. The D and A generations keep the letters — D20F1 at 0.30 mm and 900 lines, D24E1W at 0.25 mm and 1000, A20F1U at 0.30 mm1,2. **H** is the picture-monitor tube on the D9 and D14: 0.25 mm, 800 lines at 14 inches, 450 at 9, and the 9-inch is the only BVM tube with P-22 rather than SMPTE-C phosphors1. The **G** generation sits between F and D and is controlled from the same BKM-10R system1,3; its tube spec is in no document opened for this page.
+
+**The digit after the tube letter is Sony-stated, three times over.** The D brochure: “Display unit (BVM-D14H1U/D9H1U) and stand-alone (BVM-D14H5U/D9H5U) monitors”1. The E/F manual: the 20E1/20F1/14E1/14F1 “are controlled by a separate control unit, such as a BKM-10R Monitor Control Unit,” while the 14E5/14F5 have the panel built in3. Sony Japan’s D-series release calls the D14H1J a display unit and the D14H5J an integrated-control model21; the BVM-A spec table says “Display unit” for the A20F1U and “Stand-alone monitor” for the A14F5U2. **1 = display unit, needs a BKM-10R, 11R or 15R. 5 = stand-alone, controls built in.** Every 20-inch and larger BVM is a 1; the 14s and 9s came both ways. The practical consequence is on the BVM-20E1U profile (https://www.orlandu.com/bvm-20e1u.html): without its BKM-10R there is no way to adjust the monitor.
+
+Earlier BVMs — the 1911, 2010, 2011P — used the four-digit PVM-style numbering; the tube-letter system starts with the E/F generation22.
+
+### LMDLUMA professional LCDs
+**The 9-inch run**2004 – 2011LMD-9020 (https://www.orlandu.com/lmd-wall.html)LMD-9030 (https://www.orlandu.com/lmd-wall.html)LMD-9050 (https://www.orlandu.com/lmd-wall.html)
+
+One Sony manual covers all three: the 9050 is the XGA panel with HD/D1-SDI, the 9030 is VGA with D1-SDI, the 9020 is VGA with no SDI. Sony states the differences, not what the digits mean.
+*Pattern***Widescreen**2007 –LMD-2030WLMD-2050WLMD-2450WLMD-940W (https://www.orlandu.com/lmd-wall.html)
+
+W lands on the wide panels — 1920×1200 and 1680×1050 on the 20s and 24s, 800×480 on the 9-inch.
+*Pattern*
+
+## The region suffix
+
+| Suffix | Market | Sony evidence | Source |
+|---|---|---|---|
+| U | USA / Canada | The D-series manual addresses “For the customers in USA (BVM-D20F1U, BVM-D24E1WU, BVM-D32E1WU)”; the D brochure is headed “NTSC area” and lists only U models; the 2950Q service manual: “US Model / Canadian Model: PVM-2950Q.” U-model BVMs use SMPTE-C phosphors. | 1,3,7,23 |
+| E | Europe (CE marking) | “For the customers in Europe (BVM-D20F1E…)”; E-model BVMs use EBU phosphors — the E/F manual prints separate chromaticity tables for E and U units. | 3,23 |
+| J | Japan | Sony Japan’s releases list every model with a J: BVM-D32E1WJ, D14H5J, PVM-D20L5DJ. J-model BVMs are specified with EBU phosphors, like E. | 18,21 |
+| Q / QM | Four-standard PVMs | Q is the US/Canadian model, QM the export one: “AEP Model: PVM-2950QM, Aus Model: PVM-2950QM.” Both display NTSC, PAL, SECAM and NTSC 4.43. AEP is Sony’s own destination label, left as printed. | 7 |
+| P | PAL-market early BVMs | Appears on the 2011P and 1410P in collector lists; no Sony document opened for this page. | community20 |
+
+A model with no suffix in a Sony document is usually the Japanese-domestic or all-areas listing — the PVM-1944Q manual, for instance, carries none10. The D-series manual also groups an **A** suffix with E under “customers in Europe” without saying what differs; it is left out of the table for that reason23.
+
+## BKM: reading a card number
+
+Sony never explains BKM numbers either, but its own card names make the letters legible — a pattern across every card title in the brochures1,2,3. **The number is a family; the letter is a function.**
+
+| Digits | Family (which chassis) | Source |
+|---|---|---|
+| 2x, 4xHD | BVM-E/F/G and the 20–32-inch BVM-D (BKM-20D to 28X; 41HD, 42HD, 48X) | 1,3 |
+| 1xx | 9- and 14-inch BVM-D, PVM-L5, PVM-L2 (120D, 127W, 129X, 142HD, 150CP, 155DV, 126M) | 1,5,16 |
+| 6x | BVM-A only — “The BVM-A Series input boards are not compatible with other earlier BVM Series monitors” (61D, 62HS, 68X) | 2 |
+| 2xx, 3xx | LMD (LUMA) LCDs (220D, 227W, 229X, 243HS; 320D) | 14 |
+
+| Letter | Reads as | Sony’s own card names |
+|---|---|---|
+| D | Decoder (SDI) | BKM-20D “SDI 4:2:2 Decoder Adaptor,” BKM-120D, BKM-61D “SDI/Analog Multi Input Adaptor” |
+| X | Expansion — extra inputs, no decoder | BKM-22X “SDI Input Expansion,” 28X “Analog Input Expansion,” 129X and 68X “Analog Component Input Adaptor” |
+| N / P / M / T | NTSC / PAL / PAL-M / tri-standard decoders | BKM-24N, 25P, 26M, 27T |
+| W | NTSC and PAL (“world”) composite input | BKM-127W, 227W “NTSC/PAL Input Adaptor” |
+| HD / HS | HD-SDI / HD and SD SDI | BKM-41HD, 142HD, 62HS “HDSDI/SDI Input Adaptor,” 243HS |
+| CP / DV | SDTI-CP / DV (i.LINK) | BKM-150CP, 155DV |
+| R | Remote (control unit) | BKM-10R, 11R, 15R |
+| Y / L / H / E | Memory card / probe / attachment kit / rack kit | BKM-12Y, 14L, 32H–36H, 30E20 |
+
+Nothing in the number says which slot. That is what the BKM card reference (https://www.orlandu.com/bkm-cards.html) is for.
+
+## Worked examples: the fleet’s own badges
+
+| Badge | Reads |
+|---|---|
+| PVM-20L5 (https://www.orlandu.com/pvm-20l5.html) | Production monitor, 20-inch CRT, L series top tier (5): HR Trinitron, 800-plus TV lines, multiformat 15–45 kHz, one option slot. Japan sold it as PVM-D20L5J, and with SDI built in as PVM-D20L5DJ. |
+| PVM-2950Q (https://www.orlandu.com/pvm-2950q.html) | Production monitor, 29-inch CRT, four-standard (Q) — NTSC, PAL, SECAM, NTSC 4.43 — US/Canadian model (export units are 2950QM). 600 TV lines. |
+| BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html) | Broadcast monitor, pre-D generation, 20-inch, E tube (0.25 mm, 1000 TV lines — the finest 20-inch Sony made), 1 = display unit that needs its BKM-10R, U = US, SMPTE-C phosphor. |
+| BVM-A14F5U (https://www.orlandu.com/bvm-a14f5u.html) | Broadcast monitor, A generation (Ethernet control, BKM-6x cards only), 14-inch, F tube (0.25 mm, 800 lines), 5 = stand-alone with built-in controls, U = US. |
+| LMD-9050 / 9030 / 9020 / 940W (https://www.orlandu.com/lmd-wall.html) | LUMA LCDs, 9-inch. Sony’s one manual for the three 90x0s sets them apart by panel and SDI — XGA with HD/D1-SDI, VGA with D1-SDI, VGA with none — and the 940W is the widescreen panel. |
+
+## Quick answers
+
+### What do the letters in a Sony PVM model number mean?
+
+The prefix is the line (PVM production, BVM broadcast and master, LMD LCD), the number is the CRT size, the letter is the series — Q four-standard, M and L production tiers, N security — the digit is the grade within the series (M2 600 lines, M4 800; L1, L2, L5), and the last letter is the market (U USA, E Europe, J Japan). Sony never published a key; this is what its manuals show.
+
+### What is the difference between a BVM-D14H1U and a BVM-D14H5U?
+
+Controls. Sony calls the 1 a “display unit” — it needs a BKM-10R control unit — and the 5 a “stand-alone monitor” with the control panel built in. The tube and inputs are the same.
+
+### What does the U or E at the end mean?
+
+The market it was sold into: U is USA/Canada, E is Europe (CE-marked), J is Japan. On BVMs it also sets the phosphor: U units are SMPTE-C, E and J units are EBU.
+
+### What does Q mean on a PVM?
+
+Every Q model displays four color systems — NTSC, PAL, SECAM and NTSC 4.43 — and Sony’s manuals say so in those words. QM is the export version of the same monitor.
+
+### Is a BVM “E” better than an “F”?
+
+At the same size, yes: Sony’s own table gives the 14E a 0.22 mm grille and 900 TV lines against the 14F’s 0.25 mm and 800; the 20E1 reaches 1000 lines where the 20F1 reaches 900.
+
+## Sources
+
+Where this page says “Sony says,” the words are from a Sony manual or brochure below; where it says “pattern,” the reading is ours and the models it rests on are named. If you have a Sony document that defines any of these letters, the contact form (https://www.orlandu.com/about.html#write) is open.
+
+1. Sony Electronics, *BVM-D Series Professional Monitors* brochure, NTSC area, 2000 (MK7317V3TC00MAR). archive.org/details/bvm_dseries (https://archive.org/details/bvm_dseries)
+2. Sony, *BVM-A Series Broadcast and Professional Monitors* brochure. archive.org/details/sony_BVM-A_series (https://archive.org/details/sony_BVM-A_series)
+3. Sony, *BVM-14E1E/14E1U/14E5E/14E5U/14F1E/14F1U/14F5E/14F5U/20E1E/20E1U/20F1E/20F1U, BKM-10R — Operation and Maintenance Manual*, 1st ed. archive.org (https://archive.org/details/sony_BVM-E1_E5_F1_F5_Service_Manual)
+4. Sony, *CCTV Systems / Network Video Surveillance* catalog 2000–2001 (PVM-14N6U/20N6U, 8045Q, 2950Q). archive.org (https://archive.org/details/sony_2000-2001_CCTV_PVM-14N6U_20N6U_8045Q_8042Q_8040_2950Q)
+5. Sony, *Multiformat PVM-14L5 / PVM-20L5 Operating Instructions*. archive.org (https://archive.org/details/trinitron-pvm-14l-5-user-manual)
+6. Sony, *PVM-M Series* brochure, 1997 (PVM-14M2U/14M4U/20M2U/20M4U). archive.org (https://archive.org/details/pvm14m2u-brochure)
+7. Sony, *PVM-2950Q / 2950QM Service Manual* (US / Canadian / AEP / Australian model table). archive.org (https://archive.org/details/sony-78e77c)
+8. Same as 4 — the PVM-N6U security-tier specifications.
+9. Sony Marketing Japan, press release 2007-03-20, LUMA LMD-2450W/2050W/2030W. sony.jp (https://www.sony.jp/professional/News/info/pb20070320.html)
+10. Sony, *PVM-1944Q / PVM-1942Q Operating Instructions*, 1989 (3-750-719-21). archive.org (https://archive.org/details/SonyPVM1944Q1942QUserManual)
+11. Sony, *PVM-1910Q* sales sheet. archive.org (https://archive.org/details/sony_PVM-1910Q)
+12. Videokarma forum, “How to read Sony model numbers?”, 2012–13 — consumer KV decoding only; establishes the absence of a pro key. videokarma.org (https://videokarma.org/archive/index.php/t-255848.html)
+13. ConsoleMods wiki, *AV: Sony Model Prefixes* — a community key with no Sony citations. consolemods.org (https://consolemods.org/wiki/AV:Sony_Model_Prefixes)
+14. Sony, *LMD-940W Operating Instructions*, 2009 (4-134-739-11). archive.org (https://archive.org/details/manualsbase-id-79249)
+15. Orlandu’s Arcade, *Sony AMS-100: A Technical Monograph* (https://www.orlandu.com/ams-100-monograph.html) — the plate reading and the (SY) sales-region note.
+16. Sony Electronics, *PVM-L2 Series Quick Spec*, 2003. archive.org (https://archive.org/details/sony_PVM-L2_Quick_Spec)
+17. Sony Electronics, *PVM-L1 Series* sheet, 2003 (U edition). archive.org (https://archive.org/details/sony_PVM-L1_2003U)
+18. Sony Marketing Japan, press release 2002-11-11, PVM-D20L5DJ / PVM-D14L5DJ. sony.jp (https://www.sony.jp/CorporateCruise/Press/200211/02-1111B/)
+19. Olympus / Sony, *OEV143 / OEV203 (PVM-M2)* manual, Russian edition. archive.org (https://archive.org/details/sony_Olympus_OEV_143_203_PVM-M2_RU)
+20. Retro Gaming Cables, *Professional RGB monitor compatibility list* — model spellings with MD, QM and P suffixes as reported by owners. Community source.
+21. Sony Marketing Japan, press release 2000-03-09, BVM-D32E1WJ and the D-series J lineup. sony.jp (https://www.sony.jp/CorporateCruise/Press/200003/00-0309/)
+22. Archive.org catalog entries for the *BVM-1911 Operation and Service Manual* and *BVM-2811 Service Manual* — the existence of four-digit BVMs only.
+23. Sony, *BVM-D20F1U/E/A, D24E1WU/E/A, D32E1WU/E/A Operation Manual*, 1st ed. rev. 7. archive.org (https://archive.org/details/manualsbase-id-79203)
+24. Sony, *LMD-9050 / LMD-9030 / LMD-9020 Operating Instructions*, 2006 (2-593-389-11) — one manual for all three; Features and Specifications pages. sony.com (https://www.sony.com/electronics/support/res/manuals/2593/95d69af14c4ae402b60f1f4c37590724/25933891M.pdf)
+
+How to cite: Orlandu’s Arcade (“Orlandu81”), *Sony PVM, BVM & LMD Model Numbers Decoded*, orlandu.com, 2026.
+
+---
+
 # Sony BKM Cards: Which Fits Which BVM or PVM
 
 URL: https://www.orlandu.com/bkm-cards.html
@@ -4596,7 +4813,7 @@ Reference
 
 # Sony BKM Cards: Which Card Fits Which Monitor
 
-A Sony broadcast monitor is only as useful as the option cards in it, and the cards are sold by model number with no hint of which chassis they fit. This is the table that was missing: every BKM card Sony documented for the CRT-era BVM and PVM lines, what it does, where it goes, and the installation rules — from Sony's own manuals and brochures, with the source on every row.
+A Sony broadcast monitor is only as useful as the option cards in it, and the cards are sold by model number with no hint of which chassis they fit. This is the table that was missing: every BKM card Sony documented for the CRT-era BVM and PVM lines, what it does, where it goes, and the installation rules — from Sony's own manuals and brochures, with the source on every row. What the card *number* itself says is on the model-number page (https://www.orlandu.com/sony-model-numbers.html).
 
 ## Three families, not one
 
@@ -4819,7 +5036,7 @@ Buyer's Guide
 Ask around the hobby long enough and the same monitor keeps coming back. Here is what actually matters when you are standing in front of one — and what to do about the fact that you probably should not ship it.
 
 The PVM-20L5 (https://www.orlandu.com/pvm-20l5.html) arrived at the end of Sony's production-monitor line with three decades of Trinitron lessons folded into it, and the reputation it earned has not faded. The case for it is not nostalgia. It is range. This is a true multiscan chassis, locking anything from about 15 to 33.75 kHz: a Super Nintendo at 240p, a DVD player at 480p, a broadcast feed at 1080i — same glass, same effortless lock, no option card required. At 800 TV lines on a fine-pitch HR Trinitron tube with SMPTE-C phosphors, the picture is broadcast-honest. One monitor that speaks every era of video fluently is a rare thing, and it is why this one plays the bridge in this collection.
- 15–33.75 kHzScan range800 TV linesHR Trinitron, SMPTE-C73 lbA two-person lift
+ 15–33.75 kHzScan range800 TV linesHR Trinitron, SMPTE-C68 lbA two-person lift
 
 It is also twenty-odd years old, weighs about seventy-three pounds, and there is no warranty department left to call. So before money changes hands, here is the sweep.
 
@@ -5562,7 +5779,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 76,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 80,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server

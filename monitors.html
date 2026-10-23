@@ -28,7 +28,7 @@
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms.txt" title="Site index for AI assistants">
 <link rel="stylesheet" href="assets/style.css?v=1a05faa8">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
-<script src="assets/site.js?v=188d021c" defer></script>
+<script src="assets/site.js?v=1e9696f7" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -192,6 +192,45 @@
   @media(max-width:640px){
     .grid.beyond,.grid.amsshots{grid-template-columns:1fr}
   }
+
+/* To scale — the eight models as SVG elevations */
+svg.scale{width:100%;height:auto;display:block;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;margin:1rem 0}
+svg.scale .floor{stroke:var(--line);stroke-width:3}
+svg.scale .body{fill:#1d1d33;stroke:#4a4a72;stroke-width:3}
+svg.scale .frame{fill:none;stroke:#3a3a5c;stroke-width:3;stroke-dasharray:10 8}
+svg.scale .glass{fill:#0b0b16;stroke:#5a5a86;stroke-width:2}
+svg.scale .phos{fill:url(#phos)}
+svg.scale .strip{fill:#2c2c48}
+svg.scale .stand{fill:#16162a;stroke:#4a4a72;stroke-width:3}
+svg.scale .ref{fill:#2a2222;stroke:#7a5a5a;stroke-width:3}
+svg.scale .refline{fill:#7a5a5a}
+svg.scale .bar{stroke:var(--fire2);stroke-width:3;fill:none}
+svg.scale text{fill:var(--ink);text-anchor:middle;font-family:var(--cond)}
+svg.scale .lm{font-size:40px;letter-spacing:1px;font-weight:500;fill:var(--cyan)}
+svg.scale .lm.ref{fill:#c9a0a0}
+svg.scale .ld{font-size:32px;fill:var(--dim)}
+/* Compare two — a mode of the fleet table */
+.cmpbar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:1rem 0 0}
+.cmpbar label{font-family:var(--cond);text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;color:var(--dim)}
+.cmpbar select{font-family:var(--body);font-size:1rem;background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:.45rem .6rem}
+.cmpbar .vs{font-family:var(--disp);color:var(--fire2);font-size:.8rem;text-transform:uppercase}
+.cmpbar .tog{margin-left:auto;display:flex;gap:.4rem;align-items:center}
+table.spec tbody tr{cursor:pointer}
+table.spec tbody tr.pick td{background:rgba(94,233,255,.07)}
+table.spec tbody tr.pick td:first-child{box-shadow:inset 3px 0 0 var(--cyan)}
+.cmpout{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);margin-top:1rem}
+.cmpout .row{display:grid;grid-template-columns:9rem minmax(0,1fr) minmax(0,1fr);border-bottom:1px solid var(--line)}
+.cmpout .row:last-child{border-bottom:0}
+.cmpout .row>div{padding:.6rem .8rem;min-width:0}
+.cmpout .k{font-family:var(--cond);text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;color:var(--dim);background:var(--panel2)}
+.cmpout .row.hd{background:var(--panel2)}
+.cmpout .row.hd>div{font-family:var(--disp);font-size:.9rem;color:var(--fire3);letter-spacing:.04em}
+.cmpout .row.hd a{color:inherit}
+.cmpout .row.diff .v{color:var(--ink)}
+.cmpout .row.diff .k{color:var(--cyan);box-shadow:inset 3px 0 0 var(--cyan)}
+.cmpout .row.same .v{color:var(--dim)}
+.cmpout.only .row.same{display:none}
+@media(max-width:560px){.cmpout .row{grid-template-columns:6.5rem minmax(0,1fr) minmax(0,1fr)}.cmpout .row>div{padding:.5rem .55rem;font-size:.95rem}}
 main.hub{--acc:#5ee9ff}
 </style>
 </head>
@@ -260,26 +299,38 @@ main.hub{--acc:#5ee9ff}
     <p class="note" style="margin-top:1rem">How every one of these actually gets a signal &mdash; the switchers, the SCART-to-BNC cables, and the distribution amp behind the LMD wall &mdash; is written up in <a href="signal-chain.html">The Signal Chain</a>; the vocabulary &mdash; TVL, multiscan, BKM, loop-through &mdash; is in <a href="glossary.html">the glossary</a>; which BKM card fits which monitor is in <a href="bkm-cards.html">the BKM card reference</a>. Recently departed: a BVM-14F5U and the nine-inch BVM-D9H5J found new homes &mdash; the fleet consolidates so the keepers get the attention they deserve.</p>
   </section>
 
+  <section id="scale">
+    <h2 class="sec">The fleet, to scale</h2>
+    <p class="lede" style="max-width:70ch">Every model drawn to Sony&rsquo;s published width and height on one floor line, with an NES for size. The side view is the part nobody puts in words: a 20-inch BVM is deeper than it is wide, and the panel that replaced it is seven centimeters thick.</p>
+    <!-- fleet-scale:start -->
+    <svg viewBox="0 0 3750 770" class="scale" role="img" aria-label="The eight Sony monitor models drawn to scale from the front, with an NES for size"><defs><linearGradient id="phos" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#17243a"/><stop offset=".5" stop-color="#0f1a2c"/><stop offset="1" stop-color="#1a1430"/></linearGradient></defs><line x1="0" y1="600" x2="3750" y2="600" class="floor"/><rect x="40" y="62" width="687" height="538" rx="10" class="body"/><rect x="109.2" y="115.1" width="548.6" height="411.5" rx="18" class="glass"/><rect x="117.2" y="123.1" width="532.6" height="395.5" rx="14" class="phos"/><rect x="58" y="566" width="651" height="14" rx="3" class="strip"/><rect x="787" y="186" width="452" height="414" rx="10" class="body"/><rect x="820" y="238.3" width="386.1" height="289.6" rx="18" class="glass"/><rect x="828" y="246.3" width="370.1" height="273.6" rx="14" class="phos"/><rect x="805" y="566" width="416" height="14" rx="3" class="strip"/><rect x="1299" y="186" width="444" height="414" rx="10" class="body"/><rect x="1328" y="238.3" width="386.1" height="289.6" rx="18" class="glass"/><rect x="1336" y="246.3" width="370.1" height="273.6" rx="14" class="phos"/><rect x="1317" y="566" width="408" height="14" rx="3" class="strip"/><rect x="1803" y="320" width="482" height="280" rx="6" class="frame"/><rect x="1871" y="320" width="346" height="280" rx="10" class="body"/><rect x="1911.9" y="354.4" width="264.2" height="198.1" rx="18" class="glass"/><rect x="1919.9" y="362.4" width="248.2" height="182.1" rx="14" class="phos"/><rect x="1889" y="566" width="310" height="14" rx="3" class="strip"/><rect x="2345" y="370" width="216" height="206" rx="8" class="body"/><path d="M2383 600 h140 l-30 -24 h-80z" class="stand"/><rect x="2367.7" y="397.3" width="170.7" height="128" rx="4" class="glass"/><rect x="2371.7" y="401.3" width="162.7" height="120" rx="2" class="phos"/><rect x="2621" y="370" width="216" height="206" rx="8" class="body"/><path d="M2659 600 h140 l-30 -24 h-80z" class="stand"/><rect x="2643.7" y="397.3" width="170.7" height="128" rx="4" class="glass"/><rect x="2647.7" y="401.3" width="162.7" height="120" rx="2" class="phos"/><rect x="2897" y="370" width="216" height="206" rx="8" class="body"/><path d="M2935 600 h140 l-30 -24 h-80z" class="stand"/><rect x="2919.7" y="397.3" width="170.7" height="128" rx="4" class="glass"/><rect x="2923.7" y="401.3" width="162.7" height="120" rx="2" class="phos"/><rect x="3173" y="434" width="222" height="166" rx="8" class="body"/><rect x="3186" y="450.9" width="196" height="117.6" rx="4" class="glass"/><rect x="3190" y="454.9" width="188" height="109.6" rx="2" class="phos"/><rect x="3455" y="511" width="255" height="89" rx="4" class="ref"/><rect x="3455" y="560" width="255" height="3" class="refline"/><path d="M40 740 h1000" class="bar"/><path d="M40 728 v24 M1040 728 v24" class="bar"/><text x="383.5" y="644" class="lm">PVM-2950Q</text><text x="383.5" y="680" class="ld">687 × 538 mm · 115 lb</text><text x="1013" y="644" class="lm">PVM-20L5</text><text x="1013" y="680" class="ld">452 × 414 mm · 68 lb</text><text x="1521" y="644" class="lm">BVM-20E1U</text><text x="1521" y="680" class="ld">444 × 414 mm · 82 lb</text><text x="2044" y="644" class="lm">BVM-A14F5U</text><text x="2044" y="680" class="ld">482 × 280 mm · 57 lb</text><text x="2453" y="644" class="lm">LMD-9020</text><text x="2453" y="680" class="ld">216 × 230 mm · 6.6 lb</text><text x="2729" y="644" class="lm">LMD-9030</text><text x="2729" y="680" class="ld">216 × 230 mm · 6.8 lb</text><text x="3005" y="644" class="lm">LMD-9050</text><text x="3005" y="680" class="ld">216 × 230 mm · 7.1 lb</text><text x="3284" y="644" class="lm">LMD-940W</text><text x="3284" y="680" class="ld">222 × 166 mm · 4.4 lb</text><text x="3582.5" y="644" class="lm ref">NES</text><text x="3582.5" y="680" class="ld">255 × 89 mm · for scale</text><text x="1070" y="750" class="ld" style="text-anchor:start">one meter</text></svg>
+    <svg viewBox="0 0 3390 720" class="scale" role="img" aria-label="The eight Sony monitor models drawn to scale from the side"><line x1="0" y1="600" x2="3390" y2="600" class="floor"/><path d="M40 62 h90 L569 194.9 v333.6 L130 600 H40 z" class="body"/><rect x="40" y="115.1" width="6" height="411.5" class="glass"/><path d="M639 186 h90 L1139 288.3 v256.7 L729 600 H639 z" class="body"/><rect x="639" y="238.3" width="6" height="289.6" class="glass"/><path d="M1209 186 h90 L1779 288.3 v256.7 L1299 600 H1209 z" class="body"/><rect x="1209" y="238.3" width="6" height="289.6" class="glass"/><path d="M1849 320 h90 L2420 389.2 v173.6 L1939 600 H1849 z" class="body"/><rect x="1849" y="354.4" width="6" height="198.1" class="glass"/><rect x="2490" y="370" width="136" height="206" rx="6" class="body"/><path d="M2510 600 h140 l-40 -24 h-30z" class="stand"/><rect x="2490" y="380" width="5" height="138" class="glass"/><rect x="2720" y="370" width="136" height="206" rx="6" class="body"/><path d="M2740 600 h140 l-40 -24 h-30z" class="stand"/><rect x="2720" y="380" width="5" height="138" class="glass"/><rect x="2950" y="370" width="136" height="206" rx="6" class="body"/><path d="M2970 600 h140 l-40 -24 h-30z" class="stand"/><rect x="2950" y="380" width="5" height="138" class="glass"/><rect x="3180" y="434" width="70" height="166" rx="6" class="body"/><rect x="3180" y="444" width="5" height="99.6" class="glass"/><text x="304.5" y="644" class="lm">PVM-2950Q</text><text x="304.5" y="680" class="ld">529 mm deep</text><text x="889" y="644" class="lm">PVM-20L5</text><text x="889" y="680" class="ld">500 mm deep</text><text x="1494" y="644" class="lm">BVM-20E1U</text><text x="1494" y="680" class="ld">570 mm deep</text><text x="2134.5" y="644" class="lm">BVM-A14F5U</text><text x="2134.5" y="680" class="ld">571 mm deep</text><text x="2570" y="644" class="lm">LMD-9020</text><text x="2570" y="680" class="ld">160 mm deep</text><text x="2800" y="644" class="lm">LMD-9030</text><text x="2800" y="680" class="ld">160 mm deep</text><text x="3030" y="644" class="lm">LMD-9050</text><text x="3030" y="680" class="ld">160 mm deep</text><text x="3215" y="644" class="lm">LMD-940W</text><text x="3215" y="680" class="ld">70 mm deep</text></svg>
+    <!-- fleet-scale:end -->
+    <p class="note">Front and side elevations from the dimensions Sony prints in each model&rsquo;s brochure or operation manual, without projecting parts. The BVM-A14F5U is drawn as its bezel inside the dashed 19-inch rack frame the U model ships in. The LMD-9020 and 9030 are shown on their supplied stands; the 9050 is one piece.</p>
+  </section>
+
   <section id="specs">
     <h2 class="sec">The fleet, side by side</h2>
-    <p class="lede" style="max-width:70ch">Every model in the collection on one sheet &mdash; tube or panel, size, resolution, what formats it locks to, which inputs it carries and which need a BKM card. Click a column heading to sort; each model name opens its own profile page; the long-form spec table and its sources live in <a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol.&nbsp;1</a>.</p>
+    <p class="lede" style="max-width:70ch">Every model in the collection on one sheet &mdash; tube or panel, size, resolution, what formats it locks to, which inputs it carries and which need a BKM card. Pick any two to compare &mdash; the rows that differ light up. Click a column heading to sort; each model name opens its own profile page; the long-form spec table and its sources live in <a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol.&nbsp;1</a>.</p>
+    <div class="cmpbar"><label for="cmpA">Compare</label><select id="cmpA" aria-label="First monitor"></select><span class="vs">vs</span><select id="cmpB" aria-label="Second monitor"></select><label class="tog"><input type="checkbox" id="cmpOnly"> only the differences</label></div>
+    <div class="cmpout" id="cmpout" aria-live="polite"></div>
     <div class="tablewrap">
     <table class="spec" id="fleettable">
-      <thead><tr><th scope="col" data-sort="text">Model</th><th scope="col" data-sort="text">Display</th><th scope="col" data-sort="num">Size</th><th scope="col" data-sort="num">Resolution</th><th scope="col" data-sort="text">Formats</th><th scope="col" data-sort="text">HD</th><th scope="col" data-sort="text">RGB / component</th><th scope="col" data-sort="text">SD-SDI</th><th scope="col" data-sort="text">HD-SDI / 3G</th><th scope="col" data-sort="num">Option slots</th><th scope="col" data-sort="num">Weight</th><th scope="col" data-sort="num">Era</th><th scope="col" data-sort="num">Units</th></tr></thead>
+      <thead><tr><th scope="col" data-sort="text">Model</th><th scope="col" data-sort="text">Display</th><th scope="col" data-sort="num">Size</th><th scope="col" data-sort="num">Resolution</th><th scope="col" data-sort="text">Formats</th><th scope="col" data-sort="text">HD</th><th scope="col" data-sort="text">RGB / component</th><th scope="col" data-sort="text">SD-SDI</th><th scope="col" data-sort="text">HD-SDI / 3G</th><th scope="col" data-sort="num">Option slots</th><th scope="col" data-sort="num">Weight</th><th scope="col" data-sort="num">Dimensions</th><th scope="col" data-sort="num">Era</th><th scope="col" data-sort="num">Units</th></tr></thead>
       <tbody>
-        <tr><td><a href="pvm-2950q.html">PVM-2950Q</a><span class="fam">PVM &middot; CRT</span></td><td>Super Trinitron CRT</td><td data-v="29.0">29" (27" viewable)</td><td class="val" data-v="600.0">600 TVL</td><td>NTSC / PAL / SECAM</td><td class="na">No</td><td>RGB (BNC)</td><td class="na">—</td><td class="na">—</td><td class="na" data-v="0">None</td><td data-v="115.0">115 lb</td><td data-v="1991.0">1991–1996</td><td data-v="1">1</td></tr>
-        <tr><td><a href="pvm-20l5.html">PVM-20L5</a><span class="fam">PVM &middot; CRT</span></td><td>HR Trinitron CRT</td><td data-v="20.0">20" (19" viewable)</td><td class="val" data-v="800.0">800 TVL</td><td>240p–1080i, 720p</td><td class="val">Yes</td><td>RGB / component, loop-through</td><td>Optional card</td><td>Optional card</td><td data-v="1.0">1 (BKM-129X fitted)</td><td data-v="73.0">≈73 lb</td><td data-v="2002.0">2002–2007</td><td data-v="1">1</td></tr>
-        <tr><td><a href="bvm-20e1u.html">BVM-20E1U</a><span class="fam">BVM &middot; CRT</span></td><td>HR Trinitron CRT (E-grade tube)</td><td data-v="20.0">20" (19" viewable)</td><td class="val" data-v="1000.0">1000 TVL</td><td>240p, 480i, 576i</td><td class="na">No</td><td>RGB / component (fixed) + slots</td><td>Optional card</td><td class="na">—</td><td data-v="4.0">4 + fixed input</td><td data-v="85.0">≈85 lb</td><td data-v="1995.0">1995–2002</td><td data-v="1">1</td></tr>
-        <tr><td><a href="bvm-a14f5u.html">BVM-A14F5U</a><span class="fam">BVM &middot; CRT</span></td><td>HR Trinitron CRT</td><td data-v="14.0">14" (13" viewable)</td><td class="val" data-v="800.0">800 TVL</td><td>240p–1080i, 720p, 24PsF</td><td class="val">Yes</td><td>Via BKM-68X</td><td>Via BKM-61D</td><td>Via BKM-62HS</td><td data-v="3.0">3</td><td data-v="48.0">≈48 lb</td><td data-v="2003.0">2003–2007</td><td data-v="1">1</td></tr>
-        <tr><td><a href="lmd-wall.html">LMD-940W</a><span class="fam">LMD &middot; LCD</span></td><td>TFT LCD (super-wide aperture)</td><td data-v="9.0">9" wide</td><td class="val" data-v="533">800×480 WVGA</td><td>SD + HD to 1080p</td><td class="val">Yes</td><td class="na">—</td><td>Standard</td><td>3G-SDI + HDMI</td><td class="na" data-v="0">None</td><td data-v="4.4">≈4.4 lb</td><td data-v="2011.0">2011–</td><td data-v="1">1</td></tr>
-        <tr><td><a href="lmd-wall.html">LMD-9020</a><span class="fam">LMD &middot; LCD</span></td><td>TFT LCD</td><td data-v="8.4">8.4"</td><td class="val" data-v="427">640×480 VGA</td><td>SD</td><td class="na">No</td><td>Component + RGB</td><td class="na">—</td><td class="na">—</td><td class="na" data-v="0">None</td><td data-v="6.6">≈6.6 lb</td><td data-v="2005.0">2005–2011</td><td data-v="1">1</td></tr>
-        <tr><td><a href="lmd-wall.html">LMD-9030</a><span class="fam">LMD &middot; LCD</span></td><td>TFT LCD</td><td data-v="8.4">8.4"</td><td class="val" data-v="427">640×480 VGA</td><td>SD + HD (component)</td><td class="val">Yes</td><td>Component + RGB</td><td>Standard</td><td class="na">—</td><td class="na" data-v="0">None</td><td data-v="6.8">≈6.8 lb</td><td data-v="2005.0">2005–2011</td><td data-v="5">5</td></tr>
-        <tr><td><a href="lmd-wall.html">LMD-9050</a><span class="fam">LMD &middot; LCD</span></td><td>TFT LCD</td><td data-v="8.4">8.4"</td><td class="val" data-v="683">1024×768 XGA</td><td>SD + HD</td><td class="val">Yes</td><td>Component + RGB</td><td>Standard</td><td>HD-SDI</td><td class="na" data-v="0">None</td><td data-v="7.1">≈7.1 lb</td><td data-v="2005.0">2005–2011</td><td data-v="2">2</td></tr>
+        <tr><td><a href="pvm-2950q.html">PVM-2950Q</a><span class="fam">PVM &middot; CRT</span></td><td>Super Trinitron CRT</td><td data-v="29.0">29" (27" viewable)</td><td class="val" data-v="600.0">600 TVL</td><td>NTSC / PAL / SECAM</td><td class="na">No</td><td>RGB (BNC)</td><td class="na">—</td><td class="na">—</td><td class="na" data-v="0">None</td><td data-v="115.0">115 lb</td><td data-v="687">687 &times; 538 &times; 529 mm</td><td data-v="1991.0">1991–1996</td><td data-v="1">1</td></tr>
+        <tr><td><a href="pvm-20l5.html">PVM-20L5</a><span class="fam">PVM &middot; CRT</span></td><td>HR Trinitron CRT</td><td data-v="20.0">20" (19" viewable)</td><td class="val" data-v="800.0">800 TVL</td><td>240p–1080i, 720p</td><td class="val">Yes</td><td>RGB / component, loop-through</td><td>Optional card</td><td>Optional card</td><td data-v="1.0">1 (BKM-129X fitted)</td><td data-v="68.0">68 lb</td><td data-v="452">452 &times; 414 &times; 500 mm</td><td data-v="2002.0">2002–2007</td><td data-v="1">1</td></tr>
+        <tr><td><a href="bvm-20e1u.html">BVM-20E1U</a><span class="fam">BVM &middot; CRT</span></td><td>HR Trinitron CRT (E-grade tube)</td><td data-v="20.0">20" (19" viewable)</td><td class="val" data-v="1000.0">1000 TVL</td><td>240p, 480i, 576i</td><td class="na">No</td><td>RGB / component (fixed) + slots</td><td>Optional card</td><td class="na">—</td><td data-v="4.0">4 + fixed input</td><td data-v="82.0">82 lb</td><td data-v="444">444 &times; 414 &times; 570 mm</td><td data-v="1995.0">1995–2002</td><td data-v="1">1</td></tr>
+        <tr><td><a href="bvm-a14f5u.html">BVM-A14F5U</a><span class="fam">BVM &middot; CRT</span></td><td>HR Trinitron CRT</td><td data-v="14.0">14" (13" viewable)</td><td class="val" data-v="800.0">800 TVL</td><td>240p–1080i, 720p, 24PsF</td><td class="val">Yes</td><td>Via BKM-68X</td><td>Via BKM-61D</td><td>Via BKM-62HS</td><td data-v="3.0">3</td><td data-v="57.0">57 lb</td><td data-v="482">482 &times; 280 &times; 571 mm</td><td data-v="2003.0">2003–2007</td><td data-v="1">1</td></tr>
+        <tr><td><a href="lmd-wall.html">LMD-940W</a><span class="fam">LMD &middot; LCD</span></td><td>TFT LCD (super-wide aperture)</td><td data-v="9.0">9" wide</td><td class="val" data-v="533">800×480 WVGA</td><td>SD + HD to 1080p</td><td class="val">Yes</td><td class="na">—</td><td>Standard</td><td>3G-SDI + HDMI</td><td class="na" data-v="0">None</td><td data-v="4.4">≈4.4 lb</td><td data-v="222">222 &times; 166 &times; 70 mm</td><td data-v="2011.0">2011–</td><td data-v="1">1</td></tr>
+        <tr><td><a href="lmd-wall.html">LMD-9020</a><span class="fam">LMD &middot; LCD</span></td><td>TFT LCD</td><td data-v="8.4">8.4"</td><td class="val" data-v="427">640×480 VGA</td><td>SD</td><td class="na">No</td><td>Component + RGB</td><td class="na">—</td><td class="na">—</td><td class="na" data-v="0">None</td><td data-v="6.6">≈6.6 lb</td><td data-v="216">216 &times; 230 &times; 160 mm</td><td data-v="2005.0">2005–2011</td><td data-v="1">1</td></tr>
+        <tr><td><a href="lmd-wall.html">LMD-9030</a><span class="fam">LMD &middot; LCD</span></td><td>TFT LCD</td><td data-v="8.4">8.4"</td><td class="val" data-v="427">640×480 VGA</td><td>SD + HD (component)</td><td class="val">Yes</td><td>Component + RGB</td><td>Standard</td><td class="na">—</td><td class="na" data-v="0">None</td><td data-v="6.8">≈6.8 lb</td><td data-v="216">216 &times; 230 &times; 160 mm</td><td data-v="2005.0">2005–2011</td><td data-v="5">5</td></tr>
+        <tr><td><a href="lmd-wall.html">LMD-9050</a><span class="fam">LMD &middot; LCD</span></td><td>TFT LCD</td><td data-v="8.4">8.4"</td><td class="val" data-v="683">1024×768 XGA</td><td>SD + HD</td><td class="val">Yes</td><td>Component + RGB</td><td>Standard</td><td>HD-SDI</td><td class="na" data-v="0">None</td><td data-v="7.1">≈7.1 lb</td><td data-v="216">216 &times; 230 &times; 160 mm</td><td data-v="2005.0">2005–2011</td><td data-v="2">2</td></tr>
       </tbody>
     </table>
     </div>
     <p class="note">This table as open data: <a href="data/sony-monitor-specs.json">JSON</a> &middot; <a href="data/sony-monitor-specs.csv">CSV</a> &mdash; CC BY 4.0, credit Orlandu&rsquo;s Arcade. <a href="mcp.html">For AI agents &rarr;</a></p>
-    <p class="note">Specifications are Sony&rsquo;s published figures, compiled from operating manuals, brochures and the 2002&ndash;2003 line-up guide; weights marked &asymp; are approximate. TVL is Sony&rsquo;s center-resolution spec for the CRTs; the LMDs are fixed-pixel panels, so they list native pixels instead.</p>
+    <p class="note">Specifications are Sony&rsquo;s published figures, compiled from operating manuals, brochures and the 2002&ndash;2003 line-up guide; weights marked &asymp; are approximate. Dimensions are W &times; H &times; D from Sony&rsquo;s brochures and operation manuals, without projecting parts; the BVM-A14F5U&rsquo;s width is the 19-inch rack frame the U model ships in. TVL is Sony&rsquo;s center-resolution spec for the CRTs; the LMDs are fixed-pixel panels, so they list native pixels instead.</p>
   </section>
 
   <section>
@@ -305,7 +356,7 @@ main.hub{--acc:#5ee9ff}
   </section>
 </main>
 
-<footer class="site"><div class="footwrap"><img src="assets/mascot-foot.webp" alt="Orlandu’s Arcade mascot" width="176" height="216" loading="lazy" decoding="async"><div class="links"><a href="about.html">About</a><a href="about.html#contact">Contact</a><a href="stories.html">Stories</a><a href="mailto:orlandusarcade@gmail.com">Email</a><a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a><a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a></div><nav class="explore" aria-label="Explore the site"><div><span>Pages</span><a href="games.html">Coin-Op</a><a href="monitors.html">Monitors</a><a href="consoles.html">Consoles</a><a href="playchoice-10.html">PlayChoice-10</a><a href="signage.html">Signage</a><a href="guide-shelf.html">Guides</a><a href="spinning-tops.html">Spinning Tops</a><a href="gallery.html">Gallery</a><a href="stories.html">Stories</a><a href="projects.html">Projects</a><a href="forsale.html">For Sale</a><a href="wanted.html">Wanted</a><a href="about.html">About</a><a href="glossary.html">Glossary</a><a href="timeline.html">Timeline</a><a href="about.html#faq">FAQ</a><a href="mcp.html">For AI agents</a></div><div><span>Reading</span><a href="crt-field-guide.html">Professional glass in the wild</a><a href="ams-100-monograph.html">The AMS-100 monograph</a><a href="pvm-20l5-buying-guide.html">PVM-20L5 buying guide</a><a href="ams-3-vs-ams-100.html">Ancestor and descendant</a><a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol. 1</a><a href="signal-chain.html">The signal chain</a><a href="connect-console-to-pvm.html">Console to PVM, cable by cable</a><a href="vs-smb.html">VS. Super Mario Bros.</a><a href="pvm-vs-bvm.html">PVM vs. BVM</a><a href="bkm-cards.html">BKM card reference</a><a href="red-tent.html">The Red Tent</a><a href="mini-cute.html">The Mini Cute</a><a href="orlandu-100.html">The Orlandu 100</a></div></nav><div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>Photography © Orlandu’s Arcade. Game logos and characters are the property of their respective owners.</div></div></footer>
+<footer class="site"><div class="footwrap"><img src="assets/mascot-foot.webp" alt="Orlandu’s Arcade mascot" width="176" height="216" loading="lazy" decoding="async"><div class="links"><a href="about.html">About</a><a href="about.html#contact">Contact</a><a href="stories.html">Stories</a><a href="mailto:orlandusarcade@gmail.com">Email</a><a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a><a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a></div><nav class="explore" aria-label="Explore the site"><div><span>Pages</span><a href="games.html">Coin-Op</a><a href="monitors.html">Monitors</a><a href="consoles.html">Consoles</a><a href="playchoice-10.html">PlayChoice-10</a><a href="signage.html">Signage</a><a href="guide-shelf.html">Guides</a><a href="spinning-tops.html">Spinning Tops</a><a href="gallery.html">Gallery</a><a href="stories.html">Stories</a><a href="projects.html">Projects</a><a href="forsale.html">For Sale</a><a href="wanted.html">Wanted</a><a href="about.html">About</a><a href="glossary.html">Glossary</a><a href="timeline.html">Timeline</a><a href="about.html#faq">FAQ</a><a href="mcp.html">For AI agents</a></div><div><span>Reading</span><a href="crt-field-guide.html">Professional glass in the wild</a><a href="ams-100-monograph.html">The AMS-100 monograph</a><a href="pvm-20l5-buying-guide.html">PVM-20L5 buying guide</a><a href="ams-3-vs-ams-100.html">Ancestor and descendant</a><a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol. 1</a><a href="signal-chain.html">The signal chain</a><a href="connect-console-to-pvm.html">Console to PVM, cable by cable</a><a href="vs-smb.html">VS. Super Mario Bros.</a><a href="pvm-vs-bvm.html">PVM vs. BVM</a><a href="bkm-cards.html">BKM card reference</a><a href="sony-model-numbers.html">Sony model numbers decoded</a><a href="red-tent.html">The Red Tent</a><a href="mini-cute.html">The Mini Cute</a><a href="orlandu-100.html">The Orlandu 100</a></div></nav><div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>Photography © Orlandu’s Arcade. Game logos and characters are the property of their respective owners.</div></div></footer>
 
 <script>
 (function(){
@@ -327,6 +378,40 @@ main.hub{--acc:#5ee9ff}
     });
     rows.forEach(function(r){ tb.appendChild(r); });
   });
+  // Compare two — reads the fleet table, so the data lives in one place.
+  var A = document.getElementById('cmpA'), B = document.getElementById('cmpB'), out = document.getElementById('cmpout'), only = document.getElementById('cmpOnly');
+  if (A && B && out){
+    var heads = Array.prototype.slice.call(t.tHead.querySelectorAll('th')).map(function(th){ return th.textContent.trim(); });
+    var rows = Array.prototype.slice.call(tb.rows).map(function(tr){
+      var a = tr.cells[0].querySelector('a');
+      var o = { model: a.textContent.trim(), href: a.getAttribute('href'), tr: tr, v: {} };
+      for (var i = 1; i < tr.cells.length; i++) o.v[heads[i]] = tr.cells[i].textContent.trim();
+      return o;
+    });
+    var KEYS = heads.slice(1).filter(function(h){ return h !== 'Units'; });
+    rows.forEach(function(r, i){ A.add(new Option(r.model, i)); B.add(new Option(r.model, i)); });
+    A.value = rows.findIndex(function(r){ return r.model === 'BVM-20E1U'; });
+    B.value = rows.findIndex(function(r){ return r.model === 'PVM-20L5'; });
+    var next = 'A';
+    function esc(x){ return x.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+    function render(){
+      var a = rows[A.value], b = rows[B.value];
+      var h = '<div class="row hd"><div class="k"></div><div><a href="' + a.href + '">' + esc(a.model) + '</a></div><div><a href="' + b.href + '">' + esc(b.model) + '</a></div></div>';
+      KEYS.forEach(function(k){
+        var va = a.v[k] || '\u2014', vb = b.v[k] || '\u2014', same = va === vb;
+        h += '<div class="row ' + (same ? 'same' : 'diff') + '"><div class="k">' + esc(k) + '</div><div class="v">' + esc(va) + '</div><div class="v">' + esc(vb) + '</div></div>';
+      });
+      out.innerHTML = h; out.classList.toggle('only', only.checked);
+      rows.forEach(function(r){ r.tr.classList.toggle('pick', r === a || r === b); });
+    }
+    A.addEventListener('change', render); B.addEventListener('change', render); only.addEventListener('change', render);
+    rows.forEach(function(r, i){ r.tr.addEventListener('click', function(e){
+      if (e.target.closest('a')) return;
+      if (next === 'A'){ A.value = i; next = 'B'; } else { B.value = i; next = 'A'; }
+      render();
+    }); });
+    render();
+  }
 })();
 </script>
 </body>

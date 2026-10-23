@@ -49,7 +49,7 @@ const TOOLS = [
   {
     name: "sony_monitor_specs",
     title: "Sony monitor specs",
-    description: "Specifications of the Sony PVM, BVM and LMD monitors in the collection (display, size, resolution, formats, inputs, option slots, weight, era). Optional model filter, e.g. 'PVM-20L5' or 'BVM'. Dataset CC BY 4.0.",
+    description: "Specifications of the Sony PVM, BVM and LMD monitors in the collection (display, size, resolution, formats, inputs, option slots, weight, dimensions, era). Optional model filter, e.g. 'PVM-20L5' or 'BVM'. Dataset CC BY 4.0.",
     inputSchema: { type: "object", properties: { model: { type: "string", description: "Substring of a model name; omit for all" } } },
   },
   {

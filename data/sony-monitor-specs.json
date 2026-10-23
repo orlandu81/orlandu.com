@@ -1,6 +1,6 @@
 {
  "dataset": "Sony professional monitors at Orlandu's Arcade — specifications",
- "description": "Display type, size, resolution, formats, inputs, option slots, weight and era for every Sony PVM, BVM and LMD model in the collection, as published on the fleet page.",
+ "description": "Display type, size, resolution, formats, inputs, option slots, weight, dimensions and era for every Sony PVM, BVM and LMD model in the collection, as published on the fleet page.",
  "source": "https://www.orlandu.com/monitors.html#specs",
  "columns": {
   "display": "Display",
@@ -13,6 +13,7 @@
   "hd_sdi_3g": "HD-SDI / 3G",
   "option_slots": "Option slots",
   "weight": "Weight",
+  "dimensions": "Dimensions",
   "era": "Era",
   "units": "Units"
  },
@@ -32,6 +33,7 @@
    "hd_sdi_3g": "—",
    "option_slots": "None",
    "weight": "115 lb",
+   "dimensions": "687 × 538 × 529 mm",
    "era": "1991–1996",
    "units": "1",
    "profile_url": "https://www.orlandu.com/pvm-2950q.html"
@@ -48,7 +50,8 @@
    "sd_sdi": "Optional card",
    "hd_sdi_3g": "Optional card",
    "option_slots": "1 (BKM-129X fitted)",
-   "weight": "≈73 lb",
+   "weight": "68 lb",
+   "dimensions": "452 × 414 × 500 mm",
    "era": "2002–2007",
    "units": "1",
    "profile_url": "https://www.orlandu.com/pvm-20l5.html"
@@ -65,7 +68,8 @@
    "sd_sdi": "Optional card",
    "hd_sdi_3g": "—",
    "option_slots": "4 + fixed input",
-   "weight": "≈85 lb",
+   "weight": "82 lb",
+   "dimensions": "444 × 414 × 570 mm",
    "era": "1995–2002",
    "units": "1",
    "profile_url": "https://www.orlandu.com/bvm-20e1u.html"
@@ -82,7 +86,8 @@
    "sd_sdi": "Via BKM-61D",
    "hd_sdi_3g": "Via BKM-62HS",
    "option_slots": "3",
-   "weight": "≈48 lb",
+   "weight": "57 lb",
+   "dimensions": "482 × 280 × 571 mm",
    "era": "2003–2007",
    "units": "1",
    "profile_url": "https://www.orlandu.com/bvm-a14f5u.html"
@@ -100,6 +105,7 @@
    "hd_sdi_3g": "3G-SDI + HDMI",
    "option_slots": "None",
    "weight": "≈4.4 lb",
+   "dimensions": "222 × 166 × 70 mm",
    "era": "2011–",
    "units": "1",
    "profile_url": "https://www.orlandu.com/lmd-wall.html"
@@ -117,6 +123,7 @@
    "hd_sdi_3g": "—",
    "option_slots": "None",
    "weight": "≈6.6 lb",
+   "dimensions": "216 × 230 × 160 mm",
    "era": "2005–2011",
    "units": "1",
    "profile_url": "https://www.orlandu.com/lmd-wall.html"
@@ -134,6 +141,7 @@
    "hd_sdi_3g": "—",
    "option_slots": "None",
    "weight": "≈6.8 lb",
+   "dimensions": "216 × 230 × 160 mm",
    "era": "2005–2011",
    "units": "5",
    "profile_url": "https://www.orlandu.com/lmd-wall.html"
@@ -151,6 +159,7 @@
    "hd_sdi_3g": "HD-SDI",
    "option_slots": "None",
    "weight": "≈7.1 lb",
+   "dimensions": "216 × 230 × 160 mm",
    "era": "2005–2011",
    "units": "2",
    "profile_url": "https://www.orlandu.com/lmd-wall.html"
