@@ -804,7 +804,9 @@ asked for Catalog mock pages first (the fifth). Rulings and the mock are in Proj
   forsale.html and removes the named `data-itm` span from the index marquee; the "More on eBay" feedback line reads
   live `seller.feedbackPercentage` / `feedbackScore` into `data-fb-pct` / `data-fb-score`. **Needs `EBAY_CLIENT_ID` and
   `EBAY_CLIENT_SECRET` in the Vercel env (David's existing eBay developer app, the one the Tidbyt uses); until then
-  it answers 503 and the page shows every card as written.** Edge cache 30 min. This is a safety net, not the sweep:
+  it answers 503 and the page shows every card as written.** Both were added 10/22. **A Vercel serverless function
+  only sees a new or changed environment variable after the NEXT DEPLOYMENT** — adding the keys did nothing until a
+  push followed; the same holds for RESEND_API_KEY or any future key. Edge cache 30 min. This is a safety net, not the sweep:
   a sold card still comes out of the HTML in the normal sold sweep. **New sale cards must keep the `/itm/` link and,
   if named in the marquee, a `data-itm` span.**
 - Home Latest: the three tools are the first three cards; PlayChoice-10 wall, monitor pages and timeline cards dropped
