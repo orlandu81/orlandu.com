@@ -20,9 +20,10 @@
     var part = list.filter(function (x) { return x.id.toLowerCase().replace(/[\s\-_.]/g, "").indexOf(q) >= 0; });
     return part.length === 1 ? part[0] : null;
   }
-  // Rank an option: lower is better. Working beats needs-a-card beats needs-a-converter; among working, the signal rank.
+  // Rank an option: lower is better. Working (as-is, or with the console's mod or adapter) beats needs-a-card beats
+  // needs-a-converter; among working, the signal rank.
   function score(opt) {
-    var s = opt.status === "ok" ? 0 : opt.status === "card" ? 100 : opt.status === "converter" ? 200 : 900;
+    var s = opt.status === "ok" || opt.status === "mod" || opt.status === "adapter" ? 0 : opt.status === "card" ? 100 : opt.status === "converter" ? 200 : 900;
     return s + opt.rank;
   }
   function plan(data, consoleId, monitorId) {
@@ -44,14 +45,19 @@
       }
       var status = inp.state === "ok" ? "ok" : inp.state === "card" ? "card" : inp.state === "converter" ? "converter" : "no";
       if (out.state === "region") status = status === "ok" ? "region" : status;
+      // "Works as-is" only when the console side needs nothing: a mod or an external adapter is its own verdict
+      if ((out.state === "mod" || out.state === "adapter") && status === "ok") status = out.state;
       var chain = (status === "converter" ? data.chains.converter : data.chains[sig] || []).slice();
       opts.push({ signal: sig, name: S.name, rank: S.rank, status: status, card: inp.card || null, console_how: out.how, console_state: out.state, monitor_how: inp.how, formats: formats, chain: chain });
     });
     opts.sort(function (a, b) { return score(a) - score(b); });
     var best = opts[0] || null;
     var verdict = !best ? "no" : best.status;
+    var rgb = best && (best.signal === "rgb15" || best.signal === "rgb31");
     var headline = {
       ok: "Works as-is",
+      mod: rgb ? "Works with an RGB mod" : "Works with a console mod",
+      adapter: rgb ? "Works with an RGB adapter" : "Works with an adapter",
       region: "Works — on the PAL console",
       card: "Works with a card",
       converter: "Works with a converter",

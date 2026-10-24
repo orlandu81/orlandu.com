@@ -113,7 +113,7 @@
    "model": "BKM-129X",
    "family": "9/14-inch BVM-D, PVM-L5, PVM-L2",
    "sony_name": "Analog Component Input Adaptor",
-   "function": "One analog component input (Y/R-Y/B-Y or RGB) with loop-through, plus external-sync loop-through. The card most collectors want: it is the RGB input for a 20L5.",
+   "function": "One analog component input (Y/R-Y/B-Y or RGB) with loop-through, plus external-sync loop-through. The card most collectors want: on a 20L5 it is a second RGB/component input beside the built-in one.",
    "fits": "BVM-D14/D9 (supplied as standard); PVM-20L5/14L5; PVM-20L2/14L2/9L2 (the 9L2 needs it for any component input)",
    "sources": "Sony, BVM-D Series brochure; Sony, PVM-20L5 / PVM-14L5 brochure; Sony, PVM-L2 Series brochure (2003)"
   },

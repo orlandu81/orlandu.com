@@ -279,6 +279,29 @@ function dsOk(r, label) {
       const rr = await tool("plan_connection", { console: name, monitor: "PVM-20L5" });
       ok(rr.result && !rr.result.isError, "plan_connection resolves the advertised name '" + name + "'");
     }
+    // Verdicts (10/23): "Works as-is" only when the console needs nothing
+    const pm = JSON.parse((await tool("plan_connection", { console: "NES", monitor: "PVM-2950Q" })).result.content[0].text).plan;
+    ok(pm.verdict === "mod" && pm.headline === "Works with an RGB mod" && pm.best.signal === "rgb15", "NES→2950Q is RGB with a mod, not as-is (got " + pm.verdict + " / " + pm.headline + ")");
+    const pa = JSON.parse((await tool("plan_connection", { console: "TurboGrafx-16", monitor: "BVM-20E1U" })).result.content[0].text).plan;
+    ok(pa.verdict === "adapter" && pa.headline === "Works with an RGB adapter" && pa.best.signal === "rgb15", "TG-16→20E1U is RGB through an adapter (got " + pa.verdict + " / " + pa.headline + ")");
+    ok(/EDFX AV Adapter/.test(pa.in_the_collection || "") && /no mod/.test(pa.in_the_collection || ""), "TG-16 in the collection: the EDFX AV Adapter, no mod");
+    const p2 = JSON.parse((await tool("plan_connection", { console: "Nintendo 64", monitor: "LMD-940W" })).result.content[0].text).plan;
+    ok(p2.verdict === "converter", "a converter verdict is unchanged by the console's mod");
+    // Page and server share one planner: every pair, the MCP answer equals assets/connect-plan.js on data/connect.json
+    {
+      const CP = require(path.join(here, "..", "assets", "connect-plan.js"));
+      const D = require(path.join(here, "..", "data", "connect.json"));
+      let same = 0, n = 0, asis = 0, bad = 0;
+      for (const c of D.consoles) for (const m of D.monitors) {
+        n++;
+        const want = CP.plan(D, c.id, m.id);
+        const got = JSON.parse((await tool("plan_connection", { console: c.id, monitor: m.id })).result.content[0].text).plan;
+        if (got.verdict === want.verdict && got.headline === want.headline && got.best.signal === want.best.signal) same++;
+        if (want.verdict === "ok") { asis++; if (want.best.console_state !== "ok") bad++; }
+      }
+      ok(same === n, "plan_connection equals the page planner on all " + n + " pairs (" + same + ")");
+      ok(bad === 0 && asis > 0, "\"Works as-is\" only where the console path needs nothing (" + bad + " of " + asis + " wrong)");
+    }
   }
   ok(nes.count >= 1, "'NES' matches the NES row (substring also hits 'Genesis'? count=" + nes.count + ")");
 }

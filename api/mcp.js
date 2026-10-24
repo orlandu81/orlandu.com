@@ -75,7 +75,7 @@ const TOOLS = [
   {
     name: "plan_connection",
     title: "Will it connect?",
-    description: "Plan the connection from a retro console to one of the Sony monitors in the collection: the best signal the pair shares, the cable chain step by step, sync and 75-ohm termination rules, and whether a BKM card or a converter is needed. Consoles: NES, SNES, N64, GameCube, Genesis, Saturn, PC Engine, PlayStation, PS2, Dreamcast, Xbox, Wii, Neo Geo, Master System. Monitors: PVM-2950Q, PVM-20L5, BVM-20E1U, BVM-A14F5U, LMD-9020/9030/9050/940W. Rules dataset CC BY 4.0.",
+    description: "Plan the connection from a retro console to one of the Sony monitors in the collection: the best signal the pair shares, the cable chain step by step, sync and 75-ohm termination rules, and whether a BKM card, a console mod or adapter, or a converter is needed. Consoles: NES, SNES, N64, GameCube, Genesis, Saturn, PC Engine, PlayStation, PS2, Dreamcast, Xbox, Wii, Neo Geo, Master System. Monitors: PVM-2950Q, PVM-20L5, BVM-20E1U, BVM-A14F5U, LMD-9020/9030/9050/940W. Rules dataset CC BY 4.0.",
     inputSchema: { type: "object", properties: { console: { type: "string", description: "Console name, e.g. 'Super Nintendo' or 'Dreamcast'" }, monitor: { type: "string", description: "Monitor model, e.g. 'BVM-20E1U'" } }, required: ["console", "monitor"] },
   },
 ];

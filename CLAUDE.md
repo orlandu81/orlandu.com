@@ -806,15 +806,29 @@ asked for Catalog mock pages first (the fifth). Rulings and the mock are in Proj
   OG card is a render of the simulation itself. The tabled macro photo series is its ground truth if it ever happens.
 - **`will-it-connect.html` — the connection planner.** Rules in **`data/connect.json`** (hand-authored, CC BY; signals,
   chains, 8 monitors' inputs with `ok / card / converter` states and the card name, 17 consoles' outputs with
-  `ok / mod / region`); logic in **`assets/connect-plan.js`** (UMD, one copy for the page and the server). Verdict order:
+  `ok / mod / adapter / region`); logic in **`assets/connect-plan.js`** (UMD, one copy for the page and the server). Verdict order:
   works > needs a card > needs a converter; within that, RGB 15 kHz first. A 480p/HD console on an SD-only monitor
   falls back to 480i. **The MCP server has an eighth tool, `plan_connection`** — test-mcp is 222 checks, mcp.html says
   eight tools and five datasets, the fleet-table row says fourteen columns. Consoles outside the collection are
   described from published outputs and marked by `here: null`; adding one is a JSON entry. No cable brand names.
+  **Verdicts (10/23):** "Works as-is" only when neither side needs anything. A console output marked `mod` or
+  `adapter` gives "Works with an RGB mod" / "Works with an RGB adapter" ("a console mod" / "an adapter" on a non-RGB
+  signal), ranked level with as-is so RGB still wins. The TurboGrafx-16 gets RGB from an external adapter, the EDFX
+  AV Adapter (David, 10/23; named as gear, not a cable) — it is not modded. **will-it-connect.html carries an inline
+  copy of connect.json in `var DATA`; after editing the JSON, paste it back (json.dumps, ensure_ascii=False).**
 - **`bkm-10r.html` — Operate a BKM-10R.** Panel, functions and the whole menu tree from Sony's E/F operation manual
   (archive.org OCR, read in full). Shift-Off labels UNDERSCAN / H DELAY / V DELAY were garbled in the scan and are
   placed from the REMOTE function list; the page says so. Keypad is DIRECT mode; CH 91–95 draw Sony's test patterns;
   PHASE/CHROMA knobs are dead on RGB, as the manual says. The bvm-20e1u.html Control cell now links it.
+  **Menu tree corrected 10/23 (David: "you pick")** to Sony's *BVM-14E5/14F5 Operation Manual*, 1st ed. rev. 1, pp. 22–59
+  (archive.org `sony_BVM-14F5_14E5_Operation_Manual`; the readable copy of the same menu system — the E/F service manual's
+  section 1 OCR is unreadable). Labels are Sony's (REMOTE 2 / REMOTE 2 CONFIG / REMOTE 1 CONFIG, H PHASE, VITS BLK), the
+  PRESET/CH SET (100), STD/COL1/COL2/CH SET (200) and probe (220 → 241) levels are restored, EXTEND MENU, YC SEP,
+  REMOTE MODE, the 342 pin-function list and all 35 ALIGNMENT items are in; EDH and FACTORY SET were not Sony's and are
+  gone. Shared sub-lists are built by small functions (`cp101`, `ct201`, `pin`…) so the tree stays one copy. A node may
+  carry both `v` and `items` (an address or file entry that leads to the next list) and an `h` heading. The menu engine
+  remembers the parent selection (`S.selStack`). The BKM-10R's 424 × 44 × 157 mm / 1.4 kg / 5 V DC is verified in Sony's
+  BVM-G series + BKM-10R operation manual (archive.org `manual_BKM10R_OM_SONY_EN`, Specifications).
 - **`api/ebay.js` — the self-cleaning For Sale.** `GET /api/ebay?ids=…` checks each `/itm/` id through the Browse API
   with a client-credentials app token; `live:false` (404 at eBay, OUT_OF_STOCK, or past itemEndDate) hides the card on
   forsale.html and removes the named `data-itm` span from the index marquee; the "More on eBay" feedback line reads
