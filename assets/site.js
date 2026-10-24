@@ -19,6 +19,7 @@
     ["projects.html", "Projects"],
     ["forsale.html",  "For Sale"],
     ["wanted.html",   "Wanted"],
+    ["registry.html", "Registry"],
     ["about.html",    "About"]
   ];
   // Wide screens fold these into the "Collection" menu; each tile shows its step thumb.

@@ -1,0 +1,2035 @@
+{
+ "dataset": "Sony BVM and PVM model catalog — The Orlandu Registry",
+ "compiled": "2026-10-23",
+ "era_confidence_key": {
+  "high": "Sony press release, dealer bulletin or brochure date",
+  "medium": "Sony manual copyright year or brochure print code — first edition, not necessarily launch",
+  "low": "collector database or forum estimate only"
+ },
+ "suffix_key": "U = USA (120 V/NTSC), E = Europe, A = Australia/Asia, J = Japan, M = 220–240 V multistandard (older PVMs) or M-region (BVM-A), Q = multistandard, MD = medical, W = widescreen, D = digital (older) / D-series, P = PAL (older BVM), SSM = security-monitor twin of a PVM, C = component (BVM-1316C)",
+ "models": [
+  {
+   "model": "BVM-A32E1WU",
+   "slug": "bvm-a32e1wu",
+   "line": "BVM",
+   "series": "A / E (16:9 flat)",
+   "size_in": 32,
+   "era": "2006–c.2009",
+   "era_confidence": "high",
+   "era_basis": "Sony bulletin 05-0584/0585 (2005-11-15): BVM-A series introduced, available Jan–Apr 2006; brochure printed 4/06; last CRT BVM line (OLED followed); collector reports of units built into 2009 (A32 available mid-Apr 2006)",
+   "notes": "1000 TVL 16:9 flat HR Trinitron; multiformat; replaces D32E1WU; BKM-15R controller; BKM-62HS/61D/68X adaptors",
+   "variants": [
+    "BVM-A32E1WU",
+    "BVM-A32E1WE",
+    "BVM-A32E1WJ",
+    "BVM-A32E1WM"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/8/87/050584.doc.pdf",
+    "https://consolemods.org/wiki/images/d/d0/050585.doc.pdf",
+    "https://ConsoleMods.org/wiki/images/6/6d/SONY51450_BVMA.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-D32E1WU",
+   "slug": "bvm-d32e1wu",
+   "line": "BVM",
+   "series": "D / E (16:9 flat)",
+   "size_in": 32,
+   "era": "2000–2005",
+   "era_confidence": "high",
+   "era_basis": "Sony Japan press release 2000-03-09 (BVM-D32E1WJ on sale 2000-06-01, 3.7M yen); Sony bulletin Nov 2005 discontinues D series",
+   "notes": "1000 TVL 16:9 flat HR Trinitron EBU/SMPTE-C; multiformat 15–45 kHz (480i–1080i/24psf); 4 card slots; digital convergence/uniformity; ~94 kg",
+   "variants": [
+    "BVM-D32E1WU",
+    "BVM-D32E1WE",
+    "BVM-D32E1WJ",
+    "BVM-D32E1WA"
+   ],
+   "sources": [
+    "https://www.sony.jp/CorporateCruise/Press/200003/00-0309/",
+    "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
+    "https://consolemods.org/wiki/images/8/87/050584.doc.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-A24E1WU",
+   "slug": "bvm-a24e1wu",
+   "line": "BVM",
+   "series": "A / E (16:9 flat)",
+   "size_in": 24,
+   "era": "2006–2007",
+   "era_confidence": "high",
+   "era_basis": "Sony bulletin 05-0584/0585 (2005-11-15): BVM-A series introduced, available Jan–Apr 2006; brochure printed 4/06; last CRT BVM line (OLED followed); collector reports of units built into 2009; Sony bulletin Jul/Oct 2007: replaced by BVM-L230 LCD",
+   "notes": "1000 TVL 16:9 flat HR Trinitron; multiformat; BKM-36H control-unit kit",
+   "variants": [
+    "BVM-A24E1WU",
+    "BVM-A24E1WE",
+    "BVM-A24E1WJ",
+    "BVM-A24E1WM"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/8/87/050584.doc.pdf",
+    "https://ConsoleMods.org/wiki/images/6/6d/SONY51450_BVMA.pdf",
+    "https://consolemods.org/wiki/images/1/19/Microsoft_Word_-_070293.doc.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-D24E1WU",
+   "slug": "bvm-d24e1wu",
+   "line": "BVM",
+   "series": "D / E (16:9 flat)",
+   "size_in": 24,
+   "era": "1999–2005",
+   "era_confidence": "high",
+   "era_basis": "Sony Japan press 2000-03-09: D series released Oct 1999 (J models); US brochure printed 4/00; Sony bulletin 05-0584: D series discontinued 2005-12-31",
+   "notes": "1000 TVL 16:9 flat HR Trinitron; multiformat 15–45 kHz; 4 card slots; replaced by BVM-A24E1W then BVM-L230 (2007)",
+   "variants": [
+    "BVM-D24E1WU",
+    "BVM-D24E1WE",
+    "BVM-D24E1WJ",
+    "BVM-D24E1WA"
+   ],
+   "sources": [
+    "https://www.sony.jp/CorporateCruise/Press/200003/00-0309/",
+    "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
+    "https://consolemods.org/wiki/images/8/87/050584.doc.pdf",
+    "https://consolemods.org/wiki/images/1/19/Microsoft_Word_-_070293.doc.pdf",
+    "https://www.manualslib.com/brand/sony/monitor.html"
+   ]
+  },
+  {
+   "model": "BVM-1911",
+   "slug": "bvm-1911",
+   "line": "BVM",
+   "series": "19xx OSD",
+   "size_in": 20,
+   "era": "c.1992–1996",
+   "era_confidence": "medium",
+   "era_basis": "Sony TB (Aug 1993) lists BVM-1911/1916/1316; manualslib operation manual (1911/2011P); speclist est. c.1993",
+   "notes": "900 TVL; first BVM with OSD menus; 4:3/16:9; BKM-14xx decoder boards; PAL version BVM-2011P",
+   "variants": [
+    "BVM-1911",
+    "BVM-2011P"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/7/7f/201993168.pdf",
+    "https://www.manualslib.com/manual/1294789/Sony-Bvm-1911.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-1916",
+   "slug": "bvm-1916",
+   "line": "BVM",
+   "series": "19xx OSD",
+   "size_in": 20,
+   "era": "c.1993–1996",
+   "era_confidence": "medium",
+   "era_basis": "Sony TB (Aug 1993); speclist est. c.1995",
+   "notes": "600 TVL; OSD; 4:3/16:9; PAL version BVM-2016P",
+   "variants": [
+    "BVM-1916",
+    "BVM-2016P"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/7/7f/201993168.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-20E1U",
+   "slug": "bvm-20e1u",
+   "line": "BVM",
+   "series": "E (1000 TVL)",
+   "size_in": 20,
+   "era": "c.1996–2007",
+   "era_confidence": "medium",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998; a plate in the registry reads June 2007",
+   "notes": "1000 TVL 0.25 mm Super Fine Pitch Trinitron; 1x RGB/YPbPr built in; BKM-2xx card slots; needs BKM-10R/11R controller",
+   "variants": [
+    "BVM-20E1U",
+    "BVM-20E1E",
+    "BVM-20E1J",
+    "BVM-20E1A"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/CRT:BVM-20E1U",
+    "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-20F1U",
+   "slug": "bvm-20f1u",
+   "line": "BVM",
+   "series": "F (900 TVL)",
+   "size_in": 20,
+   "era": "c.1996–2001",
+   "era_confidence": "medium",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998; ex-Sony tech: most widely produced 20in BVM",
+   "notes": "900 TVL 0.30 mm HR Trinitron (same CRT family as PVM-20L5/20M4); 1x RGB/YPbPr built in; BKM-2xx cards; needs BKM-10R/11R",
+   "variants": [
+    "BVM-20F1U",
+    "BVM-20F1E",
+    "BVM-20F1J",
+    "BVM-20F1A"
+   ],
+   "sources": [
+    "https://ConsoleMods.org/wiki/CRT:BVM-20F1U",
+    "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
+    "https://www.retrorgb.com/?p=1321",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-20G1U",
+   "slug": "bvm-20g1u",
+   "line": "BVM",
+   "series": "G (800 TVL)",
+   "size_in": 20,
+   "era": "1998–c.2003",
+   "era_confidence": "medium",
+   "era_basis": "Sony G-series brochure (c)1998 Sony Corporation (MK7095/1KYP-9802); Sony TB Jul 2001",
+   "notes": "800 TVL 0.30 mm HR Trinitron SMPTE-C; 1x RGB/YPbPr built in; 1 option slot; RS-485 remote; cheaper than F",
+   "variants": [
+    "BVM-20G1U",
+    "BVM-20G1E",
+    "BVM-20G1A"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/0/01/BVM-G_Series_Brochure.pdf",
+    "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-A20F1U",
+   "slug": "bvm-a20f1u",
+   "line": "BVM",
+   "series": "A / F (4:3)",
+   "size_in": 20,
+   "era": "2006–c.2009",
+   "era_confidence": "high",
+   "era_basis": "Sony bulletin 05-0584/0585 (2005-11-15): BVM-A series introduced, available Jan–Apr 2006; brochure printed 4/06; last CRT BVM line (OLED followed); collector reports of units built into 2009",
+   "notes": "900 TVL 4:3 HR Trinitron (same CRT as D20F1/20F1); 15–45 kHz; RGB/YPbPr needs BKM-68X; BKM-35H kit; ex-Sony tech: very low production",
+   "variants": [
+    "BVM-A20F1U",
+    "BVM-A20F1E",
+    "BVM-A20F1J",
+    "BVM-A20F1M"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/8/87/050584.doc.pdf",
+    "https://ConsoleMods.org/wiki/images/6/6d/SONY51450_BVMA.pdf",
+    "https://www.retrorgb.com/?p=1321",
+    "https://shmups.system11.org/viewtopic.php?p=978179",
+    "https://crtdatabase.com/crts/sony/sony-bvm-a20f1u"
+   ]
+  },
+  {
+   "model": "BVM-D20F1U",
+   "slug": "bvm-d20f1u",
+   "line": "BVM",
+   "series": "D / F (4:3)",
+   "size_in": 20,
+   "era": "1999–2005",
+   "era_confidence": "high",
+   "era_basis": "Sony Japan press 2000-03-09: D series released Oct 1999 (J models); US brochure printed 4/00; Sony bulletin 05-0584: D series discontinued 2005-12-31",
+   "notes": "900 TVL 4:3 HR Trinitron (M49LCB20X); multiformat 15/45 kHz (240p–1080i, 1440i works); 4 card slots; ISR; needs BKM-10R/11R; 4:3/16:9 masks",
+   "variants": [
+    "BVM-D20F1U",
+    "BVM-D20F1E",
+    "BVM-D20F1J",
+    "BVM-D20F1A"
+   ],
+   "sources": [
+    "https://www.sony.jp/CorporateCruise/Press/200003/00-0309/",
+    "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
+    "https://consolemods.org/wiki/images/8/87/050584.doc.pdf",
+    "https://crtdatabase.com/crts/sony/sony-bvm-d20f1u"
+   ]
+  },
+  {
+   "model": "BVM-1910",
+   "slug": "bvm-1910",
+   "line": "BVM",
+   "series": "19xx analog",
+   "size_in": 19,
+   "era": "c.1988–1993",
+   "era_confidence": "medium",
+   "era_basis": "Sony TB 92-064 (Mar 1992); speclist est.; BVM-2010 believed EU version",
+   "notes": "900 TVL; composite + RGB/YPbPr; analog controls",
+   "variants": [
+    "BVM-1910"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/d/d3/201992064.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-1912",
+   "slug": "bvm-1912",
+   "line": "BVM",
+   "series": "19xx analog",
+   "size_in": 19,
+   "era": "c.1991–1993",
+   "era_confidence": "medium",
+   "era_basis": "Sony TB 92-064 (Mar 1992); speclist est. c.1993",
+   "notes": "900 TVL; composite + RGB/YPbPr",
+   "variants": [
+    "BVM-1912"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/d/d3/201992064.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-1915",
+   "slug": "bvm-1915",
+   "line": "BVM",
+   "series": "19xx analog",
+   "size_in": 19,
+   "era": "c.1991–1993",
+   "era_confidence": "low",
+   "era_basis": "Sony TB 92-064 (Mar 1992) only",
+   "notes": "19-inch analog BVM, lower-res sibling of 1912 (by numbering); specs unverified",
+   "variants": [
+    "BVM-1915"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/d/d3/201992064.pdf"
+   ]
+  },
+  {
+   "model": "BVM-14E1U",
+   "slug": "bvm-14e1u",
+   "line": "BVM",
+   "series": "E (900 TVL)",
+   "size_in": 14,
+   "era": "c.1996–2001",
+   "era_confidence": "medium",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998",
+   "notes": "900 TVL 0.22 mm; display unit (needs BKM-10R); BKM-2xx cards",
+   "variants": [
+    "BVM-14E1U",
+    "BVM-14E1E",
+    "BVM-14E1J",
+    "BVM-14E1A"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/CRT:BVM-14E5U",
+    "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-14E5U",
+   "slug": "bvm-14e5u",
+   "line": "BVM",
+   "series": "E (900 TVL)",
+   "size_in": 14,
+   "era": "c.1996–2001",
+   "era_confidence": "medium",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998",
+   "notes": "900 TVL 0.22 mm; stand-alone with built-in control panel; BKM-2xx cards",
+   "variants": [
+    "BVM-14E5U",
+    "BVM-14E5E",
+    "BVM-14E5J",
+    "BVM-14E5A"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/CRT:BVM-14E5U",
+    "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-14F1U",
+   "slug": "bvm-14f1u",
+   "line": "BVM",
+   "series": "F (800 TVL)",
+   "size_in": 14,
+   "era": "c.1996–2001",
+   "era_confidence": "medium",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998",
+   "notes": "800 TVL 0.25 mm; display unit (needs controller); BKM-2xx cards",
+   "variants": [
+    "BVM-14F1U",
+    "BVM-14F1E",
+    "BVM-14F1J",
+    "BVM-14F1A"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/CRT:BVM-14F5U",
+    "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-14F5U",
+   "slug": "bvm-14f5u",
+   "line": "BVM",
+   "series": "F (800 TVL)",
+   "size_in": 14,
+   "era": "c.1996–2001",
+   "era_confidence": "medium",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998",
+   "notes": "800 TVL 0.25 mm; stand-alone with control panel; BKM-2xx cards",
+   "variants": [
+    "BVM-14F5U",
+    "BVM-14F5E",
+    "BVM-14F5J",
+    "BVM-14F5A"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/CRT:BVM-14F5U",
+    "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-14G1U",
+   "slug": "bvm-14g1u",
+   "line": "BVM",
+   "series": "G (800 TVL)",
+   "size_in": 14,
+   "era": "1998–c.2003",
+   "era_confidence": "medium",
+   "era_basis": "Sony G-series brochure (c)1998; Sony TB Jul 2001",
+   "notes": "800 TVL 0.25 mm; display unit; 1 option slot",
+   "variants": [
+    "BVM-14G1U",
+    "BVM-14G1E",
+    "BVM-14G1A"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/0/01/BVM-G_Series_Brochure.pdf",
+    "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-14G5U",
+   "slug": "bvm-14g5u",
+   "line": "BVM",
+   "series": "G (800 TVL)",
+   "size_in": 14,
+   "era": "1998–c.2003",
+   "era_confidence": "medium",
+   "era_basis": "Sony G-series brochure (c)1998; Sony TB Jul 2001",
+   "notes": "800 TVL 0.25 mm; rack-mount stand-alone; 1 option slot",
+   "variants": [
+    "BVM-14G5U",
+    "BVM-14G5E",
+    "BVM-14G5A"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/0/01/BVM-G_Series_Brochure.pdf",
+    "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-A14F5U",
+   "slug": "bvm-a14f5u",
+   "line": "BVM",
+   "series": "A / F (4:3)",
+   "size_in": 14,
+   "era": "2006–c.2009",
+   "era_confidence": "high",
+   "era_basis": "Sony bulletin 05-0584/0585 (2005-11-15): BVM-A series introduced, available Jan–Apr 2006; brochure printed 4/06; last CRT BVM line (OLED followed); collector reports of units built into 2009 (A14F5 available mid-Feb 2006)",
+   "notes": "800 TVL 4:3 HR Trinitron; stand-alone; replaces both D14H1U and D14H5U",
+   "variants": [
+    "BVM-A14F5U",
+    "BVM-A14F5E",
+    "BVM-A14F5J",
+    "BVM-A14F5M"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/8/87/050584.doc.pdf",
+    "https://ConsoleMods.org/wiki/images/6/6d/SONY51450_BVMA.pdf",
+    "https://crtdatabase.com/crts/sony/sony-bvm-a14f5u",
+    "https://www.manualslib.com/brand/sony/monitor.html"
+   ]
+  },
+  {
+   "model": "BVM-D14H1U",
+   "slug": "bvm-d14h1u",
+   "line": "BVM",
+   "series": "D / H (4:3)",
+   "size_in": 14,
+   "era": "1999–2005",
+   "era_confidence": "high",
+   "era_basis": "Sony Japan press 2000-03-09: D series released Oct 1999 (J models); US brochure printed 4/00; Sony bulletin 05-0584: D series discontinued 2005-12-31; Sony TB Mar 2004 lists U/E/A sub-variants",
+   "notes": "800 TVL 4:3 HR Trinitron (M34LHF20X); multiformat; display unit (needs controller); card slots",
+   "variants": [
+    "BVM-D14H1U",
+    "BVM-D14H1E",
+    "BVM-D14H1J",
+    "BVM-D14H1A"
+   ],
+   "sources": [
+    "https://www.sony.jp/CorporateCruise/Press/200003/00-0309/",
+    "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
+    "https://consolemods.org/wiki/images/2/23/B-DPMO03-058-0.FM.pdf",
+    "https://www.manualslib.com/brand/sony/monitor.html"
+   ]
+  },
+  {
+   "model": "BVM-D14H5U",
+   "slug": "bvm-d14h5u",
+   "line": "BVM",
+   "series": "D / H (4:3)",
+   "size_in": 14,
+   "era": "1999–2005",
+   "era_confidence": "high",
+   "era_basis": "Sony Japan press 2000-03-09: D series released Oct 1999 (J models); US brochure printed 4/00; Sony bulletin 05-0584: D series discontinued 2005-12-31",
+   "notes": "800 TVL; stand-alone with built-in control panel; multiformat; card slots",
+   "variants": [
+    "BVM-D14H5U",
+    "BVM-D14H5E",
+    "BVM-D14H5J",
+    "BVM-D14H5A"
+   ],
+   "sources": [
+    "https://www.sony.jp/CorporateCruise/Press/200003/00-0309/",
+    "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
+    "https://consolemods.org/wiki/images/2/23/B-DPMO03-058-0.FM.pdf",
+    "https://crtdatabase.com/crts/sony/sony-bvm-d14h5u"
+   ]
+  },
+  {
+   "model": "BVM-1310",
+   "slug": "bvm-1310",
+   "line": "BVM",
+   "series": "13xx analog",
+   "size_in": 13,
+   "era": "c.1986–1992",
+   "era_confidence": "medium",
+   "era_basis": "Sony TB 92-064 (Mar 1992) lists BVM-1310 in service; collector speclist est. c.1986; PAL BVM-1410P service manual 4th ed.",
+   "notes": "700 TVL Super Fine Pitch Trinitron; composite A/B + RGB/YPbPr; analog knobs; BVM-1410P/PM = PAL/PAL-M",
+   "variants": [
+    "BVM-1310",
+    "BVM-1410P",
+    "BVM-1410PM"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/d/d3/201992064.pdf",
+    "https://ia803401.us.archive.org/13/items/bvm-1410-pm-sm-sony-service-manual-en/BVM1410PM_SM_SONY_EN.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-1315",
+   "slug": "bvm-1315",
+   "line": "BVM",
+   "series": "13xx analog",
+   "size_in": 13,
+   "era": "c.1990–1993",
+   "era_confidence": "medium",
+   "era_basis": "Sony TB 92-064 (Mar 1992); speclist est. c.1990",
+   "notes": "600 TVL; composite + RGB/YPbPr; lower-res sibling of 1310",
+   "variants": [
+    "BVM-1315"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/d/d3/201992064.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-1316",
+   "slug": "bvm-1316",
+   "line": "BVM",
+   "series": "13xx OSD",
+   "size_in": 13,
+   "era": "c.1993–1996",
+   "era_confidence": "medium",
+   "era_basis": "Sony TB (Aug 1993) lists BVM-1316/1316C; speclist est. c.1993",
+   "notes": "600 TVL; OSD; 4:3/16:9; PAL version BVM-1416(P)",
+   "variants": [
+    "BVM-1316",
+    "BVM-1316C",
+    "BVM-1416"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/7/7f/201993168.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-D9H1U",
+   "slug": "bvm-d9h1u",
+   "line": "BVM",
+   "series": "D / H (9in)",
+   "size_in": 9,
+   "era": "1999–2005",
+   "era_confidence": "high",
+   "era_basis": "Sony Japan press 2000-03-09: D series released Oct 1999 (J models); US brochure printed 4/00; Sony bulletin 05-0584: D series discontinued 2005-12-31; Sony bulletin Jan 2005: 'BVM-D9 series' replaced by LMD-9050",
+   "notes": "450 TVL HR Trinitron P-22, 70 deg; multiformat 15–45 kHz; display unit (no audio); battery option",
+   "variants": [
+    "BVM-D9H1U",
+    "BVM-D9H1E",
+    "BVM-D9H1J",
+    "BVM-D9H1A"
+   ],
+   "sources": [
+    "https://www.sony.jp/CorporateCruise/Press/200003/00-0309/",
+    "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
+    "https://consolemods.org/wiki/images/e/ed/040752.doc.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-D9H5U",
+   "slug": "bvm-d9h5u",
+   "line": "BVM",
+   "series": "D / H (9in)",
+   "size_in": 9,
+   "era": "1999–2005",
+   "era_confidence": "high",
+   "era_basis": "Sony Japan press 2000-03-09: D series released Oct 1999 (J models); US brochure printed 4/00; Sony bulletin 05-0584: D series discontinued 2005-12-31",
+   "notes": "450 TVL; stand-alone with audio/speaker and stand; multiformat; card slots",
+   "variants": [
+    "BVM-D9H5U",
+    "BVM-D9H5E",
+    "BVM-D9H5J",
+    "BVM-D9H5A"
+   ],
+   "sources": [
+    "https://www.sony.jp/CorporateCruise/Press/200003/00-0309/",
+    "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
+    "https://consolemods.org/wiki/images/e/ed/040752.doc.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "BVM-8021",
+   "slug": "bvm-8021",
+   "line": "BVM",
+   "series": "8-inch (80s)",
+   "size_in": 8,
+   "era": "c.1985–1990",
+   "era_confidence": "low",
+   "era_basis": "crtdatabase 'launched 1985' (shares PVM-8020 service manual)",
+   "notes": "450 TVL HR Trinitron (M20JMP10X); composite; 12 V input + RF tuner; broadcast version of PVM-8020",
+   "variants": [
+    "BVM-8021"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-bvm-8021",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "BVM-8045QD",
+   "slug": "bvm-8045qd",
+   "line": "BVM",
+   "series": "8-inch digital",
+   "size_in": 8,
+   "era": "c.1995–2001",
+   "era_confidence": "low",
+   "era_basis": "No dated Sony source found; collector sources only",
+   "notes": "450 TVL HR Trinitron 0.25 mm; RGB/YPbPr, S-Video, composite, SD-SDI (DAC built in); 4:3/16:9; EU BVM-9045QD",
+   "variants": [
+    "BVM-8045QD",
+    "BVM-9045QD",
+    "BVM-9045D"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-bvm-8045qd",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-4300",
+   "slug": "pvm-4300",
+   "line": "PVM",
+   "series": "Profeel-type (43in)",
+   "size_in": 43,
+   "era": "1989–c.1991",
+   "era_confidence": "high",
+   "era_basis": "Wikipedia article (brochure 1989); consolemods; crtdatabase",
+   "notes": "560 TVL 43-inch Trinitron, 440 lb; 2x RGB + composite; largest Trinitron CRT ever sold; very few made",
+   "variants": [
+    "PVM-4300"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sony_PVM-4300",
+    "https://consolemods.org/wiki/CRT:PVM-4300",
+    "https://crtdatabase.com/crts/sony/sony-pvm-4300",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-3230",
+   "slug": "pvm-3230",
+   "line": "PVM",
+   "series": "30 series (Profeel-type)",
+   "size_in": 32,
+   "era": "1990–c.1994",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1990",
+   "notes": "650 TVL Trinitron; RGB, RGBI, 2x S-Video/composite, VTR; stereo amp; NTSC only",
+   "variants": [
+    "PVM-3230"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1261396/Sony-Pvm-3230.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-3230",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-2950Q",
+   "slug": "pvm-2950q",
+   "line": "PVM",
+   "series": "50 series (27in)",
+   "size_in": 27,
+   "era": "c.1996–2000",
+   "era_confidence": "low",
+   "era_basis": "Sony brochure/operation manual undated; collector consensus mid-late 1990s; a plate in the registry reads June 2000",
+   "notes": "600 TVL Super Trinitron 29in tube (27in visible); RGB/YPbPr, 2x S-Video/composite; multistandard incl. PAL60; digital convergence",
+   "variants": [
+    "PVM-2950Q",
+    "PVM-2950QM"
+   ],
+   "sources": [
+    "https://ConsoleMods.org/wiki/images/d/db/PVM-2950Q_PVM-2950QM_Brochure.pdf",
+    "https://www.manualslib.com/manual/242763/Sony.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-2950q",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-2530",
+   "slug": "pvm-2530",
+   "line": "PVM",
+   "series": "30 series (Profeel-type)",
+   "size_in": 25,
+   "era": "1986–c.1990",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1986 (covers PVM-2030/2530)",
+   "notes": "approx. 420 TVL Trinitron; RGB/RGBI, 2x composite, VTR; stereo amp; EU 2730QM (SCART RGB, S-Video variant exists)",
+   "variants": [
+    "PVM-2530",
+    "PVM-2730QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1296653/Sony-Pvm-2030.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-2530",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-1942Q",
+   "slug": "pvm-1942q",
+   "line": "PVM",
+   "series": "Q (42 series)",
+   "size_in": 20,
+   "era": "1989–c.1993",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1989",
+   "notes": "600 TVL; RGB, TTL RGBI, S-Video, composite; no RGB audio",
+   "variants": [
+    "PVM-1942Q",
+    "PVM-2042QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/3682037/Sony-Trinitron-Pvm-1944q.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-1942q",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-1943MD",
+   "slug": "pvm-1943md",
+   "line": "PVM",
+   "series": "Q/MD (43 series, medical)",
+   "size_in": 20,
+   "era": "c.1989–1993",
+   "era_confidence": "low",
+   "era_basis": "Medical sibling of 1942Q (manual (c)1989); no separate dated source",
+   "notes": "600 TVL; medical; RGB, S-Video, composite",
+   "variants": [
+    "PVM-1943MD",
+    "PVM-2043MD"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony",
+    "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-1342q"
+   ]
+  },
+  {
+   "model": "PVM-1944Q",
+   "slug": "pvm-1944q",
+   "line": "PVM",
+   "series": "Q (44 series)",
+   "size_in": 20,
+   "era": "1989–c.1993",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1989 (covers 1944Q/1942Q); EU 2044QM/2042QM",
+   "notes": "600 TVL; RGB/YPbPr w/ audio, S-Video, composite; no service menu (pots)",
+   "variants": [
+    "PVM-1944Q",
+    "PVM-2044QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/3682037/Sony-Trinitron-Pvm-1944q.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-1953MD",
+   "slug": "pvm-1953md",
+   "line": "PVM",
+   "series": "Q/MD (53 series, medical)",
+   "size_in": 20,
+   "era": "c.1993–1997",
+   "era_confidence": "low",
+   "era_basis": "Same generation as 1954Q (manual (c)1993); Sony 1953MD/2053MD manual undated",
+   "notes": "600 TVL; medical; 2x RGB/YPbPr, S-Video, composite; Olympus OEV-202 rebadge",
+   "variants": [
+    "PVM-1953MD",
+    "PVM-2053MD"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/3376607/Sony-Trinitron-Pvm-1953md.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-1954Q",
+   "slug": "pvm-1954q",
+   "line": "PVM",
+   "series": "Q (54 series)",
+   "size_in": 20,
+   "era": "1993–c.1997",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1993 (covers 1954Q/1354Q/1351Q); EU 2054QM/1454QM manual (c)1994",
+   "notes": "600 TVL HR Trinitron SMPTE-C; RGB/YPbPr, S-Video, 2x composite; multistandard; BKM-101C SDI option",
+   "variants": [
+    "PVM-1954Q",
+    "PVM-2054QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/3322819/Sony-Trinitron-Pvm-1954q.html",
+    "https://www.manualslib.com/manual/1144413/Sony-Trinitron-Pvm-2054qm.html",
+    "https://ConsoleMods.org/wiki/images/9/97/PVM-1954Q_PVM-1354Q_Brochure.pdf",
+    "https://crtdatabase.com/crts/sony/sony-pvm-1954q",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-2030",
+   "slug": "pvm-2030",
+   "line": "PVM",
+   "series": "30 series (Profeel-type)",
+   "size_in": 20,
+   "era": "1986–c.1990",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1986 (covers PVM-2030/2530)",
+   "notes": "approx. 420–560 TVL Trinitron (A51JKQ10X); RGB/RGBI, 2x composite, VTR; stereo amp; stackable; EU 2130QM (SCART RGB)",
+   "variants": [
+    "PVM-2030",
+    "PVM-2130QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1296653/Sony-Pvm-2030.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-2030",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-20L1",
+   "slug": "pvm-20l1",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 20,
+   "era": "c.2000–2005",
+   "era_confidence": "low",
+   "era_basis": "Sony service manual 1st ed. (undated) covers PVM-14L1/20L1/SSM-14L1/20L1; Sony Japan lineup page lists 9L1/14L1/20L1; collector consensus early 2000s",
+   "notes": "600 TVL Trinitron; composite + Y/C only (no RGB); SSM security-monitor twin",
+   "variants": [
+    "PVM-20L1",
+    "PVM-20L1E",
+    "SSM-20L1"
+   ],
+   "sources": [
+    "https://ia804508.us.archive.org/0/items/pvm-14-l-1-20-l-1-ssm-14-l-1-20-l-1-service-manual-fixed/PVM-14L1%2020L1%20SSM-14L1%2020L1%20Service%20Manual%20-%20FIXED.pdf",
+    "https://www.sony.jp/pro/lineup/pictm.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-20L2",
+   "slug": "pvm-20l2",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 20,
+   "era": "c.2001–2006",
+   "era_confidence": "medium",
+   "era_basis": "Sony US brochure printed 12/02; Sony Japan product page (discontinued, no date); collector consensus early 2000s",
+   "notes": "600 TVL Trinitron 0.4 mm; 15 kHz; RGB/YPbPr; 1 option slot (BKM-120D/129X/150CP/155DV)",
+   "variants": [
+    "PVM-20L2",
+    "PVM-20L2E",
+    "PVM-D20L2J"
+   ],
+   "sources": [
+    "https://archive.org/download/sony_PVM-L2_2002U/PVM-L2_2002U.pdf",
+    "https://www.sony.jp/pro-monitor/products/PVM-20L2/index.html",
+    "https://consolemods.org/wiki/CRT:PVM-20L2",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-20L2MD",
+   "slug": "pvm-20l2md",
+   "line": "PVM",
+   "series": "L (medical)",
+   "size_in": 20,
+   "era": "c.2001–2006",
+   "era_confidence": "low",
+   "era_basis": "Same chassis as PVM-20L2 (brochure 12/02); no medical-specific date found",
+   "notes": "600 TVL; medical-rated L2 chassis; no 4:3/16:9 switch; 1 option slot",
+   "variants": [
+    "PVM-20L2MD",
+    "PVM-20L2MDE"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/CRT:PVM-20L2MD",
+    "https://crtdatabase.com/crts/sony/sony-pvm-20l2md",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-20L4",
+   "slug": "pvm-20l4",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 20,
+   "era": "2001–c.2006",
+   "era_confidence": "medium",
+   "era_basis": "Sony brochure print code MK7730V1IW01OCT, (c)2001 Sony Corporation; Sony TB Jan 2003",
+   "notes": "800 TVL HR Trinitron EBU; 15 kHz only (no 480p); RGB/YPbPr; 1 option slot; 9RU rack",
+   "variants": [
+    "PVM-20L4",
+    "PVM-20L4E"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/e/eb/PVM-20L4_PVM-14L4_PVM-14L3_Brochure.pdf",
+    "https://consolemods.org/wiki/images/8/82/302003004.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-20L5",
+   "slug": "pvm-20l5",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 20,
+   "era": "2002–c.2007",
+   "era_confidence": "high",
+   "era_basis": "Sony Japan press release 2002-11-11 (PVM-D20L5DJ on sale 2002-12-09); US brochure (c)2002; Sony TB 30-2003-004 Jan 2003",
+   "notes": "800 TVL HR Trinitron SMPTE-C; multiformat 15–45 kHz (480p/576p/720p/1080i); built-in RGB/YPbPr; 1 option slot (BKM-120D/129X/142HD/150CP/155DV)",
+   "variants": [
+    "PVM-20L5",
+    "PVM-D20L5J",
+    "PVM-D20L5DJ"
+   ],
+   "sources": [
+    "https://www.sony.jp/CorporateCruise/Press/200211/02-1111B/",
+    "https://ConsoleMods.org/wiki/images/c/c1/Sony_PVM-20L5_PVM-14L5_Brochure.pdf",
+    "https://consolemods.org/wiki/images/8/82/302003004.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony/sony-pvm-20l5"
+   ]
+  },
+  {
+   "model": "PVM-20M2MDU",
+   "slug": "pvm-20m2mdu",
+   "line": "PVM",
+   "series": "M (medical)",
+   "size_in": 20,
+   "era": "c.1996–2003",
+   "era_confidence": "medium",
+   "era_basis": "Same chassis as 20M2U (c.1997); Sony TB 30-2003-214 (Dec 2003) still servicing MDU/MDE/MDA; Sony Japan lineup lists 20M2MDJ",
+   "notes": "600 TVL; medical-rated; 2x RGB/YPbPr, S-Video, composite; Olympus OEV-203 rebadge",
+   "variants": [
+    "PVM-20M2MDU",
+    "PVM-20M2MDE",
+    "PVM-20M2MDA",
+    "PVM-20M2MDJ"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1002620/Sony-Trinitron-Pvm-14m2mdu.html",
+    "https://consolemods.org/wiki/images/1/18/302003214.pdf",
+    "https://www.sony.jp/pro/lineup/pictm.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-20M2U",
+   "slug": "pvm-20m2u",
+   "line": "PVM",
+   "series": "M",
+   "size_in": 20,
+   "era": "c.1996–2001",
+   "era_confidence": "medium",
+   "era_basis": "crtdatabase 'launched 1997'; Sony service manual covers 20M2/20M4 U/E/A",
+   "notes": "600 TVL Trinitron (M49KGH11X); RGB/YPbPr, S-Video, 2x composite",
+   "variants": [
+    "PVM-20M2U",
+    "PVM-20M2E",
+    "PVM-20M2A",
+    "PVM-20M2J"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-20m2u",
+    "https://www.manualslib.com/manual/1303987/Sony-Pvm-20m2u.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-20M4U",
+   "slug": "pvm-20m4u",
+   "line": "PVM",
+   "series": "M",
+   "size_in": 20,
+   "era": "c.1996–2001",
+   "era_confidence": "medium",
+   "era_basis": "crtdatabase 'launched 1997'; radiomuseum dates 14M2E c.1995(?); Sony brochure/manuals undated; ex-Sony tech says same CRT as BVM-20F1U",
+   "notes": "800 TVL HR Trinitron (M49LCB20X); RGB/YPbPr, S-Video, 2x composite; OSD service menu; BKM-101C/102 SDI option",
+   "variants": [
+    "PVM-20M4U",
+    "PVM-20M4E",
+    "PVM-20M4A",
+    "PVM-20M4J"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-20m4u",
+    "https://www.manualslib.com/manual/694450/Sony-Pvm-20m4u.html",
+    "https://www.manualslib.com/manual/1303987/Sony-Pvm-20m2u.html",
+    "https://www.retrorgb.com/?p=1321",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-20M7MDE",
+   "slug": "pvm-20m7mde",
+   "line": "PVM",
+   "series": "M (medical, EU)",
+   "size_in": 20,
+   "era": "c.1995–2000",
+   "era_confidence": "low",
+   "era_basis": "crtdatabase 'launched 1995' citing a forum thread only",
+   "notes": "800 TVL HR Trinitron; European medical model with 100 Hz digital doubling (adds lag on 240p/480i)",
+   "variants": [
+    "PVM-20M7MDE"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-20m7mde"
+   ]
+  },
+  {
+   "model": "PVM-20N1U",
+   "slug": "pvm-20n1u",
+   "line": "PVM",
+   "series": "N",
+   "size_in": 20,
+   "era": "c.1995–1998",
+   "era_confidence": "low",
+   "era_basis": "Shares manual with 20N2U; no dated source",
+   "notes": "500 TVL; 2x S-Video/composite, no RGB; SSM-20N1 twin",
+   "variants": [
+    "PVM-20N1U",
+    "SSM-20N1"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/CRT:PVM-14N2",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-20N2U",
+   "slug": "pvm-20n2u",
+   "line": "PVM",
+   "series": "N",
+   "size_in": 20,
+   "era": "c.1995–1998",
+   "era_confidence": "low",
+   "era_basis": "Predecessor of N6 (manual (c)1998); radiomuseum dates PVM-14N2E c.1995(?); Sony manuals undated",
+   "notes": "500 TVL; 1x RGB, 2x S-Video/composite",
+   "variants": [
+    "PVM-20N2U",
+    "PVM-20N2E"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/CRT:PVM-14N2",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html"
+   ]
+  },
+  {
+   "model": "PVM-20N5U",
+   "slug": "pvm-20n5u",
+   "line": "PVM",
+   "series": "N",
+   "size_in": 20,
+   "era": "c.1997–2001",
+   "era_confidence": "medium",
+   "era_basis": "Sony service manual (c)1998",
+   "notes": "500 TVL; 2x S-Video/composite, no RGB; SSM-20N5 security twin",
+   "variants": [
+    "PVM-20N5U",
+    "PVM-20N5E",
+    "PVM-20N5A",
+    "PVM-20N5J",
+    "SSM-20N5U"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/2633373/Sony-Trinitron-Pvm-14n5a.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://www.sony.jp/pro/lineup/pictm.html"
+   ]
+  },
+  {
+   "model": "PVM-20N6U",
+   "slug": "pvm-20n6u",
+   "line": "PVM",
+   "series": "N",
+   "size_in": 20,
+   "era": "c.1997–2001",
+   "era_confidence": "medium",
+   "era_basis": "Sony service manual (c)1998 covers N5/N6 U/E/A + SSM; Sony Japan lineup lists 20N6J",
+   "notes": "500 TVL Trinitron (M49KGH10X); 1x RGB, 2x S-Video/composite; budget line",
+   "variants": [
+    "PVM-20N6U",
+    "PVM-20N6E",
+    "PVM-20N6A",
+    "PVM-20N6J"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/2633373/Sony-Trinitron-Pvm-14n5a.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-20n6u",
+    "https://www.sony.jp/pro/lineup/pictm.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-20S1WU",
+   "slug": "pvm-20s1wu",
+   "line": "PVM",
+   "series": "S (16:9)",
+   "size_in": 20,
+   "era": "c.1997–2000",
+   "era_confidence": "low",
+   "era_basis": "crtdatabase 'launched 1997'; collector consensus late 1990s; no Sony date found",
+   "notes": "300 TVL 16:9 consumer-derived tube (W46LEZ070X); only widescreen PVM; 2x RGB, S-Video, 2x composite, SDI",
+   "variants": [
+    "PVM-20S1WU",
+    "PVM-20S1WE",
+    "PVM-20S1WA"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-20s1wu",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-1910",
+   "slug": "pvm-1910",
+   "line": "PVM",
+   "series": "10 series (80s)",
+   "size_in": 19,
+   "era": "c.1984–1988",
+   "era_confidence": "medium",
+   "era_basis": "crtdatabase 'launched 1984'; Sony manuals on manualslib (undated)",
+   "notes": "350 TVL Trinitron (A49JHT00X); 2x composite + 2x RGB (BNC + 25-pin); PVM-1911 = touchscreen version",
+   "variants": [
+    "PVM-1910",
+    "PVM-1911",
+    "PVM-2010QM"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-1910",
+    "https://www.manualslib.com/products/Sony-Trinitron-Pvm-1910-14095084.html",
+    "https://www.manualslib.com/products/Sony-Trinitron-Pvm-1911-14095085.html"
+   ]
+  },
+  {
+   "model": "PVM-1340",
+   "slug": "pvm-1340",
+   "line": "PVM",
+   "series": "40 series",
+   "size_in": 14,
+   "era": "1988–c.1993",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1988",
+   "notes": "450 TVL NTSC only; RGB in only (no loop-out), S-Video, 2x composite, VTR",
+   "variants": [
+    "PVM-1340",
+    "PVM-1440QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1446654/Sony-Trinitron-Pvm-1344q.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-1340",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-1341",
+   "slug": "pvm-1341",
+   "line": "PVM",
+   "series": "41 series",
+   "size_in": 14,
+   "era": "1988–c.1993",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1988; crtdatabase 'launched 1988'",
+   "notes": "450 TVL Trinitron (A34JHS12X) NTSC only; RGB, TTL RGBI, S-Video, 2x composite",
+   "variants": [
+    "PVM-1341"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1446654/Sony-Trinitron-Pvm-1344q.html",
+    "https://www.manualslib.com/manual/242761/Sony-Trinitron-Pvm-1341.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-1341",
+    "https://consolemods.org/wiki/CRT:PVM-1341"
+   ]
+  },
+  {
+   "model": "PVM-1342Q",
+   "slug": "pvm-1342q",
+   "line": "PVM",
+   "series": "Q (42 series)",
+   "size_in": 14,
+   "era": "1988–c.1993",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1988; Sony service manual (1341/1342Q/1343MD)",
+   "notes": "600 TVL Super HR Trinitron; RGB, TTL RGBI, S-Video, 2x composite; no RGB audio stock",
+   "variants": [
+    "PVM-1342Q",
+    "PVM-1442QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1446654/Sony-Trinitron-Pvm-1344q.html",
+    "https://www.manualslib.com/manual/1339662/Sony-Pvm-1341.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-1342q",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-1343MD",
+   "slug": "pvm-1343md",
+   "line": "PVM",
+   "series": "Q/MD (43 series, medical)",
+   "size_in": 14,
+   "era": "c.1988–1993",
+   "era_confidence": "medium",
+   "era_basis": "Sony service manual covers PVM-1341/1342Q/1343MD (same chassis as (c)1988 manual)",
+   "notes": "600 TVL; medical; RGB, TTL RGBI, S-Video, 2x composite",
+   "variants": [
+    "PVM-1343MD",
+    "PVM-1443MD"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1339662/Sony-Pvm-1341.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-1344Q",
+   "slug": "pvm-1344q",
+   "line": "PVM",
+   "series": "Q (44 series)",
+   "size_in": 14,
+   "era": "1988–c.1993",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1988 (covers 1344Q/1342Q/1341/1340)",
+   "notes": "600 TVL Super HR Trinitron (M34KBE20X); RGB/YPbPr with audio, S-Video, 2x composite, VTR; multistandard",
+   "variants": [
+    "PVM-1344Q",
+    "PVM-1444QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1446654/Sony-Trinitron-Pvm-1344q.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-1344q",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-1350",
+   "slug": "pvm-1350",
+   "line": "PVM",
+   "series": "50 series",
+   "size_in": 14,
+   "era": "c.1992–1995",
+   "era_confidence": "low",
+   "era_basis": "NTSC-only sibling of 1351Q; no dated Sony source found",
+   "notes": "450 TVL; RGB, S-Video, 2x composite; no multistandard",
+   "variants": [
+    "PVM-1350"
+   ],
+   "sources": [
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-1351Q",
+   "slug": "pvm-1351q",
+   "line": "PVM",
+   "series": "Q (50 series)",
+   "size_in": 14,
+   "era": "c.1992–1995",
+   "era_confidence": "medium",
+   "era_basis": "Covered by Sony PVM-1954Q/1354Q/1351Q operating manual (c)1993",
+   "notes": "450 TVL Trinitron; RGB/YPbPr, S-Video, 2x composite; multistandard budget sibling of 1354Q",
+   "variants": [
+    "PVM-1351Q",
+    "PVM-1450QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/3322819/Sony-Trinitron-Pvm-1954q.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-1353MD",
+   "slug": "pvm-1353md",
+   "line": "PVM",
+   "series": "Q/MD (53 series, medical)",
+   "size_in": 14,
+   "era": "c.1993–1997",
+   "era_confidence": "low",
+   "era_basis": "Same generation as 1354Q; Sony manuals undated",
+   "notes": "600 TVL; medical; 2x RGB/YPbPr, S-Video, composite; Olympus OEV-142 rebadge",
+   "variants": [
+    "PVM-1353MD",
+    "PVM-1453MD"
+   ],
+   "sources": [
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-1354Q",
+   "slug": "pvm-1354q",
+   "line": "PVM",
+   "series": "Q (54 series)",
+   "size_in": 14,
+   "era": "1993–c.1997",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1993; EU 1454QM manual (c)1994; crtdatabase 'launched 1994'",
+   "notes": "600 TVL HR Trinitron (M34KBE20X) SMPTE-C; RGB/YPbPr, S-Video, 2x composite; precursor to M series",
+   "variants": [
+    "PVM-1354Q",
+    "PVM-1454QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/3322819/Sony-Trinitron-Pvm-1954q.html",
+    "https://www.manualslib.com/manual/1144413/Sony-Trinitron-Pvm-2054qm.html",
+    "https://ConsoleMods.org/wiki/images/9/97/PVM-1954Q_PVM-1354Q_Brochure.pdf",
+    "https://crtdatabase.com/crts/sony/sony-pvm-1354q",
+    "https://consolemods.org/wiki/CRT:PVM-1354Q"
+   ]
+  },
+  {
+   "model": "PVM-14L1",
+   "slug": "pvm-14l1",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 14,
+   "era": "c.2000–2005",
+   "era_confidence": "low",
+   "era_basis": "Sony service manual 1st ed. (undated); Sony Japan lineup page; collector consensus early 2000s",
+   "notes": "600 TVL Trinitron; composite + Y/C only; medical PVM-14L1MDE variant in service manual",
+   "variants": [
+    "PVM-14L1",
+    "PVM-14L1E",
+    "PVM-14L1MDE",
+    "SSM-14L1"
+   ],
+   "sources": [
+    "https://ia804508.us.archive.org/0/items/pvm-14-l-1-20-l-1-ssm-14-l-1-20-l-1-service-manual-fixed/PVM-14L1%2020L1%20SSM-14L1%2020L1%20Service%20Manual%20-%20FIXED.pdf",
+    "https://www.sony.jp/pro/lineup/pictm.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony/sony-pvm-14l1"
+   ]
+  },
+  {
+   "model": "PVM-14L2",
+   "slug": "pvm-14l2",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 14,
+   "era": "c.2001–2006",
+   "era_confidence": "medium",
+   "era_basis": "Sony US brochure printed 12/02; Sony Japan lineup page; collector consensus early 2000s",
+   "notes": "600 TVL Trinitron; 15 kHz; RGB/YPbPr; 1 option slot",
+   "variants": [
+    "PVM-14L2",
+    "PVM-14L2E",
+    "PVM-D14L2J"
+   ],
+   "sources": [
+    "https://archive.org/download/sony_PVM-L2_2002U/PVM-L2_2002U.pdf",
+    "https://www.sony.jp/pro/lineup/pictm.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-14L2MD",
+   "slug": "pvm-14l2md",
+   "line": "PVM",
+   "series": "L (medical)",
+   "size_in": 14,
+   "era": "c.2001–2006",
+   "era_confidence": "low",
+   "era_basis": "Same chassis as PVM-14L2; no medical-specific date found",
+   "notes": "600 TVL; medical-rated L2 chassis; no 4:3/16:9 switch",
+   "variants": [
+    "PVM-14L2MD",
+    "PVM-14L2MDE"
+   ],
+   "sources": [
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://consolemods.org/wiki/CRT:PVM-20L2MD"
+   ]
+  },
+  {
+   "model": "PVM-14L3",
+   "slug": "pvm-14l3",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 14,
+   "era": "2001–c.2006",
+   "era_confidence": "medium",
+   "era_basis": "Sony brochure (c)2001 (code 01OCT); Sony TB Jan 2003; crtdatabase 'launched 2001'",
+   "notes": "600 TVL Trinitron P-22; 15 kHz; RGB/YPbPr; 1 option slot; mostly European market",
+   "variants": [
+    "PVM-14L3",
+    "PVM-14L3E"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/e/eb/PVM-20L4_PVM-14L4_PVM-14L3_Brochure.pdf",
+    "https://consolemods.org/wiki/images/8/82/302003004.pdf",
+    "https://crtdatabase.com/crts/sony/sony-pvm-14l3",
+    "https://www.manualslib.com/brand/sony/monitor.html"
+   ]
+  },
+  {
+   "model": "PVM-14L4",
+   "slug": "pvm-14l4",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 14,
+   "era": "2001–c.2006",
+   "era_confidence": "medium",
+   "era_basis": "Sony brochure (c)2001 (code 01OCT); Sony TB Jan 2003",
+   "notes": "800 TVL HR Trinitron EBU; 15 kHz only; RGB/YPbPr; 1 option slot",
+   "variants": [
+    "PVM-14L4",
+    "PVM-14L4E"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/e/eb/PVM-20L4_PVM-14L4_PVM-14L3_Brochure.pdf",
+    "https://consolemods.org/wiki/images/8/82/302003004.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-14L5",
+   "slug": "pvm-14l5",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 14,
+   "era": "2002–c.2007",
+   "era_confidence": "high",
+   "era_basis": "Sony Japan press release 2002-11-11 (PVM-D14L5DJ on sale 2002-12-09); US brochure (c)2002; Sony TB Jan 2003",
+   "notes": "800 TVL HR Trinitron SMPTE-C; multiformat 15–45 kHz; built-in RGB/YPbPr; 1 option slot",
+   "variants": [
+    "PVM-14L5",
+    "PVM-D14L5J",
+    "PVM-D14L5DJ"
+   ],
+   "sources": [
+    "https://www.sony.jp/CorporateCruise/Press/200211/02-1111B/",
+    "https://ConsoleMods.org/wiki/images/c/c1/Sony_PVM-20L5_PVM-14L5_Brochure.pdf",
+    "https://consolemods.org/wiki/images/8/82/302003004.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-14M2MDU",
+   "slug": "pvm-14m2mdu",
+   "line": "PVM",
+   "series": "M (medical)",
+   "size_in": 14,
+   "era": "c.1996–2003",
+   "era_confidence": "medium",
+   "era_basis": "Same chassis as 14M2U; Sony TB Dec 2003 lists MDU/MDE/MDA",
+   "notes": "600 TVL; medical-rated; 2x RGB/YPbPr, S-Video, composite; Olympus OEV-143 rebadge",
+   "variants": [
+    "PVM-14M2MDU",
+    "PVM-14M2MDE",
+    "PVM-14M2MDA"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1002620/Sony-Trinitron-Pvm-14m2mdu.html",
+    "https://consolemods.org/wiki/images/1/18/302003214.pdf",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony/sony-pvm-14m2mdu"
+   ]
+  },
+  {
+   "model": "PVM-14M2U",
+   "slug": "pvm-14m2u",
+   "line": "PVM",
+   "series": "M",
+   "size_in": 14,
+   "era": "c.1996–2001",
+   "era_confidence": "medium",
+   "era_basis": "crtdatabase 'launched 1997'; radiomuseum lists PVM-14M2E c.1995(?)",
+   "notes": "600 TVL Trinitron (M34KBE11X); RGB/YPbPr, S-Video, 2x composite",
+   "variants": [
+    "PVM-14M2U",
+    "PVM-14M2E",
+    "PVM-14M2A",
+    "PVM-14M2J"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-14m2u",
+    "https://www.manualslib.com/manual/1507579/Sony-Trinitron-Pvm-14m2u.html",
+    "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-14M4U",
+   "slug": "pvm-14m4u",
+   "line": "PVM",
+   "series": "M",
+   "size_in": 14,
+   "era": "c.1996–2001",
+   "era_confidence": "medium",
+   "era_basis": "crtdatabase 'launched 1997'; Sony service manual (undated) covers 14M2/14M4 U/E/A",
+   "notes": "800 TVL HR Trinitron (M34LHF20X); RGB/YPbPr, S-Video, 2x composite",
+   "variants": [
+    "PVM-14M4U",
+    "PVM-14M4E",
+    "PVM-14M4A",
+    "PVM-14M4J"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-14m4u",
+    "https://crtdatabase.com/crts/sony/sony-pvm-14m4j",
+    "https://www.manualslib.com/manual/1507579/Sony-Trinitron-Pvm-14m2u.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-14N1U",
+   "slug": "pvm-14n1u",
+   "line": "PVM",
+   "series": "N",
+   "size_in": 14,
+   "era": "c.1995–1998",
+   "era_confidence": "low",
+   "era_basis": "Shares manual with 14N2U; no dated source",
+   "notes": "500 TVL; 2x S-Video/composite, no RGB; SSM-14N1 twin",
+   "variants": [
+    "PVM-14N1U",
+    "SSM-14N1"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/CRT:PVM-14N2",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-14N2U",
+   "slug": "pvm-14n2u",
+   "line": "PVM",
+   "series": "N",
+   "size_in": 14,
+   "era": "c.1995–1998",
+   "era_confidence": "low",
+   "era_basis": "radiomuseum lists PVM-14N2E c.1995(?); consolemods page (manuals undated)",
+   "notes": "500 TVL; 1x RGB, 2x S-Video/composite; SSM-14N2U twin",
+   "variants": [
+    "PVM-14N2U",
+    "PVM-14N2E",
+    "SSM-14N2U"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/CRT:PVM-14N2",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html"
+   ]
+  },
+  {
+   "model": "PVM-14N5U",
+   "slug": "pvm-14n5u",
+   "line": "PVM",
+   "series": "N",
+   "size_in": 14,
+   "era": "c.1997–2001",
+   "era_confidence": "medium",
+   "era_basis": "Sony service manual (c)1998 (incl. PVM-14N5MDE medical)",
+   "notes": "500 TVL; 2x S-Video/composite, no RGB; SSM-14N5 security twin",
+   "variants": [
+    "PVM-14N5U",
+    "PVM-14N5E",
+    "PVM-14N5A",
+    "PVM-14N5J",
+    "PVM-14N5MDE",
+    "SSM-14N5U"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/2633373/Sony-Trinitron-Pvm-14n5a.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-14N6U",
+   "slug": "pvm-14n6u",
+   "line": "PVM",
+   "series": "N",
+   "size_in": 14,
+   "era": "c.1997–2001",
+   "era_confidence": "medium",
+   "era_basis": "Sony service manual (c)1998",
+   "notes": "500 TVL Trinitron (M34KBE10X); 1x RGB, 2x S-Video/composite",
+   "variants": [
+    "PVM-14N6U",
+    "PVM-14N6E",
+    "PVM-14N6A",
+    "PVM-14N6J"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/2633373/Sony-Trinitron-Pvm-14n5a.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-14n6u",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-136",
+   "slug": "pvm-136",
+   "line": "PVM",
+   "series": "mono 13in",
+   "size_in": 13,
+   "era": "c.1993–2005",
+   "era_confidence": "low",
+   "era_basis": "crtdatabase 'launched 1993'; manualslib product page; Sony Japan lineup lists PVM-146J (14in 1000 TVL mono)",
+   "notes": "1000 TVL monochrome; composite; PVM-137 = 9300K variant",
+   "variants": [
+    "PVM-136",
+    "PVM-137"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-136",
+    "https://www.manualslib.com/products/Sony-Pvm-136-364897.html",
+    "https://www.sony.jp/pro/lineup/pictm.html"
+   ]
+  },
+  {
+   "model": "PVM-1380",
+   "slug": "pvm-1380",
+   "line": "PVM",
+   "series": "80 series (80s)",
+   "size_in": 13,
+   "era": "c.1987–1991",
+   "era_confidence": "low",
+   "era_basis": "crtdatabase 'late 80s/early 90s'; manualslib lists manual (undated)",
+   "notes": "250 TVL; composite only; simple chassis",
+   "variants": [
+    "PVM-1380"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-1380",
+    "https://www.manualslib.com/manual/3678223/Sony-Trinitron-Pvm-1390.html",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-1390",
+   "slug": "pvm-1390",
+   "line": "PVM",
+   "series": "90 series (80s)",
+   "size_in": 13,
+   "era": "1987–c.1991",
+   "era_confidence": "medium",
+   "era_basis": "Sony operating manual (c)1987; crtdatabase 'launched 1989'",
+   "notes": "400–450 TVL Trinitron (A34JHS10X); RGB (DB25), S-Video, composite; NTSC; same gen as PVM-2030; KX-14CP1 Profeel twin",
+   "variants": [
+    "PVM-1390"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/3678223/Sony-Trinitron-Pvm-1390.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-1390",
+    "https://ConsoleMods.org/wiki/CRT:PVM-1390"
+   ]
+  },
+  {
+   "model": "PVM-1271Q",
+   "slug": "pvm-1271q",
+   "line": "PVM",
+   "series": "70 series (80s)",
+   "size_in": 12,
+   "era": "1984–c.1987",
+   "era_confidence": "medium",
+   "era_basis": "Video History Project catalog record: PVM-1271Q/1371QM operating instructions cited 1984",
+   "notes": "12-inch Trinitron; RGB (25-pin) + composite; multistandard; EU PVM-1371QM",
+   "variants": [
+    "PVM-1271Q",
+    "PVM-1371QM"
+   ],
+   "sources": [
+    "https://www.videohistoryproject.org/node/10071",
+    "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-91",
+   "slug": "pvm-91",
+   "line": "PVM",
+   "series": "mono 9in (80s)",
+   "size_in": 9,
+   "era": "c.1982–1990",
+   "era_confidence": "low",
+   "era_basis": "crtdatabase 'launched 1982' citing Sony spec sheet",
+   "notes": "800 TVL monochrome; composite",
+   "variants": [
+    "PVM-91"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-91",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-96",
+   "slug": "pvm-96",
+   "line": "PVM",
+   "series": "mono 9in",
+   "size_in": 9,
+   "era": "c.1993–2005",
+   "era_confidence": "low",
+   "era_basis": "crtdatabase 'launched 1993, produced to mid-2000s'; Sony Japan lineup lists PVM-96J",
+   "notes": "900 TVL monochrome; composite; PVM-97 = 9300K phosphor variant",
+   "variants": [
+    "PVM-96",
+    "PVM-96J",
+    "PVM-97"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-96",
+    "https://www.sony.jp/pro/lineup/pictm.html",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-9L1",
+   "slug": "pvm-9l1",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 9,
+   "era": "c.2000–2005",
+   "era_confidence": "low",
+   "era_basis": "Sony Japan lineup page; crtdatabase; collector consensus early 2000s",
+   "notes": "250 TVL Trinitron; single S-Video/composite input; no RGB",
+   "variants": [
+    "PVM-9L1",
+    "PVM-9L1E"
+   ],
+   "sources": [
+    "https://www.sony.jp/pro/lineup/pictm.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-9l1",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-9L2",
+   "slug": "pvm-9l2",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 9,
+   "era": "c.2002–2006",
+   "era_confidence": "medium",
+   "era_basis": "Sony US L2 brochure printed 12/02; crtdatabase 'launched 2002'",
+   "notes": "250 TVL Trinitron (8in viewable); composite/Y/C built in; RGB/YPbPr needs BKM-129X card; SDI via card",
+   "variants": [
+    "PVM-9L2",
+    "PVM-9L2E"
+   ],
+   "sources": [
+    "https://archive.org/download/sony_PVM-L2_2002U/PVM-L2_2002U.pdf",
+    "https://crtdatabase.com/crts/sony/sony-pvm-9l2",
+    "https://www.sony.jp/pro/lineup/pictm.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-9L3",
+   "slug": "pvm-9l3",
+   "line": "PVM",
+   "series": "L",
+   "size_in": 9,
+   "era": "c.2003–2005",
+   "era_confidence": "medium",
+   "era_basis": "crtdatabase 'launched 2003'; Sony bulletin 04-0752 (Jan 2005): PVM-9L3 discontinued 2005-03-31, replaced by LMD-9050",
+   "notes": "450 TVL HR Trinitron (M20JMP10X); composite/Y/C; RGB via BKM-129X, SDI via BKM-120D",
+   "variants": [
+    "PVM-9L3",
+    "PVM-9L3E"
+   ],
+   "sources": [
+    "https://consolemods.org/wiki/images/e/ed/040752.doc.pdf",
+    "https://crtdatabase.com/crts/sony/sony-pvm-9l3",
+    "https://www.sony.jp/pro/lineup/pictm.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-8020",
+   "slug": "pvm-8020",
+   "line": "PVM",
+   "series": "8-inch (80s)",
+   "size_in": 8,
+   "era": "c.1985–1989",
+   "era_confidence": "medium",
+   "era_basis": "crtdatabase 'launched 1985'; Sony service manual (archive.org)",
+   "notes": "230 TVL Trinitron; composite; 12 V DC input and RF tuner; BVM-8021 is 450 TVL sibling",
+   "variants": [
+    "PVM-8020"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-8020",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-8040",
+   "slug": "pvm-8040",
+   "line": "PVM",
+   "series": "8-inch (40)",
+   "size_in": 8,
+   "era": "c.1991–1997",
+   "era_confidence": "low",
+   "era_basis": "Listed in Sony PVM-8045Q brochure family; Sony Japan lineup lists PVM-9040; no dated source",
+   "notes": "250 TVL; single S-Video/composite input; NTSC only (9040ME = PAL)",
+   "variants": [
+    "PVM-8040",
+    "PVM-9040ME"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/688989/Sony-Pvm-8045q.html",
+    "https://www.sony.jp/pro/lineup/pictm.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-8041Q",
+   "slug": "pvm-8041q",
+   "line": "PVM",
+   "series": "8-inch Q (41)",
+   "size_in": 8,
+   "era": "c.1991–1997",
+   "era_confidence": "low",
+   "era_basis": "Sony service manual (undated); radiomuseum dates PVM-9041QM c.1994(?)",
+   "notes": "250 TVL Trinitron (A20JMP10X); RGB/YPbPr, S-Video/composite, composite",
+   "variants": [
+    "PVM-8041Q",
+    "PVM-9041QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1269192/Sony-Trinitron-Pvm-8041q.html",
+    "https://crtdatabase.com/crts/sony/sony-pvm-8041q",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html"
+   ]
+  },
+  {
+   "model": "PVM-8042Q",
+   "slug": "pvm-8042q",
+   "line": "PVM",
+   "series": "8-inch Q (42)",
+   "size_in": 8,
+   "era": "c.1997–2002",
+   "era_confidence": "medium",
+   "era_basis": "Sony service manual (c)1998",
+   "notes": "250 TVL Trinitron; RGB/YPbPr, S-Video/composite, composite; front underscan/16:9 + manual degauss",
+   "variants": [
+    "PVM-8042Q",
+    "PVM-9042QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1282003/Sony-Trinitron-Pvm-8042q.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-8044Q",
+   "slug": "pvm-8044q",
+   "line": "PVM",
+   "series": "8-inch Q (44)",
+   "size_in": 8,
+   "era": "c.1991–1997",
+   "era_confidence": "low",
+   "era_basis": "Sony service manual (undated) covers 8041Q/8044Q; radiomuseum dates PVM-9044QM c.1997(?); collector consensus early-mid 1990s",
+   "notes": "450 TVL HR Trinitron; RGB/YPbPr, S-Video/composite, composite",
+   "variants": [
+    "PVM-8044Q",
+    "PVM-9044QM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1269192/Sony-Trinitron-Pvm-8041q.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-8045Q",
+   "slug": "pvm-8045q",
+   "line": "PVM",
+   "series": "8-inch Q (45)",
+   "size_in": 8,
+   "era": "c.1997–2002",
+   "era_confidence": "medium",
+   "era_basis": "Sony service manual (c)1998 (covers 8042Q/8045Q/9042QM/9045QM/9045PM); Sony brochure undated",
+   "notes": "450 TVL HR Trinitron (M20JMP10X); RGB/YPbPr, S-Video/composite, composite; battery option; front 16:9 + degauss",
+   "variants": [
+    "PVM-8045Q",
+    "PVM-9045QM",
+    "PVM-9045PM"
+   ],
+   "sources": [
+    "https://www.manualslib.com/manual/1282003/Sony-Trinitron-Pvm-8042q.html",
+    "https://www.manualslib.com/manual/688989/Sony-Pvm-8045q.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-8220",
+   "slug": "pvm-8220",
+   "line": "PVM",
+   "series": "8-inch (80s)",
+   "size_in": 8,
+   "era": "c.1985–1989",
+   "era_confidence": "medium",
+   "era_basis": "crtdatabase 'launched 1985' (MSRP $645); Sony manual undated",
+   "notes": "approx. 230 TVL Trinitron (A20JKU10X); 2x composite; shares tube with KV-8AD11",
+   "variants": [
+    "PVM-8220"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-8220",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-5041Q",
+   "slug": "pvm-5041q",
+   "line": "PVM",
+   "series": "5-inch Q",
+   "size_in": 5,
+   "era": "c.1990–1997",
+   "era_confidence": "low",
+   "era_basis": "radiomuseum dates EU PVM-6041QM c.1988(?); Sony operation manual undated; Sony Japan lineup lists 6041Q",
+   "notes": "250 TVL Trinitron (A13JZV00X); RGB/YPbPr + composite; portable",
+   "variants": [
+    "PVM-5041Q",
+    "PVM-6041QM"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-5041q",
+    "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html",
+    "https://www.sony.jp/pro/lineup/pictm.html",
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+   ]
+  },
+  {
+   "model": "PVM-411",
+   "slug": "pvm-411",
+   "line": "PVM",
+   "series": "quad 4in mono",
+   "size_in": 4,
+   "era": "c.1990–1996",
+   "era_confidence": "low",
+   "era_basis": "crtdatabase (user manual on archive.org, undated); predecessor of PVM-4B1U",
+   "notes": "Four 4-inch mono modules; composite",
+   "variants": [
+    "PVM-411"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-411",
+    "https://crtdatabase.com/crts/sony"
+   ]
+  },
+  {
+   "model": "PVM-4B1U",
+   "slug": "pvm-4b1u",
+   "line": "PVM",
+   "series": "quad 4in mono",
+   "size_in": 4,
+   "era": "c.1996–2004",
+   "era_confidence": "low",
+   "era_basis": "crtdatabase 'launched 1996'; Sony Japan lineup lists PVM-4B1J",
+   "notes": "Four 4-inch 500 TVL mono modules in one rack unit; composite",
+   "variants": [
+    "PVM-4B1U",
+    "PVM-4B1J"
+   ],
+   "sources": [
+    "https://crtdatabase.com/crts/sony/sony-pvm-4b1u",
+    "https://www.sony.jp/pro/lineup/pictm.html"
+   ]
+  }
+ ],
+ "unconfirmed": [
+  "BVM-1200",
+  "BVM-1201",
+  "BVM-1900",
+  "BVM-2000",
+  "BVM-2010",
+  "BVM-1311",
+  "BVM-2811",
+  "BVM-3011P",
+  "BVM-1454D",
+  "BVM-D14F1U",
+  "BVM-D16H",
+  "BVM-14M4",
+  "PVM-2950MD",
+  "PVM-8221",
+  "PVM-5300",
+  "PVM-5310",
+  "PVM-146J",
+  "PVM-14M1J",
+  "PVM-1211",
+  "PVM-6030ME",
+  "PVM-9220ME",
+  "PVM-X550/WC",
+  "PVM-14M7MDE",
+  "PVM-1230 / PVM-1250 / PVM-1370"
+ ]
+}

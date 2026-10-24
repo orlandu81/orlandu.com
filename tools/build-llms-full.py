@@ -16,6 +16,7 @@ from html.parser import HTMLParser
 root = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://www.orlandu.com/"
 SKIP_PAGES = {"404.html", "ebay-callback.html", "tesla-callback.html"}
+REGISTRY_MODEL = re.compile(r"^registry-(?!models\.html$|submit\.html$).+\.html$")  # 96 generated model pages: the catalog JSON says it all
 SKIP_TAGS = {"script", "style", "noscript", "button", "form", "input", "select", "textarea", "svg", "template"}
 SKIP_CLASSES = {"machnav", "rt", "sr-only", "sharerow", "btn", "skip", "explore"}
 BLOCK = {"p", "div", "section", "article", "header", "footer", "aside", "figure", "figcaption", "ul", "ol", "li",
@@ -194,7 +195,7 @@ for u in order:
         seen.add(u); pages.append(u)
 for loc in re.findall(r"<loc>https://www\.orlandu\.com/([^<]*)</loc>", (root / "sitemap.xml").read_text(encoding="utf-8")):
     u = loc or "index.html"
-    if u.endswith(".html") and u not in seen and u not in SKIP_PAGES and (root / u).exists():
+    if u.endswith(".html") and u not in seen and u not in SKIP_PAGES and not REGISTRY_MODEL.match(u) and (root / u).exists():
         seen.add(u); pages.append(u)
 
 if "index.html" in pages:

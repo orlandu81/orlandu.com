@@ -28,6 +28,10 @@ node tools/test-mcp.mjs              # 200+ contract checks on api/mcp.js (trans
 node tools/eval-search.mjs           # search quality: 218 queries vs both search paths; top-1 should stay ≥ 90 %, top-3 ≥ 97 %
 ```
 
+`python3 tools/build-registry-pages.py` goes FIRST in that list whenever `data/registry-models.json` or the
+builder itself changed (it writes registry.html, registry-models.html, registry-submit.html and the 96
+registry-<model>.html pages with bare asset refs; stamp after it). See "The Orlandu Registry" below.
+
 **The footer is pre-rendered into every page's `<footer class="site">` shell (2026-10-09)** so crawlers
 that don't run JavaScript (Bing's secondary crawl, GPTBot/ClaudeBot/PerplexityBot) see the full
 internal-link set in raw HTML. site.js still overwrites it at runtime with the identical string.
@@ -842,3 +846,64 @@ asked for Catalog mock pages first (the fifth). Rulings and the mock are in Proj
 - Home Latest: the three tools are the first three cards; PlayChoice-10 wall, monitor pages and timeline cards dropped
   (still 9). Footer Reading row and llms.txt carry all three; sitemap blocks added; OG cards cut from
   bvm-sonic-knuckles (connect) and bvm-20e1u-lit (10R).
+
+## The Orlandu Registry (2026-10-23) — the Sony BVM + PVM serial census
+
+David's feature to give collectors a reason to visit: owners register a monitor (model, serial, hours, condition,
+acquisition, optional photo), the site counts survivors per model and draws a serial-range chart per model.
+Decisions (all his): BVM + PVM only at launch; serials shown with the last two digits masked (20015xx), the full
+serial stored privately for duplicate detection; auto-publish with an email alert per entry and a delete link in
+it; one optional photo; optional handle + country/state, email required and never shown; **prices and seller
+names from other owners are WELCOME** (Price paid + Bought from fields, published if given) — his own entries
+carry neither; five condition states; honeypot + rate limit, no Turnstile; "Registry" is a 9th top-level nav item.
+
+**What it is made of**
+- `data/registry-models.json` — the catalog: 96 chassis (66 PVM, 30 BVM), ~250 model strings with U/E/J/A/M/QM/MD/SSM
+  variants folded under the parent, `era` + `era_confidence` (high = Sony press release/bulletin/brochure date,
+  medium = manual copyright or brochure print year, low = collector estimate) + `era_basis` + `sources`. 24
+  unconfirmed names are listed in `unconfirmed` and are NOT in the dropdown. **The registry carries these researched
+  dates with their tags even where the fleet table / decoder page say otherwise** (BVM-A 2006–c.2009 vs the site's
+  2003–2008; PVM-2950Q c.1996–1999 (low) vs 1991–1996; BVM-20E1U c.1996–2001 vs 1995–2002) — David's call 10/23;
+  the older pages were left alone. Research with per-model URLs: `Claude outputs/registry/registry-catalog-research.json`
+  in his connected folder.
+- `tools/build-registry-pages.py` — GENERATES every registry page from the catalog: `registry.html` (census),
+  `registry-models.html` (catalog table), `registry-submit.html` (form, `form.rfm` — NOT `.cform`, because site.js
+  hijacks every form.cform for the contact relay) and `registry-<slug>.html` × 96. Edit the builder, never the pages.
+  Model pages carry the static facts and fetch counts/chart/entries from the API. Head/JSON-LD is in the builder.
+- `assets/registry.js` + `assets/registry.css` — the page scripts (body `data-registry` = landing | models | submit |
+  model + `data-model`) and styles. The entry card renders in one place (`card()`); photos are an inline 112×76
+  thumb (`.ethumb`, opens in the lightbox), not a card header, so cards with and without photos share a row.
+  The chart's band width adapts to the serial spread (100 … 500,000). The browser resizes photos to 1600 px JPEG
+  before upload (re-encoding strips EXIF/GPS).
+- Fields: model (catalog slug or "other" + typed badge), serial, **built** (the plate date, YYYY-MM or YYYY — added after
+  David read his plates; with the serial it is the production timeline), hours, cond, note, acq_year, acq_src, price +
+  currency, seller, handle, country, state (US only), email (private). David's plates corrected two catalog eras:
+  PVM-2950Q to c.1996–2000 and BVM-20E1U to c.1996–2007 (`era_basis` says "a plate in the registry reads …").
+- `api/registry.js` (GET: summary / `?model=slug` / `?entries=1&page=N`, edge-cached 60 s),
+  `api/registry-submit.js` (POST, honeypot `site`, validation in `lib/registry.js`, rate limit = entries per hashed IP
+  per hour counted in the table itself — `REGISTRY_RATE_PER_HOUR`, default 12 — plus 150/day from everyone,
+  duplicate = 409 on the live unique index, Blob upload, insert, Resend alert), `api/registry-admin.js` (GET confirm
+  page → POST soft-delete, link signed with HMAC of the id; key = `REGISTRY_ADMIN_SECRET` or, unset, derived from
+  `DATABASE_URL`). Shared code in `lib/registry.js` (outside `api/` so Vercel doesn't build it as a function).
+  **The chart gets each serial floored to its hundred** — exactly what the mask shows, nothing more; the full serial
+  and the email never leave the server. Schema is created on first submit (`ensureSchema`); reads before that
+  answer the empty state.
+- **First dependencies in the repo:** `package.json` with `@neondatabase/serverless` and `@vercel/blob`, and a
+  `.gitignore` for `node_modules/`. No build script, so Vercel still serves the root as static — verify on the first
+  deploy. The two SDKs are used only inside the functions.
+- Env vars (Vercel project): `DATABASE_URL` (written by Storage → Create → Neon, free plan, connected to the project),
+  `BLOB_READ_WRITE_TOKEN` (Storage → Create → Blob), `RESEND_API_KEY` (already there). **A function only sees a new
+  env var after the NEXT deployment.** Alerts go from `onboarding@resend.dev` to orlandusarcade@gmail.com — the
+  free tier delivers only to the account's own address, which is all this needs.
+- Hooks: nav item (site.js NAV, after Wanted; the footer Pages row follows NAV), home Latest card (first, badge
+  New; still 9), monitors.html `p.note` under the roster heading, llms.txt two lines, sitemap blocks for all 99 pages,
+  `media/og/og-registry.jpg` (cut from the BVM pair photo + wordmark). `build-llms-full.py` SKIPS the 96 model pages
+  (`REGISTRY_MODEL`); `build-search-index.py` gives them kind "Registry" and weight 4 so a model number still finds
+  the profile page first. No MCP tool yet; `data/registry-models.json` is served with CORS like the other datasets.
+- Testing without Neon: `node test-registry.mjs` and `devserver.mjs` in the session notes run the real handlers on
+  PGlite with neon()/Blob/Resend stubbed (29 checks + a Playwright run through the real form). Re-create them from
+  the Project doc `claude/registry-2026-10-23.md` if needed.
+- Seeding: David's four from the vault (only the BVM-20E1U serial was on file; he is reading the other three plates),
+  Dan's fleet by form. **Never publish David's prices or sellers**; other owners' are fine by his rule.
+- Open: a price-over-time chart per model once entries carry prices (promised in the house rules), an MCP tool over
+  the registry, an "update my entry" flow (today: contact form with the masked serial), LMD/AMS/BKM scope.

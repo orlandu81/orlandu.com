@@ -10,6 +10,8 @@ profiles, work logs, buying guides, a glossary, and the Sony AMS-100 monograph.
 ## How it's built
 
 - Plain HTML, CSS and JavaScript — no build step, no framework. Served from the repo root.
+- The Orlandu Registry (a Sony BVM/PVM serial census) runs on three Vercel functions under `api/`,
+  Neon Postgres and Vercel Blob; `package.json` holds their two dependencies.
 - Hosted on **Vercel**, which auto-deploys `main`. `vercel.json` holds the headers and redirects.
 - Shared header, footer, nav, site search and lightbox come from `assets/site.js`;
   the house style is `assets/style.css`.

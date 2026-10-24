@@ -1,0 +1,9 @@
+{
+  "name": "orlandu.com",
+  "private": true,
+  "description": "Orlandu's Arcade — static site plus the Vercel functions under api/. No build step.",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
+    "@vercel/blob": "^2.8.2"
+  }
+}

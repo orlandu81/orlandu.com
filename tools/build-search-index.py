@@ -22,6 +22,7 @@ KIND = {
     "projects.html": "Projects", "forsale.html": "For Sale", "wanted.html": "Wanted", "about.html": "About",
     "glossary.html": "Glossary", "trinitron-fleet-vol1.html": "Magazine", "ams-100-monograph.html": "Monograph",
     "orlandu-100.html": "Magazine", "orlandu-50-games.html": "Magazine",
+    "registry.html": "Registry", "registry-models.html": "Registry", "registry-submit.html": "Registry",
 }
 
 def text(s):
@@ -54,7 +55,7 @@ for p in sorted(root.glob("*.html")):
     body_html = m.group(1) if m else src
     kick = re.search(r'class="kicker"[^>]*>(.*?)</', body_html, re.S)
     kicker = text(kick.group(1)) if kick else ""
-    kind = KIND.get(p.name) or ("Machine" if re.search(r'class="kicker"[^>]*>\s*Machine Profile', body_html) else kicker or "Page")
+    kind = KIND.get(p.name) or ("Registry" if p.name.startswith("registry-") else "Machine" if re.search(r'class="kicker"[^>]*>\s*Machine Profile', body_html) else kicker or "Page")
     h1 = re.search(r"<h1[^>]*>(.*?)</h1>", body_html, re.S)
     h1t = text(h1.group(1)) if h1 else title
     lede = re.search(r'<p class="lede"[^>]*>(.*?)</p>', body_html, re.S)
@@ -72,7 +73,7 @@ for p in sorted(root.glob("*.html")):
     # its profile page before the gallery photo of it, and a hub page before a card on it. The interactive tools
     # (kicker "Tool · …": through-the-mask, will-it-connect, bkm-10r) rank with the guides — they are reference pages.
     profile = bool(re.search(r'<main[^>]*class="[^"]*\bprofile\b', src) or re.search(r'<div class="rt"', body_html))
-    ent = {"u": url, "t": h1t, "k": kind, "s": lede_t[:180], "h": " ".join(heads)[:1200], "b": body[:6000], "w": 10 if (profile or kind in ("Machine", "Monitors", "Coin-Op") or kind.startswith("Tool")) else 6}
+    ent = {"u": url, "t": h1t, "k": kind, "s": lede_t[:180], "h": " ".join(heads)[:1200], "b": body[:6000], "w": 10 if (profile or kind in ("Machine", "Monitors", "Coin-Op") or kind.startswith("Tool")) else -10 if (kind == "Registry" and p.name not in KIND) else 6}  # the 96 generated registry model pages rank below every real page (a model number must find its profile first; they still answer when nothing else has the model), so "pvm-20l5" still finds the profile first
     if title.lower() != h1t.lower():
         ent["tt"] = title  # the <title> front-loads the searchable term ("PVM vs. BVM: …") where the H1 is editorial; scored like the title, never displayed
     entries.append(ent)
