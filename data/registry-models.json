@@ -146,9 +146,9 @@
    "line": "BVM",
    "series": "E (1000 TVL)",
    "size_in": 20,
-   "era": "c.1996–2007",
+   "era": "c.1996–2001",
    "era_confidence": "medium",
-   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998; a plate in the registry reads June 2007",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998",
    "notes": "1000 TVL 0.25 mm Super Fine Pitch Trinitron; 1x RGB/YPbPr built in; BKM-2xx card slots; needs BKM-10R/11R controller",
    "variants": [
     "BVM-20E1U",

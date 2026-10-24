@@ -878,7 +878,9 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
 - Fields: model (catalog slug or "other" + typed badge), serial, **built** (the plate date, YYYY-MM or YYYY — added after
   David read his plates; with the serial it is the production timeline), hours, cond, note, acq_year, acq_src, price +
   currency, seller, handle, country, state (US only), email (private). David's plates corrected two catalog eras:
-  PVM-2950Q to c.1996–2000 and BVM-20E1U to c.1996–2007 (`era_basis` says "a plate in the registry reads …").
+  PVM-2950Q to c.1996–2000 (`era_basis` says "a plate in the registry reads June 2000"). The BVM-20E1U's vault date of
+  June 2007 is DOUBTED by David (10/23: "seems 8 years too late") — its registry entry has no build date and the catalog era
+  stays c.1996–2001 until he reads the plate again; the entry's hours are 44,708 (read 10/23, supersedes the vault's ~40,000).
 - `api/registry.js` (GET: summary / `?model=slug` / `?entries=1&page=N`, edge-cached 60 s),
   `api/registry-submit.js` (POST, honeypot `site`, validation in `lib/registry.js`, rate limit = entries per hashed IP
   per hour counted in the table itself — `REGISTRY_RATE_PER_HOUR`, default 12 — plus 150/day from everyone,

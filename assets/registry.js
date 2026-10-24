@@ -78,7 +78,7 @@
     const med = hrs.length ? hrs[Math.floor(hrs.length / 2)] : null;
     const owners = new Set(E.map(e => e.handle || "anon-" + e.id)).size, countries = new Set(E.map(e => e.country).filter(Boolean)).size;
     const P = d.points;
-    const range = P.length ? String(P[0].h).slice(0, -1) + "k–" + String(P[P.length - 1].h).slice(0, -1) + "k" : "—";
+    const range = P.length > 1 ? String(P[0].h).slice(0, -1) + "k–" + String(P[P.length - 1].h).slice(0, -1) + "k" : P.length ? String(P[0].h).slice(0, -1) + "k" : "—";
     st.innerHTML = [[n, "Registered"], [n ? working + " of " + n : "—", "Working"], [med != null ? fmt(med) + " h" : "—", "Median hours · " + hrs.length + " reported"], [range, "Serial range seen"]].map(([v, l]) => '<div><span class="n">' + v + '</span><span class="l">' + l + "</span></div>").join("");
     if (lede) lede.textContent = n ? (n === 1 ? "One registered so far" : fmt(n) + " registered so far") + (n > 1 ? ", from " + owners + (owners === 1 ? " owner" : " owners") + (countries > 1 ? " in " + countries + " countries" : "") : "") + "." : "None registered yet. Yours would be the first.";
     charts(P, m ? m.model : d.model);
