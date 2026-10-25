@@ -881,6 +881,10 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
   PVM-2950Q to c.1996–2000 (`era_basis` says "a plate in the registry reads June 2000"). The BVM-20E1U's vault date of
   June 2007 is DOUBTED by David (10/23: "seems 8 years too late") — its registry entry has no build date and the catalog era
   stays c.1996–2001 until he reads the plate again; the entry's hours are 44,708 (read 10/23, supersedes the vault's ~40,000).
+- **Regional variants (David, 10/25):** the model dropdown reads "BVM-20E1 U/E/J/A" (suffix swaps) or "PVM-1954Q / 2054QM"
+  (twins written out) — `optionLabel()` in registry.js; picking a chassis reveals "Badge as printed" (`#variantwrap`), the
+  exact variant list with the catalog badge preselected. The server keeps it as `model_as_entered` (public; shown on the
+  card's sub line when it differs from the chassis name) — counts, pages and charts still group by chassis.
 - **Only BVMs have an hours meter (David, 10/25):** a PVM card shows no Hours cell at all (a BVM card shows it, dash when
   blank); PVM model pages replace the "Median hours" tile with the build-date span seen on their plates; the form hides
   the Hours field when a PVM is picked (`#hourswrap`).

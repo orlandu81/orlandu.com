@@ -127,6 +127,6 @@ table.spec.models td.num,table.spec.models th.num{text-align:right;font-variant-
 table.spec.models td.num b{color:var(--cyan)}
 .conf{border-left:3px solid #5a5a86;padding-left:.45rem}
 .conf.high{border-color:#3f7d41}.conf.medium{border-color:var(--fire2)}
-.rfm #otherwrap[hidden],.rfm #statewrap[hidden],.rfm #hourswrap[hidden],.chartwrap[hidden]{display:none}
+.rfm #otherwrap[hidden],.rfm #statewrap[hidden],.rfm #hourswrap[hidden],.rfm #variantwrap[hidden],.chartwrap[hidden]{display:none}
 .rform .cstatus{text-transform:none;letter-spacing:.02em;font-size:1.02rem;line-height:1.5}
 .rform .cstatus a{color:var(--cyan)}

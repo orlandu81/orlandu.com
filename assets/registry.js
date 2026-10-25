@@ -13,7 +13,21 @@
   const seriesLine = (e, cat) => {
     const m = cat && cat.bySlug[e.model_slug];
     if (!m) return esc(e.line) + (e.model_slug.startsWith("other-") ? " · not in the catalog yet" : "");
-    return esc(m.line) + " · " + m.size_in + "-inch · " + esc(m.series) + (m.line === "PVM" ? " series" : " generation");
+    const badge = e.model_as_entered && e.model_as_entered.toUpperCase() !== m.model.toUpperCase() ? esc(e.model_as_entered.toUpperCase()) + " · " : "";
+    return badge + esc(m.line) + " · " + m.size_in + "-inch · " + esc(m.series) + (m.line === "PVM" ? " series" : " generation");
+  };
+  // Dropdown label: "BVM-20E1 U/E/J/A" when the variants are suffix swaps on one stem, else the twins written out ("PVM-1954Q / 2054QM").
+  const optionLabel = m => {
+    const pre = m.model.slice(0, 4), tail = v => v.startsWith(pre) ? v.slice(4) : v;
+    if (!/[UEJAM]$/.test(m.model)) { // base badge has no region letter: write every twin out ("PVM-1954Q / 2054QM", "PVM-20L4 / 20L4E")
+      const rest = m.variants.filter(v => v !== m.model).map(tail);
+      return rest.length ? m.model + " / " + rest.join(" / ") : m.model;
+    }
+    const stem = m.model.slice(0, -1), swaps = [], others = [];
+    m.variants.forEach(v => { const s = v.startsWith(stem) ? v.slice(stem.length) : ""; (/^[UEJAM]$/.test(s) ? swaps : others).push(v); });
+    const base = swaps.length > 1 ? stem + " " + swaps.map(v => v.slice(stem.length)).join("/") : m.model;
+    const rest = others.map(tail);
+    return rest.length ? base + " / " + rest.join(" / ") : base;
   };
   const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const builtTxt = b => { if (!b) return null; const m = String(b).match(/^(\d{4})(?:-(\d{2}))?$/); return m ? (m[2] ? MON[+m[2] - 1] + " " : "") + m[1] : null; };
@@ -154,12 +168,17 @@
     const form = document.getElementById("rf"), sel = document.getElementById("model"), other = document.getElementById("model_other"), otherWrap = document.getElementById("otherwrap");
     const status = document.getElementById("rstatus"), btn = form.querySelector("button[type=submit]");
     const cat = await catalog();
-    const group = line => '<optgroup label="' + (line === "BVM" ? "BVM · broadcast and master" : "PVM · production") + '">' + cat.models.filter(m => m.line === line).map(m => '<option value="' + m.slug + '">' + esc(m.model) + "</option>").join("") + "</optgroup>";
+    const group = line => '<optgroup label="' + (line === "BVM" ? "BVM · broadcast and master" : "PVM · production") + '">' + cat.models.filter(m => m.line === line).map(m => '<option value="' + m.slug + '">' + esc(optionLabel(m)) + "</option>").join("") + "</optgroup>";
     sel.innerHTML = '<option value="">Choose a model…</option>' + group("BVM") + group("PVM") + '<option value="other">Not listed — I\'ll type it</option>';
     const want = new URLSearchParams(location.search).get("m"); if (want && cat.bySlug[want]) sel.value = want;
-    const hoursWrap = document.getElementById("hourswrap");
+    const hoursWrap = document.getElementById("hourswrap"), varWrap = document.getElementById("variantwrap"), varSel = document.getElementById("variant");
     const syncOther = () => {
       otherWrap.hidden = sel.value !== "other";
+      const cm = cat.bySlug[sel.value];
+      if (varWrap) {
+        varWrap.hidden = !cm || cm.variants.length < 2;
+        if (cm && cm.variants.length > 1 && varSel.dataset.for !== cm.slug) { varSel.innerHTML = cm.variants.map(v => '<option' + (v === cm.model ? " selected" : "") + ">" + esc(v) + "</option>").join(""); varSel.dataset.for = cm.slug; }
+      }
       const pvm = sel.value.startsWith("pvm-") || (sel.value === "other" && /^\s*pvm/i.test(other.value));
       if (hoursWrap) hoursWrap.hidden = pvm; // PVMs have no hours meter
     };
@@ -180,6 +199,7 @@
       const f = new FormData(form), body = {};
       for (const [k, v] of f.entries()) if (k !== "photo") body[k] = v;
       if (sel.value === "other") body.model_other = other.value;
+      else if (varWrap && !varWrap.hidden) body.variant = varSel.value; else delete body.variant;
       if (body.built && !/^\d{4}(-\d{2})?$/.test(body.built)) { // browsers without a month picker: "June 2007", "6/2007", "2007-6"
         const s = String(body.built).trim(), mi = MON.findIndex(m => s.toLowerCase().startsWith(m.toLowerCase())), y = (s.match(/\d{4}/) || [])[0], mn = (s.match(/^(\d{1,2})[\/\-.]/) || s.match(/-(\d{1,2})$/) || [])[1];
         if (y && mi >= 0) body.built = y + "-" + String(mi + 1).padStart(2, "0"); else if (y && mn && +mn >= 1 && +mn <= 12) body.built = y + "-" + String(mn).padStart(2, "0"); else if (y) body.built = y; else { say("warn", "The build date should be a month and year, like 2005-01 or Jan 2005."); document.getElementById("built").focus(); return; }

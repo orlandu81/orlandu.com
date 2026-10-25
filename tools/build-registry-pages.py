@@ -182,7 +182,11 @@ def submit_page():
       <h2 class="sec">The monitor</h2>
       <label class="wide">Model
         <select id="model" name="model" required><option value="">Loading the catalog&hellip;</option></select>
-        <span class="help">Pick the badge as printed on the rear plate. A region suffix (U, E, J) is fine either way; the census groups variants under one chassis.</span>
+        <span class="help">Pick the chassis. The census groups a model with its regional variants; the exact badge goes in the next box.</span>
+      </label>
+      <label class="wide" id="variantwrap" hidden>Badge as printed
+        <select id="variant" name="variant"></select>
+        <span class="help">The model number on the rear plate, with its region letter. Kept with your entry and shown on the card.</span>
       </label>
       <label class="wide" id="otherwrap" hidden>Model, as printed
         <input type="text" id="model_other" name="model_other" maxlength="40" placeholder="PVM-1442QM">
