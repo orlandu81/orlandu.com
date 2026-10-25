@@ -886,7 +886,7 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
   exact variant list with the catalog badge preselected. The server keeps it as `model_as_entered` (public; shown on the
   card's sub line when it differs from the chassis name) — counts, pages and charts still group by chassis.
 - **Records strip (David, 10/25) — monitors, never owners.** The summary API carries `records` (most-registered model,
-  biggest tube, highest hours, oldest and newest plate, countries), each pointing at ONE entry; registry.html renders
+  biggest tube, LOWEST hours — fewest is the ideal, David 10/25 — oldest and newest plate, countries), each pointing at ONE entry; registry.html renders
   them as `.records .rec` tiles linking `registry-<slug>.html#e<id>` (cards carry `id="e<id>"`, `:target` lights one).
   David weighed a per-owner leaderboard and chose this instead: a public ranking of who owns the most is the same
   "actionable intelligence" his no-full-inventory rule exists to avoid, and auto-published entries would make it

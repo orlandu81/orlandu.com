@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
     const latest = await q.query(`SELECT ${R.PUBLIC} FROM registry_entries WHERE deleted_at IS NULL ORDER BY created_at DESC LIMIT 9`);
     // Records — about the monitors, never a per-owner total (David, 10/25). Each points at one entry.
     const live = "FROM registry_entries WHERE deleted_at IS NULL";
-    const [hi] = await q.query(`SELECT ${R.PUBLIC} ${live} AND hours IS NOT NULL ORDER BY hours DESC, created_at ASC LIMIT 1`);
+    const [hi] = await q.query(`SELECT ${R.PUBLIC} ${live} AND hours IS NOT NULL AND hours > 0 ORDER BY hours ASC, created_at ASC LIMIT 1`); // the LOWEST meter reading is the record (David, 10/25): fewest hours is the ideal, not the most
     const [oldest] = await q.query(`SELECT ${R.PUBLIC} ${live} AND built IS NOT NULL ORDER BY built ASC, created_at ASC LIMIT 1`);
     const [newest] = await q.query(`SELECT ${R.PUBLIC} ${live} AND built IS NOT NULL ORDER BY built DESC, created_at ASC LIMIT 1`);
     let biggest = null, bigSize = 0;

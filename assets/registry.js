@@ -89,7 +89,7 @@
     const tiles = [];
     if (r.top) { const tied = counts.filter(c => c.n === r.top.n).length; tiles.push('<a class="rec" href="registry-' + esc(r.top.model_slug) + '.html"><span class="n">' + esc(r.top.model) + '</span><span class="l">Most registered</span><span class="w">' + r.top.n + (r.top.n === 1 ? " unit" : " units") + (tied > 1 ? " · tied with " + (tied - 1) + (tied === 2 ? " other" : " others") : "") + "</span></a>"); }
     if (r.biggest) tiles.push(tile(r.biggest.size + "-inch", "Biggest tube", r.biggest.entry));
-    if (r.hours) tiles.push(tile(fmt(r.hours.hours) + " h", "Highest hours", r.hours));
+    if (r.hours) tiles.push(tile(fmt(r.hours.hours) + " h", "Lowest hours", r.hours));
     if (r.oldest) tiles.push(tile(builtTxt(r.oldest.built), "Oldest plate", r.oldest));
     if (r.newest && (!r.oldest || r.newest.id !== r.oldest.id)) tiles.push(tile(builtTxt(r.newest.built), "Newest plate", r.newest));
     if (r.countries && r.countries.length) tiles.push('<span class="rec"><span class="n">' + r.countries.length + '</span><span class="l">' + (r.countries.length === 1 ? "Country" : "Countries") + '</span><span class="w">' + r.countries.map(c => esc(COUNTRY[c] || c)).join(" · ") + "</span></span>");
