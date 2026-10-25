@@ -25,7 +25,7 @@
   // Wide screens fold these into the "Collection" menu; each tile shows its step thumb.
   const COLLECTION = {
     "games.html": "step-games", "monitors.html": "step-monitors", "consoles.html": "step-consoles",
-    "playchoice-10.html": "step-playchoice-10", "signage.html": "step-signage-v2",
+    "playchoice-10.html": "step-playchoice-10-v2", "signage.html": "step-signage-v2",
     "guide-shelf.html": "step-guides", "spinning-tops.html": "step-spinning-tops"
   };
   // Phone menu only (CSS hides these on wide screens): the cluster a link opens.
