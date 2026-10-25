@@ -25,6 +25,7 @@
     const c = COND[e.cond] || ["", ""];
     const mask = esc(e.serial_masked).replace(/x+$/i, m => '<span class="mask">' + m + "</span>");
     const hours = e.hours == null ? "—" : fmt(e.hours) + " h", built = builtTxt(e.built);
+    const hoursCell = e.line === "PVM" ? "" : "<div><b>Hours</b>" + hours + "</div>"; // PVMs have no meter (David, 10/25)
     const acq = [e.acq_year, e.acq_src].filter(Boolean).map(esc).join(" · ");
     const price = e.price != null ? fmt(e.price) + " " + esc(e.currency || "USD") : null;
     const title = opts.nolink || e.model_slug.startsWith("other-") ? esc(e.model) : '<a href="' + pageFor(e) + '">' + esc(e.model) + "</a>";
@@ -32,7 +33,7 @@
       '<div class="ebody"><div class="etop"><div><h3>' + title + '</h3><div class="sub">' + seriesLine(e, cat) + "</div></div>" +
       '<span class="badge cond ' + c[1] + '">' + c[0] + "</span></div>" +
       '<div class="eline"><div><div class="serial"><b>Serial</b>' + mask + "</div>" +
-      '<div class="emeta">' + (built ? "<div><b>Built</b>" + built + "</div>" : "") + "<div><b>Hours</b>" + hours + "</div><div><b>Acquired</b>" + (acq || "—") + "</div>" + (price ? "<div><b>Paid</b>" + price + "</div>" : "") + (e.seller ? "<div><b>Bought from</b>" + esc(e.seller) + "</div>" : "") + "</div></div>" +
+      '<div class="emeta">' + (built ? "<div><b>Built</b>" + built + "</div>" : "") + hoursCell + "<div><b>Acquired</b>" + (acq || "—") + "</div>" + (price ? "<div><b>Paid</b>" + price + "</div>" : "") + (e.seller ? "<div><b>Bought from</b>" + esc(e.seller) + "</div>" : "") + "</div></div>" +
       (e.photo_url ? '<img class="ethumb" src="' + esc(e.photo_url) + '" data-full="' + esc(e.photo_url) + '" alt="' + esc(e.model) + " registered by " + esc(e.handle || "an owner") + '" loading="lazy" width="112" height="76">' : "") + "</div>" +
       (e.note ? '<p class="enote">' + esc(e.note) + "</p>" : "") +
       '<div class="ewho"><span>' + (e.handle ? esc(e.handle) : "Anonymous owner") + "</span>" + esc(where(e)) + "</div>" +
@@ -79,7 +80,11 @@
     const owners = new Set(E.map(e => e.handle || "anon-" + e.id)).size, countries = new Set(E.map(e => e.country).filter(Boolean)).size;
     const P = d.points;
     const range = P.length > 1 ? String(P[0].h).slice(0, -1) + "k–" + String(P[P.length - 1].h).slice(0, -1) + "k" : P.length ? String(P[0].h).slice(0, -1) + "k" : "—";
-    st.innerHTML = [[n, "Registered"], [n ? working + " of " + n : "—", "Working"], [med != null ? fmt(med) + " h" : "—", "Median hours · " + hrs.length + " reported"], [range, "Serial range seen"]].map(([v, l]) => '<div><span class="n">' + v + '</span><span class="l">' + l + "</span></div>").join("");
+    const builts = E.map(e => e.built).filter(Boolean).sort();
+    const tile3 = (m ? m.line : d.model.slice(0, 3)) === "PVM"
+      ? [builts.length > 1 ? (builts[0].slice(0, 4) === builts[builts.length - 1].slice(0, 4) ? builtTxt(builts[0]) + " – " + builtTxt(builts[builts.length - 1]) : builts[0].slice(0, 4) + "–" + builts[builts.length - 1].slice(0, 4)) : builts.length ? builtTxt(builts[0]) : "—", "Build dates seen · " + builts.length + (builts.length === 1 ? " plate" : " plates")]
+      : [med != null ? fmt(med) + " h" : "—", "Median hours · " + hrs.length + " reported"];
+    st.innerHTML = [[n, "Registered"], [n ? working + " of " + n : "—", "Working"], tile3, [range, "Serial range seen"]].map(([v, l]) => '<div><span class="n">' + v + '</span><span class="l">' + l + "</span></div>").join("");
     if (lede) lede.textContent = n ? (n === 1 ? "One registered so far" : fmt(n) + " registered so far") + (n > 1 ? ", from " + owners + (owners === 1 ? " owner" : " owners") + (countries > 1 ? " in " + countries + " countries" : "") : "") + "." : "None registered yet. Yours would be the first.";
     charts(P, m ? m.model : d.model);
     out.innerHTML = n ? E.map(e => card(e, cat, { nolink: true })).join("") : '<div class="card"><h3>No ' + esc(m ? m.model : d.model) + ' registered yet</h3><p>Be the first: <a href="registry-submit.html?m=' + esc(slug) + '">add yours →</a></p></div>';
@@ -152,7 +157,13 @@
     const group = line => '<optgroup label="' + (line === "BVM" ? "BVM · broadcast and master" : "PVM · production") + '">' + cat.models.filter(m => m.line === line).map(m => '<option value="' + m.slug + '">' + esc(m.model) + "</option>").join("") + "</optgroup>";
     sel.innerHTML = '<option value="">Choose a model…</option>' + group("BVM") + group("PVM") + '<option value="other">Not listed — I\'ll type it</option>';
     const want = new URLSearchParams(location.search).get("m"); if (want && cat.bySlug[want]) sel.value = want;
-    const syncOther = () => { otherWrap.hidden = sel.value !== "other"; }; sel.addEventListener("change", syncOther); syncOther();
+    const hoursWrap = document.getElementById("hourswrap");
+    const syncOther = () => {
+      otherWrap.hidden = sel.value !== "other";
+      const pvm = sel.value.startsWith("pvm-") || (sel.value === "other" && /^\s*pvm/i.test(other.value));
+      if (hoursWrap) hoursWrap.hidden = pvm; // PVMs have no hours meter
+    };
+    sel.addEventListener("change", syncOther); other.addEventListener("input", syncOther); syncOther();
     const country = document.getElementById("country"), sw = document.getElementById("statewrap");
     const syncState = () => { sw.hidden = country.value !== "US"; }; country.addEventListener("change", syncState); syncState();
     // photo preview + resize

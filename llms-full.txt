@@ -5803,7 +5803,7 @@ Each card shows what the owner chose to share. Email addresses are never publish
 ### Public, on the entry card
 
 - Model and the serial with its last two digits masked (20015xx)
-- The build date on the plate, and hours on the meter if the monitor has one
+- The build date on the plate, and on a BVM the hours on the meter
 - Condition, in five steps, and a short note
 - Year, source and, if you give them, price paid and who sold it
 - Your handle (KLOV, forum, Instagram) and country or state, if you give them

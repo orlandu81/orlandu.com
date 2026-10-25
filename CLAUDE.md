@@ -881,6 +881,9 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
   PVM-2950Q to c.1996–2000 (`era_basis` says "a plate in the registry reads June 2000"). The BVM-20E1U's vault date of
   June 2007 is DOUBTED by David (10/23: "seems 8 years too late") — its registry entry has no build date and the catalog era
   stays c.1996–2001 until he reads the plate again; the entry's hours are 44,708 (read 10/23, supersedes the vault's ~40,000).
+- **Only BVMs have an hours meter (David, 10/25):** a PVM card shows no Hours cell at all (a BVM card shows it, dash when
+  blank); PVM model pages replace the "Median hours" tile with the build-date span seen on their plates; the form hides
+  the Hours field when a PVM is picked (`#hourswrap`).
 - `api/registry.js` (GET: summary / `?model=slug` / `?entries=1&page=N`, edge-cached 60 s),
   `api/registry-submit.js` (POST, honeypot `site`, validation in `lib/registry.js`, rate limit = entries per hashed IP
   per hour counted in the table itself — `REGISTRY_RATE_PER_HOUR`, default 12 — plus 150/day from everyone,

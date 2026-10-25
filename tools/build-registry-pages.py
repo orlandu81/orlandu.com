@@ -127,7 +127,7 @@ def landing():
   <section id="how">
     <h2 class="sec">What gets published, what stays private</h2>
     <div class="pubpriv">
-      <div class="card"><h3>Public, on the entry card</h3><ul><li>Model and the serial with its last two digits masked (20015xx)</li><li>The build date on the plate, and hours on the meter if the monitor has one</li><li>Condition, in five steps, and a short note</li><li>Year, source and, if you give them, price paid and who sold it</li><li>Your handle (KLOV, forum, Instagram) and country or state, if you give them</li><li>One photo, if you add one</li></ul></div>
+      <div class="card"><h3>Public, on the entry card</h3><ul><li>Model and the serial with its last two digits masked (20015xx)</li><li>The build date on the plate, and on a BVM the hours on the meter</li><li>Condition, in five steps, and a short note</li><li>Year, source and, if you give them, price paid and who sold it</li><li>Your handle (KLOV, forum, Instagram) and country or state, if you give them</li><li>One photo, if you add one</li></ul></div>
       <div class="card"><h3>Private, never shown</h3><ul><li>The full serial number, used only to reject a duplicate</li><li>Your email, kept so the arcade can follow up on an entry, and for nothing else</li><li>Anything you leave blank: every field but model, serial and email is optional</li></ul></div>
       <div class="card"><h3>House rules</h3><ul><li>One entry per monitor. If a monitor changes hands or an entry needs a fix, write through the <a href="about.html#write">contact form</a> with the masked serial.</li><li>Entries publish immediately and are reviewed after the fact. Junk gets deleted.</li><li>Say as much as you like: what you paid, who sold it, what it took to get it running. Price history per model is the next chart once enough entries carry one.</li><li>Sony LMD, AMS speakers and BKM cards are not in scope yet.</li></ul></div>
     </div>
@@ -195,9 +195,9 @@ def submit_page():
         <input type="month" id="built" name="built" min="1975-01" max="2026-12" placeholder="optional">
         <span class="help">The date on the rear plate, month and year. With the serial it is what draws the production timeline.</span>
       </label>
-      <label>Hours on the meter
+      <label id="hourswrap">Hours on the meter
         <input type="number" id="hours" name="hours" min="0" max="300000" step="1" placeholder="optional">
-        <span class="help">BVM-D and BVM-A show it on the status screen (use the operation time; CRT time can go in the notes); older BVMs on the controller. PVMs have no meter; leave it blank.</span>
+        <span class="help">BVM-D and BVM-A show it on the status screen (use the operation time; CRT time can go in the notes); older BVMs on the controller.</span>
       </label>
 
       <fieldset>
