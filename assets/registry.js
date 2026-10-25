@@ -189,7 +189,11 @@
     const group = line => '<optgroup label="' + (line === "BVM" ? "BVM · broadcast and master" : "PVM · production") + '">' + cat.models.filter(m => m.line === line).map(m => '<option value="' + m.slug + '">' + esc(optionLabel(m)) + "</option>").join("") + "</optgroup>";
     sel.innerHTML = '<option value="">Choose a model…</option>' + group("BVM") + group("PVM") + '<option value="other">Not listed — I\'ll type it</option>';
     const want = new URLSearchParams(location.search).get("m"); if (want && cat.bySlug[want]) sel.value = want;
-    const hoursWrap = document.getElementById("hourswrap"), varWrap = document.getElementById("variantwrap"), varSel = document.getElementById("variant");
+    const hoursWrap = document.getElementById("hourswrap"), varWrap = document.getElementById("variantwrap"), varSel = document.getElementById("variant"), hint = document.getElementById("builthint");
+    const CONFW = { high: "Sony's own date", medium: "from a manual or brochure year", low: "a collector estimate" };
+    // Build year vs catalog era — a nudge, not a gate (David, 10/25): warn once, send on the second press.
+    const eraYears = m => { const t = m && m.era ? String(m.era).match(/(\d{4}).*?(\d{4})/) : null; return t ? [+t[1], +t[2]] : null; };
+    let eraOk = "";
     const syncOther = () => {
       otherWrap.hidden = sel.value !== "other";
       const cm = cat.bySlug[sel.value];
@@ -199,6 +203,7 @@
       }
       const pvm = sel.value.startsWith("pvm-") || (sel.value === "other" && /^\s*pvm/i.test(other.value));
       if (hoursWrap) hoursWrap.hidden = pvm; // PVMs have no hours meter
+      if (hint) hint.innerHTML = cm ? "The catalog has the " + esc(cm.model) + " at <b>" + esc(cm.era) + "</b> (" + CONFW[cm.era_confidence] + "). A plate outside that still goes in — it's how the catalog gets corrected." : "";
     };
     sel.addEventListener("change", syncOther); other.addEventListener("input", syncOther); syncOther();
     const country = document.getElementById("country"), sw = document.getElementById("statewrap");
@@ -223,6 +228,12 @@
         if (y && mi >= 0) body.built = y + "-" + String(mi + 1).padStart(2, "0"); else if (y && mn && +mn >= 1 && +mn <= 12) body.built = y + "-" + String(mn).padStart(2, "0"); else if (y) body.built = y; else { say("warn", "The build date should be a month and year, like 2005-01 or Jan 2005."); document.getElementById("built").focus(); return; }
       }
       if (!body.model) { say("warn", "Pick the model first."); sel.focus(); return; }
+      const cm = cat.bySlug[sel.value], ey = eraYears(cm), by = body.built ? +String(body.built).slice(0, 4) : 0;
+      if (ey && by && (by < ey[0] - 1 || by > ey[1] + 1) && eraOk !== sel.value + "|" + body.built) {
+        eraOk = sel.value + "|" + body.built;
+        say("warn", "<b>" + by + "</b> is outside the years the catalog has for the " + esc(cm.model) + " (" + esc(cm.era) + ", " + CONFW[cm.era_confidence] + "). A slip of a digit? Check the plate — if that's what it reads, press Send again and it goes in as written.");
+        document.getElementById("built").focus(); return;
+      }
       if (!/^[A-Za-z0-9\s\-_.]{4,24}$/.test(body.serial || "")) { say("warn", "The serial looks wrong. Digits and letters as printed on the plate, no punctuation needed."); document.getElementById("serial").focus(); return; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email || "")) { say("warn", "An email address is needed (it stays private)."); document.getElementById("email").focus(); return; }
       if (photo) body.photo = { name: file.files[0].name, type: photo.type, data: photo.data };

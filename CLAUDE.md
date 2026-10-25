@@ -30,7 +30,8 @@ node tools/eval-search.mjs           # search quality: 218 queries vs both searc
 
 `python3 tools/build-registry-pages.py` goes FIRST in that list whenever `data/registry-models.json` or the
 builder itself changed (it writes registry.html, registry-models.html, registry-submit.html and the 96
-registry-<model>.html pages with bare asset refs; stamp after it). See "The Orlandu Registry" below.
+registry-<model>.html pages with bare asset refs AND an empty `<footer class="site">` shell; run `stamp-assets.py` and
+`build-static-footer.py` after it, or the 99 pages ship without the crawler footer — caught 10/25). See "The Orlandu Registry" below.
 
 **The footer is pre-rendered into every page's `<footer class="site">` shell (2026-10-09)** so crawlers
 that don't run JavaScript (Bing's secondary crawl, GPTBot/ClaudeBot/PerplexityBot) see the full
@@ -894,6 +895,11 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
 - **Only BVMs have an hours meter (David, 10/25):** a PVM card shows no Hours cell at all (a BVM card shows it, dash when
   blank); PVM model pages replace the "Median hours" tile with the build-date span seen on their plates; the form hides
   the Hours field when a PVM is picked (`#hourswrap`).
+- **Build year vs catalog era is a NUDGE, never a gate (David, 10/25, on Dan's "limit years per model"):** the form shows the
+  catalog era under Built once a model is picked (`#builthint`), warns once when the year is more than a year outside it
+  ("press Send again and it goes in as written"), and the alert mail carries a "⚠ Build date outside the catalog era" line
+  (`R.eraOutlier` in lib/registry.js). Plates have corrected the catalog twice already; a hard limit would refuse exactly
+  the entries the catalog should learn from. The "year acquired" field is deliberately not checked.
 - `api/registry.js` (GET: summary / `?model=slug` / `?entries=1&page=N`, edge-cached 60 s),
   `api/registry-submit.js` (POST, honeypot `site`, validation in `lib/registry.js`, rate limit = entries per hashed IP
   per hour counted in the table itself — `REGISTRY_RATE_PER_HOUR`, default 12 — plus 150/day from everyone,

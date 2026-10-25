@@ -77,6 +77,7 @@ async function alert(id, row, photo_url, ua) {
   const line = (k, v) => v == null || v === "" ? "" : `<tr><td style="color:#888;padding:2px 10px 2px 0">${R.esc(k)}</td><td>${R.esc(v)}</td></tr>`;
   const html =
     `<p><b>New registry entry #${id}</b> — ${R.esc(row.model)}${row.catalog ? "" : " (NOT in the catalog, typed by the owner)"}</p>` +
+    (R.eraOutlier(R.bySlug.get(row.model_slug), row.built) ? `<p style="color:#b45309"><b>⚠ Build date outside the catalog era</b> — the plate says ${R.esc(row.built)}, the catalog has ${R.esc(R.bySlug.get(row.model_slug).era)}. A typo, or a plate the catalog should learn from.</p>` : "") +
     `<table style="font:14px/1.5 -apple-system,Segoe UI,sans-serif;border-collapse:collapse">` +
     line("Badge as printed", row.model_as_entered) + line("Serial (full, private)", row.serial) + line("Shown as", row.serial_masked) + line("Built", row.built) + line("Hours", row.hours) + line("Condition", R.COND[row.cond]) +
     line("Note", row.note) + line("Acquired", [row.acq_year, row.acq_src].filter(Boolean).join(" · ")) + line("Price", row.price != null ? `${row.price} ${row.currency}` : null) +

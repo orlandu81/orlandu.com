@@ -202,7 +202,7 @@ def submit_page():
       </label>
       <label>Built
         <input type="month" id="built" name="built" min="1975-01" max="2026-12" placeholder="optional">
-        <span class="help">The date on the rear plate, month and year. With the serial it is what draws the production timeline.</span>
+        <span class="help">The date on the rear plate, month and year. With the serial it is what draws the production timeline. <span id="builthint"></span></span>
       </label>
       <label id="hourswrap">Hours on the meter
         <input type="number" id="hours" name="hours" min="0" max="300000" step="1" placeholder="optional">
