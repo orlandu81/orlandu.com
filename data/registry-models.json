@@ -692,12 +692,12 @@
    "model": "PVM-2950Q",
    "slug": "pvm-2950q",
    "line": "PVM",
-   "series": "50 series (27in)",
-   "size_in": 27,
+   "series": "50 series (29in)",
+   "size_in": 29,
    "era": "c.1996–2000",
    "era_confidence": "low",
    "era_basis": "Sony brochure/operation manual undated; collector consensus mid-late 1990s; a plate in the registry reads June 2000",
-   "notes": "600 TVL Super Trinitron 29in tube (27in visible); RGB/YPbPr, 2x S-Video/composite; multistandard incl. PAL60; digital convergence",
+   "notes": "600 TVL Super Trinitron, 29-inch tube (27-inch viewable); RGB/YPbPr, 2x S-Video/composite; multistandard incl. PAL60; digital convergence",
    "variants": [
     "PVM-2950Q",
     "PVM-2950QM"

@@ -43,7 +43,7 @@
     const acq = [e.acq_year, e.acq_src].filter(Boolean).map(esc).join(" · ");
     const price = e.price != null ? fmt(e.price) + " " + esc(e.currency || "USD") : null;
     const title = opts.nolink || e.model_slug.startsWith("other-") ? esc(e.model) : '<a href="' + pageFor(e) + '">' + esc(e.model) + "</a>";
-    return '<article class="card entry" data-id="' + e.id + '">' +
+    return '<article class="card entry" id="e' + e.id + '" data-id="' + e.id + '">' +
       '<div class="ebody"><div class="etop"><div><h3>' + title + '</h3><div class="sub">' + seriesLine(e, cat) + "</div></div>" +
       '<span class="badge cond ' + c[1] + '">' + c[0] + "</span></div>" +
       '<div class="eline"><div><div class="serial"><b>Serial</b>' + mask + "</div>" +
@@ -77,8 +77,24 @@
       return "<div><h3>" + (line === "BVM" ? "BVM · broadcast and master monitors" : "PVM · production monitors") + "</h3>" + list + '<p class="more">' + left + " more " + line + ' models in the catalog with no entry yet. <a href="registry-models.html">See every model →</a></p></div>';
     };
     cen.innerHTML = col("BVM") + col("PVM");
+    records(d.records, d.counts, cat);
     lat.innerHTML = d.latest.length ? d.latest.map(e => card(e, cat)).join("") : '<div class="card"><h3>Nothing here yet</h3><p>The first entry is the hardest. <a href="registry-submit.html">Add yours →</a></p></div>';
     bindLightbox(lat);
+  }
+
+  function records(r, counts, cat) {
+    const sec = document.getElementById("records"), out = document.getElementById("records-out");
+    if (!sec || !out || !r || !counts.length) return;
+    const tile = (v, l, e, extra) => e ? '<a class="rec" href="registry-' + esc(e.model_slug) + '.html#e' + e.id + '"><span class="n">' + v + '</span><span class="l">' + l + '</span><span class="w">' + esc(e.model_as_entered && e.model_as_entered.toUpperCase() !== e.model ? e.model_as_entered.toUpperCase() : e.model) + (extra ? " · " + extra : "") + " · " + esc(e.handle || "anonymous owner") + "</span></a>" : "";
+    const tiles = [];
+    if (r.top) { const tied = counts.filter(c => c.n === r.top.n).length; tiles.push('<a class="rec" href="registry-' + esc(r.top.model_slug) + '.html"><span class="n">' + esc(r.top.model) + '</span><span class="l">Most registered</span><span class="w">' + r.top.n + (r.top.n === 1 ? " unit" : " units") + (tied > 1 ? " · tied with " + (tied - 1) + (tied === 2 ? " other" : " others") : "") + "</span></a>"); }
+    if (r.biggest) tiles.push(tile(r.biggest.size + "-inch", "Biggest tube", r.biggest.entry));
+    if (r.hours) tiles.push(tile(fmt(r.hours.hours) + " h", "Highest hours", r.hours));
+    if (r.oldest) tiles.push(tile(builtTxt(r.oldest.built), "Oldest plate", r.oldest));
+    if (r.newest && (!r.oldest || r.newest.id !== r.oldest.id)) tiles.push(tile(builtTxt(r.newest.built), "Newest plate", r.newest));
+    if (r.countries && r.countries.length) tiles.push('<span class="rec"><span class="n">' + r.countries.length + '</span><span class="l">' + (r.countries.length === 1 ? "Country" : "Countries") + '</span><span class="w">' + r.countries.map(c => esc(COUNTRY[c] || c)).join(" · ") + "</span></span>");
+    out.innerHTML = tiles.join("");
+    sec.hidden = false;
   }
 
   // ── registry-<model>.html ───────────────────────────────────────────────
@@ -102,6 +118,8 @@
     if (lede) lede.textContent = n ? (n === 1 ? "One registered so far" : fmt(n) + " registered so far") + (n > 1 ? ", from " + owners + (owners === 1 ? " owner" : " owners") + (countries > 1 ? " in " + countries + " countries" : "") : "") + "." : "None registered yet. Yours would be the first.";
     charts(P, m ? m.model : d.model);
     out.innerHTML = n ? E.map(e => card(e, cat, { nolink: true })).join("") : '<div class="card"><h3>No ' + esc(m ? m.model : d.model) + ' registered yet</h3><p>Be the first: <a href="registry-submit.html?m=' + esc(slug) + '">add yours →</a></p></div>';
+    const want = location.hash && /^#e\d+$/.test(location.hash) ? document.getElementById(location.hash.slice(1)) : null; // a records link: the cards arrive after load, so :target never fires
+    if (want) { want.classList.add("lit"); want.scrollIntoView({ block: "center" }); }
     bindLightbox(out);
   }
 

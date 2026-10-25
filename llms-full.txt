@@ -5794,6 +5794,8 @@ Nobody knows how many Sony broadcast monitors are left. Sony never published pro
 
 Loading the census…
 
+## Records the monitors, not the owners
+
 ## Latest entries newest first
 
 Each card shows what the owner chose to share. Email addresses are never published and never shown to other owners; the full serial stays on the server. The whole catalog, with a page per model, is on the models list (https://www.orlandu.com/registry-models.html).

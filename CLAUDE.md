@@ -885,6 +885,12 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
   (twins written out) — `optionLabel()` in registry.js; picking a chassis reveals "Badge as printed" (`#variantwrap`), the
   exact variant list with the catalog badge preselected. The server keeps it as `model_as_entered` (public; shown on the
   card's sub line when it differs from the chassis name) — counts, pages and charts still group by chassis.
+- **Records strip (David, 10/25) — monitors, never owners.** The summary API carries `records` (most-registered model,
+  biggest tube, highest hours, oldest and newest plate, countries), each pointing at ONE entry; registry.html renders
+  them as `.records .rec` tiles linking `registry-<slug>.html#e<id>` (cards carry `id="e<id>"`, `:target` lights one).
+  David weighed a per-owner leaderboard and chose this instead: a public ranking of who owns the most is the same
+  "actionable intelligence" his no-full-inventory rule exists to avoid, and auto-published entries would make it
+  easy to pad. Don't build per-handle totals without asking him again.
 - **Only BVMs have an hours meter (David, 10/25):** a PVM card shows no Hours cell at all (a BVM card shows it, dash when
   blank); PVM model pages replace the "Median hours" tile with the build-date span seen on their plates; the form hides
   the Hours field when a PVM is picked (`#hourswrap`).

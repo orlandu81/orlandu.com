@@ -118,6 +118,11 @@ def landing():
     <div class="census" id="census-out"><p class="note">Loading the census&hellip;</p></div>
   </section>
 
+  <section id="records" hidden>
+    <h2 class="sec">Records <small>the monitors, not the owners</small></h2>
+    <div class="records" id="records-out"></div>
+  </section>
+
   <section id="entries">
     <h2 class="sec">Latest entries <small>newest first</small></h2>
     <div class="entries" id="entries-out"></div>

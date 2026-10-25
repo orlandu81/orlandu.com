@@ -34,12 +34,22 @@ module.exports = async (req, res) => {
     const [stats] = await q.query(`SELECT count(*)::int AS entries, count(DISTINCT model_slug)::int AS models, count(DISTINCT email)::int AS owners, count(DISTINCT country)::int AS countries, max(created_at) AS updated FROM registry_entries WHERE deleted_at IS NULL`);
     const counts = await q.query(`SELECT model_slug, model, line, count(*)::int AS n FROM registry_entries WHERE deleted_at IS NULL GROUP BY model_slug, model, line ORDER BY n DESC, model`);
     const latest = await q.query(`SELECT ${R.PUBLIC} FROM registry_entries WHERE deleted_at IS NULL ORDER BY created_at DESC LIMIT 9`);
+    // Records — about the monitors, never a per-owner total (David, 10/25). Each points at one entry.
+    const live = "FROM registry_entries WHERE deleted_at IS NULL";
+    const [hi] = await q.query(`SELECT ${R.PUBLIC} ${live} AND hours IS NOT NULL ORDER BY hours DESC, created_at ASC LIMIT 1`);
+    const [oldest] = await q.query(`SELECT ${R.PUBLIC} ${live} AND built IS NOT NULL ORDER BY built ASC, created_at ASC LIMIT 1`);
+    const [newest] = await q.query(`SELECT ${R.PUBLIC} ${live} AND built IS NOT NULL ORDER BY built DESC, created_at ASC LIMIT 1`);
+    let biggest = null, bigSize = 0;
+    for (const c of counts) { const m = R.bySlug.get(c.model_slug); if (m && m.size_in > bigSize) { bigSize = m.size_in; biggest = c.model_slug; } }
+    const [big] = biggest ? await q.query(`SELECT ${R.PUBLIC} ${live} AND model_slug = $1 ORDER BY created_at ASC LIMIT 1`, [biggest]) : [null];
+    const countries = (await q.query(`SELECT DISTINCT country ${live} AND country IS NOT NULL ORDER BY country`)).map(r => r.country);
+    const records = { top: counts[0] || null, biggest: big ? { size: bigSize, entry: R.pub(big) } : null, hours: hi ? R.pub(hi) : null, oldest: oldest ? R.pub(oldest) : null, newest: newest ? R.pub(newest) : null, countries };
     res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=600");
-    res.status(200).json({ ok: true, stats: { ...stats, updated: stats.updated instanceof Date ? stats.updated.toISOString() : stats.updated }, counts, latest: latest.map(R.pub) });
+    res.status(200).json({ ok: true, stats: { ...stats, updated: stats.updated instanceof Date ? stats.updated.toISOString() : stats.updated }, counts, latest: latest.map(R.pub), records });
   } catch (e) {
     if (/does not exist/.test(String(e && e.message))) { // first run: no table yet
       res.setHeader("Cache-Control", "no-store");
-      res.status(200).json({ ok: true, stats: { entries: 0, models: 0, owners: 0, countries: 0, updated: null }, counts: [], latest: [], entries: [], points: [], n: 0 });
+      res.status(200).json({ ok: true, stats: { entries: 0, models: 0, owners: 0, countries: 0, updated: null }, counts: [], latest: [], entries: [], points: [], n: 0, records: null });
       return;
     }
     console.error("registry", e && e.message);
