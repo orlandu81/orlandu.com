@@ -900,6 +900,10 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
   ("press Send again and it goes in as written"), and the alert mail carries a "⚠ Build date outside the catalog era" line
   (`R.eraOutlier` in lib/registry.js). Plates have corrected the catalog twice already; a hard limit would refuse exactly
   the entries the catalog should learn from. The "year acquired" field is deliberately not checked.
+  **Standing rule (David, 10/25): an OWNER-CONFIRMED plate outside a catalog era WIDENS the era** (never narrows it) —
+  edit `era` in the catalog, name the plate in `era_basis`, keep the confidence tag (it rises only on a Sony document),
+  rerun the builder. An unconfirmed plate only flags the alert mail. First applied to the PVM-2950Q: Dan's plate reads
+  Aug 1995 → c.1995–2000. The fleet table / magazine / profile still say 1991–1996 for it — David left those alone again.
 - `api/registry.js` (GET: summary / `?model=slug` / `?entries=1&page=N`, edge-cached 60 s),
   `api/registry-submit.js` (POST, honeypot `site`, validation in `lib/registry.js`, rate limit = entries per hashed IP
   per hour counted in the table itself — `REGISTRY_RATE_PER_HOUR`, default 12 — plus 150/day from everyone,
