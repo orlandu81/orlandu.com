@@ -238,7 +238,10 @@
         else if (r.status === 429) say("warn", "Too many entries from this connection for now. Try again in an hour.");
         else if (r.status === 413) say("warn", "The photo is too big even after resizing. Try a smaller one, or skip it.");
         else if (r.status === 503) say("warn", j.error === "photos-not-configured" ? "Photos aren't switched on yet. Send the entry without one." : "The registry isn't switched on yet.");
-        else if (r.status === 400 && j.fields) say("warn", "Check these fields: " + j.fields.map(esc).join(", ") + ".");
+        else if (r.status === 400 && j.fields) {
+          const WHY = { model: "pick a model, or type the badge under Not listed", "model-format": "the typed model should read like PVM-1442QM or BVM-D20F1J — letters and digits, no description", serial: "the serial should be 4 to 20 letters and digits as printed", hours: "hours should be a whole number", cond: "pick a condition", acq_year: "the year acquired should be a four-digit year", acq_src: "pick a source from the list", price: "the price should be a plain number", currency: "pick a currency", email: "an email address is needed (it stays private)", country: "pick a country from the list", built: "the build date should be a month and year, like 2005-01" };
+          say("warn", "Not sent yet: " + j.fields.map(f => esc(WHY[f] || f)).join("; ") + ".");
+        }
         else say("warn", "That didn't go through. Try again in a minute, or <a href=\"about.html#write\">write to the arcade</a>.");
       } catch (e) { say("warn", "No connection. Try again in a minute."); }
       btn.disabled = false;
