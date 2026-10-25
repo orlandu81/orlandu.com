@@ -922,3 +922,22 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
   Dan's fleet by form. **Never publish David's prices or sellers**; other owners' are fine by his rule.
 - Open: a price-over-time chart per model once entries carry prices (promised in the house rules), an MCP tool over
   the registry, an "update my entry" flow (today: contact form with the masked serial), LMD/AMS/BKM scope.
+
+## Dark backdrops on the PC-10, topper and VS. card walls (2026-10-25)
+
+Every tile on `playchoice-10.html` (52 boards + 10 conversions) and `signage.html` (#toppers, #cards) is now
+a cut-out on the Spinning Tops backdrop: a radial glow (46,46,62) → (19,19,34) with a soft drop shadow. The
+edge colour is the `.shot` panel colour (#131322), so the photo has no visible frame. Files are
+`<old-slug>-dk.webp`; the old files were deleted (CDN immutability rule). David's standard: "this only works
+if it looks consistent."
+- Boards: 1600×480 (thumb 800×240, exactly the 10:3 plate), built from the published redacted files, so the
+  serial redactions and the corner "© orlandu.com" mark carry over (the mark is redrawn on the backdrop).
+- Toppers: 1600×804 (Double Dragon 2400×819); cards: 1600×1600. Both cut from the HEIC camera originals in
+  `_originals/`, NOT from the published crops (those clip the outer border on several, e.g. Metroid's yellow
+  rim). Each edge was picked by eye at zoom, then perspective-squared: toppers 1.99:1, cards 1:1 except Sky
+  Kid and T.K.O. Boxing, which keep their own shape. The Top Gun card's curl was flattened.
+- The 13 small PCH1-01-ROM boards were shot with keystone (connector base not parallel to the board top) and
+  are homography-corrected; David caught that one.
+- A new board, topper or card needs the same treatment to match. The build scripts, edge picks and full
+  notes are in `_pending-deploy\dark-backdrops-2026-10-25.zip` in the connected folder and the Project doc
+  `claude/dark-backdrop-walls.md`.
