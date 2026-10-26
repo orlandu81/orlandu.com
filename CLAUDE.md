@@ -909,6 +909,15 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
   edit `era` in the catalog, name the plate in `era_basis`, keep the confidence tag (it rises only on a Sony document),
   rerun the builder. An unconfirmed plate only flags the alert mail. First applied to the PVM-2950Q: Dan's plate reads
   Aug 1995 → c.1995–2000. The fleet table / magazine / profile still say 1991–1996 for it — David left those alone again.
+- **Sony serial ceilings (10/26, from Rado's BVM-20E1E lead):** six catalog entries (BVM-20E1U, 20F1U, 14E1U, 14E5U, 14F1U,
+  14F5U) carry `sony_serials` — the E and U serial lists from Sony technical bulletins 1998-289 (Dec 14, 1998, Americas, U ranges),
+  1999-274R (Dec 25, 2000, fw 1.34) and 2001-236 (Jul 30, 2001, fw 1.40), COPIED EXACTLY AS PRINTED (scans on ConsoleMods, linked).
+  The builder renders them as `#sony` "What Sony's bulletins say" on those model pages. A ceiling is how far a badge's serial run had
+  reached by that date, NEVER a production total: the 20E1E's 2,000,505 is the European run only; U sets are a separate sequence
+  (2,000,001… then the 2,100,000 block, to 2,100,464 by Jul 2001). Sony's own lists disagree in places (2,100,126 printed for three
+  models in 1999-274R; the 14E1U ceiling falls from 2,100,025 to 2,100,016) — keep them as printed, the page says so. The values were
+  read from the PDFs' text layer twice; the scans themselves sit behind a Cloudflare human check and were not viewed directly.
+  The 20E1's era is now 1996–c.2001, confidence high, on those bulletins. More bulletins (20G1, D series) can be added the same way.
 - `api/registry.js` (GET: summary / `?model=slug` / `?entries=1&page=N`, edge-cached 60 s),
   `api/registry-submit.js` (POST, honeypot `site`, validation in `lib/registry.js`, rate limit = entries per hashed IP
   per hour counted in the table itself — `REGISTRY_RATE_PER_HOUR`, default 12 — plus 150/day from everyone,

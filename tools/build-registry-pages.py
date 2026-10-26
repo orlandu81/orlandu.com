@@ -312,6 +312,33 @@ def submit_page():
 PROFILES = {"pvm-20l5": "pvm-20l5.html", "pvm-2950q": "pvm-2950q.html", "bvm-20e1u": "bvm-20e1u.html", "bvm-a14f5u": "bvm-a14f5u.html"}
 CONF = {"high": "Sony press release, bulletin or brochure date", "medium": "manual copyright or brochure print year", "low": "collector estimate"}
 
+MON3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+def sony_section(m):
+    """Serial ceilings from Sony's technical bulletins, copied exactly as printed (David, 10/26: Rado's 20E1E lead).
+    A ceiling is how far a badge's serial run had reached by the bulletin's date, never a production total."""
+    rows = m.get("sony_serials")
+    if not rows:
+        return ""
+    model = m["model"]
+    sufs = sorted({k for r in rows for k in r["serials"]}, key=lambda k: "EUJA".find(k))
+    badge = lambda k: model[:-1] + k if model.endswith("U") else model + k
+    head = "".join(f"<th>{e(badge(k))}</th>" for k in sufs)
+    def when(d):
+        y, mo, da = d.split("-")
+        return f"{MON3[int(mo) - 1]} {int(da)}, {y}"
+    body = "".join(
+        f'<tr><td><a href="{e(r["url"])}" rel="noopener">TB {e(r["doc"])}</a> · {when(r["date"])}<br><small>{e(r["title"])}</small></td>'
+        + "".join(f"<td>{e(r['serials'][k]) if k in r['serials'] else '<span class=\"dim\">not listed</span>'}</td>" for k in sufs) + "</tr>"
+        for r in rows)
+    return f"""  <section id="sony">
+    <h2 class="sec">What Sony's bulletins say</h2>
+    <p>Sony's technical bulletins list the serial numbers each firmware update covers. The highest number listed for a badge is a ceiling: how far that serial run had reached by the bulletin's date, not a production total. European (E) and U.S. (U) sets are numbered separately; the 1998 bulletin, written for the Americas, shows the U sets starting at 2,000,001 before moving to the 2,100,000 block. The figures are copied exactly as Sony printed them, including the few that don't agree from one bulletin to the next.</p>
+    <div class="tablewrap" tabindex="0"><table class="spec"><thead><tr><th>Bulletin</th>{head}</tr></thead><tbody>{body}</tbody></table></div>
+    <p class="note">Scans of the bulletins are on ConsoleMods; the links open Sony's PDF.</p>
+  </section>
+"""
+
 def model_page(m):
     slug, model, line = m["slug"], m["model"], m["line"]
     variants = [v for v in m["variants"] if v != model]
@@ -373,9 +400,9 @@ def model_page(m):
     <div class="entries" id="entries-out"><p class="note">Loading&hellip;</p></div>
   </section>
 
-  <section id="about">
+{sony_section(m)}  <section id="about">
     <h2 class="sec">About this model</h2>
-    <p>{('<b>Catalog notes:</b> ' + about + '. ') if about else ''}<b>Era:</b> {e(m['era'])}, {CONF[m['era_confidence']]}{(' (' + basis + ')') if basis else ''}. Sony never published production figures for any of these; the registry is the count.</p>
+    <p>{('<b>Catalog notes:</b> ' + about + '. ') if about else ''}<b>Era:</b> {e(m['era'])}, {CONF[m['era_confidence']]}{(' (' + basis + ')') if basis else ''}. {"Sony never published production totals; the bulletin ceilings above are the nearest thing, and the registry is the count." if m.get("sony_serials") else "Sony never published production figures for any of these; the registry is the count."}</p>
   </section>
 </main>
 """

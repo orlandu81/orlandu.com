@@ -146,9 +146,9 @@
    "line": "BVM",
    "series": "E (1000 TVL)",
    "size_in": 20,
-   "era": "c.1996–2001",
-   "era_confidence": "medium",
-   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998",
+   "era": "1996–c.2001",
+   "era_confidence": "high",
+   "era_basis": "Sony TB 1999-274R (Dec 2000) and 2001-236 (Jul 2001) show both serial runs still rising into mid-2001 (E to 2,000,505, U to 2,100,464); registry plates read Feb 1996 and Jan 2001; consolemods infobox earliest Mar 1996",
    "notes": "1000 TVL 0.25 mm Super Fine Pitch Trinitron; 1x RGB/YPbPr built in; BKM-2xx card slots; needs BKM-10R/11R controller",
    "variants": [
     "BVM-20E1U",
@@ -159,7 +159,41 @@
    "sources": [
     "https://consolemods.org/wiki/CRT:BVM-20E1U",
     "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
-    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+    "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+    "https://consolemods.org/wiki/images/1/1c/202001236.pdf"
+   ],
+   "sony_serials": [
+    {
+     "doc": "1998-289",
+     "date": "1998-12-14",
+     "title": "Software upgrade, version 1.31 (Americas)",
+     "url": "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+     "serials": {
+      "U": "2,000,001–2,100,015"
+     }
+    },
+    {
+     "doc": "1999-274R",
+     "date": "2000-12-25",
+     "title": "Software upgrade, version 1.34",
+     "url": "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+     "serials": {
+      "E": "Up to 2,000,400",
+      "U": "Up to 2,100,126"
+     }
+    },
+    {
+     "doc": "2001-236",
+     "date": "2001-07-30",
+     "title": "Software upgrade, version 1.40",
+     "url": "https://consolemods.org/wiki/images/1/1c/202001236.pdf",
+     "serials": {
+      "E": "Up to 2,000,505",
+      "U": "Up to 2,100,464"
+     }
+    }
    ]
   },
   {
@@ -170,7 +204,7 @@
    "size_in": 20,
    "era": "c.1996–2001",
    "era_confidence": "medium",
-   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998; ex-Sony tech: most widely produced 20in BVM",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998; ex-Sony tech: most widely produced 20in BVM; Sony TB 1999-274R (Dec 2000) and 2001-236 (Jul 2001) list E and U serial ceilings still rising into mid-2001",
    "notes": "900 TVL 0.30 mm HR Trinitron (same CRT family as PVM-20L5/20M4); 1x RGB/YPbPr built in; BKM-2xx cards; needs BKM-10R/11R",
    "variants": [
     "BVM-20F1U",
@@ -182,7 +216,41 @@
     "https://ConsoleMods.org/wiki/CRT:BVM-20F1U",
     "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
     "https://www.retrorgb.com/?p=1321",
-    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+    "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+    "https://consolemods.org/wiki/images/1/1c/202001236.pdf"
+   ],
+   "sony_serials": [
+    {
+     "doc": "1998-289",
+     "date": "1998-12-14",
+     "title": "Software upgrade, version 1.31 (Americas)",
+     "url": "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+     "serials": {
+      "U": "2,000,001–2,100,240"
+     }
+    },
+    {
+     "doc": "1999-274R",
+     "date": "2000-12-25",
+     "title": "Software upgrade, version 1.34",
+     "url": "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+     "serials": {
+      "E": "Up to 2,002,315",
+      "U": "Up to 2,100,702"
+     }
+    },
+    {
+     "doc": "2001-236",
+     "date": "2001-07-30",
+     "title": "Software upgrade, version 1.40",
+     "url": "https://consolemods.org/wiki/images/1/1c/202001236.pdf",
+     "serials": {
+      "E": "Up to 2,010,252",
+      "U": "Up to 2,110,195"
+     }
+    }
    ]
   },
   {
@@ -314,7 +382,7 @@
    "size_in": 14,
    "era": "c.1996–2001",
    "era_confidence": "medium",
-   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998; Sony TB 1999-274R (Dec 2000) and 2001-236 (Jul 2001) list E and U serial ceilings still rising into mid-2001",
    "notes": "900 TVL 0.22 mm; display unit (needs BKM-10R); BKM-2xx cards",
    "variants": [
     "BVM-14E1U",
@@ -325,7 +393,41 @@
    "sources": [
     "https://consolemods.org/wiki/CRT:BVM-14E5U",
     "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
-    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+    "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+    "https://consolemods.org/wiki/images/1/1c/202001236.pdf"
+   ],
+   "sony_serials": [
+    {
+     "doc": "1998-289",
+     "date": "1998-12-14",
+     "title": "Software upgrade, version 1.31 (Americas)",
+     "url": "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+     "serials": {
+      "U": "2,000,001–2,100,000"
+     }
+    },
+    {
+     "doc": "1999-274R",
+     "date": "2000-12-25",
+     "title": "Software upgrade, version 1.34",
+     "url": "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+     "serials": {
+      "E": "Up to 2,000,220",
+      "U": "Up to 2,100,025"
+     }
+    },
+    {
+     "doc": "2001-236",
+     "date": "2001-07-30",
+     "title": "Software upgrade, version 1.40",
+     "url": "https://consolemods.org/wiki/images/1/1c/202001236.pdf",
+     "serials": {
+      "E": "Up to 2,000,222",
+      "U": "Up to 2,100,016"
+     }
+    }
    ]
   },
   {
@@ -336,7 +438,7 @@
    "size_in": 14,
    "era": "c.1996–2001",
    "era_confidence": "medium",
-   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998; Sony TB 1999-274R (Dec 2000) and 2001-236 (Jul 2001) list E and U serial ceilings still rising into mid-2001",
    "notes": "900 TVL 0.22 mm; stand-alone with built-in control panel; BKM-2xx cards",
    "variants": [
     "BVM-14E5U",
@@ -347,7 +449,41 @@
    "sources": [
     "https://consolemods.org/wiki/CRT:BVM-14E5U",
     "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
-    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+    "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+    "https://consolemods.org/wiki/images/1/1c/202001236.pdf"
+   ],
+   "sony_serials": [
+    {
+     "doc": "1998-289",
+     "date": "1998-12-14",
+     "title": "Software upgrade, version 1.31 (Americas)",
+     "url": "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+     "serials": {
+      "U": "2,000,001–2,100,030"
+     }
+    },
+    {
+     "doc": "1999-274R",
+     "date": "2000-12-25",
+     "title": "Software upgrade, version 1.34",
+     "url": "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+     "serials": {
+      "E": "Up to 2,000,295",
+      "U": "Up to 2,100,126"
+     }
+    },
+    {
+     "doc": "2001-236",
+     "date": "2001-07-30",
+     "title": "Software upgrade, version 1.40",
+     "url": "https://consolemods.org/wiki/images/1/1c/202001236.pdf",
+     "serials": {
+      "E": "Up to 2,000,373",
+      "U": "Up to 2,100,252"
+     }
+    }
    ]
   },
   {
@@ -358,7 +494,7 @@
    "size_in": 14,
    "era": "c.1996–2001",
    "era_confidence": "medium",
-   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998; Sony TB 1999-274R (Dec 2000) and 2001-236 (Jul 2001) list E and U serial ceilings still rising into mid-2001",
    "notes": "800 TVL 0.25 mm; display unit (needs controller); BKM-2xx cards",
    "variants": [
     "BVM-14F1U",
@@ -369,7 +505,41 @@
    "sources": [
     "https://consolemods.org/wiki/CRT:BVM-14F5U",
     "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
-    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+    "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+    "https://consolemods.org/wiki/images/1/1c/202001236.pdf"
+   ],
+   "sony_serials": [
+    {
+     "doc": "1998-289",
+     "date": "1998-12-14",
+     "title": "Software upgrade, version 1.31 (Americas)",
+     "url": "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+     "serials": {
+      "U": "2,000,001–2,100,020"
+     }
+    },
+    {
+     "doc": "1999-274R",
+     "date": "2000-12-25",
+     "title": "Software upgrade, version 1.34",
+     "url": "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+     "serials": {
+      "E": "Up to 2,000,855",
+      "U": "Up to 2,100,126"
+     }
+    },
+    {
+     "doc": "2001-236",
+     "date": "2001-07-30",
+     "title": "Software upgrade, version 1.40",
+     "url": "https://consolemods.org/wiki/images/1/1c/202001236.pdf",
+     "serials": {
+      "E": "Up to 2,000,903",
+      "U": "Up to 2,100,135"
+     }
+    }
    ]
   },
   {
@@ -380,7 +550,7 @@
    "size_in": 14,
    "era": "c.1996–2001",
    "era_confidence": "medium",
-   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998",
+   "era_basis": "consolemods infobox: earliest Mar 1996 (no Sony date cited); Sony TB 2001-230 (Jul 2001) lists all E/F/G in service; superseded by D series Oct 1999 and G series 1998; Sony TB 1999-274R (Dec 2000) and 2001-236 (Jul 2001) list E and U serial ceilings still rising into mid-2001",
    "notes": "800 TVL 0.25 mm; stand-alone with control panel; BKM-2xx cards",
    "variants": [
     "BVM-14F5U",
@@ -391,7 +561,41 @@
    "sources": [
     "https://consolemods.org/wiki/CRT:BVM-14F5U",
     "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
-    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
+    "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
+    "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+    "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+    "https://consolemods.org/wiki/images/1/1c/202001236.pdf"
+   ],
+   "sony_serials": [
+    {
+     "doc": "1998-289",
+     "date": "1998-12-14",
+     "title": "Software upgrade, version 1.31 (Americas)",
+     "url": "https://consolemods.org/wiki/images/d/d0/201998289.pdf",
+     "serials": {
+      "U": "2,000,001–2,100,050"
+     }
+    },
+    {
+     "doc": "1999-274R",
+     "date": "2000-12-25",
+     "title": "Software upgrade, version 1.34",
+     "url": "https://consolemods.org/wiki/images/d/d5/201999274.pdf",
+     "serials": {
+      "E": "Up to 2,001,685",
+      "U": "Up to 2,100,565"
+     }
+    },
+    {
+     "doc": "2001-236",
+     "date": "2001-07-30",
+     "title": "Software upgrade, version 1.40",
+     "url": "https://consolemods.org/wiki/images/1/1c/202001236.pdf",
+     "serials": {
+      "E": "Up to 2,001,962",
+      "U": "Up to 2,100,907"
+     }
+    }
    ]
   },
   {

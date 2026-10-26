@@ -140,3 +140,8 @@ table.spec.models td.num b{color:var(--cyan)}
 .rfm #otherwrap[hidden],.rfm #statewrap[hidden],.rfm #hourswrap[hidden],.rfm #variantwrap[hidden],.chartwrap[hidden]{display:none}
 .rform .cstatus{text-transform:none;letter-spacing:.02em;font-size:1.02rem;line-height:1.5}
 .rform .cstatus a{color:var(--cyan)}
+/* Sony bulletin ceilings on model pages: three columns that fit a phone without a sideways scroll */
+#sony table.spec{table-layout:fixed;min-width:0}
+#sony table.spec th,#sony table.spec td{white-space:normal;overflow-wrap:break-word;vertical-align:top}
+#sony table.spec th:first-child{width:46%}
+@media (max-width:560px){#sony table.spec th,#sony table.spec td{padding:.5rem .4rem;font-size:.86rem}#sony table.spec td small{font-size:.78rem}}
