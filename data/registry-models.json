@@ -2061,7 +2061,8 @@
    "notes": "250 TVL Trinitron (A20JMP10X); RGB/YPbPr, S-Video/composite, composite",
    "variants": [
     "PVM-8041Q",
-    "PVM-9041QM"
+    "PVM-9041QM",
+    "PVM-9041Q"
    ],
    "sources": [
     "https://www.manualslib.com/manual/1269192/Sony-Trinitron-Pvm-8041q.html",
@@ -2124,7 +2125,8 @@
    "variants": [
     "PVM-8045Q",
     "PVM-9045QM",
-    "PVM-9045PM"
+    "PVM-9045PM",
+    "PVM-9045Q"
    ],
    "sources": [
     "https://www.manualslib.com/manual/1282003/Sony-Trinitron-Pvm-8042q.html",
