@@ -543,7 +543,7 @@ ImageObject (page `primaryImageOfPage`, the Organization logo).
 `media/2026/alumni-ams-100.jpg` and its thumb are currently **unreferenced** — the old listing
 photo, kept in case the AMS-100 monograph wants it. Not an oversight.
 
-**Watermarks: For Sale photos only.** The photos on `forsale.html` carry a
+**Watermarks: For Sale photos, plus the PC-10 board tiles** (David's scoped exception, heavy diagonal on every board — see "Dark backdrops" below). The photos on `forsale.html` carry a
 `© orlandu.com` mark, bottom-right, at 4.2% of the short edge (white 80% over a soft dark
 shadow). **Nothing else on the site is watermarked and nothing else should be** — the
 editorial and gallery photography is the reason people stay, and a mark across it costs
@@ -964,6 +964,13 @@ edge colour is the `.shot` panel colour (#131322), so the photo has no visible f
 if it looks consistent."
 - Boards: 1600×480 (thumb 800×240, exactly the 10:3 plate), built from the published redacted files, so the
   serial redactions and the corner "© orlandu.com" mark carry over (the mark is redrawn on the backdrop).
+- **Heavy diagonal watermark on all 62 boards (2026-10-26, David: "use the same more intense watermark used on
+  Ninja Gaiden 3 … on all of my playchoice cart pics").** Until then the boards carried the light diagonal
+  "© orlandu.com" tile and only Ninja Gaiden III had the heavy one. The other 61 were boosted in place on the
+  `-dk` tiles (the light pattern was fitted per board, then raised to the heavy pattern's opacity on the same
+  grid, board pixels only), so the cut-outs, keystone fixes and serial redactions are untouched. Files are
+  `<slug>-dk2.webp`; the `-dk` files were deleted. Ninja Gaiden III keeps its `-dk` file. A new board gets the
+  heavy diagonal plus the corner mark.
 - Toppers: 1600×804 (Double Dragon 2400×819); cards: 1600×1600. Both cut from the HEIC camera originals in
   `_originals/`, NOT from the published crops (those clip the outer border on several, e.g. Metroid's yellow
   rim). Each edge was picked by eye at zoom, then perspective-squared: toppers 1.99:1, cards 1:1 except Sky
