@@ -971,6 +971,12 @@ if it looks consistent."
   grid, board pixels only), so the cut-outs, keystone fixes and serial redactions are untouched. Files are
   `<slug>-dk2.webp`; the `-dk` files were deleted. Ninja Gaiden III keeps its `-dk` file. A new board gets the
   heavy diagonal plus the corner mark.
+- **Light diagonal watermark on all 21 toppers and 18 VS. cards (2026-10-26, David: "put a faint water mark on the
+  toppers and VS instruction cards too").** The boards' pattern ("© orlandu.com", DejaVu Sans Bold, -17.75°,
+  185 px period, 103 px rows, -35 px stagger at 26 px type) scaled 1.5× on toppers and 2× on cards so it reads the
+  same size on screen as on the boards, white at 0.20 alpha (the old light "B" level), panel pixels only (mask
+  rebuilt from the compose geometry), plus the corner "© orlandu.com" mark (32 px toppers, 42 px cards). Files are
+  `<slug>-dk2.webp`; the `-dk` files were deleted. Builder: `wm.py` (Project doc `claude/dark-backdrop-walls.md`).
 - Toppers: 1600×804 (Double Dragon 2400×819); cards: 1600×1600. Both cut from the HEIC camera originals in
   `_originals/`, NOT from the published crops (those clip the outer border on several, e.g. Metroid's yellow
   rim). Each edge was picked by eye at zoom, then perspective-squared: toppers 1.99:1, cards 1:1 except Sky
