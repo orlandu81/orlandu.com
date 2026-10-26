@@ -103,7 +103,9 @@ Every deploy goes through David's laptop over the device bridge:
 3. `SendUserFile` the bundle, then `device_commit_files` it into the connected
    folder (`C:\Users\david\OneDrive\Kempner Docs LAST BACKUP 5.24.2025\Desktop\orlandu.com`).
    `~/mnt/...` paths are rejected — use the full Windows path.
-4. On the device, in `$HOME/site-repo`:
+4. On the device, in `$HOME/site-repo` (**if the VM restarted, there is no clone; and `$HOME` sits on a shared `/sessions`
+   disk that has filled up (10/26) — clone with `--depth 20` into `/tmp/site-repo` instead, and don't chain the final `mv`
+   of the bundle with `&&` after a step that can fail, or the bundle is filed away unpushed**):
    `git fetch <bundle> main:incoming && git merge --ff-only incoming`
 5. Push with the token: the file `github-token.txt` in the connected folder is a
    *note* with the token embedded in prose, so extract it —
