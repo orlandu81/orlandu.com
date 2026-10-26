@@ -90,7 +90,7 @@ FOOT = """
 
 # ── the census ────────────────────────────────────────────────────────────
 def landing():
-    desc = "A survivor census of Sony BVM and PVM broadcast monitors, built from owners' serial numbers. Add your monitor; see how many of each model are accounted for and where your serial falls in the run."
+    desc = "A survivor census of Sony BVM and PVM monitors, built from owners' serial numbers: how many of each model are accounted for and where your serial falls."
     body = """<body data-registry="landing">
 <header class="site" data-page="registry"></header>
 
@@ -149,11 +149,24 @@ def landing():
   </section>
 </main>
 """
-    return head("registry.html", "The Orlandu Registry: Sony BVM & PVM Serial Number Census — Orlandu's Arcade", "The Orlandu Registry", desc, "Census", crumbs=[("Registry", "registry.html")]) + body + FOOT
+    return head("registry.html", "Sony BVM & PVM Serial Number Registry — Orlandu's Arcade", "The Orlandu Registry", desc, "Census", crumbs=[("Registry", "registry.html")]) + body + FOOT
 
 # ── the catalog list ──────────────────────────────────────────────────────
+def static_models():
+    """The catalog table in the raw HTML, so crawlers that don't run JS still find all 96 model pages.
+    Same markup as models() in assets/registry.js, which re-renders it with the live counts."""
+    conf = {"high": "Sony-dated", "medium": "Manual or brochure year", "low": "Collector estimate"}
+    out = []
+    for line in ("BVM", "PVM"):
+        rows = [m for m in cat["models"] if m["line"] == line]
+        out.append(f'<h2 class="sec" id="{line.lower()}">' + ("BVM · broadcast and master monitors" if line == "BVM" else "PVM · production monitors") + f" <small>{len(rows)} chassis</small></h2>"
+            '<div class="tablewrap" tabindex="0"><table class="spec models"><thead><tr><th>Model</th><th>Size</th><th>Series</th><th>Era</th><th>Variants</th><th class="num">Registered</th></tr></thead><tbody>'
+            + "".join(f'<tr><td><a href="registry-{m["slug"]}.html">{e(m["model"])}</a></td><td>{m["size_in"]}"</td><td>{e(m["series"])}</td><td><span class="conf {m["era_confidence"]}" title="{conf[m["era_confidence"]]}">{e(m["era"])}</span></td><td class="dim">{e(", ".join(v for v in m["variants"] if v != m["model"]))}</td><td class="num"><span class="dim">&hellip;</span></td></tr>' for m in rows)
+            + "</tbody></table></div>")
+    return "".join(out)
+
 def models_page():
-    desc = "Every Sony BVM and PVM chassis in the Orlandu Registry catalog: 96 models with size, series, production era and regional variants, and how many of each are registered."
+    desc = "Every Sony BVM and PVM chassis in the Orlandu Registry: 96 models with screen size, series, production era and regional variants, and how many are registered."
     body = """<body data-registry="models">
 <header class="site" data-page="registry"></header>
 <main class="reg">
@@ -163,11 +176,11 @@ def models_page():
     <p class="lede" style="max-width:68ch">The 96 chassis the registry knows, with their regional variants folded in. The era is Sony's own date where a press release, dealer bulletin or brochure gives one, a manual's copyright year where that is all there is, and a collector estimate where nothing from Sony has turned up; the color on each era says which. A model with no entry still has its page, so yours can be the first.</p>
   </div>
   <div class="legend" style="margin:-.8rem 0 1.4rem"><span><i class="sq" style="background:#3f7d41"></i>Sony-dated</span><span><i class="sq" style="background:#ff8a00"></i>Manual or brochure year</span><span><i class="sq" style="background:#5a5a86"></i>Collector estimate</span></div>
-  <div id="models-out"><p class="note">Loading the catalog&hellip;</p></div>
+  <div id="models-out">""" + static_models() + """</div>
   <p class="note">Missing a model that exists? Register it under "Not listed" with the badge as printed; it joins the catalog once a plate confirms it. Suffix key: U = USA, E = Europe, J = Japan, A = Australia/Asia, M = multistandard or M-region, QM = multistandard PAL/SECAM, MD = medical, SSM = security twin.</p>
 </main>
 """
-    return head("registry-models.html", "Sony BVM & PVM Model List: Every Chassis in the Registry — Orlandu's Arcade", "Every BVM and PVM in the registry", desc, "Reference", crumbs=[("Registry", "registry.html"), ("Every model", "registry-models.html")]) + body + FOOT
+    return head("registry-models.html", "Sony BVM & PVM Model List & Production Eras — Orlandu's Arcade", "Every BVM and PVM in the registry", desc, "Reference", crumbs=[("Registry", "registry.html"), ("Every model", "registry-models.html")]) + body + FOOT
 
 # ── the form ──────────────────────────────────────────────────────────────
 def submit_page():
@@ -306,10 +319,20 @@ def submit_page():
   </div>
 </main>
 """
-    return head("registry-submit.html", "Register Your Sony BVM or PVM: Add a Monitor to the Census — Orlandu's Arcade", "Register your monitor", desc, "Form", crumbs=[("Registry", "registry.html"), ("Add a monitor", "registry-submit.html")]) + body + FOOT
+    return head("registry-submit.html", "Register Your Sony BVM or PVM Monitor — Orlandu's Arcade", "Register your monitor", desc, "Form", crumbs=[("Registry", "registry.html"), ("Add a monitor", "registry-submit.html")]) + body + FOOT
 
 # ── one page per chassis ──────────────────────────────────────────────────
 PROFILES = {"pvm-20l5": "pvm-20l5.html", "pvm-2950q": "pvm-2950q.html", "bvm-20e1u": "bvm-20e1u.html", "bvm-a14f5u": "bvm-a14f5u.html"}
+# Which model pages Google may index (David, 10/26 SEO pass). A page earns indexing when it carries content no
+# other page has: Sony's bulletin serial lists (sony_serials) or the arcade's own unit (PROFILES). The rest are
+# noindex,follow and stay OUT of sitemap.xml — ~200 words of shared template each, mostly with no entries yet, on a
+# young domain. To promote one (it has real entries now), add its slug to INDEX_EXTRA and rerun, then add its
+# sitemap block.
+INDEX_EXTRA = set()
+def indexable(m):
+    return bool(m.get("sony_serials")) or m["slug"] in PROFILES or m["slug"] in INDEX_EXTRA
+NOINDEX = "noindex,follow"
+
 CONF = {"high": "Sony press release, bulletin or brochure date", "medium": "manual copyright or brochure print year", "low": "collector estimate"}
 
 MON3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -343,7 +366,7 @@ def model_page(m):
     slug, model, line = m["slug"], m["model"], m["line"]
     variants = [v for v in m["variants"] if v != model]
     series = e(m["series"]) + (" series" if line == "PVM" else " generation")
-    title = f"Sony {model} Serial Number Registry: Survivors, Hours & Serial Range — Orlandu's Arcade"
+    title = f"Sony {model} Serial Number Registry — Orlandu's Arcade"
     desc = f"Every Sony {model} registered by its owner: survivor count, serial-number range, hours and condition. {m['size_in']}-inch {line}, {m['era']}. Add yours."
     links = []
     if slug in PROFILES:
@@ -406,7 +429,8 @@ def model_page(m):
   </section>
 </main>
 """
-    return head(f"registry-{slug}.html", title, f"{model} registry", desc, "Registry", extra_ld=ld, crumbs=[("Registry", "registry.html"), (model, f"registry-{slug}.html")]) + body + FOOT
+    kw = {} if indexable(m) else {"robots": NOINDEX}
+    return head(f"registry-{slug}.html", title, f"{model} registry", desc, "Registry", extra_ld=ld, **kw, crumbs=[("Registry", "registry.html"), (model, f"registry-{slug}.html")]) + body + FOOT
 
 written = 0
 for fn, html in [("registry.html", landing()), ("registry-models.html", models_page()), ("registry-submit.html", submit_page())] + [(f"registry-{m['slug']}.html", model_page(m)) for m in cat["models"]]:
