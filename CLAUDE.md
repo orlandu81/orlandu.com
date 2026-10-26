@@ -977,6 +977,13 @@ if it looks consistent."
   Kid and T.K.O. Boxing, which keep their own shape. The Top Gun card's curl was flattened.
 - The 13 small PCH1-01-ROM boards were shot with keystone (connector base not parallel to the board top) and
   are homography-corrected; David caught that one.
+- 2026-10-26: Double Dribble and Kung Fu toppers added (wall = twenty-one; copyright range now starts at Kung Fu's
+  1984) and Gauntlet REPLACED by a nicer copy (`pc10-gauntlet-v2-dk`, old file deleted). Shot standing on the AMS
+  rack against the wall, not on the red shelf: four edges fit by RANSAC, the BOTTOM edge is the sticker's lower
+  edge (the metal stand's grey lip below it is excluded, matching the older tiles), corner alpha r=0.05h (the
+  sticker's own corner is ~0.07h; 0.04h let wall show). One scalar linear exposure gain (0.854) for all three
+  (same light), solved so new Gauntlet's p95 L = the old Gauntlet tile's 207; whites were already in the wall's
+  range, so no WB change. Masters: `_originals/2026-10-26 gauntlet double dribble kung fu toppers/`.
 - A new board, topper or card needs the same treatment to match. The build scripts, edge picks and full
   notes are in `_pending-deploy\dark-backdrops-2026-10-25.zip` in the connected folder and the Project doc
   `claude/dark-backdrop-walls.md`.

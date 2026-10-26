@@ -36,7 +36,7 @@ The whole PlayChoice-10 library as bare green boards, photographed one by one �
 
 ### Toppers, Cards & Lit Retail Signs
 
-Nineteen original PlayChoice-10 arcade toppers, eighteen NOS VS. instruction cards, and the Nintendo retail signage that told a shop floor what was inside.
+Twenty-one original PlayChoice-10 arcade toppers, eighteen NOS VS. instruction cards, and the Nintendo retail signage that told a shop floor what was inside.
  (https://www.orlandu.com/signage.html) The Guide Shelf
 
 ### Twenty-One Player’s Guides
@@ -93,6 +93,11 @@ The geometry grid, judging a tube with no hours counter, what to pay — and why
  (https://www.orlandu.com/pvm-20l5-buying-guide.html)
 
 ## Latest from the arcade
+ Found
+
+### Double Dribble and Kung Fu
+
+Two more original PlayChoice-10 toppers off the hunt list — Konami’s 1988 Double Dribble and Irem’s 1984 Kung Fu. See them on the topper wall → (https://www.orlandu.com/signage.html#toppers)
  New
 
 ### The Orlandu Registry
@@ -133,11 +138,6 @@ Three physical families, not one: the 2x decoders for the BVM-E/F/G and big D-se
 ### Ask your AI assistant about the arcade
 
 An MCP server, a full-text file and five open datasets let Claude, ChatGPT, Cursor or any agent search the site, read a page and query the monitor specs — no key, no scraping. How to connect it → (https://www.orlandu.com/mcp.html)
- New how-to
-
-### Console to PVM, cable by cable
-
-What actually plugs into what to get a retro console onto a Sony professional monitor — the RGB cable, the switcher, the SCART to 4 BNC breakout, sync, termination and audio, and the one box you do not need. Read the how-to → (https://www.orlandu.com/connect-console-to-pvm.html)
 
 ---
 
@@ -1224,13 +1224,13 @@ The console mod table (https://www.orlandu.com/consoles.html#mods) lists every m
 
 URL: https://www.orlandu.com/signage.html
 
-Nintendo retail signs, nineteen original PlayChoice-10 toppers and eighteen VS. instruction cards — the print that told an arcade what was in the cabinet.
+Nintendo retail signs, twenty-one original PlayChoice-10 toppers and eighteen VS. instruction cards — the print that told an arcade what was in the cabinet.
 
 Paper, Plastic and Fiber Optic
 
 # The Signage Wall
 
-An arcade cabinet is a box that plays one game. Everything that told you *which* game — the topper on the crown, the instruction card on the face, the sign over the counter — was printed, disposable, and thrown out the week it stopped being current. That is why it is rare now. Three walls of it here: the retail signs, nineteen PlayChoice-10 toppers, and eighteen VS. instruction cards.
+An arcade cabinet is a box that plays one game. Everything that told you *which* game — the topper on the crown, the instruction card on the face, the sign over the counter — was printed, disposable, and thrown out the week it stopped being current. That is why it is rare now. Three walls of it here: the retail signs, twenty-one PlayChoice-10 toppers, and eighteen VS. instruction cards.
  Retail Signs Toppers Instruction Cards
 
 ## Nintendo retail signage the store stuff
@@ -1274,11 +1274,11 @@ From across a store it reads as neon. There is no neon in it. Three F25T12 fluor
 
 The World of Nintendo logo is printed on both sides, but only one side lights. It was most likely made to hang in a window: lit toward the street, still readable from inside the store. This is the full logo in Nintendo’s colors, yellow **World of** over the red oval.
 
-## The PlayChoice-10 topper wall nineteen originals
+## The PlayChoice-10 topper wall twenty-one originals
 
 A PlayChoice-10 held ten games at once, so the cabinet needed a way to say what was in it. Nintendo's answer was the topper: a printed sticker, applied to a metal stand that screws to the top of the cabinet, announcing the game — usually with the word *NEW* somewhere on it, because the whole point was to tell a room full of quarters that something had changed. Operators swapped them as the game cards rotated, which is exactly why so few survived: they were consumables, printed to be replaced. The boards they advertised have a wall of their own — all fifty-two PlayChoice-10 game boards (https://www.orlandu.com/playchoice-10.html).
 
-These nineteen are originals, and the copyright lines printed on them run from Gauntlet's 1985 to the Turtles' 1990. They were printed for PlayChoice-10 cabinets; the canopy of the Red Tent (https://www.orlandu.com/red-tent.html) is simply where they get displayed. More of them are still on the hunt list (https://www.orlandu.com/wanted.html).
+These twenty-one are originals, and the copyright lines printed on them run from Kung Fu's 1984 to the Turtles' 1990. They were printed for PlayChoice-10 cabinets; the canopy of the Red Tent (https://www.orlandu.com/red-tent.html) is simply where they get displayed. More of them are still on the hunt list (https://www.orlandu.com/wanted.html).
 
 [Photo: Original Nintendo PlayChoice-10 arcade topper for Captain Skyhawk, two jets over pale blue]
 
@@ -1300,6 +1300,10 @@ These nineteen are originals, and the copyright lines printed on them run from G
 
 ***Double Dragon***
 
+[Photo: Original Nintendo PlayChoice-10 arcade topper for Double Dribble, a player lifting the ball overhead on green]
+
+***Double Dribble***
+
 [Photo: Original Nintendo PlayChoice-10 arcade topper for Dr. Mario]
 
 ***Dr. Mario***
@@ -1311,6 +1315,10 @@ These nineteen are originals, and the copyright lines printed on them run from G
 [Photo: Original Nintendo PlayChoice-10 arcade topper for Gradius, the blue winged logo on black inside a yellow border]
 
 ***Gradius***
+
+[Photo: Original Nintendo PlayChoice-10 arcade topper for Kung Fu, a flying kick across a blue sky]
+
+***Kung Fu***
 
 [Photo: Original Nintendo PlayChoice-10 arcade topper for Mega Man 3]
 
@@ -1755,7 +1763,7 @@ The part number tells you the rest. Every board is stamped **PCH1** and then a r
 ### The topper wall (https://www.orlandu.com/signage.html#toppers)
  Signage
 
-The printed sticker that sat on the crown of the cabinet and announced which game had just gone in. Nineteen originals hang on the signage wall — the paper half of this hobby, and much harder to find than the boards.
+The printed sticker that sat on the crown of the cabinet and announced which game had just gone in. Twenty-one originals hang on the signage wall — the paper half of this hobby, and much harder to find than the boards.
 
 ### The cabinets (https://www.orlandu.com/games.html#memoriam)
  Coin-Op Games
@@ -2436,7 +2444,7 @@ Today the surviving Tent runs VS. Excitebike on one side. The other side holds s
 
 ***The PlayChoice side** — Duck Hunt off the channel menu, Zapper in hand*
 
-The instruction cards were made for this cabinet — eighteen NOS titles are on the card wall (https://www.orlandu.com/signage.html#cards), with three still on the hunt list (https://www.orlandu.com/wanted.html). The PlayChoice-10 toppers on the canopy weren’t: those were printed for PC-10 uprights, and the canopy is just where they get shown — nineteen so far (https://www.orlandu.com/signage.html#toppers), with more still out there.
+The instruction cards were made for this cabinet — eighteen NOS titles are on the card wall (https://www.orlandu.com/signage.html#cards), with three still on the hunt list (https://www.orlandu.com/wanted.html). The PlayChoice-10 toppers on the canopy weren’t: those were printed for PC-10 uprights, and the canopy is just where they get shown — twenty-one so far (https://www.orlandu.com/signage.html#toppers), with more still out there.
 
 ## Work log
 
@@ -5454,7 +5462,7 @@ This site talks the way the hobby talks, which means it uses a lot of words with
 - **Widebody**: A cabinet built wider than standard — for a two-player control panel on an upright, or for a bigger playfield on a pinball machine. Mario Bros. (https://www.orlandu.com/mario-bros.html) is the one; Indiana Jones (https://www.orlandu.com/indiana-jones.html) is the other.
 - **Dedicated**: A cabinet built by the manufacturer for one specific game, with that game's artwork and controls from the factory — as opposed to a conversion, where an operator swapped a new board and marquee into an old cabinet.
 - **Marquee**: The backlit sign across the top of an upright naming the game. Original ones are printed on translucent plastic and are among the first things to crack, fade or go missing.
-- **Topper**: On a pinball machine, the decoration mounted above the backbox. On a PlayChoice-10, a printed sticker on a metal stand that announced which game was new inside — nineteen of those are here (https://www.orlandu.com/signage.html#toppers).
+- **Topper**: On a pinball machine, the decoration mounted above the backbox. On a PlayChoice-10, a printed sticker on a metal stand that announced which game was new inside — twenty-one of those are here (https://www.orlandu.com/signage.html#toppers).
 - **Instruction card**: The printed card fixed beside the controls that told a player the rules and buttons. On Nintendo's VS. cabinets it changed with every board swap, which is why the unused ones (https://www.orlandu.com/signage.html#cards) are collected.
 - **CPO control panel overlay**: The printed sheet laminated over the control panel, carrying the artwork and the button labels. The part hands wear through first, and one of the first things replaced on a restoration.
 - **Side art**: The printed graphics on the sides of a cabinet. Originals are screen-printed or applied as large decals; reproductions exist for most popular games and are a normal part of a restoration.
@@ -5571,7 +5579,7 @@ Actively searching for the items below. If you have one — or know where one is
 
 ## PlayChoice-10 toppers complete toppers, originals, good overall condition
 
-The nineteen already here are on the topper wall (https://www.orlandu.com/signage.html#toppers).
+The twenty-one already here are on the topper wall (https://www.orlandu.com/signage.html#toppers).
 
 **Not sure what you have?** An original PC-10 topper is a printed sticker applied to a metal stand that screws to the top of the cabinet, usually with the word NEW worked into the artwork and a Nintendo or licensee copyright line printed in it, most dated 1987–1990. Complete toppers are the hunt, but if it looks close and you aren't certain, email a photo to orlandusarcade@gmail.com — identifying these is half the fun.
 
@@ -5635,7 +5643,7 @@ I have one →
 
 ### Also wanted
 
-1942 · Double Dribble · Fester's Quest · The Goonies · Kung Fu · Nintendo World Cup · Pin Bot · Rad Racer II · Rygar · Tecmo Bowl · Teenage Mutant Ninja Turtles · Track & Field · Trojan · Volleyball · Yo! Noid
+1942 · Fester's Quest · The Goonies · Nintendo World Cup · Pin Bot · Rad Racer II · Rygar · Tecmo Bowl · Teenage Mutant Ninja Turtles · Track & Field · Trojan · Volleyball · Yo! Noid
 
 ## VS. upright marquees originals, very good to excellent condition
 
