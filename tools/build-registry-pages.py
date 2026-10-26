@@ -201,7 +201,7 @@ def submit_page():
         <span class="help">Published as <b>20015xx</b>. The full number is kept privately to reject duplicates.</span>
       </label>
       <label>Built
-        <input type="month" id="built" name="built" min="1975-01" max="2026-12" placeholder="optional">
+        <input type="month" id="built" name="built" min="1975-01" max="2010-12" placeholder="optional">
         <span class="help">The date on the rear plate, month and year. With the serial it is what draws the production timeline. <span id="builthint"></span></span>
       </label>
       <label id="hourswrap">Hours on the meter

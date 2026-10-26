@@ -900,6 +900,9 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
   ("press Send again and it goes in as written"), and the alert mail carries a "⚠ Build date outside the catalog era" line
   (`R.eraOutlier` in lib/registry.js). Plates have corrected the catalog twice already; a hard limit would refuse exactly
   the entries the catalog should learn from. The "year acquired" field is deliberately not checked.
+  **One hard stop (David, 10/26): a build year after 2010 is refused** (`BUILT_MAX` in lib/registry.js, `max="2010-12"` on
+  the input, a client message about phones auto-filling today's date). No BVM/PVM CRT postdates the catalog's 2009; entry 17
+  arrived as 2026-10 from a month picker. This is impossibility, not an era judgment — the era check stays a nudge.
   **Standing rule (David, 10/25): an OWNER-CONFIRMED plate outside a catalog era WIDENS the era** (never narrows it) —
   edit `era` in the catalog, name the plate in `era_basis`, keep the confidence tag (it rises only on a Sony document),
   rerun the builder. An unconfirmed plate only flags the alert mail. First applied to the PVM-2950Q: Dan's plate reads

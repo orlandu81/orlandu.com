@@ -227,6 +227,7 @@
         const s = String(body.built).trim(), mi = MON.findIndex(m => s.toLowerCase().startsWith(m.toLowerCase())), y = (s.match(/\d{4}/) || [])[0], mn = (s.match(/^(\d{1,2})[\/\-.]/) || s.match(/-(\d{1,2})$/) || [])[1];
         if (y && mi >= 0) body.built = y + "-" + String(mi + 1).padStart(2, "0"); else if (y && mn && +mn >= 1 && +mn <= 12) body.built = y + "-" + String(mn).padStart(2, "0"); else if (y) body.built = y; else { say("warn", "The build date should be a month and year, like 2005-01 or Jan 2005."); document.getElementById("built").focus(); return; }
       }
+      if (body.built && +String(body.built).slice(0, 4) > 2010) { say("warn", "The build date reads <b>" + esc(builtTxt(body.built) || body.built) + "</b> — no Sony CRT monitor was built after about 2009. Phones often fill in today's date when the field is tapped; enter the month and year from the rear plate, or leave it blank."); document.getElementById("built").focus(); return; }
       if (!body.model) { say("warn", "Pick the model first."); sel.focus(); return; }
       const cm = cat.bySlug[sel.value], ey = eraYears(cm), by = body.built ? +String(body.built).slice(0, 4) : 0;
       if (ey && by && (by < ey[0] - 1 || by > ey[1] + 1) && eraOk !== sel.value + "|" + body.built) {
@@ -250,7 +251,7 @@
         else if (r.status === 413) say("warn", "The photo is too big even after resizing. Try a smaller one, or skip it.");
         else if (r.status === 503) say("warn", j.error === "photos-not-configured" ? "Photos aren't switched on yet. Send the entry without one." : "The registry isn't switched on yet.");
         else if (r.status === 400 && j.fields) {
-          const WHY = { model: "pick a model, or type the badge under Not listed", "model-format": "the typed model should read like PVM-1442QM or BVM-D20F1J — letters and digits, no description", serial: "the serial should be 4 to 20 letters and digits as printed", hours: "hours should be a whole number", cond: "pick a condition", acq_year: "the year acquired should be a four-digit year", acq_src: "pick a source from the list", price: "the price should be a plain number", currency: "pick a currency", email: "an email address is needed (it stays private)", country: "pick a country from the list", built: "the build date should be a month and year, like 2005-01" };
+          const WHY = { model: "pick a model, or type the badge under Not listed", "model-format": "the typed model should read like PVM-1442QM or BVM-D20F1J — letters and digits, no description", serial: "the serial should be 4 to 20 letters and digits as printed", hours: "hours should be a whole number", cond: "pick a condition", acq_year: "the year acquired should be a four-digit year", acq_src: "pick a source from the list", price: "the price should be a plain number", currency: "pick a currency", email: "an email address is needed (it stays private)", country: "pick a country from the list", built: "the build date should be a month and year, like 2005-01", "built-late": "the build date is after 2010 — check the rear plate, or leave it blank" };
           say("warn", "Not sent yet: " + j.fields.map(f => esc(WHY[f] || f)).join("; ") + ".");
         }
         else say("warn", "That didn't go through. Try again in a minute, or <a href=\"about.html#write\">write to the arcade</a>.");
