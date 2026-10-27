@@ -1005,10 +1005,12 @@
    "notes": "600 TVL; medical; 2x RGB/YPbPr, S-Video, composite; Olympus OEV-202 rebadge",
    "variants": [
     "PVM-1953MD",
-    "PVM-2053MD"
+    "PVM-2053MD",
+    "PVM-1953ST"
    ],
    "sources": [
     "https://www.manualslib.com/manual/3376607/Sony-Trinitron-Pvm-1953md.html",
+    "https://shmups.system11.org/viewtopic.php?p=1402999",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony"
    ]
