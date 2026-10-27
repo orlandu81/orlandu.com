@@ -5927,7 +5927,7 @@ The 96 chassis the registry knows, with their regional variants folded in. The e
 | PVM-1944Q (https://www.orlandu.com/registry-pvm-1944q.html) | 20" | Q (44 series) | 1989–c.1993 | PVM-2044QM | … |
 | PVM-1953MD (https://www.orlandu.com/registry-pvm-1953md.html) | 20" | Q/MD (53 series, medical) | c.1993–1997 | PVM-2053MD | … |
 | PVM-1954Q (https://www.orlandu.com/registry-pvm-1954q.html) | 20" | Q (54 series) | 1993–c.1997 | PVM-2054QM | … |
-| PVM-2030 (https://www.orlandu.com/registry-pvm-2030.html) | 20" | 30 series (Profeel-type) | 1986–c.1990 | PVM-2130QM | … |
+| PVM-2030 (https://www.orlandu.com/registry-pvm-2030.html) | 20" | 30 series (Profeel-type) | 1986–c.1991 | PVM-2130QM | … |
 | PVM-20L1 (https://www.orlandu.com/registry-pvm-20l1.html) | 20" | L | c.2000–2005 | PVM-20L1E, SSM-20L1 | … |
 | PVM-20L2 (https://www.orlandu.com/registry-pvm-20l2.html) | 20" | L | c.2001–2006 | PVM-20L2E, PVM-D20L2J | … |
 | PVM-20L2MD (https://www.orlandu.com/registry-pvm-20l2md.html) | 20" | L (medical) | c.2001–2006 | PVM-20L2MDE | … |

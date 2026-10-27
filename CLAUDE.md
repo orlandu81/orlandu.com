@@ -908,7 +908,7 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
   **Standing rule (David, 10/25): an OWNER-CONFIRMED plate outside a catalog era WIDENS the era** (never narrows it) —
   edit `era` in the catalog, name the plate in `era_basis`, keep the confidence tag (it rises only on a Sony document),
   rerun the builder. An unconfirmed plate only flags the alert mail. First applied to the PVM-2950Q: Dan's plate reads
-  Aug 1995 → c.1995–2000. The fleet table / magazine / profile still say 1991–1996 for it — David left those alone again.
+  Aug 1995 → c.1995–2000. The fleet table / magazine / profile still say 1991–1996 for it — David left those alone again. Second case (10/26): Dan's PVM-2030 plate is March 1991 (entry 15, was entered as Oct 1989) → 1986–c.1991.
 - **Sony serial ceilings (10/26, from Rado's BVM-20E1E lead):** six catalog entries (BVM-20E1U, 20F1U, 14E1U, 14E5U, 14F1U,
   14F5U) carry `sony_serials` — the E and U serial lists from Sony technical bulletins 1998-289 (Dec 14, 1998, Americas, U ranges),
   1999-274R (Dec 25, 2000, fw 1.34) and 2001-236 (Jul 30, 2001, fw 1.40), COPIED EXACTLY AS PRINTED (scans on ConsoleMods, linked).
