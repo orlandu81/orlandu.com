@@ -55,12 +55,31 @@
   }
   const bindLightbox = () => {}; // site.js delegates img[data-full] clicks at the document level, so late cards just work
   const fail = (el, msg) => { el.innerHTML = '<p class="note">' + esc(msg) + "</p>"; };
+  // No wait on a return visit (David, 10/26: the entries took ~2 s to appear). The browser keeps the last answer
+  // for each API URL; the page paints from that copy at once, then repaints only if the network says something
+  // different. A first visit waits on the network once. After an owner submits, this tab skips the edge cache for
+  // the rest of the session so the new entry shows on the next page. Storage can be off; every access is guarded.
+  const KEY = u => "orlandu-registry:" + u;
+  const peek = u => { try { const v = localStorage.getItem(KEY(u)); return v ? JSON.parse(v) : null; } catch (e) { return null; } };
+  const keep = (u, d) => { try { localStorage.setItem(KEY(u), JSON.stringify(d)); } catch (e) {} };
+  const bust = () => { try { return sessionStorage.getItem("orlandu-registry-fresh"); } catch (e) { return null; } };
+  function live(u, paint) { // paint(d, first): first is true the first time it runs on this page view
+    const old = peek(u), was = old && old.ok ? JSON.stringify(old) : null;
+    if (was) paint(old, true);
+    const b = bust();
+    return fetch(b ? u + (u.indexOf("?") < 0 ? "?" : "&") + "fresh=" + b : u, { cache: "no-cache" }).then(r => r.json()).then(d => {
+      if (d.ok) keep(u, d);
+      if (JSON.stringify(d) !== was && (d.ok || !was)) paint(d, !was); // a failed refresh never wipes a good copy
+    }, e => { if (!was) throw e; });
+  }
 
   // ── registry.html ──────────────────────────────────────────────────────
   async function landing() {
     const cen = document.getElementById("census-out"), lat = document.getElementById("entries-out"), st = document.getElementById("stats");
-    let d, cat;
-    try { [d, cat] = await Promise.all([fetch(API).then(r => r.json()), catalog()]); } catch (e) { fail(cen, "The registry is taking a moment to answer. Reload in a few seconds."); return; }
+    let cat;
+    try { cat = await catalog(); await live(API, d => paintLanding(d, cat, cen, lat, st)); } catch (e) { fail(cen, "The registry is taking a moment to answer. Reload in a few seconds."); }
+  }
+  function paintLanding(d, cat, cen, lat, st) {
     if (!d.ok) { fail(cen, d.error === "not-configured" ? "The registry is not switched on yet." : "The registry is taking a moment to answer. Reload in a few seconds."); return; }
     const s = d.stats;
     st.innerHTML = [[s.entries, "Monitors registered"], [s.models, "Models accounted for"], [s.owners, "Owners"], [s.countries, "Countries"]].map(([n, l]) => '<div><span class="n">' + fmt(n) + '</span><span class="l">' + l + "</span></div>").join("");
@@ -100,8 +119,10 @@
   // ── registry-<model>.html ───────────────────────────────────────────────
   async function model(slug) {
     const out = document.getElementById("entries-out"), st = document.getElementById("stats"), lede = document.getElementById("mlede");
-    let d, cat;
-    try { [d, cat] = await Promise.all([fetch(API + "?model=" + encodeURIComponent(slug)).then(r => r.json()), catalog()]); } catch (e) { fail(out, "The registry is taking a moment to answer. Reload in a few seconds."); return; }
+    let cat;
+    try { cat = await catalog(); await live(API + "?model=" + encodeURIComponent(slug), (d, first) => paintModel(d, first, cat, slug, out, st, lede)); } catch (e) { fail(out, "The registry is taking a moment to answer. Reload in a few seconds."); }
+  }
+  function paintModel(d, first, cat, slug, out, st, lede) {
     if (!d.ok) { fail(out, "The registry is taking a moment to answer. Reload in a few seconds."); return; }
     const m = cat.bySlug[slug], E = d.entries, n = E.length;
     const working = E.filter(e => e.cond === "serviced" || e.cond === "working").length;
@@ -119,7 +140,7 @@
     charts(P, m ? m.model : d.model);
     out.innerHTML = n ? E.map(e => card(e, cat, { nolink: true })).join("") : '<div class="card"><h3>No ' + esc(m ? m.model : d.model) + ' registered yet</h3><p>Be the first: <a href="registry-submit.html?m=' + esc(slug) + '">add yours →</a></p></div>';
     const want = location.hash && /^#e\d+$/.test(location.hash) ? document.getElementById(location.hash.slice(1)) : null; // a records link: the cards arrive after load, so :target never fires
-    if (want) { want.classList.add("lit"); want.scrollIntoView({ block: "center" }); }
+    if (want) { want.classList.add("lit"); if (first) want.scrollIntoView({ block: "center" }); }
     bindLightbox(out);
   }
 
@@ -166,8 +187,12 @@
   // ── registry-models.html ───────────────────────────────────────────────
   async function models() {
     const out = document.getElementById("models-out");
-    let d, cat;
-    try { [d, cat] = await Promise.all([fetch(API).then(r => r.json()).catch(() => ({ ok: false })), catalog()]); } catch (e) { fail(out, "Couldn't load the catalog."); return; }
+    let cat;
+    try { cat = await catalog(); } catch (e) { fail(out, "Couldn't load the catalog."); return; }
+    paintModels({ ok: false }, cat, out); // the table needs only the catalog; the counts fill in from the copy kept or the network
+    live(API, d => paintModels(d, cat, out)).catch(() => {});
+  }
+  function paintModels(d, cat, out) {
     const n = {}; if (d.ok) d.counts.forEach(c => { n[c.model_slug] = c.n; });
     const conf = { high: "Sony-dated", medium: "Manual or brochure year", low: "Collector estimate" };
     const block = line => {
@@ -243,6 +268,7 @@
         const r = await fetch("/api/registry-submit", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
         const j = await r.json().catch(() => ({}));
         if (r.ok && j.ok) {
+          try { sessionStorage.setItem("orlandu-registry-fresh", String(Date.now())); } catch (e) {}
           const page = j.catalog ? "registry-" + j.model_slug + ".html" : "registry.html";
           say("ok", "In. <b>" + esc(j.model) + " · " + esc(j.serial_masked) + "</b> is entry #" + j.id + '. <a href="' + page + '">See it on the ' + (j.catalog ? esc(j.model) + " page" : "registry") + " →</a>" + (j.catalog ? "" : " (a model not in the catalog shows on the registry list until the catalog catches up)"));
           form.reset(); photo = null; prev.innerHTML = ""; syncOther(); syncState();

@@ -955,6 +955,21 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
 - Open: a price-over-time chart per model once entries carry prices (promised in the house rules), an MCP tool over
   the registry, an "update my entry" flow (today: contact form with the masked serial), LMD/AMS/BKM scope.
 
+**No-wait loading (2026-10-26, David: "it takes 2 seconds to load the entries… make it so there is no delay").**
+Measured live: the summary call took ~0.9 s warm (eight Neon queries one after another) and ~2 s after an idle spell
+(cold function + Neon compute waking), and the old `stale-while-revalidate=600` let the edge copy lapse after ten
+quiet minutes. Three fixes, keep all three:
+- `api/registry.js` sends the summary's eight queries together (`Promise.all`; the biggest-tube record comes from one
+  `DISTINCT ON (model_slug)` query instead of a follow-up) — one round trip of wait.
+- `R.CACHE` in `lib/registry.js` = `public, s-maxage=60, stale-while-revalidate=604800` on every public read: the edge
+  answers instantly with the copy it holds and refetches behind the scenes for up to a week of quiet. Vercel strips
+  s-maxage/SWR before the browser, which sees `public` + ETag.
+- `assets/registry.js` `live(url, paint)`: paints from the last answer kept in `localStorage["orlandu-registry:<url>"]`
+  at once, fetches with `cache: "no-cache"`, repaints only if the answer differs; a failed refresh never wipes a good
+  copy. After a successful submit, `sessionStorage["orlandu-registry-fresh"]` makes that tab add `?fresh=<ts>` (edge
+  bypass) so the new entry shows. Paint functions (`paintLanding`, `paintModel`, `paintModels`) must stay idempotent.
+  A `<link rel=preload as=fetch>` was tried and dropped: it can't carry `cache: "no-cache"`, so it double-fetched.
+
 ## Dark backdrops on the PC-10, topper and VS. card walls (2026-10-25)
 
 Every tile on `playchoice-10.html` (52 boards + 10 conversions) and `signage.html` (#toppers, #cards) is now
