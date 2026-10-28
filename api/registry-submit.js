@@ -84,7 +84,7 @@ async function alert(id, row, photo_url, ua) {
     line("Seller", row.seller) + line("Handle", row.handle) + line("Location", [row.state, row.country].filter(Boolean).join(", ")) + line("Email (private)", row.email) + line("Browser", ua) +
     `</table>` +
     (photo_url ? `<p><a href="${R.esc(photo_url)}">Photo</a></p>` : "") +
-    `<p><a href="${base}/registry-${R.esc(row.model_slug)}.html">See it on the model page</a> · <a href="${R.esc(del)}">Delete this entry</a> (asks you to confirm)</p>`;
+    `<p><a href="${base}/registry-${R.esc(row.model_slug)}.html">See it on the model page</a> · <a href="${R.esc(del)}">Edit the note or delete this entry</a> (opens a page first)</p>`;
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" },
     body: JSON.stringify({ from: FROM, to: [TO], reply_to: row.email, subject: `[registry] ${row.model} · ${row.serial_masked}${row.handle ? " · " + row.handle : ""}`, html })
