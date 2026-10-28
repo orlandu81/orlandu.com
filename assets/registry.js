@@ -97,8 +97,39 @@
     };
     cen.innerHTML = col("BVM") + col("PVM");
     records(d.records, d.counts, cat);
+    if (lat.dataset.expanded) return; // the owner already asked for the full list; a background refresh must not shrink it back to nine
     lat.innerHTML = d.latest.length ? d.latest.map(e => card(e, cat)).join("") : '<div class="card"><h3>Nothing here yet</h3><p>The first entry is the hardest. <a href="registry-submit.html">Add yours →</a></p></div>';
     bindLightbox(lat);
+    loadMore(lat, cat, s.entries, d.latest.length);
+  }
+  // "Show all N entries" under the nine-card strip (David, 10/27: the older entries were reachable only through
+  // their model pages). Page 1 of ?entries=1 replaces the strip with the 24 newest; later pages append.
+  function loadMore(lat, cat, total, shown) {
+    const wrap = document.getElementById("entries-more"), btn = document.getElementById("entries-more-btn");
+    if (!wrap || !btn) return;
+    if (!(total > shown)) { wrap.hidden = true; return; }
+    btn.textContent = "Show all " + fmt(total) + " entries";
+    wrap.hidden = false;
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = "1";
+    let page = 0, count = 0;
+    btn.addEventListener("click", async () => {
+      btn.disabled = true;
+      try {
+        const d = await fetch(API + "?entries=1&page=" + (page + 1), { cache: "no-cache" }).then(r => r.json());
+        if (!d.ok) throw new Error(d.error || "bad");
+        page += 1;
+        const html = d.entries.map(e => card(e, cat)).join("");
+        if (page === 1) { lat.dataset.expanded = "1"; lat.innerHTML = html; count = d.entries.length; }
+        else { lat.insertAdjacentHTML("beforeend", html); count += d.entries.length; }
+        bindLightbox(lat);
+        const small = document.querySelector("#entries h2.sec small");
+        if (small) small.textContent = "all " + fmt(count) + " · newest first";
+        if (d.more) { btn.textContent = "Show more"; btn.disabled = false; } else wrap.hidden = true;
+      } catch (e) {
+        btn.textContent = "Try again"; btn.disabled = false;
+      }
+    });
   }
 
   function records(r, counts, cat) {

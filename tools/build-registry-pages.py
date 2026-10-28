@@ -126,6 +126,7 @@ def landing():
   <section id="entries">
     <h2 class="sec">Latest entries <small>newest first</small></h2>
     <div class="entries" id="entries-out"></div>
+    <p class="loadmore" id="entries-more" hidden><button type="button" class="btn cy" id="entries-more-btn">Show all entries</button></p>
     <p class="note" style="margin-top:1.2rem">Each card shows what the owner chose to share. Email addresses are never published and never shown to other owners; the full serial stays on the server. The whole catalog, with a page per model, is on the <a href="registry-models.html">models list</a>.</p>
   </section>
 
