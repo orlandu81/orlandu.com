@@ -5,12 +5,17 @@
 // Nothing private ever leaves here: no full serial, no email, no IP. The chart gets each
 // serial rounded DOWN to its hundred — exactly what the masked serial already shows.
 const R = require("../lib/registry");
+let fixupsDone = false; // per cold start; the list in lib/registry.js is idempotent, so a repeat costs one no-op UPDATE per item
 
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   if (req.method !== "GET") { res.status(405).json({ ok: false, error: "GET only" }); return; }
   let q;
   try { q = R.sql(); } catch (e) { res.setHeader("Cache-Control", "no-store"); res.status(503).json({ ok: false, error: "not-configured" }); return; }
+  if (!fixupsDone && R.FIXUPS.length) {
+    fixupsDone = true;
+    try { const n = await R.applyFixups(q); if (n) console.log("registry fixups applied:", n); } catch (e) { console.error("registry fixups", e && e.message); }
+  }
   const p = req.query || {};
   try {
     if (p.model) {
