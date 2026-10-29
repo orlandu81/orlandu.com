@@ -22,7 +22,12 @@ The garage arcade with four uprights and the pinball row, plus the inside game r
 ### Sony PVM · BVM · LMD
 
 A working museum of Sony professional video — thirteen units across eight models, documented in the Trinitron Fleet magazine.
- (https://www.orlandu.com/monitors.html) The Consoles
+ (https://www.orlandu.com/monitors.html) The Orlandu Registry
+
+### Sony BVM & PVM Serial Census
+
+A survivor count of Sony broadcast monitors kept by the people who own them — 29 monitors from 14 owners so far. Add yours and see where your serial falls in the run.
+ (https://www.orlandu.com/registry.html) The Consoles
 
 ### Nintendo · Sega · NEC · Sony
 
@@ -5796,6 +5801,8 @@ Census · Sony BVM + PVM · kept by owners
 # The Orlandu Registry
 
 Nobody knows how many Sony broadcast monitors are left. Sony never published production figures, and the ones that survived left the studios one at a time. This is a serial-number census kept by the people who own them: add yours, and the site counts survivors per model and plots where each serial falls in the run. Serials are shown partly masked; the full number is used only to catch duplicates.
+
+Kept by Orlandu’s Arcade (https://www.orlandu.com/about.html), a private Sony monitor collection in Orange County, California. The arcade’s own four BVMs and PVMs (https://www.orlandu.com/monitors.html) were the first four entries; everything since has come from other owners.
  …Monitors registered …Models accounted for …Owners …Countries
 
 ## Survivors by model click a model for its serial-range chart
@@ -5849,6 +5856,39 @@ A full serial next to a photo is enough to clone a listing. Two masked digits ke
 ### Does the U, E or J at the end matter?
 
 Not for the count. The census groups a chassis with its regional variants (BVM-20E1U, 20E1E, 20E1J are one model); the suffix you pick or type is kept with the entry.
+
+## While you're here for Sony monitor owners
+ Explainer
+
+### PVM vs. BVM
+
+What the two lines were built for, what differs in the tube and the inputs, and which one a game collector should buy first.
+ (https://www.orlandu.com/pvm-vs-bvm.html)Reference
+
+### Every Sony BKM card, and which monitor it fits
+
+Three physical card families, 34 cards, the installation rules and the controllers — sourced to Sony.
+ (https://www.orlandu.com/bkm-cards.html)Reference
+
+### What a Sony model number says
+
+Line, size, tube letter, the digit that means "needs a control unit," and the market suffix — from Sony's own manuals.
+ (https://www.orlandu.com/sony-model-numbers.html)Tool
+
+### Will it connect?
+
+Pick any console and any monitor in the fleet: the cable chain step by step and a plain verdict.
+ (https://www.orlandu.com/will-it-connect.html)Tool
+
+### Through the mask
+
+Every tube in the fleet simulated from its own numbers — scan-line gap, grille pitch, center resolution — two side by side.
+ (https://www.orlandu.com/through-the-mask.html)The collection
+
+### The monitor fleet
+
+The arcade's own Sony PVM, BVM and LMD units, with the full spec table, a compare mode and the fleet drawn to scale.
+ (https://www.orlandu.com/monitors.html)
 
 ---
 
@@ -6074,7 +6114,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 83,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 84,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server

@@ -53,6 +53,7 @@ for p in sorted(root.glob("*.html")):
     title = re.sub(r"\s+[—–-]\s+Orlandu.*$", "", title)
     m = re.search(r"<main[^>]*>(.*)</main>", src, re.S)
     body_html = m.group(1) if m else src
+    body_html = re.sub(r'<section id="related"[^>]*>.*?</section>', "", body_html, flags=re.S)  # the "While you're here" row is navigation, not the page (2026-10-28)
     kick = re.search(r'class="kicker"[^>]*>(.*?)</', body_html, re.S)
     kicker = text(kick.group(1)) if kick else ""
     kind = KIND.get(p.name) or ("Registry" if p.name.startswith("registry-") else "Machine" if re.search(r'class="kicker"[^>]*>\s*Machine Profile', body_html) else kicker or "Page")

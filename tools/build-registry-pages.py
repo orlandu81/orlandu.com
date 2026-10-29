@@ -88,6 +88,30 @@ FOOT = """
 </html>
 """
 
+# ── "while you're here" (2026-10-28) ─────────────────────────────────────
+# Facebook sends strangers straight to the registry; this is their path into the rest of the site. Picked by
+# monitor line — a BVM owner wants the card and controller references, a PVM owner the buying and hookup guides.
+RELATED = {
+    "pvm-vs-bvm.html": ("Explainer", "PVM vs. BVM", "What the two lines were built for, what differs in the tube and the inputs, and which one a game collector should buy first."),
+    "bkm-cards.html": ("Reference", "Every Sony BKM card, and which monitor it fits", "Three physical card families, 34 cards, the installation rules and the controllers — sourced to Sony."),
+    "bkm-10r.html": ("Tool", "Operate a BKM-10R", "The control unit a BVM-20E1U cannot live without, button by button and menu by menu."),
+    "sony-model-numbers.html": ("Reference", "What a Sony model number says", "Line, size, tube letter, the digit that means \"needs a control unit,\" and the market suffix — from Sony's own manuals."),
+    "pvm-20l5-buying-guide.html": ("Buyer's guide", "What to check before you buy a PVM-20L5", "The geometry grid, judging a tube with no hours counter, what to pay — and why you should drive to it."),
+    "connect-console-to-pvm.html": ("How-to", "Connect a console to a PVM or BVM", "Seven steps from the console's video-out to the BNCs, the sync and termination rules, and which cable each console wants."),
+    "will-it-connect.html": ("Tool", "Will it connect?", "Pick any console and any monitor in the fleet: the cable chain step by step and a plain verdict."),
+    "through-the-mask.html": ("Tool", "Through the mask", "Every tube in the fleet simulated from its own numbers — scan-line gap, grille pitch, center resolution — two side by side."),
+    "monitors.html": ("The collection", "The monitor fleet", "The arcade's own Sony PVM, BVM and LMD units, with the full spec table, a compare mode and the fleet drawn to scale."),
+}
+RELATED_FOR = {
+    "BVM": ["bkm-cards.html", "bkm-10r.html", "pvm-vs-bvm.html", "sony-model-numbers.html"],
+    "PVM": ["pvm-20l5-buying-guide.html", "connect-console-to-pvm.html", "pvm-vs-bvm.html", "sony-model-numbers.html"],
+    "hub": ["pvm-vs-bvm.html", "bkm-cards.html", "sony-model-numbers.html", "will-it-connect.html", "through-the-mask.html", "monitors.html"],
+}
+def related(kind, exclude=()):
+    hrefs = [h for h in RELATED_FOR[kind] if h not in exclude]
+    cards = "".join(f'<a class="card linked" href="{h}"><div class="sub">{e(RELATED[h][0])}</div><h3>{e(RELATED[h][1])}</h3><p>{e(RELATED[h][2])}</p></a>' for h in hrefs)
+    return f'  <section id="related" class="related">\n    <h2 class="sec">While you\'re here <small>for Sony monitor owners</small></h2>\n    <div class="grid c3 readroom">{cards}</div>\n  </section>\n'
+
 # ── the census ────────────────────────────────────────────────────────────
 def landing():
     desc = "A survivor census of Sony BVM and PVM monitors, built from owners' serial numbers: how many of each model are accounted for and where your serial falls."
@@ -99,6 +123,7 @@ def landing():
     <div class="kicker">Census · Sony BVM + PVM · kept by owners</div>
     <h1 class="page">The Orlandu Registry</h1>
     <p class="lede" style="max-width:70ch">Nobody knows how many Sony broadcast monitors are left. Sony never published production figures, and the ones that survived left the studios one at a time. This is a serial-number census kept by the people who own them: add yours, and the site counts survivors per model and plots where each serial falls in the run. Serials are shown partly masked; the full number is used only to catch duplicates.</p>
+    <p class="note keeper">Kept by <a href="about.html">Orlandu&rsquo;s Arcade</a>, a private Sony monitor collection in Orange County, California. The arcade&rsquo;s own <a href="monitors.html">four BVMs and PVMs</a> were the first four entries; everything since has come from other owners.</p>
   </div>
 
   <div class="ctas">
@@ -148,9 +173,9 @@ def landing():
       <div class="card"><h3>Does the U, E or J at the end matter?</h3><p>Not for the count. The census groups a chassis with its regional variants (BVM-20E1U, 20E1E, 20E1J are one model); the suffix you pick or type is kept with the entry.</p></div>
     </div>
   </section>
-</main>
+""" + related("hub") + """</main>
 """
-    return head("registry.html", "Sony BVM & PVM Serial Number Registry — Orlandu's Arcade", "The Orlandu Registry", desc, "Census", crumbs=[("Registry", "registry.html")]) + body + FOOT
+    return head("registry.html", "Sony BVM & PVM Serial Number Registry — Orlandu's Arcade", "Sony BVM & PVM Serial Number Registry", desc, "Census", crumbs=[("Registry", "registry.html")]) + body + FOOT
 
 # ── the catalog list ──────────────────────────────────────────────────────
 def static_models():
@@ -181,7 +206,7 @@ def models_page():
   <p class="note">Missing a model that exists? Register it under "Not listed" with the badge as printed; it joins the catalog once a plate confirms it. Suffix key: U = USA, E = Europe, J = Japan, A = Australia/Asia, M = multistandard or M-region, QM = multistandard PAL/SECAM, MD = medical, SSM = security twin.</p>
 </main>
 """
-    return head("registry-models.html", "Sony BVM & PVM Model List & Production Eras — Orlandu's Arcade", "Every BVM and PVM in the registry", desc, "Reference", crumbs=[("Registry", "registry.html"), ("Every model", "registry-models.html")]) + body + FOOT
+    return head("registry-models.html", "Sony BVM & PVM Model List & Production Eras — Orlandu's Arcade", "Every Sony BVM and PVM model, with production eras", desc, "Reference", crumbs=[("Registry", "registry.html"), ("Every model", "registry-models.html")]) + body + FOOT
 
 # ── the form ──────────────────────────────────────────────────────────────
 def submit_page():
@@ -318,9 +343,9 @@ def submit_page():
       </div>
     </aside>
   </div>
-</main>
+""" + related("hub", exclude=("monitors.html",)) + """</main>
 """
-    return head("registry-submit.html", "Register Your Sony BVM or PVM Monitor — Orlandu's Arcade", "Register your monitor", desc, "Form", crumbs=[("Registry", "registry.html"), ("Add a monitor", "registry-submit.html")]) + body + FOOT
+    return head("registry-submit.html", "Register Your Sony BVM or PVM Monitor — Orlandu's Arcade", "Register your Sony BVM or PVM", desc, "Form", crumbs=[("Registry", "registry.html"), ("Add a monitor", "registry-submit.html")]) + body + FOOT
 
 # ── one page per chassis ──────────────────────────────────────────────────
 PROFILES = {"pvm-20l5": "pvm-20l5.html", "pvm-2950q": "pvm-2950q.html", "bvm-20e1u": "bvm-20e1u.html", "bvm-a14f5u": "bvm-a14f5u.html"}
@@ -428,10 +453,10 @@ def model_page(m):
     <h2 class="sec">About this model</h2>
     <p>{('<b>Catalog notes:</b> ' + about + '. ') if about else ''}<b>Era:</b> {e(m['era'])}, {CONF[m['era_confidence']]}{(' (' + basis + ')') if basis else ''}. {"Sony never published production totals; the bulletin ceilings above are the nearest thing, and the registry is the count." if m.get("sony_serials") else "Sony never published production figures for any of these; the registry is the count."}</p>
   </section>
-</main>
+{related(line)}</main>
 """
     kw = {} if indexable(m) else {"robots": NOINDEX}
-    return head(f"registry-{slug}.html", title, f"{model} registry", desc, "Registry", extra_ld=ld, **kw, crumbs=[("Registry", "registry.html"), (model, f"registry-{slug}.html")]) + body + FOOT
+    return head(f"registry-{slug}.html", title, f"Sony {model} Serial Number Registry", desc, "Registry", extra_ld=ld, **kw, crumbs=[("Registry", "registry.html"), (model, f"registry-{slug}.html")]) + body + FOOT
 
 written = 0
 for fn, html in [("registry.html", landing()), ("registry-models.html", models_page()), ("registry-submit.html", submit_page())] + [(f"registry-{m['slug']}.html", model_page(m)) for m in cat["models"]]:

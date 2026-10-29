@@ -264,6 +264,15 @@ table.spec td.d{color:var(--dim)}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
 
 /* ── Marquee strip ────────────────────────────── */
+/* The registry band under the home hero (2026-10-28): the most-visited page, with live counts filled by site.js. */
+.regband{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.35rem 1.2rem;padding:.75rem 1rem;background:linear-gradient(90deg,rgba(94,233,255,.06),rgba(94,233,255,.12),rgba(94,233,255,.06));border-bottom:1px solid var(--cyan-dim);color:var(--text);text-align:center}
+.regband:hover{text-decoration:none;background:linear-gradient(90deg,rgba(94,233,255,.09),rgba(94,233,255,.18),rgba(94,233,255,.09))}
+.regband .k{font-family:var(--disp);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan)}
+.regband .v{font-family:var(--cond);font-size:1.05rem;letter-spacing:.04em;color:var(--dim)}
+.regband .v b{color:var(--text);font-weight:600}
+.regband .go{font-family:var(--disp);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fire3)}
+.regband:hover .go{color:var(--fire2)}
+@media(max-width:560px){.regband{gap:.2rem .8rem;padding:.65rem .8rem}.regband .v{font-size:.95rem}}
 .strip{
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   background:var(--bg2);overflow:hidden;white-space:nowrap;padding:.55rem 0;

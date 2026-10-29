@@ -31,6 +31,19 @@
   // Phone menu only (CSS hides these on wide screens): the cluster a link opens.
   const GROUPS = { "games.html": "The collection", "stories.html": "Reading", "forsale.html": "Trading" };
 
+  // Live registry counts on any page that asks for them (2026-10-28; the home band and Step Inside card):
+  // <b data-reg="entries|owners|countries|models">. Paints from the copy registry.js keeps in localStorage,
+  // then refreshes from the API; the baked-in number stays if both are missing.
+  (function regCounts() {
+    const els = document.querySelectorAll("[data-reg]");
+    if (!els.length) return;
+    const key = "orlandu-registry:/api/registry";
+    const paint = d => { if (!d || !d.ok || !d.stats) return; els.forEach(el => { const v = d.stats[el.dataset.reg]; if (v != null) el.textContent = Number(v).toLocaleString("en-US"); }); };
+    try { const v = localStorage.getItem(key); if (v) paint(JSON.parse(v)); } catch (e) {}
+    const go = () => fetch("/api/registry", { cache: "no-cache" }).then(r => r.json()).then(d => { if (d && d.ok) { paint(d); try { localStorage.setItem(key, JSON.stringify(d)); } catch (e) {} } }).catch(() => {});
+    if ("requestIdleCallback" in window) requestIdleCallback(go, { timeout: 2500 }); else setTimeout(go, 800);
+  })();
+
   // Keyboard access: a skip link ahead of the injected chrome.
   const mainEl = document.querySelector("main");
   if (mainEl && !mainEl.id) mainEl.id = "main";

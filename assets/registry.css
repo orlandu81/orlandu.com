@@ -148,3 +148,23 @@ table.spec.models td.num b{color:var(--cyan)}
 #sony table.spec th,#sony table.spec td{white-space:normal;overflow-wrap:break-word;vertical-align:top}
 #sony table.spec th:first-child{width:46%}
 @media (max-width:560px){#sony table.spec th,#sony table.spec td{padding:.5rem .4rem;font-size:.86rem}#sony table.spec td small{font-size:.78rem}}
+
+/* Entry permalinks (2026-10-28): every card names its own address and copies it. */
+.card.entry .elink{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:.55rem;padding-top:.5rem;border-top:1px dotted rgba(255,255,255,.08);font-family:var(--cond);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.card.entry .elink .plink{color:var(--dim)}
+.card.entry .elink .plink:hover{color:var(--cyan)}
+.card.entry .elink .copy{font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--cyan);background:none;border:1px solid var(--line);border-radius:6px;padding:.15rem .5rem;cursor:pointer}
+.card.entry .elink .copy:hover{border-color:var(--cyan)}
+.card.entry .elink .copy.did{color:#9effa0;border-color:#3f7d41}
+/* After a submit: the owner's card and the share step, in place of the form. */
+.done{margin:0 0 1.4rem}
+.done .entries.one{grid-template-columns:minmax(0,420px)}
+.done .cactions{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 .6rem}
+.done .btn.copy.did{color:#9effa0;border-color:#3f7d41}
+/* "While you're here" row on the registry pages. */
+.reg .related{margin-top:2.4rem}
+.reg .related .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.reg .related .card p{font-size:.95rem;line-height:1.45}
+.reg .keeper{max-width:70ch;margin-top:.6rem}
+.rfm[hidden]{display:none}
+.done .card.entry .elink .copy{display:none} /* the big button below does the copying */

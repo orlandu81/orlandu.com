@@ -33,6 +33,9 @@
   const builtTxt = b => { if (!b) return null; const m = String(b).match(/^(\d{4})(?:-(\d{2}))?$/); return m ? (m[2] ? MON[+m[2] - 1] + " " : "") + m[1] : null; };
   const where = e => [e.state, e.country ? (COUNTRY[e.country] || e.country) : null].filter(Boolean).join(", ");
   const pageFor = e => "registry-" + e.model_slug + ".html";
+  // Every entry has an address (2026-10-28): the model page plus #e<id>, or the hub for a model not in the catalog.
+  const linkFor = e => (e.model_slug && !String(e.model_slug).startsWith("other-") ? pageFor(e) : "registry.html") + "#e" + e.id;
+  const absLink = e => new URL(linkFor(e), location.href).href;
 
   function card(e, cat, opts) {
     opts = opts || {};
@@ -51,7 +54,25 @@
       (e.photo_url ? '<img class="ethumb" src="' + esc(e.photo_url) + '" data-full="' + esc(e.photo_url) + '" alt="' + esc(e.model) + " registered by " + esc(e.handle || "an owner") + '" loading="lazy" width="112" height="76">' : "") + "</div>" +
       (e.note ? '<p class="enote">' + esc(e.note) + "</p>" : "") +
       '<div class="ewho"><span>' + (e.handle ? esc(e.handle) : "Anonymous owner") + "</span>" + esc(where(e)) + "</div>" +
+      '<div class="elink"><a class="plink" href="' + linkFor(e) + '" title="Link to this entry">Entry #' + e.id + '</a><button type="button" class="copy" data-copy="' + esc(absLink(e)) + '" aria-label="Copy a link to entry ' + e.id + '">Copy link</button></div>' +
       "</div></article>";
+  }
+  // "Copy link" on every card, one listener for all of them (cards arrive after load).
+  document.addEventListener("click", ev => {
+    const b = ev.target.closest && ev.target.closest("button.copy[data-copy]");
+    if (!b) return;
+    const done = () => { const t = b.textContent; b.textContent = "Copied"; b.classList.add("did"); setTimeout(() => { b.textContent = t; b.classList.remove("did"); }, 1800); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(b.dataset.copy).then(done, () => fallbackCopy(b.dataset.copy, done));
+    else fallbackCopy(b.dataset.copy, done);
+  });
+  function fallbackCopy(text, done) {
+    const t = document.createElement("textarea"); t.value = text; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select(); try { document.execCommand("copy"); done(); } catch (e) {} t.remove();
+  }
+  // The phone's share sheet where there is one (most of the registry's visitors are on phones), copy where there isn't.
+  function share(url, title, text) {
+    if (navigator.share) return navigator.share({ url, title, text }).catch(() => {});
+    return Promise.resolve(false);
   }
   const bindLightbox = () => {}; // site.js delegates img[data-full] clicks at the document level, so late cards just work
   const fail = (el, msg) => { el.innerHTML = '<p class="note">' + esc(msg) + "</p>"; };
@@ -302,6 +323,7 @@
           try { sessionStorage.setItem("orlandu-registry-fresh", String(Date.now())); } catch (e) {}
           const page = j.catalog ? "registry-" + j.model_slug + ".html" : "registry.html";
           say("ok", "In. <b>" + esc(j.model) + " · " + esc(j.serial_masked) + "</b> is entry #" + j.id + '. <a href="' + page + '">See it on the ' + (j.catalog ? esc(j.model) + " page" : "registry") + " →</a>" + (j.catalog ? "" : " (a model not in the catalog shows on the registry list until the catalog catches up)"));
+          showDone(j, body, cat, form, page);
           form.reset(); photo = null; prev.innerHTML = ""; syncOther(); syncState();
         } else if (r.status === 409) say("warn", "That serial is already registered for this model. If it's yours and something's wrong with the entry, write through the <a href=\"about.html#write\">contact form</a> with the masked serial.");
         else if (r.status === 429) say("warn", "Too many entries from this connection for now. Try again in an hour.");
@@ -315,6 +337,29 @@
       } catch (e) { say("warn", "No connection. Try again in a minute."); }
       btn.disabled = false;
     });
+  }
+  // After a submit (2026-10-28): the owner's finished card, its link, and a share button — the loop that brings the
+  // next owner in is this one posting their own card where they found the registry.
+  function showDone(j, body, cat, form, page) {
+    const cm = j.catalog && cat.bySlug[j.model_slug];
+    const e = { id: j.id, model: j.model, model_slug: j.model_slug || "other-" + slugOf(j.model), line: cm ? cm.line : (/^BVM/i.test(j.model) ? "BVM" : "PVM"),
+      model_as_entered: body.variant || body.model_other || null, serial_masked: j.serial_masked, built: body.built || null, hours: body.hours ? +body.hours : null,
+      cond: body.cond, note: body.note || null, acq_year: body.acq_year ? +body.acq_year : null, acq_src: body.acq_src || null, price: body.price ? +body.price : null,
+      currency: body.currency || null, seller: body.seller || null, handle: body.handle || null, country: body.country || null, state: body.state || null, photo_url: j.photo_url || null };
+    const url = absLink(e), title = "Sony " + j.model + " · " + j.serial_masked + " — the Orlandu Registry";
+    const canShare = !!navigator.share;
+    let box = document.getElementById("done");
+    if (!box) { box = document.createElement("section"); box.id = "done"; box.className = "done"; form.parentNode.insertBefore(box, form); }
+    box.innerHTML = '<h2 class="sec">You&rsquo;re in <small>entry #' + e.id + '</small></h2>' +
+      '<div class="entries one">' + card(e, cat) + "</div>" +
+      '<div class="cactions">' + (canShare ? '<button type="button" class="btn" id="done-share">Share this entry</button>' : '<button type="button" class="btn copy" data-copy="' + esc(url) + '">Copy a link to this entry</button>') +
+      '<a class="btn cy" href="' + page + '">See it on the ' + (j.catalog ? esc(j.model) + " page" : "registry") + ' &rarr;</a>' +
+      '<button type="button" class="btn cy" id="done-again">Add another monitor</button></div>' +
+      '<p class="note">Know another owner? Send them the link, or post your card where you found the registry. The card shows what you chose to share and nothing else.</p>';
+    form.hidden = true;
+    box.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (canShare) document.getElementById("done-share").addEventListener("click", () => share(url, title, "My " + j.model + " is in the Orlandu Registry, a serial-number census of surviving Sony BVM and PVM monitors."));
+    document.getElementById("done-again").addEventListener("click", () => { box.remove(); form.hidden = false; form.scrollIntoView({ behavior: "smooth", block: "start" }); });
   }
   // Resize in the browser: longest side 1600, JPEG 0.82 — strips EXIF (and GPS) by re-encoding.
   function shrink(f) {
