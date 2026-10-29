@@ -2,6 +2,8 @@
 //   GET /api/registry                → summary: stats, survivor counts per model, latest entries
 //   GET /api/registry?model=<slug>   → one model: count, entries, chart points (masked serials only)
 //   GET /api/registry?entries=1&page=N  → the browsable list, 24 per page, newest first
+//   GET /api/registry?export=json|csv  → every live entry, masked, as a CC BY 4.0 dataset (2026-10-28; the AI channel)
+//   GET /api/registry?feed=rss        → the 50 newest entries as an RSS feed (2026-10-28; linked from the registry pages)
 // Nothing private ever leaves here: no full serial, no email, no IP. The chart gets each
 // serial rounded DOWN to its hundred — exactly what the masked serial already shows.
 const R = require("../lib/registry");
@@ -27,6 +29,39 @@ module.exports = async (req, res) => {
       const cat = R.bySlug.get(slug) || null;
       res.setHeader("Cache-Control", R.CACHE);
       res.status(200).json({ ok: true, model: cat ? cat.model : (entries[0] ? entries[0].model : slug), slug, n: entries.length, entries, points });
+      return;
+    }
+    if (p.feed) {
+      const rows = await q.query(`SELECT ${R.PUBLIC} FROM registry_entries WHERE deleted_at IS NULL ORDER BY created_at DESC LIMIT 50`);
+      const x = R.esc, site = "https://www.orlandu.com/";
+      const urlOf = e => (e.model_slug.startsWith("other-") ? site + "registry.html" : site + "registry-" + e.model_slug + ".html") + "#e" + e.id;
+      const items = rows.map(R.pub).map(e => {
+        const badge = e.model_as_entered && e.model_as_entered.toUpperCase() !== e.model ? e.model_as_entered.toUpperCase() : e.model;
+        const bits = [e.built ? "plate " + e.built : null, e.hours != null ? Number(e.hours).toLocaleString("en-US") + " h" : null, R.COND[e.cond] || e.cond, e.acq_src ? "from " + e.acq_src : null, e.handle ? "registered by " + e.handle : null, [e.state, e.country].filter(Boolean).join(", ") || null].filter(Boolean).join(" · ");
+        return "<item><title>" + x("Sony " + badge + " · " + e.serial_masked + " — entry #" + e.id) + "</title><link>" + x(urlOf(e)) + "</link><guid isPermaLink=\"true\">" + x(urlOf(e)) + "</guid><pubDate>" + new Date(e.created_at).toUTCString() + "</pubDate><category>" + x(e.line) + "</category><description>" + x(bits + (e.note ? " — " + e.note : "")) + "</description></item>";
+      });
+      res.setHeader("Cache-Control", R.CACHE);
+      res.setHeader("Content-Type", "application/rss+xml; charset=utf-8");
+      res.status(200).send('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Orlandu Registry — new entries</title><link>' + site + 'registry.html</link><description>Sony BVM and PVM monitors as their owners register them in the Orlandu Registry, a serial-number census of the survivors. Serials are masked.</description><language>en-us</language><atom:link href="' + site + 'api/registry?feed=rss" rel="self" type="application/rss+xml"/>' + items.join("") + "</channel></rss>\n");
+      return;
+    }
+    if (p.export) {
+      const fmt = String(p.export).toLowerCase() === "csv" ? "csv" : "json";
+      const rows = await q.query(`SELECT ${R.PUBLIC} FROM registry_entries WHERE deleted_at IS NULL ORDER BY id ASC`);
+      const entries = rows.map(R.pub).map(e => ({ ...e, entry_url: (e.model_slug.startsWith("other-") ? "https://www.orlandu.com/registry.html" : "https://www.orlandu.com/registry-" + e.model_slug + ".html") + "#e" + e.id }));
+      res.setHeader("Cache-Control", R.CACHE);
+      res.setHeader("Access-Control-Expose-Headers", "Content-Disposition");
+      if (fmt === "csv") {
+        const cols = ["id", "model", "model_as_entered", "model_slug", "line", "serial_masked", "built", "hours", "cond", "note", "acq_year", "acq_src", "price", "currency", "seller", "handle", "country", "state", "photo_url", "created_at", "entry_url"];
+        const cell = v => { const s = v == null ? "" : String(v); return /[",\r\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+        res.setHeader("Content-Type", "text/csv; charset=utf-8");
+        res.setHeader("Content-Disposition", 'inline; filename="orlandu-registry-entries.csv"');
+        res.status(200).send("\ufeff" + cols.join(",") + "\r\n" + entries.map(e => cols.map(c => cell(e[c])).join(",")).join("\r\n") + "\r\n");
+        return;
+      }
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.setHeader("Content-Disposition", 'inline; filename="orlandu-registry-entries.json"');
+      res.status(200).send(JSON.stringify({ dataset: "The Orlandu Registry — entries", source: "https://www.orlandu.com/registry.html", license: "CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/", credit: "Orlandu's Arcade, https://www.orlandu.com/ — and the owners who registered each monitor", note: "Serials are masked (last two digits) by design; the full serial and the owner's email are never published. Photos stay © their owners.", count: entries.length, rows: entries }, null, 1));
       return;
     }
     if (p.entries) {

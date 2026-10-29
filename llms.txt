@@ -8,9 +8,10 @@
 
 ## For agents
 
-- [Full text in one file](https://www.orlandu.com/llms-full.txt): every page as Markdown, about 84,000 words.
-- [MCP server](https://www.orlandu.com/api/mcp): read-only tools — search the site, read a page, Sony monitor specs, the PlayChoice-10 library, console video out. How to connect: https://www.orlandu.com/mcp.html
-- [Open datasets, CC BY 4.0](https://www.orlandu.com/mcp.html#the-datasets): sony-monitor-specs, playchoice-10-library, console-video-out, bkm-cards as JSON and CSV, connect (the Will-it-connect rules) as JSON under https://www.orlandu.com/data/
+- [Full text in one file](https://www.orlandu.com/llms-full.txt): every page as Markdown, about 85,000 words.
+- [MCP server](https://www.orlandu.com/api/mcp): read-only tools — search the site, read a page, Sony monitor specs, the PlayChoice-10 library, BKM cards, console video out, the console-to-monitor planner, and registry_census (the live Sony BVM/PVM survivor census). How to connect: https://www.orlandu.com/mcp.html
+- [What's new](https://www.orlandu.com/feed.xml): RSS of new pages, stories, tools and arrivals (also https://www.orlandu.com/feed.json); new registry entries at https://www.orlandu.com/api/registry?feed=rss
+- [Open datasets, CC BY 4.0](https://www.orlandu.com/mcp.html#the-datasets): sony-monitor-specs, playchoice-10-library, console-video-out, bkm-cards as JSON and CSV, connect (the Will-it-connect rules) as JSON under https://www.orlandu.com/data/; the Orlandu Registry entries (masked serials) live at https://www.orlandu.com/api/registry?export=json and ?export=csv
 
 ## The collection
 

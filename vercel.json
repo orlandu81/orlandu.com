@@ -55,7 +55,7 @@
       ]
     },
     {
-      "source": "/(llms|llms-full)\\.txt",
+      "source": "/(llms|llms-full|feed)\\.(txt|xml|json)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",

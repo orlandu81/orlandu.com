@@ -35,10 +35,14 @@
   // <b data-reg="entries|owners|countries|models">. Paints from the copy registry.js keeps in localStorage,
   // then refreshes from the API; the baked-in number stays if both are missing.
   (function regCounts() {
-    const els = document.querySelectorAll("[data-reg]");
-    if (!els.length) return;
+    const els = document.querySelectorAll("[data-reg]"), per = document.querySelectorAll("[data-regmodel]");
+    if (!els.length && !per.length) return;
     const key = "orlandu-registry:/api/registry";
-    const paint = d => { if (!d || !d.ok || !d.stats) return; els.forEach(el => { const v = d.stats[el.dataset.reg]; if (v != null) el.textContent = Number(v).toLocaleString("en-US"); }); };
+    const paint = d => {
+      if (!d || !d.ok || !d.stats) return;
+      els.forEach(el => { const v = d.stats[el.dataset.reg]; if (v != null) el.textContent = Number(v).toLocaleString("en-US"); });
+      if (per.length && Array.isArray(d.counts)) { const n = {}; d.counts.forEach(c => { n[c.model_slug] = c.n; }); per.forEach(el => { el.textContent = Number(n[el.dataset.regmodel] || 0).toLocaleString("en-US"); }); } // monitors.html cards (2026-10-28)
+    };
     try { const v = localStorage.getItem(key); if (v) paint(JSON.parse(v)); } catch (e) {}
     const go = () => fetch("/api/registry", { cache: "no-cache" }).then(r => r.json()).then(d => { if (d && d.ok) { paint(d); try { localStorage.setItem(key, JSON.stringify(d)); } catch (e) {} } }).catch(() => {});
     if ("requestIdleCallback" in window) requestIdleCallback(go, { timeout: 2500 }); else setTimeout(go, 800);
@@ -164,6 +168,7 @@
           '<a href="mailto:orlandusarcade@gmail.com">Email</a>' +
           '<a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a>' +
           '<a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a>' +
+          '<a href="feed.xml">RSS</a>' +
         '</div>' +
         '<nav class="explore" aria-label="Explore the site">' +
           '<div><span>Pages</span>' + NAV.slice(1).map(([href, label]) => '<a href="' + href + '">' + label + '</a>').join('') +

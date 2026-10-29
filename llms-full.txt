@@ -26,7 +26,7 @@ A working museum of Sony professional video — thirteen units across eight mode
 
 ### Sony BVM & PVM Serial Census
 
-A survivor count of Sony broadcast monitors kept by the people who own them — 29 monitors from 14 owners so far. Add yours and see where your serial falls in the run.
+A survivor count of Sony’s professional monitors, kept by the people who own them — 29 monitors from 14 owners so far. Add yours and see where your serial falls in the run.
  (https://www.orlandu.com/registry.html) The Consoles
 
 ### Nintendo · Sega · NEC · Sony
@@ -52,12 +52,7 @@ Nintendo’s official strategy guides, photographed cover by cover — the SNES 
 ### Sixty Foreverspin Tops
 
 One shape turned in thirty-five metals, from 6 g magnesium to 60 g tungsten, plus twenty-five mystery tops and limited editions — each photographed off its base.
- (https://www.orlandu.com/spinning-tops.html) Gallery
-
-### Photos & Video from the Arcade
-
-The growing photo and video log — new shots from the garage land here as they happen.
- (https://www.orlandu.com/gallery.html) Stories
+ (https://www.orlandu.com/spinning-tops.html) Stories
 
 ### Monographs, Guides & Magazines
 
@@ -348,7 +343,7 @@ Every BVM and PVM on this page is in the Orlandu Registry (https://www.orlandu.c
 
 Twenty-nine inches of presence, the biggest tube in the room. On screen: *Super Mario World*, 1990.
 
-The full profile → (https://www.orlandu.com/pvm-2950q.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f0)
+The full profile → (https://www.orlandu.com/pvm-2950q.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f0) · 2 in the registry → (https://www.orlandu.com/registry-pvm-2950q.html)
 
 [Photo: Sony PVM-20L5 multiformat Trinitron monitor lit and running Super Mario Sunshine, an AMS-100 audio monitor on top and both control strips in frame]
 
@@ -358,7 +353,7 @@ The full profile → (https://www.orlandu.com/pvm-2950q.html) · Feature in Vol.
 
 The late-generation 20-inch multiformat, AMS-100 riding on top. On screen: *Super Mario Sunshine*, 2002 — the year this generation of chassis arrived, at 480p over component.
 
-The full profile → (https://www.orlandu.com/pvm-20l5.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f1)
+The full profile → (https://www.orlandu.com/pvm-20l5.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f1) · 3 in the registry → (https://www.orlandu.com/registry-pvm-20l5.html)
 
 [Photo: Sony BVM-20E1U broadcast monitor lit in its rack running Chrono Trigger, with an AMS-100 audio monitor speaker on top]
 
@@ -368,7 +363,7 @@ The full profile → (https://www.orlandu.com/pvm-20l5.html) · Feature in Vol. 
 
 The primary broadcast chassis, AMS-100 riding on top. On screen: *Chrono Trigger*, 1995 — the year this chassis went into production.
 
-The full profile → (https://www.orlandu.com/bvm-20e1u.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f2)
+The full profile → (https://www.orlandu.com/bvm-20e1u.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f2) · 3 in the registry → (https://www.orlandu.com/registry-bvm-20e1u.html)
 
 [Photo: Sony BVM-A14F5U broadcast monitor lit and running Beggar Prince on the Sega Genesis, with its full control panel and an AMS-100 speaker above]
 
@@ -378,7 +373,7 @@ The full profile → (https://www.orlandu.com/bvm-20e1u.html) · Feature in Vol.
 
 Two of three card slots filled, control panel and keypad flanking the tube. On screen: *Beggar Prince*, 2006 — a brand-new Genesis game a decade after Sega walked away, on the last CRT generation Sony ever built.
 
-The full profile → (https://www.orlandu.com/bvm-a14f5u.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f3)
+The full profile → (https://www.orlandu.com/bvm-a14f5u.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f3) · 1 in the registry → (https://www.orlandu.com/registry-bvm-a14f5u.html)
 
 [Photo: Three Sony LMD professional LCD monitors side by side, all showing the same cartoon frame]
 
@@ -947,7 +942,7 @@ Handhelds, the unit on the bench, and anything that does not run through the RGB
 
 ---
 
-# Nintendo NES Top Loader (NES-101)
+# NES Top Loader (NES-101): Nintendo’s 1993 Redesign, in RGB
 
 URL: https://www.orlandu.com/nes-top-loader.html
 
@@ -988,6 +983,24 @@ What has been done to it.
 - **Family**: **Nintendo NES** — 8-bit, 1985 in North America
 - **Revision**: **NES-101** — 1993, the top-loading redesign
 - **Status**: **In service** — On the display shelf, wired into the RGB chain.
+
+## Quick answers
+
+### What is the NES top loader?
+
+Nintendo’s 1993 redesign of the NES, model NES-101: a smaller, cheaper box that takes the cartridge straight down, the way the Famicom always had. It dropped the front loader’s spring tray and its lockout chip, so the blinking-screen ritual never happens on one.
+
+### Does the NES top loader have AV output?
+
+Not from the factory. Stock it speaks RF only — Nintendo dropped the front loader’s AV jacks — which is the weakest picture the NES ever had. Getting a clean signal out of one means a modification.
+
+### How do you get RGB from an NES top loader?
+
+With an NESRGB board, which takes the color straight from the picture chip ahead of any RF or composite stage. This one feeds RGB over SCART into the switcher, a SCART-to-BNC breakout, and a Sony PVM or BVM. The console mod table (https://www.orlandu.com/consoles.html#mods) has every machine’s path.
+
+### Does the NES-101 have the 10NES lockout chip?
+
+No. Nintendo removed the lockout chip in this revision, so unlicensed and imported cartridges that fight the front loader simply run. The cartridge slot is the same 72-pin NTSC connector.
 
 The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and The Signal Chain (https://www.orlandu.com/signal-chain.html) walks it box by box. The NES Front Loader carries an NESRGB board too; it isn’t on the display shelf. Nintendo’s own Player’s Guides have a shelf of their own (https://www.orlandu.com/guide-shelf.html), and the arcade side of the NES library is on the PlayChoice-10 wall (https://www.orlandu.com/playchoice-10.html).
 
@@ -1039,7 +1052,7 @@ The console mod table (https://www.orlandu.com/consoles.html#mods) lists every m
 
 ---
 
-# Game Boy Advance SP (Cobalt, IPS)
+# Game Boy Advance SP, Cobalt, with an IPS Screen Mod
 
 URL: https://www.orlandu.com/gba-sp.html
 
@@ -1080,6 +1093,24 @@ What has been done to it.
 - **Family**: **Game Boy Advance** — 32-bit handheld, 2001
 - **Revision**: **SP** — the 2003 clamshell
 - **Status**: **On the shelf** — With the rest of the handhelds.
+
+## Quick answers
+
+### What is the cobalt Game Boy Advance SP?
+
+Nintendo’s 2003 clamshell Game Boy Advance in one of its launch colors: a folding shell that protects its own screen, a built-in rechargeable battery and, for the first time on a Game Boy, a light for the screen.
+
+### Is the Game Boy Advance SP backlit?
+
+The original SP’s light is a front light, shining across the screen from the edge, and the picture looks washed out next to anything backlit. This one has had that screen replaced with a backlit IPS panel, so it is now.
+
+### What is an IPS screen mod on a GBA SP?
+
+A backlit IPS panel fitted in place of the front-lit reflective LCD, inside the original shell — real contrast and wide viewing angles. This one was installed by iFixRetro; the cobalt shell is untouched.
+
+### What cartridges does the GBA SP play?
+
+Game Boy, Game Boy Color and Game Boy Advance cartridges. Handhelds don’t run through the RGB chain here, so it is on the shelf with the rest of the handhelds rather than in the console mod table.
 
 Handhelds don’t run through the RGB chain, so this one isn’t in the console mod table (https://www.orlandu.com/consoles.html#mods). The rest of the handhelds are on the consoles page (https://www.orlandu.com/consoles.html).
 
@@ -1888,11 +1919,11 @@ The games themselves — fifty favorites, every one of them finished — are ran
 
 ---
 
-# Foreverspin Tops, Metal by Metal, with Weights
+# Foreverspin Metal Spinning Tops: 35 Metals, Weighed
 
 URL: https://www.orlandu.com/spinning-tops.html
 
-Foreverspin spinning tops photographed off their bases, metal by metal — titanium, tungsten, Damascus, mokume-gane, Humanium Metal and the mystery tops.
+Sixty Foreverspin metal spinning tops photographed off their bases, each with its weight — tungsten (60 g), titanium, steel, Damascus, mokume-gane, Humanium and the mystery tops.
 
 Foreverspin, Metal by Metal
 
@@ -2146,6 +2177,28 @@ Foreverspin slips mystery tops into orders as gifts and releases limited edition
 [Photo: Foreverspin Valentine's Day Pink spinning top, limited edition, photographed off its base]
 
 ***Valentine’s Day Pink** 9 gLimited Edition*
+
+## Quick answers
+
+### Which spinning top is the heaviest, and which the lightest?
+
+Tungsten, at 60 g — Foreverspin calls it the master top — and magnesium at 6 g, ten times lighter and the fastest-spinning of them all. The same shape, so the difference is entirely the metal.
+
+### How much does a tungsten spinning top weigh?
+
+Foreverspin’s tungsten top is 60 g. For scale, the stainless steel original is 28 g, titanium 16 g, silver 37 g and copper 32 g; every top on this page is labeled with its weight.
+
+### What steel spinning tops are there?
+
+Stainless Steel (the 28 g original), S.S. Mirror with its 10-day polish, Stainless Steel Damascus, M2 high-speed steel, Golden-Inox and CarbonChromium — six steels, each a different pattern or finish on the same form.
+
+### Are all Foreverspin tops the same shape?
+
+Yes. One shape, turned in a long list of metals, which is the point of lining them up: the only thing left to compare is the material — its color, its weight in the hand and the way it wears.
+
+### What are Foreverspin mystery tops?
+
+Tops the company slips into orders as gifts, alongside limited editions in colors that come and go. Foreverspin doesn’t say what they are made of, so the twenty-five here are labeled by color and edition, all 9 g.
 
 ---
 
@@ -2770,7 +2823,7 @@ TNA sits in the pinball row with Indiana Jones (https://www.orlandu.com/indiana-
 
 ---
 
-# Ghostbusters Premium — Stern Pinball
+# Ghostbusters Premium Pinball (Stern, 2016): Magna-Slings & All
 
 URL: https://www.orlandu.com/ghostbusters.html
 
@@ -2821,6 +2874,24 @@ Complete is the hard part. The accessories were expensive when the machine was n
 - **Manufacturer**: **Stern** — 2016. Premium edition.
 - **Notable**: **Magna-slings** — Magnetic slingshots. Divisive by design.
 - **Status**: **Free play** — In the pinball row.
+
+## Quick answers
+
+### What are the magna-slings on Ghostbusters pinball?
+
+Magnetic slingshots. On the Premium and LE editions of Stern’s 2016 Ghostbusters the slingshots grab the ball mid-flight and fling it somewhere you were not expecting — the feature the machine is famous for and the one players still complain about.
+
+### Is Stern’s Ghostbusters a hard pinball machine?
+
+It has a reputation for being mean, and it earned it: the magna-slings can end a good ball for no reason you could have played around. Underneath that is a fast machine with one of the best-looking playfields Stern has produced, in Zombie Yeti’s artwork.
+
+### What OEM accessories did Stern make for Ghostbusters?
+
+A topper, a shaker motor, a shooter rod, side rails (black here), inner side blades, a headphone-jack kit and a banner. This machine carries the complete set; the black side rails, the topper and the shooter rod almost never surface on their own.
+
+### Who made Ghostbusters pinball and when?
+
+Stern Pinball, 2016, in Pro, Premium and Limited Edition versions with artwork by Zombie Yeti. This one is a Premium, shopped out and on free play in the pinball row.
 
 More photos of Ghostbusters in the gallery → (https://www.orlandu.com/gallery.html#tag=ghostbusters)
 
@@ -4545,7 +4616,7 @@ Buying the monitor first? What to check before you buy a PVM-20L5 (https://www.o
 
 URL: https://www.orlandu.com/pvm-vs-bvm.html
 
-Why the best screens for retro games were never sold to gamers: how Sony's PVM and BVM professional monitors differ, and which one you actually want.
+PVM vs. BVM: the PVM is Sony's production monitor, the BVM its broadcast reference — sharper tube, BKM card slots, deeper calibration. Which one you actually want.
 
 Did You Know?
 
@@ -4573,7 +4644,7 @@ The BVM was something else entirely: Sony's reference grade, the monitors broadc
 | Inputs | Fixed on the back panel: RGB/component BNCs, composite, S-Video; one option slot on the late 20L5 | Modular BKM cards in 3–4 slots; the E/F series keeps one fixed RGB block, the A series has no analog input at all until a card is fitted |
 | Formats | 15 kHz standard definition on most (the 2950Q: NTSC, PAL, SECAM); the late 20L5 is multiscan, 240p to 1080i | Model by model: strictly SD on the E/F series (240p, 480i, 576i); 240p to 1080i and 24PsF on the A series |
 | Calibration | Front-panel picture controls | Deep — beam-landing correction, digital uniformity, a probe that walks the white point to D65 on the A series |
-| Weight | PVM-20L5 ≈73 lb; PVM-2950Q 115 lb | BVM-20E1U ≈85 lb; BVM-A14F5U ≈48 lb |
+| Weight | PVM-20L5 68 lb; PVM-2950Q 115 lb | BVM-20E1U 82 lb; BVM-A14F5U 57 lb |
 | For a game collector | The right answer for most — the picture gap to a BVM is small | The sharpest 240p ever rendered (the 20E1U), or reference work |
 
 The fleet here — thirteen units across eight models, documented in Trinitron Fleet, Vol. 1 (https://www.orlandu.com/trinitron-fleet-vol1.html) — grew out of a single purchase more than a decade ago: a 13-inch PVM-1354Q. One good monitor is a slippery slope; that first PVM has since moved on, the way first monitors do, but it opened the door to everything on the Monitor Fleet page (https://www.orlandu.com/monitors.html).
@@ -5813,7 +5884,9 @@ Loading the census…
 
 ## Latest entries newest first
 
-Each card shows what the owner chose to share. Email addresses are never published and never shown to other owners; the full serial stays on the server. The whole catalog, with a page per model, is on the models list (https://www.orlandu.com/registry-models.html).
+Each card shows what the owner chose to share. Email addresses are never published and never shown to other owners; the full serial stays on the server. The whole catalog, with a page per model, is on the models list (https://www.orlandu.com/registry-models.html). The entries are open data, CC BY 4.0: JSON (https://www.orlandu.com/api/registry?export=json) · CSV (https://www.orlandu.com/api/registry?export=csv), masked exactly as shown here, and an AI assistant can read the census through the site's MCP server (https://www.orlandu.com/mcp.html) (registry_census).
+
+How to cite: Orlandu’s Arcade (“Orlandu81”) and the registry’s owners, *The Orlandu Registry: Sony BVM & PVM Serial Number Census*, orlandu.com, 2026, https://www.orlandu.com/registry.html
 
 ## What gets published, what stays private
 
@@ -6114,12 +6187,12 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 84,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 85,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server
 
-Endpoint https://www.orlandu.com/api/mcp — Streamable HTTP transport, read-only, no authentication. Eight tools:
+Endpoint https://www.orlandu.com/api/mcp — Streamable HTTP transport, read-only, no authentication. Nine tools:
 
 - search_orlandu — full-text search over every page, card, glossary term and gallery caption
 - read_orlandu_page — one page as Markdown
@@ -6129,6 +6202,7 @@ Endpoint https://www.orlandu.com/api/mcp — Streamable HTTP transport, read-onl
 - bkm_cards — every Sony BKM option card and which monitor it fits
 - console_video_out — how each console reaches the glass
 - plan_connection — any console to any monitor in the fleet: the chain, the rules, the verdict
+- registry_census — the Orlandu Registry (https://www.orlandu.com/registry.html), live: survivors per model, the records, and any model's registered entries with their masked serials
 
 It answers from the published pages only, and it is rebuilt with every update to the site.
 
@@ -6146,11 +6220,11 @@ In Cursor, add it to mcp.json:
 { "mcpServers": { "orlandu": { "url": "https://www.orlandu.com/api/mcp" } } }
 ```
 
-In Claude it goes in as a custom connector with that URL; ChatGPT and most other assistants that accept a remote MCP server take the same URL. Then ask: *"Which Sony monitors at Orlandu's Arcade take BKM cards, and which cards are fitted?"* · *"What does the PVM-20L5 buying guide say about shipping?"* · *"Read the PVM vs. BVM piece and tell me which one I want for a Super Nintendo."*
+In Claude it goes in as a custom connector with that URL; ChatGPT and most other assistants that accept a remote MCP server take the same URL. Then ask: *"Which Sony monitors at Orlandu's Arcade take BKM cards, and which cards are fitted?"* · *"What does the PVM-20L5 buying guide say about shipping?"* · *"Read the PVM vs. BVM piece and tell me which one I want for a Super Nintendo."* · *"How many BVM-20E1Us are in the Orlandu Registry, and what hours do they show?"*
 
 ## The datasets
 
-Five tables from the site as open data, CC BY 4.0 — use them, credit Orlandu's Arcade.
+Six tables from the site as open data, CC BY 4.0 — use them, credit Orlandu's Arcade.
 
 | Dataset | What's in it | Files |
 |---|---|---|
@@ -6158,6 +6232,7 @@ Five tables from the site as open data, CC BY 4.0 — use them, credit Orlandu's
 | PlayChoice-10 library | The fifty-two games Nintendo released, each with a photo of its original board — the cart wall (https://www.orlandu.com/playchoice-10.html) | JSON (https://www.orlandu.com/data/playchoice-10-library.json) · CSV (https://www.orlandu.com/data/playchoice-10-library.csv) |
 | Sony BKM cards | Thirty-four option cards and controllers across the BVM-D, E/F/G, A and LCD-era lines: what each does, which chassis it fits, the Sony source — the reference (https://www.orlandu.com/bkm-cards.html) | JSON (https://www.orlandu.com/data/bkm-cards.json) · CSV (https://www.orlandu.com/data/bkm-cards.csv) |
 | Console video out | Nine consoles: the modification, the video output, the chain to the monitor — the console table (https://www.orlandu.com/consoles.html#mods) | JSON (https://www.orlandu.com/data/console-video-out.json) · CSV (https://www.orlandu.com/data/console-video-out.csv) |
+| The Orlandu Registry | Every monitor registered by its owner, live: model, masked serial, plate date, hours, condition, note, where it came from and what it cost, with a link to each entry — the census (https://www.orlandu.com/registry.html). Serials stay masked and emails never leave the server. | JSON (https://www.orlandu.com/api/registry?export=json) · CSV (https://www.orlandu.com/api/registry?export=csv) |
 | Will it connect? rules | Seventeen consoles, eight monitors, seven signal types: what each console puts out and how, what each monitor accepts and through which card, and the cable chain per signal — the planner (https://www.orlandu.com/will-it-connect.html) | JSON (https://www.orlandu.com/data/connect.json) |
 
 The photos the datasets link to stay © Orlandu's Arcade.

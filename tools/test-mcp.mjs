@@ -47,7 +47,7 @@ section("transport");
 {
   const { res, parsed } = await call("GET", undefined);
   ok(res.code === 405, "GET → 405 (got " + res.code + ")");
-  ok(parsed && parsed.ok === false && Array.isArray(parsed.tools) && parsed.tools.length === 8, "GET body is JSON with 8 tool names");
+  ok(parsed && parsed.ok === false && Array.isArray(parsed.tools) && parsed.tools.length === 9, "GET body is JSON with 9 tool names");
   ok(res.headers["allow"] === "POST, OPTIONS", "GET sets Allow");
   ok(res.headers["access-control-allow-origin"] === "*", "CORS origin * on GET");
 }
@@ -89,7 +89,7 @@ section("transport");
 {
   const { parsed } = await call("POST", [rpc("ping"), { jsonrpc: "2.0", method: "notifications/x" }, rpc("tools/list")]);
   ok(Array.isArray(parsed) && parsed.length === 2, "batch drops the notification, answers the two requests");
-  ok(parsed[1].result && parsed[1].result.tools.length === 8, "batch tools/list answered");
+  ok(parsed[1].result && parsed[1].result.tools.length === 9, "batch tools/list answered");
 }
 {
   const { res, parsed } = await call("POST", JSON.stringify(rpc("ping")));
@@ -116,9 +116,9 @@ let TOOLS;
 {
   const { parsed } = await call("POST", rpc("tools/list"));
   TOOLS = parsed.result.tools;
-  ok(TOOLS.length === 8, "tools/list has 8 tools (got " + TOOLS.length + ")");
+  ok(TOOLS.length === 9, "tools/list has 9 tools (got " + TOOLS.length + ")");
   const names = TOOLS.map(t => t.name).sort().join(",");
-  ok(names === "bkm_cards,console_video_out,list_orlandu_pages,plan_connection,playchoice_10_library,read_orlandu_page,search_orlandu,sony_monitor_specs", "tool names: " + names);
+  ok(names === "bkm_cards,console_video_out,list_orlandu_pages,plan_connection,playchoice_10_library,read_orlandu_page,registry_census,search_orlandu,sony_monitor_specs", "tool names: " + names);
   for (const t of TOOLS) {
     ok(/^[a-z0-9_]+$/.test(t.name), t.name + " name is snake_case");
     ok(typeof t.description === "string" && t.description.length > 40, t.name + " has a description");
@@ -333,6 +333,38 @@ section("ids");
   ok(res.code === 202, "id null is treated as a notification (202)");
   const { parsed: pj } = await call("POST", { jsonrpc: "1.0", id: 1, method: "ping" });
   ok(pj.error && pj.error.code === -32600, "jsonrpc != 2.0 → Invalid Request");
+}
+
+// registry_census reads the live API over fetch; stub it so the test runs offline and deterministically.
+{
+  const realFetch = globalThis.fetch;
+  const E = { id: 20, model: "BVM-20E1U", model_as_entered: "BVM-20E1E", model_slug: "bvm-20e1u", line: "BVM", serial_masked: "20004xx", built: "2001-01", hours: 47103, cond: "working", note: "n", acq_year: 2026, acq_src: "Private sale", price: null, currency: null, seller: null, handle: null, country: "AT", state: null, photo_url: null, created_at: "2026-10-26T16:08:14.484Z" };
+  const calls = [];
+  globalThis.fetch = async (url) => {
+    calls.push(String(url));
+    const u = new URL(String(url));
+    if (u.searchParams.get("model")) return { json: async () => ({ ok: true, model: "BVM-20E1U", slug: u.searchParams.get("model"), n: 1, entries: [E], points: [{ id: 20, h: 20004, label: "20004xx" }] }) };
+    return { json: async () => ({ ok: true, stats: { entries: 29, models: 20, owners: 14, countries: 4, updated: "2026-10-28T23:10:03.532Z" }, counts: [{ model_slug: "bvm-20e1u", model: "BVM-20E1U", line: "BVM", n: 3 }], latest: [E], records: { top: { model_slug: "bvm-20e1u", model: "BVM-20E1U", line: "BVM", n: 3 }, countries: ["AT", "US"] } }) };
+  };
+  const sum = await tool("registry_census", {});
+  ok(sum.result && !sum.result.isError, "registry_census (summary) answers");
+  const sc = sum.result && sum.result.structuredContent;
+  ok(sc && sc.stats && sc.stats.entries === 29 && Array.isArray(sc.survivors_by_model) && sc.survivors_by_model[0].page.endsWith("registry-bvm-20e1u.html"), "summary carries stats + per-model pages");
+  ok(sc && /CC BY/.test(sc.license) && sc.export && sc.source, "summary carries license, export URL, source");
+  ok(!JSON.stringify(sc).includes("email"), "summary never carries an email field");
+  const one = await tool("registry_census", { model: "bvm-20e1e" });
+  const so = one.result && one.result.structuredContent;
+  ok(so && so.model === "BVM-20E1U" && so.registered === 1 && so.entries[0].entry_url.endsWith("#e20") && Array.isArray(so.serial_points), "a variant badge resolves to its chassis; entries carry entry_url; points present");
+  ok(calls.some(c => c.endsWith("?model=bvm-20e1u")), "model query hits the API with the chassis slug");
+  const bad = await tool("registry_census", { model: "LMD-9050" });
+  ok(bad.result && bad.result.isError && /not a Sony BVM or PVM chassis/.test(bad.result.content[0].text), "a non-catalog model → isError with the catalog pointer");
+  globalThis.fetch = async () => { throw new Error("down"); };
+  const down = await tool("registry_census", {});
+  ok(down.result && down.result.isError && /did not answer/.test(down.result.content[0].text), "API down → isError, not a crash");
+  globalThis.fetch = async () => ({ json: async () => ({ ok: false, error: "db" }) });
+  const db = await tool("registry_census", { model: "PVM-20L5" });
+  ok(db.result && db.result.isError, "API error body → isError");
+  globalThis.fetch = realFetch;
 }
 
 console.log("\n" + checks + " checks, " + failures + " failed");

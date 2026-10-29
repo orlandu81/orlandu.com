@@ -71,6 +71,8 @@ def head(fn, title, og_title, desc, kicker_kind, extra_ld="", robots="index,foll
 <link rel="canonical" href="{url}">
 <link rel="alternate" type="text/markdown" href="{SITE}llms-full.txt" title="Full text of this site for AI assistants">
 <link rel="alternate" type="text/markdown" href="{SITE}llms.txt" title="Site index for AI assistants">
+<link rel="alternate" type="application/rss+xml" href="{SITE}feed.xml" title="What's new at Orlandu's Arcade">
+<link rel="alternate" type="application/rss+xml" href="{SITE}api/registry?feed=rss" title="The Orlandu Registry — new entries">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/registry.css">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
@@ -152,7 +154,8 @@ def landing():
     <h2 class="sec">Latest entries <small>newest first</small></h2>
     <div class="entries" id="entries-out"></div>
     <p class="loadmore" id="entries-more" hidden><button type="button" class="btn cy" id="entries-more-btn">Show all entries</button></p>
-    <p class="note" style="margin-top:1.2rem">Each card shows what the owner chose to share. Email addresses are never published and never shown to other owners; the full serial stays on the server. The whole catalog, with a page per model, is on the <a href="registry-models.html">models list</a>.</p>
+    <p class="note" style="margin-top:1.2rem">Each card shows what the owner chose to share. Email addresses are never published and never shown to other owners; the full serial stays on the server. The whole catalog, with a page per model, is on the <a href="registry-models.html">models list</a>. The entries are open data, CC BY 4.0: <a href="api/registry?export=json">JSON</a> · <a href="api/registry?export=csv">CSV</a>, masked exactly as shown here, and an AI assistant can read the census through the site's <a href="mcp.html">MCP server</a> (<code>registry_census</code>).</p>
+    <p class="note">How to cite: Orlandu&rsquo;s Arcade (&ldquo;Orlandu81&rdquo;) and the registry&rsquo;s owners, <em>The Orlandu Registry: Sony BVM &amp; PVM Serial Number Census</em>, orlandu.com, 2026, https://www.orlandu.com/registry.html</p>
   </section>
 
   <section id="how">
@@ -175,7 +178,15 @@ def landing():
   </section>
 """ + related("hub") + """</main>
 """
-    return head("registry.html", "Sony BVM & PVM Serial Number Registry — Orlandu's Arcade", "Sony BVM & PVM Serial Number Registry", desc, "Census", crumbs=[("Registry", "registry.html")]) + body + FOOT
+    ds = {"@type": "Dataset", "@id": SITE + "registry.html#dataset", "name": "The Orlandu Registry — Sony BVM and PVM serial-number census",
+          "description": "Every Sony BVM and PVM monitor registered by its owner: model, masked serial number, plate build date, hours, condition, note, where it came from and what it cost. Serials are masked to their last two digits; owners' emails are never published.",
+          "url": SITE + "registry.html", "license": "https://creativecommons.org/licenses/by/4.0/", "isAccessibleForFree": True,
+          "creator": {"@type": "Organization", "@id": SITE + "#org", "name": "Orlandu's Arcade", "url": SITE},
+          "publisher": {"@type": "Organization", "@id": SITE + "#org", "name": "Orlandu's Arcade", "url": SITE},
+          "inLanguage": "en-US", "keywords": ["Sony BVM", "Sony PVM", "serial number", "registry", "census", "broadcast monitor", "CRT"],
+          "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": SITE + "api/registry?export=json"},
+                           {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": SITE + "api/registry?export=csv"}]}
+    return head("registry.html", "Sony BVM & PVM Serial Number Registry — Orlandu's Arcade", "Sony BVM & PVM Serial Number Registry", desc, "Census", extra_ld=ds, crumbs=[("Registry", "registry.html")]) + body + FOOT
 
 # ── the catalog list ──────────────────────────────────────────────────────
 def static_models():

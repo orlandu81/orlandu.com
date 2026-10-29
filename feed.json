@@ -1,0 +1,241 @@
+{
+ "version": "https://jsonfeed.org/version/1.1",
+ "title": "Orlandu's Arcade — what's new",
+ "home_page_url": "https://www.orlandu.com/",
+ "feed_url": "https://www.orlandu.com/feed.json",
+ "description": "New pages, stories, tools and arrivals at Orlandu's Arcade. New registry entries: https://www.orlandu.com/api/registry?feed=rss",
+ "icon": "https://www.orlandu.com/assets/favicon-192.png",
+ "language": "en-US",
+ "items": [
+  {
+   "id": "https://www.orlandu.com/signage.html#toppers",
+   "url": "https://www.orlandu.com/signage.html#toppers",
+   "title": "Double Dribble and Kung Fu",
+   "summary": "Two more original PlayChoice-10 toppers off the hunt list — Konami’s 1988 Double Dribble and Irem’s 1984 Kung Fu. See them on the topper wall →",
+   "tags": [
+    "Found"
+   ],
+   "date_published": "2026-10-26T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/registry.html",
+   "url": "https://www.orlandu.com/registry.html",
+   "title": "The Orlandu Registry",
+   "summary": "A serial-number census of surviving Sony BVM and PVM monitors, kept by the people who own them. Add yours and see how many of your model are still accounted for. Register a monitor →",
+   "tags": [
+    "New"
+   ],
+   "date_published": "2026-10-23T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/through-the-mask.html",
+   "url": "https://www.orlandu.com/through-the-mask.html",
+   "title": "Through the mask",
+   "summary": "Every tube in the fleet simulated from its own numbers — scan-line gap, grille pitch, center resolution — two side by side, with a slider that walks you from the glass to the couch. See through it →",
+   "tags": [
+    "New tool"
+   ],
+   "date_published": "2026-10-22T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/will-it-connect.html",
+   "url": "https://www.orlandu.com/will-it-connect.html",
+   "title": "Will it connect?",
+   "summary": "Pick any console and any monitor in the fleet: the cable chain step by step, the sync and termination rules, which BKM card it needs, and a plain verdict. Ask it →",
+   "tags": [
+    "New tool"
+   ],
+   "date_published": "2026-10-22T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/bkm-10r.html",
+   "url": "https://www.orlandu.com/bkm-10r.html",
+   "title": "Operate a BKM-10R",
+   "summary": "The control unit a BVM-20E1U cannot live without, button by button and menu by menu, with Sony’s own description of what each one does. Press something →",
+   "tags": [
+    "New tool"
+   ],
+   "date_published": "2026-10-22T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/sony-model-numbers.html",
+   "url": "https://www.orlandu.com/sony-model-numbers.html",
+   "title": "What a Sony model number says",
+   "summary": "PVM-20L5, BVM-D14H5U, BKM-129X — line, size, tube letter, the digit that means “needs a control unit,” and the market suffix, from Sony’s own manuals, with each family drawn as a lineage strip. Decode a badge →",
+   "tags": [
+    "New reference"
+   ],
+   "date_published": "2026-10-22T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/monitors.html#scale",
+   "url": "https://www.orlandu.com/monitors.html#scale",
+   "title": "Compare two monitors, and see them to scale",
+   "summary": "Pick any two models and the specs that differ light up; above the table, all eight are drawn to Sony’s published dimensions, front and side, with an NES for size. The fleet, to scale →",
+   "tags": [
+    "New on the fleet page"
+   ],
+   "date_published": "2026-10-22T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/bkm-cards.html",
+   "url": "https://www.orlandu.com/bkm-cards.html",
+   "title": "Every Sony BKM card, and which monitor it fits",
+   "summary": "Three physical families, not one: the 2x decoders for the BVM-E/F/G and big D-series, the 1xx cards for the small D-series and the PVM-L5/L2 slot, and the BVM-A boards. What each does, the installation rules, the controllers — sourced to Sony. The reference →",
+   "tags": [
+    "New reference"
+   ],
+   "date_published": "2026-10-10T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/mcp.html",
+   "url": "https://www.orlandu.com/mcp.html",
+   "title": "Ask your AI assistant about the arcade",
+   "summary": "An MCP server, a full-text file and five open datasets let Claude, ChatGPT, Cursor or any agent search the site, read a page and query the monitor specs — no key, no scraping. How to connect it →",
+   "tags": [
+    "New"
+   ],
+   "date_published": "2026-10-10T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/connect-console-to-pvm.html",
+   "url": "https://www.orlandu.com/connect-console-to-pvm.html",
+   "title": "How to Connect a Retro Console to a Sony PVM or BVM",
+   "summary": "A PVM has no SCART socket and no HDMI. The cable, the switcher, the SCART to 4 BNC breakout, sync, termination, audio — and the one box you do not need — from a setup that runs eight consoles into thirteen Sony monitors with no scaler in the path.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-10-10T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/timeline.html",
+   "url": "https://www.orlandu.com/timeline.html",
+   "title": "Forty Years on One Line",
+   "summary": "Every machine, console and monitor plotted by the year it was released — from the 1981 Donkey Kong to the 2020 Rick and Morty, with the quiet years folded away.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-09-11T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/orlandu-50-games.html",
+   "url": "https://www.orlandu.com/orlandu-50-games.html",
+   "title": "The Orlandu 50",
+   "summary": "Fifty favorite console games, ordered by head-to-head duel rather than by argument — every position won against another game. One rule sits above the rest: it had to be beaten, not admired. Plus the ten that were not, and have no excuse. No CRTs, no coin doors — the same instinct pointed at a controller.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-09-10T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/orlandu-100.html",
+   "url": "https://www.orlandu.com/orlandu-100.html",
+   "title": "The Orlandu 100",
+   "summary": "A hundred favorite films, ordered by head-to-head duel rather than by argument — every position on the list won against another film. With the Rotten Tomatoes scores beside each one, the eight this list defends hardest, and the six nobody else in the room liked either. No CRTs, no coin doors — just the same instinct pointed somewhere else.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-09-04T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/crt-field-guide.html",
+   "url": "https://www.orlandu.com/crt-field-guide.html",
+   "title": "How to Spot Professional Glass in the Wild",
+   "summary": "The best screens ever pointed at a game are still hiding in thrift stores, estate garages and surplus auctions, priced like old TVs. The badge, the BNC tells, the lookalikes — and the thirty-second check before you haul it home.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-09-01T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/ams-100-monograph.html",
+   "url": "https://www.orlandu.com/ams-100-monograph.html",
+   "title": "The Sony AMS-100 Has No Written History",
+   "summary": "A 1RU broadcast confidence monitor with two option slots, three input boards and not one article written about it anywhere. This is the first: seven documented frames, twelve boards, the service internals, and a market that has almost never been priced.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-27T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/pvm-20l5-buying-guide.html",
+   "url": "https://www.orlandu.com/pvm-20l5-buying-guide.html",
+   "title": "What to Check Before You Buy a PVM-20L5",
+   "summary": "The one check that tells you most, how to judge a tube that has no hours counter, what the bands actually are — and why a seventy-three pound monitor is something you drive to rather than something you ship.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-26T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/ams-3-vs-ams-100.html",
+   "url": "https://www.orlandu.com/ams-3-vs-ams-100.html",
+   "title": "Ancestor and Descendant",
+   "summary": "Sony's AMS-3 and AMS-100 do the same job in the same kind of room, thirty years apart — one with a transformer and a wall of heatsink, one with SDI and plug-in cards. Stacked on the bench, the difference is not subtle.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-26T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/signal-chain.html",
+   "url": "https://www.orlandu.com/signal-chain.html",
+   "title": "How the Signal Gets to the Glass",
+   "summary": "A shelf of consoles, thirteen professional monitors, and not one scaler in the building — the switchers, the SCART-to-BNC cables and the distribution amp that make it all connect.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-25T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/red-tent.html",
+   "url": "https://www.orlandu.com/red-tent.html",
+   "title": "The Red Tent",
+   "summary": "Nintendo's VS. DualSystem cocktail — found beat-up on Craigslist, restored down to the last screw, and now running VS. Excitebike on one side and a genuinely rare official PlayChoice-10 kit on the other.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-24T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/pvm-vs-bvm.html",
+   "url": "https://www.orlandu.com/pvm-vs-bvm.html",
+   "title": "The Best Screen for Retro Games Was Never Sold to Gamers",
+   "summary": "PVM vs. BVM: what Sony's professional monitors actually were, why RGB changes everything, and which one to buy today — answered from a fleet of thirteen.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-24T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/mini-cute.html",
+   "url": "https://www.orlandu.com/mini-cute.html",
+   "title": "The Mini Cute",
+   "summary": "Capcom's smallest candy cab, built for Japanese kids in 1991 — and how this pink one crossed the world in a hand-built crate from Sweden, thanks to a friendship that started on KLOV.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-24T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/trinitron-fleet-vol1.html",
+   "url": "https://www.orlandu.com/trinitron-fleet-vol1.html",
+   "title": "TRINITRON FLEET",
+   "summary": "An interactive magazine documenting the Sony professional monitor fleet — eight models, from the PVM-2950Q to the LMD-9050 squadron, and the calibration work that keeps them honest. Future volumes will follow as the fleet evolves.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-23T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/vs-smb.html",
+   "url": "https://www.orlandu.com/vs-smb.html",
+   "title": "The Hardest Super Mario Bros. Most People Never Noticed",
+   "summary": "The VS. UniSystem's Super Mario Bros. looks exactly like the NES classic — and was quietly rebuilt to fight back: removed 1-ups, patched turtle tricks, and levels that later became The Lost Levels.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-23T17:00:00Z"
+  }
+ ]
+}

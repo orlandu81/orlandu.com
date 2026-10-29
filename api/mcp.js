@@ -18,6 +18,8 @@ const CONSOLES = require("../data/console-video-out.json");
 const BKM = require("../data/bkm-cards.json");
 const CONNECT = require("../data/connect.json");
 const ConnectPlan = require("../assets/connect-plan.js");
+const REGISTRY_CATALOG = require("../data/registry-models.json");
+const REGISTRY_API = process.env.REGISTRY_API_URL || "https://www.orlandu.com/api/registry";
 
 const SITE = "https://www.orlandu.com/";
 const SERVER = { name: "orlandu-arcade", title: "Orlandu's Arcade", version: "1.0.0" };
@@ -26,7 +28,8 @@ const INSTRUCTIONS =
   "Orlandu's Arcade is a private arcade and working collection in Orange County, California: arcade cabinets, " +
   "pinball, RGB-modded consoles and a fleet of Sony professional broadcast monitors (PVM, BVM, LMD), each documented " +
   "with its work log, plus buying guides and reference pieces. Use search_orlandu to find pages, read_orlandu_page to " +
-  "read one in full, and the dataset tools for structured specs. Cite pages by their URL. The arcade is private — not " +
+  "read one in full, and the dataset tools for structured specs. registry_census reads the Orlandu Registry, the owner-kept " +
+  "serial-number census of surviving Sony BVM and PVM monitors (live counts per model). Cite pages by their URL. The arcade is private — not " +
   "open to the public — and nothing here is for sale except what the For Sale page lists on eBay.";
 
 const TOOLS = [
@@ -71,6 +74,12 @@ const TOOLS = [
     title: "Console video out",
     description: "How each retro console in the collection reaches a Sony professional monitor: the modification (if any), the video output used, and the cable chain. Optional console filter, e.g. 'Genesis'. Dataset CC BY 4.0.",
     inputSchema: { type: "object", properties: { console: { type: "string", description: "Substring of a console name; omit for all" } } },
+  },
+  {
+    name: "registry_census",
+    title: "The Orlandu Registry",
+    description: "The Orlandu Registry: a serial-number census of surviving Sony BVM and PVM monitors, kept by their owners (live data). With no argument: how many monitors, models, owners and countries are registered, the survivor count per model, and the records. With a model (e.g. 'BVM-20E1U' or 'PVM-20L5'): that model's registered entries — masked serial, plate date, hours, condition, note, where it came from — and its serial-range points. Serials are masked by design; emails never leave the server. Dataset CC BY 4.0; the full list is at https://www.orlandu.com/api/registry?export=json (or export=csv).",
+    inputSchema: { type: "object", properties: { model: { type: "string", description: "A Sony BVM or PVM model, e.g. 'BVM-20E1U'; omit for the census summary" } } },
   },
   {
     name: "plan_connection",
@@ -183,9 +192,36 @@ function rows(ds, key, filter) {
   return { dataset: ds.dataset, source: ds.source, license: ds.license, credit: ds.credit, count: out.length, rows: out };
 }
 
-function callTool(name, args) {
+// The registry lives in Neon, not in a data file, so this tool reads the site's own public API (edge-cached; masked
+// data only). A model name is resolved against the catalog the way the form does, so 'BVM-20E1E' finds the 20E1U chassis.
+async function registryCensus(model) {
+  const want = typeof model === "string" ? model.trim() : "";
+  let slug = null;
+  if (want) {
+    const key = want.toUpperCase().replace(/[^A-Z0-9]/g, "");
+    const hit = REGISTRY_CATALOG.models.find(m => [m.model, ...(m.variants || [])].some(v => v.toUpperCase().replace(/[^A-Z0-9]/g, "") === key))
+      || REGISTRY_CATALOG.models.find(m => m.model.toUpperCase().replace(/[^A-Z0-9]/g, "").includes(key));
+    if (!hit) throw rpcError(-32602, `"${want}" is not a Sony BVM or PVM chassis in the registry catalog (96 models; see https://www.orlandu.com/registry-models.html). Omit the model for the census summary.`);
+    slug = hit.slug;
+  }
+  let r;
+  try { r = await fetch(slug ? `${REGISTRY_API}?model=${slug}` : REGISTRY_API, { headers: { "User-Agent": "orlandu-mcp" } }); }
+  catch (e) { throw rpcError(-32603, "The registry did not answer; try again in a minute or read https://www.orlandu.com/registry.html"); }
+  const d = await r.json().catch(() => null);
+  if (!d || !d.ok) throw rpcError(-32603, "The registry did not answer; try again in a minute or read https://www.orlandu.com/registry.html");
+  const meta = { dataset: "The Orlandu Registry — Sony BVM + PVM serial census", source: "https://www.orlandu.com/registry.html", license: "CC BY 4.0", credit: "Orlandu's Arcade and the owners who registered each monitor", export: "https://www.orlandu.com/api/registry?export=json" };
+  if (slug) {
+    const cat = REGISTRY_CATALOG.models.find(m => m.slug === slug);
+    return { ...meta, model: cat.model, page: `https://www.orlandu.com/registry-${slug}.html`, line: cat.line, size_in: cat.size_in, series: cat.series, era: cat.era, era_confidence: cat.era_confidence, variants: cat.variants, registered: d.n, entries: d.entries.map(e => ({ ...e, entry_url: `https://www.orlandu.com/registry-${slug}.html#e${e.id}` })), serial_points: d.points };
+  }
+  return { ...meta, stats: d.stats, survivors_by_model: d.counts.map(c => ({ ...c, page: c.model_slug.startsWith("other-") ? "https://www.orlandu.com/registry.html" : `https://www.orlandu.com/registry-${c.model_slug}.html` })), records: d.records, latest: d.latest };
+}
+
+async function callTool(name, args) {
   args = args && typeof args === "object" ? args : {};
   switch (name) {
+    case "registry_census":
+      return json(await registryCensus(args.model));
     case "search_orlandu": {
       if (typeof args.query !== "string" || !args.query.trim()) throw rpcError(-32602, "query (string) is required");
       const limit = Math.min(Math.max(parseInt(args.limit, 10) || 8, 1), 20);
@@ -232,7 +268,7 @@ const json = o => ({ content: [{ type: "text", text: JSON.stringify(o, null, 1) 
 function rpcError(code, message) { const e = new Error(message); e.rpc = { code, message }; return e; }
 
 // ── JSON-RPC dispatch ──
-function handle(msg) {
+async function handle(msg) {
   if (!msg || typeof msg !== "object" || msg.jsonrpc !== "2.0" || typeof msg.method !== "string") {
     return { jsonrpc: "2.0", id: msg && msg.id !== undefined ? msg.id : null, error: { code: -32600, message: "Invalid Request" } };
   }
@@ -249,8 +285,8 @@ function handle(msg) {
       result = { tools: TOOLS };
     } else if (method === "tools/call") {
       const name = params && params.name;
-      try { result = callTool(name, params && params.arguments); }
-      catch (e) { if (e.rpc && e.rpc.code === -32602) result = { content: [{ type: "text", text: e.rpc.message }], isError: true }; else throw e; }
+      try { result = await callTool(name, params && params.arguments); }
+      catch (e) { if (e.rpc && (e.rpc.code === -32602 || e.rpc.code === -32603)) result = { content: [{ type: "text", text: e.rpc.message }], isError: true }; else throw e; }
     } else if (method.startsWith("notifications/")) {
       return null;
     } else if (method === "resources/list" || method === "prompts/list") {
@@ -280,7 +316,7 @@ module.exports = async (req, res) => {
   let b = req.body;
   if (typeof b === "string") { try { b = JSON.parse(b); } catch (e) { b = undefined; } }
   if (b === undefined || b === null) { res.status(400).json({ jsonrpc: "2.0", id: null, error: { code: -32700, message: "Parse error" } }); return; }
-  const out = Array.isArray(b) ? b.map(handle).filter(Boolean) : handle(b);
+  const out = Array.isArray(b) ? (await Promise.all(b.map(handle))).filter(Boolean) : await handle(b);
   if (out === null || (Array.isArray(out) && !out.length)) { res.status(202).end(); return; }
   res.setHeader("Content-Type", "application/json");
   res.status(200).send(JSON.stringify(out));
