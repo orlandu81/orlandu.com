@@ -21,6 +21,7 @@ python3 tools/build-timeline.py      # only if a timeline thumb/year changed; it
 python3 tools/build-llms-full.py     # llms-full.txt + data/pages.json (what the MCP server reads); also refreshes the word count on mcp.html/llms.txt
 python3 tools/build-search-index.py  # assets/search-index.js is generated
 python3 tools/build-datasets.py      # data/*.json|csv from the fleet table, the PC-10 wall, the console table; data/search-index.json (after the index)
+python3 tools/build-feed.py          # feed.xml + feed.json from the Latest ledger and the Stories grid (dates from git); run after any ledger/story edit
 python3 tools/stamp-assets.py        # ?v=<hash> on every style.css / site.js / gallery-data.js reference
 python3 tools/update-lastmod.py      # sitemap <lastmod> = the day each page's <main> content last changed
 python3 tools/build-static-footer.py # only if the footer block or NAV in site.js changed; re-renders the static footer copy
@@ -988,6 +989,31 @@ page (227 of 446 visitors in 30 days, 63% on phones), so the site now treats the
 - **og:title** on the registry pages says what the page is ("Sony BVM & PVM Serial Number Registry", "Sony <model> Serial
   Number Registry", "Register your Sony BVM or PVM"); `.keeper` under the hub lede names who keeps it and links About + the fleet.
 - Not done, by choice: Registry stays 9th in the nav; a CSV export of the entries waits until the list is past ~100.
+
+**Round two of the registry traffic pass (2026-10-28, `1d06811`).** David: "any other improvements… on the whole site."
+- **The registry in the AI channel:** `registry_census` is the ninth MCP tool (api/mcp.js). It fetches the site's own
+  `/api/registry` (summary, or `?model=<slug>` after resolving a badge/variant against `data/registry-models.json`) and
+  returns masked data with license/credit/export fields; API failures come back as `isError`, never a crash.
+  `callTool`/`handle` are async now and batches run through `Promise.all`. `GET /api/registry?export=json|csv` is the
+  dataset (every live entry, masked, `entry_url` added, CC BY 4.0, cached like the other reads); `?feed=rss` is the
+  50 newest entries as RSS. registry.html carries a Dataset node, the download links and a how-to-cite line (builder);
+  mcp.html has the tool and a sixth dataset row; llms.txt the lines. `test-mcp.mjs` stubs `globalThis.fetch` for the tool.
+- **Site feed:** `tools/build-feed.py` → `feed.xml` (RSS 2.0) + `feed.json` (JSON Feed 1.1), 30 items max, from the
+  home Latest ledger and the Stories grid. Dates: a story/new page = the day its file entered git; a ledger card about an
+  old page = the day the card's heading entered index.html (`git log -S`). This is the one place the site carries dates
+  — publish dates, not stamps in the copy. Every head has `rel=alternate` to feed.xml (registry pages also to
+  `/api/registry?feed=rss`; the builder writes both); footer "RSS" link; vercel.json caches `feed.*` with the llms files.
+- **Striking-distance pass:** Quick answers on spinning-tops (5, before `</main>`), nes-top-loader, gba-sp and ghostbusters
+  (4 each, inside the profile section before the closing note), every fact from the page itself; titles front-loaded
+  ("Foreverspin Metal Spinning Tops: 35 Metals, Weighed", "NES Top Loader (NES-101)…", "Game Boy Advance SP, Cobalt,
+  with an IPS Screen Mod", "Ghostbusters Premium Pinball (Stern, 2016)…"). pvm-vs-bvm's meta description now answers
+  the query in its first clause, and its weight row reads Sony's 68 / 82 / 57 lb (the 10-22 ruling had missed that table).
+  These five join the leave-alone list for the 11/10 pass.
+- **Fleet page + About:** the four monitor cards on monitors.html end in "N in the registry →" (`[data-regmodel]`,
+  painted by `regCounts()` from the summary's `counts`); about.html FAQ + FAQPage JSON-LD gained "Can I add it to the registry?".
+- **Outbound links (62 unique, checked 10-28):** 51 OK, 0 dead, 0 hijacked; 11 sit behind Cloudflare/bot walls (KLOV,
+  arcade-projects member page, ipdb ×3, pinside ×2, manualowl, sony.com PDF) and can't be verified from here — the
+  domains are alive. Extraction recipe: hrefs matching `https?://` minus orlandu.com/web.archive/ebay-itm/instagram.
 
 ## Dark backdrops on the PC-10, topper and VS. card walls (2026-10-25)
 
