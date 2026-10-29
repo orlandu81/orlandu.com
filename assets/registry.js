@@ -37,8 +37,10 @@
   const linkFor = e => (e.model_slug && !String(e.model_slug).startsWith("other-") ? pageFor(e) : "registry.html") + "#e" + e.id;
   const absLink = e => new URL(linkFor(e), location.href).href;
 
+  const ENTRIES = new Map(); // id → { e, cat } for every card rendered on this page (the image button needs the data)
   function card(e, cat, opts) {
     opts = opts || {};
+    ENTRIES.set(e.id, { e, cat });
     const c = COND[e.cond] || ["", ""];
     const mask = esc(e.serial_masked).replace(/x+$/i, m => '<span class="mask">' + m + "</span>");
     const hours = e.hours == null ? "—" : fmt(e.hours) + " h", built = builtTxt(e.built);
@@ -54,9 +56,94 @@
       (e.photo_url ? '<img class="ethumb" src="' + esc(e.photo_url) + '" data-full="' + esc(e.photo_url) + '" alt="' + esc(e.model) + " registered by " + esc(e.handle || "an owner") + '" loading="lazy" width="112" height="76">' : "") + "</div>" +
       (e.note ? '<p class="enote">' + esc(e.note) + "</p>" : "") +
       '<div class="ewho"><span>' + (e.handle ? esc(e.handle) : "Anonymous owner") + "</span>" + esc(where(e)) + "</div>" +
-      '<div class="elink"><a class="plink" href="' + linkFor(e) + '" title="Link to this entry">Entry #' + e.id + '</a><button type="button" class="copy" data-copy="' + esc(absLink(e)) + '" aria-label="Copy a link to entry ' + e.id + '">Copy link</button></div>' +
+      '<div class="elink"><a class="plink" href="' + linkFor(e) + '" title="Link to this entry">Entry #' + e.id + '</a><span class="eact"><button type="button" class="cardimg" data-id="' + e.id + '" aria-label="Save entry ' + e.id + ' as an image">Save as image</button><button type="button" class="copy" data-copy="' + esc(absLink(e)) + '" aria-label="Copy a link to entry ' + e.id + '">Copy link</button></span></div>' +
       "</div></article>";
   }
+  // "Save as image" (2026-10-28): the card drawn to a 1080×1080 PNG in the browser — what gets posted to a Facebook
+  // group is a picture, not a link. On a phone with a share sheet the PNG goes straight into it; elsewhere it downloads.
+  const loadImg = src => new Promise((ok, no) => { const i = new Image(); i.crossOrigin = "anonymous"; i.onload = () => ok(i); i.onerror = () => no(new Error("img")); i.src = src; });
+  async function cardImage(e, cat) {
+    const W = 1080, H = 1080, c = document.createElement("canvas"); c.width = W; c.height = H; const x = c.getContext("2d");
+    try { await Promise.all([document.fonts.load("800 80px Orbitron"), document.fonts.load("600 30px Orbitron"), document.fonts.load("500 40px 'Barlow Condensed'"), document.fonts.load("400 34px Rajdhani"), document.fonts.load("600 34px Rajdhani")]); } catch (err) {}
+    const DISP = "Orbitron, 'Orbitron Fallback', Arial, sans-serif", COND_F = "'Barlow Condensed', 'Barlow Condensed Fallback', 'Arial Narrow', sans-serif", BODY = "Rajdhani, 'Rajdhani Fallback', Arial, sans-serif";
+    let photo = null; if (e.photo_url) { try { photo = await loadImg(e.photo_url); } catch (err) { photo = null; } }
+    let mark = null; try { mark = await loadImg("assets/logo-wordmark-nav.webp"); } catch (err) {}
+    // backdrop: the site's panel colours with the faint grid floor
+    const g = x.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#181829"); g.addColorStop(1, "#0a0a12"); x.fillStyle = g; x.fillRect(0, 0, W, H);
+    x.strokeStyle = "rgba(94,233,255,.07)"; x.lineWidth = 1; for (let i = 0; i <= W; i += 60) { x.beginPath(); x.moveTo(i, 0); x.lineTo(i, H); x.stroke(); } for (let i = 0; i <= H; i += 60) { x.beginPath(); x.moveTo(0, i); x.lineTo(W, i); x.stroke(); }
+    const rg = x.createRadialGradient(W / 2, 0, 50, W / 2, 0, 900); rg.addColorStop(0, "rgba(255,138,0,.16)"); rg.addColorStop(1, "rgba(255,138,0,0)"); x.fillStyle = rg; x.fillRect(0, 0, W, H);
+    // the card panel
+    const P = 48, r = 28; x.fillStyle = "#131322"; x.strokeStyle = "#2aa8c0"; x.lineWidth = 3;
+    x.beginPath(); x.roundRect(P, P, W - 2 * P, H - 2 * P, r); x.fill(); x.stroke();
+    // header: wordmark + kicker
+    if (mark) { const mh = 64, mw = mark.width * (mh / mark.height); x.drawImage(mark, P + 36, P + 32, mw, mh); }
+    x.textBaseline = "alphabetic"; x.fillStyle = "#5ee9ff"; x.font = "600 22px " + DISP; x.textAlign = "right"; x.fillText("THE ORLANDU REGISTRY", W - P - 36, P + 60);
+    x.fillStyle = "#9a9ab4"; x.font = "500 22px " + COND_F; x.fillText("SONY BVM + PVM SERIAL CENSUS", W - P - 36, P + 90);
+    // photo on the right, square, cover-cropped
+    const hasPhoto = !!photo, photoW = 400, px0 = W - P - 36 - photoW, py0 = P + 150;
+    if (hasPhoto) {
+      const s = Math.max(photoW / photo.width, photoW / photo.height), sw = photoW / s, sh = photoW / s, sx = (photo.width - sw) / 2, sy = (photo.height - sh) / 2;
+      x.save(); x.beginPath(); x.roundRect(px0, py0, photoW, photoW, 20); x.clip(); x.drawImage(photo, sx, sy, sw, sh, px0, py0, photoW, photoW); x.restore();
+      x.strokeStyle = "#262640"; x.lineWidth = 2; x.beginPath(); x.roundRect(px0, py0, photoW, photoW, 20); x.stroke();
+    }
+    const textW = hasPhoto ? px0 - 36 - (P + 36) : W - 2 * P - 72, L = P + 36;
+    // model + series
+    x.textAlign = "left"; x.fillStyle = "#e8e8f2";
+    let size = 76; x.font = "800 " + size + "px " + DISP; while (x.measureText(e.model).width > textW && size > 40) { size -= 4; x.font = "800 " + size + "px " + DISP; }
+    x.fillText(e.model, L, P + 150 + size);
+    const sub = seriesLine(e, cat).replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").toUpperCase();
+    let ss = 30; x.fillStyle = "#ff8a00"; x.font = "500 " + ss + "px " + COND_F; while (x.measureText(sub).width > textW && ss > 18) { ss -= 1; x.font = "500 " + ss + "px " + COND_F; }
+    x.fillText(sub, L, P + 150 + size + 44);
+    // serial
+    let y = P + 150 + size + 120;
+    x.fillStyle = "#9a9ab4"; x.font = "500 24px " + COND_F; x.fillText("SERIAL", L, y);
+    const sm = String(e.serial_masked || ""), keep = sm.replace(/x+$/i, ""), mask = sm.slice(keep.length);
+    x.fillStyle = "#e8e8f2"; x.font = "500 54px " + COND_F; x.fillText(keep, L + 110, y + 4); const kw = x.measureText(keep).width;
+    x.fillStyle = "#9a9ab4"; x.fillText(mask, L + 110 + kw, y + 4);
+    // meta grid
+    y += 70;
+    const cells = []; const b = builtTxt(e.built); if (b) cells.push(["BUILT", b]);
+    if (e.line !== "PVM") cells.push(["HOURS", e.hours == null ? "—" : fmt(e.hours) + " h"]);
+    cells.push(["CONDITION", (COND[e.cond] || ["—"])[0]]);
+    const acq = [e.acq_year, e.acq_src].filter(Boolean).join(" · "); if (acq) cells.push(["ACQUIRED", acq]);
+    if (e.price != null) cells.push(["PAID", fmt(e.price) + " " + (e.currency || "USD")]);
+    const colW = Math.floor(textW / 2); let cx = 0, cy = y;
+    cells.forEach((cell, i) => { const col = i % 2, row = Math.floor(i / 2); const X = L + col * colW, Y = cy + row * 78;
+      x.fillStyle = "#9a9ab4"; x.font = "500 22px " + COND_F; x.fillText(cell[0], X, Y);
+      x.fillStyle = "#e8e8f2"; let vs = 32; x.font = "600 " + vs + "px " + BODY; let v = String(cell[1]);
+      while (x.measureText(v).width > colW - 24 && vs > 22) { vs -= 1; x.font = "600 " + vs + "px " + BODY; }
+      while (x.measureText(v).width > colW - 24 && v.length > 4) v = v.slice(0, -2).trimEnd() + "…"; x.fillText(v, X, Y + 36); });
+    y = cy + Math.ceil(cells.length / 2) * 78 + 10;
+    // note, up to three lines, below the photo band
+    const noteTop = Math.max(y, hasPhoto ? py0 + photoW + 40 : y), fullW = W - 2 * P - 72;
+    if (e.note) {
+      x.fillStyle = "#c9c9dc"; x.font = "400 30px " + BODY; const words = String(e.note).split(/\s+/); const lines = []; let line = "";
+      for (const w of words) { const t = line ? line + " " + w : w; if (x.measureText(t).width > fullW) { lines.push(line); line = w; if (lines.length === 3) break; } else line = t; }
+      if (lines.length < 3 && line) lines.push(line); if (lines.length === 3 && words.join(" ") !== lines.join(" ")) lines[2] = lines[2].replace(/\s*\S*$/, "") + " …";
+      lines.forEach((ln, i) => x.fillText(ln, L, noteTop + 34 + i * 40));
+    }
+    // owner line + footer
+    x.fillStyle = "#5ee9ff"; x.font = "500 26px " + COND_F; x.fillText(((e.handle ? e.handle : "Anonymous owner") + (where(e) ? "  ·  " + where(e) : "")).toUpperCase(), L, H - P - 110);
+    x.strokeStyle = "#262640"; x.lineWidth = 1; x.beginPath(); x.moveTo(L, H - P - 82); x.lineTo(W - P - 36, H - P - 82); x.stroke();
+    x.fillStyle = "#ffd400"; x.font = "600 24px " + DISP; x.fillText("ORLANDU.COM/REGISTRY", L, H - P - 40);
+    x.fillStyle = "#9a9ab4"; x.font = "500 24px " + COND_F; x.textAlign = "right"; x.fillText("ENTRY #" + e.id + "  ·  ADD YOURS", W - P - 36, H - P - 40);
+    return new Promise(ok => c.toBlob(ok, "image/png"));
+  }
+  async function saveCardImage(e, cat, btn) {
+    const was = btn.textContent; btn.disabled = true; btn.textContent = "Drawing…";
+    try {
+      const blob = await cardImage(e, cat), name = "orlandu-registry-" + String(e.model).toLowerCase().replace(/[^a-z0-9]+/g, "-") + "-" + e.serial_masked + ".png";
+      const file = new File([blob], name, { type: "image/png" });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: "Sony " + e.model + " · " + e.serial_masked + " — the Orlandu Registry" }).catch(() => {}); }
+      else { const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000); }
+      btn.textContent = "Saved"; setTimeout(() => { btn.textContent = was; btn.disabled = false; }, 1800);
+    } catch (err) { btn.textContent = "Couldn't draw it"; setTimeout(() => { btn.textContent = was; btn.disabled = false; }, 2500); }
+  }
+  document.addEventListener("click", ev => {
+    const b = ev.target.closest && ev.target.closest("button.cardimg[data-id]");
+    if (!b) return;
+    const rec = ENTRIES.get(+b.dataset.id); if (rec) saveCardImage(rec.e, rec.cat, b);
+  });
   // "Copy link" on every card, one listener for all of them (cards arrive after load).
   document.addEventListener("click", ev => {
     const b = ev.target.closest && ev.target.closest("button.copy[data-copy]");
@@ -352,10 +439,10 @@
     if (!box) { box = document.createElement("section"); box.id = "done"; box.className = "done"; form.parentNode.insertBefore(box, form); }
     box.innerHTML = '<h2 class="sec">You&rsquo;re in <small>entry #' + e.id + '</small></h2>' +
       '<div class="entries one">' + card(e, cat) + "</div>" +
-      '<div class="cactions">' + (canShare ? '<button type="button" class="btn" id="done-share">Share this entry</button>' : '<button type="button" class="btn copy" data-copy="' + esc(url) + '">Copy a link to this entry</button>') +
+      '<div class="cactions"><button type="button" class="btn cardimg" data-id="' + e.id + '">Save my card as an image</button>' + (canShare ? '<button type="button" class="btn cy" id="done-share">Share the link</button>' : '<button type="button" class="btn cy copy" data-copy="' + esc(url) + '">Copy a link to this entry</button>') +
       '<a class="btn cy" href="' + page + '">See it on the ' + (j.catalog ? esc(j.model) + " page" : "registry") + ' &rarr;</a>' +
       '<button type="button" class="btn cy" id="done-again">Add another monitor</button></div>' +
-      '<p class="note">Know another owner? Send them the link, or post your card where you found the registry. The card shows what you chose to share and nothing else.</p>';
+      '<p class="note">Post the image where you found the registry, or send the link to another owner. The card shows what you chose to share and nothing else.</p>';
     form.hidden = true;
     box.scrollIntoView({ behavior: "smooth", block: "start" });
     if (canShare) document.getElementById("done-share").addEventListener("click", () => share(url, title, "My " + j.model + " is in the Orlandu Registry, a serial-number census of surviving Sony BVM and PVM monitors."));

@@ -301,7 +301,7 @@ def submit_page():
       </label>
       <label class="wide">Photo
         <input type="file" id="photo" name="photo" accept="image/jpeg,image/png,image/webp">
-        <span class="help">Optional, one photo, JPEG, PNG or WebP. Resized in your browser before upload, which also strips the camera's location data. Keep the plate out of the shot if you'd rather not show the full serial.</span>
+        <span class="help">Optional, one photo, JPEG, PNG or WebP. Resized in your browser before upload, which also strips the camera's location data. Keep the plate out of the shot if you'd rather not show the full serial &mdash; and remember a BVM's status screen and the front-panel label on a BVM-D show it too. A photo that shows the whole serial gets its last two digits blurred before long.</span>
       </label>
       <div class="preview" id="preview"></div>
 

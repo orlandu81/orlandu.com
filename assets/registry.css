@@ -168,3 +168,9 @@ table.spec.models td.num b{color:var(--cyan)}
 .reg .keeper{max-width:70ch;margin-top:.6rem}
 .rfm[hidden]{display:none}
 .done .card.entry .elink .copy{display:none} /* the big button below does the copying */
+/* Save as image (2026-10-28) */
+.card.entry .elink .eact{display:flex;gap:.4rem}
+.card.entry .elink .cardimg{font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--fire3);background:none;border:1px solid var(--line);border-radius:6px;padding:.15rem .5rem;cursor:pointer}
+.card.entry .elink .cardimg:hover{border-color:var(--fire2)}
+.card.entry .elink .cardimg[disabled]{opacity:.7;cursor:default}
+.done .card.entry .elink .cardimg{display:none} /* the big button above does it */
