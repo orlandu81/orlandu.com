@@ -1015,6 +1015,25 @@ page (227 of 446 visitors in 30 days, 63% on phones), so the site now treats the
   arcade-projects member page, ipdb ×3, pinside ×2, manualowl, sony.com PDF) and can't be verified from here — the
   domains are alive. Extraction recipe: hrefs matching `https?://` minus orlandu.com/web.archive/ebay-itm/instagram.
 
+**Round three (2026-10-28, `02a3e78` + `8dc5275`).** David picked save-as-image, a mobile Lighthouse run and the photo sweep.
+- **Save as image:** `cardImage(e, cat)` in registry.js draws a 1080×1080 PNG (canvas: wordmark, model, series line,
+  masked serial, meta grid, photo cover-cropped via `crossOrigin=anonymous` — the Blob store answers CORS —, note ≤ 3 lines,
+  owner line, ORLANDU.COM/REGISTRY + entry #). `button.cardimg[data-id]` on every card (`ENTRIES` Map keeps the data) and
+  a primary button in the done panel; `saveCardImage()` hands the file to `navigator.share` when `canShare({files})`,
+  else downloads `orlandu-registry-<model>-<serial>.png`. Fonts are awaited with `document.fonts.load` first.
+- **Photo sweep (all 22 owner photos, 10/28):** entries 18 and 19 (Chili's BVM-D14H1E fronts) showed the serial on the
+  front-panel label; replacement files with the last two digits blurred are `…-e18-blur.jpg` / `…-e19-blur.jpg` in Blob
+  (made in the dashboard page: fetch → canvas downscale-blur of the box → File → the dashboard's upload input), and the
+  `photo_url` swaps ship as FIXUPS (`FIXUP_FIELDS` now includes `photo_url`). The submit help text names the status
+  screen and the BVM-D front label as places the serial shows.
+- **Card thumbnails:** `shrink()` also makes a 320-px JPEG (`photo_thumb`); the function stores it as `<full name>-t.jpg`
+  with `addRandomSuffix:false`, so `thumbOf(photo_url)` in registry.js derives it (media/2026 photos → media/thumbs);
+  `onerror` falls back to the full file. The 22 existing photos got their `-t.jpg` in one dashboard upload (22 files at
+  once works). Live: the hub's card photos went from 1.02 MB to 81 KB. Local Lighthouse (mobile, mock server, no
+  compression) on the hub: 90/100/96/100, CLS 0, TBT 60 ms; the only real finding was the thumbnails. PageSpeed's web
+  UI stalled and the anonymous PSI API is quota-exhausted — `npx lighthouse` in the container against a local mock
+  server with Playwright's Chromium (`CHROME_PATH=/opt/pw-browsers/chromium-*/chrome-linux64/chrome`) is the fallback.
+
 ## Dark backdrops on the PC-10, topper and VS. card walls (2026-10-25)
 
 Every tile on `playchoice-10.html` (52 boards + 10 conversions) and `signage.html` (#toppers, #cards) is now
