@@ -970,6 +970,25 @@ quiet minutes. Three fixes, keep all three:
   bypass) so the new entry shows. Paint functions (`paintLanding`, `paintModel`, `paintModels`) must stay idempotent.
   A `<link rel=preload as=fetch>` was tried and dropped: it can't carry `cache: "no-cache"`, so it double-fetched.
 
+**The registry traffic pass (2026-10-28, `1bbed9b`).** Facebook became the #1 referrer and registry.html the most-visited
+page (227 of 446 visitors in 30 days, 63% on phones), so the site now treats the registry as a front door:
+- **Home:** `a.regband` under the hero and a Step Inside card after The Monitor Fleet (`media/step-thumbs/step-registry.webp`,
+  cut from the BVM pair photo like og-registry). Both carry `[data-reg="entries|owners|countries|models"]` spans with the
+  day's numbers baked in; `regCounts()` in site.js repaints them from `/api/registry`, sharing registry.js's
+  `localStorage["orlandu-registry:/api/registry"]` copy. The grid is 13 cards now (auto-fill, so a one-card last row on desktop).
+- **After a submit** (`showDone()` in registry.js): the form hides (`.rfm[hidden]`), the owner's card renders from the
+  response + the posted fields, with "Share this entry" (navigator.share) or "Copy a link to this entry" (no share sheet),
+  the model-page link and "Add another monitor". The card's own small Copy button is hidden inside `.done`.
+- **Every entry card** ends in `.elink`: "Entry #N" → `registry-<slug>.html#e<id>` (`linkFor`/`absLink`) and a `button.copy[data-copy]`;
+  one delegated document click handler copies (clipboard API, execCommand fallback) and flips the label to "Copied".
+- **"While you're here"** (`related()` in the builder, `RELATED`/`RELATED_FOR`): six cards on the hub, five on the submit
+  page, four per model page by line (BVM → bkm-cards, bkm-10r, pvm-vs-bvm, decoder; PVM → 20L5 buying guide,
+  connect-console, pvm-vs-bvm, decoder). `build-search-index.py` strips `<section id="related">` so the row never
+  ranks a registry page for another page's words — the eval battery is unchanged from before the row.
+- **og:title** on the registry pages says what the page is ("Sony BVM & PVM Serial Number Registry", "Sony <model> Serial
+  Number Registry", "Register your Sony BVM or PVM"); `.keeper` under the hub lede names who keeps it and links About + the fleet.
+- Not done, by choice: Registry stays 9th in the nav; a CSV export of the entries waits until the list is past ~100.
+
 ## Dark backdrops on the PC-10, topper and VS. card walls (2026-10-25)
 
 Every tile on `playchoice-10.html` (52 boards + 10 conversions) and `signage.html` (#toppers, #cards) is now
