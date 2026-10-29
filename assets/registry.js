@@ -33,6 +33,9 @@
   const builtTxt = b => { if (!b) return null; const m = String(b).match(/^(\d{4})(?:-(\d{2}))?$/); return m ? (m[2] ? MON[+m[2] - 1] + " " : "") + m[1] : null; };
   const where = e => [e.state, e.country ? (COUNTRY[e.country] || e.country) : null].filter(Boolean).join(", ");
   const pageFor = e => "registry-" + e.model_slug + ".html";
+  // Card thumbnails (2026-10-28): a Blob photo has a 320-px sibling "<name>-t.jpg"; the arcade's own media/2026 photos
+  // have their media/thumbs copies. The <img> falls back to the full file if the thumb is missing (older entries).
+  const thumbOf = u => { u = String(u || ""); const m = u.match(/^(https?:\/\/[^/]+\/)?media\/2026\/([^?]+)(\?.*)?$/); if (m) return (m[1] || "") + "media/thumbs/" + m[2] + (m[3] || ""); return /vercel-storage\.com\/registry\//.test(u) ? u.replace(/\.[a-z0-9]+$/i, "") + "-t.jpg" : u; };
   // Every entry has an address (2026-10-28): the model page plus #e<id>, or the hub for a model not in the catalog.
   const linkFor = e => (e.model_slug && !String(e.model_slug).startsWith("other-") ? pageFor(e) : "registry.html") + "#e" + e.id;
   const absLink = e => new URL(linkFor(e), location.href).href;
@@ -53,7 +56,7 @@
       '<span class="badge cond ' + c[1] + '">' + c[0] + "</span></div>" +
       '<div class="eline"><div><div class="serial"><b>Serial</b>' + mask + "</div>" +
       '<div class="emeta">' + (built ? "<div><b>Built</b>" + built + "</div>" : "") + hoursCell + "<div><b>Acquired</b>" + (acq || "—") + "</div>" + (price ? "<div><b>Paid</b>" + price + "</div>" : "") + (e.seller ? "<div><b>Bought from</b>" + esc(e.seller) + "</div>" : "") + "</div></div>" +
-      (e.photo_url ? '<img class="ethumb" src="' + esc(e.photo_url) + '" data-full="' + esc(e.photo_url) + '" alt="' + esc(e.model) + " registered by " + esc(e.handle || "an owner") + '" loading="lazy" width="112" height="76">' : "") + "</div>" +
+      (e.photo_url ? '<img class="ethumb" src="' + esc(thumbOf(e.photo_url)) + '" data-full="' + esc(e.photo_url) + '" onerror="this.onerror=null;this.src=this.dataset.full" alt="' + esc(e.model) + " registered by " + esc(e.handle || "an owner") + '" loading="lazy" width="112" height="76">' : "") + "</div>" +
       (e.note ? '<p class="enote">' + esc(e.note) + "</p>" : "") +
       '<div class="ewho"><span>' + (e.handle ? esc(e.handle) : "Anonymous owner") + "</span>" + esc(where(e)) + "</div>" +
       '<div class="elink"><a class="plink" href="' + linkFor(e) + '" title="Link to this entry">Entry #' + e.id + '</a><span class="eact"><button type="button" class="cardimg" data-id="' + e.id + '" aria-label="Save entry ' + e.id + ' as an image">Save as image</button><button type="button" class="copy" data-copy="' + esc(absLink(e)) + '" aria-label="Copy a link to entry ' + e.id + '">Copy link</button></span></div>' +
@@ -401,7 +404,7 @@
       }
       if (!/^[A-Za-z0-9\s\-_.]{4,24}$/.test(body.serial || "")) { say("warn", "The serial looks wrong. Digits and letters as printed on the plate, no punctuation needed."); document.getElementById("serial").focus(); return; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email || "")) { say("warn", "An email address is needed (it stays private)."); document.getElementById("email").focus(); return; }
-      if (photo) body.photo = { name: file.files[0].name, type: photo.type, data: photo.data };
+      if (photo) { body.photo = { name: file.files[0].name, type: photo.type, data: photo.data }; if (photo.thumb) body.photo_thumb = { type: "image/jpeg", data: photo.thumb }; }
       btn.disabled = true; say("", "Sending…");
       try {
         const r = await fetch("/api/registry-submit", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
@@ -458,7 +461,9 @@
         const c = document.createElement("canvas"); c.width = Math.round(img.naturalWidth * s); c.height = Math.round(img.naturalHeight * s);
         c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
         const data = c.toDataURL("image/jpeg", 0.82);
-        ok({ data, type: "image/jpeg", bytes: Math.round((data.length - 23) * 0.75) });
+        const t = document.createElement("canvas"); const ts = Math.min(1, 320 / c.width); t.width = Math.round(c.width * ts); t.height = Math.round(c.height * ts);
+        t.getContext("2d").drawImage(c, 0, 0, t.width, t.height);
+        ok({ data, type: "image/jpeg", bytes: Math.round((data.length - 23) * 0.75), thumb: t.toDataURL("image/jpeg", 0.8) });
       };
       img.onerror = () => { URL.revokeObjectURL(url); no(new Error("bad image")); };
       img.src = url;

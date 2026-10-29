@@ -31,6 +31,13 @@ module.exports = async (req, res) => {
     const buf = Buffer.from(data, "base64");
     if (buf.length > MAX_PHOTO || buf.length < 100) { res.status(413).json({ ok: false, error: "photo-too-big" }); return; }
     photo = { buf, type };
+    // A 320-px card thumbnail made in the browser beside the full photo (2026-10-28): the cards show a 112-px thumb,
+    // and nine 1600-px JPEGs on the hub were ~2 MB on a phone. Stored as <full name>-t.jpg, so the URL is derivable.
+    if (b.photo_thumb && b.photo_thumb.data) {
+      const tb = Buffer.from(String(b.photo_thumb.data).replace(/^data:[^,]*,/, ""), "base64");
+      if (tb.length > 120000 || tb.length < 100) { res.status(413).json({ ok: false, error: "photo-too-big" }); return; }
+      photo.thumb = tb;
+    }
   }
 
   const ip = R.ipHash(req), ua = R.clean(req.headers["user-agent"], 200);
@@ -51,6 +58,10 @@ module.exports = async (req, res) => {
       const ext = photo.type === "image/png" ? "png" : photo.type === "image/webp" ? "webp" : "jpg";
       const blob = await put(`registry/${row.model_slug}-${row.serial_masked.toLowerCase()}.${ext}`, photo.buf, { access: "public", addRandomSuffix: true, contentType: photo.type, cacheControlMaxAge: 31536000 });
       photo_url = blob.url;
+      if (photo.thumb) {
+        try { await put(blob.pathname.replace(/\.[a-z0-9]+$/i, "") + "-t.jpg", photo.thumb, { access: "public", addRandomSuffix: false, contentType: "image/jpeg", cacheControlMaxAge: 31536000 }); }
+        catch (e) { console.error("registry thumb", e && e.message); } // the card falls back to the full photo
+      }
     }
 
     const [ins] = await q.query(
