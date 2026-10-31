@@ -380,7 +380,7 @@
     const CONFW = { high: "Sony's own date", medium: "from a manual or brochure year", low: "a collector estimate" };
     // Build year vs catalog era — a nudge, not a gate (David, 10/25): warn once, send on the second press.
     const eraYears = m => { const t = m && m.era ? String(m.era).match(/(\d{4}).*?(\d{4})/) : null; return t ? [+t[1], +t[2]] : null; };
-    let eraOk = "";
+    let eraOk = ""; let serialOk = null;
     const syncOther = () => {
       otherWrap.hidden = sel.value !== "other";
       const cm = cat.bySlug[sel.value];
@@ -423,6 +423,12 @@
         document.getElementById("built").focus(); return;
       }
       if (!/^[A-Za-z0-9\s\-_.]{4,24}$/.test(body.serial || "")) { say("warn", "The serial looks wrong. Digits and letters as printed on the plate, no punctuation needed."); document.getElementById("serial").focus(); return; }
+      const sd = String(body.serial).replace(/\D/g, "").length; // Sony BVM/PVM plates carry a seven-digit serial; entry 14 arrived with eight (a doubled digit, 10/31). A nudge, not a gate.
+      if (sd && sd !== 7 && serialOk !== body.serial) {
+        serialOk = body.serial;
+        say("warn", "That serial has <b>" + sd + " digits</b> — Sony BVM and PVM plates carry seven (like 2001234). A doubled or missing digit? Check the plate — if that's what it reads, press Send again and it goes in as written.");
+        document.getElementById("serial").focus(); return;
+      }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email || "")) { say("warn", "An email address is needed (it stays private)."); document.getElementById("email").focus(); return; }
       if (photo) { body.photo = { name: file.files[0].name, type: photo.type, data: photo.data }; if (photo.thumb) body.photo_thumb = { type: "image/jpeg", data: photo.thumb }; }
       btn.disabled = true; say("", "Sending…");
