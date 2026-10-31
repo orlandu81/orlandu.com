@@ -272,7 +272,12 @@
     };
     single.push(sizeTile(r.biggest, "Biggest tube"), sizeTile(r.smallest, "Smallest tube"));
     if (r.hours) single.push(tile(fmt(r.hours.hours) + " h", "Lowest hours", r.hours));
-    if (r.workhorse) single.push(tile(fmt(r.workhorse.hours) + " h", "Workhorse", r.workhorse, "most hours logged"));
+    if (r.workhorse) { // the stat David liked (10/31): how much of its life the set has spent switched on, from the plate date to today
+      const w = r.workhorse, yrs = w.hours / 8766, bm = w.built ? String(w.built).match(/^(\d{4})(?:-(\d{2}))?$/) : null;
+      const since = bm ? new Date(+bm[1], bm[2] ? +bm[2] - 1 : 6, 1) : null, lifeH = since ? (Date.now() - since) / 36e5 : 0;
+      const perDay = lifeH > 0 ? Math.min(24, Math.round(w.hours / (lifeH / 24) * 10) / 10) : null; // hours lit per day, every day since the plate
+      single.push(tile(fmt(w.hours) + " h", "Workhorse", w, perDay != null ? "about " + perDay + " hours a day, every day, since its " + esc(builtTxt(w.built)) + " plate" : "about " + (yrs >= 10 ? Math.round(yrs) : Math.round(yrs * 10) / 10) + " years switched on"));
+    }
     if (r.oldest) single.push(tile(builtTxt(r.oldest.built), "Oldest plate", r.oldest));
     if (r.newest && (!r.oldest || r.newest.id !== r.oldest.id)) single.push(tile(builtTxt(r.newest.built), "Newest plate", r.newest));
     if (r.oldest_working && (!r.oldest || r.oldest_working.id !== r.oldest.id)) single.push(tile(builtTxt(r.oldest_working.built), "Oldest still working", r.oldest_working));
