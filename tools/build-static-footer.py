@@ -22,15 +22,12 @@ NAV = re.findall(r'\["([^"]+)",\s*"([^"]+)"\]', nav_src)
 assert NAV and NAV[0] == ("/", "Home"), NAV
 
 footer_js = re.search(r"footer\.innerHTML =\s*(.*?);\n  \}", js, re.S).group(1)
-assert footer_js.count("NAV.slice(1)") == 1, "footer builder changed shape — update this tool"
+# Review nine (2026-10-30): the footer no longer maps NAV; its four columns are literal strings.
+assert "NAV.slice(1)" not in footer_js, "footer builder maps NAV again — update this tool"
 parts = re.findall(r"'((?:[^'\\]|\\.)*)'", footer_js)
-static = "".join(parts)
-# The .map() template pieces ('<a href="' + href + '">' + label + '</a>') come through as one
-# empty anchor; drop it and splice the real nav links in its place.
-assert static.count('<a href=""></a>') == 1
-nav_links = "".join(f'<a href="{h}">{l}</a>' for h, l in NAV[1:])
-static = static.replace('<a href=""></a>', nav_links)
-assert "<div><span>Pages</span>" + nav_links in static
+static = "".join(parts).replace("\\'", "'")
+for col in ("Collection", "Reading", "Tools &amp; reference", "The arcade"):
+    assert f"<div><span>{col}</span>" in static, col
 assert "San Clemente" not in static
 
 pat = re.compile(r'<footer class="site">.*?</footer>', re.S)

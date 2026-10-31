@@ -372,6 +372,17 @@ consistent" — a new board, topper or card gets the same treatment.
 
 ## 11. Other features and references
 
+- **Review nine (2026-10-30), the presentation pass — items 2–10 shipped, 1 (poster Step Inside cards) declined.**
+  The CSS lives in one block at the end of style.css ("Review nine"). Hooks: a hub card that opens with a photo uses
+  `<figure class="pf">` (no inline margin/radius styles — games, consoles; For Sale cards are `.card.sale` with the same
+  `figure.pf` on a 4:3 contain plate, and the eBay store card is `.card.saleband` under the grid). Every `main.profile`
+  page wraps `figure.pshot` + `.specs` in `<div class="prail">` (sticky); only donkey-kong also carries its two shots
+  in `.pmore` — pages with several photo sets keep them inline with their text. Small labels (badges, chips, spec
+  labels, ticker, footer labels, regband, machnav, TOC) are Barlow Condensed; Orbitron keeps H1/H2/card titles/nav/
+  buttons; headings `text-wrap:balance`. Nav fits one row from 761 px (compact sizes ≤1100). Footer = four literal
+  columns in site.js (Collection · Reading · Tools & reference · The arcade; `build-static-footer.py` no longer maps
+  NAV). about.html intro is `.aboutintro` (text left; mascot + room-spin video right); monitors.html's magazine promo
+  is `a.card.linked.magband`. Reading Room cards on the home page carry their story thumbs.
 - **Contact form:** `api/contact.js` relays through Resend from `onboarding@resend.dev` to orlandusarcade@gmail.com;
   forms `form.cform` on about.html#write and wanted.html#have-one ("I have one →" links prefill the subject); honeypot
   `site`; photos ≤ 3 MB after an in-browser downscale; the mailto stays as the fallback.

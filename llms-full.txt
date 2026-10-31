@@ -325,11 +325,13 @@ Sony Professional Video
 # The Monitor Fleet
 
 A working museum of Sony professional displays — broadcast BVMs, production PVMs, and the LMD generation that followed. Thirteen units across eight models.
- Vol. 1
 
-### TRINITRON FLEET — the magazine
+The magazine · Vol. 1
+
+### Trinitron Fleet Eight chassis, one issue
 
 The full story of the fleet, told properly: an interactive magazine covering every chassis, the calibration work, and why these monitors matter. Future volumes will follow as the fleet evolves.
+ (https://www.orlandu.com/trinitron-fleet-vol1.html)
 
 ## The fleet roster
 
@@ -456,12 +458,11 @@ The cube. Twenty-nine inches of Super Trinitron, 115 pounds, and the biggest tub
 
 ***In the fleet** — PVM production*
 
- Monitor Profile
+ FamilyPVMSize29"Resolution600 TVLEra1991–1996 Monitor Profile
 
 # Sony PVM-2950Q
 
 The cube. Twenty-nine inches of Super Trinitron, 115 pounds, and the biggest tube Sony ever put in a production monitor.
- FamilyPVMSize29"Resolution600 TVLEra1991–1996
 
 Every collection has a centerpiece, and this one announces itself before it is ever switched on. The PVM-2950Q is twenty-nine inches of Super Trinitron in a hundred-and-fifteen-pound cube — the biggest tube Sony ever committed to a production monitor, and the closest thing the format has to a monument.
 
@@ -531,12 +532,11 @@ The king of PVMs. The last and best of Sony's production line, multiscan from 24
 
 ***In the fleet** — PVM production (top of line)*
 
- Monitor Profile
+ FamilyPVM (top of line)Size20"Resolution800 TVLEra2002–2007 Monitor Profile
 
 # Sony PVM-20L5
 
 The king of PVMs. The last and best of Sony's production line, multiscan from 240p to 1080i on 800 lines of HR Trinitron.
- FamilyPVM (top of line)Size20"Resolution800 TVLEra2002–2007
 
 Ask around the hobby and one name keeps coming back. The 20L5 is the king of PVMs — full stop — the machine that arrived at the very end of Sony's production-monitor line with thirty years of Trinitron lessons folded into it. Plug anything into it, from any decade, and it shows why the title stuck.
 
@@ -589,12 +589,11 @@ The grail. One thousand TV lines at twenty inches in 4:3 — a number Sony hit o
 
 ***In the fleet** — BVM broadcast, E/F series — highest-resolution grade*
 
- Monitor Profile
+ FamilyBVMSize20"Resolution1000 TVLEra1995–2002 Monitor Profile
 
 # Sony BVM-20E1U
 
 The grail. One thousand TV lines at twenty inches in 4:3 — a number Sony hit once, on this chassis, and never again.
- FamilyBVMSize20"Resolution1000 TVLEra1995–2002
 
 Every collector has one machine that justifies the whole pursuit. This is that machine. One thousand TVL, at twenty inches, in 4:3 — a number Sony hit exactly once, on exactly this chassis, and never again. A grail earns the name on a single specification.
 
@@ -651,12 +650,11 @@ The finale. Sony's last CRT generation in fourteen inches — master grade, two 
 
 ***In the fleet** — BVM-A broadcast, final CRT generation*
 
- Monitor Profile
+ FamilyBVM-ASize14"Resolution800 TVLEra2003–2007 Monitor Profile
 
 # Sony BVM-A14F5U
 
 The finale. Sony's last CRT generation in fourteen inches — master grade, two of its three card slots filled.
- FamilyBVM-ASize14"Resolution800 TVLEra2003–2007
 
 Every great saga needs a finale, and the A-series is how Sony's CRT story ends: one final generation, built with everything the company had learned, released into a world already turning to flat panels. The A14F5U is that finale in fourteen inches — the master-grade CRT perfected at the exact moment it became art.
 
@@ -709,12 +707,11 @@ Mission control. Four LMD models, nine units, one job: keep every signal honest 
 
 ***In the fleet** — the confidence layer behind the tubes*
 
- Monitor Profile
+ FamilySony LMDModelsFourUnitsNinePanels8.4" and 9" LCD Monitor Profile
 
 # The LMD Wall
 
 Mission control. Four LMD models, nine units, one job: keep every signal honest before it reaches the tubes.
- FamilySony LMDModelsFourUnitsNinePanels8.4" and 9" LCD
 
 Behind the tubes stands mission control. Four LMD models, nine units, one job: keep every signal honest before it touches the glass that matters. Five 9030s form the wall, two 9050s extend it into HD, a 9020 holds the analog corner, and a lone 940W speaks every modern format down to HDMI.
 
@@ -952,12 +949,11 @@ The NES-101 top loader, Nintendo’s 1993 redesign of the NES, fitted with an NE
 
 ***On the shelf** — NES-101*
 
- Console Profile
+ MakerNintendoModelNES-101Year1993VideoRGB (modded) Console Profile
 
 # NES — Top Loader
 
 Nintendo’s 1993 redesign of the NES. Out of the box it only spoke RF; this one puts out RGB.
- MakerNintendoModelNES-101Year1993VideoRGB (modded)
 
 Nintendo sold the top loader at the very end of the NES’s run: a smaller, cheaper box with the cartridge going straight down, the way the Famicom always had it. It dropped the front loader’s spring-loaded tray and the lockout chip along with it, so the blinking-screen ritual of the original console never happens here.
 
@@ -1016,12 +1012,11 @@ The Nintendo 64, Nintendo’s 1996 cartridge console, fitted with an RGB upgrade
 
 ***On the shelf** — NUS-001*
 
- Console Profile
+ MakerNintendoModelNUS-001Year1996VideoRGB (modded) Console Profile
 
 # Nintendo 64
 
 Nintendo’s 1996 cartridge holdout. The American N64 never put RGB on its back; this one does.
- MakerNintendoModelNUS-001Year1996VideoRGB (modded)
 
 The Nintendo 64 reached North America in September 1996, the last major home console built around cartridges. Four controller ports on the front made it the multiplayer machine of its generation.
 
@@ -1062,12 +1057,11 @@ A cobalt Game Boy Advance SP, Nintendo’s 2003 clamshell, upgraded from its fro
 
 ***On the shelf** — Cobalt*
 
- Console Profile
+ MakerNintendoColorCobaltYear2003ScreenIPS (upgraded) Console Profile
 
 # Game Boy Advance SP — Cobalt
 
 The 2003 clamshell Game Boy Advance in cobalt blue, with its front-lit screen swapped for an IPS panel.
- MakerNintendoColorCobaltYear2003ScreenIPS (upgraded)
 
 Nintendo folded the Game Boy Advance in half in 2003: a clamshell that protects its own screen, a built-in rechargeable battery, and, for the first time on a Game Boy, a light for the screen. Cobalt was one of the launch colors.
 
@@ -1126,12 +1120,11 @@ The Sega Genesis CDX (MK-4121), a Genesis and Sega CD in one 1994 unit, serviced
 
 ***On the shelf** — MK-4121*
 
- Console Profile
+ MakerSegaModelMK-4121Year1994VideoRGB (native) Console Profile
 
 # Genesis CDX
 
 A Genesis and a Sega CD in one slim 1994 box, running on a replaced laser lens.
- MakerSegaModelMK-4121Year1994VideoRGB (native)
 
 The CDX put a Genesis and a Sega CD in one box barely bigger than a portable CD player, and it doubles as one, with a small display for audio discs. It plays Genesis cartridges on top and Sega CD discs under the lid.
 
@@ -1173,12 +1166,11 @@ The NEC PC Engine Duo-R, the 1993 Japanese HuCard and CD-ROM² console, fitted w
 
 ***On the shelf** — Duo-R, Japan*
 
- Console Profile
+ MakerNECRegionJapanYear1993VideoRGB (modded) Console Profile
 
 # PC Engine Duo-R
 
 NEC’s 1993 HuCard-and-CD machine from Japan, modded for RGB and for the American TurboGrafx library.
- MakerNECRegionJapanYear1993VideoRGB (modded)
 
 The Duo put the PC Engine and its CD-ROM² drive in one white case, and the Duo-R was its 1993 revision. In Japan the PC Engine was a major platform; in America, sold as the TurboGrafx-16, it stayed a cult machine.
 
@@ -1220,12 +1212,11 @@ The slimline Sony PlayStation 2 from 2004, running games from a MemCard Pro 2 wi
 
 ***On the shelf** — Slimline*
 
- Console Profile
+ MakerSonyModelSlimlineYear2004VideoComponent Console Profile
 
 # PlayStation 2 Slim
 
 Sony’s 2004 slimline PS2, loading its library from a memory card and feeding the LMD wall over component.
- MakerSonyModelSlimlineYear2004VideoComponent
 
 The slim PlayStation 2 arrived in 2004 at a fraction of the original’s size, with the network adapter built in.
 
@@ -2269,12 +2260,11 @@ The Dynamo showcase cabinet at Orlandu's Arcade — rebuilt power supply, repair
 
 ***Big Blue** — marquee lit, attract mode running, the VS. UniSystem alongside*
 
- Machine Profile
+ CabinetDynamo Gen 1 Year1992 BoardDarksoft CPS-2 multi On screenMarvel vs. Capcom Machine Profile
 
 # Big Blue
 
 The big American cabinet at the end of the row — a Dynamo showcase cab in Capcom colors, rebuilt from the power supply up, running Marvel vs. Capcom on free play.
- CabinetDynamo Gen 1 Year1992 BoardDarksoft CPS-2 multi On screenMarvel vs. Capcom
 
 Not every great arcade cabinet came out of Japan. Through the eighties and nineties, Dynamo built cabinets in Texas for the American market — big, square-shouldered, generously proportioned things designed to take a JAMMA board and a beating in equal measure. Operators loved them because they were serviceable and they lasted. Collectors love them now for the same reason, plus one more: a Dynamo is a canvas. Swap the board, swap the marquee, swap the art, and the cabinet becomes whatever you want it to be.
 
@@ -2376,12 +2366,11 @@ Capcom's smallest candy cab: the Mini Cute, and how a pink one crossed the world
 
 ***Head on** — the whole reason candy cabs are shaped the way they are*
 
- The Machines
+ CabinetCapcom Mini Cute Year1991 BoardCPS1 + Darksoft Multi OriginJapan, by crate The Machines
 
 # The Mini Cute
 
 Capcom's smallest arcade cabinet, built for Japanese kids in 1991 — and how this pink one crossed half the world in a crate to hold court in an Orange County game room.
- CabinetCapcom Mini Cute Year1991 BoardCPS1 + Darksoft Multi OriginJapan, by crate
 
 In Japan, arcade cabinets are "candy cabs" — sleek, sit-down machines in molded pastel plastic, as far from the black plywood American upright as a machine can get. In 1991, Capcom built the smallest and most charming of them all: the Mini Cute. At just 1,300mm tall, it's one of the tiniest arcade cabinets ever made, deliberately scaled down and aimed at kids — Capcom's own marketing pitched it as a design piece first and a machine second. It came in three colors — pink, yellow, and turquoise — and packed a proper 18-inch monitor that rotates, so the same little cabinet could run horizontal fighters or vertical shooters. Japan-only, never exported, and rarely surrendered by the people who own them: when Mini Cutes change hands at all, they change hands quietly, at prices that make grown collectors wince.
 
@@ -2449,12 +2438,11 @@ Nintendo's VS. DualSystem cocktail — the 'Red Tent' — how it worked, why so 
 
 ***The Red Tent** — VS. Excitebike up, toppers on the canopy*
 
- Restoration Story
+ CabinetVS. DualSystem cocktail Year1984 SidesVS. + PlayChoice-10 StatusFully restored Restoration Story
 
 # The Red Tent
 
 Nintendo built a sit-down arcade machine with a bright red canopy roof, and most people have never seen one in person. This is the story of the one in the game room — and the twin that got away.
- CabinetVS. DualSystem cocktail Year1984 SidesVS. + PlayChoice-10 StatusFully restored
 
 In 1984, Nintendo's VS. System put NES-grade hardware into arcades a full year before the NES itself reached American living rooms. Most VS. machines were uprights — but for bars, pizza parlors, and anywhere people sat down with a drink, Nintendo built something stranger: the VS. DualSystem cocktail, a table-style cabinet with two screens back-to-back, two sets of controls, and a peaked red canopy over the top that earned it the nickname collectors use to this day — the Red Tent. Two players could face each other across the table playing two different games at once, each on their own screen, sharing one set of guts in the middle. It looked less like an arcade machine than a tiny circus tent that wandered into a tavern, and that's exactly why people love it.
 
@@ -2545,12 +2533,11 @@ Nintendo's dedicated VS. UniSystem at Orlandu's Arcade, running VS. Super Mario 
 
 ***The UniSystem** — dedicated cabinet, marquee lit*
 
- Machine Profile
+ CabinetVS. UniSystem, dedicated Year1984 SwitcherVS. Interchanger On screenVS. Super Mario Bros. Machine Profile
 
 # VS. UniSystem
 
 Nintendo's arcade answer to the NES era, running VS. Super Mario Bros. — which is not the game you think it is.
- CabinetVS. UniSystem, dedicated Year1984 SwitcherVS. Interchanger On screenVS. Super Mario Bros.
 
 In 1984 Nintendo put NES-grade hardware into arcade cabinets a full year before the NES itself reached American living rooms. The VS. System let operators swap games by changing a board, and it let Nintendo test what American players would pay a quarter for before betting a console launch on it.
 
@@ -2615,20 +2602,7 @@ Nintendo's 1981 Donkey Kong arcade cabinet at Orlandu's Arcade — the blue plyw
 
 ***In the row** — blue plywood, marquee lit*
 
- Machine Profile
-
-# Donkey Kong
-
-Blue plywood. The machine that started Nintendo's arcade legend, and most collections worth the name.
  CabinetNintendo upright Year1981 BuildBlue plywood MonitorVertical
-
-Before Nintendo was a household name in America it was a Japanese company with a warehouse of unsold cabinets and one last idea. Donkey Kong was that idea: a carpenter, a barrel-throwing ape, and a girl on a girder. It rescued the company, it introduced the character who would carry it for the next forty years, and it did both by being a genuinely brilliant game rather than a lucky one.
-
-This one is blue plywood — the construction collectors look for. It sits between the VS. UniSystem (https://www.orlandu.com/vs-unisystem.html) and the Mario Bros. widebody, marquee lit, on free play. It also has a trick: a switcher fitted with an original Donkey Kong Jr. board, so the same cabinet plays both games. Nintendo's own sequel, in the cabinet it belongs in, without swapping anything.
-
-## What it looks like running
-
-Donkey Kong's monitor is mounted *vertically*, which is why the screen is taller than it is wide. That was a deliberate choice: the whole game is about climbing, and a portrait screen gives you more girders to climb. Almost every arcade conversion of the era got this wrong; the original never did.
 
 [Photo: The Donkey Kong screen mid-game showing the girder stage, barrels rolling, score on the board]
 
@@ -2637,6 +2611,20 @@ Donkey Kong's monitor is mounted *vertically*, which is why the screen is taller
 [Photo: Close view of the Donkey Kong cabinet side art showing Donkey Kong, Pauline and Mario on the blue cabinet]
 
 ***The side** — original art on blue plywood*
+
+ Machine Profile
+
+# Donkey Kong
+
+Blue plywood. The machine that started Nintendo's arcade legend, and most collections worth the name.
+
+Before Nintendo was a household name in America it was a Japanese company with a warehouse of unsold cabinets and one last idea. Donkey Kong was that idea: a carpenter, a barrel-throwing ape, and a girl on a girder. It rescued the company, it introduced the character who would carry it for the next forty years, and it did both by being a genuinely brilliant game rather than a lucky one.
+
+This one is blue plywood — the construction collectors look for. It sits between the VS. UniSystem (https://www.orlandu.com/vs-unisystem.html) and the Mario Bros. widebody, marquee lit, on free play. It also has a trick: a switcher fitted with an original Donkey Kong Jr. board, so the same cabinet plays both games. Nintendo's own sequel, in the cabinet it belongs in, without swapping anything.
+
+## What it looks like running
+
+Donkey Kong's monitor is mounted *vertically*, which is why the screen is taller than it is wide. That was a deliberate choice: the whole game is about climbing, and a portrait screen gives you more girders to climb. Almost every arcade conversion of the era got this wrong; the original never did.
 
 ## Work log
 
@@ -2667,12 +2655,11 @@ Nintendo's 1983 Mario Bros. arcade cabinet at Orlandu's Arcade — the two-playe
 
 ***The widebody** — one wide panel, two players*
 
- Machine Profile
+ CabinetNintendo widebody Year1983 PlayersTwo, simultaneous MonitorHorizontal Machine Profile
 
 # Mario Bros. Widebody
 
 Two players, one sewer, zero excuses. Nintendo’s widebody upright, on free play.
- CabinetNintendo widebody Year1983 PlayersTwo, simultaneous MonitorHorizontal
 
 Mario Bros. is where Mario stopped being “Jumpman from the Donkey Kong game” and became Mario — a plumber, with a brother, in a sewer full of turtles. It is also one of the great two-player arcade games, and not because it is cooperative. It technically is. In practice, the fastest way to clear a level is to bump your brother into a Shellcreeper and take the coins yourself, and everyone who has ever played it knows this.
 
@@ -2719,12 +2706,11 @@ Williams' 1993 Indiana Jones: The Pinball Adventure at Orlandu's Arcade — the 
 
 ***The widebody** — backbox lit, in the pinball row*
 
- Machine Profile
+ MakerWilliams Year1993 CabinetWidebody SoundDCS Machine Profile
 
 # Indiana Jones
 
 The Williams widebody from 1993 — twelve modes deep, all three films on one playfield, and Williams' first year of DCS sound.
- MakerWilliams Year1993 CabinetWidebody SoundDCS
 
 Indiana Jones: The Pinball Adventure came out in 1993, at the exact moment Williams was at the height of its powers. It is a widebody — wider playfield, more room for toys — and it tries to fit all three films onto one machine, which is exactly as ambitious and as chaotic as it sounds. There is a mine cart, a rotating idol, a ball-eating Ark, and a mode select that behaves like a board game.
 
@@ -2782,12 +2768,11 @@ Scott Danesi's Total Nuclear Annihilation at Orlandu's Arcade — Spooky Pinball
 
 ***The machine** — with the full topper set: mushroom cloud, warning beacon, synthwave sunset*
 
- Machine Profile
+ MakerSpooky Pinball Year2017 DesignerScott Danesi DesignSingle level Machine Profile
 
 # Total Nuclear Annihilation
 
 Scott Danesi's synthwave fever dream. Fast, brutal, single-level, perfect.
- MakerSpooky Pinball Year2017 DesignerScott Danesi DesignSingle level
 
 Total Nuclear Annihilation should not work. It has one level. There is no mode select, no ramp-fed video mode, no licensed film to lean on. You are trying to blow up a reactor, then another reactor, then another, faster each time, until you fail. That is the entire game.
 
@@ -2833,12 +2818,11 @@ Stern's Ghostbusters Premium at Orlandu's Arcade — the notorious magna-slings 
 
 ***Premium** — backbox lit, topper on*
 
- Machine Profile
+ MakerStern Year2016 EditionPremium NotableMagna-slings Machine Profile
 
 # Ghostbusters Premium
 
 Who you gonna call when the magna-slings throw the ball somewhere unfair? Nobody. That's the game.
- MakerStern Year2016 EditionPremium NotableMagna-slings
 
 Stern's Ghostbusters arrived in 2016 with a reputation that formed almost immediately: this machine is *mean*. The Premium and LE editions carry magnetic slingshots — magna-slings — which grab the ball mid-flight and fling it somewhere you were not expecting and could not have prepared for.
 
@@ -2911,12 +2895,11 @@ Spooky Pinball's Rick and Morty Blood Sucker Edition at Orlandu's Arcade — bou
 
 ***Blood Sucker Edition** — the limited run, backbox lit*
 
- Machine Profile
+ MakerSpooky Pinball Year2020 EditionBlood Sucker OwnershipNew in box, home use only Machine Profile
 
 # Rick and Morty
 
 The limited Blood Sucker Edition — bought new in box, home use only, and still in its original butter cabinet.
- MakerSpooky Pinball Year2020 EditionBlood Sucker OwnershipNew in box, home use only
 
 Spooky Pinball's Rick and Morty is the machine that proved a small Wisconsin manufacturer could take one of the biggest licenses on television and do more with it than a major would have. It sold out immediately, it changes hands for absurd money, and the reason is that it is genuinely funny in a medium where licensed humor usually dies on the display.
 
@@ -6130,6 +6113,10 @@ Player One
 
 [Photo: The Orlandu's Arcade mascot — a wandering warrior with a staff and an arcade cabinet on his back]
 
+Inside the game room — one full turn
+
+***A 33-second spin** — the framed PCB wall, Super Mario Bros. on the PVMs, the fiber-optic Kay·Bee World of Nintendo sign, and the Mini Cute and Red Tent holding their corners*
+
 Orlandu's Arcade is a private arcade and working collection in Orange County, California, spread across two rooms: the garage arcade, where the upright cabinets, the pinball row, and the broadcast monitor racks live, and the game room inside the house, home to the candy cab, the cocktail, and the big PVMs. Between them runs a fleet of Sony professional monitors that most video engineers would recognize before most gamers would.
 
 The philosophy here is simple: everything runs. Cabinets get their power supplies rebuilt, pinball machines get their mechs restored, monitors get calibrated the way Sony intended. This isn't a museum behind glass — it's a garage where the CRTs are warm and the high-score initials still get entered.
@@ -6137,10 +6124,6 @@ The philosophy here is simple: everything runs. Cabinets get their power supplie
 The name comes from the handle "orlandu81," a long-standing identity across the KLOV / Museum of the Game forums, Arcade-Projects, and eBay. The mascot — a wandering warrior hauling an arcade cabinet on his back — pretty much sums up the lifestyle.
 
 Alongside the collecting there's an active trade in vintage gaming collectibles, arcade hardware, and rare electronics — what's for sale now (https://www.orlandu.com/forsale.html), and what the arcade is hunting (https://www.orlandu.com/wanted.html).
-
-## Inside the game room one full turn
-
-***A 33-second spin** — the framed PCB wall, Super Mario Bros. on the PVMs, the fiber-optic Kay·Bee World of Nintendo sign, and the Mini Cute and Red Tent holding their corners*
 
 ## Contact & links
  Email · The front door
