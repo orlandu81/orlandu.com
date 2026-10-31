@@ -326,7 +326,7 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
 - **Rules (David's):** BVM + PVM only; serials shown with the last two digits masked, full serial stored privately for
   duplicates; auto-publish with an email alert + signed delete link; optional photo, handle, country/state; email
   required, never shown. **Other owners' prices and sellers are welcome; David's own entries carry neither.** Records
-  strip shows monitors, never owners — 15 tiles since 10/31 (Most registered, Biggest/Smallest tube, Lowest hours,
+  strip shows monitors, never owners — 15 tiles since 10/31 (Most registered, Biggest/Smallest tube [a shared size is a TIE: "PVM-2950Q · 3 tied", linking the model page], Lowest hours,
   Workhorse, Combined BVM reported runtime, Oldest/Newest plate, Oldest still working, Longest production span, Lowest/Highest serial,
   Serial neighbors [same badge, gap BUCKETED to 10/100/1,000 — the exact gap never leaves the API], Best find [ranked in
   rough USD], Countries); each hides without data. David CUT Priciest, Where they came from and Farthest from the

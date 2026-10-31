@@ -255,8 +255,13 @@
     const tiles = [];
     // Order: the fleet, then hours, then plates, then serials, then prices, then where they are. All about the monitors (David, 10/25).
     if (r.top) { const tied = counts.filter(c => c.n === r.top.n).length; tiles.push('<a class="rec" href="registry-' + esc(r.top.model_slug) + '.html"><span class="n">' + esc(r.top.model) + '</span><span class="l">Most registered</span><span class="w">' + r.top.n + (r.top.n === 1 ? " unit" : " units") + (tied > 1 ? " · tied with " + (tied - 1) + (tied === 2 ? " other" : " others") : "") + "</span></a>"); }
-    if (r.biggest) tiles.push(tile(r.biggest.size + "-inch", "Biggest tube", r.biggest.entry));
-    if (r.smallest) tiles.push(tile(r.smallest.size + "-inch", "Smallest tube", r.smallest.entry));
+    const sizeTile = (b, l) => { // one set → its entry; several of the same size → a tie, naming the model(s), linking the model page
+      if (!b) return "";
+      if (b.entry) return tile(b.size + "-inch", l, b.entry);
+      const ms = b.models || []; if (!ms.length) return "";
+      return '<a class="rec" href="registry-' + esc(ms[0].model_slug) + '.html"><span class="n">' + b.size + '-inch</span><span class="l">' + l + '</span><span class="w">' + ms.map(m => esc(m.model)).join(" &amp; ") + " · " + b.n + " tied</span></a>";
+    };
+    tiles.push(sizeTile(r.biggest, "Biggest tube"), sizeTile(r.smallest, "Smallest tube"));
     if (r.hours) tiles.push(tile(fmt(r.hours.hours) + " h", "Lowest hours", r.hours));
     if (r.workhorse) tiles.push(tile(fmt(r.workhorse.hours) + " h", "Workhorse", r.workhorse, "most hours logged"));
     if (r.runtime) { const yrs = r.runtime.total / 8766; tiles.push(plain(fmt(r.runtime.total) + " h", "Combined BVM reported runtime", (yrs >= 1 ? "about " + (yrs >= 10 ? Math.round(yrs) : Math.round(yrs * 10) / 10) + " years switched on" : "the fleet's meters added up") + " · " + r.runtime.n + (r.runtime.n === 1 ? " meter" : " meters"))); }

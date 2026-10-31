@@ -105,14 +105,20 @@ module.exports = async (req, res) => {
       if (m.size_in > bigSize) { bigSize = m.size_in; biggest = c.model_slug; }
       if (m.size_in < smallSize) { smallSize = m.size_in; smallest = c.model_slug; }
     }
-    const big = biggest ? firsts.find(r => r.model_slug === biggest) || null : null;
-    const small = smallest && smallest !== biggest ? firsts.find(r => r.model_slug === smallest) || null : null;
+    // A size shared by several sets is a TIE, not the first one registered (David, 10/31): the tile then names the
+    // model(s) and the count and links to the model page; only a lone set gets its own entry link.
+    const bySize = (size, slug) => {
+      if (!slug) return null;
+      const models = counts.filter(c => { const m = R.bySlug.get(c.model_slug); return m && m.size_in === size; });
+      const n = models.reduce((t, c) => t + c.n, 0);
+      return { size, n, models: models.map(c => ({ model_slug: c.model_slug, model: c.model, n: c.n })), entry: n === 1 ? R.pub(firsts.find(r => r.model_slug === slug)) : null };
+    };
     const countries = countryRows.map(r => r.country);
     const gapBucket = g => g == null ? null : g <= 10 ? 10 : g <= 100 ? 100 : g <= 1000 ? 1000 : g <= 10000 ? 10000 : 100000;
     const noGap = r => { const o = R.pub(r); delete o.gap; return o; }; // the exact gap stays here
     const pair = pairRows.length === 2 ? { within: gapBucket(Number(pairRows[0].gap)), a: noGap(pairRows[0]), b: noGap(pairRows[1]) } : null;
     const records = {
-      top: counts[0] || null, biggest: big ? { size: bigSize, entry: R.pub(big) } : null, smallest: small ? { size: smallSize, entry: R.pub(small) } : null,
+      top: counts[0] || null, biggest: bySize(bigSize, biggest), smallest: smallest !== biggest ? bySize(smallSize, smallest) : null,
       hours: hi ? R.pub(hi) : null, workhorse: work && (!hi || work.id !== hi.id) ? R.pub(work) : null,
       runtime: runtime && Number(runtime.total) > 0 ? { total: Number(runtime.total), n: runtime.n } : null,
       oldest: oldest ? R.pub(oldest) : null, newest: newest ? R.pub(newest) : null, oldest_working: oldWorking ? R.pub(oldWorking) : null,
