@@ -365,7 +365,8 @@ PROFILES = {"pvm-20l5": "pvm-20l5.html", "pvm-2950q": "pvm-2950q.html", "bvm-20e
 # noindex,follow and stay OUT of sitemap.xml — ~200 words of shared template each, mostly with no entries yet, on a
 # young domain. To promote one (it has real entries now), add its slug to INDEX_EXTRA and rerun, then add its
 # sitemap block.
-INDEX_EXTRA = set()
+# 10-30: promoted once each had two owner entries (29 entries registry-wide that day).
+INDEX_EXTRA = {"bvm-d14h1u", "pvm-1354q", "pvm-14m2u", "pvm-8041q"}
 def indexable(m):
     return bool(m.get("sony_serials")) or m["slug"] in PROFILES or m["slug"] in INDEX_EXTRA
 NOINDEX = "noindex,follow"

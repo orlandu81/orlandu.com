@@ -937,9 +937,9 @@ carry neither; five condition states; honeypot + rate limit, no Turnstile; "Regi
   `media/og/og-registry.jpg` (cut from the BVM pair photo + wordmark). `build-llms-full.py` SKIPS the 96 model pages
   (`REGISTRY_MODEL`); `build-search-index.py` gives them kind "Registry" and weight 4 so a model number still finds
   the profile page first. No MCP tool yet; `data/registry-models.json` is served with CORS like the other datasets.
-- **Indexing (David, 10/26 SEO pass): only 9 of the 96 model pages are indexable** — the six with Sony bulletin serial
-  lists (`sony_serials`) and the arcade's own PVM-20L5, PVM-2950Q and BVM-A14F5U (`PROFILES`; the 20E1U is in both).
-  The other 87 are `noindex,follow` and are NOT in sitemap.xml: ~200 words of shared template each, mostly with no
+- **Indexing (David, 10/26 SEO pass): 13 of the 96 model pages are indexable** — the six with Sony bulletin serial
+  lists (`sony_serials`), the arcade's own PVM-20L5, PVM-2950Q and BVM-A14F5U (`PROFILES`; the 20E1U is in both), and
+  (10/30, `INDEX_EXTRA`) BVM-D14H1U, PVM-1354Q, PVM-14M2U, PVM-8041Q once each had two owner entries. The other 83 are `noindex,follow` and are NOT in sitemap.xml: ~200 words of shared template each, mostly with no
   entries, were 62% of the sitemap on a domain Google still indexes slowly. `indexable()` in the builder decides; to
   promote a page that has gathered real entries, add its slug to `INDEX_EXTRA`, rerun, and add its sitemap block.
   `registry-models.html` now carries the whole catalog table in its raw HTML (`static_models()`, same markup as
