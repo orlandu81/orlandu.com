@@ -76,8 +76,8 @@ module.exports = async (req, res) => {
     const live = "FROM registry_entries WHERE deleted_at IS NULL";
     // Best find ranks across currencies, so compare in rough USD (rates are for ORDERING only; the tile shows the price as paid).
     const USD = "(price * CASE currency WHEN 'EUR' THEN 1.08 WHEN 'GBP' THEN 1.27 WHEN 'JPY' THEN 0.0067 WHEN 'CAD' THEN 0.73 WHEN 'AUD' THEN 0.66 ELSE 1 END)";
-    const [[stats], counts, latest, [hi], [oldest], [newest], firsts, countryRows, [work], [serLo], [serHi], [runtime], pairRows, [cheapest], [oldWorking], [span]] = await Promise.all([
-      q.query(`SELECT count(*)::int AS entries, count(DISTINCT model_slug)::int AS models, count(DISTINCT email)::int AS owners, count(DISTINCT country)::int AS countries, max(created_at) AS updated ${live}`),
+    const [[stats], counts, latest, [hi], [oldest], [newest], firsts, countryRows, [work], [runtime], pairRows, [cheapest], [oldWorking], [span], ceilRows] = await Promise.all([
+      q.query(`SELECT count(*)::int AS entries, count(DISTINCT model_slug)::int AS models, count(DISTINCT email)::int AS owners, count(DISTINCT country)::int AS countries, max(created_at) AS updated, count(*) FILTER (WHERE cond IN ('working', 'serviced'))::int AS working, count(*) FILTER (WHERE line = 'BVM')::int AS bvm, count(*) FILTER (WHERE line = 'PVM')::int AS pvm, count(DISTINCT model_slug) FILTER (WHERE catalog)::int AS catalog_models ${live}`),
       q.query(`SELECT model_slug, model, line, count(*)::int AS n ${live} GROUP BY model_slug, model, line ORDER BY n DESC, model`),
       q.query(`SELECT ${R.PUBLIC} ${live} ORDER BY created_at DESC LIMIT 9`),
       // Records — about the monitors, never a per-owner total (David, 10/25). Each points at one entry.
@@ -88,8 +88,6 @@ module.exports = async (req, res) => {
       q.query(`SELECT DISTINCT country ${live} AND country IS NOT NULL ORDER BY country`),
       // The 10/31 batch (David: "all, and workhorse"). Still monitors, not owners; each tile hides itself until the data exists.
       q.query(`SELECT ${R.PUBLIC} ${live} AND hours IS NOT NULL AND hours > 0 ORDER BY hours DESC, created_at ASC LIMIT 1`), // Workhorse — its own badge beside Lowest hours, not a replacement
-      q.query(`SELECT ${R.PUBLIC} ${live} AND serial_num IS NOT NULL ORDER BY serial_num ASC, created_at ASC LIMIT 1`),
-      q.query(`SELECT ${R.PUBLIC} ${live} AND serial_num IS NOT NULL ORDER BY serial_num DESC, created_at ASC LIMIT 1`),
       q.query(`SELECT coalesce(sum(hours), 0)::bigint AS total, count(hours)::int AS n ${live} AND hours > 0`),
       // Serial neighbors: the two sets of the SAME BADGE (E and U are separate sequences) closest together in serial. Only the
       // two masked serials and a bucketed gap leave here — never the exact gap, which could help un-mask a serial.
@@ -98,7 +96,19 @@ module.exports = async (req, res) => {
       q.query(`SELECT ${R.PUBLIC} ${live} AND built IS NOT NULL AND cond IN ('working', 'serviced') ORDER BY built ASC, created_at ASC LIMIT 1`),
       // Longest production span: the model whose registered plates sit farthest apart. built is 'YYYY' or 'YYYY-MM'; a bare year counts as June.
       q.query(`SELECT model_slug, model, min(built) AS lo, max(built) AS hi, count(built)::int AS n FROM registry_entries WHERE deleted_at IS NULL AND built IS NOT NULL GROUP BY model_slug, model HAVING count(built) >= 2 ORDER BY (left(max(built), 4)::int * 12 + coalesce(nullif(substr(max(built), 6, 2), '')::int, 6)) - (left(min(built), 4)::int * 12 + coalesce(nullif(substr(min(built), 6, 2), '')::int, 6)) DESC, model LIMIT 1`),
+      // Closest to the end of its run: entries of the six models with Sony bulletin ceilings; the pick is made below.
+      R.CEILINGS.size ? q.query(`SELECT ${R.PUBLIC}, serial_num ${live} AND serial_num IS NOT NULL AND model_slug = ANY($1)`, [[...R.CEILINGS.keys()]]) : Promise.resolve([]),
     ]);
+    // Nearest documented ceiling, by badge letter (E and U are separate runs). The distance leaves here BUCKETED only —
+    // ceiling + exact distance would be the full serial.
+    let endrun = null, startrun = null;
+    for (const r of ceilRows) {
+      const badge = String(r.model_as_entered || r.model).toUpperCase(), c = R.CEILINGS.get(r.model_slug), letter = badge.slice(-1), ceil = c && c[letter];
+      if (!ceil) continue;
+      const n = Number(r.serial_num);
+      if (n <= ceil.max) { const d = ceil.max - n; if (!endrun || d < endrun.d) endrun = { d, r, ceil }; }
+      if (n >= R.RUN_START) { const d = n - R.RUN_START; if (!startrun || d < startrun.d) startrun = { d, r }; } // Earliest in its run: documented runs begin at 2,000,001
+    }
     let biggest = null, bigSize = 0, smallest = null, smallSize = Infinity;
     for (const c of counts) {
       const m = R.bySlug.get(c.model_slug); if (!m || !m.size_in) continue;
@@ -122,7 +132,10 @@ module.exports = async (req, res) => {
       hours: hi ? R.pub(hi) : null, workhorse: work && (!hi || work.id !== hi.id) ? R.pub(work) : null,
       runtime: runtime && Number(runtime.total) > 0 ? { total: Number(runtime.total), n: runtime.n } : null,
       oldest: oldest ? R.pub(oldest) : null, newest: newest ? R.pub(newest) : null, oldest_working: oldWorking ? R.pub(oldWorking) : null,
-      span: span || null, serial_lo: serLo ? R.pub(serLo) : null, serial_hi: serHi && (!serLo || serHi.id !== serLo.id) ? R.pub(serHi) : null, pair,
+      startrun: startrun ? { within: gapBucket(startrun.d), start: R.RUN_START, entry: (() => { const o = R.pub(startrun.r); delete o.serial_num; return o; })() } : null,
+      endrun: endrun ? { within: gapBucket(endrun.d), ceiling: endrun.ceil.max, doc: endrun.ceil.doc, entry: (() => { const o = R.pub(endrun.r); delete o.serial_num; return o; })() } : null,
+      fleet: { total: stats.entries, working: stats.working, bvm: stats.bvm, pvm: stats.pvm, catalog_models: stats.catalog_models, catalog_total: R.CATALOG.models.length },
+      span: span || null, pair, // Lowest/Highest serial were dropped 10/31: serials are per-run sequences with a plant prefix (UK-built PVM-20L1s run 62xxxxx), so a cross-model high or low means nothing
       cheapest: cheapest ? R.pub(cheapest) : null, // Priciest, Where they came from and Farthest from the factory were cut 10/31 at David's call
       countries,
     };

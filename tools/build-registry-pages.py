@@ -147,6 +147,9 @@ def landing():
 
   <section id="records" hidden>
     <h2 class="sec">Records <small>the monitors, not the owners</small></h2>
+    <h3 class="rsub">Fleet records <small>the registry as a whole</small></h3>
+    <div class="records" id="records-fleet"></div>
+    <h3 class="rsub">Single-monitor records <small>each one points at an entry</small></h3>
     <div class="records" id="records-out"></div>
   </section>
 

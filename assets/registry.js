@@ -244,37 +244,44 @@
   }
 
   function records(r, counts, cat) {
-    const sec = document.getElementById("records"), out = document.getElementById("records-out");
+    const sec = document.getElementById("records"), out = document.getElementById("records-out"), fleetOut = document.getElementById("records-fleet");
     if (!sec || !out || !r || !counts.length) return;
     const badge = e => esc(e.model_as_entered && e.model_as_entered.toUpperCase() !== e.model ? e.model_as_entered.toUpperCase() : e.model);
     const who = e => esc(e.handle || "anonymous owner");
     const href = (e, nohash) => "registry-" + esc(e.model_slug) + ".html" + (nohash ? "" : "#e" + e.id);
     const tile = (v, l, e, extra) => e ? '<a class="rec" href="' + href(e) + '"><span class="n">' + v + '</span><span class="l">' + l + '</span><span class="w">' + badge(e) + (extra ? " · " + extra : "") + " · " + who(e) + "</span></a>" : "";
-    const plain = (v, l, w) => '<span class="rec"><span class="n">' + v + '</span><span class="l">' + l + '</span><span class="w">' + w + "</span></span>";
+    const plain = (v, l, w, link) => (link ? '<a class="rec" href="' + link + '">' : '<span class="rec">') + '<span class="n">' + v + '</span><span class="l">' + l + '</span><span class="w">' + w + "</span>" + (link ? "</a>" : "</span>");
     const money = e => fmt(e.price) + " " + esc(e.currency || "USD");
-    const tiles = [];
-    // Order: the fleet, then hours, then plates, then serials, then prices, then where they are. All about the monitors (David, 10/25).
-    if (r.top) { const tied = counts.filter(c => c.n === r.top.n).length; tiles.push('<a class="rec" href="registry-' + esc(r.top.model_slug) + '.html"><span class="n">' + esc(r.top.model) + '</span><span class="l">Most registered</span><span class="w">' + r.top.n + (r.top.n === 1 ? " unit" : " units") + (tied > 1 ? " · tied with " + (tied - 1) + (tied === 2 ? " other" : " others") : "") + "</span></a>"); }
+    const F = r.fleet || {}, total = F.total || counts.reduce((t, c) => t + c.n, 0);
+    // Two strips (David, 10/31): FLEET records are about the registry as a whole; SINGLE-MONITOR records each point at one entry.
+    const fleet = [], single = [];
+    if (r.top) { const tied = counts.filter(c => c.n === r.top.n).length; fleet.push('<a class="rec" href="registry-' + esc(r.top.model_slug) + '.html"><span class="n">' + esc(r.top.model) + '</span><span class="l">Most registered</span><span class="w">' + r.top.n + (r.top.n === 1 ? " unit" : " units") + (tied > 1 ? " · tied with " + (tied - 1) + (tied === 2 ? " other" : " others") : "") + "</span></a>"); }
+    if (F.working != null && total) fleet.push(plain(F.working + " of " + total, "Working share", Math.round(F.working / total * 100) + "% working or recently serviced"));
+    if (F.pvm != null && F.bvm != null && (F.pvm || F.bvm)) fleet.push(plain(fmt(F.pvm) + " PVM · " + fmt(F.bvm) + " BVM", "PVM vs BVM", F.pvm === F.bvm ? "dead even" : (F.pvm > F.bvm ? "PVM" : "BVM") + " leads by " + Math.abs(F.pvm - F.bvm)));
+    if (F.catalog_models != null && F.catalog_total) fleet.push(plain(F.catalog_models + " of " + F.catalog_total, "Catalog coverage", "models with at least one registered · " + (F.catalog_total - F.catalog_models) + " still waiting for a first", "registry-models.html"));
+    if (r.oldest && r.newest) { const y0 = +String(r.oldest.built).slice(0, 4), y1 = +String(r.newest.built).slice(0, 4), yrs = y1 - y0; fleet.push(plain(y0 === y1 ? String(y0) : y0 + "–" + y1, "Years of production spanned", (yrs >= 1 ? yrs + (yrs === 1 ? " year" : " years") + " between the oldest and newest plates" : "every plate so far reads the same year"))); }
+    if (r.runtime) { const yrs = r.runtime.total / 8766; fleet.push(plain(fmt(r.runtime.total) + " h", "Combined BVM reported runtime", (yrs >= 1 ? "about " + (yrs >= 10 ? Math.round(yrs) : Math.round(yrs * 10) / 10) + " years switched on" : "the fleet's meters added up") + " · " + r.runtime.n + (r.runtime.n === 1 ? " meter" : " meters"))); }
+    if (r.span) { const y0 = String(r.span.lo).slice(0, 4), y1 = String(r.span.hi).slice(0, 4), yrs = +y1 - +y0; fleet.push('<a class="rec" href="registry-' + esc(r.span.model_slug) + '.html"><span class="n">' + (yrs >= 1 ? yrs + (yrs === 1 ? " year" : " years") : "Same year") + '</span><span class="l">Longest production span</span><span class="w">' + esc(r.span.model) + " · plates " + esc(builtTxt(r.span.lo)) + " – " + esc(builtTxt(r.span.hi)) + " · " + r.span.n + " plates</span></a>"); }
+    if (r.countries && r.countries.length) fleet.push(plain(r.countries.length, r.countries.length === 1 ? "Country" : "Countries", r.countries.map(c => esc(COUNTRY[c] || c)).join(" · ")));
+
     const sizeTile = (b, l) => { // one set → its entry; several of the same size → a tie, naming the model(s), linking the model page
       if (!b) return "";
       if (b.entry) return tile(b.size + "-inch", l, b.entry);
       const ms = b.models || []; if (!ms.length) return "";
       return '<a class="rec" href="registry-' + esc(ms[0].model_slug) + '.html"><span class="n">' + b.size + '-inch</span><span class="l">' + l + '</span><span class="w">' + ms.map(m => esc(m.model)).join(" &amp; ") + " · " + b.n + " tied</span></a>";
     };
-    tiles.push(sizeTile(r.biggest, "Biggest tube"), sizeTile(r.smallest, "Smallest tube"));
-    if (r.hours) tiles.push(tile(fmt(r.hours.hours) + " h", "Lowest hours", r.hours));
-    if (r.workhorse) tiles.push(tile(fmt(r.workhorse.hours) + " h", "Workhorse", r.workhorse, "most hours logged"));
-    if (r.runtime) { const yrs = r.runtime.total / 8766; tiles.push(plain(fmt(r.runtime.total) + " h", "Combined BVM reported runtime", (yrs >= 1 ? "about " + (yrs >= 10 ? Math.round(yrs) : Math.round(yrs * 10) / 10) + " years switched on" : "the fleet's meters added up") + " · " + r.runtime.n + (r.runtime.n === 1 ? " meter" : " meters"))); }
-    if (r.oldest) tiles.push(tile(builtTxt(r.oldest.built), "Oldest plate", r.oldest));
-    if (r.newest && (!r.oldest || r.newest.id !== r.oldest.id)) tiles.push(tile(builtTxt(r.newest.built), "Newest plate", r.newest));
-    if (r.oldest_working && (!r.oldest || r.oldest_working.id !== r.oldest.id)) tiles.push(tile(builtTxt(r.oldest_working.built), "Oldest still working", r.oldest_working));
-    if (r.span) { const y0 = String(r.span.lo).slice(0, 4), y1 = String(r.span.hi).slice(0, 4), yrs = +y1 - +y0; tiles.push('<a class="rec" href="registry-' + esc(r.span.model_slug) + '.html"><span class="n">' + (yrs >= 1 ? yrs + (yrs === 1 ? " year" : " years") : "Same year") + '</span><span class="l">Longest production span</span><span class="w">' + esc(r.span.model) + " · plates " + esc(builtTxt(r.span.lo)) + " – " + esc(builtTxt(r.span.hi)) + " · " + r.span.n + " plates</span></a>"); }
-    if (r.serial_lo) tiles.push(tile(esc(r.serial_lo.serial_masked), "Lowest serial", r.serial_lo, "earliest in its run"));
-    if (r.serial_hi) tiles.push(tile(esc(r.serial_hi.serial_masked), "Highest serial", r.serial_hi, "latest in its run"));
-    if (r.pair && r.pair.a && r.pair.b) { const a = r.pair.a, b = r.pair.b, same = (a.handle || "") === (b.handle || ""); tiles.push('<a class="rec" href="' + href(a) + '"><span class="n">Within ' + fmt(r.pair.within) + '</span><span class="l">Serial neighbors</span><span class="w">' + badge(a) + " · " + esc(a.serial_masked) + " &amp; " + esc(b.serial_masked) + " · " + (same ? who(a) : who(a) + " &amp; " + who(b)) + "</span></a>"); }
-    if (r.cheapest) tiles.push(tile(money(r.cheapest), "Best find", r.cheapest, r.cheapest.acq_src ? esc(r.cheapest.acq_src.toLowerCase()) : null));
-    if (r.countries && r.countries.length) tiles.push(plain(r.countries.length, r.countries.length === 1 ? "Country" : "Countries", r.countries.map(c => esc(COUNTRY[c] || c)).join(" · ")));
-    out.innerHTML = tiles.join("");
+    single.push(sizeTile(r.biggest, "Biggest tube"), sizeTile(r.smallest, "Smallest tube"));
+    if (r.hours) single.push(tile(fmt(r.hours.hours) + " h", "Lowest hours", r.hours));
+    if (r.workhorse) single.push(tile(fmt(r.workhorse.hours) + " h", "Workhorse", r.workhorse, "most hours logged"));
+    if (r.oldest) single.push(tile(builtTxt(r.oldest.built), "Oldest plate", r.oldest));
+    if (r.newest && (!r.oldest || r.newest.id !== r.oldest.id)) single.push(tile(builtTxt(r.newest.built), "Newest plate", r.newest));
+    if (r.oldest_working && (!r.oldest || r.oldest_working.id !== r.oldest.id)) single.push(tile(builtTxt(r.oldest_working.built), "Oldest still working", r.oldest_working));
+    if (r.startrun && r.startrun.entry) single.push(tile("Within " + fmt(r.startrun.within), "Earliest in its run", r.startrun.entry, "Sony's documented runs begin at " + fmt(r.startrun.start)));
+    if (r.endrun && r.endrun.entry) single.push(tile("Within " + fmt(r.endrun.within), "Closest to the end of its run", r.endrun.entry, "Sony bulletin " + esc(r.endrun.doc) + " lists sets up to " + fmt(r.endrun.ceiling)));
+    if (r.pair && r.pair.a && r.pair.b) { const a = r.pair.a, b = r.pair.b, same = (a.handle || "") === (b.handle || ""); single.push('<a class="rec" href="' + href(a) + '"><span class="n">Within ' + fmt(r.pair.within) + '</span><span class="l">Serial neighbors</span><span class="w">' + badge(a) + " · " + esc(a.serial_masked) + " &amp; " + esc(b.serial_masked) + " · " + (same ? who(a) : who(a) + " &amp; " + who(b)) + "</span></a>"); }
+    if (r.cheapest) single.push(tile(money(r.cheapest), "Best find", r.cheapest, r.cheapest.acq_src ? esc(r.cheapest.acq_src.toLowerCase()) : null));
+    if (fleetOut) { fleetOut.innerHTML = fleet.join(""); out.innerHTML = single.join(""); }
+    else out.innerHTML = fleet.join("") + single.join(""); // a page without the two sub-strips (older cached markup) still gets everything
     sec.hidden = false;
   }
 
