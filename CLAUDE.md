@@ -43,6 +43,8 @@ without it a returning visitor gets new HTML with an old stylesheet or script. A
 writes a page (the timeline tool, the magazine `build_page.py` scripts) emits bare references, so
 stamp AFTER generating. `update-lastmod.py` needs full history (`git fetch --unshallow`) — run it
 in a full clone, not the depth-20 deploy clone. It ignores head-only edits and re-stamps on purpose.
+Both it and `build-feed.py` date commits by their **Pacific** day (2026-10-30), so an evening push
+from the UTC laptop VM no longer stamps tomorrow — no more hand-reverting dates after a run.
 
 **Titles (2026-10-09):** `<title>` front-loads the searchable term and spells out what the page
 holds — "Sony BVM-20E1U: Specs, BKM Cards & Work Log — Orlandu's Arcade", "Nintendo 64 RGB Mod: Signal
@@ -165,20 +167,15 @@ lookups below before acting — do not go by `netlify.toml` or by an old note.
     https://dns.google/resolve?name=orlandu.com&type=A&cd=0
     https://dns.google/resolve?name=www.orlandu.com&type=CNAME&cd=0
 
-`netlify.toml` is **retained deliberately** as a rollback path, not dead config.
-It is inert while DNS points at Vercel. `vercel.json` is the file actually in
-force — security headers, `/media/*` caching, and the `/index.html` -> `/` redirect.
-Do not delete either one without David saying so.
-
-The old Netlify project still exists and still serves a copy at
-`sensational-cocada-4cbd01.netlify.app`. That hostname resolving is not evidence
-that orlandu.com points there. David is deleting the project; until he does,
-expect it to keep answering.
+`vercel.json` is the only hosting config — security headers, `/media/*` caching, and the
+`/index.html` -> `/` redirect. `netlify.toml` and the GitHub Pages `CNAME` file were deleted
+2026-10-30 on David's say-so (both inert since the move to Vercel). The old Netlify project may
+still answer at `sensational-cocada-4cbd01.netlify.app`; that is not evidence orlandu.com points there.
 
 Vercel auto-deploys `main`; allow ~40s before verifying.
 
 **GitHub Pages was DISABLED on the repo 2026-10-20** (it had been building a copy of the site on
-every push that DNS never pointed at, and emailing David when a build failed). `CNAME` is inert.
+every push that DNS never pointed at, and emailing David when a build failed).
 
 **Vercel Web Analytics self-traffic opt-out (2026-10-22, site.js):** Hobby has no IP exclusion, so
 every visit from David or from a Claude browser pane counted. Opening any page with

@@ -4,9 +4,16 @@
 "Content" = the page's <main> (or <body>) with tags, ?v= stamps and whitespace normalized away,
 so head-only edits (meta, JSON-LD) and asset re-stamps don't bump every date. gallery.html and
 the home page also count assets/gallery-data.js, which they render from. An uncommitted change
-counts as today. Needs full git history. RUN BEFORE EVERY PUSH:  python3 tools/update-lastmod.py
+counts as today. Dates are Pacific (the site's day), whatever clock the commit or the runner used.
+Needs full git history. RUN BEFORE EVERY PUSH:  python3 tools/update-lastmod.py
 """
 import datetime, hashlib, pathlib, re, subprocess, sys
+from zoneinfo import ZoneInfo
+PT = ZoneInfo("America/Los_Angeles")
+def pt_day(epoch=None):
+    """A commit time (or now) as a Pacific calendar day: a 9 PM PT push is that day, not tomorrow's UTC date."""
+    t = datetime.datetime.fromtimestamp(int(epoch), PT) if epoch else datetime.datetime.now(PT)
+    return t.date().isoformat()
 root = pathlib.Path(__file__).resolve().parent.parent
 def git(*a): return subprocess.run(["git", *a], cwd=root, capture_output=True, text=True).stdout
 if git("rev-parse", "--is-shallow-repository").strip() == "true":
@@ -24,15 +31,15 @@ def changed_on(path):
     wt = (root / path).read_text(encoding="utf-8")
     head = git("show", f"HEAD:{path}")
     if head and norm(wt, path) != norm(head, path):
-        return datetime.date.today().isoformat()
-    commits = git("log", "--format=%H %cs", "--", path).split("\n")
-    commits = [c.split() for c in commits if c]
+        return pt_day()
+    commits = git("log", "--format=%H %ct", "--", path).split("\n")
+    commits = [(h, pt_day(t)) for h, t in (c.split() for c in commits if c)]
     # Skip commits where the file was absent (the 9-26 empty-tree accident and its restore).
     hist = [(d, norm(t, path)) for h, d in commits if (t := git("show", f"{h}:{path}"))]
     for (d, cur), (_, prev) in zip(hist, hist[1:]):
         if cur != prev:
             return d
-    return hist[-1][0] if hist else datetime.date.today().isoformat()
+    return hist[-1][0] if hist else pt_day()
 sm = (root / "sitemap.xml").read_text(encoding="utf-8")
 out, n = [], 0
 def fix(m):

@@ -23,15 +23,20 @@ def text(h):
     return re.sub(r"\s+", " ", html.unescape(h)).strip()
 
 lastmod = dict(re.findall(r"<loc>https://www\.orlandu\.com/([^<]*)</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>", (root / "sitemap.xml").read_text(encoding="utf-8")))
+def pt_day(epoch):
+    """A commit time as its Pacific calendar day (an evening PT push is that day, not the next UTC date)."""
+    from zoneinfo import ZoneInfo
+    return datetime.fromtimestamp(int(epoch.strip()), ZoneInfo("America/Los_Angeles")).date().isoformat()
+
 def first_commit_day(page):
-    out = git("log", "--diff-filter=A", "--format=%cs", "--", page).strip().split("\n")
-    d = out[-1].strip() if out and out[-1].strip() else ""
+    out = git("log", "--diff-filter=A", "--format=%ct", "--", page).strip().split("\n")
+    d = pt_day(out[-1]) if out and out[-1].strip() else ""
     return d or lastmod.get(page) or lastmod.get("")
 
 def ledger_day(title):
     needle = html.escape(title, quote=False).split(" &mdash; ")[0][:40]
-    out = git("log", "-S" + needle, "--format=%cs", "--", "index.html").strip().split("\n")
-    return out[-1].strip() if out and out[-1].strip() else ""
+    out = git("log", "-S" + needle, "--format=%ct", "--", "index.html").strip().split("\n")
+    return pt_day(out[-1]) if out and out[-1].strip() else ""
 
 items = []  # (href, title, summary, kind)
 idx = (root / "index.html").read_text(encoding="utf-8")

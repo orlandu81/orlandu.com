@@ -125,7 +125,7 @@
    "tags": [
     "Story"
    ],
-   "date_published": "2026-09-10T17:00:00Z"
+   "date_published": "2026-09-09T17:00:00Z"
   },
   {
    "id": "https://www.orlandu.com/orlandu-100.html",
@@ -135,7 +135,7 @@
    "tags": [
     "Story"
    ],
-   "date_published": "2026-09-04T17:00:00Z"
+   "date_published": "2026-09-03T17:00:00Z"
   },
   {
    "id": "https://www.orlandu.com/crt-field-guide.html",
@@ -145,7 +145,7 @@
    "tags": [
     "Story"
    ],
-   "date_published": "2026-09-01T17:00:00Z"
+   "date_published": "2026-08-31T17:00:00Z"
   },
   {
    "id": "https://www.orlandu.com/ams-100-monograph.html",
@@ -155,7 +155,7 @@
    "tags": [
     "Story"
    ],
-   "date_published": "2026-08-27T17:00:00Z"
+   "date_published": "2026-08-26T17:00:00Z"
   },
   {
    "id": "https://www.orlandu.com/pvm-20l5-buying-guide.html",
@@ -175,43 +175,13 @@
    "tags": [
     "Story"
    ],
-   "date_published": "2026-08-26T17:00:00Z"
+   "date_published": "2026-08-25T17:00:00Z"
   },
   {
    "id": "https://www.orlandu.com/signal-chain.html",
    "url": "https://www.orlandu.com/signal-chain.html",
    "title": "How the Signal Gets to the Glass",
    "summary": "A shelf of consoles, thirteen professional monitors, and not one scaler in the building — the switchers, the SCART-to-BNC cables and the distribution amp that make it all connect.",
-   "tags": [
-    "Story"
-   ],
-   "date_published": "2026-08-25T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/red-tent.html",
-   "url": "https://www.orlandu.com/red-tent.html",
-   "title": "The Red Tent",
-   "summary": "Nintendo's VS. DualSystem cocktail — found beat-up on Craigslist, restored down to the last screw, and now running VS. Excitebike on one side and a genuinely rare official PlayChoice-10 kit on the other.",
-   "tags": [
-    "Story"
-   ],
-   "date_published": "2026-08-24T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/pvm-vs-bvm.html",
-   "url": "https://www.orlandu.com/pvm-vs-bvm.html",
-   "title": "The Best Screen for Retro Games Was Never Sold to Gamers",
-   "summary": "PVM vs. BVM: what Sony's professional monitors actually were, why RGB changes everything, and which one to buy today — answered from a fleet of thirteen.",
-   "tags": [
-    "Story"
-   ],
-   "date_published": "2026-08-24T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/mini-cute.html",
-   "url": "https://www.orlandu.com/mini-cute.html",
-   "title": "The Mini Cute",
-   "summary": "Capcom's smallest candy cab, built for Japanese kids in 1991 — and how this pink one crossed the world in a hand-built crate from Sweden, thanks to a friendship that started on KLOV.",
    "tags": [
     "Story"
    ],
@@ -232,6 +202,36 @@
    "url": "https://www.orlandu.com/vs-smb.html",
    "title": "The Hardest Super Mario Bros. Most People Never Noticed",
    "summary": "The VS. UniSystem's Super Mario Bros. looks exactly like the NES classic — and was quietly rebuilt to fight back: removed 1-ups, patched turtle tricks, and levels that later became The Lost Levels.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-23T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/red-tent.html",
+   "url": "https://www.orlandu.com/red-tent.html",
+   "title": "The Red Tent",
+   "summary": "Nintendo's VS. DualSystem cocktail — found beat-up on Craigslist, restored down to the last screw, and now running VS. Excitebike on one side and a genuinely rare official PlayChoice-10 kit on the other.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-23T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/pvm-vs-bvm.html",
+   "url": "https://www.orlandu.com/pvm-vs-bvm.html",
+   "title": "The Best Screen for Retro Games Was Never Sold to Gamers",
+   "summary": "PVM vs. BVM: what Sony's professional monitors actually were, why RGB changes everything, and which one to buy today — answered from a fleet of thirteen.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-23T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/mini-cute.html",
+   "url": "https://www.orlandu.com/mini-cute.html",
+   "title": "The Mini Cute",
+   "summary": "Capcom's smallest candy cab, built for Japanese kids in 1991 — and how this pink one crossed the world in a hand-built crate from Sweden, thanks to a friendship that started on KLOV.",
    "tags": [
     "Story"
    ],
