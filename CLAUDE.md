@@ -326,11 +326,11 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
 - **Rules (David's):** BVM + PVM only; serials shown with the last two digits masked, full serial stored privately for
   duplicates; auto-publish with an email alert + signed delete link; optional photo, handle, country/state; email
   required, never shown. **Other owners' prices and sellers are welcome; David's own entries carry neither.** Records
-  strip shows monitors, never owners — 18 tiles since 10/31 (Most registered, Biggest/Smallest tube, Lowest hours,
+  strip shows monitors, never owners — 15 tiles since 10/31 (Most registered, Biggest/Smallest tube, Lowest hours,
   Workhorse, Combined runtime, Oldest/Newest plate, Oldest still working, Longest production span, Lowest/Highest serial,
-  Serial neighbors [same badge, gap BUCKETED to 10/100/1,000 — the exact gap never leaves the API], Best find, Priciest,
-  Where they came from, Farthest from the factory [country centroids vs Japan, miles], Countries); each hides without
-  data. Lowest hours stays the hours record; Workhorse is its own badge. Only BVMs have hours (PVM cards/pages/forms hide them). Build year vs catalog era
+  Serial neighbors [same badge, gap BUCKETED to 10/100/1,000 — the exact gap never leaves the API], Best find [ranked in
+  rough USD], Countries); each hides without data. David CUT Priciest, Where they came from and Farthest from the
+  factory the same night — don't bring them back. Lowest hours stays the hours record; Workhorse is its own badge. Only BVMs have hours (PVM cards/pages/forms hide them). Build year vs catalog era
   is a NUDGE (hint + one warning + an alert-mail flag), never a gate — except a build year after 2010 is refused
   (`BUILT_MAX`). An OWNER-CONFIRMED plate outside an era WIDENS the era (edit `era`, name the plate in `era_basis`,
   keep the confidence tag — it rises only on a Sony document). The registry keeps its researched eras even where the

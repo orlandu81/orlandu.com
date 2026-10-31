@@ -243,10 +243,6 @@
     });
   }
 
-  // Country centroids (lat, lon) for the "Farthest from the factory" tile — distance from Sony's Japanese plants, by country only.
-  const GEO = { US: [39.8, -98.6], CA: [56.1, -106.3], GB: [54.0, -2.5], JP: [36.2, 138.3], DE: [51.2, 10.4], AU: [-25.3, 133.8], FR: [46.6, 2.2], NL: [52.1, 5.3], IT: [42.5, 12.6], ES: [40.5, -3.7], SE: [62.0, 15.0], NO: [64.6, 11.0], DK: [56.0, 10.0], FI: [64.0, 26.0], BE: [50.6, 4.5], CH: [46.8, 8.2], AT: [47.6, 14.1], IE: [53.4, -8.0], PT: [39.6, -8.0], PL: [52.0, 19.4], CZ: [49.8, 15.5], BR: [-10.0, -53.0], MX: [23.6, -102.5], AR: [-35.0, -65.0], CL: [-33.0, -71.0], NZ: [-41.0, 174.0], KR: [36.5, 127.9], TW: [23.7, 121.0], HK: [22.3, 114.2], SG: [1.35, 103.8], TH: [15.0, 101.0], MY: [4.0, 102.0], PH: [12.0, 122.0], ID: [-2.5, 118.0], IN: [21.0, 78.0], ZA: [-29.0, 25.0], IL: [31.5, 34.9], TR: [39.0, 35.0], GR: [39.0, 22.0], HU: [47.2, 19.5], RO: [45.9, 25.0], RU: [60.0, 90.0], UA: [49.0, 32.0], AE: [24.0, 54.0], SA: [24.0, 45.0], CN: [35.0, 103.0] };
-  const kmFromJapan = cc => { const p = GEO[cc], j = GEO.JP; if (!p) return null; const d = Math.PI / 180, dLat = (p[0] - j[0]) * d, dLon = (p[1] - j[1]) * d; const h = Math.sin(dLat / 2) ** 2 + Math.cos(p[0] * d) * Math.cos(j[0] * d) * Math.sin(dLon / 2) ** 2; return 2 * 6371 * Math.asin(Math.sqrt(h)); };
-
   function records(r, counts, cat) {
     const sec = document.getElementById("records"), out = document.getElementById("records-out");
     if (!sec || !out || !r || !counts.length) return;
@@ -272,9 +268,6 @@
     if (r.serial_hi) tiles.push(tile(esc(r.serial_hi.serial_masked), "Highest serial", r.serial_hi, "latest in its run"));
     if (r.pair && r.pair.a && r.pair.b) { const a = r.pair.a, b = r.pair.b, same = (a.handle || "") === (b.handle || ""); tiles.push('<a class="rec" href="' + href(a) + '"><span class="n">Within ' + fmt(r.pair.within) + '</span><span class="l">Serial neighbors</span><span class="w">' + badge(a) + " · " + esc(a.serial_masked) + " &amp; " + esc(b.serial_masked) + " · " + (same ? who(a) : who(a) + " &amp; " + who(b)) + "</span></a>"); }
     if (r.cheapest) tiles.push(tile(money(r.cheapest), "Best find", r.cheapest, r.cheapest.acq_src ? esc(r.cheapest.acq_src.toLowerCase()) : null));
-    if (r.dearest) tiles.push(tile(money(r.dearest), "Priciest", r.dearest, r.dearest.acq_src ? esc(r.dearest.acq_src.toLowerCase()) : null));
-    if (r.source) tiles.push(plain(esc(r.source.src), "Where they came from", r.source.n + " of " + r.source.total + (r.source.total === 1 ? " monitor" : " monitors") + " with a source given"));
-    if (r.by_country && r.by_country.length) { let far = null, km = -1; r.by_country.forEach(e => { const d = kmFromJapan(e.country); if (d != null && d > km) { km = d; far = e; } }); if (far && km > 0) tiles.push(tile(fmt(Math.round(km * 0.621371 / 100) * 100) + " mi", "Farthest from the factory", far, esc(COUNTRY[far.country] || far.country))); }
     if (r.countries && r.countries.length) tiles.push(plain(r.countries.length, r.countries.length === 1 ? "Country" : "Countries", r.countries.map(c => esc(COUNTRY[c] || c)).join(" · ")));
     out.innerHTML = tiles.join("");
     sec.hidden = false;
