@@ -75,6 +75,11 @@
       "permanent": true
     },
     {
+      "source": "/media/ams-100-monograph.pdf",
+      "destination": "/media/ams-100-monograph-rev2.pdf",
+      "permanent": true
+    },
+    {
       "source": "/library.html",
       "destination": "/consoles.html",
       "permanent": true

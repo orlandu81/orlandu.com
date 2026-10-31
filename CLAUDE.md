@@ -561,6 +561,15 @@ sales-page rule above).
 `/media/*` `s-maxage=86400`, so the CDN serves the old bytes for a day otherwise. Leave
 JSON-LD `image` URLs unversioned.
 
+## The AMS-100 PDF (rebuilt 2026-10-30)
+
+`media/ams-100-monograph-rev2.pdf` is typeset FROM the web edition (`ams-100-monograph.html`), so the two can no
+longer diverge: §4.5.2 / EXT-02 is gone from both (David's "fully" ruling) and the spelling is American. Same look as
+David's compile9 (pandoc → xelatex, DejaVu Serif, 1in margins, TOC to depth 3; the one Japanese run set in Noto Serif
+CJK JP), his XMP/docinfo rights metadata copied across. The old `ams-100-monograph.pdf` was deleted and 301s to the new
+file (`vercel.json`). To rebuild after a page edit: the script pair is in the Project doc
+`claude/ams-100-pdf-build.md`; publish under a NEW filename (media is immutable-cached) and repoint the two links.
+
 ## The vault
 
 `vault.html` lives on David's device (not in this repo) — 1,283 inventory items.
