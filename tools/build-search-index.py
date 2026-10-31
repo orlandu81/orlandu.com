@@ -16,6 +16,15 @@ import re, html, json, pathlib
 root = pathlib.Path(__file__).resolve().parent.parent
 EXCLUDE = {"404.html", "ebay-callback.html", "tesla-callback.html"}
 HEADINGS_ONLY = {"ams-100-monograph.html", "trinitron-fleet-vol1.html", "orlandu-100.html", "orlandu-50-games.html"}
+# Search-only hints (2026-10-30): the words people type for a page that the page itself never uses in a heading.
+# Scored like headings, never shown; tools/eval-search.mjs is the check — keep only hints that move a battery query.
+HINTS = {
+    "through-the-mask.html": "simulator scanlines up close aperture grille shadow mask phosphor",
+    "sony-model-numbers.html": "stand for meaning suffix decoder model number letters",
+    "bkm-10r.html": "bkm-10r bkm-15r remote control unit menu",
+    "wanted.html": "looking for hunt list",
+    "forsale.html": "buy ebay listings",
+}
 KIND = {
     "index.html": "Home", "games.html": "Coin-Op", "monitors.html": "Monitors", "consoles.html": "Consoles",
     "signage.html": "Signage", "guide-shelf.html": "Guides", "spinning-tops.html": "Tops", "gallery.html": "Gallery", "stories.html": "Stories",
@@ -75,6 +84,8 @@ for p in sorted(root.glob("*.html")):
     # (kicker "Tool · …": through-the-mask, will-it-connect, bkm-10r) rank with the guides — they are reference pages.
     profile = bool(re.search(r'<main[^>]*class="[^"]*\bprofile\b', src) or re.search(r'<div class="rt"', body_html))
     ent = {"u": url, "t": h1t, "k": kind, "s": lede_t[:180], "h": " ".join(heads)[:1200], "b": body[:6000], "w": 10 if (profile or kind in ("Machine", "Monitors", "Coin-Op") or kind.startswith("Tool")) else -10 if (kind == "Registry" and p.name not in KIND) else 6}  # the 96 generated registry model pages rank below every real page (a model number must find its profile first; they still answer when nothing else has the model), so "pvm-20l5" still finds the profile first
+    if p.name in HINTS:
+        ent["h"] = (ent["h"] + " " + HINTS[p.name]).strip()  # scored like a heading, never displayed
     if title.lower() != h1t.lower():
         ent["tt"] = title  # the <title> front-loads the searchable term ("PVM vs. BVM: …") where the H1 is editorial; scored like the title, never displayed
     entries.append(ent)

@@ -26,7 +26,8 @@ python3 tools/stamp-assets.py        # ?v=<hash> on every style.css / site.js / 
 python3 tools/update-lastmod.py      # sitemap <lastmod> = the day each page's <main> content last changed
 python3 tools/build-static-footer.py # only if the footer block or NAV in site.js changed; re-renders the static footer copy
 node tools/test-mcp.mjs              # 200+ contract checks on api/mcp.js (transport, every tool, bad input) — must print "0 failed"
-node tools/eval-search.mjs           # search quality: 218 queries vs both search paths; top-1 should stay ≥ 90 %, top-3 ≥ 97 %
+node tools/eval-search.mjs           # search quality: 271 queries vs both search paths; top-1 should stay ≥ 90 %, top-3 ≥ 97 %
+                                     # (HINTS in build-search-index.py = search-only words per page; add one only if it moves a battery query)
 ```
 
 `python3 tools/build-registry-pages.py` goes FIRST in that list whenever `data/registry-models.json` or the
