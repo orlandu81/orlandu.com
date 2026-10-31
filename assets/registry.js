@@ -259,7 +259,7 @@
     if (r.smallest) tiles.push(tile(r.smallest.size + "-inch", "Smallest tube", r.smallest.entry));
     if (r.hours) tiles.push(tile(fmt(r.hours.hours) + " h", "Lowest hours", r.hours));
     if (r.workhorse) tiles.push(tile(fmt(r.workhorse.hours) + " h", "Workhorse", r.workhorse, "most hours logged"));
-    if (r.runtime) { const yrs = r.runtime.total / 8766; tiles.push(plain(fmt(r.runtime.total) + " h", "Combined runtime", (yrs >= 1 ? "about " + (yrs >= 10 ? Math.round(yrs) : Math.round(yrs * 10) / 10) + " years switched on" : "the fleet's meters added up") + " · " + r.runtime.n + (r.runtime.n === 1 ? " meter" : " meters"))); }
+    if (r.runtime) { const yrs = r.runtime.total / 8766; tiles.push(plain(fmt(r.runtime.total) + " h", "Combined BVM reported runtime", (yrs >= 1 ? "about " + (yrs >= 10 ? Math.round(yrs) : Math.round(yrs * 10) / 10) + " years switched on" : "the fleet's meters added up") + " · " + r.runtime.n + (r.runtime.n === 1 ? " meter" : " meters"))); }
     if (r.oldest) tiles.push(tile(builtTxt(r.oldest.built), "Oldest plate", r.oldest));
     if (r.newest && (!r.oldest || r.newest.id !== r.oldest.id)) tiles.push(tile(builtTxt(r.newest.built), "Newest plate", r.newest));
     if (r.oldest_working && (!r.oldest || r.oldest_working.id !== r.oldest.id)) tiles.push(tile(builtTxt(r.oldest_working.built), "Oldest still working", r.oldest_working));
