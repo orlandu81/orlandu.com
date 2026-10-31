@@ -74,6 +74,8 @@ module.exports = async (req, res) => {
     // Every query below is independent, so they go out together: one Neon round trip of wait instead of
     // eight in a row (the summary took ~0.9 s warm and ~2 s cold that way — David, 10/26: "no delay").
     const live = "FROM registry_entries WHERE deleted_at IS NULL";
+    // Best find / Priciest rank across currencies, so compare in rough USD (rates are for ORDERING only; the tile shows the price as paid).
+    const USD = "(price * CASE currency WHEN 'EUR' THEN 1.08 WHEN 'GBP' THEN 1.27 WHEN 'JPY' THEN 0.0067 WHEN 'CAD' THEN 0.73 WHEN 'AUD' THEN 0.66 ELSE 1 END)";
     const [[stats], counts, latest, [hi], [oldest], [newest], firsts, countryRows, [work], [serLo], [serHi], [runtime], pairRows, [cheapest], [dearest], [oldWorking], [span], [source], [sourceTotal], byCountry] = await Promise.all([
       q.query(`SELECT count(*)::int AS entries, count(DISTINCT model_slug)::int AS models, count(DISTINCT email)::int AS owners, count(DISTINCT country)::int AS countries, max(created_at) AS updated ${live}`),
       q.query(`SELECT model_slug, model, line, count(*)::int AS n ${live} GROUP BY model_slug, model, line ORDER BY n DESC, model`),
@@ -92,8 +94,8 @@ module.exports = async (req, res) => {
       // Serial neighbors: the two sets of the SAME BADGE (E and U are separate sequences) closest together in serial. Only the
       // two masked serials and a bucketed gap leave here — never the exact gap, which could help un-mask a serial.
       q.query(`WITH s AS (SELECT id, serial_num, lead(id) OVER w AS b_id, lead(serial_num) OVER w - serial_num AS gap FROM registry_entries WHERE deleted_at IS NULL AND serial_num IS NOT NULL WINDOW w AS (PARTITION BY coalesce(upper(model_as_entered), model) ORDER BY serial_num, id)), p AS (SELECT id AS a_id, b_id, gap FROM s WHERE b_id IS NOT NULL ORDER BY gap ASC, id ASC LIMIT 1) SELECT ${R.PUBLIC}, p.gap FROM registry_entries e JOIN p ON e.id IN (p.a_id, p.b_id) ORDER BY e.serial_num, e.id`),
-      q.query(`SELECT ${R.PUBLIC} ${live} AND price IS NOT NULL AND price > 0 ORDER BY price ASC, created_at ASC LIMIT 1`), // prices are other owners' by design; David's entries never carry one
-      q.query(`SELECT ${R.PUBLIC} ${live} AND price IS NOT NULL AND price > 0 ORDER BY price DESC, created_at ASC LIMIT 1`),
+      q.query(`SELECT ${R.PUBLIC} ${live} AND price IS NOT NULL AND price > 0 ORDER BY ${USD} ASC, created_at ASC LIMIT 1`), // prices are other owners' by design; David's entries never carry one
+      q.query(`SELECT ${R.PUBLIC} ${live} AND price IS NOT NULL AND price > 0 ORDER BY ${USD} DESC, created_at ASC LIMIT 1`),
       q.query(`SELECT ${R.PUBLIC} ${live} AND built IS NOT NULL AND cond IN ('working', 'serviced') ORDER BY built ASC, created_at ASC LIMIT 1`),
       // Longest production span: the model whose registered plates sit farthest apart. built is 'YYYY' or 'YYYY-MM'; a bare year counts as June.
       q.query(`SELECT model_slug, model, min(built) AS lo, max(built) AS hi, count(built)::int AS n FROM registry_entries WHERE deleted_at IS NULL AND built IS NOT NULL GROUP BY model_slug, model HAVING count(built) >= 2 ORDER BY (left(max(built), 4)::int * 12 + coalesce(nullif(substr(max(built), 6, 2), '')::int, 6)) - (left(min(built), 4)::int * 12 + coalesce(nullif(substr(min(built), 6, 2), '')::int, 6)) DESC, model LIMIT 1`),
