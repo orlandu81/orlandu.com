@@ -277,7 +277,7 @@ table.spec td.d{color:var(--dim)}
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   background:var(--bg2);overflow:hidden;white-space:nowrap;padding:.55rem 0;
 }
-.strip span{
+.strip>span{ /* direct child only: the FOR SALE items are spans too (data-itm) and must not get the padding or the animation */
   display:inline-block;font-family:var(--disp);font-size:.7rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--dim);padding-left:100%;
   /* Duration is a fallback only. site.js measures the actual content width and
@@ -367,7 +367,7 @@ img[data-full]{cursor:zoom-in}
 /* ── Marquee links + pause ────────────────────── */
 .strip a{color:inherit}
 .strip a:hover{color:var(--cyan);text-decoration:none}
-.strip:hover span{animation-play-state:paused}
+.strip:hover>span{animation-play-state:paused}
 
 /* ── Jump chips ───────────────────────────────── */
 .chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:-1rem 0 2rem}
@@ -393,7 +393,7 @@ section[id]{scroll-margin-top:90px}
 /* ── Reduced motion ───────────────────────────── */
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
-  .strip span{animation:none;padding-left:0;white-space:normal;display:block;padding:.1rem 1.2rem}
+  .strip>span{animation:none;padding-left:0;white-space:normal;display:block;padding:.1rem 1.2rem}
   .hero .coin{animation:none}
 }
 
@@ -854,7 +854,7 @@ header.site.compact .collbtn{font-size:.62rem;padding:.42rem .5rem;letter-spacin
 .chips a,.filters button{font-family:var(--cond);font-weight:500;font-size:.86rem;letter-spacing:.1em}
 .card .sub{font-size:.82rem;letter-spacing:.1em}
 .specs .sl{font-family:var(--cond);font-size:.76rem;letter-spacing:.12em}
-.strip span{font-family:var(--cond);font-weight:500;font-size:.98rem;letter-spacing:.12em}
+.strip>span{font-family:var(--cond);font-weight:500;font-size:.98rem;letter-spacing:.12em}
 .footwrap .explore span{font-family:var(--cond);font-weight:500;font-size:.82rem;letter-spacing:.16em}
 .regband .k,.regband .go{font-family:var(--cond);font-weight:500;font-size:.92rem;letter-spacing:.16em}
 .machnav .mnl{font-family:var(--cond);font-size:.8rem;letter-spacing:.12em}

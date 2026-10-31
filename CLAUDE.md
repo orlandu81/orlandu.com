@@ -145,6 +145,8 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
 - **Watermarks:** For Sale photos (`© orlandu.com` bottom-right, 4.2 % of the short edge) and the PC-10 board,
   topper and VS.-card tiles (section 9). Nothing else on the site is watermarked, and nothing else should be.
 - **Never hard-code the marquee's animation duration** — site.js sets it from a 75 px/s target.
+- **Marquee CSS targets `.strip>span` (direct child only).** The FOR SALE items are nested `data-itm` spans; a
+  descendant selector gave each one 100 % padding and its own scroll, blanking the strip after "FOR SALE:" (10/31).
 
 ## 4. Page conventions
 
@@ -324,7 +326,11 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
 - **Rules (David's):** BVM + PVM only; serials shown with the last two digits masked, full serial stored privately for
   duplicates; auto-publish with an email alert + signed delete link; optional photo, handle, country/state; email
   required, never shown. **Other owners' prices and sellers are welcome; David's own entries carry neither.** Records
-  strip shows monitors, never owners. Only BVMs have hours (PVM cards/pages/forms hide them). Build year vs catalog era
+  strip shows monitors, never owners — 18 tiles since 10/31 (Most registered, Biggest/Smallest tube, Lowest hours,
+  Workhorse, Combined runtime, Oldest/Newest plate, Oldest still working, Longest production span, Lowest/Highest serial,
+  Serial neighbors [same badge, gap BUCKETED to 10/100/1,000 — the exact gap never leaves the API], Best find, Priciest,
+  Where they came from, Farthest from the factory [country centroids vs Japan, miles], Countries); each hides without
+  data. Lowest hours stays the hours record; Workhorse is its own badge. Only BVMs have hours (PVM cards/pages/forms hide them). Build year vs catalog era
   is a NUDGE (hint + one warning + an alert-mail flag), never a gate — except a build year after 2010 is refused
   (`BUILT_MAX`). An OWNER-CONFIRMED plate outside an era WIDENS the era (edit `era`, name the plate in `era_basis`,
   keep the confidence tag — it rises only on a Sony document). The registry keeps its researched eras even where the

@@ -74,7 +74,7 @@ module.exports = async (req, res) => {
     // Every query below is independent, so they go out together: one Neon round trip of wait instead of
     // eight in a row (the summary took ~0.9 s warm and ~2 s cold that way — David, 10/26: "no delay").
     const live = "FROM registry_entries WHERE deleted_at IS NULL";
-    const [[stats], counts, latest, [hi], [oldest], [newest], firsts, countryRows] = await Promise.all([
+    const [[stats], counts, latest, [hi], [oldest], [newest], firsts, countryRows, [work], [serLo], [serHi], [runtime], pairRows, [cheapest], [dearest], [oldWorking], [span], [source], [sourceTotal], byCountry] = await Promise.all([
       q.query(`SELECT count(*)::int AS entries, count(DISTINCT model_slug)::int AS models, count(DISTINCT email)::int AS owners, count(DISTINCT country)::int AS countries, max(created_at) AS updated ${live}`),
       q.query(`SELECT model_slug, model, line, count(*)::int AS n ${live} GROUP BY model_slug, model, line ORDER BY n DESC, model`),
       q.query(`SELECT ${R.PUBLIC} ${live} ORDER BY created_at DESC LIMIT 9`),
@@ -82,14 +82,47 @@ module.exports = async (req, res) => {
       q.query(`SELECT ${R.PUBLIC} ${live} AND hours IS NOT NULL AND hours > 0 ORDER BY hours ASC, created_at ASC LIMIT 1`), // the LOWEST meter reading is the record (David, 10/25): fewest hours is the ideal, not the most
       q.query(`SELECT ${R.PUBLIC} ${live} AND built IS NOT NULL ORDER BY built ASC, created_at ASC LIMIT 1`),
       q.query(`SELECT ${R.PUBLIC} ${live} AND built IS NOT NULL ORDER BY built DESC, created_at ASC LIMIT 1`),
-      q.query(`SELECT DISTINCT ON (model_slug) ${R.PUBLIC} ${live} ORDER BY model_slug, created_at ASC`), // first entry of each model; the biggest tube's is picked below
+      q.query(`SELECT DISTINCT ON (model_slug) ${R.PUBLIC} ${live} ORDER BY model_slug, created_at ASC`), // first entry of each model; the biggest and smallest tubes' are picked below
       q.query(`SELECT DISTINCT country ${live} AND country IS NOT NULL ORDER BY country`),
+      // The 10/31 batch (David: "all, and workhorse"). Still monitors, not owners; each tile hides itself until the data exists.
+      q.query(`SELECT ${R.PUBLIC} ${live} AND hours IS NOT NULL AND hours > 0 ORDER BY hours DESC, created_at ASC LIMIT 1`), // Workhorse — its own badge beside Lowest hours, not a replacement
+      q.query(`SELECT ${R.PUBLIC} ${live} AND serial_num IS NOT NULL ORDER BY serial_num ASC, created_at ASC LIMIT 1`),
+      q.query(`SELECT ${R.PUBLIC} ${live} AND serial_num IS NOT NULL ORDER BY serial_num DESC, created_at ASC LIMIT 1`),
+      q.query(`SELECT coalesce(sum(hours), 0)::bigint AS total, count(hours)::int AS n ${live} AND hours > 0`),
+      // Serial neighbors: the two sets of the SAME BADGE (E and U are separate sequences) closest together in serial. Only the
+      // two masked serials and a bucketed gap leave here — never the exact gap, which could help un-mask a serial.
+      q.query(`WITH s AS (SELECT id, serial_num, lead(id) OVER w AS b_id, lead(serial_num) OVER w - serial_num AS gap FROM registry_entries WHERE deleted_at IS NULL AND serial_num IS NOT NULL WINDOW w AS (PARTITION BY coalesce(upper(model_as_entered), model) ORDER BY serial_num, id)), p AS (SELECT id AS a_id, b_id, gap FROM s WHERE b_id IS NOT NULL ORDER BY gap ASC, id ASC LIMIT 1) SELECT ${R.PUBLIC}, p.gap FROM registry_entries e JOIN p ON e.id IN (p.a_id, p.b_id) ORDER BY e.serial_num, e.id`),
+      q.query(`SELECT ${R.PUBLIC} ${live} AND price IS NOT NULL AND price > 0 ORDER BY price ASC, created_at ASC LIMIT 1`), // prices are other owners' by design; David's entries never carry one
+      q.query(`SELECT ${R.PUBLIC} ${live} AND price IS NOT NULL AND price > 0 ORDER BY price DESC, created_at ASC LIMIT 1`),
+      q.query(`SELECT ${R.PUBLIC} ${live} AND built IS NOT NULL AND cond IN ('working', 'serviced') ORDER BY built ASC, created_at ASC LIMIT 1`),
+      // Longest production span: the model whose registered plates sit farthest apart. built is 'YYYY' or 'YYYY-MM'; a bare year counts as June.
+      q.query(`SELECT model_slug, model, min(built) AS lo, max(built) AS hi, count(built)::int AS n FROM registry_entries WHERE deleted_at IS NULL AND built IS NOT NULL GROUP BY model_slug, model HAVING count(built) >= 2 ORDER BY (left(max(built), 4)::int * 12 + coalesce(nullif(substr(max(built), 6, 2), '')::int, 6)) - (left(min(built), 4)::int * 12 + coalesce(nullif(substr(min(built), 6, 2), '')::int, 6)) DESC, model LIMIT 1`),
+      q.query(`SELECT acq_src, count(*)::int AS n ${live} AND acq_src IS NOT NULL GROUP BY acq_src ORDER BY n DESC, acq_src LIMIT 1`),
+      q.query(`SELECT count(*)::int AS n ${live} AND acq_src IS NOT NULL`),
+      q.query(`SELECT DISTINCT ON (country) ${R.PUBLIC} ${live} AND country IS NOT NULL ORDER BY country, created_at ASC`), // one entry per country; the client picks the one farthest from Japan
     ]);
-    let biggest = null, bigSize = 0;
-    for (const c of counts) { const m = R.bySlug.get(c.model_slug); if (m && m.size_in > bigSize) { bigSize = m.size_in; biggest = c.model_slug; } }
+    let biggest = null, bigSize = 0, smallest = null, smallSize = Infinity;
+    for (const c of counts) {
+      const m = R.bySlug.get(c.model_slug); if (!m || !m.size_in) continue;
+      if (m.size_in > bigSize) { bigSize = m.size_in; biggest = c.model_slug; }
+      if (m.size_in < smallSize) { smallSize = m.size_in; smallest = c.model_slug; }
+    }
     const big = biggest ? firsts.find(r => r.model_slug === biggest) || null : null;
+    const small = smallest && smallest !== biggest ? firsts.find(r => r.model_slug === smallest) || null : null;
     const countries = countryRows.map(r => r.country);
-    const records = { top: counts[0] || null, biggest: big ? { size: bigSize, entry: R.pub(big) } : null, hours: hi ? R.pub(hi) : null, oldest: oldest ? R.pub(oldest) : null, newest: newest ? R.pub(newest) : null, countries };
+    const gapBucket = g => g == null ? null : g <= 10 ? 10 : g <= 100 ? 100 : g <= 1000 ? 1000 : g <= 10000 ? 10000 : 100000;
+    const noGap = r => { const o = R.pub(r); delete o.gap; return o; }; // the exact gap stays here
+    const pair = pairRows.length === 2 ? { within: gapBucket(Number(pairRows[0].gap)), a: noGap(pairRows[0]), b: noGap(pairRows[1]) } : null;
+    const records = {
+      top: counts[0] || null, biggest: big ? { size: bigSize, entry: R.pub(big) } : null, smallest: small ? { size: smallSize, entry: R.pub(small) } : null,
+      hours: hi ? R.pub(hi) : null, workhorse: work && (!hi || work.id !== hi.id) ? R.pub(work) : null,
+      runtime: runtime && Number(runtime.total) > 0 ? { total: Number(runtime.total), n: runtime.n } : null,
+      oldest: oldest ? R.pub(oldest) : null, newest: newest ? R.pub(newest) : null, oldest_working: oldWorking ? R.pub(oldWorking) : null,
+      span: span || null, serial_lo: serLo ? R.pub(serLo) : null, serial_hi: serHi && (!serLo || serHi.id !== serLo.id) ? R.pub(serHi) : null, pair,
+      cheapest: cheapest ? R.pub(cheapest) : null, dearest: dearest && (!cheapest || dearest.id !== cheapest.id) ? R.pub(dearest) : null,
+      source: source ? { src: source.acq_src, n: source.n, total: sourceTotal ? sourceTotal.n : source.n } : null,
+      by_country: byCountry.map(R.pub), countries,
+    };
     res.setHeader("Cache-Control", R.CACHE);
     res.status(200).json({ ok: true, stats: { ...stats, updated: stats.updated instanceof Date ? stats.updated.toISOString() : stats.updated }, counts, latest: latest.map(R.pub), records });
   } catch (e) {

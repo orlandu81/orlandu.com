@@ -490,7 +490,7 @@
   const TARGET_PX_PER_SEC = 75;   // comfortable read for .7rem letterspaced caps
   const MIN_S = 20, MAX_S = 300;
 
-  const span = document.querySelector(".strip span");
+  const span = document.querySelector(".strip > span");
   if (!span) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
