@@ -257,7 +257,8 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   original; LMD-9020 SD only, LMD-9030 HD over component, both 640×480; LMD-940W HDMI + SDI, no analog component;
   BVM-A14F5U has the BKM-68X clone + BKM-62HS, no BKM-61D; BVM-20E1U has four option slots with only a BKM-21D fitted
   (BKM-24N and BKM-20D on the shelf), is controlled by the rack-width BKM-10R and can't be adjusted without it, reads
-  44,708 hours, and its vault build date (June 2007) is DOUBTED — publish no build date until he re-reads the plate;
+  44,708 hours, and its plate reads October 1998 (confirmed 10/31; the vault's June 2007 was wrong — registry entry 3
+  carries 1998-10 via a FIXUP);
   the AMS-3 is in storage and its pots are fixed; Ghostbusters' Spike 1 board is a spare.
 
 ## 7. For Sale and sold items
@@ -343,7 +344,7 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   soft delete), shared code in `lib/registry.js` (outside `api/`). The chart floors serials to the hundred. The repo's
   only dependencies (`package.json`: `@neondatabase/serverless`, `@vercel/blob`; `node_modules/` gitignored) are used
   inside the functions only — there is still no build step.
-- **Data fixes ship as code:** `FIXUP_FIELDS` / FIXUPS in lib/registry.js (photo_url included) — David does not run SQL
+- **Data fixes ship as code:** `FIXUP_FIELDS` / FIXUPS in lib/registry.js (photo_url and, since 10/31, built included; `from: null` means the field was empty) — David does not run SQL
   or click through admin consoles himself. Photo swaps go into Blob under a NEW name via the Blob dashboard page.
 - **Indexing:** 13 model pages are indexable — six with `sony_serials`, the arcade's own (`PROFILES`), and
   `INDEX_EXTRA` (BVM-D14H1U, PVM-1354Q, PVM-14M2U, PVM-8041Q, promoted 10-30 at two entries each). The rest are
