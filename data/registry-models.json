@@ -2120,9 +2120,9 @@
    "line": "PVM",
    "series": "8-inch Q (45)",
    "size_in": 8,
-   "era": "c.1997–2002",
+   "era": "c.1997–2003",
    "era_confidence": "medium",
-   "era_basis": "Sony service manual (c)1998 (covers 8042Q/8045Q/9042QM/9045QM/9045PM); Sony brochure undated",
+   "era_basis": "Sony service manual (c)1998 (covers 8042Q/8045Q/9042QM/9045QM/9045PM); Sony brochure undated; a registry plate reads June 2003 (owner-confirmed), so the run reached 2003",
    "notes": "450 TVL HR Trinitron (M20JMP10X); RGB/YPbPr, S-Video/composite, composite; battery option; front 16:9 + degauss",
    "variants": [
     "PVM-8045Q",

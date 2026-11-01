@@ -5881,6 +5881,10 @@ Loading the census…
 
 ## Records the monitors, not the owners
 
+### Fleet records the registry as a whole
+
+### Single-monitor records each one points at an entry
+
 ## Latest entries newest first
 
 Each card shows what the owner chose to share. Email addresses are never published and never shown to other owners; the full serial stays on the server. The whole catalog, with a page per model, is on the models list (https://www.orlandu.com/registry-models.html). The entries are open data, CC BY 4.0: JSON (https://www.orlandu.com/api/registry?export=json) · CSV (https://www.orlandu.com/api/registry?export=csv), masked exactly as shown here, and an AI assistant can read the census through the site's MCP server (https://www.orlandu.com/mcp.html) (registry_census).
@@ -6091,7 +6095,7 @@ The 96 chassis the registry knows, with their regional variants folded in. The e
 | PVM-8041Q (https://www.orlandu.com/registry-pvm-8041q.html) | 8" | 8-inch Q (41) | c.1991–1997 | PVM-9041QM, PVM-9041Q | … |
 | PVM-8042Q (https://www.orlandu.com/registry-pvm-8042q.html) | 8" | 8-inch Q (42) | c.1997–2002 | PVM-9042QM | … |
 | PVM-8044Q (https://www.orlandu.com/registry-pvm-8044q.html) | 8" | 8-inch Q (44) | c.1991–1997 | PVM-9044QM | … |
-| PVM-8045Q (https://www.orlandu.com/registry-pvm-8045q.html) | 8" | 8-inch Q (45) | c.1997–2002 | PVM-9045QM, PVM-9045PM, PVM-9045Q | … |
+| PVM-8045Q (https://www.orlandu.com/registry-pvm-8045q.html) | 8" | 8-inch Q (45) | c.1997–2003 | PVM-9045QM, PVM-9045PM, PVM-9045Q | … |
 | PVM-8220 (https://www.orlandu.com/registry-pvm-8220.html) | 8" | 8-inch (80s) | c.1985–1989 | | … |
 | PVM-5041Q (https://www.orlandu.com/registry-pvm-5041q.html) | 5" | 5-inch Q | c.1990–1997 | PVM-6041QM | … |
 | PVM-411 (https://www.orlandu.com/registry-pvm-411.html) | 4" | quad 4in mono | c.1990–1996 | | … |
