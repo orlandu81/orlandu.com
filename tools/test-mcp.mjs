@@ -253,7 +253,7 @@ function dsOk(r, label) {
 }
 {
   const all = dsOk(await tool("console_video_out", {}), "console_video_out (all)");
-  ok(all.count === 9, "9 console rows (got " + all.count + ")");
+  ok(all.count === 10, "10 console rows (got " + all.count + ")");
   const gen = dsOk(await tool("console_video_out", { console: "genesis" }), "console_video_out genesis");
   ok(gen.count === 2, "'genesis' → 2 rows (Model 1 + CDX)");
   const nes = dsOk(await tool("console_video_out", { console: "NES" }), "console_video_out NES");

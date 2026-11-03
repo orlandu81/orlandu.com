@@ -48,6 +48,12 @@
    "into_the_chain": "RGB SCART → switcher → breakout → PVM / BVM"
   },
   {
+   "console": "JVC X'Eye",
+   "work_done": "Full service: both boards recapped, new laser pickup, FRAM save mod",
+   "video_out": "RGB (native)",
+   "into_the_chain": "RGB SCART → switcher → breakout → PVM / BVM"
+  },
+  {
    "console": "Saturn",
    "work_done": "Stock",
    "video_out": "RGB (native)",

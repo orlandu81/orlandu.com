@@ -8,6 +8,16 @@
  "language": "en-US",
  "items": [
   {
+   "id": "https://www.orlandu.com/jvc-xeye.html",
+   "url": "https://www.orlandu.com/jvc-xeye.html",
+   "title": "The X’Eye comes home",
+   "summary": "JVC’s rare Genesis + Sega CD combo is back from a full servicing at iFixRetro — every capacitor on both boards, a new laser, and saves that never die. Read the story →",
+   "tags": [
+    "Restored"
+   ],
+   "date_published": "2026-11-02T17:00:00Z"
+  },
+  {
    "id": "https://www.orlandu.com/signage.html#toppers",
    "url": "https://www.orlandu.com/signage.html#toppers",
    "title": "Double Dribble and Kung Fu",
@@ -84,16 +94,6 @@
    "summary": "Three physical families, not one: the 2x decoders for the BVM-E/F/G and big D-series, the 1xx cards for the small D-series and the PVM-L5/L2 slot, and the BVM-A boards. What each does, the installation rules, the controllers — sourced to Sony. The reference →",
    "tags": [
     "New reference"
-   ],
-   "date_published": "2026-10-10T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/mcp.html",
-   "url": "https://www.orlandu.com/mcp.html",
-   "title": "Ask your AI assistant about the arcade",
-   "summary": "An MCP server, a full-text file and five open datasets let Claude, ChatGPT, Cursor or any agent search the site, read a page and query the monitor specs — no key, no scraping. How to connect it →",
-   "tags": [
-    "New"
    ],
    "date_published": "2026-10-10T17:00:00Z"
   },

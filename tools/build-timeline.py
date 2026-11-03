@@ -31,7 +31,7 @@ CONSOLES = [
     ("NES Top Loader", 1993, "media/thumbs/consoles-nes-toploader.webp?v=2", "nes-top-loader.html"),
     ("PC Engine Duo-R", 1993, "media/thumbs/consoles-duo-r.webp?v=2", "pc-engine-duo-r.html"),
     ("Genesis CDX", 1994, "media/thumbs/consoles-genesis-cdx.webp", "genesis-cdx.html"),
-    ("JVC X'Eye", 1994, None, "consoles.html", "X'EYE"),
+    ("JVC X'Eye", 1994, "media/thumbs/consoles-xeye.webp", "jvc-xeye.html"),
     ("Nomad", 1995, "media/thumbs/consoles-nomad.webp", "consoles.html"),
     ("Saturn", 1995, "media/thumbs/consoles-saturn.webp?v=2", "consoles.html"),
     ("Nintendo 64", 1996, "media/thumbs/consoles-n64.webp?v=2", "nintendo-64.html"),

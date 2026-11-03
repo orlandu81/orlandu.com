@@ -8,7 +8,7 @@
   // "nes" means the front loader, "genesis" the Model 1 — the longer names still reach the other units.
   var ALIAS = { nes: "NES (front loader)", famicom: "NES (front loader)", snes: "Super Nintendo", superfamicom: "Super Nintendo",
     sfc: "Super Nintendo", n64: "Nintendo 64", gc: "GameCube", gcn: "GameCube", ngc: "GameCube", genesis: "Genesis Model 1",
-    megadrive: "Genesis Model 1", md: "Genesis Model 1", cdx: "Genesis CDX", ps1: "PlayStation", psx: "PlayStation",
+    megadrive: "Genesis Model 1", md: "Genesis Model 1", cdx: "Genesis CDX", xeye: "JVC X'Eye", wondermega: "JVC X'Eye", ps1: "PlayStation", psx: "PlayStation",
     psone: "PlayStation", ps2: "PlayStation 2", pce: "PC Engine Duo-R", tg16: "TurboGrafx-16", sms: "Master System",
     aes: "Neo Geo AES", dc: "Dreamcast" };
   function find(list, id) {

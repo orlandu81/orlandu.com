@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/mcp.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-02</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/bkm-cards.html</loc>
@@ -24,7 +24,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/will-it-connect.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-02</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/bkm-10r.html</loc>
@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/consoles.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-nes-toploader.webp</image:loc><image:title>Nintendo Entertainment System top loader, the NES-101 redesign, with its red power switch</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-snes.webp</image:loc><image:title>Super Nintendo Entertainment System seen from the front, purple power and reset switches and both controller ports</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-n64.webp</image:loc><image:title>Nintendo 64 seen from the front, all four controller ports and the cartridge slot on top</image:title></image:image>
@@ -315,7 +315,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-02</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/indiana-jones.html</loc>
@@ -344,6 +344,18 @@
     <image:image><image:loc>https://www.orlandu.com/media/2026/minicute-screen.webp</image:loc><image:title>Close-up of the Mini Cute screen showing the Street Fighter II Hyper Fighting title with FREE PLAY below it</image:title></image:image>
   </url>
   <url>
+    <loc>https://www.orlandu.com/jvc-xeye.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-xeye.webp</image:loc><image:title>JVC X&#x27;Eye seen from the front, cartridge slot on the left, CD lid on the right, two controller ports below</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/xeye-mainboard-before.webp</image:loc><image:title>The X&#x27;Eye main board held in one hand with every electrolytic capacitor removed, bare solder pads where they stood</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/xeye-mainboard-after.webp</image:loc><image:title>The same X&#x27;Eye main board with new electrolytic capacitors fitted across the board</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/xeye-frontboard-before.webp</image:loc><image:title>The X&#x27;Eye front panel board with its capacitors removed, showing the microphone and headphone jacks, two LEDs and four orange trimmer pots</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/xeye-frontboard-after.webp</image:loc><image:title>The X&#x27;Eye front panel board with new capacitors fitted, the three ribbon connectors on its edge</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/xeye-pickup.webp</image:loc><image:title>A new CD laser pickup unit on the bench mat, flex cable and adjustment trimmer visible</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/xeye-drive.webp</image:loc><image:title>The X&#x27;Eye CD drive mechanism from above with the lid off: spindle, pickup on its rails and the drive gears</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/xeye-fram.webp</image:loc><image:title>Close-up of an FM1808 ferroelectric RAM chip soldered in place on the X&#x27;Eye board</image:title></image:image>
+  </url>
+  <url>
     <loc>https://www.orlandu.com/pvm-2950q.html</loc>
     <lastmod>2026-10-30</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pvm-2950q.webp</image:loc><image:title>Sony PVM-2950Q 29-inch Trinitron production monitor lit at night running Super Mario World</image:title></image:image>
@@ -370,7 +382,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/timeline.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-11-02</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/monitors.html</loc>
@@ -387,7 +399,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/projects.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ams-3-heatsinks.webp</image:loc><image:title>Rear view of a Sony AMS-3 showing full-width heatsink fins running down both sides of the chassis</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ams-100-lineup.webp</image:loc><image:title>Seven Sony AMS-100 audio monitor speakers on arrival, stacked on a workbench, front panels facing out</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/bvm-20e1u-crosshatch.webp</image:loc><image:title>Sony BVM-20E1U broadcast monitor displaying a crosshatch calibration pattern with an AMS-100 speaker on top</image:title></image:image>
@@ -430,7 +442,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/stories.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-02</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/orlandu-100.html</loc>

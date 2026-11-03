@@ -93,6 +93,11 @@ The geometry grid, judging a tube with no hours counter, what to pay — and why
  (https://www.orlandu.com/pvm-20l5-buying-guide.html)
 
 ## Latest from the arcade
+ Restored
+
+### The X’Eye comes home
+
+JVC’s rare Genesis + Sega CD combo is back from a full servicing at iFixRetro — every capacitor on both boards, a new laser, and saves that never die. Read the story → (https://www.orlandu.com/jvc-xeye.html)
  Found
 
 ### Double Dribble and Kung Fu
@@ -133,11 +138,6 @@ Pick any two models and the specs that differ light up; above the table, all eig
 ### Every Sony BKM card, and which monitor it fits
 
 Three physical families, not one: the 2x decoders for the BVM-E/F/G and big D-series, the 1xx cards for the small D-series and the PVM-L5/L2 slot, and the BVM-A boards. What each does, the installation rules, the controllers — sourced to Sony. The reference → (https://www.orlandu.com/bkm-cards.html)
- New
-
-### Ask your AI assistant about the arcade
-
-An MCP server, a full-text file and five open datasets let Claude, ChatGPT, Cursor or any agent search the site, read a page and query the monitor specs — no key, no scraping. How to connect it → (https://www.orlandu.com/mcp.html)
 
 ---
 
@@ -842,12 +842,16 @@ The one that looks like a tiny Super Nintendo folded in half — purple buttons,
 The slim Genesis/Sega CD combo (MK-4121), running strong on a replaced laser lens.
 
 The full profile → (https://www.orlandu.com/genesis-cdx.html)
- Portrait reservedOn the bench — back soon
- 1994 · Out for service
+
+[Photo: JVC X'Eye seen from the front, cartridge slot on the left, CD lid on the right, two controller ports below]
+
+ 1994 · Serviced
 
 ### JVC X'Eye
 
-JVC's take on the Genesis + Sega CD combo — currently off at iFixRetro for a full servicing. Follow the bench → (https://www.orlandu.com/projects.html)
+JVC's take on the Genesis + Sega CD combo, back from a full servicing: both boards recapped, a new laser, battery-free saves.
+
+The restoration story → (https://www.orlandu.com/jvc-xeye.html)
 
 [Photo: Sega Genesis Nomad handheld on a clear display stand, six-button face and screen forward]
 
@@ -929,13 +933,14 @@ The part every collector asks about: which machines needed a modification to giv
 | GameCube | Stock | Component, OEM cable | Component input, no switcher in the path |
 | Genesis Model 1 | HDG S-Video and stereo output jacks | RGB (native) · S-Video added | RGB SCART → switcher → breakout → PVM / BVM |
 | Genesis CDX | New laser lens | RGB (native) | RGB SCART → switcher → breakout → PVM / BVM |
+| JVC X'Eye | Full service: both boards recapped, new laser pickup, FRAM save mod | RGB (native) | RGB SCART → switcher → breakout → PVM / BVM |
 | Saturn | Stock | RGB (native) | RGB SCART → switcher → breakout → PVM / BVM |
 | PC Engine Duo-R | Region mod · RGB mod | RGB (modded) | RGB SCART → switcher → breakout → PVM / BVM |
 | PlayStation 2 Slim | MemCard Pro 2 with FMCB/OPL | Component | Switcher → distribution amp → the LMD wall |
 
 This table as open data: JSON (https://www.orlandu.com/data/console-video-out.json) · CSV (https://www.orlandu.com/data/console-video-out.csv) — CC BY 4.0, credit Orlandu’s Arcade.
 
-Handhelds, the unit on the bench, and anything that does not run through the RGB chain are left off. “Switcher” is the GSCARTSW in each room; “breakout” is the SCART to 4 BNC cable. The whole path, box by box, is in The Signal Chain (https://www.orlandu.com/signal-chain.html). Nintendo’s official Player’s Guides have a shelf of their own (https://www.orlandu.com/guide-shelf.html).
+Handhelds and anything that does not run through the RGB chain are left off. “Switcher” is the GSCARTSW in each room; “breakout” is the SCART to 4 BNC cable. The whole path, box by box, is in The Signal Chain (https://www.orlandu.com/signal-chain.html). Nintendo’s official Player’s Guides have a shelf of their own (https://www.orlandu.com/guide-shelf.html).
 
 ---
 
@@ -2523,6 +2528,103 @@ Sources & further reading: Super Mario Wiki — PlayChoice-10 (https://www.mario
 
 ---
 
+# The X'Eye Comes Home: A Full JVC X'Eye Service
+
+URL: https://www.orlandu.com/jvc-xeye.html
+
+JVC's rare Genesis + Sega CD combo, fully serviced at iFixRetro: every capacitor on both boards, a new laser, a greased drive and FRAM saves that never die.
+
+[Photo: JVC X'Eye seen from the front, cartridge slot on the left, CD lid on the right, two controller ports below]
+
+***Home again** — the X'Eye, back on the shelf*
+
+ MakerJVC Year1994 PlaysGenesis + Sega CD StatusFully serviced Restoration Story
+
+# The X'Eye Comes Home
+
+JVC's Genesis-and-Sega-CD-in-one-box is one of the rarer ways to play Sega, and one of the hardest to keep healthy. After a full servicing at iFixRetro — every capacitor on both boards, a new laser, a cleaned and greased drive, and battery-free saves — this one runs like it just left the factory.
+
+In 1994 JVC sold a console that most people in North America never saw on a shelf: the X'Eye, the American version of its Japanese Wondermega. It is a Genesis and a Sega CD in a single chassis, built under license from Sega on Sega's own silicon, with a few things no Sega-branded machine ever had — a microphone input on the front for karaoke discs, a headphone jack with its own volume control, and JVC's audio section behind them. It launched at a price well above a Genesis and a Sega CD bought separately and sold accordingly, which is why an X'Eye is a rare sight today and a working one rarer still.
+
+That second part is the catch. Every Sega CD of the era is a capacitor time bomb, and the X'Eye is two boards' worth of them. Thirty years on, the electrolytics leak, the laser weakens, the drive's grease hardens, and the backup RAM that holds your game saves forgets them the moment it loses power. This one had reached the point where it deserved a complete going-over rather than one more patch, so it went to iFixRetro (https://www.instagram.com/ifixretro/) — the same bench that put the IPS screen in the Game Boy Advance SP (https://www.orlandu.com/gba-sp.html) and did the screens and full recaps on the Turbo Express and the Nomad — with the brief to do everything at once.
+
+## The main board, stripped and rebuilt
+
+The big board is the whole console: the Sega 315-5660 that is a Genesis on one chip, a second 68000 for the CD side, the Sony CD decoder, the RAM, and the cartridge slot across the middle. The first photo is the board with every electrolytic capacitor already pulled — bare pads, cleaned of thirty years of electrolyte — and the second is the same board with a fresh set soldered in.
+
+[Photo: The X'Eye main board held in one hand with every electrolytic capacitor removed, bare solder pads where they stood]
+
+***Every capacitor out** — the main board with its old electrolytics pulled and the pads cleanedPhoto: iFixRetro*
+
+[Photo: The same X'Eye main board with new electrolytic capacitors fitted across the board]
+
+***Every capacitor in** — a full new set, which is the only recap that countsPhoto: iFixRetro*
+
+## The front board too
+
+The smaller board behind the front panel carries the microphone jack, the headphone jack, the two indicator LEDs and the CD servo trimmers — and its own row of capacitors. A recap that stops at the main board leaves these in place, next to the audio path, where a leaking one does the most audible damage. This one got the same treatment: every electrolytic out, every one replaced.
+
+[Photo: The X'Eye front panel board with its capacitors removed, showing the microphone and headphone jacks, two LEDs and four orange trimmer pots]
+
+***Front board, stripped** — mic and headphone jacks, the LEDs and the servo trimmers, with the old capacitors gonePhoto: iFixRetro*
+
+[Photo: The X'Eye front panel board with new capacitors fitted, the three ribbon connectors on its edge]
+
+***Front board, rebuilt** — new capacitors in, ready to go back behind the panelPhoto: iFixRetro*
+
+## A new laser, and a drive that moves again
+
+The laser pickup is the part that ages whether or not the console is used, and a weak one reads discs slowly, then intermittently, then not at all. Rather than wait for the last stage, the pickup was replaced outright with a new unit. While the drive was apart, the rails the pickup rides on were cleaned of the old hardened grease and re-lubricated, and the mechanism itself was cleaned, so the sled travels smoothly from the inner tracks to the outer ones instead of sticking on the way.
+
+[Photo: A new CD laser pickup unit on the bench mat, flex cable and adjustment trimmer visible]
+
+***The new pickup** — on the mat before it went into the sledPhoto: iFixRetro*
+
+[Photo: The X'Eye CD drive mechanism from above with the lid off: spindle, pickup on its rails and the drive gears]
+
+***The transport, open** — spindle, rails and gears, cleaned and freshly greasedPhoto: iFixRetro*
+
+## Saves that cannot be lost
+
+The stock backup RAM holds its contents only as long as something keeps it powered, and on a machine this age that something has long since stopped working: a save made on Tuesday is gone by the weekend. The fix is to replace the memory chip itself with ferroelectric RAM — an FM1808, pin-compatible, that keeps its contents with no power at all. No battery, no capacitor, nothing to replace in another thirty years.
+
+[Photo: Close-up of an FM1808 ferroelectric RAM chip soldered in place on the X'Eye board]
+
+***FM1808** — ferroelectric RAM in place of the original backup memory; saves survive without a batteryPhoto: iFixRetro*
+
+## What was done
+
+- **Main board recapped** — Every electrolytic capacitor replaced, pads cleaned first.
+- **Front panel board recapped** — The audio and indicator board, same treatment.
+- **Laser pickup replaced** — A new unit, not an adjustment of the old one.
+- **Drive cleaned and greased** — Rails re-lubricated, mechanism cleaned.
+- **FRAM save mod** — FM1808 ferroelectric RAM in place of the backup RAM; saves persist with no battery.
+- **Serviced by** — iFixRetro (https://www.instagram.com/ifixretro/), who also shot the bench photos on this page.
+
+Like every Genesis, the X'Eye puts RGB out of its AV port from the factory, so it joins the shelf with no video work at all: an RGB SCART cable into the switcher, a SCART to 4 BNC breakout out of it, and a Sony at the end. It plays Genesis cartridges on the left and Sega CD discs under the lid on the right, and for the first time in a long while, it does both without complaint.
+
+## Quick answers
+
+### What is the JVC X'Eye?
+
+A 1994 console from JVC that combines a Sega Genesis and a Sega CD in one chassis, built under license on Sega's own chips. It is the North American version of JVC's Japanese Wondermega, and it adds a microphone input and a headphone jack that no Sega-branded machine had.
+
+### What does a full X'Eye servicing involve?
+
+Replacing every electrolytic capacitor on both boards, replacing the laser pickup, cleaning and re-greasing the drive rails and mechanism, and swapping the backup RAM for ferroelectric RAM so saves survive without power. That is what was done to this one.
+
+### Why do Sega CD saves disappear?
+
+The internal backup RAM only holds data while it is powered, and the part that keeps it powered between sessions fails with age. An FM1808 FRAM in its place keeps saves with no battery or capacitor at all.
+
+### Does the X'Eye need an RGB mod?
+
+No. Like the Genesis it is built on, it carries RGB on its AV port from the factory. An RGB SCART cable and a SCART to 4 BNC breakout put it on a PVM or BVM as-is.
+
+Bench photography on this page by iFixRetro (https://www.instagram.com/ifixretro/), used with permission. The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and the how-to (https://www.orlandu.com/connect-console-to-pvm.html) walks the cable chain step by step.
+
+---
+
 # Nintendo VS. UniSystem Upright
 
 URL: https://www.orlandu.com/vs-unisystem.html
@@ -2939,24 +3041,31 @@ Read Before Playing
 # Stories
 
 The written side of the arcade — deep dives, restorations, and the history hiding inside the machines. New stories land here as they're written. The words they use without explaining are in the glossary (https://www.orlandu.com/glossary.html).
+ NewRestoration Story
+
+### The X'Eye Comes Home
+
+JVC's Genesis-and-Sega-CD-in-one is one of the rarer ways to play Sega, and one of the hardest to keep healthy. A full servicing at iFixRetro, board by board: every capacitor out and in, a new laser, a cleaned and greased drive, and ferroelectric RAM so a save never dies again.
+
+Read the newest story →
+ (https://www.orlandu.com/jvc-xeye.html)
+
+## More stories
  NewHow-To
 
 ### How to Connect a Retro Console to a Sony PVM or BVM
 
 A PVM has no SCART socket and no HDMI. The cable, the switcher, the SCART to 4 BNC breakout, sync, termination, audio — and the one box you do not need — from a setup that runs eight consoles into thirteen Sony monitors with no scaler in the path.
 
-Read the newest story →
- (https://www.orlandu.com/connect-console-to-pvm.html)
-
-## More stories
- NewField Guide
+Read the story →
+ (https://www.orlandu.com/connect-console-to-pvm.html) NewField Guide
 
 ### How to Spot Professional Glass in the Wild
 
 The best screens ever pointed at a game are still hiding in thrift stores, estate garages and surplus auctions, priced like old TVs. The badge, the BNC tells, the lookalikes — and the thirty-second check before you haul it home.
 
 Read the story →
- (https://www.orlandu.com/crt-field-guide.html) NewMonograph
+ (https://www.orlandu.com/crt-field-guide.html) Monograph
 
 ### The Sony AMS-100 Has No Written History
 
@@ -4712,7 +4821,7 @@ Pick a console and a monitor. You get the exact chain the arcade would use — c
 
 A 15 kHz RGB signal — 240p and 480i — is what every CRT here was built for, so it ranks first whenever the console can produce it. Component carries 480p and HD only into the multiformat monitors: the PVM-20L5, the BVM-A14F5U through its BKM-68X, and the LMD-9030 and 9050. The BVM-20E1U and PVM-2950Q are standard-definition by design; a 480p-capable console still connects, it just runs at 480i. S-Video and composite are listed because they exist, not because the arcade uses them. The LMD-940W has no analog input at all, so anything older than HDMI needs a converter in front of it. Sync rides the composite-sync line of the SCART cable; a monitor whose BNCs take RGB or component is set to RGB; and the last, or only, monitor on a loop-through line is terminated at 75 Ω.
 
-The rules are open data: connect.json (https://www.orlandu.com/data/connect.json), CC BY 4.0, credit Orlandu’s Arcade; the planner itself is one small script (https://www.orlandu.com/assets/connect-plan.js?v=253933e3), and an AI assistant can call it as the plan_connection tool on the MCP server (https://www.orlandu.com/mcp.html). Which card fits which chassis is on the BKM reference (https://www.orlandu.com/bkm-cards.html); what each monitor accepts is on the fleet table (https://www.orlandu.com/monitors.html#specs).
+The rules are open data: connect.json (https://www.orlandu.com/data/connect.json), CC BY 4.0, credit Orlandu’s Arcade; the planner itself is one small script (https://www.orlandu.com/assets/connect-plan.js?v=9ab84117), and an AI assistant can call it as the plan_connection tool on the MCP server (https://www.orlandu.com/mcp.html). Which card fits which chassis is on the BKM reference (https://www.orlandu.com/bkm-cards.html); what each monitor accepts is on the fleet table (https://www.orlandu.com/monitors.html#specs).
 
 ---
 
@@ -5401,11 +5510,6 @@ The primary E/F-series broadcast monitor has three open card slots waiting for t
 ### Sony AMS-100 monograph
 
 The deep technical write-up is finished — history, internals, the module system, a registry of documented frames and the market record. Read the monograph → (https://www.orlandu.com/ams-100-monograph.html)
- Out for service
-
-### JVC X'Eye — full servicing
-
-The Genesis/Sega CD combo unit is off at iFixRetro (@ifixretro (https://www.instagram.com/ifixretro/)) for a complete going-over. It'll come home better than new.
 
 [Photo: Seven Sony AMS-100 audio monitor speakers on arrival, stacked on a workbench, front panels facing out]
 
@@ -5432,6 +5536,11 @@ Addressable RGB throughout the arcade bay: WS2815 strip, ESP32 running WLED, a p
 A room full of running CRTs makes real heat. A thermostat-controlled exhaust fan is the plan for keeping the tandem bay happy in summer.
 
 ## Completed
+ Completed
+
+### JVC X'Eye — full servicing
+
+Home from iFixRetro (@ifixretro (https://www.instagram.com/ifixretro/)): every capacitor on both boards, a new laser pickup, the drive cleaned and greased, and an FM1808 FRAM in place of the backup RAM. The story, with the bench photos → (https://www.orlandu.com/jvc-xeye.html)
  Fixed
 
 ### Sony AMS-3 — volume pots cleaned
@@ -5485,7 +5594,7 @@ A PS2 slim running its library through FMCB/OPL from a MemCard Pro 2 — modern 
 
 ---
 
-# Collection Timeline: Forty Years on One Line
+# Forty Years on One Line
 
 URL: https://www.orlandu.com/timeline.html
 
@@ -5496,7 +5605,7 @@ The Long View
 # Forty Years on One Line
 
 Everything in the collection in the order the world first saw it — the cabinets and pins, the consoles, and the Sony monitors on one line, oldest at the top. Years are release years, not the year each one arrived here. Click anything to open its page.
- **1981**Donkey KongCoin-op (https://www.orlandu.com/donkey-kong.html)**1983**Mario Bros.Coin-op (https://www.orlandu.com/mario-bros.html)**1984**VS. Red TentCoin-op (https://www.orlandu.com/red-tent.html)VS. UniSystemCoin-op (https://www.orlandu.com/vs-unisystem.html)**1985**NES Front LoaderConsoles (https://www.orlandu.com/consoles.html)**1989**Game BoyConsoles (https://www.orlandu.com/consoles.html)Genesis Model 1Consoles (https://www.orlandu.com/consoles.html)TurboGrafx-16Consoles (https://www.orlandu.com/consoles.html)**1990**Turbo ExpressConsoles (https://www.orlandu.com/consoles.html)**1991**Mini CuteCoin-op (https://www.orlandu.com/mini-cute.html)Super NintendoConsoles (https://www.orlandu.com/consoles.html)PVM-2950QMonitors (https://www.orlandu.com/pvm-2950q.html)**1992**Big BlueCoin-op (https://www.orlandu.com/big-blue.html)**1993**Indiana JonesCoin-op (https://www.orlandu.com/indiana-jones.html)NES Top LoaderConsoles (https://www.orlandu.com/nes-top-loader.html)PC Engine Duo-RConsoles (https://www.orlandu.com/pc-engine-duo-r.html)**1994**Genesis CDXConsoles (https://www.orlandu.com/genesis-cdx.html)JVC X'EyeConsoles (https://www.orlandu.com/consoles.html)**1995**NomadConsoles (https://www.orlandu.com/consoles.html)SaturnConsoles (https://www.orlandu.com/consoles.html)BVM-20E1UMonitors (https://www.orlandu.com/bvm-20e1u.html)**1996**Nintendo 64Consoles (https://www.orlandu.com/nintendo-64.html)**1999**DreamcastConsoles (https://www.orlandu.com/consoles.html)**2001**GameCubeConsoles (https://www.orlandu.com/consoles.html)**2002**PVM-20L5Monitors (https://www.orlandu.com/pvm-20l5.html)**2003**Game Boy Advance SPConsoles (https://www.orlandu.com/gba-sp.html)BVM-A14F5UMonitors (https://www.orlandu.com/bvm-a14f5u.html)**2004**PlayStation 2Consoles (https://www.orlandu.com/ps2-slim.html)**2005**LMD wallMonitors (https://www.orlandu.com/lmd-wall.html)**2015**New 3DS XLConsoles (https://www.orlandu.com/consoles.html)**2016**GhostbustersCoin-op (https://www.orlandu.com/ghostbusters.html)New 3DS XL — SNES EditionConsoles (https://www.orlandu.com/consoles.html)**2017**Total Nuclear AnnihilationCoin-op (https://www.orlandu.com/tna.html)**2020**Rick and MortyCoin-op (https://www.orlandu.com/rick-and-morty.html)
+ **1981**Donkey KongCoin-op (https://www.orlandu.com/donkey-kong.html)**1983**Mario Bros.Coin-op (https://www.orlandu.com/mario-bros.html)**1984**VS. Red TentCoin-op (https://www.orlandu.com/red-tent.html)VS. UniSystemCoin-op (https://www.orlandu.com/vs-unisystem.html)**1985**NES Front LoaderConsoles (https://www.orlandu.com/consoles.html)**1989**Game BoyConsoles (https://www.orlandu.com/consoles.html)Genesis Model 1Consoles (https://www.orlandu.com/consoles.html)TurboGrafx-16Consoles (https://www.orlandu.com/consoles.html)**1990**Turbo ExpressConsoles (https://www.orlandu.com/consoles.html)**1991**Mini CuteCoin-op (https://www.orlandu.com/mini-cute.html)Super NintendoConsoles (https://www.orlandu.com/consoles.html)PVM-2950QMonitors (https://www.orlandu.com/pvm-2950q.html)**1992**Big BlueCoin-op (https://www.orlandu.com/big-blue.html)**1993**Indiana JonesCoin-op (https://www.orlandu.com/indiana-jones.html)NES Top LoaderConsoles (https://www.orlandu.com/nes-top-loader.html)PC Engine Duo-RConsoles (https://www.orlandu.com/pc-engine-duo-r.html)**1994**Genesis CDXConsoles (https://www.orlandu.com/genesis-cdx.html)JVC X'EyeConsoles (https://www.orlandu.com/jvc-xeye.html)**1995**NomadConsoles (https://www.orlandu.com/consoles.html)SaturnConsoles (https://www.orlandu.com/consoles.html)BVM-20E1UMonitors (https://www.orlandu.com/bvm-20e1u.html)**1996**Nintendo 64Consoles (https://www.orlandu.com/nintendo-64.html)**1999**DreamcastConsoles (https://www.orlandu.com/consoles.html)**2001**GameCubeConsoles (https://www.orlandu.com/consoles.html)**2002**PVM-20L5Monitors (https://www.orlandu.com/pvm-20l5.html)**2003**Game Boy Advance SPConsoles (https://www.orlandu.com/gba-sp.html)BVM-A14F5UMonitors (https://www.orlandu.com/bvm-a14f5u.html)**2004**PlayStation 2Consoles (https://www.orlandu.com/ps2-slim.html)**2005**LMD wallMonitors (https://www.orlandu.com/lmd-wall.html)**2015**New 3DS XLConsoles (https://www.orlandu.com/consoles.html)**2016**GhostbustersCoin-op (https://www.orlandu.com/ghostbusters.html)New 3DS XL — SNES EditionConsoles (https://www.orlandu.com/consoles.html)**2017**Total Nuclear AnnihilationCoin-op (https://www.orlandu.com/tna.html)**2020**Rick and MortyCoin-op (https://www.orlandu.com/rick-and-morty.html)
 
 ---
 
@@ -6190,7 +6299,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 85,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 86,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server
@@ -6234,9 +6343,9 @@ Six tables from the site as open data, CC BY 4.0 — use them, credit Orlandu's 
 | Sony monitor specs | Eight models, fourteen columns: display, size, resolution, formats, inputs, option slots, weight, dimensions, era — the fleet table (https://www.orlandu.com/monitors.html#specs) | JSON (https://www.orlandu.com/data/sony-monitor-specs.json) · CSV (https://www.orlandu.com/data/sony-monitor-specs.csv) |
 | PlayChoice-10 library | The fifty-two games Nintendo released, each with a photo of its original board — the cart wall (https://www.orlandu.com/playchoice-10.html) | JSON (https://www.orlandu.com/data/playchoice-10-library.json) · CSV (https://www.orlandu.com/data/playchoice-10-library.csv) |
 | Sony BKM cards | Thirty-four option cards and controllers across the BVM-D, E/F/G, A and LCD-era lines: what each does, which chassis it fits, the Sony source — the reference (https://www.orlandu.com/bkm-cards.html) | JSON (https://www.orlandu.com/data/bkm-cards.json) · CSV (https://www.orlandu.com/data/bkm-cards.csv) |
-| Console video out | Nine consoles: the modification, the video output, the chain to the monitor — the console table (https://www.orlandu.com/consoles.html#mods) | JSON (https://www.orlandu.com/data/console-video-out.json) · CSV (https://www.orlandu.com/data/console-video-out.csv) |
+| Console video out | Ten consoles: the modification, the video output, the chain to the monitor — the console table (https://www.orlandu.com/consoles.html#mods) | JSON (https://www.orlandu.com/data/console-video-out.json) · CSV (https://www.orlandu.com/data/console-video-out.csv) |
 | The Orlandu Registry | Every monitor registered by its owner, live: model, masked serial, plate date, hours, condition, note, where it came from and what it cost, with a link to each entry — the census (https://www.orlandu.com/registry.html). Serials stay masked and emails never leave the server. | JSON (https://www.orlandu.com/api/registry?export=json) · CSV (https://www.orlandu.com/api/registry?export=csv) |
-| Will it connect? rules | Seventeen consoles, eight monitors, seven signal types: what each console puts out and how, what each monitor accepts and through which card, and the cable chain per signal — the planner (https://www.orlandu.com/will-it-connect.html) | JSON (https://www.orlandu.com/data/connect.json) |
+| Will it connect? rules | Eighteen consoles, eight monitors, seven signal types: what each console puts out and how, what each monitor accepts and through which card, and the cable chain per signal — the planner (https://www.orlandu.com/will-it-connect.html) | JSON (https://www.orlandu.com/data/connect.json) |
 
 The photos the datasets link to stay © Orlandu's Arcade.
 
