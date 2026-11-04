@@ -28,7 +28,7 @@
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms-full.txt" title="Full text of this site for AI assistants">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms.txt" title="Site index for AI assistants">
 <link rel="alternate" type="application/rss+xml" href="https://www.orlandu.com/feed.xml" title="What's new at Orlandu's Arcade">
-<link rel="stylesheet" href="assets/style.css?v=6d61c1f5">
+<link rel="stylesheet" href="assets/style.css?v=e7aa9011">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav-v2.webp">
 <link rel="preload" as="image" href="assets/logo-wordmark-hero-v3.webp" fetchpriority="high">
 <script src="assets/site.js?v=1dfe7ba8" defer></script>
@@ -131,6 +131,7 @@
 /* The PVM readout: once per visit, like a monitor switching inputs */
 .hero .osd{position:absolute;left:18px;top:18px;z-index:3;font-family:var(--pixel);font-size:.55rem;letter-spacing:.08em;color:#4ad66d;background:rgba(5,5,9,.72);border:1px solid rgba(74,214,109,.35);padding:.45rem .6rem;opacity:0;pointer-events:none}
 .hero .osd .k{color:var(--ink);margin-right:.6rem}
+@media(max-width:600px){.hero .osd{font-size:.42rem;left:12px;top:12px}}
 .hero.lit .osd{animation:osd 3.2s steps(1) 1}
 @keyframes osd{0%{opacity:0}20%{opacity:1}85%{opacity:1}100%{opacity:0}}
 /* DEGAUSS: a round front-panel button, bottom-left. 4.6 s event, 5 s cooldown (the LED goes amber, the icon gives way to the count). */

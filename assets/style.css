@@ -205,6 +205,13 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
 .hero .bars b{flex:1}
 .hero .bars b:nth-child(1){background:#c0c0c0}.hero .bars b:nth-child(2){background:#c0c000}.hero .bars b:nth-child(3){background:#00c0c0}.hero .bars b:nth-child(4){background:#00c000}.hero .bars b:nth-child(5){background:#c000c0}.hero .bars b:nth-child(6){background:#c00000}.hero .bars b:nth-child(7){background:#0000c0}
 .hero .dmark{position:absolute;right:16px;bottom:18px;font-family:var(--pixel);font-size:.5rem;color:var(--cyan);opacity:.45;letter-spacing:.12em;z-index:2}
+/* Phones: the hero is tall there (the tagline wraps), so a 46 % floor would put the horizon through the words. Pin both lower. */
+@media(max-width:600px){
+  .hero::before{height:17%}
+  .hero .horizon{bottom:17%}
+  .hero .heroimg{background:radial-gradient(ellipse 110% 30% at 50% 100%,rgba(255,138,0,.20),rgba(122,60,255,.10) 45%,transparent 72%),radial-gradient(ellipse 55% 50% at 50% 42%,rgba(94,233,255,.10),transparent 70%),radial-gradient(ellipse 120% 100% at 50% 50%,#101024 0%,#0b0b16 70%,#050509 100%)}
+  .hero .dmark{display:none}
+}
 @keyframes twinkle{50%{opacity:.12}}
 @keyframes sweep{to{top:110%}}
 .hero::before{z-index:1}
