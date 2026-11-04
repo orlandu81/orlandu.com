@@ -112,6 +112,8 @@ nav.main a:hover{color:var(--cyan);background:var(--panel);text-decoration:none}
   nav.main>a:nth-of-type(7){--nacc:#ffd400}
   nav.main>a:nth-of-type(8){--nacc:#ff2d00}
   header.site.compact nav.main>a::after,header.site.compact nav.main .collbtn::before{left:.5rem;right:.5rem;bottom:.22rem}
+  /* hover lights the word in its own color, not the generic cyan */
+  nav.main>a:hover,nav.main .collbtn:hover,header.site.collopen .collbtn{color:var(--nacc)}
 }
 nav.main a.here{color:var(--fire3);background:var(--panel)}
 
