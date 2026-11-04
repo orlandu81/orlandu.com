@@ -93,6 +93,11 @@ The geometry grid, judging a tube with no hours counter, what to pay — and why
  (https://www.orlandu.com/pvm-20l5-buying-guide.html)
 
 ## Latest from the arcade
+ Pictured
+
+### The last three consoles, on camera
+
+The NES Front Loader, the Genesis Model 1 and the TurboGrafx-16 were the only cards without a photo. Now every console on the page has one, and the TurboGrafx has its own row in the mod table. See the full roster → (https://www.orlandu.com/consoles.html)
  Restored
 
 ### The X’Eye comes home
@@ -133,11 +138,6 @@ PVM-20L5, BVM-D14H5U, BKM-129X — line, size, tube letter, the digit that means
 ### Compare two monitors, and see them to scale
 
 Pick any two models and the specs that differ light up; above the table, all eight are drawn to Sony’s published dimensions, front and side, with an NES for size. The fleet, to scale → (https://www.orlandu.com/monitors.html#scale)
- New reference
-
-### Every Sony BKM card, and which monitor it fits
-
-Three physical families, not one: the 2x decoders for the BVM-E/F/G and big D-series, the 1xx cards for the small D-series and the PVM-L5/L2 slot, and the BVM-A boards. What each does, the installation rules, the controllers — sourced to Sony. The reference → (https://www.orlandu.com/bkm-cards.html)
 
 ---
 
@@ -1022,7 +1022,7 @@ With an NESRGB board, which takes the color straight from the picture chip ahead
 
 No. Nintendo removed the lockout chip in this revision, so unlicensed and imported cartridges that fight the front loader simply run. The cartridge slot is the same 72-pin NTSC connector.
 
-The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and The Signal Chain (https://www.orlandu.com/signal-chain.html) walks it box by box. The NES Front Loader carries an NESRGB board too; it isn’t on the display shelf. Nintendo’s own Player’s Guides have a shelf of their own (https://www.orlandu.com/guide-shelf.html), and the arcade side of the NES library is on the PlayChoice-10 wall (https://www.orlandu.com/playchoice-10.html).
+The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and The Signal Chain (https://www.orlandu.com/signal-chain.html) walks it box by box. The NES Front Loader (https://www.orlandu.com/consoles.html) carries an NESRGB board too, so both generations reach the glass the same way. Nintendo’s own Player’s Guides have a shelf of their own (https://www.orlandu.com/guide-shelf.html), and the arcade side of the NES library is on the PlayChoice-10 wall (https://www.orlandu.com/playchoice-10.html).
 
 ---
 
@@ -5699,7 +5699,8 @@ This site talks the way the hobby talks, which means it uses a lot of words with
 - **TVL TV lines**: The resolution figure Sony quoted for its tubes: how many alternating vertical lines the screen can resolve across a width equal to its height. A production PVM runs around 600 to 800; a BVM, around 1000.
 - **SMPTE-C**: The broadcast color standard for phosphors in North America. A monitor built to it shows colors where the mastering engineer put them, which a store-bought set never promised.
 - **Geometry / convergence**: Whether straight lines are straight and evenly spaced across the screen, and whether the red, green and blue beams land on the same spot. The first things to check on any tube, and the expensive ones to fix.
-- **Degauss**: The coil that fires on power-up to clear stray magnetism from the shadow mask or grille. If the corners of a screen have gone pink or green, it has usually been a while.
+- **Degauss**: The coil around the tube that fires on power-up, and on demand from a DEGAUSS button, to clear stray magnetism from the shadow mask or grille: a loud thump, the picture blooms and the colors swing before it settles. If the corners of a screen have gone pink or green, it has usually been a while. A professional set locks the button out for a few seconds after each fire while the coil cools, which is why the one on the home page (https://www.orlandu.com/index.html) does too.
+- **Color bars SMPTE bars**: The broadcast test pattern: seven vertical bars at 75% level, white through blue in luminance order, with the small PLUGE and reverse-bar rows underneath on the full version. Feed them to a monitor and you can set brightness, contrast, chroma and phase by eye. The strip along the bottom of the home page is the top row.
 - **Burn-in**: The ghost of an image a tube displayed for too long, worn permanently into the phosphor. Arcade monitors that spent years in attract mode often carry it; the ones here that came out clean are remarked on for a reason.
 - **Zero scan / underscan**: Showing the entire picture inside the screen edge instead of pushing the outer few percent past it the way a television does. A professional monitor lets you choose.
 - **ISR**: Sony's serial remote control system for professional monitors: one controller, a daisy-chained cable, and a whole wall of monitors taking the same commands. The reason a BVM has a remote port beside its inputs.

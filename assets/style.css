@@ -586,6 +586,8 @@ div.rt{margin:-.5rem 0 1rem}
 
 /* ── Section links, share, toast ──────────────────────────── */
 h2 .hlink{font-family:var(--body);font-weight:400;font-size:.85em;color:var(--dim);margin-left:.45em;opacity:0;text-decoration:none;transition:opacity .15s}
+/* touch: 24 px hit areas on the permalink marks and footnote markers without moving the text (padding + negative margin) */
+@media(pointer:coarse){h2 .hlink{opacity:.5;padding:.3em .5em;margin:-.3em 0 -.3em -.05em}sup a{display:inline-block;padding:.45em .6em;margin:-.45em -.5em}}
 h2:hover .hlink,h2 .hlink:focus-visible{opacity:.85}
 h2 .hlink:hover{color:var(--cyan);text-decoration:none}
 @media(hover:none){h2 .hlink{opacity:.45}}

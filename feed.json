@@ -8,6 +8,16 @@
  "language": "en-US",
  "items": [
   {
+   "id": "https://www.orlandu.com/consoles.html",
+   "url": "https://www.orlandu.com/consoles.html",
+   "title": "The last three consoles, on camera",
+   "summary": "The NES Front Loader, the Genesis Model 1 and the TurboGrafx-16 were the only cards without a photo. Now every console on the page has one, and the TurboGrafx has its own row in the mod table. See the full roster →",
+   "tags": [
+    "Pictured"
+   ],
+   "date_published": "2026-11-04T17:00:00Z"
+  },
+  {
    "id": "https://www.orlandu.com/jvc-xeye.html",
    "url": "https://www.orlandu.com/jvc-xeye.html",
    "title": "The X’Eye comes home",
@@ -86,16 +96,6 @@
     "New on the fleet page"
    ],
    "date_published": "2026-10-22T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/bkm-cards.html",
-   "url": "https://www.orlandu.com/bkm-cards.html",
-   "title": "Every Sony BKM card, and which monitor it fits",
-   "summary": "Three physical families, not one: the 2x decoders for the BVM-E/F/G and big D-series, the 1xx cards for the small D-series and the PVM-L5/L2 slot, and the BVM-A boards. What each does, the installation rules, the controllers — sourced to Sony. The reference →",
-   "tags": [
-    "New reference"
-   ],
-   "date_published": "2026-10-10T17:00:00Z"
   },
   {
    "id": "https://www.orlandu.com/connect-console-to-pvm.html",

@@ -30,6 +30,7 @@ ALIASES = {
     "audio-monitor": ["audio monitors"],
     "trinitron": ["Trinitrons"],
     "switcher": ["auto-switcher"],
+    "color-bars": ["SMPTE bars", "75% bars", "test pattern"],
 }
 # terms too generic to auto-underline in prose (they still exist on glossary.html)
 SKIP = {"upright", "dedicated", "conversion", "kit", "monitor", "chassis", "cabinet", "marquee", "bezel", "topper", "shop-out", "sync", "route"}

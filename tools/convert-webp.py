@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """One-time (2026-09-11) JPEG → WebP conversion for the site's photos.
 Converts every media/**/*.jpg (except media/og/, which stays JPEG for social scrapers)
-and assets/hero-bg.jpg to a .webp sibling under the SAME basename, rewrites every
+to a .webp sibling under the SAME basename, rewrites every
 reference in HTML/JS/CSS/sitemap/llms/tools to .webp (query strings like ?v=3 preserved),
 then deletes the JPEGs. New photos added later should be saved as .webp directly
 (Pillow: im.save(path, "WEBP", quality=82, method=6) — no exif= argument, ever).
@@ -10,7 +10,7 @@ import re, pathlib, subprocess, sys
 from PIL import Image
 root = pathlib.Path(__file__).resolve().parent.parent
 Q = 82
-jpgs = [p for p in root.glob("media/**/*.jpg") if "media/og" not in p.as_posix()] + [root / "assets" / "hero-bg.jpg"]
+jpgs = [p for p in root.glob("media/**/*.jpg") if "media/og" not in p.as_posix()]
 before = after = 0
 converted = []
 for p in jpgs:
@@ -26,7 +26,7 @@ print(f"{len(converted)} converted: {before/1e6:.1f} MB → {after/1e6:.1f} MB (
 names = set(converted)  # e.g. media/2026/foo.jpg
 # rewrite references
 targets = [p for p in root.glob("*.html")] + list((root / "assets").glob("*.js")) + list((root / "assets").glob("*.css")) + [root / "sitemap.xml", root / "llms.txt"] + list((root / "tools").glob("*.py"))
-pat = re.compile(r'((?:https://www\.orlandu\.com/)?)((?:media/[A-Za-z0-9_\-./]+?|assets/hero-bg))\.jpg\b')
+pat = re.compile(r'((?:https://www\.orlandu\.com/)?)(media/[A-Za-z0-9_\-./]+?)\.jpg\b')
 def sub(m):
     rel = m.group(2) + ".jpg"
     if rel in names: return m.group(1) + m.group(2) + ".webp"
@@ -43,7 +43,6 @@ print(f"{total} references rewritten")
 fixes = {
     "gallery.html": [("replace(/\\.jpg$/, '')", "replace(/\\.webp$/, '')"), ("'-400.jpg 400w, ' + b + '-600.jpg 600w, '", "'-400.webp 400w, ' + b + '-600.webp 600w, '")],
     "index.html": [("replace(/\\.jpg$/,'')", "replace(/\\.webp$/,'')"), ("base + '.jpg\" srcset=\"' + base + '.jpg 1x, ' + base + '-2x.jpg 2x\"", "base + '.webp\" srcset=\"' + base + '.webp 1x, ' + base + '-2x.webp 2x\"")],
-    "assets/style.css": [('url("hero-bg.jpg")', 'url("hero-bg.webp")')],
 }
 for f, reps in fixes.items():
     s = (root / f).read_text(encoding="utf-8")

@@ -24,6 +24,8 @@ HINTS = {
     "bkm-10r.html": "bkm-10r bkm-15r remote control unit menu",
     "wanted.html": "looking for hunt list",
     "forsale.html": "buy ebay listings",
+    "index.html": "degauss button color bars smpte insert coin press start splash",
+    "glossary.html": "degauss color bars smpte bars",
 }
 KIND = {
     "index.html": "Home", "games.html": "Coin-Op", "monitors.html": "Monitors", "consoles.html": "Consoles",

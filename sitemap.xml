@@ -3,7 +3,7 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.orlandu.com/about.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <video:video><video:thumbnail_loc>https://www.orlandu.com/media/2026/game-room-spin-poster.webp</video:thumbnail_loc><video:title>The game room, one full turn</video:title><video:description>A 33-second spin around the inside room — the framed PCB wall, Super Mario Bros. on the PVMs, the fiber-optic Kay·Bee World of Nintendo sign, and the Mini Cute and Red Tent holding their corners.</video:description><video:content_loc>https://www.orlandu.com/media/video/game-room-spin-v2.mp4</video:content_loc></video:video>
   </url>
   <url>
@@ -69,7 +69,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/glossary.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/guide-shelf.html</loc>
@@ -186,7 +186,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/nes-top-loader.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/consoles-nes-toploader.webp</image:loc><image:title>Nintendo Entertainment System top loader, the NES-101 redesign, with its red power switch</image:title></image:image>
   </url>
   <url>
@@ -318,7 +318,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/indiana-jones.html</loc>

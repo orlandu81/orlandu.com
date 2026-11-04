@@ -28,7 +28,7 @@
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms-full.txt" title="Full text of this site for AI assistants">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms.txt" title="Site index for AI assistants">
 <link rel="alternate" type="application/rss+xml" href="https://www.orlandu.com/feed.xml" title="What's new at Orlandu's Arcade">
-<link rel="stylesheet" href="assets/style.css?v=e7aa9011">
+<link rel="stylesheet" href="assets/style.css?v=8888aa1e">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav-v2.webp">
 <link rel="preload" as="image" href="assets/logo-wordmark-hero-v3.webp" fetchpriority="high">
 <script src="assets/site.js?v=1dfe7ba8" defer></script>
@@ -120,7 +120,8 @@
 /* Index-scoped: reading room columns + the coin easter egg */
 .grid.readroom{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:900px){.grid.readroom{grid-template-columns:1fr}}
-.hero .coin{cursor:pointer;-webkit-user-select:none;user-select:none}
+.hero .coin{cursor:pointer;-webkit-user-select:none;user-select:none;display:inline-block;padding:.2rem .5rem;border-radius:4px}
+.hero .coin:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 .hero .credits{font-family:"Press Start 2P","Press Start 2P Fallback",monospace;font-size:.62rem;letter-spacing:.22em;color:var(--fire3);margin-top:.55rem;min-height:1.1em;opacity:0;transition:opacity .25s}
 .hero .credits.on{opacity:1}
 @keyframes coinflick{0%{filter:none}25%{filter:brightness(1.65) saturate(1.35)}55%{filter:brightness(.82)}100%{filter:none}}
@@ -144,6 +145,7 @@
 .hero .degauss:disabled{cursor:default}
 .hero .degauss:disabled svg{display:none}.hero .degauss:disabled .n{display:block}
 .hero .degauss:disabled i{background:var(--fire2);box-shadow:0 0 6px var(--fire2)}
+.hero:not(.dg) .purity{display:none}
 .hero .purity{position:absolute;inset:-10%;z-index:2;pointer-events:none;opacity:0;mix-blend-mode:color;background:conic-gradient(from 90deg at 50% 50%,#ff2d00,#ffd400,#2dff5a,#5ee9ff,#7a3cff,#ff2d8a,#ff2d00)}
 .hero.dg .heroimg,.hero.dg .inner{animation:degauss 4.6s linear 1}
 .hero.dg::before{animation:degauss-floor 4.6s linear 1}
@@ -180,7 +182,7 @@
   <div class="bars" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div><div class="dmark" aria-hidden="true">SMPTE &middot; 75% BARS &middot; 15.734 kHz</div>
   <div class="osd" aria-hidden="true"><span class="k">INPUT A</span> RGB &nbsp;15.734 kHz / 60.0 Hz</div>
   <div class="purity" aria-hidden="true"></div>
-  <button type="button" class="degauss" aria-label="Degauss" title="Degauss"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4v8a6 6 0 0 0 12 0V4"/><path d="M10 4v8a2 2 0 0 0 4 0V4"/><path d="M6 4h4M14 4h4"/><path d="M4 21 21 4"/></svg><span class="n"></span><i></i></button>
+  <button type="button" class="degauss" aria-label="Degauss" title="Degauss"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4v8a6 6 0 0 0 12 0V4"/><path d="M10 4v8a2 2 0 0 0 4 0V4"/><path d="M6 4h4M14 4h4"/><path d="M4 21 21 4"/></svg><span class="n" aria-live="polite" aria-atomic="true"></span><i></i></button>
   <div class="inner">
     <h1 class="wordmark-h1"><img class="wordmark" src="assets/logo-wordmark-hero-v3.webp" alt="Orlandu's Arcade — private arcade and Sony professional monitor collection" width="1080" height="425" fetchpriority="high" decoding="async"></h1>
     <p class="tag">Private arcade · Retro games · Sony professional monitors<br>Orange County, California</p>
@@ -372,6 +374,11 @@ document.addEventListener('DOMContentLoaded', function(){
     <h2 class="sec">Latest from the arcade</h2>
     <div class="ledger">
       <div class="card">
+        <span class="badge done">Pictured</span>
+        <h3>The last three consoles, on camera</h3>
+        <p>The NES Front Loader, the Genesis Model 1 and the TurboGrafx-16 were the only cards without a photo. Now every console on the page has one, and the TurboGrafx has its own row in the mod table. <a href="consoles.html">See the full roster &rarr;</a></p>
+      </div>
+      <div class="card">
         <span class="badge done">Restored</span>
         <h3>The X&rsquo;Eye comes home</h3>
         <p>JVC&rsquo;s rare Genesis + Sega CD combo is back from a full servicing at iFixRetro &mdash; every capacitor on both boards, a new laser, and saves that never die. <a href="jvc-xeye.html">Read the story &rarr;</a></p>
@@ -410,11 +417,6 @@ document.addEventListener('DOMContentLoaded', function(){
         <span class="badge plan">New on the fleet page</span>
         <h3>Compare two monitors, and see them to scale</h3>
         <p>Pick any two models and the specs that differ light up; above the table, all eight are drawn to Sony&rsquo;s published dimensions, front and side, with an NES for size. <a href="monitors.html#scale">The fleet, to scale &rarr;</a></p>
-      </div>
-      <div class="card">
-        <span class="badge plan">New reference</span>
-        <h3>Every Sony BKM card, and which monitor it fits</h3>
-        <p>Three physical families, not one: the 2x decoders for the BVM-E/F/G and big D-series, the 1xx cards for the small D-series and the PVM-L5/L2 slot, and the BVM-A boards. What each does, the installation rules, the controllers &mdash; sourced to Sony. <a href="bkm-cards.html">The reference &rarr;</a></p>
       </div>
     </div>
   </section>
