@@ -101,9 +101,11 @@ nav.main a:hover{color:var(--cyan);background:var(--panel);text-decoration:none}
    Order: Home · Collection · Gallery · Stories · Projects · For Sale · Wanted · Registry · About. */
 @media(min-width:761px){
   nav.main>a,nav.main .collbtn{position:relative}
-  nav.main>a::after,nav.main .collbtn::before{content:"";position:absolute;left:.7rem;right:.7rem;bottom:.3rem;height:2px;border-radius:2px;background:var(--nacc);opacity:.85;pointer-events:none}
+  nav.main>a::after,nav.main .collbtn::before{content:"";position:absolute;left:.7rem;right:.7rem;bottom:.3rem;height:2px;border-radius:2px;background:var(--nacc);opacity:.4;pointer-events:none;transition:opacity .15s}
+  nav.main>a:hover::after,nav.main>a.here::after,nav.main .collbtn:hover::before,nav.main .collbtn.here::before,header.site.collopen nav.main .collbtn::before{opacity:1}
   nav.main>a:nth-of-type(1){--nacc:#ffd400}
-  nav.main .collbtn{--nacc:#ff8a00}
+  /* Collection is seven hubs, not one section: it gets its own color, violet, used by nothing else on the row */
+  nav.main .collbtn{--nacc:var(--ink)}
   nav.main>a:nth-of-type(2){--nacc:#5ee9ff}
   nav.main>a:nth-of-type(3){--nacc:#9effa0}
   nav.main>a:nth-of-type(4){--nacc:#ff8a00}
@@ -113,7 +115,7 @@ nav.main a:hover{color:var(--cyan);background:var(--panel);text-decoration:none}
   nav.main>a:nth-of-type(8){--nacc:#ff2d00}
   header.site.compact nav.main>a::after,header.site.compact nav.main .collbtn::before{left:.5rem;right:.5rem;bottom:.22rem}
   /* hover lights the word in its own color, not the generic cyan */
-  nav.main>a:hover,nav.main .collbtn:hover,header.site.collopen .collbtn{color:var(--nacc)}
+  nav.main>a:hover,nav.main .collbtn:hover,header.site.collopen nav.main .collbtn{color:var(--nacc)}
 }
 nav.main a.here{color:var(--fire3);background:var(--panel)}
 
