@@ -22,10 +22,10 @@ COINOP = [
 ]
 CONSOLES = [
     # thumb None = no photograph yet; the card shows a lettered tile instead (tph)
-    ("NES Front Loader", 1985, None, "consoles.html", "NES"),
+    ("NES Front Loader", 1985, "media/thumbs/consoles-nes-frontloader.webp", "consoles.html"),
     ("Game Boy", 1989, "media/thumbs/consoles-gameboy-dmg.webp", "consoles.html"),
-    ("Genesis Model 1", 1989, None, "consoles.html", "MD"),
-    ("TurboGrafx-16", 1989, None, "consoles.html", "TG16"),
+    ("Genesis Model 1", 1989, "media/thumbs/consoles-genesis-model1.webp", "consoles.html"),
+    ("TurboGrafx-16", 1989, "media/thumbs/consoles-tg16.webp", "consoles.html"),
     ("Turbo Express", 1990, "media/thumbs/consoles-turbo-express.webp", "consoles.html"),
     ("Super Nintendo", 1991, "media/thumbs/consoles-snes.webp?v=2", "consoles.html"),
     ("NES Top Loader", 1993, "media/thumbs/consoles-nes-toploader.webp?v=2", "nes-top-loader.html"),

@@ -60,6 +60,12 @@
    "into_the_chain": "RGB SCART → switcher → breakout → PVM / BVM"
   },
   {
+   "console": "TurboGrafx-16",
+   "work_done": "Stock · EDFX AV Adapter",
+   "video_out": "RGB (adapter)",
+   "into_the_chain": "EDFX → RGB SCART → switcher → breakout → PVM / BVM"
+  },
+  {
    "console": "PC Engine Duo-R",
    "work_done": "Region mod · RGB mod",
    "video_out": "RGB (modded)",

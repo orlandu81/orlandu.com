@@ -232,6 +232,8 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   get separate cards. Years are North American releases where the vault has a Japan year (SNES 1991, Turbo Express
   1990, New 3DS XL Black 2015, PC Engine Duo-R 1993). Six consoles have profiles (nes-top-loader, nintendo-64, gba-sp,
   genesis-cdx, pc-engine-duo-r, ps2-slim); the others stay card-only by his choice. The PS2 Slim is NOT modded.
+  Every card has a photo since 11-03 (NES Front Loader, Genesis Model 1 and TurboGrafx-16 were footnotes until then;
+  the "not on the display shelf" footnotes are gone). TG-16 is stock and reaches RGB through the EDFX AV Adapter.
   `consoles.html#mods` lists only consoles whose signal path the site states.
 - **monitors.html:** photo cards, `object-fit:contain` plates (`aspect-ratio:7/6`), the four LMD models folded into one
   wide card on the rack photo. **The fleet is THIRTEEN units across EIGHT models** (LMD-9050 ×2); a count change is

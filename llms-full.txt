@@ -759,6 +759,14 @@ The home-console side of the collection — the machines that fed the CRTs befor
 
 ## Nintendo
 
+[Photo: Original Nintendo Entertainment System front loader seen from the front, gray power and reset buttons and both controller ports]
+
+ 1985 · Modded
+
+### NES — Front Loader
+
+The original toaster, fitted with an NESRGB board — the 8-bit library in pure RGB, straight to the Sony glass.
+
 [Photo: Nintendo Entertainment System top loader, the NES-101 redesign, with its red power switch]
 
  1993 · Modded
@@ -829,9 +837,15 @@ The plain black clamshell, and the last of the two-screen Nintendo handhelds.
 
 The one that looks like a tiny Super Nintendo folded in half — purple buttons, gray shell and all.
 
-**Not pictured:** the NES Front Loader (1985, fitted with an NESRGB board like the Top Loader) — not on the display shelf.
-
 ## Sega
+
+[Photo: Sega Genesis Model 1 seen from the front, High Definition Graphics ring around the cartridge slot, volume slider and headphone jack on the left]
+
+ 1989 · Modded
+
+### Genesis Model 1
+
+The first Genesis, with RGB out of the box — fitted with HDG S-Video and stereo output jacks.
 
 [Photo: Sega Genesis CDX combo unit seen from above, disc lid and player controls visible]
 
@@ -877,9 +891,15 @@ Sega's 2D powerhouse and quiet legend.
 
 The last Sega console, still thinking.
 
-**Not pictured:** the Genesis Model 1 (1989, modded with HDG S-Video and stereo output jacks) — not on the display shelf.
-
 ## NEC & Sony
+
+[Photo: NEC TurboGrafx-16 seen from the front, HuCard slot door and the single controller port]
+
+ 1989
+
+### TurboGrafx-16
+
+NEC's 8-bit machine with the 16-bit graphics chip, stock — it reaches the monitors in RGB through an EDFX AV Adapter.
 
 [Photo: NEC Turbo Express handheld on a clear display stand, TurboGrafx-16 branding on the face]
 
@@ -909,8 +929,6 @@ Runs its library from a MemCard Pro 2 with FMCB/OPL — the whole PS2 catalog, n
 
 The full profile → (https://www.orlandu.com/ps2-slim.html)
 
-**Not pictured:** the TurboGrafx-16 (1989) — not on the display shelf.
-
 Nearly every home console here reaches a CRT over analog RGB, through a pair of SCART switchers and a stack of BNC breakout cables. The Signal Chain (https://www.orlandu.com/signal-chain.html) shows the whole path.
 
 [Photo: GSCART automatic SCART switch on a clear acrylic mount, eight SCART cables plugged in]
@@ -935,6 +953,7 @@ The part every collector asks about: which machines needed a modification to giv
 | Genesis CDX | New laser lens | RGB (native) | RGB SCART → switcher → breakout → PVM / BVM |
 | JVC X'Eye | Full service: both boards recapped, new laser pickup, FRAM save mod | RGB (native) | RGB SCART → switcher → breakout → PVM / BVM |
 | Saturn | Stock | RGB (native) | RGB SCART → switcher → breakout → PVM / BVM |
+| TurboGrafx-16 | Stock · EDFX AV Adapter | RGB (adapter) | EDFX → RGB SCART → switcher → breakout → PVM / BVM |
 | PC Engine Duo-R | Region mod · RGB mod | RGB (modded) | RGB SCART → switcher → breakout → PVM / BVM |
 | PlayStation 2 Slim | MemCard Pro 2 with FMCB/OPL | Component | Switcher → distribution amp → the LMD wall |
 
