@@ -96,6 +96,23 @@ nav.main a{
   color:var(--dim);padding:.55rem .7rem;border-radius:6px;white-space:nowrap;
 }
 nav.main a:hover{color:var(--cyan);background:var(--panel);text-decoration:none}
+/* Nav accent lines (11-04): a 2 px line under each word in its section's own hub accent. Desktop only; nth-of-type
+   because hidden .ng group labels sit between the links; the Collection button uses ::before (its ::after is the chevron).
+   Order: Home · Collection · Gallery · Stories · Projects · For Sale · Wanted · Registry · About. */
+@media(min-width:761px){
+  nav.main>a,nav.main .collbtn{position:relative}
+  nav.main>a::after,nav.main .collbtn::before{content:"";position:absolute;left:.7rem;right:.7rem;bottom:.3rem;height:2px;border-radius:2px;background:var(--nacc);opacity:.85;pointer-events:none}
+  nav.main>a:nth-of-type(1){--nacc:#ffd400}
+  nav.main .collbtn{--nacc:#ff8a00}
+  nav.main>a:nth-of-type(2){--nacc:#5ee9ff}
+  nav.main>a:nth-of-type(3){--nacc:#9effa0}
+  nav.main>a:nth-of-type(4){--nacc:#ff8a00}
+  nav.main>a:nth-of-type(5){--nacc:#ffb0e0}
+  nav.main>a:nth-of-type(6){--nacc:#5ee9ff}
+  nav.main>a:nth-of-type(7){--nacc:#ffd400}
+  nav.main>a:nth-of-type(8){--nacc:#ff2d00}
+  header.site.compact nav.main>a::after,header.site.compact nav.main .collbtn::before{left:.5rem;right:.5rem;bottom:.22rem}
+}
 nav.main a.here{color:var(--fire3);background:var(--panel)}
 
 /* ── Layout ───────────────────────────────────── */
