@@ -12,7 +12,7 @@ import json, re, pathlib, html as H
 root = pathlib.Path(__file__).resolve().parent.parent
 cat = json.loads((root / "data" / "registry-models.json").read_text(encoding="utf-8"))
 SITE = "https://www.orlandu.com/"
-OG = SITE + "media/og/og-registry.jpg"
+OG = SITE + "media/og/og-registry-v2.jpg"
 e = H.escape
 
 def head(fn, title, og_title, desc, kicker_kind, extra_ld="", robots="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1", crumbs=None):
@@ -29,7 +29,7 @@ def head(fn, title, og_title, desc, kicker_kind, extra_ld="", robots="index,foll
          "logo": {"@type": "ImageObject", "creator": {"@type": "Organization", "name": "Orlandu's Arcade"}, "copyrightNotice": "© Orlandu's Arcade",
                   "creditText": "Orlandu's Arcade", "license": SITE + "about.html#photo-use", "acquireLicensePage": SITE + "about.html#photo-use",
                   "url": SITE + "assets/logo-wordmark-v2.png", "width": 1080, "height": 425},
-         "image": SITE + "media/og/og-home.jpg", "email": "orlandusarcade@gmail.com", "founder": {"@id": SITE + "#person"},
+         "image": SITE + "media/og/og-home-v2.jpg", "email": "orlandusarcade@gmail.com", "founder": {"@id": SITE + "#person"},
          "sameAs": ["https://www.instagram.com/orlandusarcade/", "https://www.ebay.com/usr/orlandu81",
                     "https://forums.arcade-museum.com/members/orlandu81.67452/", "https://www.arcade-projects.com/members/orlandu81.4521/"]},
         {"@type": "Person", "@id": SITE + "#person", "name": "orlandu81", "url": SITE + "about.html",

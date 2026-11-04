@@ -113,13 +113,13 @@ page = f"""<!DOCTYPE html>
 <meta property="og:title" content="Forty Years on One Line &mdash; Orlandu&rsquo;s Arcade">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="https://www.orlandu.com/timeline.html">
-<meta property="og:image" content="https://www.orlandu.com/media/og/og-games.jpg">
+<meta property="og:image" content="https://www.orlandu.com/media/og/og-games-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Forty Years on One Line &mdash; Orlandu&rsquo;s Arcade">
 <meta name="twitter:description" content="{desc}">
-<meta name="twitter:image" content="https://www.orlandu.com/media/og/og-games.jpg">
+<meta name="twitter:image" content="https://www.orlandu.com/media/og/og-games-v2.jpg">
 <link rel="canonical" href="https://www.orlandu.com/timeline.html">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav-v2.webp">
