@@ -125,7 +125,7 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
 - **First-screen images:** not `loading="lazy"`; the top one carries `fetchpriority="high"` with a matching
   `<link rel="preload" as="image">`. Change both when that photo changes; never preload a below-the-fold image.
   gallery.html and the home filmstrip make their first six eager in JS.
-- Branding files: nav logo `assets/logo-wordmark-nav.webp`, hero wordmark `logo-wordmark-hero-v2.webp`, mascots
+- Branding files: nav logo `assets/logo-wordmark-nav.webp`, hero wordmark `logo-wordmark-hero-v3.webp` (11-03: the white inside the O, behind ORLANDU'S and between the mascot's legs cut to transparent; v2 deleted). The hero backdrop is DRAWN in style.css since 11-03 (Trinitron grille + vignette + SMPTE bars, horizon glow, 40 star `<i>`s, scanline sweep) — `hero-bg.webp` is deleted; `.hero .heroimg` markup lives in index.html, mascots
   `mascot-foot.webp` / `mascot-about.webp`. The original PNGs stay as masters and JSON-LD `logo` URLs only.
 - **Thumbs:** story and step thumbs are 1200×514 (21:9) with an 800×343 sibling and the same `srcset`/`sizes` as their
   neighbors; the featured story keeps the plain 1200. Story thumbs are cut from the story's OWN media (navigational

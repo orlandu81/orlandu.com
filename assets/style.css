@@ -73,7 +73,8 @@ body::after{
   opacity:.32;
 }
 @media (prefers-reduced-motion: no-preference){
-  .hero .heroimg{animation:kenburns 32s ease-in-out infinite alternate}
+  .hero .heroimg i{animation:twinkle 5s ease-in-out infinite;animation-delay:var(--d)}
+  .hero .sweep{animation:sweep 9s linear infinite}
 }
 
 a{color:var(--cyan);text-decoration:none}
@@ -185,28 +186,36 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
   border-bottom:1px solid var(--line);
   background:var(--bg2);
 }
-/* The room photo rides its own layer so it can drift; the grid floor sits over it. */
+/* The backdrop is drawn, not photographed: the face of a Trinitron (aperture-grille stripes, the tube's
+   vignette, SMPTE bars along the bottom) under a horizon glow, pixel stars and a slow scanline sweep.
+   Everything lives inside .heroimg's own stacking context, so nothing can ride over the wordmark. */
 .hero .heroimg{
-  position:absolute;inset:0;z-index:0;
+  position:absolute;inset:0;z-index:0;overflow:hidden;
   background:
-    radial-gradient(ellipse 70% 55% at 50% 0%,rgba(255,138,0,.12),transparent 62%),
-    linear-gradient(180deg,rgba(10,10,18,.34),rgba(10,10,18,.10) 40%,rgba(14,14,26,.80)),
-    url("hero-bg.webp") center 30%/cover no-repeat;
-  transform:scale(1.06);transform-origin:60% 40%;
+    radial-gradient(ellipse 90% 45% at 50% 100%,rgba(255,138,0,.20),rgba(122,60,255,.10) 45%,transparent 72%),
+    radial-gradient(ellipse 55% 50% at 50% 42%,rgba(94,233,255,.10),transparent 70%),
+    radial-gradient(ellipse 120% 100% at 50% 50%,#101024 0%,#0b0b16 70%,#050509 100%);
 }
-@keyframes kenburns{
-  from{transform:scale(1.06) translate(0,0)}
-  to{transform:scale(1.14) translate(-1.5%,-1.2%)}
-}
+.hero .heroimg::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,60,60,.07) 0 1px,rgba(60,255,90,.07) 1px 2px,rgba(80,120,255,.07) 2px 3px,transparent 3px 4px)}
+.hero .heroimg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 100% 100% at 50% 50%,transparent 60%,rgba(0,0,0,.55) 100%)}
+.hero .heroimg i{position:absolute;width:2px;height:2px;background:var(--cyan);opacity:.4;z-index:1}
+.hero .sweep{position:absolute;left:0;right:0;height:90px;top:-90px;background:linear-gradient(180deg,transparent,rgba(94,233,255,.08),transparent);z-index:1}
+.hero .horizon{position:absolute;left:0;right:0;bottom:46%;height:2px;background:linear-gradient(90deg,transparent,var(--fire2) 30%,var(--fire3) 50%,var(--fire2) 70%,transparent);opacity:.7;filter:blur(1px);box-shadow:0 0 24px 4px rgba(255,138,0,.35);z-index:1}
+.hero .bars{position:absolute;left:0;right:0;bottom:0;height:10px;display:flex;opacity:.55;z-index:2}
+.hero .bars b{flex:1}
+.hero .bars b:nth-child(1){background:#c0c0c0}.hero .bars b:nth-child(2){background:#c0c000}.hero .bars b:nth-child(3){background:#00c0c0}.hero .bars b:nth-child(4){background:#00c000}.hero .bars b:nth-child(5){background:#c000c0}.hero .bars b:nth-child(6){background:#c00000}.hero .bars b:nth-child(7){background:#0000c0}
+.hero .dmark{position:absolute;right:16px;bottom:18px;font-family:var(--pixel);font-size:.5rem;color:var(--cyan);opacity:.45;letter-spacing:.12em;z-index:2}
+@keyframes twinkle{50%{opacity:.12}}
+@keyframes sweep{to{top:110%}}
 .hero::before{z-index:1}
 .hero .inner{z-index:2}
 /* neon grid floor */
 .hero::before{
   content:"";position:absolute;left:-25%;right:-25%;bottom:0;height:46%;
   background:
-    linear-gradient(transparent, rgba(94,233,255,.09)),
-    repeating-linear-gradient(90deg,rgba(94,233,255,.22) 0 1px,transparent 1px 70px),
-    repeating-linear-gradient(0deg,rgba(94,233,255,.22) 0 1px,transparent 1px 34px);
+    linear-gradient(transparent, rgba(94,233,255,.07)),
+    repeating-linear-gradient(90deg,rgba(94,233,255,.3) 0 1px,transparent 1px 70px),
+    repeating-linear-gradient(0deg,rgba(94,233,255,.3) 0 1px,transparent 1px 34px);
   transform:perspective(320px) rotateX(58deg);
   transform-origin:bottom center;
   mask-image:linear-gradient(transparent,#000 35%);
