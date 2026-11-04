@@ -96,6 +96,21 @@ nav.main a{
   color:var(--dim);padding:.55rem .7rem;border-radius:6px;white-space:nowrap;
 }
 nav.main a:hover{color:var(--cyan);background:var(--panel);text-decoration:none}
+/* SMPTE bars over the nav: the seven 75% bars ride the seven middle menu words (Home and About go bare).
+   Desktop only. nth-of-type, because hidden .ng group labels sit between the links for the phone menu;
+   the Collection button uses ::before since its ::after is the chevron. */
+@media(min-width:761px){
+  nav.main>a,nav.main .collbtn{position:relative;isolation:isolate}
+  nav.main .collbtn::before,nav.main>a:nth-of-type(n+2):nth-of-type(-n+7)::after{content:"";position:absolute;inset:0;border-radius:6px;opacity:.2;pointer-events:none;z-index:1;background:var(--smpte)}
+  nav.main>a.here::after{opacity:.1}
+  nav.main .collbtn{--smpte:#c0c0c0}
+  nav.main>a:nth-of-type(2){--smpte:#c0c000}
+  nav.main>a:nth-of-type(3){--smpte:#00c0c0}
+  nav.main>a:nth-of-type(4){--smpte:#00c000}
+  nav.main>a:nth-of-type(5){--smpte:#c000c0}
+  nav.main>a:nth-of-type(6){--smpte:#c00000}
+  nav.main>a:nth-of-type(7){--smpte:#0000c0}
+}
 nav.main a.here{color:var(--fire3);background:var(--panel)}
 
 /* ── Layout ───────────────────────────────────── */
@@ -187,7 +202,7 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
   background:var(--bg2);
 }
 /* The backdrop is drawn, not photographed: the face of a Trinitron (aperture-grille stripes, the tube's
-   vignette, SMPTE bars along the bottom) under a horizon glow, pixel stars and a slow scanline sweep.
+   vignette; the SMPTE bars sit over the nav words instead, see .smpte) under a horizon glow, pixel stars and a slow scanline sweep.
    Everything lives inside .heroimg's own stacking context, so nothing can ride over the wordmark. */
 .hero .heroimg{
   position:absolute;inset:0;z-index:0;overflow:hidden;
@@ -201,10 +216,6 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
 .hero .heroimg i{position:absolute;width:2px;height:2px;background:var(--cyan);opacity:.4;z-index:1}
 .hero .sweep{position:absolute;left:0;right:0;height:90px;top:-90px;background:linear-gradient(180deg,transparent,rgba(94,233,255,.08),transparent);z-index:1}
 .hero .horizon{position:absolute;left:0;right:0;bottom:46%;height:2px;background:linear-gradient(90deg,transparent,var(--fire2) 30%,var(--fire3) 50%,var(--fire2) 70%,transparent);opacity:.7;filter:blur(1px);box-shadow:0 0 24px 4px rgba(255,138,0,.35);z-index:1}
-.hero .bars{position:absolute;left:0;right:0;bottom:0;height:10px;display:flex;opacity:.55;z-index:2}
-.hero .bars b{flex:1}
-.hero .bars b:nth-child(1){background:#c0c0c0}.hero .bars b:nth-child(2){background:#c0c000}.hero .bars b:nth-child(3){background:#00c0c0}.hero .bars b:nth-child(4){background:#00c000}.hero .bars b:nth-child(5){background:#c000c0}.hero .bars b:nth-child(6){background:#c00000}.hero .bars b:nth-child(7){background:#0000c0}
-.hero .dmark{position:absolute;right:16px;bottom:18px;font-family:var(--pixel);font-size:.5rem;color:var(--cyan);opacity:.45;letter-spacing:.12em;z-index:2}
 @keyframes twinkle{50%{opacity:.12}}
 @keyframes sweep{to{top:110%}}
 .hero::before{z-index:1}

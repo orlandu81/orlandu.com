@@ -28,7 +28,7 @@ def head(fn, title, og_title, desc, kicker_kind, extra_ld="", robots="index,foll
          "description": "A private arcade and Sony professional monitor collection in Orange County, California.",
          "logo": {"@type": "ImageObject", "creator": {"@type": "Organization", "name": "Orlandu's Arcade"}, "copyrightNotice": "© Orlandu's Arcade",
                   "creditText": "Orlandu's Arcade", "license": SITE + "about.html#photo-use", "acquireLicensePage": SITE + "about.html#photo-use",
-                  "url": SITE + "assets/logo-wordmark.png", "width": 1080, "height": 425},
+                  "url": SITE + "assets/logo-wordmark-v2.png", "width": 1080, "height": 425},
          "image": SITE + "media/og/og-home.jpg", "email": "orlandusarcade@gmail.com", "founder": {"@id": SITE + "#person"},
          "sameAs": ["https://www.instagram.com/orlandusarcade/", "https://www.ebay.com/usr/orlandu81",
                     "https://forums.arcade-museum.com/members/orlandu81.67452/", "https://www.arcade-projects.com/members/orlandu81.4521/"]},
@@ -75,7 +75,7 @@ def head(fn, title, og_title, desc, kicker_kind, extra_ld="", robots="index,foll
 <link rel="alternate" type="application/rss+xml" href="{SITE}api/registry?feed=rss" title="The Orlandu Registry — new entries">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/registry.css">
-<link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
+<link rel="preload" as="image" href="assets/logo-wordmark-nav-v2.webp">
 <script src="assets/site.js" defer></script>
 <script src="assets/registry.js" defer></script>
 <script type="application/ld+json">

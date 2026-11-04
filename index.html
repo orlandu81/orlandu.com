@@ -28,10 +28,10 @@
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms-full.txt" title="Full text of this site for AI assistants">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms.txt" title="Site index for AI assistants">
 <link rel="alternate" type="application/rss+xml" href="https://www.orlandu.com/feed.xml" title="What's new at Orlandu's Arcade">
-<link rel="stylesheet" href="assets/style.css?v=1003d83a">
-<link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
+<link rel="stylesheet" href="assets/style.css?v=ab3c6aa4">
+<link rel="preload" as="image" href="assets/logo-wordmark-nav-v2.webp">
 <link rel="preload" as="image" href="assets/logo-wordmark-hero-v3.webp" fetchpriority="high">
-<script src="assets/site.js?v=d029995b" defer></script>
+<script src="assets/site.js?v=1dfe7ba8" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -60,7 +60,7 @@
     "creditText": "Orlandu's Arcade",
     "license": "https://www.orlandu.com/about.html#photo-use",
     "acquireLicensePage": "https://www.orlandu.com/about.html#photo-use",
-    "url": "https://www.orlandu.com/assets/logo-wordmark.png",
+    "url": "https://www.orlandu.com/assets/logo-wordmark-v2.png",
     "width": 1080,
     "height": 425
    },
@@ -125,6 +125,49 @@
 .hero .credits.on{opacity:1}
 @keyframes coinflick{0%{filter:none}25%{filter:brightness(1.65) saturate(1.35)}55%{filter:brightness(.82)}100%{filter:none}}
 .hero.flick{animation:coinflick .3s linear}
+.hero .start{display:inline-block;margin-top:.5rem;font-family:var(--pixel);font-size:.62rem;letter-spacing:.14em;color:var(--cyan);text-decoration:none;border:1px solid var(--cyan-dim);padding:.5rem .9rem;animation:blink 1s steps(1) infinite}
+.hero .start:hover{background:var(--panel);animation:none;text-decoration:none}
+.hero .start[hidden]{display:none}
+/* The PVM readout: once per visit, like a monitor switching inputs */
+.hero .osd{position:absolute;left:18px;top:18px;z-index:3;font-family:var(--pixel);font-size:.55rem;letter-spacing:.08em;color:#4ad66d;background:rgba(5,5,9,.72);border:1px solid rgba(74,214,109,.35);padding:.45rem .6rem;opacity:0;pointer-events:none}
+.hero .osd .k{color:var(--ink);margin-right:.6rem}
+.hero.lit .osd{animation:osd 3.2s steps(1) 1}
+@keyframes osd{0%{opacity:0}20%{opacity:1}85%{opacity:1}100%{opacity:0}}
+/* DEGAUSS: a round front-panel button, bottom-left. 4.6 s event, 5 s cooldown (the LED goes amber, the icon gives way to the count). */
+.hero .degauss{position:absolute;left:16px;bottom:14px;z-index:3;width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;color:var(--dim);background:rgba(5,5,9,.6);border:1px solid var(--line);border-radius:50%;padding:0;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 1px 0 #000;transition:color .2s,border-color .2s}
+.hero .degauss svg{width:22px;height:22px;display:block}
+.hero .degauss .n{display:none;font-family:var(--pixel);font-size:.6rem;color:var(--fire2)}
+.hero .degauss i{position:absolute;right:-1px;top:-1px;width:7px;height:7px;border-radius:50%;background:#2a2a38;border:1px solid var(--bg)}
+.hero .degauss:hover{color:var(--ink);border-color:var(--cyan-dim)}
+.hero .degauss:focus-visible{outline:1px solid var(--cyan-dim);outline-offset:2px}
+.hero .degauss:disabled{cursor:default}
+.hero .degauss:disabled svg{display:none}.hero .degauss:disabled .n{display:block}
+.hero .degauss:disabled i{background:var(--fire2);box-shadow:0 0 6px var(--fire2)}
+.hero .purity{position:absolute;inset:-10%;z-index:2;pointer-events:none;opacity:0;mix-blend-mode:color;background:conic-gradient(from 90deg at 50% 50%,#ff2d00,#ffd400,#2dff5a,#5ee9ff,#7a3cff,#ff2d8a,#ff2d00)}
+.hero.dg .heroimg,.hero.dg .inner{animation:degauss 4.6s linear 1}
+.hero.dg::before{animation:degauss-floor 4.6s linear 1}
+.hero.dg .purity{animation:purity 4.6s linear 1}
+@keyframes purity{0%{opacity:0;transform:rotate(0) scale(1)}1.5%{opacity:.95;transform:rotate(-40deg) scale(1.3)}5%{opacity:.75;transform:rotate(60deg) scale(1.1)}10%{opacity:.4;transform:rotate(-25deg) scale(1.02)}18%{opacity:.18;transform:rotate(10deg)}40%{opacity:.12;transform:rotate(-6deg)}70%{opacity:.1;transform:rotate(4deg)}93%{opacity:.08;transform:rotate(-2deg)}94%,100%{opacity:0}}
+/* the coil fires in the first tenth, the picture rings down hard, a low ripple lingers, and at 94% it snaps back in one step */
+@keyframes degauss{
+  0%{transform:none;filter:none}
+  1.5%{transform:scale(1.11,.9) skewX(4deg) translateY(-1.5%);filter:hue-rotate(-110deg) saturate(3) contrast(1.5) brightness(1.7) blur(1.2px)}
+  4%{transform:scale(.92,1.08) skewX(-3.2deg) translateY(1.2%);filter:hue-rotate(130deg) saturate(2.4) contrast(1.3) brightness(1.2)}
+  7%{transform:scale(1.06,.955) skewX(2.2deg) translateY(-.7%);filter:hue-rotate(-70deg) saturate(1.9) brightness(1.1)}
+  10.5%{transform:scale(.965,1.03) skewX(-1.4deg) translateY(.4%);filter:hue-rotate(45deg) saturate(1.5)}
+  14%{transform:scale(1.02,.985) skewX(.9deg);filter:hue-rotate(-24deg) saturate(1.25)}
+  18%{transform:scale(.988,1.01) skewX(-.6deg);filter:hue-rotate(12deg) saturate(1.15)}
+  24%{transform:scale(1.008,.994) skewX(.45deg) translateY(-.15%);filter:hue-rotate(-8deg) saturate(1.1)}
+  31%{transform:scale(.994,1.005) skewX(-.4deg) translateY(.15%);filter:hue-rotate(6deg) saturate(1.08)}
+  39%{transform:scale(1.006,.996) skewX(.35deg) translateY(-.12%);filter:hue-rotate(-5deg) saturate(1.06)}
+  48%{transform:scale(.995,1.004) skewX(-.3deg) translateY(.1%);filter:hue-rotate(4deg)}
+  58%{transform:scale(1.005,.997) skewX(.28deg) translateY(-.1%);filter:hue-rotate(-3deg)}
+  69%{transform:scale(.996,1.003) skewX(-.25deg) translateY(.08%);filter:hue-rotate(3deg)}
+  81%{transform:scale(1.004,.998) skewX(.22deg) translateY(-.08%);filter:hue-rotate(-2deg)}
+  93.9%{transform:scale(.997,1.002) skewX(-.2deg) translateY(.06%);filter:hue-rotate(2deg)}
+  94%,100%{transform:none;filter:none}}
+@keyframes degauss-floor{1.5%{opacity:.1;transform:perspective(320px) rotateX(58deg) scaleY(1.3)}5%{opacity:1}12%{transform:perspective(320px) rotateX(58deg) scaleY(1.05)}30%{transform:perspective(320px) rotateX(58deg) scaleY(1.01)}93.9%{transform:perspective(320px) rotateX(58deg) scaleY(1.01)}94%{transform:perspective(320px) rotateX(58deg)}}
+@media(prefers-reduced-motion:reduce){.hero.dg .heroimg,.hero.dg .inner,.hero.dg::before,.hero.dg .purity{animation:none}.hero .start{animation:none}}
 </style>
 </head>
 <body>
@@ -132,11 +175,14 @@
 <header class="site" data-page="index"></header>
 
 <div class="hero" role="region" aria-label="Welcome">
-  <div class="heroimg" aria-hidden="true"><div class="sweep"></div><div class="horizon"></div><i style="left:0%;top:0%;--d:0s"></i><i style="left:37%;top:53%;--d:7s"></i><i style="left:74%;top:48%;--d:5s"></i><i style="left:11%;top:43%;--d:3s"></i><i style="left:48%;top:38%;--d:1s"></i><i style="left:85%;top:33%;--d:8s"></i><i style="left:22%;top:28%;--d:6s"></i><i style="left:59%;top:23%;--d:4s"></i><i style="left:96%;top:18%;--d:2s"></i><i style="left:33%;top:13%;--d:0s"></i><i style="left:70%;top:8%;--d:7s"></i><i style="left:7%;top:3%;--d:5s"></i><i style="left:44%;top:56%;--d:3s"></i><i style="left:81%;top:51%;--d:1s"></i><i style="left:18%;top:46%;--d:8s"></i><i style="left:55%;top:41%;--d:6s"></i><i style="left:92%;top:36%;--d:4s"></i><i style="left:29%;top:31%;--d:2s"></i><i style="left:66%;top:26%;--d:0s"></i><i style="left:3%;top:21%;--d:7s"></i><i style="left:40%;top:16%;--d:5s"></i><i style="left:77%;top:11%;--d:3s"></i><i style="left:14%;top:6%;--d:1s"></i><i style="left:51%;top:1%;--d:8s"></i><i style="left:88%;top:54%;--d:6s"></i><i style="left:25%;top:49%;--d:4s"></i><i style="left:62%;top:44%;--d:2s"></i><i style="left:99%;top:39%;--d:0s"></i><i style="left:36%;top:34%;--d:7s"></i><i style="left:73%;top:29%;--d:5s"></i><i style="left:10%;top:24%;--d:3s"></i><i style="left:47%;top:19%;--d:1s"></i><i style="left:84%;top:14%;--d:8s"></i><i style="left:21%;top:9%;--d:6s"></i><i style="left:58%;top:4%;--d:4s"></i><i style="left:95%;top:57%;--d:2s"></i><i style="left:32%;top:52%;--d:0s"></i><i style="left:69%;top:47%;--d:7s"></i><i style="left:6%;top:42%;--d:5s"></i><i style="left:43%;top:37%;--d:3s"></i><div class="bars"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div><div class="dmark">SMPTE &middot; 75% BARS &middot; 15.734 kHz</div></div>
+  <div class="heroimg" aria-hidden="true"><div class="sweep"></div><div class="horizon"></div><i style="left:0%;top:0%;--d:0s"></i><i style="left:37%;top:53%;--d:7s"></i><i style="left:74%;top:48%;--d:5s"></i><i style="left:11%;top:43%;--d:3s"></i><i style="left:48%;top:38%;--d:1s"></i><i style="left:85%;top:33%;--d:8s"></i><i style="left:22%;top:28%;--d:6s"></i><i style="left:59%;top:23%;--d:4s"></i><i style="left:96%;top:18%;--d:2s"></i><i style="left:33%;top:13%;--d:0s"></i><i style="left:70%;top:8%;--d:7s"></i><i style="left:7%;top:3%;--d:5s"></i><i style="left:44%;top:56%;--d:3s"></i><i style="left:81%;top:51%;--d:1s"></i><i style="left:18%;top:46%;--d:8s"></i><i style="left:55%;top:41%;--d:6s"></i><i style="left:92%;top:36%;--d:4s"></i><i style="left:29%;top:31%;--d:2s"></i><i style="left:66%;top:26%;--d:0s"></i><i style="left:3%;top:21%;--d:7s"></i><i style="left:40%;top:16%;--d:5s"></i><i style="left:77%;top:11%;--d:3s"></i><i style="left:14%;top:6%;--d:1s"></i><i style="left:51%;top:1%;--d:8s"></i><i style="left:88%;top:54%;--d:6s"></i><i style="left:25%;top:49%;--d:4s"></i><i style="left:62%;top:44%;--d:2s"></i><i style="left:99%;top:39%;--d:0s"></i><i style="left:36%;top:34%;--d:7s"></i><i style="left:73%;top:29%;--d:5s"></i><i style="left:10%;top:24%;--d:3s"></i><i style="left:47%;top:19%;--d:1s"></i><i style="left:84%;top:14%;--d:8s"></i><i style="left:21%;top:9%;--d:6s"></i><i style="left:58%;top:4%;--d:4s"></i><i style="left:95%;top:57%;--d:2s"></i><i style="left:32%;top:52%;--d:0s"></i><i style="left:69%;top:47%;--d:7s"></i><i style="left:6%;top:42%;--d:5s"></i><i style="left:43%;top:37%;--d:3s"></i></div>
+  <div class="osd" aria-hidden="true"><span class="k">INPUT A</span> RGB &nbsp;15.734 kHz / 60.0 Hz</div>
+  <div class="purity" aria-hidden="true"></div>
+  <button type="button" class="degauss" aria-label="Degauss" title="Degauss"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4v8a6 6 0 0 0 12 0V4"/><path d="M10 4v8a2 2 0 0 0 4 0V4"/><path d="M6 4h4M14 4h4"/><path d="M4 21 21 4"/></svg><span class="n"></span><i></i></button>
   <div class="inner">
     <h1 class="wordmark-h1"><img class="wordmark" src="assets/logo-wordmark-hero-v3.webp" alt="Orlandu's Arcade — private arcade and Sony professional monitor collection" width="1080" height="425" fetchpriority="high" decoding="async"></h1>
     <p class="tag">Private arcade · Retro games · Sony professional monitors<br>Orange County, California</p>
-    <p class="coin">— INSERT COIN TO CONTINUE —</p>
+    <p class="coin" tabindex="0" role="button" aria-label="Insert coin">— INSERT COIN TO CONTINUE —</p>
   </div>
 </div>
 
@@ -380,12 +426,28 @@ document.addEventListener('DOMContentLoaded', function(){
   if(!coin||!hero)return;
   var out=document.createElement("p");out.className="credits";out.setAttribute("aria-live","polite");
   coin.parentNode.insertBefore(out,coin.nextSibling);
+  var GAMES=["donkey-kong","mario-bros","vs-unisystem","red-tent","mini-cute","big-blue","indiana-jones","tna","ghostbusters","rick-and-morty"];
+  var st=document.createElement("a");st.className="start";st.hidden=true;st.innerHTML="&#9654; PRESS START";
+  st.href=GAMES[Math.floor(Math.random()*GAMES.length)]+".html";
+  out.parentNode.insertBefore(st,out.nextSibling);
   var n=0;
-  coin.addEventListener("click",function(){
+  function insert(){
     n++;
     out.textContent=n<10?"CREDIT "+n:"FREE PLAY \u2014 CREDITS \u221E";
-    out.classList.add("on");
+    out.classList.add("on");st.hidden=false;
     hero.classList.remove("flick");void hero.offsetWidth;hero.classList.add("flick");
+  }
+  coin.addEventListener("click",insert);
+  coin.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();insert()}});
+  /* PVM readout, once per browser session */
+  try{if(!sessionStorage.getItem("orlandu-osd")){sessionStorage.setItem("orlandu-osd","1");hero.classList.add("lit")}}catch(e){hero.classList.add("lit")}
+  /* DEGAUSS: fire, then a 5 s cooldown like the real coil */
+  var b=hero.querySelector(".degauss"),left=0,tm=null,rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(b)b.addEventListener("click",function(){
+    if(left)return;
+    if(!rm){hero.classList.remove("dg");void hero.offsetWidth;hero.classList.add("dg")}
+    left=5;b.disabled=true;b.querySelector(".n").textContent=left;
+    tm=setInterval(function(){left--;if(left<=0){clearInterval(tm);b.disabled=false;hero.classList.remove("dg")}else b.querySelector(".n").textContent=left},1000);
   });
 })();
 </script>

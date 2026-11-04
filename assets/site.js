@@ -96,7 +96,7 @@
         '<span>' + label + '</span></a>';
     header.innerHTML =
       '<div class="navwrap">' +
-        '<a class="navlogo" href="/"><img src="assets/logo-wordmark-nav.webp" alt="Orlandu’s Arcade" width="335" height="132" fetchpriority="high" decoding="async"></a>' +
+        '<a class="navlogo" href="/"><img src="assets/logo-wordmark-nav-v2.webp" alt="Orlandu’s Arcade" width="335" height="132" fetchpriority="high" decoding="async"></a>' +
         '<button class="burger" aria-label="Menu" aria-expanded="false">☰ MENU</button>' +
         '<nav class="main">' +
           link(NAV[0]) +

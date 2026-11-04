@@ -122,7 +122,7 @@ page = f"""<!DOCTYPE html>
 <meta name="twitter:image" content="https://www.orlandu.com/media/og/og-games.jpg">
 <link rel="canonical" href="https://www.orlandu.com/timeline.html">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="preload" as="image" href="assets/logo-wordmark-nav.webp">
+<link rel="preload" as="image" href="assets/logo-wordmark-nav-v2.webp">
 <style>main.hub{{--acc:#ffd400}}</style>
 <script src="assets/site.js" defer></script>
 <style>

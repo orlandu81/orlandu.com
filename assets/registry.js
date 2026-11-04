@@ -70,7 +70,7 @@
     try { await Promise.all([document.fonts.load("800 80px Orbitron"), document.fonts.load("600 30px Orbitron"), document.fonts.load("500 40px 'Barlow Condensed'"), document.fonts.load("400 34px Rajdhani"), document.fonts.load("600 34px Rajdhani")]); } catch (err) {}
     const DISP = "Orbitron, 'Orbitron Fallback', Arial, sans-serif", COND_F = "'Barlow Condensed', 'Barlow Condensed Fallback', 'Arial Narrow', sans-serif", BODY = "Rajdhani, 'Rajdhani Fallback', Arial, sans-serif";
     let photo = null; if (e.photo_url) { try { photo = await loadImg(e.photo_url); } catch (err) { photo = null; } }
-    let mark = null; try { mark = await loadImg("assets/logo-wordmark-nav.webp"); } catch (err) {}
+    let mark = null; try { mark = await loadImg("assets/logo-wordmark-nav-v2.webp"); } catch (err) {}
     // backdrop: the site's panel colours with the faint grid floor
     const g = x.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#181829"); g.addColorStop(1, "#0a0a12"); x.fillStyle = g; x.fillRect(0, 0, W, H);
     x.strokeStyle = "rgba(94,233,255,.07)"; x.lineWidth = 1; for (let i = 0; i <= W; i += 60) { x.beginPath(); x.moveTo(i, 0); x.lineTo(i, H); x.stroke(); } for (let i = 0; i <= H; i += 60) { x.beginPath(); x.moveTo(0, i); x.lineTo(W, i); x.stroke(); }
