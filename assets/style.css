@@ -210,6 +210,10 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
   .hero .heroimg{background:radial-gradient(ellipse 110% 30% at 50% 100%,rgba(255,138,0,.20),rgba(122,60,255,.10) 45%,transparent 72%),radial-gradient(ellipse 55% 50% at 50% 42%,rgba(94,233,255,.10),transparent 70%),radial-gradient(ellipse 120% 100% at 50% 50%,#101024 0%,#0b0b16 70%,#050509 100%)}
   .hero .dmark{display:none}
 }
+/* The horizon line runs through the vertical middle of the wordmark, behind it: the .inner padding is 3.5rem and the
+   wordmark is min(680px, 92%) wide at 1080:425, so its center is 3.5rem + 0.1968 * width. (.inner is 92% of the hero's inner
+   width, which is the viewport minus the 1rem side padding.) */
+.hero .horizon{position:absolute;left:0;right:0;top:calc(3.5rem + 0.1968 * min(680px, 0.92 * (100vw - 2rem)));height:2px;background:linear-gradient(90deg,transparent,var(--fire2) 30%,var(--fire3) 50%,var(--fire2) 70%,transparent);opacity:.7;filter:blur(1px);box-shadow:0 0 24px 4px rgba(255,138,0,.35);z-index:1}
 @keyframes twinkle{50%{opacity:.12}}
 @keyframes sweep{to{top:110%}}
 .hero::before{z-index:1}
