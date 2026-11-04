@@ -200,7 +200,6 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
 .hero .heroimg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 100% 100% at 50% 50%,transparent 60%,rgba(0,0,0,.55) 100%)}
 .hero .heroimg i{position:absolute;width:2px;height:2px;background:var(--cyan);opacity:.4;z-index:1}
 .hero .sweep{position:absolute;left:0;right:0;height:90px;top:-90px;background:linear-gradient(180deg,transparent,rgba(94,233,255,.08),transparent);z-index:1}
-.hero .horizon{position:absolute;left:0;right:0;bottom:46%;height:2px;background:linear-gradient(90deg,transparent,var(--fire2) 30%,var(--fire3) 50%,var(--fire2) 70%,transparent);opacity:.7;filter:blur(1px);box-shadow:0 0 24px 4px rgba(255,138,0,.35);z-index:1}
 .hero .bars{position:absolute;left:0;right:0;bottom:0;height:10px;display:flex;opacity:.55;z-index:2}
 .hero .bars b{flex:1}
 .hero .bars b:nth-child(1){background:#c0c0c0}.hero .bars b:nth-child(2){background:#c0c000}.hero .bars b:nth-child(3){background:#00c0c0}.hero .bars b:nth-child(4){background:#00c000}.hero .bars b:nth-child(5){background:#c000c0}.hero .bars b:nth-child(6){background:#c00000}.hero .bars b:nth-child(7){background:#0000c0}
@@ -208,7 +207,6 @@ h2.sec small{color:var(--dim);font-family:var(--cond);letter-spacing:.05em;text-
 /* Phones: the hero is tall there (the tagline wraps), so a 46 % floor would put the horizon through the words. Pin both lower. */
 @media(max-width:600px){
   .hero::before{height:17%}
-  .hero .horizon{bottom:17%}
   .hero .heroimg{background:radial-gradient(ellipse 110% 30% at 50% 100%,rgba(255,138,0,.20),rgba(122,60,255,.10) 45%,transparent 72%),radial-gradient(ellipse 55% 50% at 50% 42%,rgba(94,233,255,.10),transparent 70%),radial-gradient(ellipse 120% 100% at 50% 50%,#101024 0%,#0b0b16 70%,#050509 100%)}
   .hero .dmark{display:none}
 }
