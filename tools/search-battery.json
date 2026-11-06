@@ -185,7 +185,7 @@
     {"q": "buy", "cat": "intents", "target": ["forsale", "about"]},
     {"q": "ebay", "cat": "intents", "target": ["forsale", "about"]},
     {"q": "what's for sale", "cat": "intents", "target": "forsale"},
-    {"q": "baseball stars", "cat": "intents", "target": ["forsale", "wanted"]},
+    {"q": "baseball stars", "cat": "intents", "target": ["wanted", "playchoice-10"]},
     {"q": "captain skyhawk", "cat": "intents", "target": ["forsale", "signage"]},
     {"q": "wanted", "cat": "intents", "target": "wanted"},
     {"q": "hunt list", "cat": "intents", "target": "wanted"},
