@@ -8,6 +8,16 @@
  "language": "en-US",
  "items": [
   {
+   "id": "https://www.orlandu.com/ocarina-of-time-switch-2.html",
+   "url": "https://www.orlandu.com/ocarina-of-time-switch-2.html",
+   "title": "Ocarina of Time on Switch 2",
+   "summary": "A review and a returning player’s guide to the remake — what’s identical to the N64 game, what moved, what’s new, and the gates that stall a veteran. Read the story →",
+   "tags": [
+    "New story"
+   ],
+   "date_published": "2026-11-08T17:00:00Z"
+  },
+  {
    "id": "https://www.orlandu.com/consoles.html",
    "url": "https://www.orlandu.com/consoles.html",
    "title": "The last three consoles, on camera",
@@ -84,16 +94,6 @@
    "summary": "PVM-20L5, BVM-D14H5U, BKM-129X — line, size, tube letter, the digit that means “needs a control unit,” and the market suffix, from Sony’s own manuals, with each family drawn as a lineage strip. Decode a badge →",
    "tags": [
     "New reference"
-   ],
-   "date_published": "2026-10-22T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/monitors.html#scale",
-   "url": "https://www.orlandu.com/monitors.html#scale",
-   "title": "Compare two monitors, and see them to scale",
-   "summary": "Pick any two models and the specs that differ light up; above the table, all eight are drawn to Sony’s published dimensions, front and side, with an NES for size. The fleet, to scale →",
-   "tags": [
-    "New on the fleet page"
    ],
    "date_published": "2026-10-22T17:00:00Z"
   },

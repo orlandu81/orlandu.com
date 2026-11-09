@@ -26,6 +26,7 @@ HINTS = {
     "forsale.html": "buy ebay listings",
     "index.html": "degauss button color bars smpte insert coin press start splash",
     "glossary.html": "degauss color bars smpte bars",
+    "ocarina-of-time-switch-2.html": "zelda oot ocarina remake switch 2 nintendo review guide n64 differences echo gem",
 }
 KIND = {
     "index.html": "Home", "games.html": "Coin-Op", "monitors.html": "Monitors", "consoles.html": "Consoles",

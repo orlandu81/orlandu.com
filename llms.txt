@@ -8,7 +8,7 @@
 
 ## For agents
 
-- [Full text in one file](https://www.orlandu.com/llms-full.txt): every page as Markdown, about 86,000 words.
+- [Full text in one file](https://www.orlandu.com/llms-full.txt): every page as Markdown, about 89,000 words.
 - [MCP server](https://www.orlandu.com/api/mcp): read-only tools — search the site, read a page, Sony monitor specs, the PlayChoice-10 library, BKM cards, console video out, the console-to-monitor planner, and registry_census (the live Sony BVM/PVM survivor census). How to connect: https://www.orlandu.com/mcp.html
 - [What's new](https://www.orlandu.com/feed.xml): RSS of new pages, stories, tools and arrivals (also https://www.orlandu.com/feed.json); new registry entries at https://www.orlandu.com/api/registry?feed=rss
 - [Open datasets, CC BY 4.0](https://www.orlandu.com/mcp.html#the-datasets): sony-monitor-specs, playchoice-10-library, console-video-out, bkm-cards as JSON and CSV, connect (the Will-it-connect rules) as JSON under https://www.orlandu.com/data/; the Orlandu Registry entries (masked serials) live at https://www.orlandu.com/api/registry?export=json and ?export=csv
@@ -56,6 +56,7 @@
 - [Ancestor and Descendant](https://www.orlandu.com/ams-3-vs-ams-100.html): Sony's AMS-3 and AMS-100 audio monitors compared.
 - [Trinitron Fleet, Vol. 1](https://www.orlandu.com/trinitron-fleet-vol1.html): a field guide to the Sony pro monitors here.
 - [The Signal Chain](https://www.orlandu.com/signal-chain.html): how the consoles reach the glass — SCART switchers, BNC runs, a distribution amp, and no scaler.
+- [Ocarina of Time on Switch 2: A Review and Returning Player's Guide](https://www.orlandu.com/ocarina-of-time-switch-2.html): what the remake keeps from the N64 game, what moved, what's new, the rebalanced economy and the gates that stall a veteran — from one full playthrough.
 - [How to Connect a Retro Console to a Sony PVM or BVM](https://www.orlandu.com/connect-console-to-pvm.html): the RGB cable, the switcher, the SCART to 4 BNC breakout, sync, termination and audio — step by step, no scaler.
 - [PVM vs. BVM](https://www.orlandu.com/pvm-vs-bvm.html): how Sony's professional monitor lines differ.
 - [Operate a BKM-10R](https://www.orlandu.com/bkm-10r.html): an interactive Sony BKM-10R Monitor Control Unit driving the BVM-20E1U — every button, the knobs, and the menu tree as Sony prints it (100 CONTROL PRESET ADJ to 900 STATUS), each quoted from Sony's operation manuals.
