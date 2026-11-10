@@ -2374,6 +2374,24 @@ A Dynamo is a big empty box with good bones, and everything that makes it work i
 
 More photos of Big Blue in the gallery → (https://www.orlandu.com/gallery.html#tag=big-blue)
 
+## Quick answers
+
+### What cabinet is Big Blue?
+
+A 1992 Dynamo Gen 1 showcase cabinet — the big American cab Dynamo built in Texas to take a JAMMA board and a beating. It started life as a Street Fighter II: Champion Edition machine and now wears Capcom blue, a gold Capcom decal, a granite control panel with two six-button layouts and a Marvel vs. Capcom marquee.
+
+### What board runs in it?
+
+A Darksoft CPS-2 multi in a Jasen's Customs case, not a single-game board — the whole CPS-2 library from a menu with no suicide battery to fear. Marvel vs. Capcom: Clash of Super Heroes is usually on screen; Street Fighter Alpha, Vampire Savior and Progear are a reboot away. Free play, no coins.
+
+### What is Q-Sound?
+
+Capcom's positional audio process on CPS-2, which widens a two-speaker stage until effects seem to come from outside the cabinet. Here it runs through a CPB-001A Q-Sound amplifier whose failing RCA jack was reflowed, then rewired with screw-terminal RCA connections and a Y adapter.
+
+### What work has been done to it?
+
+Power supply recapped and voltages trimmed to spec, Q-Sound amp repaired and rewired, Cherry microswitches in both panels, a fresh control panel overlay, Capcom side art installed, a custom monitor shroud, new monitor glass, and the monitor serviced in 2024.
+
 Sources & further reading: Museum of the Game — Marvel vs. Capcom (https://www.arcade-museum.com/Videogame/marvel-vs-capcom-clash-of-super-heroes)
 
 Big Blue anchors the end of the row, next to the VS. UniSystem, Donkey Kong (https://www.orlandu.com/donkey-kong.html), and the Mario Bros. widebody. See the whole lineup → (https://www.orlandu.com/games.html)
@@ -3186,7 +3204,7 @@ Read the issue →
 
 ---
 
-# Sony AMS-100: A Technical Monograph
+# Sony AMS-100 Audio Monitor Speaker Monograph
 
 URL: https://www.orlandu.com/ams-100-monograph.html
 
@@ -3198,6 +3216,20 @@ Monograph
 
 A technical monograph. The AMS-100 has no written history — no retrospectives, no teardowns, no collector references. This is the primary literature: the frame, its option-board system, a registry of documented units, the service internals, and what the market record actually contains.
  The typeset edition — seven sections, six appendices, complete source and evidence record.
+
+## Quick answers
+
+### What is the Sony AMS-100?
+
+A 1RU rack-mount audio confidence monitor from Sony's professional video line, made in Japan: stereo amplification with small internal speakers (2 W + 2 W), a headphone output and a balanced monitor output, built to let an engineer hear the audio riding with a video signal at a master control, edit or QC position. It is not a hi-fi loudspeaker.
+
+### What do the BKAM option boards do?
+
+They decide what the frame listens to. Two slots, A and B, take BKAM-series boards: the BKAM-101 (analog), BKAM-102 (AES/EBU digital) and BKAM-103 (embedded-SDI de-embedder) are documented in Sony's 1999 manuals; a later HD-SDI board rests on a single photograph. A BKAM-103 is inert in an analog-only chain.
+
+### How many AMS-100 units are documented?
+
+Seven frames owned and documented by the author form the registry in Section 4 (a record of documented units, not a current inventory), plus one externally documented frame kept behind a scope wall in §4.5. As of the July 2026 literature sweep, no other written documentation of the AMS-100 existed.
 
 ## Contents
 
