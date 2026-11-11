@@ -397,6 +397,19 @@ consistent" — a new board, topper or card gets the same treatment.
   columns in site.js (Collection · Reading · Tools & reference · The arcade; `build-static-footer.py` no longer maps
   NAV). about.html intro is `.aboutintro` (text left; mascot + room-spin video right); monitors.html's magazine promo
   is `a.card.linked.magband`. Reading Room cards on the home page carry their story thumbs.
+- **Review ten (2026-11-10), ten polish fixes — all ten approved.** One CSS block at the end of style.css ("Review
+  ten"). Hooks: a grid with a FIXED card count adds `n2`/`n3`/`n5` beside `c2`/`c3` so no row ends with a hole (games
+  `#gameroom` uses `quad`; consoles Nintendo/Sega `n3`; wanted marquees/BKM `n5`, Red Tent `n3`; projects photo rows
+  `n3` + `align-items:start`; about FAQ `n2`; the registry builder adds `n3` when the related row divides by three) —
+  when a count changes, change the class. "More stories" is a growing list and is left alone. Home Latest: the first
+  card spans both columns (nine = lead + 4×2). `--measure:72ch` caps unclassed running text in `main.hub section`
+  and `.signshow p`. Page-head band: the grid floor has its own strip under the text; ends fade from 1241 px.
+  `main.hub .sub` / `.wantgroup` take the page's `--acc` (home is not a hub and stays orange). For Sale buttons pin
+  to the card bottom (`!important` beats the inline margin). **Callouts:** two back-to-back thoughts share one
+  `<div class="note"><p>…</p><p>…</p></div>`; sources, open-data lines and table caveats are `p.note.fine` (unboxed).
+  site.js glues a trailing "→" to its last word at runtime. Phones: footer is two columns and hides the top link
+  row; an `h2.sec small` note drops under its title. Home Stories card = `step-stories-v2` (the Mini Cute triptych,
+  copied from `story-mini-cute`) so it no longer repeats the Monograph card's AMS-100 stack.
 - **Contact form:** `api/contact.js` relays through Resend from `onboarding@resend.dev` to orlandusarcade@gmail.com;
   forms `form.cform` on about.html#write and wanted.html#have-one ("I have one →" links prefill the subject); honeypot
   `site`; photos ≤ 3 MB after an in-browser downscale; the mailto stays as the fallback.

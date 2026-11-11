@@ -964,3 +964,59 @@ main.hub .card.sale > figure.pf img{position:absolute;inset:0;width:100%;height:
 .magband .mb h3 small{display:block;font-family:var(--cond);font-size:1rem;letter-spacing:.14em;color:var(--dim);margin-top:.25rem}
 .magband .mb p{margin:0 0 .6rem}
 @media(max-width:700px){.card.linked.magband{grid-template-columns:1fr}.magband figure{min-height:170px}}
+
+/* ══ Review ten (2026-11-10): ten polish fixes — one block, like Review nine ══ */
+:root{--measure:72ch}
+
+/* 1. A block with a fixed number of cards pins its columns, so no row ends with a hole.
+      .n2/.n3/.n5 sit beside c2/c3 (which stay as the narrow-screen fallback). */
+@media(min-width:900px){.grid.n2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1100px){.grid.n5{grid-template-columns:repeat(5,minmax(0,1fr))}}
+/* Home Latest holds nine: the newest leads full width over a 4×2 */
+@media(min-width:761px){
+  .ledger .card:first-child{grid-column:1/-1}
+  .ledger .card:first-child h3{font-size:1.12rem}
+  .ledger .card:first-child p{max-width:var(--measure)}
+}
+
+/* 2. One reading width for running text on the hubs (the lede's own edge) */
+main.hub section>p:not([class]){max-width:var(--measure)}
+
+/* 3. Page-head band: the grid floor gets its own strip under the text, and the band's ends fade out */
+.pagehead{padding-bottom:3.7rem}
+.pagehead::after{height:6.2rem}
+@media(max-width:560px){.pagehead{padding-bottom:2.9rem}.pagehead::after{height:5rem}}
+@media(min-width:1241px){.pagehead{-webkit-mask-image:linear-gradient(90deg,transparent,#000 1.2rem,#000 calc(100% - 1.2rem),transparent);mask-image:linear-gradient(90deg,transparent,#000 1.2rem,#000 calc(100% - 1.2rem),transparent)}}
+@media(min-width:1340px){.pagehead{margin-inline:-4.2rem;padding-inline:4.2rem;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4.2rem,#000 calc(100% - 4.2rem),transparent);mask-image:linear-gradient(90deg,transparent,#000 4.2rem,#000 calc(100% - 4.2rem),transparent)}}
+@media print{.pagehead{-webkit-mask-image:none;mask-image:none;margin-inline:0;padding:0}}
+
+/* 4. Small labels on a hub take that hub's accent (one color per page) */
+main.hub .sub,main.hub .wantgroup{color:var(--acc)}
+
+/* 5. For Sale: the listing button sits on the card's bottom edge, so a row of buttons lines up
+      (!important beats the inline margin the cards are copied with) */
+main.hub .card.sale{display:flex;flex-direction:column}
+main.hub .card.sale>.badge{align-self:flex-start}
+main.hub .card.sale>p:last-child{margin-top:auto!important;padding-top:.9rem}
+
+/* 6. Callouts: one box can hold two thoughts; sources and fine print go unboxed (.note.fine) */
+.note>p{margin:0}
+.note>p+p{margin-top:.55rem}
+.note.fine{background:none;border-left:0;border-radius:0;padding:0;font-size:.93rem;margin:.7rem 0}
+.note.fine+.note.fine{margin-top:-.2rem}
+
+/* 7. Latest badges stay on one line (the arrow half of this fix is in site.js) */
+.ledger .card{grid-template-columns:7.6rem minmax(0,1fr)}
+.ledger .card .badge{white-space:nowrap}
+.ledger .card{grid-template-rows:auto 1fr}
+@media(max-width:400px){.ledger .card{grid-template-columns:1fr}}
+
+/* 8. Phone footer: two columns, and the top link row (all repeated below) steps aside */
+@media(max-width:700px){.footwrap .links{display:none}}
+@media(max-width:480px){.footwrap .explore{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 1.1rem}}
+
+/* 9. Phone section headings: the side note drops under the title */
+@media(max-width:640px){
+  main.hub h2.sec{flex-wrap:wrap;row-gap:.15rem}
+  main.hub h2.sec small{flex-basis:100%;margin-left:0;text-align:left}
+}

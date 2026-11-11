@@ -167,6 +167,7 @@ table.spec.models td.num b{color:var(--cyan)}
 /* "While you're here" row on the registry pages. */
 .reg .related{margin-top:2.4rem}
 .reg .related .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+@media(min-width:900px){.reg .related .grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .reg .related .card p{font-size:.95rem;line-height:1.45}
 .reg .keeper{max-width:70ch;margin-top:.6rem}
 .rfm[hidden]{display:none}

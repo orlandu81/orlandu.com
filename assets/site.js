@@ -1139,3 +1139,12 @@
     });
   });
 })();
+
+/* ── A trailing arrow never wraps onto a line of its own: glue it to the last word ──
+   (runtime, so the generated pages get it too and no page's <main> changes for it) */
+(function(){
+  if (!document.createTreeWalker || !document.body) return;
+  var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null), n, hit = [];
+  while ((n = w.nextNode())) if (/[ \t\n]+\u2192\s*$/.test(n.nodeValue)) hit.push(n);
+  hit.forEach(function(t){ t.nodeValue = t.nodeValue.replace(/[ \t\n]+\u2192(\s*)$/, '\u00a0\u2192$1'); });
+})();

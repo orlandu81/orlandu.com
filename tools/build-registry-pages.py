@@ -112,7 +112,7 @@ RELATED_FOR = {
 def related(kind, exclude=()):
     hrefs = [h for h in RELATED_FOR[kind] if h not in exclude]
     cards = "".join(f'<a class="card linked" href="{h}"><div class="sub">{e(RELATED[h][0])}</div><h3>{e(RELATED[h][1])}</h3><p>{e(RELATED[h][2])}</p></a>' for h in hrefs)
-    return f'  <section id="related" class="related">\n    <h2 class="sec">While you\'re here <small>for Sony monitor owners</small></h2>\n    <div class="grid c3 readroom">{cards}</div>\n  </section>\n'
+    return f'  <section id="related" class="related">\n    <h2 class="sec">While you\'re here <small>for Sony monitor owners</small></h2>\n    <div class="grid c3 readroom{" n3" if len(hrefs) % 3 == 0 else ""}">{cards}</div>\n  </section>\n'
 
 # ── the census ────────────────────────────────────────────────────────────
 def landing():
@@ -158,7 +158,7 @@ def landing():
     <div class="entries" id="entries-out"></div>
     <p class="loadmore" id="entries-more" hidden><button type="button" class="btn cy" id="entries-more-btn">Show all entries</button></p>
     <p class="note" style="margin-top:1.2rem">Each card shows what the owner chose to share. Email addresses are never published and never shown to other owners; the full serial stays on the server. The whole catalog, with a page per model, is on the <a href="registry-models.html">models list</a>. The entries are open data, CC BY 4.0: <a href="api/registry?export=json">JSON</a> · <a href="api/registry?export=csv">CSV</a>, masked exactly as shown here, and an AI assistant can read the census through the site's <a href="mcp.html">MCP server</a> (<code>registry_census</code>).</p>
-    <p class="note">How to cite: Orlandu&rsquo;s Arcade (&ldquo;Orlandu81&rdquo;) and the registry&rsquo;s owners, <em>The Orlandu Registry: Sony BVM &amp; PVM Serial Number Census</em>, orlandu.com, 2026, https://www.orlandu.com/registry.html</p>
+    <p class="note fine">How to cite: Orlandu&rsquo;s Arcade (&ldquo;Orlandu81&rdquo;) and the registry&rsquo;s owners, <em>The Orlandu Registry: Sony BVM &amp; PVM Serial Number Census</em>, orlandu.com, 2026, https://www.orlandu.com/registry.html</p>
   </section>
 
   <section id="how">
