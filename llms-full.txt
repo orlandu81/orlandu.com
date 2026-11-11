@@ -152,9 +152,7 @@ Press Start
 # Coin-Op Games
 
 Orlandu's Arcade lives in two rooms: the garage arcade — four uprights, the pinball row, and the broadcast monitor racks — and the game room inside the house, where the candy cab and the cocktail hold court.
- Uprights Pinball Game Room In Memoriam Console Library
-
-## The garage arcade — uprights
+ In Memoriam Console Library Select your machine**10** machines · all on free play
 
 [Photo: Nintendo Donkey Kong upright in blue plywood, marquee lit]
 
@@ -162,7 +160,8 @@ Orlandu's Arcade lives in two rooms: the garage arcade — four uprights, the pi
 
 ### Donkey Kong
 
-Blue plywood — the machine that started Nintendo's arcade legend, and most collections worth the name. The full profile → (https://www.orlandu.com/donkey-kong.html)
+Blue plywood — the machine that started Nintendo's arcade legend, and most collections worth the name.
+ CabinetNintendo uprightYear1981BuildBlue plywoodMonitorVertical
 
 [Photo: Nintendo Mario Bros. widebody arcade cabinet, marquee lit]
 
@@ -170,7 +169,8 @@ Blue plywood — the machine that started Nintendo's arcade legend, and most col
 
 ### Mario Bros. — Widebody
 
-Two players, one sewer. The widebody Mario Bros. joins the Nintendo upright lineup. The full profile → (https://www.orlandu.com/mario-bros.html)
+Two players, one sewer. The widebody Mario Bros. joins the Nintendo upright lineup.
+ CabinetNintendo widebodyYear1983PlayersTwo, simultaneousMonitorHorizontal
 
 [Photo: Nintendo VS. UniSystem dedicated arcade cabinet with the VS. Super Mario Bros. marquee lit]
 
@@ -178,7 +178,8 @@ Two players, one sewer. The widebody Mario Bros. joins the Nintendo upright line
 
 ### VS. UniSystem — Dedicated
 
-Nintendo's arcade answer to the NES era. A VS. Interchanger runs both VS. Super Mario Bros. and VS. Duck Hunt — and the Mario is not the game you think it is. Did you know? → (https://www.orlandu.com/vs-smb.html) The full profile → (https://www.orlandu.com/vs-unisystem.html)
+Nintendo's arcade answer to the NES era. A VS. Interchanger runs both VS. Super Mario Bros. and VS. Duck Hunt — and the Mario is not the game you think it is. Did you know? → (https://www.orlandu.com/vs-smb.html)
+ CabinetVS. UniSystem, dedicatedYear1984SwitcherVS. InterchangerOn screenVS. Super Mario Bros.
 
 [Photo: Dynamo Big Blue arcade cabinet in blue with Capcom side art and a Marvel vs. Capcom marquee]
 
@@ -186,9 +187,8 @@ Nintendo's arcade answer to the NES era. A VS. Interchanger runs both VS. Super 
 
 ### Big Blue
 
-The classic American showcase cabinet — rebuilt power supply, and now wearing fresh Capcom-logo side art. It runs a Darksoft CPS-2 multi in a Jasen's Customs case, so the whole CPS-2 library is on tap — Marvel vs. Capcom most of the time. The full profile → (https://www.orlandu.com/big-blue.html)
-
-## The garage arcade — pinball row
+The classic American showcase cabinet — rebuilt power supply, and now wearing fresh Capcom-logo side art. It runs a Darksoft CPS-2 multi in a Jasen's Customs case, so the whole CPS-2 library is on tap — Marvel vs. Capcom most of the time.
+ CabinetDynamo Gen 1Year1992BoardDarksoft CPS-2 multiOn screenMarvel vs. Capcom
 
 [Photo: Williams Indiana Jones widebody pinball machine, backbox lit]
 
@@ -196,7 +196,8 @@ The classic American showcase cabinet — rebuilt power supply, and now wearing 
 
 ### Indiana Jones: The Pinball Adventure
 
-The widebody DCS-era classic — three films on one playfield, and Williams’ first year of digital sound. The full profile → (https://www.orlandu.com/indiana-jones.html)
+The widebody DCS-era classic — three films on one playfield, and Williams’ first year of digital sound.
+ MakerWilliamsYear1993CabinetWidebodySoundDCS
 
 [Photo: Stern Ghostbusters Premium pinball machine, backbox and topper lit]
 
@@ -204,7 +205,8 @@ The widebody DCS-era classic — three films on one playfield, and Williams’ f
 
 ### Ghostbusters Premium
 
-Who you gonna call when the magna-slings throw the ball somewhere unfair? Nobody. That's the game. The full profile → (https://www.orlandu.com/ghostbusters.html)
+Who you gonna call when the magna-slings throw the ball somewhere unfair? Nobody. That's the game.
+ MakerSternYear2016EditionPremiumNotableMagna-slings
 
 [Photo: Total Nuclear Annihilation pinball machine by Spooky Pinball with its full topper set]
 
@@ -212,7 +214,8 @@ Who you gonna call when the magna-slings throw the ball somewhere unfair? Nobody
 
 ### Total Nuclear Annihilation
 
-Scott Danesi's synthwave fever dream. Fast, brutal, single-level, perfect. The full profile → (https://www.orlandu.com/tna.html)
+Scott Danesi's synthwave fever dream. Fast, brutal, single-level, perfect.
+ MakerSpooky PinballYear2017DesignerScott DanesiDesignSingle level
 
 [Photo: Spooky Pinball Rick and Morty Blood Sucker Edition pinball machine, backbox lit]
 
@@ -220,9 +223,8 @@ Scott Danesi's synthwave fever dream. Fast, brutal, single-level, perfect. The f
 
 ### Rick and Morty — Blood Sucker Edition
 
-The limited Blood Sucker Edition — bought new in box, home use only, running in its original butter cabinet. The full profile → (https://www.orlandu.com/rick-and-morty.html)
-
-## The game room inside the house
+The limited Blood Sucker Edition — bought new in box, home use only, running in its original butter cabinet.
+ MakerSpooky PinballYear2020EditionBlood SuckerOwnershipNew in box, home use only
 
 [Photo: The restored Red Tent cocktail seen at an angle, VS. Excitebike on the screen and three PlayChoice-10 toppers displayed on the canopy]
 
@@ -230,7 +232,8 @@ The limited Blood Sucker Edition — bought new in box, home use only, running i
 
 ### VS. DualSystem — Red Tent Cocktail
 
-The rarer sit-down side of the VS. family — the distinctive red-canopy cocktail DualSystem. The full profile → (https://www.orlandu.com/red-tent.html)
+The rarer sit-down side of the VS. family — the distinctive red-canopy cocktail DualSystem.
+ CabinetVS. DualSystem cocktailYear1984SidesVS. + PlayChoice-10StatusFully restored
 
 [Photo: The pink Capcom Mini Cute candy cabinet head on at night, Street Fighter II lit on its screen and a Capcom poster above]
 
@@ -238,7 +241,8 @@ The rarer sit-down side of the VS. family — the distinctive red-canopy cocktai
 
 ### Mini Cute — Pink
 
-The only candy-style cabinet in the collection, and it's the one that matters: Capcom's compact Mini Cute in the pink variant. The full profile → (https://www.orlandu.com/mini-cute.html)
+The only candy-style cabinet in the collection, and it's the one that matters: Capcom's compact Mini Cute in the pink variant.
+ CabinetCapcom Mini CuteYear1991BoardCPS1 + Darksoft MultiOriginJapan, by crate UprightsDonkey Kong (https://www.orlandu.com/donkey-kong.html)Mario Bros. (https://www.orlandu.com/mario-bros.html)VS. UniSystem (https://www.orlandu.com/vs-unisystem.html)Big Blue (https://www.orlandu.com/big-blue.html) PinballIndiana Jones (https://www.orlandu.com/indiana-jones.html)Ghostbusters (https://www.orlandu.com/ghostbusters.html)TNA (https://www.orlandu.com/tna.html)Rick & Morty (https://www.orlandu.com/rick-and-morty.html) Candy & cocktailRed Tent (https://www.orlandu.com/red-tent.html)Mini Cute (https://www.orlandu.com/mini-cute.html)
 
 The game room also hosts the big PVMs — the 29-inch PVM-2950Q (https://www.orlandu.com/pvm-2950q.html) and the PVM-20L5. Meet the fleet → (https://www.orlandu.com/monitors.html)
 
