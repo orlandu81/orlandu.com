@@ -232,7 +232,7 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   and the accent are read from each profile's `.specs` and `main.profile{--acc}`. The page-scoped CSS and the small
   inline script (hover/focus previews, arrows move, a touch tap selects first then opens, `games.html#m-<slug>` opens
   on that machine) are hand-written in games.html. Every tile and panel button is a plain link, so it works without
-  JavaScript. A new machine = a MACHINES row + its profile. The old two-up photo cards are gone from the hub. The **In memoriam** section (full color, `figure.shot`, "<b>Name</b> — one line") is the ONLY memoriam on the
+  JavaScript. A new machine = a MACHINES row + its profile. The name is sized from its own column (`.sinfo` is a size container, `9.5cqi` = the longest word, GHOSTBUSTERS, on one line) after the first build let that word run into the roster; three columns hold from 1141 px, roster drops below to 761, one column under that. **Check every panel at every width, not three widths**: a longer name than GHOSTBUSTERS needs a smaller cqi. The old two-up photo cards are gone from the hub. The **In memoriam** section (full color, `figure.shot`, "<b>Name</b> — one line") is the ONLY memoriam on the
   site; don't clone it elsewhere without asking.
 - **Console photos are cut-outs on the walls' dark backdrop** (David, 11-10: "make sure you blend the acrylic in with
   the background"): `media/2026/consoles-<slug>-dk.webp` (4:3, object at 80 %, up to 1600 px) + `media/thumbs/…-dk.webp`
