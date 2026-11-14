@@ -444,9 +444,9 @@ consistent" — a new board, topper or card gets the same treatment.
   Step Inside holds twelve cards plus the registry card.
 - **The AMS-100 monograph:** web edition is canonical; no images by the author's ruling; §4.5.2 / EXT-02 removed fully and
   never reintroduced; all rights reserved with the citation block; `.mbody` text children carry the 74ch measure (never
-  the section); `.tag` must not be nowrap. The PDF `media/ams-100-monograph-rev2.pdf` is typeset FROM the web edition
+  the section); `.tag` must not be nowrap. The PDF `media/ams-100-monograph-rev3.pdf` (11-14; rev2 and the original both 301 to it) is typeset FROM the web edition
   (pandoc → xelatex, DejaVu Serif, his rights metadata copied across); the old PDF 301s to it. Rebuild scripts: Project
-  doc `claude/ams-100-pdf-build.md`; publish under a new filename and repoint the two links.
+  doc `claude/ams-100-pdf-build.md`; publish under a new filename and repoint the two links. Appendix E cites Sony's AMS-3 Operation and Maintenance Manual as `[AMS-3 OM]` (found by David 11-14 as a manualslib.de scan, read online): three destinations J / UC / AE with serial floors 10031 / 20001 / 10011, the covered rear fitting is the voltage selector, Sony weight 14.5 kg beside his measured 35 lb. The lineage claim stays low confidence; the manual does not name the AMS-100.
 - **Vault:** `vault.html` on David's device (not in the repo), ~1,283 items, JSON between `/*VAULT_DATA_START*/` and
   `/*VAULT_DATA_END*/` prefixed `items = [`. Useful fields: `upgrades`, `conditionNotes`, `notes`, `lastServiced`,
   `originality`. Facts he has corrected on the site win over the vault.
