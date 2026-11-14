@@ -43,8 +43,17 @@ node tools/eval-search.mjs           # 271-query battery vs both search paths; t
 
 ### How a push actually happens
 
-The container can clone and fetch but **cannot push** (the proxy blocks authenticated pushes). Push from David's
-laptop VM through the device shell:
+**Changed 2026-11-14.** The device shell on David's laptop now refuses `git push` ("Cowork blocked this request: only
+git clone, git fetch and plain downloads from GitHub work here"), so the token route below no longer works from
+there. David connected GitHub to Claude the same day (Customize > Connectors > GitHub Integration, Claude GitHub App
+installed on `orlandu81`). The route now: attach the repo to the session with push access (`add_repo`, access
+`push`), clone in the CONTAINER, commit there and push from there. Seen so far: a new `claude/…` branch pushes; a tag
+push and a branch delete are refused (403). If a push to `main` is refused, push a `claude/…` branch and merge it by
+pull request. Fallback that always works: a bundle in `_pending-deploy\` plus a paste-into-PowerShell block David
+runs on his PC (Git for Windows is installed).
+
+Before 11/14 the container could clone and fetch but not push, and pushes went from David's laptop VM through the
+device shell (kept for reference; steps 2, 4, 5 and 6 still apply to the bundle fallback):
 1. Clone fresh into a unique `/tmp/orl-<ts>` (the VM's `$HOME` sits on a shared `/sessions` disk that fills up; old
    clones in `/tmp` may belong to dead sessions and can't be removed). `--depth 20` is fine for a push.
 2. Bring the work across: either make the commits there, or `git bundle create x.bundle <origin-sha>..main` in the
