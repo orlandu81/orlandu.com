@@ -268,7 +268,7 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   `fleet-scale` markers (edit MODELS there, never the SVG). Weights and dimensions are Sony's figures.
   Monitor profiles: pvm-2950q, pvm-20l5, bvm-20e1u, bvm-a14f5u, lmd-wall (body copy = the magazine's COPY object).
   Name **SavonPat** on the A14F5U service (2025) and on the BVM-20E1U's full service (2026: every board recapped, tube
-  serviced, calibrated, shell cleaned; his line that it is the best 20-inch tube Sony ever made is on the profile); the 20L5's slot holds a **BKM-129X** (second analog input, component or RGB
+  serviced, calibrated, shell cleaned and sanded; his line that it is the best 20-inch tube Sony ever made is on the profile); the 20L5's slot holds a **BKM-129X** (second analog input, component or RGB
   with loop-through — not SCART/VGA); 20L5 sync range 15–45 kHz.
 - **playchoice-10.html:** 52 board tiles (title-only captions, alphabetical ignoring "The") + 10 conversions (each a
   short story about its own game) + anatomy. Toppers stay on signage.html; never pair topper and cart tiles. The page's
