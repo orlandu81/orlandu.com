@@ -86,7 +86,11 @@ for p in sorted(root.glob("*.html")):
     # its profile page before the gallery photo of it, and a hub page before a card on it. The interactive tools
     # (kicker "Tool · …": through-the-mask, will-it-connect, bkm-10r) rank with the guides — they are reference pages.
     profile = bool(re.search(r'<main[^>]*class="[^"]*\bprofile\b', src) or re.search(r'<div class="rt"', body_html))
+    # A story ABOUT a machine must not outrank that machine's profile for the bare model number ("bvm 20e1u" has to
+    # find bvm-20e1u.html first): such stories are listed here and rank at card weight (4), below the profile (10).
+    if p.name in ("bvm-20e1u-service.html",): profile = False
     ent = {"u": url, "t": h1t, "k": kind, "s": lede_t[:180], "h": " ".join(heads)[:1200], "b": body[:6000], "w": 10 if (profile or kind in ("Machine", "Monitors", "Coin-Op") or kind.startswith("Tool")) else -10 if (kind == "Registry" and p.name not in KIND) else 6}  # the 96 generated registry model pages rank below every real page (a model number must find its profile first; they still answer when nothing else has the model), so "pvm-20l5" still finds the profile first
+    if p.name in ("bvm-20e1u-service.html",): ent["w"] = 4
     if p.name in HINTS:
         ent["h"] = (ent["h"] + " " + HINTS[p.name]).strip()  # scored like a heading, never displayed
     if title.lower() != h1t.lower():
