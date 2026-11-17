@@ -382,7 +382,7 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   soft delete), shared code in `lib/registry.js` (outside `api/`). The chart floors serials to the hundred. The repo's
   only dependencies (`package.json`: `@neondatabase/serverless`, `@vercel/blob`; `node_modules/` gitignored) are used
   inside the functions only — there is still no build step.
-- **Data fixes ship as code:** `FIXUP_FIELDS` / FIXUPS in lib/registry.js (photo_url and, since 10/31, built included; `cond` since 11/14 — the value must be a COND key; `from: null` means the field was empty; `field: "serial"` is a PREFIX swap that
+- **Data fixes ship as code:** `FIXUP_FIELDS` / FIXUPS in lib/registry.js (photo_url and, since 10/31, built included; `cond` since 11/14 — the value must be a COND key; `hours` since 11/17 — an integer; `from: null` means the field was empty; `field: "serial"` is a PREFIX swap that
   moves serial + mask + number together, guarded by the old prefix — entry 14's doubled digit, 10/31) — David does not run
   SQL or click through admin consoles himself. Sony BVM/PVM serials are SEVEN digits; the form nudges once on any other count. Photo swaps go into Blob under a NEW name via the Blob dashboard page.
 - **Indexing:** 13 model pages are indexable — six with `sony_serials`, the arcade's own (`PROFILES`), and
