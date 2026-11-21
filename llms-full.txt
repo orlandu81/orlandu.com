@@ -2767,7 +2767,7 @@ The main multiball is Storage Facility, and its lock is the left ramp. Each time
 
 ### Total Nuclear Annihilation
 
-There are no modes to choose. Hit the reactor grid to arm the reactor, shoot the scoop to start it, then hit the lit targets to destroy it, and do it again faster. Multiball is two balls in the lock lane and one more hit to release them. It is the cleanest example in the row of a machine with one question, asked repeatedly.
+There are no modes to choose. Hit the reactor grid to arm the reactor and shoot the scoop to start it. Then overload it, and only then hit the lit targets to destroy it. Do it again, faster. Multiball is two balls in the lock lane and one more hit to release them. It is the cleanest example in the row of a machine with one question, asked repeatedly.
  Spooky · 2020
 
 ### Rick and Morty
