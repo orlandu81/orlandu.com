@@ -272,7 +272,11 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   edge-to-edge photos "overly cropped" and asked for looser frames with the background filled in "to match the other
   collection items". Cut from the camera originals in `_originals/` by hand-picked polygons (20L5 and 2950Q squared to
   the cabinet front; the 20E1U and A14F5U were shot edge to edge, so their AMS-100 / BKM-10R stay clipped by the frame).
-  ONLY the monitors.html cards use them: profiles, the gallery, the buying guide and the timeline keep the photographs.
+  Also used (same night, his "check the rest of the site") by the five monitor profiles' hero, the buying guide's 20L5 figure and the
+  timeline tiles. The gallery entries (and so the home filmstrip, `media/strip/`) use them too, by his choice; his four registry entries
+  too (photo_url FIXUPS, 11-20). The old photograph files' siblings and `lmd-rack` are deleted; `media/2026` + `media/thumbs`
+  `pvm-2950q`, `pvm-20l5`, `bvm-20e1u-lit`, `bvm-a14f5u-lit` are KEPT unreferenced for cached registry answers — delete after 12/1.
+  Story thumbs, step tiles and OG cards were not rebuilt.
   Build script: Project doc `claude/monitors-dark-backdrop-2026-11-20.md`. The four LMD models are folded into one wide card; its
   picture is the same treatment (`monitors-lmd-wall-dk`, 1600×576, the three units cut from IMG_3698 in the garage intake). **The fleet is THIRTEEN units across EIGHT models** (LMD-9050 ×2); a count change is
   swept across index, monitors, stories, signal-chain, pvm-vs-bvm and Trinitron Fleet Vol. 1 (its `UNITS` array, stats
