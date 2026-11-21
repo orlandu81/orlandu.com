@@ -95,6 +95,11 @@ The geometry grid, judging a tube with no hours counter, what to pay — and why
 ## Latest from the arcade
  New story
 
+### How to read a playfield
+
+A beginner’s guide to pinball, taught on the four tables in the row: the lanes, the shots, what a flashing light is telling you, and a five-minute method for any machine. Read the story → (https://www.orlandu.com/how-to-read-a-playfield.html)
+ New story
+
 ### Thirty more years
 
 The BVM-20E1U is back from a full service with SavonPat, a former Sony technician: every board recapped, the tube serviced, the picture calibrated. Read the story → (https://www.orlandu.com/bvm-20e1u-service.html)
@@ -133,11 +138,6 @@ Every tube in the fleet simulated from its own numbers — scan-line gap, grille
 ### Will it connect?
 
 Pick any console and any monitor in the fleet: the cable chain step by step, the sync and termination rules, which BKM card it needs, and a plain verdict. Ask it → (https://www.orlandu.com/will-it-connect.html)
- New tool
-
-### Operate a BKM-10R
-
-The control unit a BVM-20E1U cannot live without, button by button and menu by menu, with Sony’s own description of what each one does. Press something → (https://www.orlandu.com/bkm-10r.html)
 
 ---
 
@@ -2671,6 +2671,149 @@ Bench photography on this page by iFixRetro (https://www.instagram.com/ifixretro
 
 ---
 
+# How to Read a Pinball Playfield: A Beginner's Guide
+
+URL: https://www.orlandu.com/how-to-read-a-playfield.html
+
+A beginner's guide to reading a pinball machine: flippers and lanes, the kinds of shots, what lit and flashing inserts mean, the rules card and multiball.
+
+Field Guide
+
+# How to Read a Playfield
+
+Most people play pinball the same way. They keep the ball alive, hit whatever it happens to hit, and wonder why the score is small. That is not a lack of skill. It is a reading problem. Every pinball machine is covered in instructions, and once you know where they are, the game stops being luck.
+
+The four machines in the pinball row here make a good classroom, because they were built across twenty-seven years by three different makers and they still speak the same language: Indiana Jones (https://www.orlandu.com/indiana-jones.html) (Williams, 1993), Ghostbusters (https://www.orlandu.com/ghostbusters.html) (Stern, 2016), Total Nuclear Annihilation (https://www.orlandu.com/tna.html) (Spooky, 2017) and Rick and Morty (https://www.orlandu.com/rick-and-morty.html) (Spooky, 2020).
+
+[Photo: The Indiana Jones pinball playfield lit up, showing the ramps, mine cart and center idol]
+
+***Indiana Jones** — 1993*
+
+[Photo: The Ghostbusters Premium playfield lit in pink and purple, showing the ramps and Zombie Yeti artwork]
+
+***Ghostbusters** — 2016*
+
+[Photo: The Total Nuclear Annihilation playfield lit in red, showing the reactor targets and drop targets]
+
+***Total Nuclear Annihilation** — 2017*
+
+[Photo: The Rick and Morty pinball playfield lit in green and gold, showing the portal and ramps]
+
+***Rick and Morty** — 2020*
+
+## Start at the bottom
+
+Before you look at anything else, look at the last six inches of the table. This part is nearly identical on every machine made in the last fifty years.
+
+- **Flippers.** The two bats you control. Everything else on this list exists to get the ball back to them.
+- **Slingshots.** The two triangles just above the flippers. They kick the ball sideways when it touches them. You do not aim for them; they happen to you.
+- **Inlanes.** The inner channels that roll the ball gently down to a flipper. Good.
+- **Outlanes.** The outer channels that send it past the flippers and out of play. Bad.
+
+Ghostbusters is the machine that proves the slingshots matter. On the Premium, the slings are magnetic. They can catch the ball in flight and throw it somewhere new, sometimes straight at an outlane. It is the feature the table is famous for, and it is a fast lesson in how much of pinball is decided in that bottom corner.
+
+## Then find the shots
+
+Above the flippers, a playfield is a set of targets you can hit on purpose. There are only a handful of kinds.
+
+- **Ramps.** Wire or plastic tracks that carry the ball up and return it to a flipper. A made ramp is the safest shot in pinball, because the table hands the ball back.
+- **Orbits.** Lanes that run up one side, around the back and down the other.
+- **Standup targets.** Small flat targets that stay put when hit.
+- **Drop targets.** Targets that fall into the table when hit, usually in a row. Clear the row and something happens.
+- **Scoops and saucers.** Holes that swallow the ball, hold it for a moment and kick it back out. This is usually where a machine starts something.
+- **Pop bumpers.** The round, mushroom-capped kickers near the top. Like slingshots, they are chaos you pass through rather than a shot you make.
+
+Indiana Jones is the place to practice finding them, because it is a widebody and Williams filled every inch. The ramps cross over each other, the mine cart runs up the right side and the idol sits in the center. It takes a few games before your eye stops sliding off it. That is normal. Pick one ramp and learn where the ball comes back.
+
+Total Nuclear Annihilation is the opposite lesson. It is a single-level playfield in the style of the early 1980s, with none of the stacked ramps Indiana Jones is built on. What it has is targets: a grid of them that arms the reactor, a scoop that starts it, and a lane of drop targets that locks balls. With nothing to hide behind, it shows you how much game can be built from “hit that, then hit that.”
+
+## The lights are the instructions
+
+This is the part most new players never notice. Set into the playfield are colored plastic windows called inserts, and each one sits in front of a shot. They are not decoration.
+ LitThis shot is worth something nowFlashingShoot here nextUnlitNot yet
+
+So the question to ask on every ball is not “where is the ball going,” it is “what is flashing.” The machine is pointing.
+
+The question on every ball is not where the ball is going. It is what is flashing.
+
+TNA makes this impossible to miss, because the lights lock to the music as the reactor heats up, and its lock lane tells you it is open with green arrows. The other three do the same thing more quietly: an arrow in front of a ramp, a lamp beside a scoop.
+
+## Read the card
+
+On the flat apron at the very bottom of the table, below the flippers, there is almost always a printed card. It is the rules, in about a hundred words, written by the people who made the game. Nobody reads it. Read it. It will tell you how to start the main feature and what the big-scoring shots are, and that is all you need for a first session.
+
+Every machine in the row also has a display, and it is the second set of instructions. Indiana Jones’s own card says so: start a mode, then “see display for mode instructions.” Ghostbusters does it on a dot-matrix display and Rick and Morty on a full screen, with the cast saying it out loud.
+
+## What the machine is actually asking for
+
+Once you can find the shots and read the lights, every table reduces to the same three ideas.
+
+- **Modes.** Hit a marked shot, usually a scoop, and the machine starts a timed objective with its own rules.
+- **Multiball.** Lock balls in a marked place, then get them all back at once. This is where the big scores are on nearly every machine.
+- **The long goal.** Finish enough modes or multiballs and you reach a final stage, usually called a wizard mode. Most players never see it. Knowing it is there changes how you play the first ball.
+
+Here is what that looks like on each table in the row.
+ Williams · 1993
+
+### Indiana Jones
+
+The mode shot is the saucer on the left marked Start Mode. Whichever of the twelve modes is lit on the playfield is the one you get. Multiball is a two-step read: knock down the bank of three drop targets to light the lock, then put three balls up the center shot, where the idol holds them. Play all twelve modes and the same saucer starts a six-ball finale called Eternal Life.
+ Stern · 2016
+
+### Ghostbusters
+
+The main multiball is Storage Facility, and its lock is the left ramp. Each time the ramp is lit for a lock, shoot it; the third lock starts the multiball. Its modes are scenes from the films, arranged in three sets, and each set starts from a different shot. Which is exactly why you read the lights instead of memorizing the table.
+ Spooky · 2017
+
+### Total Nuclear Annihilation
+
+There are no modes to choose. Hit the reactor grid to arm the reactor, shoot the scoop to start it, then hit the lit targets to destroy it, and do it again faster. Multiball is two balls in the lock lane and one more hit to release them. It is the cleanest example in the row of a machine with one question, asked repeatedly.
+ Spooky · 2020
+
+### Rick and Morty
+
+Modes here are called Adventures. Shoot the left or right ramp to qualify one, then the center scoop to start it. That same scoop starts multiball once two balls are locked. One scoop, three jobs, and the lights tell you which one it is doing.
+
+## A five-minute method for any machine
+
+1. Read the card on the apron.
+2. Find the ramps and note which flipper each one returns to.
+3. Find the scoop. That is probably how you start something.
+4. Launch, and on every ball ask one thing: what is flashing?
+5. Shoot that. When it stops flashing, look again.
+
+That is the whole skill. Aim comes with time. Reading you can do tonight.
+
+## Quick answers
+
+### What do the lights on a pinball playfield mean?
+
+The lit windows, called inserts, mark shots. Lit means the shot is worth something now; flashing means shoot it next; unlit means not yet.
+
+### What is the difference between an inlane and an outlane?
+
+Inlanes feed the ball back to a flipper. Outlanes drain it out of play.
+
+### What is the easiest shot in pinball?
+
+Usually a ramp, because a made ramp returns the ball to a flipper.
+
+### What is a mode in pinball?
+
+A timed objective with its own rules, usually started at a scoop. Indiana Jones (1993) has twelve, all started at one saucer marked Start Mode.
+
+### How do you start multiball?
+
+Usually by locking balls. On Indiana Jones you drop three targets to light the lock, then lock three balls. On Total Nuclear Annihilation you lock two in the lock lane and hit it once more.
+
+### Where are the rules on a pinball machine?
+
+On a printed card on the apron below the flippers, and on the display as you play.
+
+Rules are from each maker’s own card, manual or guide and the community rule sheets, and can change with a game’s code. Sources & further reading: IPDB — Indiana Jones: The Pinball Adventure (https://www.ipdb.org/machine.cgi?id=1267) · Stern — Ghostbusters basic guide (https://sternpinball.com/wp-content/uploads/2018/10/GB-Basic-guide.pdf) · Tilt Forums — Ghostbusters (https://tiltforums.com/t/ghostbusters-pinball-rulesheet/1358) · Total Nuclear Annihilation (https://tiltforums.com/t/total-nuclear-annihilation-rulesheet/3209) · Rick & Morty (https://tiltforums.com/t/rick-morty-rulesheet/6391)
+
+---
+
 # Sony BVM Full Service: Recap, Tube & Calibration by SavonPat
 
 URL: https://www.orlandu.com/bvm-20e1u-service.html
@@ -3000,7 +3143,7 @@ The most worked-on machine in the building. Most involved first.
 - **Sound**: **DCS** — Williams' first year of digital compressed sound.
 - **Status**: **Free play** — In the pinball row, with one item open on the bench.
 
-More photos of Indiana Jones in the gallery → (https://www.orlandu.com/gallery.html#tag=indiana-jones)
+More photos of Indiana Jones in the gallery → (https://www.orlandu.com/gallery.html#tag=indiana-jones) · New to pinball? How to read a playfield → (https://www.orlandu.com/how-to-read-a-playfield.html)
 
 Sources & further reading: IPDB — Indiana Jones: The Pinball Adventure (https://www.ipdb.org/machine.cgi?id=1267) · Wikipedia (https://en.wikipedia.org/wiki/Indiana_Jones:_The_Pinball_Adventure)
 
@@ -3050,7 +3193,7 @@ Scott Danesi's design, brought up to the specification Spooky reserved for the C
 - **Design**: **Single level** — No modes. Clear the reactor, repeat, faster.
 - **Status**: **Free play** — Full topper set fitted.
 
-More photos of Total Nuclear Annihilation in the gallery → (https://www.orlandu.com/gallery.html#tag=tna)
+More photos of Total Nuclear Annihilation in the gallery → (https://www.orlandu.com/gallery.html#tag=tna) · New to pinball? How to read a playfield → (https://www.orlandu.com/how-to-read-a-playfield.html)
 
 Sources & further reading: IPDB — Total Nuclear Annihilation (https://www.ipdb.org/machine.cgi?id=6444) · Pinside game archive (https://pinside.com/pinball/machine/total-nuclear-annihilation)
 
@@ -3170,7 +3313,7 @@ Bought new in box and never on route — home use only, original owner. Nothing 
 - **Ownership**: **Home use only** — Bought new in box. Original owner. IPS screen fitted.
 - **Status**: **Free play** — In the pinball row.
 
-More photos of Rick and Morty in the gallery → (https://www.orlandu.com/gallery.html#tag=rick-and-morty)
+More photos of Rick and Morty in the gallery → (https://www.orlandu.com/gallery.html#tag=rick-and-morty) · New to pinball? How to read a playfield → (https://www.orlandu.com/how-to-read-a-playfield.html)
 
 Sources & further reading: Pinside game archive — Rick and Morty (Blood Sucker Edition) (https://pinside.com/pinball/machine/rick-and-morty-blood-suckers-edition)
 
@@ -3189,24 +3332,31 @@ Read Before Playing
 # Stories
 
 The written side of the arcade — deep dives, restorations, and the history hiding inside the machines. New stories land here as they're written. The words they use without explaining are in the glossary (https://www.orlandu.com/glossary.html).
+ NewField Guide
+
+### How to Read a Playfield
+
+Most people play pinball by keeping the ball alive and hoping. Every machine is covered in instructions: the lanes at the bottom, the handful of shots, what a lit or flashing light means, the card nobody reads. A beginner’s guide taught on four tables built across twenty-seven years.
+
+Read the newest story →
+ (https://www.orlandu.com/how-to-read-a-playfield.html)
+
+## More stories
  NewRestoration Story
 
 ### Thirty More Years
 
 The BVM-20E1U arrived working and looking good. It went to SavonPat anyway: every board recapped, the tube serviced, the picture calibrated, and a verdict from a former Sony technician that it is fit to go back into the field. A full service that has nothing to do with fixing a fault.
 
-Read the newest story →
- (https://www.orlandu.com/bvm-20e1u-service.html)
-
-## More stories
- NewReview & Guide
+Read the story →
+ (https://www.orlandu.com/bvm-20e1u-service.html) NewReview & Guide
 
 ### Ocarina of Time on Switch 2: A Review and Returning Player's Guide
 
 If you played the N64 original you can walk the remake from memory and be right nine times out of ten. This is the tenth time: what the remake adds and leaves out, what moved, what's new, the rebalanced economy, and the gates that stall a veteran — from one full playthrough, launch day to credits.
 
 Read the story →
- (https://www.orlandu.com/ocarina-of-time-switch-2.html) NewRestoration Story
+ (https://www.orlandu.com/ocarina-of-time-switch-2.html) Restoration Story
 
 ### The X'Eye Comes Home
 
@@ -5940,6 +6090,13 @@ This site talks the way the hobby talks, which means it uses a lot of words with
 - **Free play**: The operator setting that removes the need for coins. Every machine here is on it, which is why the coin doors are decorative.
 - **Shop-out**: Pinball's word for a full service: playfield stripped of every part, cleaned, rubbers and bulbs replaced, mechanisms rebuilt, reassembled. Not every machine needs one — one bought new from the factory never did.
 - **Playfield**: The wooden surface under the glass where the ball lives, with all its ramps, targets and toys. The single most expensive thing on a pinball machine to replace.
+- **Insert**: A colored plastic window set into a pinball playfield with a lamp under it. Each one marks a shot: lit means it is worth something, flashing means shoot it next. How to read them (https://www.orlandu.com/how-to-read-a-playfield.html).
+- **Inlane / outlane**: The channels beside the flippers. An inlane rolls the ball back to a flipper; an outlane sends it past them and out of play.
+- **Slingshot**: One of the two triangular kickers just above the flippers, which fire the ball sideways on contact. On Ghostbusters (https://www.orlandu.com/ghostbusters.html) Premium they are magnetic.
+- **Drop target**: A target that falls into the playfield when hit, usually one of a row. Clearing the row lights or starts something.
+- **Scoop**: A hole that swallows the ball, holds it for a moment and kicks it back out. Usually where a pinball machine starts a mode.
+- **Multiball**: Several balls in play at once, usually earned by locking balls one at a time and then releasing them together. Where most of the big scores are.
+- **Wizard mode**: The final stage of a pinball machine, reached by finishing its modes or multiballs. On Indiana Jones (https://www.orlandu.com/indiana-jones.html) it is a six-ball multiball after all twelve modes.
 - **Backglass / translite**: The illustrated panel in the backbox. A backglass is painted on glass; a translite is printed on plastic film behind clear glass. Originals fade, flake and crack, so good reproductions are prized.
 - **DMD dot matrix display**: The orange dot display in the backbox of a nineties machine. A ColorDMD is a drop-in color replacement for it.
 - **DCS**: Williams' Digital Compression System, the 1993 sound hardware that replaced tinny sample playback with something close to a film soundtrack. Indiana Jones (https://www.orlandu.com/indiana-jones.html) was in the first year of it.
@@ -6583,7 +6740,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 92,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 94,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server

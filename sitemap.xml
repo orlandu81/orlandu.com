@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/mcp.html</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/bkm-cards.html</loc>
@@ -321,7 +321,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/indiana-jones.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ij-portrait.webp</image:loc><image:title>Williams Indiana Jones: The Pinball Adventure widebody pinball machine, backbox lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ij-backglass.webp</image:loc><image:title>The Indiana Jones pinball translite showing Indiana Jones, Marion and the cast, lit from behind</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/ij-playfield.webp</image:loc><image:title>The Indiana Jones pinball playfield lit up, showing the ramps, mine cart and center idol</image:title></image:image>
@@ -362,6 +362,10 @@
     <image:image><image:loc>https://www.orlandu.com/media/2026/xeye-pickup.webp</image:loc><image:title>A new CD laser pickup unit on the bench mat, flex cable and adjustment trimmer visible</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/xeye-drive.webp</image:loc><image:title>The X&#x27;Eye CD drive mechanism from above with the lid off: spindle, pickup on its rails and the drive gears</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/xeye-fram.webp</image:loc><image:title>Close-up of an FM1808 ferroelectric RAM chip soldered in place on the X&#x27;Eye board</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/how-to-read-a-playfield.html</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/bvm-20e1u-service.html</loc>
@@ -447,7 +451,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/rick-and-morty.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/rickmorty-portrait.webp</image:loc><image:title>Spooky Pinball Rick and Morty Blood Sucker Edition pinball machine with the backbox lit</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/rickmorty-playfield.webp</image:loc><image:title>The Rick and Morty pinball playfield lit in green and gold, showing the portal and ramps</image:title></image:image>
   </url>
@@ -457,7 +461,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/stories.html</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://www.orlandu.com/orlandu-100.html</loc>
@@ -469,7 +473,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/tna.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/tna-portrait.webp</image:loc><image:title>Total Nuclear Annihilation pinball machine by Spooky Pinball, lit in blue and purple, with the full topper set</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/tna-playfield.webp</image:loc><image:title>The Total Nuclear Annihilation playfield lit in red, showing the reactor targets and drop targets</image:title></image:image>
   </url>

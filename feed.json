@@ -8,6 +8,16 @@
  "language": "en-US",
  "items": [
   {
+   "id": "https://www.orlandu.com/how-to-read-a-playfield.html",
+   "url": "https://www.orlandu.com/how-to-read-a-playfield.html",
+   "title": "How to read a playfield",
+   "summary": "A beginner’s guide to pinball, taught on the four tables in the row: the lanes, the shots, what a flashing light is telling you, and a five-minute method for any machine. Read the story →",
+   "tags": [
+    "New story"
+   ],
+   "date_published": "2026-11-20T17:00:00Z"
+  },
+  {
    "id": "https://www.orlandu.com/bvm-20e1u-service.html",
    "url": "https://www.orlandu.com/bvm-20e1u-service.html",
    "title": "Thirty more years",
@@ -82,16 +92,6 @@
    "url": "https://www.orlandu.com/will-it-connect.html",
    "title": "Will it connect?",
    "summary": "Pick any console and any monitor in the fleet: the cable chain step by step, the sync and termination rules, which BKM card it needs, and a plain verdict. Ask it →",
-   "tags": [
-    "New tool"
-   ],
-   "date_published": "2026-10-22T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/bkm-10r.html",
-   "url": "https://www.orlandu.com/bkm-10r.html",
-   "title": "Operate a BKM-10R",
-   "summary": "The control unit a BVM-20E1U cannot live without, button by button and menu by menu, with Sony’s own description of what each one does. Press something →",
    "tags": [
     "New tool"
    ],

@@ -31,9 +31,11 @@ ALIASES = {
     "trinitron": ["Trinitrons"],
     "switcher": ["auto-switcher"],
     "color-bars": ["SMPTE bars", "75% bars", "test pattern"],
+    "slingshot": ["slingshots"],
+    "drop-target": ["drop targets"],
 }
 # terms too generic to auto-underline in prose (they still exist on glossary.html)
-SKIP = {"upright", "dedicated", "conversion", "kit", "monitor", "chassis", "cabinet", "marquee", "bezel", "topper", "shop-out", "sync", "route"}
+SKIP = {"upright", "dedicated", "conversion", "kit", "monitor", "chassis", "cabinet", "marquee", "bezel", "topper", "shop-out", "sync", "route", "insert", "scoop"}
 out = {}
 for m in re.finditer(r'<dt id="([^"]+)">(.*?)</dt>\s*<dd>(.*?)</dd>', src, re.S):
     slug, term, d = m.group(1), m.group(2), m.group(3)

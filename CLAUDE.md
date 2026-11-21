@@ -429,6 +429,14 @@ consistent" — a new board, topper or card gets the same treatment.
 
 ## 11. Other features and references
 
+- **Pinball and arcade stories (2026-11-20).** `how-to-read-a-playfield.html` ("How to Read a Playfield", kicker Field Guide, 6 min)
+  is live: a beginner's guide taught on the four tables, reusing the four playfield photos (David's choice, over one-photo-one-home).
+  Its per-table rules come from the makers' cards/guides and community rule sheets (sources in the Project doc
+  `claude/how-to-read-a-playfield-story-draft-2026-11-20.md`); David runs the latest code on every game. Glossary +7 pinball terms
+  (insert, inlane/outlane, slingshot, drop target, scoop, multiball, wizard mode; `insert` and `scoop` are in SKIP so they are not
+  auto-underlined). Linked from tna, indiana-jones and rick-and-morty; NOT from ghostbusters (leave-alone until 12/10 — add it then).
+  HELD at his choice: "Mario Before He Was Super" (`_pending-deploy\two-stories-2026-11-20.bundle` carries the page; draft and
+  hooks owed in `claude/mario-before-super-story-draft-2026-11-20.md` / `claude/story-ideas-2026-11-20.md`, which also lists six tabled ideas).
 - **Review nine (2026-10-30), the presentation pass — items 2–10 shipped, 1 (poster Step Inside cards) declined.**
   The CSS lives in one block at the end of style.css ("Review nine"). Hooks: a hub card that opens with a photo uses
   `<figure class="pf">` (no inline margin/radius styles — games, consoles; For Sale cards are `.card.sale` with the same
