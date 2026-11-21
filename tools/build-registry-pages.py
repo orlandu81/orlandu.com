@@ -200,8 +200,8 @@ def static_models():
     for line in ("BVM", "PVM"):
         rows = [m for m in cat["models"] if m["line"] == line]
         out.append(f'<h2 class="sec" id="{line.lower()}">' + ("BVM · broadcast and master monitors" if line == "BVM" else "PVM · production monitors") + f" <small>{len(rows)} chassis</small></h2>"
-            '<div class="tablewrap" tabindex="0"><table class="spec models"><thead><tr><th>Model</th><th>Size</th><th>Series</th><th>Era</th><th>Variants</th><th class="num">Registered</th></tr></thead><tbody>'
-            + "".join(f'<tr><td><a href="registry-{m["slug"]}.html">{e(m["model"])}</a></td><td>{m["size_in"]}"</td><td>{e(m["series"])}</td><td><span class="conf {m["era_confidence"]}" title="{conf[m["era_confidence"]]}">{e(m["era"])}</span></td><td class="dim">{e(", ".join(v for v in m["variants"] if v != m["model"]))}</td><td class="num"><span class="dim">&hellip;</span></td></tr>' for m in rows)
+            '<div class="tablewrap" tabindex="0"><table class="spec models"><thead><tr><th>Model</th><th>Size</th><th>Series</th><th>TV lines</th><th>Era</th><th>Variants</th><th class="num">Registered</th></tr></thead><tbody>'
+            + "".join(f'<tr><td><a href="registry-{m["slug"]}.html">{e(m["model"])}</a></td><td>{m["size_in"]}"</td><td>{e(m["series"])}</td><td>{e(m.get("specs", {}).get("tvl", "")) or '<span class="dim">&mdash;</span>'}</td><td><span class="conf {m["era_confidence"]}" title="{conf[m["era_confidence"]]}">{e(m["era"])}</span></td><td class="dim">{e(", ".join(v for v in m["variants"] if v != m["model"]))}</td><td class="num"><span class="dim">&hellip;</span></td></tr>' for m in rows)
             + "</tbody></table></div>")
     return "".join(out)
 
@@ -403,6 +403,29 @@ def sony_section(m):
   </section>
 """
 
+SPEC_ROWS = [("tvl", "Resolution", lambda v: v + " TV lines"), ("tube", "Tube", None), ("color", "Picture", None), ("crt_part", "CRT part", None),
+             ("pitch_mm", "Aperture-grille pitch", lambda v: v + " mm"), ("phosphor", "Phosphor", None), ("scan", "Scan range", None),
+             ("rgb", "RGB / component input", None), ("slots", "Option slots", None), ("control", "Control", None),
+             ("dims_mm", "Dimensions (W × H × D)", lambda v: v + " mm"), ("weight", "Weight", None)]
+GRADE = {"sony": "a Sony document", "wiki": "a community-kept wiki, not checked against a Sony document", "arcade": "Sony's figure"}
+def spec_section(m):
+    """The catalog's own notes as a table, plus pitch / size / weight where a source is in hand (tools/build-registry-specs.py)."""
+    sp = m.get("specs") or {}
+    rows = [(lab, (fmt(sp[k]) if fmt else sp[k])) for k, lab, fmt in SPEC_ROWS if sp.get(k)]
+    if len(rows) < 2:
+        return ""
+    src = ""
+    if sp.get("phys_source"):
+        what = " and ".join(x for x, k in (("dimensions", "dims_mm"), ("weight", "weight")) if sp.get(k)) or "pitch"
+        src = f' Source for the {what}: {e(sp["phys_source"])} ({GRADE[sp["phys_grade"]]}).'
+    return f"""  <section id="specs">
+    <h2 class="sec">Specifications</h2>
+    <div class="tablewrap" tabindex="0"><table class="spec mspec"><tbody>
+{"".join(f'      <tr><th scope="row">{e(lab)}</th><td>{e(val)}</td></tr>' + chr(10) for lab, val in rows)}    </tbody></table></div>
+    <p class="note fine">From the registry catalog&rsquo;s sources for this chassis; a row that is missing is a figure the catalog does not have, not a feature the monitor lacks.{src}</p>
+  </section>
+"""
+
 def model_page(m):
     slug, model, line = m["slug"], m["model"], m["line"]
     variants = [v for v in m["variants"] if v != model]
@@ -464,7 +487,7 @@ def model_page(m):
     <div class="entries" id="entries-out"><p class="note">Loading&hellip;</p></div>
   </section>
 
-{sony_section(m)}  <section id="about">
+{spec_section(m)}{sony_section(m)}  <section id="about">
     <h2 class="sec">About this model</h2>
     <p>{('<b>Catalog notes:</b> ' + about + '. ') if about else ''}<b>Era:</b> {e(m['era'])}, {CONF[m['era_confidence']]}{(' (' + basis + ')') if basis else ''}. {"Sony never published production totals; the bulletin ceilings above are the nearest thing, and the registry is the count." if m.get("sony_serials") else "Sony never published production figures for any of these; the registry is the count."}</p>
   </section>

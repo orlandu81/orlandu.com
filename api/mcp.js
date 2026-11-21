@@ -118,7 +118,8 @@ function prep() {
     return { e, t: norm(e.t), tt: norm(e.tt), h: norm(e.h), s: norm(e.s), b: norm(e.b), k: norm(e.k), tc: compact(e.t), hc: compact(e.h), u: slug.concat(slug.length > 1 ? [slug.join("")] : []) };
   });
   VOCAB = new Set();
-  for (const p of PREP) for (const w of (p.t + " " + p.tt + " " + p.h + " " + p.u.join(" ")).split(/[^a-z]+/)) if (w.length >= 4) VOCAB.add(w);
+  for (const p of PREP) for (const w of (p.t + " " + p.tt + " " + p.h + " " + p.k + " " + p.s + " " + p.u.join(" ")).split(/[^a-z]+/)) if (w.length >= 4) VOCAB.add(w);
+  for (const w of Object.keys(ALIAS)) if (w.length >= 4 && /^[a-z]+$/.test(w)) VOCAB.add(w); // a mistyped alias or hint word still gets its one-letter retry
   return PREP;
 }
 function edits1(a, b) { // true when a and b differ by one substitution, insertion, deletion or adjacent swap

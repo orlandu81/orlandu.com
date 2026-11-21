@@ -6,7 +6,7 @@ main.reg{--acc:#5ee9ff}
 @media(max-width:400px){.reg .stats{grid-template-columns:1fr 1fr}}
 
 /* survivor counts — one bar per model, single series */
-.census{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem 2.2rem}
+.census{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:1.2rem 2.2rem}
 .census h3{font-family:var(--disp);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line)}
 .census ol{list-style:none;margin:0;padding:0}
 .census li{display:grid;grid-template-columns:minmax(9.5rem,auto) 1fr 2.4rem;align-items:center;gap:.7rem;padding:.3rem 0;border-bottom:1px dotted rgba(255,255,255,.06)}
@@ -33,7 +33,7 @@ main.reg{--acc:#5ee9ff}
 #records[hidden]{display:none}
 
 /* entry cards */
-.entries{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.entries{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr))}
 .loadmore{margin-top:1.2rem;text-align:center}
 .loadmore[hidden]{display:none}
 .loadmore .btn[disabled]{opacity:.6;cursor:wait}
@@ -123,7 +123,8 @@ main.reg{--acc:#5ee9ff}
 .conds label:hover{border-color:var(--cyan-dim)}
 .conds label:has(input:checked){border-color:var(--cyan);box-shadow:0 0 0 2px rgba(94,233,255,.15)}
 .conds input{accent-color:var(--cyan);margin:0}
-.rfm .row3{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.rfm .row3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.6rem}
+.rfm .row3>*{min-width:0}
 .rfm h2.sec{grid-column:1/-1;margin:.6rem 0 .2rem}
 .rfm .preview{grid-column:1/-1;display:flex;gap:.8rem;align-items:center;font-family:var(--cond);color:var(--dim);font-size:.9rem;letter-spacing:.04em}
 .rfm .preview img{width:96px;height:64px;object-fit:cover;border-radius:6px;border:1px solid var(--line)}
@@ -132,7 +133,7 @@ main.reg{--acc:#5ee9ff}
 .aside ul{margin:0 0 .9rem 1.1rem;padding:0;color:var(--dim);font-size:.98rem}
 .aside li{margin:.25rem 0}
 .aside li b{color:var(--ink);font-weight:500}
-.pubpriv{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.pubpriv{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:1rem}
 .pubpriv .card h3{color:var(--cyan)}
 .pubpriv ul{margin:0 0 0 1.1rem;padding:0;color:var(--dim)}
 .pubpriv li{margin:.25rem 0}
@@ -178,3 +179,12 @@ table.spec.models td.num b{color:var(--cyan)}
 .card.entry .elink .cardimg:hover{border-color:var(--fire2)}
 .card.entry .elink .cardimg[disabled]{opacity:.7;cursor:default}
 .done .card.entry .elink .cardimg{display:none} /* the big button above does it */
+
+/* Model-page specification table (tools/build-registry-specs.py -> spec_section in the page builder) */
+table.spec.mspec{min-width:0;max-width:46rem}
+table.spec.mspec th{width:15.5rem;font-family:var(--cond);font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);white-space:normal}
+@media(max-width:560px){table.spec.mspec th{width:9.5rem}}
+/* A long <option> gave the form a 358 px minimum, so phones up to 375 px scrolled sideways. */
+.rform>*,.rfm>*{min-width:0}
+.rfm select,.rfm input,.rfm textarea{min-width:0;max-width:100%}
+@media(max-width:640px){.rfm{grid-template-columns:minmax(0,1fr)}}

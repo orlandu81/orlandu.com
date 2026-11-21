@@ -935,7 +935,8 @@
       return { e: e, t: norm(e.t), tt: norm(e.tt), h: norm(e.h), s: norm(e.s), b: norm(e.b), k: norm(e.k), tc: compact(e.t), hc: compact(e.h), u: slug };
     });
     VOCAB = {};
-    PREP.forEach(function(p){ (p.t + " " + p.tt + " " + p.h + " " + p.u.join(" ")).split(/[^a-z]+/).forEach(function(w){ if (w.length >= 4) VOCAB[w] = 1; }); });
+    PREP.forEach(function(p){ (p.t + " " + p.tt + " " + p.h + " " + p.k + " " + p.s + " " + p.u.join(" ")).split(/[^a-z]+/).forEach(function(w){ if (w.length >= 4) VOCAB[w] = 1; }); });
+    Object.keys(ALIAS).forEach(function(w){ if (w.length >= 4 && /^[a-z]+$/.test(w)) VOCAB[w] = 1; }); // a mistyped alias or search-only hint word still gets its one-letter retry
     return PREP;
   }
   function edits1(a, b){

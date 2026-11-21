@@ -27,9 +27,9 @@
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms-full.txt" title="Full text of this site for AI assistants">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms.txt" title="Site index for AI assistants">
 <link rel="alternate" type="application/rss+xml" href="https://www.orlandu.com/feed.xml" title="What's new at Orlandu's Arcade">
-<link rel="stylesheet" href="assets/style.css?v=a17a42a2">
+<link rel="stylesheet" href="assets/style.css?v=30706b82">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav-v3.webp">
-<script src="assets/site.js?v=5fa2e0a4" defer></script>
+<script src="assets/site.js?v=fc94cfe3" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -234,7 +234,7 @@
 
   <section>
     <h2 class="sec">The rules behind the answer</h2>
-    <p>A 15 kHz RGB signal &mdash; 240p and 480i &mdash; is what every CRT here was built for, so it ranks first whenever the console can produce it. Component carries 480p and HD only into the multiformat monitors: the PVM-20L5, the BVM-A14F5U through its BKM-68X, and the LMD-9030 and 9050. The BVM-20E1U and PVM-2950Q are standard-definition by design; a 480p-capable console still connects, it just runs at 480i. S-Video and composite are listed because they exist, not because the arcade uses them. The LMD-940W has no analog input at all, so anything older than HDMI needs a converter in front of it. Sync rides the composite-sync line of the SCART cable; a monitor whose BNCs take RGB or component is set to RGB; and the last, or only, monitor on a loop-through line is terminated at 75 &Omega;.</p>
+    <p>A 15 kHz RGB signal &mdash; 240p and 480i &mdash; is what every CRT here was built for, so it ranks first whenever the console can produce it. Component carries 480p and HD only into the multiformat monitors: the <a href="pvm-20l5.html">PVM-20L5</a>, the <a href="bvm-a14f5u.html">BVM-A14F5U</a> through its BKM-68X, and the <a href="lmd-wall.html">LMD-9030</a> and 9050. The <a href="bvm-20e1u.html">BVM-20E1U</a> and <a href="pvm-2950q.html">PVM-2950Q</a> are standard-definition by design; a 480p-capable console still connects, it just runs at 480i. S-Video and composite are listed because they exist, not because the arcade uses them. The LMD-940W has no analog input at all, so anything older than HDMI needs a converter in front of it. Sync rides the composite-sync line of the SCART cable; a monitor whose BNCs take RGB or component is set to RGB; and the last, or only, monitor on a loop-through line is terminated at 75 &Omega;.</p>
     <p class="note">The rules are open data: <a href="data/connect.json">connect.json</a>, CC BY 4.0, credit Orlandu&rsquo;s Arcade; the planner itself is <a href="assets/connect-plan.js?v=9ab84117">one small script</a>, and an AI assistant can call it as the <code>plan_connection</code> tool on the <a href="mcp.html">MCP server</a>. Which card fits which chassis is on the <a href="bkm-cards.html">BKM reference</a>; what each monitor accepts is on the <a href="monitors.html#specs">fleet table</a>.</p>
   </section>
   <p style="margin-top:1.2rem"><a class="btn cy" href="connect-console-to-pvm.html">The how-to, step by step →</a> &nbsp; <a class="btn" href="signal-chain.html">The signal chain →</a> &nbsp; <a class="btn" href="consoles.html#mods">The console table →</a></p>
@@ -274,7 +274,7 @@
     if (p.in_the_collection) h += '<p class="here" style="margin-top:.8rem">In the collection: ' + esc(p.in_the_collection) + '. <a href="consoles.html#mods">The console table &rarr;</a></p>';
     h += '<p style="margin-top:.6rem;font-size:.95rem"><a href="' + esc(p.monitor_url) + '">The ' + esc(p.monitor) + ' profile &rarr;</a></p></div>';
     if (p.options.length > 1) {
-      h += '<div class="tablewrap"><table class="spec alts"><thead><tr><th scope="col">Every signal this pair shares</th><th scope="col">Console</th><th scope="col">Monitor</th><th scope="col">Verdict</th></tr></thead><tbody>';
+      h += '<div class="tablewrap" tabindex="0"><table class="spec alts"><thead><tr><th scope="col">Every signal this pair shares</th><th scope="col">Console</th><th scope="col">Monitor</th><th scope="col">Verdict</th></tr></thead><tbody>';
       p.options.forEach(function(o){ h += '<tr><th scope="row">' + esc(o.name) + '</th><td>' + esc(o.console_how) + '</td><td>' + esc(o.monitor_how) + '</td><td class="st ' + o.status + '">' + esc(label(o.status)) + '</td></tr>'; });
       h += '</tbody></table></div>';
     }

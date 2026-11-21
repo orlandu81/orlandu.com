@@ -1,276 +1,6166 @@
 {
-  "_": "Query battery for tools/eval-search.mjs. target = page file (without .html; 'home' for /) that should be the top hit, or a list of acceptable pages. 'cat' groups the hit rates.",
-  "queries": [
-    {"q": "pvm 20l5", "cat": "model numbers", "target": ["pvm-20l5", "pvm-20l5-buying-guide"]},
-    {"q": "pvm-20l5", "cat": "model numbers", "target": ["pvm-20l5", "pvm-20l5-buying-guide"]},
-    {"q": "PVM20L5", "cat": "model numbers", "target": ["pvm-20l5", "pvm-20l5-buying-guide"]},
-    {"q": "20L5", "cat": "model numbers", "target": ["pvm-20l5", "pvm-20l5-buying-guide"]},
-    {"q": "sony pvm 20l5", "cat": "model numbers", "target": ["pvm-20l5", "pvm-20l5-buying-guide"]},
-    {"q": "pvm 2950q", "cat": "model numbers", "target": "pvm-2950q"},
-    {"q": "pvm-2950q", "cat": "model numbers", "target": "pvm-2950q"},
-    {"q": "2950q", "cat": "model numbers", "target": "pvm-2950q"},
-    {"q": "2950", "cat": "model numbers", "target": "pvm-2950q"},
-    {"q": "bvm 20e1u", "cat": "model numbers", "target": "bvm-20e1u"},
-    {"q": "bvm-20e1u", "cat": "model numbers", "target": "bvm-20e1u"},
-    {"q": "20e1u", "cat": "model numbers", "target": "bvm-20e1u"},
-    {"q": "BVM20E1U", "cat": "model numbers", "target": "bvm-20e1u"},
-    {"q": "bvm a14f5u", "cat": "model numbers", "target": "bvm-a14f5u"},
-    {"q": "bvm-a14f5u", "cat": "model numbers", "target": "bvm-a14f5u"},
-    {"q": "a14f5u", "cat": "model numbers", "target": "bvm-a14f5u"},
-    {"q": "lmd 9050", "cat": "model numbers", "target": "lmd-wall"},
-    {"q": "lmd-940w", "cat": "model numbers", "target": "lmd-wall"},
-    {"q": "lmd9020", "cat": "model numbers", "target": "lmd-wall"},
-    {"q": "ams-100", "cat": "model numbers", "target": ["ams-100-monograph", "ams-3-vs-ams-100"]},
-    {"q": "ams 100", "cat": "model numbers", "target": ["ams-100-monograph", "ams-3-vs-ams-100"]},
-    {"q": "sony ams-3", "cat": "model numbers", "target": ["ams-3-vs-ams-100", "ams-100-monograph"]},
-    {"q": "ams3", "cat": "model numbers", "target": ["ams-3-vs-ams-100", "ams-100-monograph"]},
-    {"q": "bkm 129x", "cat": "bkm cards", "target": ["bkm-cards", "pvm-20l5", "pvm-20l5-buying-guide"]},
-    {"q": "bkm-129x", "cat": "bkm cards", "target": ["bkm-cards", "pvm-20l5", "pvm-20l5-buying-guide"]},
-    {"q": "BKM129X", "cat": "bkm cards", "target": ["bkm-cards", "pvm-20l5", "pvm-20l5-buying-guide"]},
-    {"q": "129x", "cat": "bkm cards", "target": ["bkm-cards", "pvm-20l5", "pvm-20l5-buying-guide"]},
-    {"q": "bkm 21d", "cat": "bkm cards", "target": ["bkm-cards", "bvm-20e1u"]},
-    {"q": "bkm-68x", "cat": "bkm cards", "target": ["bkm-cards", "bvm-a14f5u"]},
-    {"q": "bkm 62hs", "cat": "bkm cards", "target": ["bkm-cards", "bvm-a14f5u"]},
-    {"q": "bkm-10r", "cat": "bkm cards", "target": ["bkm-10r", "bkm-cards"]},
-    {"q": "bkm card", "cat": "bkm cards", "target": ["bkm-cards", "glossary"]},
-    {"q": "bkm cards", "cat": "bkm cards", "target": ["bkm-cards", "glossary"]},
-    {"q": "what is a bkm card", "cat": "bkm cards", "target": ["bkm-cards", "glossary", "pvm-vs-bvm"]},
-    {"q": "which bkm card fits bvm-20e1u", "cat": "bkm cards", "target": ["bkm-cards", "bvm-20e1u"]},
-    {"q": "option card sony bvm", "cat": "bkm cards", "target": ["bkm-cards", "bvm-20e1u", "bvm-a14f5u"]},
-    {"q": "bkm-22x", "cat": "bkm cards", "target": ["bkm-cards", "wanted"]},
-    {"q": "playchoise 10", "cat": "misspellings", "target": "playchoice-10"},
-    {"q": "play choice 10", "cat": "misspellings", "target": "playchoice-10"},
-    {"q": "playchoice10", "cat": "misspellings", "target": "playchoice-10"},
-    {"q": "trinitron", "cat": "misspellings", "target": ["trinitron-fleet-vol1", "monitors", "glossary"]},
-    {"q": "trinatron", "cat": "misspellings", "target": ["trinitron-fleet-vol1", "monitors", "glossary"]},
-    {"q": "ghost busters", "cat": "misspellings", "target": "ghostbusters"},
-    {"q": "donkey kong arcade", "cat": "misspellings", "target": "donkey-kong"},
-    {"q": "donkeykong", "cat": "misspellings", "target": "donkey-kong"},
-    {"q": "nintendo 64", "cat": "misspellings", "target": ["nintendo-64", "consoles"]},
-    {"q": "n64", "cat": "misspellings", "target": ["nintendo-64", "consoles"]},
-    {"q": "unisystem", "cat": "misspellings", "target": ["vs-unisystem", "glossary"]},
-    {"q": "uni system", "cat": "misspellings", "target": ["vs-unisystem", "glossary"]},
-    {"q": "how to connect snes to pvm", "cat": "questions", "target": "connect-console-to-pvm"},
-    {"q": "connect console to sony monitor", "cat": "questions", "target": "connect-console-to-pvm"},
-    {"q": "hook up genesis to bvm", "cat": "questions", "target": ["connect-console-to-pvm", "genesis-cdx"]},
-    {"q": "pvm or bvm for retro games", "cat": "questions", "target": "pvm-vs-bvm"},
-    {"q": "pvm vs bvm", "cat": "questions", "target": "pvm-vs-bvm"},
-    {"q": "bvm vs pvm", "cat": "questions", "target": "pvm-vs-bvm"},
-    {"q": "difference between pvm and bvm", "cat": "questions", "target": "pvm-vs-bvm"},
-    {"q": "what to check before buying a pvm", "cat": "questions", "target": "pvm-20l5-buying-guide"},
-    {"q": "how to spot a professional monitor", "cat": "questions", "target": "crt-field-guide"},
-    {"q": "is the arcade open to the public", "cat": "questions", "target": "about"},
-    {"q": "can i come play", "cat": "questions", "target": "about"},
-    {"q": "do you buy", "cat": "questions", "target": "about"},
-    {"q": "can i use your photos", "cat": "questions", "target": "about"},
-    {"q": "75 ohm termination", "cat": "questions", "target": ["connect-console-to-pvm", "glossary"]},
-    {"q": "what is 240p", "cat": "questions", "target": "glossary"},
-    {"q": "what are scanlines", "cat": "questions", "target": "glossary"},
-    {"q": "rgb vs component", "cat": "questions", "target": ["glossary", "connect-console-to-pvm", "pvm-vs-bvm"]},
-    {"q": "big blue", "cat": "machines", "target": "big-blue"},
-    {"q": "capcom big blue", "cat": "machines", "target": "big-blue"},
-    {"q": "cps2 cabinet", "cat": "machines", "target": ["big-blue", "glossary"]},
-    {"q": "mini cute", "cat": "machines", "target": "mini-cute"},
-    {"q": "capcom mini cute", "cat": "machines", "target": "mini-cute"},
-    {"q": "candy cab", "cat": "machines", "target": ["mini-cute", "glossary"]},
-    {"q": "red tent", "cat": "machines", "target": "red-tent"},
-    {"q": "nintendo red tent", "cat": "machines", "target": "red-tent"},
-    {"q": "vs unisystem", "cat": "machines", "target": "vs-unisystem"},
-    {"q": "vs. unisystem", "cat": "machines", "target": "vs-unisystem"},
-    {"q": "vs system", "cat": "machines", "target": ["vs-unisystem", "glossary", "vs-smb"]},
-    {"q": "vs super mario bros", "cat": "machines", "target": ["vs-smb", "vs-unisystem"]},
-    {"q": "vs smb high score", "cat": "machines", "target": "vs-smb"},
-    {"q": "tna", "cat": "machines", "target": "tna"},
-    {"q": "total nuclear annihilation", "cat": "machines", "target": "tna"},
-    {"q": "ghostbusters pinball", "cat": "machines", "target": "ghostbusters"},
-    {"q": "ghostbusters premium", "cat": "machines", "target": "ghostbusters"},
-    {"q": "stern ghostbusters", "cat": "machines", "target": "ghostbusters"},
-    {"q": "indiana jones pinball", "cat": "machines", "target": "indiana-jones"},
-    {"q": "williams indiana jones", "cat": "machines", "target": "indiana-jones"},
-    {"q": "cold boot", "cat": "machines", "target": ["indiana-jones", "projects"]},
-    {"q": "rick and morty", "cat": "machines", "target": "rick-and-morty"},
-    {"q": "rick and morty pinball", "cat": "machines", "target": "rick-and-morty"},
-    {"q": "spooky pinball", "cat": "machines", "target": "rick-and-morty"},
-    {"q": "mario bros widebody", "cat": "machines", "target": "mario-bros"},
-    {"q": "mario bros", "cat": "machines", "target": "mario-bros"},
-    {"q": "donkey kong", "cat": "machines", "target": "donkey-kong"},
-    {"q": "pinball", "cat": "machines", "target": ["games", "indiana-jones", "ghostbusters", "tna", "rick-and-morty", "glossary"]},
-    {"q": "arcade cabinets", "cat": "machines", "target": ["games", "glossary"]},
-    {"q": "coin op", "cat": "machines", "target": "games"},
-    {"q": "n64 rgb", "cat": "consoles", "target": "nintendo-64"},
-    {"q": "n64 rgb mod", "cat": "consoles", "target": "nintendo-64"},
-    {"q": "nesrgb top loader", "cat": "consoles", "target": "nes-top-loader"},
-    {"q": "nes top loader", "cat": "consoles", "target": ["nes-top-loader", "consoles"]},
-    {"q": "top loader rgb", "cat": "consoles", "target": "nes-top-loader"},
-    {"q": "duo-r region mod", "cat": "consoles", "target": "pc-engine-duo-r"},
-    {"q": "pc engine duo r", "cat": "consoles", "target": ["pc-engine-duo-r", "consoles"]},
-    {"q": "duo-r", "cat": "consoles", "target": ["pc-engine-duo-r", "consoles"]},
-    {"q": "gba sp", "cat": "consoles", "target": ["gba-sp", "consoles"]},
-    {"q": "gba sp cobalt", "cat": "consoles", "target": ["gba-sp", "consoles"]},
-    {"q": "game boy advance sp", "cat": "consoles", "target": ["gba-sp", "consoles"]},
-    {"q": "genesis cdx", "cat": "consoles", "target": ["genesis-cdx", "consoles"]},
-    {"q": "sega cdx", "cat": "consoles", "target": ["genesis-cdx", "consoles"]},
-    {"q": "ps2 slim", "cat": "consoles", "target": ["ps2-slim", "consoles"]},
-    {"q": "memcard pro 2", "cat": "consoles", "target": ["ps2-slim", "projects"]},
-    {"q": "opl ps2", "cat": "consoles", "target": "ps2-slim"},
-    {"q": "x'eye", "cat": "consoles", "target": ["consoles", "projects"]},
-    {"q": "xeye", "cat": "consoles", "target": ["consoles", "projects"]},
-    {"q": "jvc x eye", "cat": "consoles", "target": ["consoles", "projects"]},
-    {"q": "nomad", "cat": "consoles", "target": "consoles"},
-    {"q": "saturn", "cat": "consoles", "target": "consoles"},
-    {"q": "dreamcast", "cat": "consoles", "target": "consoles"},
-    {"q": "gamecube", "cat": "consoles", "target": "consoles"},
-    {"q": "new 3ds xl", "cat": "consoles", "target": "consoles"},
-    {"q": "turbo express", "cat": "consoles", "target": "consoles"},
-    {"q": "console mods", "cat": "consoles", "target": ["consoles", "glossary"]},
-    {"q": "rgb mod", "cat": "consoles", "target": ["glossary", "consoles", "nintendo-64", "nes-top-loader"]},
-    {"q": "pc-10 topper", "cat": "signage", "target": ["signage", "wanted", "forsale", "glossary"]},
-    {"q": "pc10 toppers", "cat": "signage", "target": ["signage", "wanted", "forsale", "glossary"]},
-    {"q": "playchoice toppers", "cat": "signage", "target": ["signage", "wanted", "forsale", "glossary"]},
-    {"q": "playchoice 10 topper", "cat": "signage", "target": ["signage", "wanted", "forsale", "glossary", "playchoice-10"]},
-    {"q": "topper", "cat": "signage", "target": ["glossary", "signage", "wanted", "forsale"]},
-    {"q": "vs instruction cards", "cat": "signage", "target": ["signage", "glossary"]},
-    {"q": "instruction card", "cat": "signage", "target": ["glossary", "signage"]},
-    {"q": "kaybee sign", "cat": "signage", "target": ["signage", "gallery"]},
-    {"q": "kay bee toys", "cat": "signage", "target": ["signage", "gallery"]},
-    {"q": "kay-bee", "cat": "signage", "target": ["signage", "gallery"]},
-    {"q": "world of nintendo sign", "cat": "signage", "target": ["signage", "gallery"]},
-    {"q": "superbrite", "cat": "signage", "target": ["signage", "gallery"]},
-    {"q": "racetrack sign", "cat": "signage", "target": ["signage", "gallery"]},
-    {"q": "nintendo store display", "cat": "signage", "target": ["signage", "gallery"]},
-    {"q": "signage", "cat": "signage", "target": "signage"},
-    {"q": "foreverspin", "cat": "collections", "target": "spinning-tops"},
-    {"q": "spinning tops", "cat": "collections", "target": "spinning-tops"},
-    {"q": "tungsten spinning top", "cat": "collections", "target": "spinning-tops"},
-    {"q": "metal spinning tops", "cat": "collections", "target": "spinning-tops"},
-    {"q": "player's guide", "cat": "collections", "target": "guide-shelf"},
-    {"q": "nintendo players guide", "cat": "collections", "target": "guide-shelf"},
-    {"q": "strategy guides", "cat": "collections", "target": "guide-shelf"},
-    {"q": "earthbound guide", "cat": "collections", "target": "guide-shelf"},
-    {"q": "playchoice 10 games list", "cat": "collections", "target": "playchoice-10"},
-    {"q": "pc-10 cart wall", "cat": "collections", "target": "playchoice-10"},
-    {"q": "playchoice 10 boards", "cat": "collections", "target": ["playchoice-10", "forsale"]},
-    {"q": "monitor fleet", "cat": "collections", "target": "monitors"},
-    {"q": "sony monitors", "cat": "collections", "target": ["monitors", "pvm-vs-bvm", "glossary"]},
-    {"q": "broadcast monitors", "cat": "collections", "target": ["monitors", "pvm-vs-bvm", "crt-field-guide"]},
-    {"q": "lmd wall", "cat": "collections", "target": "lmd-wall"},
-    {"q": "sony lmd", "cat": "collections", "target": ["lmd-wall", "monitors"]},
-    {"q": "gallery", "cat": "collections", "target": "gallery"},
-    {"q": "photos", "cat": "collections", "target": ["gallery", "about"]},
-    {"q": "buying guide", "cat": "guides", "target": "pvm-20l5-buying-guide"},
-    {"q": "pvm buying guide", "cat": "guides", "target": "pvm-20l5-buying-guide"},
-    {"q": "checklist pdf", "cat": "guides", "target": "pvm-20l5-buying-guide"},
-    {"q": "checklist", "cat": "guides", "target": "pvm-20l5-buying-guide"},
-    {"q": "glossary", "cat": "guides", "target": "glossary"},
-    {"q": "field guide", "cat": "guides", "target": "crt-field-guide"},
-    {"q": "crt field guide", "cat": "guides", "target": "crt-field-guide"},
-    {"q": "timeline", "cat": "guides", "target": "timeline"},
-    {"q": "signal chain", "cat": "guides", "target": "signal-chain"},
-    {"q": "switcher", "cat": "guides", "target": ["signal-chain", "glossary", "connect-console-to-pvm"]},
-    {"q": "scart to bnc", "cat": "guides", "target": ["glossary", "connect-console-to-pvm", "signal-chain"]},
-    {"q": "monograph", "cat": "guides", "target": ["ams-100-monograph", "projects"]},
-    {"q": "ams-100 history", "cat": "guides", "target": ["ams-100-monograph", "ams-3-vs-ams-100"]},
-    {"q": "trinitron fleet", "cat": "guides", "target": "trinitron-fleet-vol1"},
-    {"q": "magazine", "cat": "guides", "target": ["trinitron-fleet-vol1", "orlandu-100", "orlandu-50-games", "stories"]},
-    {"q": "orlandu 100", "cat": "guides", "target": "orlandu-100"},
-    {"q": "favorite movies", "cat": "guides", "target": "orlandu-100"},
-    {"q": "orlandu 50", "cat": "guides", "target": "orlandu-50-games"},
-    {"q": "favorite games", "cat": "guides", "target": "orlandu-50-games"},
-    {"q": "stories", "cat": "guides", "target": "stories"},
-    {"q": "projects", "cat": "guides", "target": "projects"},
-    {"q": "work log", "cat": "guides", "target": ["projects", "big-blue", "indiana-jones", "bvm-20e1u", "pvm-20l5", "pvm-2950q", "bvm-a14f5u", "ghostbusters", "tna", "red-tent", "mini-cute", "vs-unisystem", "donkey-kong", "mario-bros", "rick-and-morty", "nes-top-loader", "nintendo-64", "gba-sp", "genesis-cdx", "pc-engine-duo-r", "ps2-slim", "lmd-wall"]},
-    {"q": "psu rebuild", "cat": "guides", "target": ["projects", "big-blue"]},
-    {"q": "q-sound", "cat": "guides", "target": ["projects", "big-blue"]},
-    {"q": "for sale", "cat": "intents", "target": "forsale"},
-    {"q": "buy", "cat": "intents", "target": ["forsale", "about"]},
-    {"q": "ebay", "cat": "intents", "target": ["forsale", "about"]},
-    {"q": "what's for sale", "cat": "intents", "target": "forsale"},
-    {"q": "baseball stars", "cat": "intents", "target": ["wanted", "playchoice-10"]},
-    {"q": "captain skyhawk", "cat": "intents", "target": ["forsale", "signage"]},
-    {"q": "wanted", "cat": "intents", "target": "wanted"},
-    {"q": "hunt list", "cat": "intents", "target": "wanted"},
-    {"q": "looking for", "cat": "intents", "target": ["wanted", "about"]},
-    {"q": "i have one", "cat": "intents", "target": "wanted"},
-    {"q": "kv-1310", "cat": "intents", "target": "wanted"},
-    {"q": "philips discoverer", "cat": "intents", "target": "wanted"},
-    {"q": "contact", "cat": "intents", "target": "about"},
-    {"q": "email", "cat": "intents", "target": "about"},
-    {"q": "about", "cat": "intents", "target": "about"},
-    {"q": "orange county arcade", "cat": "intents", "target": ["about", "home"]},
-    {"q": "mcp", "cat": "ai channel", "target": "mcp"},
-    {"q": "mcp server", "cat": "ai channel", "target": "mcp"},
-    {"q": "dataset", "cat": "ai channel", "target": ["mcp", "monitors", "consoles", "playchoice-10", "bkm-cards"]},
-    {"q": "datasets", "cat": "ai channel", "target": ["mcp", "monitors", "consoles", "playchoice-10", "bkm-cards"]},
-    {"q": "llms.txt", "cat": "ai channel", "target": "mcp"},
-    {"q": "llms", "cat": "ai channel", "target": "mcp"},
-    {"q": "ai agents", "cat": "ai channel", "target": "mcp"},
-    {"q": "claude", "cat": "ai channel", "target": "mcp"},
-    {"q": "cc by", "cat": "ai channel", "target": ["mcp", "monitors", "consoles", "playchoice-10", "bkm-cards"]},
-    {"q": "scanlines", "cat": "glossary", "target": "glossary"},
-    {"q": "aperture grille", "cat": "glossary", "target": "glossary"},
-    {"q": "degauss", "cat": "glossary", "target": "glossary"},
-    {"q": "burn in", "cat": "glossary", "target": "glossary"},
-    {"q": "jamma", "cat": "glossary", "target": "glossary"},
-    {"q": "suicide battery", "cat": "glossary", "target": "glossary"},
-    {"q": "huo", "cat": "glossary", "target": "glossary"},
-    {"q": "klov", "cat": "glossary", "target": ["glossary", "about"]},
-    {"q": "rottendog", "cat": "glossary", "target": ["indiana-jones", "projects", "glossary"]},
-    {"q": "15khz", "cat": "glossary", "target": "glossary"},
-    {"q": "15 khz", "cat": "glossary", "target": "glossary"},
-    {"q": "underscan", "cat": "glossary", "target": "glossary"},
-    {"q": "line doubler", "cat": "glossary", "target": "glossary"},
-    {"q": "sony model numbers", "cat": "new pages", "target": "sony-model-numbers"},
-    {"q": "pvm model number meaning", "cat": "new pages", "target": "sony-model-numbers"},
-    {"q": "what does the u mean on a pvm", "cat": "new pages", "target": "sony-model-numbers"},
-    {"q": "sony monitor suffix meaning", "cat": "new pages", "target": "sony-model-numbers"},
-    {"q": "bvm 1 vs 5", "cat": "new pages", "target": ["sony-model-numbers", "bkm-10r"]},
-    {"q": "what does pvm stand for", "cat": "new pages", "target": ["sony-model-numbers", "glossary"]},
-    {"q": "bvm model number decoder", "cat": "new pages", "target": "sony-model-numbers"},
-    {"q": "sony monitor naming", "cat": "new pages", "target": "sony-model-numbers"},
-    {"q": "lmd model numbers", "cat": "new pages", "target": ["sony-model-numbers", "lmd-wall"]},
-    {"q": "bkm card number meaning", "cat": "new pages", "target": ["sony-model-numbers", "bkm-cards"]},
-    {"q": "sony region suffix", "cat": "new pages", "target": "sony-model-numbers"},
-    {"q": "decode sony badge", "cat": "new pages", "target": "sony-model-numbers"},
-    {"q": "what does the w mean sony monitor", "cat": "new pages", "target": "sony-model-numbers"},
-    {"q": "pvm q vs m", "cat": "new pages", "target": "sony-model-numbers"},
-    {"q": "crt simulator", "cat": "new pages", "target": "through-the-mask"},
-    {"q": "sony crt simulator", "cat": "new pages", "target": "through-the-mask"},
-    {"q": "aperture grille simulator", "cat": "new pages", "target": "through-the-mask"},
-    {"q": "scanline simulator", "cat": "new pages", "target": "through-the-mask"},
-    {"q": "shadow mask vs aperture grille", "cat": "new pages", "target": ["through-the-mask", "crt-field-guide", "glossary"]},
-    {"q": "compare crt pitch", "cat": "new pages", "target": ["through-the-mask", "monitors"]},
-    {"q": "tvl comparison", "cat": "new pages", "target": ["through-the-mask", "monitors"]},
-    {"q": "what does a pvm look like up close", "cat": "new pages", "target": "through-the-mask"},
-    {"q": "crt viewing distance", "cat": "new pages", "target": "through-the-mask"},
-    {"q": "through the mask", "cat": "new pages", "target": "through-the-mask"},
-    {"q": "simulate pvm 20l5", "cat": "new pages", "target": ["through-the-mask", "pvm-20l5"]},
-    {"q": "scanlines up close", "cat": "new pages", "target": "through-the-mask"},
-    {"q": "will it connect", "cat": "new pages", "target": "will-it-connect"},
-    {"q": "can i connect n64 to pvm", "cat": "new pages", "target": ["will-it-connect", "connect-console-to-pvm", "nintendo-64"]},
-    {"q": "snes to bvm", "cat": "new pages", "target": ["will-it-connect", "connect-console-to-pvm"]},
-    {"q": "will my console work with a pvm", "cat": "new pages", "target": ["will-it-connect", "connect-console-to-pvm"]},
-    {"q": "console to monitor planner", "cat": "new pages", "target": "will-it-connect"},
-    {"q": "genesis to pvm cable", "cat": "new pages", "target": ["will-it-connect", "connect-console-to-pvm", "genesis-cdx"]},
-    {"q": "ps2 component to pvm", "cat": "new pages", "target": ["will-it-connect", "connect-console-to-pvm", "ps2-slim"]},
-    {"q": "which cable for pvm", "cat": "new pages", "target": ["will-it-connect", "connect-console-to-pvm"]},
-    {"q": "do i need a bkm card for rgb", "cat": "new pages", "target": ["will-it-connect", "bkm-cards"]},
-    {"q": "connection planner", "cat": "new pages", "target": "will-it-connect"},
-    {"q": "console compatibility pvm", "cat": "new pages", "target": ["will-it-connect", "connect-console-to-pvm"]},
-    {"q": "bkm 10r", "cat": "new pages", "target": ["bkm-10r", "bkm-cards"]},
-    {"q": "bkm-10r menu", "cat": "new pages", "target": "bkm-10r"},
-    {"q": "bvm controller", "cat": "new pages", "target": "bkm-10r"},
-    {"q": "bkm 10r manual", "cat": "new pages", "target": "bkm-10r"},
-    {"q": "bvm control unit", "cat": "new pages", "target": "bkm-10r"},
-    {"q": "how to adjust a bvm 20e1u", "cat": "new pages", "target": ["bkm-10r", "bvm-20e1u"]},
-    {"q": "bvm menu", "cat": "new pages", "target": "bkm-10r"},
-    {"q": "bkm-15r", "cat": "new pages", "target": ["bkm-10r", "bkm-cards", "sony-model-numbers"]},
-    {"q": "bvm remote control", "cat": "new pages", "target": "bkm-10r"},
-    {"q": "bkm-10r buttons", "cat": "new pages", "target": "bkm-10r"},
-    {"q": "pvm vs bvm difference", "cat": "overlap", "target": "pvm-vs-bvm"},
-    {"q": "how to hook up a console to a pvm", "cat": "overlap", "target": "connect-console-to-pvm"},
-    {"q": "connect console to pvm guide", "cat": "overlap", "target": "connect-console-to-pvm"},
-    {"q": "bkm cards list", "cat": "overlap", "target": "bkm-cards"},
-    {"q": "which bkm card fits", "cat": "overlap", "target": "bkm-cards"},
-    {"q": "bvm-20e1u specs", "cat": "overlap", "target": "bvm-20e1u"}
-  ]
+ "_": "Query battery for tools/eval-search.mjs. target = page file (without .html; 'home' for /) that should be the top hit, or a list of acceptable pages. 'cat' groups the hit rates.",
+ "queries": [
+  {
+   "q": "pvm 20l5",
+   "cat": "model numbers",
+   "target": [
+    "pvm-20l5",
+    "pvm-20l5-buying-guide"
+   ]
+  },
+  {
+   "q": "pvm-20l5",
+   "cat": "model numbers",
+   "target": [
+    "pvm-20l5",
+    "pvm-20l5-buying-guide"
+   ]
+  },
+  {
+   "q": "PVM20L5",
+   "cat": "model numbers",
+   "target": [
+    "pvm-20l5",
+    "pvm-20l5-buying-guide"
+   ]
+  },
+  {
+   "q": "20L5",
+   "cat": "model numbers",
+   "target": [
+    "pvm-20l5",
+    "pvm-20l5-buying-guide"
+   ]
+  },
+  {
+   "q": "sony pvm 20l5",
+   "cat": "model numbers",
+   "target": [
+    "pvm-20l5",
+    "pvm-20l5-buying-guide"
+   ]
+  },
+  {
+   "q": "pvm 2950q",
+   "cat": "model numbers",
+   "target": "pvm-2950q"
+  },
+  {
+   "q": "pvm-2950q",
+   "cat": "model numbers",
+   "target": "pvm-2950q"
+  },
+  {
+   "q": "2950q",
+   "cat": "model numbers",
+   "target": "pvm-2950q"
+  },
+  {
+   "q": "2950",
+   "cat": "model numbers",
+   "target": "pvm-2950q"
+  },
+  {
+   "q": "bvm 20e1u",
+   "cat": "model numbers",
+   "target": "bvm-20e1u"
+  },
+  {
+   "q": "bvm-20e1u",
+   "cat": "model numbers",
+   "target": "bvm-20e1u"
+  },
+  {
+   "q": "20e1u",
+   "cat": "model numbers",
+   "target": "bvm-20e1u"
+  },
+  {
+   "q": "BVM20E1U",
+   "cat": "model numbers",
+   "target": "bvm-20e1u"
+  },
+  {
+   "q": "bvm a14f5u",
+   "cat": "model numbers",
+   "target": "bvm-a14f5u"
+  },
+  {
+   "q": "bvm-a14f5u",
+   "cat": "model numbers",
+   "target": "bvm-a14f5u"
+  },
+  {
+   "q": "a14f5u",
+   "cat": "model numbers",
+   "target": "bvm-a14f5u"
+  },
+  {
+   "q": "lmd 9050",
+   "cat": "model numbers",
+   "target": "lmd-wall"
+  },
+  {
+   "q": "lmd-940w",
+   "cat": "model numbers",
+   "target": "lmd-wall"
+  },
+  {
+   "q": "lmd9020",
+   "cat": "model numbers",
+   "target": "lmd-wall"
+  },
+  {
+   "q": "ams-100",
+   "cat": "model numbers",
+   "target": [
+    "ams-100-monograph",
+    "ams-3-vs-ams-100"
+   ]
+  },
+  {
+   "q": "ams 100",
+   "cat": "model numbers",
+   "target": [
+    "ams-100-monograph",
+    "ams-3-vs-ams-100"
+   ]
+  },
+  {
+   "q": "sony ams-3",
+   "cat": "model numbers",
+   "target": [
+    "ams-3-vs-ams-100",
+    "ams-100-monograph"
+   ]
+  },
+  {
+   "q": "ams3",
+   "cat": "model numbers",
+   "target": [
+    "ams-3-vs-ams-100",
+    "ams-100-monograph"
+   ]
+  },
+  {
+   "q": "bkm 129x",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "pvm-20l5",
+    "pvm-20l5-buying-guide"
+   ]
+  },
+  {
+   "q": "bkm-129x",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "pvm-20l5",
+    "pvm-20l5-buying-guide"
+   ]
+  },
+  {
+   "q": "BKM129X",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "pvm-20l5",
+    "pvm-20l5-buying-guide"
+   ]
+  },
+  {
+   "q": "129x",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "pvm-20l5",
+    "pvm-20l5-buying-guide"
+   ]
+  },
+  {
+   "q": "bkm 21d",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "bvm-20e1u"
+   ]
+  },
+  {
+   "q": "bkm-68x",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "bvm-a14f5u"
+   ]
+  },
+  {
+   "q": "bkm 62hs",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "bvm-a14f5u"
+   ]
+  },
+  {
+   "q": "bkm-10r",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-10r",
+    "bkm-cards"
+   ]
+  },
+  {
+   "q": "bkm card",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "glossary"
+   ]
+  },
+  {
+   "q": "bkm cards",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "glossary"
+   ]
+  },
+  {
+   "q": "what is a bkm card",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "glossary",
+    "pvm-vs-bvm"
+   ]
+  },
+  {
+   "q": "which bkm card fits bvm-20e1u",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "bvm-20e1u"
+   ]
+  },
+  {
+   "q": "option card sony bvm",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "bvm-20e1u",
+    "bvm-a14f5u"
+   ]
+  },
+  {
+   "q": "bkm-22x",
+   "cat": "bkm cards",
+   "target": [
+    "bkm-cards",
+    "wanted"
+   ]
+  },
+  {
+   "q": "playchoise 10",
+   "cat": "misspellings",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "play choice 10",
+   "cat": "misspellings",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "playchoice10",
+   "cat": "misspellings",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "trinitron",
+   "cat": "misspellings",
+   "target": [
+    "trinitron-fleet-vol1",
+    "monitors",
+    "glossary"
+   ]
+  },
+  {
+   "q": "trinatron",
+   "cat": "misspellings",
+   "target": [
+    "trinitron-fleet-vol1",
+    "monitors",
+    "glossary"
+   ]
+  },
+  {
+   "q": "ghost busters",
+   "cat": "misspellings",
+   "target": "ghostbusters"
+  },
+  {
+   "q": "donkey kong arcade",
+   "cat": "misspellings",
+   "target": "donkey-kong"
+  },
+  {
+   "q": "donkeykong",
+   "cat": "misspellings",
+   "target": "donkey-kong"
+  },
+  {
+   "q": "nintendo 64",
+   "cat": "misspellings",
+   "target": [
+    "nintendo-64",
+    "consoles"
+   ]
+  },
+  {
+   "q": "n64",
+   "cat": "misspellings",
+   "target": [
+    "nintendo-64",
+    "consoles"
+   ]
+  },
+  {
+   "q": "unisystem",
+   "cat": "misspellings",
+   "target": [
+    "vs-unisystem",
+    "glossary"
+   ]
+  },
+  {
+   "q": "uni system",
+   "cat": "misspellings",
+   "target": [
+    "vs-unisystem",
+    "glossary"
+   ]
+  },
+  {
+   "q": "how to connect snes to pvm",
+   "cat": "questions",
+   "target": "connect-console-to-pvm"
+  },
+  {
+   "q": "connect console to sony monitor",
+   "cat": "questions",
+   "target": "connect-console-to-pvm"
+  },
+  {
+   "q": "hook up genesis to bvm",
+   "cat": "questions",
+   "target": [
+    "connect-console-to-pvm",
+    "genesis-cdx"
+   ]
+  },
+  {
+   "q": "pvm or bvm for retro games",
+   "cat": "questions",
+   "target": "pvm-vs-bvm"
+  },
+  {
+   "q": "pvm vs bvm",
+   "cat": "questions",
+   "target": "pvm-vs-bvm"
+  },
+  {
+   "q": "bvm vs pvm",
+   "cat": "questions",
+   "target": "pvm-vs-bvm"
+  },
+  {
+   "q": "difference between pvm and bvm",
+   "cat": "questions",
+   "target": "pvm-vs-bvm"
+  },
+  {
+   "q": "what to check before buying a pvm",
+   "cat": "questions",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "how to spot a professional monitor",
+   "cat": "questions",
+   "target": "crt-field-guide"
+  },
+  {
+   "q": "is the arcade open to the public",
+   "cat": "questions",
+   "target": "about"
+  },
+  {
+   "q": "can i come play",
+   "cat": "questions",
+   "target": "about"
+  },
+  {
+   "q": "do you buy",
+   "cat": "questions",
+   "target": "about"
+  },
+  {
+   "q": "can i use your photos",
+   "cat": "questions",
+   "target": "about"
+  },
+  {
+   "q": "75 ohm termination",
+   "cat": "questions",
+   "target": [
+    "connect-console-to-pvm",
+    "glossary"
+   ]
+  },
+  {
+   "q": "what is 240p",
+   "cat": "questions",
+   "target": "glossary"
+  },
+  {
+   "q": "what are scanlines",
+   "cat": "questions",
+   "target": "glossary"
+  },
+  {
+   "q": "rgb vs component",
+   "cat": "questions",
+   "target": [
+    "glossary",
+    "connect-console-to-pvm",
+    "pvm-vs-bvm"
+   ]
+  },
+  {
+   "q": "big blue",
+   "cat": "machines",
+   "target": "big-blue"
+  },
+  {
+   "q": "capcom big blue",
+   "cat": "machines",
+   "target": "big-blue"
+  },
+  {
+   "q": "cps2 cabinet",
+   "cat": "machines",
+   "target": [
+    "big-blue",
+    "glossary"
+   ]
+  },
+  {
+   "q": "mini cute",
+   "cat": "machines",
+   "target": "mini-cute"
+  },
+  {
+   "q": "capcom mini cute",
+   "cat": "machines",
+   "target": "mini-cute"
+  },
+  {
+   "q": "candy cab",
+   "cat": "machines",
+   "target": [
+    "mini-cute",
+    "glossary"
+   ]
+  },
+  {
+   "q": "red tent",
+   "cat": "machines",
+   "target": "red-tent"
+  },
+  {
+   "q": "nintendo red tent",
+   "cat": "machines",
+   "target": "red-tent"
+  },
+  {
+   "q": "vs unisystem",
+   "cat": "machines",
+   "target": "vs-unisystem"
+  },
+  {
+   "q": "vs. unisystem",
+   "cat": "machines",
+   "target": "vs-unisystem"
+  },
+  {
+   "q": "vs system",
+   "cat": "machines",
+   "target": [
+    "vs-unisystem",
+    "glossary",
+    "vs-smb"
+   ]
+  },
+  {
+   "q": "vs super mario bros",
+   "cat": "machines",
+   "target": [
+    "vs-smb",
+    "vs-unisystem"
+   ]
+  },
+  {
+   "q": "vs smb high score",
+   "cat": "machines",
+   "target": "vs-smb"
+  },
+  {
+   "q": "tna",
+   "cat": "machines",
+   "target": "tna"
+  },
+  {
+   "q": "total nuclear annihilation",
+   "cat": "machines",
+   "target": "tna"
+  },
+  {
+   "q": "ghostbusters pinball",
+   "cat": "machines",
+   "target": "ghostbusters"
+  },
+  {
+   "q": "ghostbusters premium",
+   "cat": "machines",
+   "target": "ghostbusters"
+  },
+  {
+   "q": "stern ghostbusters",
+   "cat": "machines",
+   "target": "ghostbusters"
+  },
+  {
+   "q": "indiana jones pinball",
+   "cat": "machines",
+   "target": "indiana-jones"
+  },
+  {
+   "q": "williams indiana jones",
+   "cat": "machines",
+   "target": "indiana-jones"
+  },
+  {
+   "q": "cold boot",
+   "cat": "machines",
+   "target": [
+    "indiana-jones",
+    "projects"
+   ]
+  },
+  {
+   "q": "rick and morty",
+   "cat": "machines",
+   "target": "rick-and-morty"
+  },
+  {
+   "q": "rick and morty pinball",
+   "cat": "machines",
+   "target": "rick-and-morty"
+  },
+  {
+   "q": "spooky pinball",
+   "cat": "machines",
+   "target": "rick-and-morty"
+  },
+  {
+   "q": "mario bros widebody",
+   "cat": "machines",
+   "target": "mario-bros"
+  },
+  {
+   "q": "mario bros",
+   "cat": "machines",
+   "target": "mario-bros"
+  },
+  {
+   "q": "donkey kong",
+   "cat": "machines",
+   "target": "donkey-kong"
+  },
+  {
+   "q": "pinball",
+   "cat": "machines",
+   "target": [
+    "games",
+    "indiana-jones",
+    "ghostbusters",
+    "tna",
+    "rick-and-morty",
+    "glossary"
+   ]
+  },
+  {
+   "q": "arcade cabinets",
+   "cat": "machines",
+   "target": [
+    "games",
+    "glossary"
+   ]
+  },
+  {
+   "q": "coin op",
+   "cat": "machines",
+   "target": "games"
+  },
+  {
+   "q": "n64 rgb",
+   "cat": "consoles",
+   "target": "nintendo-64"
+  },
+  {
+   "q": "n64 rgb mod",
+   "cat": "consoles",
+   "target": "nintendo-64"
+  },
+  {
+   "q": "nesrgb top loader",
+   "cat": "consoles",
+   "target": "nes-top-loader"
+  },
+  {
+   "q": "nes top loader",
+   "cat": "consoles",
+   "target": [
+    "nes-top-loader",
+    "consoles"
+   ]
+  },
+  {
+   "q": "top loader rgb",
+   "cat": "consoles",
+   "target": "nes-top-loader"
+  },
+  {
+   "q": "duo-r region mod",
+   "cat": "consoles",
+   "target": "pc-engine-duo-r"
+  },
+  {
+   "q": "pc engine duo r",
+   "cat": "consoles",
+   "target": [
+    "pc-engine-duo-r",
+    "consoles"
+   ]
+  },
+  {
+   "q": "duo-r",
+   "cat": "consoles",
+   "target": [
+    "pc-engine-duo-r",
+    "consoles"
+   ]
+  },
+  {
+   "q": "gba sp",
+   "cat": "consoles",
+   "target": [
+    "gba-sp",
+    "consoles"
+   ]
+  },
+  {
+   "q": "gba sp cobalt",
+   "cat": "consoles",
+   "target": [
+    "gba-sp",
+    "consoles"
+   ]
+  },
+  {
+   "q": "game boy advance sp",
+   "cat": "consoles",
+   "target": [
+    "gba-sp",
+    "consoles"
+   ]
+  },
+  {
+   "q": "genesis cdx",
+   "cat": "consoles",
+   "target": [
+    "genesis-cdx",
+    "consoles"
+   ]
+  },
+  {
+   "q": "sega cdx",
+   "cat": "consoles",
+   "target": [
+    "genesis-cdx",
+    "consoles"
+   ]
+  },
+  {
+   "q": "ps2 slim",
+   "cat": "consoles",
+   "target": [
+    "ps2-slim",
+    "consoles"
+   ]
+  },
+  {
+   "q": "memcard pro 2",
+   "cat": "consoles",
+   "target": [
+    "ps2-slim",
+    "projects"
+   ]
+  },
+  {
+   "q": "opl ps2",
+   "cat": "consoles",
+   "target": "ps2-slim"
+  },
+  {
+   "q": "x'eye",
+   "cat": "consoles",
+   "target": [
+    "consoles",
+    "projects"
+   ]
+  },
+  {
+   "q": "xeye",
+   "cat": "consoles",
+   "target": [
+    "consoles",
+    "projects"
+   ]
+  },
+  {
+   "q": "jvc x eye",
+   "cat": "consoles",
+   "target": [
+    "consoles",
+    "projects"
+   ]
+  },
+  {
+   "q": "nomad",
+   "cat": "consoles",
+   "target": "consoles"
+  },
+  {
+   "q": "saturn",
+   "cat": "consoles",
+   "target": "consoles"
+  },
+  {
+   "q": "dreamcast",
+   "cat": "consoles",
+   "target": "consoles"
+  },
+  {
+   "q": "gamecube",
+   "cat": "consoles",
+   "target": "consoles"
+  },
+  {
+   "q": "new 3ds xl",
+   "cat": "consoles",
+   "target": "consoles"
+  },
+  {
+   "q": "turbo express",
+   "cat": "consoles",
+   "target": "consoles"
+  },
+  {
+   "q": "console mods",
+   "cat": "consoles",
+   "target": [
+    "consoles",
+    "glossary"
+   ]
+  },
+  {
+   "q": "rgb mod",
+   "cat": "consoles",
+   "target": [
+    "glossary",
+    "consoles",
+    "nintendo-64",
+    "nes-top-loader"
+   ]
+  },
+  {
+   "q": "pc-10 topper",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "wanted",
+    "forsale",
+    "glossary"
+   ]
+  },
+  {
+   "q": "pc10 toppers",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "wanted",
+    "forsale",
+    "glossary"
+   ]
+  },
+  {
+   "q": "playchoice toppers",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "wanted",
+    "forsale",
+    "glossary"
+   ]
+  },
+  {
+   "q": "playchoice 10 topper",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "wanted",
+    "forsale",
+    "glossary",
+    "playchoice-10"
+   ]
+  },
+  {
+   "q": "topper",
+   "cat": "signage",
+   "target": [
+    "glossary",
+    "signage",
+    "wanted",
+    "forsale"
+   ]
+  },
+  {
+   "q": "vs instruction cards",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "glossary"
+   ]
+  },
+  {
+   "q": "instruction card",
+   "cat": "signage",
+   "target": [
+    "glossary",
+    "signage"
+   ]
+  },
+  {
+   "q": "kaybee sign",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "gallery"
+   ]
+  },
+  {
+   "q": "kay bee toys",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "gallery"
+   ]
+  },
+  {
+   "q": "kay-bee",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "gallery"
+   ]
+  },
+  {
+   "q": "world of nintendo sign",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "gallery"
+   ]
+  },
+  {
+   "q": "superbrite",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "gallery"
+   ]
+  },
+  {
+   "q": "racetrack sign",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "gallery"
+   ]
+  },
+  {
+   "q": "nintendo store display",
+   "cat": "signage",
+   "target": [
+    "signage",
+    "gallery"
+   ]
+  },
+  {
+   "q": "signage",
+   "cat": "signage",
+   "target": "signage"
+  },
+  {
+   "q": "foreverspin",
+   "cat": "collections",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "spinning tops",
+   "cat": "collections",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "tungsten spinning top",
+   "cat": "collections",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "metal spinning tops",
+   "cat": "collections",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "player's guide",
+   "cat": "collections",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "nintendo players guide",
+   "cat": "collections",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "strategy guides",
+   "cat": "collections",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "earthbound guide",
+   "cat": "collections",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "playchoice 10 games list",
+   "cat": "collections",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "pc-10 cart wall",
+   "cat": "collections",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "playchoice 10 boards",
+   "cat": "collections",
+   "target": [
+    "playchoice-10",
+    "forsale"
+   ]
+  },
+  {
+   "q": "monitor fleet",
+   "cat": "collections",
+   "target": "monitors"
+  },
+  {
+   "q": "sony monitors",
+   "cat": "collections",
+   "target": [
+    "monitors",
+    "pvm-vs-bvm",
+    "glossary"
+   ]
+  },
+  {
+   "q": "broadcast monitors",
+   "cat": "collections",
+   "target": [
+    "monitors",
+    "pvm-vs-bvm",
+    "crt-field-guide"
+   ]
+  },
+  {
+   "q": "lmd wall",
+   "cat": "collections",
+   "target": "lmd-wall"
+  },
+  {
+   "q": "sony lmd",
+   "cat": "collections",
+   "target": [
+    "lmd-wall",
+    "monitors"
+   ]
+  },
+  {
+   "q": "gallery",
+   "cat": "collections",
+   "target": "gallery"
+  },
+  {
+   "q": "photos",
+   "cat": "collections",
+   "target": [
+    "gallery",
+    "about"
+   ]
+  },
+  {
+   "q": "buying guide",
+   "cat": "guides",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "pvm buying guide",
+   "cat": "guides",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "checklist pdf",
+   "cat": "guides",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "checklist",
+   "cat": "guides",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "glossary",
+   "cat": "guides",
+   "target": "glossary"
+  },
+  {
+   "q": "field guide",
+   "cat": "guides",
+   "target": "crt-field-guide"
+  },
+  {
+   "q": "crt field guide",
+   "cat": "guides",
+   "target": "crt-field-guide"
+  },
+  {
+   "q": "timeline",
+   "cat": "guides",
+   "target": "timeline"
+  },
+  {
+   "q": "signal chain",
+   "cat": "guides",
+   "target": "signal-chain"
+  },
+  {
+   "q": "switcher",
+   "cat": "guides",
+   "target": [
+    "signal-chain",
+    "glossary",
+    "connect-console-to-pvm"
+   ]
+  },
+  {
+   "q": "scart to bnc",
+   "cat": "guides",
+   "target": [
+    "glossary",
+    "connect-console-to-pvm",
+    "signal-chain"
+   ]
+  },
+  {
+   "q": "monograph",
+   "cat": "guides",
+   "target": [
+    "ams-100-monograph",
+    "projects"
+   ]
+  },
+  {
+   "q": "ams-100 history",
+   "cat": "guides",
+   "target": [
+    "ams-100-monograph",
+    "ams-3-vs-ams-100"
+   ]
+  },
+  {
+   "q": "trinitron fleet",
+   "cat": "guides",
+   "target": "trinitron-fleet-vol1"
+  },
+  {
+   "q": "magazine",
+   "cat": "guides",
+   "target": [
+    "trinitron-fleet-vol1",
+    "orlandu-100",
+    "orlandu-50-games",
+    "stories"
+   ]
+  },
+  {
+   "q": "orlandu 100",
+   "cat": "guides",
+   "target": "orlandu-100"
+  },
+  {
+   "q": "favorite movies",
+   "cat": "guides",
+   "target": "orlandu-100"
+  },
+  {
+   "q": "orlandu 50",
+   "cat": "guides",
+   "target": "orlandu-50-games"
+  },
+  {
+   "q": "favorite games",
+   "cat": "guides",
+   "target": "orlandu-50-games"
+  },
+  {
+   "q": "stories",
+   "cat": "guides",
+   "target": "stories"
+  },
+  {
+   "q": "projects",
+   "cat": "guides",
+   "target": "projects"
+  },
+  {
+   "q": "work log",
+   "cat": "guides",
+   "target": [
+    "projects",
+    "big-blue",
+    "indiana-jones",
+    "bvm-20e1u",
+    "pvm-20l5",
+    "pvm-2950q",
+    "bvm-a14f5u",
+    "ghostbusters",
+    "tna",
+    "red-tent",
+    "mini-cute",
+    "vs-unisystem",
+    "donkey-kong",
+    "mario-bros",
+    "rick-and-morty",
+    "nes-top-loader",
+    "nintendo-64",
+    "gba-sp",
+    "genesis-cdx",
+    "pc-engine-duo-r",
+    "ps2-slim",
+    "lmd-wall"
+   ]
+  },
+  {
+   "q": "psu rebuild",
+   "cat": "guides",
+   "target": [
+    "projects",
+    "big-blue"
+   ]
+  },
+  {
+   "q": "q-sound",
+   "cat": "guides",
+   "target": [
+    "projects",
+    "big-blue"
+   ]
+  },
+  {
+   "q": "for sale",
+   "cat": "intents",
+   "target": "forsale"
+  },
+  {
+   "q": "buy",
+   "cat": "intents",
+   "target": [
+    "forsale",
+    "about"
+   ]
+  },
+  {
+   "q": "ebay",
+   "cat": "intents",
+   "target": [
+    "forsale",
+    "about"
+   ]
+  },
+  {
+   "q": "what's for sale",
+   "cat": "intents",
+   "target": "forsale"
+  },
+  {
+   "q": "baseball stars",
+   "cat": "intents",
+   "target": [
+    "wanted",
+    "playchoice-10"
+   ]
+  },
+  {
+   "q": "captain skyhawk",
+   "cat": "intents",
+   "target": [
+    "forsale",
+    "signage"
+   ]
+  },
+  {
+   "q": "wanted",
+   "cat": "intents",
+   "target": "wanted"
+  },
+  {
+   "q": "hunt list",
+   "cat": "intents",
+   "target": "wanted"
+  },
+  {
+   "q": "looking for",
+   "cat": "intents",
+   "target": [
+    "wanted",
+    "about"
+   ]
+  },
+  {
+   "q": "i have one",
+   "cat": "intents",
+   "target": "wanted"
+  },
+  {
+   "q": "kv-1310",
+   "cat": "intents",
+   "target": "wanted"
+  },
+  {
+   "q": "philips discoverer",
+   "cat": "intents",
+   "target": "wanted"
+  },
+  {
+   "q": "contact",
+   "cat": "intents",
+   "target": "about"
+  },
+  {
+   "q": "email",
+   "cat": "intents",
+   "target": "about"
+  },
+  {
+   "q": "about",
+   "cat": "intents",
+   "target": "about"
+  },
+  {
+   "q": "orange county arcade",
+   "cat": "intents",
+   "target": [
+    "about",
+    "home"
+   ]
+  },
+  {
+   "q": "mcp",
+   "cat": "ai channel",
+   "target": "mcp"
+  },
+  {
+   "q": "mcp server",
+   "cat": "ai channel",
+   "target": "mcp"
+  },
+  {
+   "q": "dataset",
+   "cat": "ai channel",
+   "target": [
+    "mcp",
+    "monitors",
+    "consoles",
+    "playchoice-10",
+    "bkm-cards"
+   ]
+  },
+  {
+   "q": "datasets",
+   "cat": "ai channel",
+   "target": [
+    "mcp",
+    "monitors",
+    "consoles",
+    "playchoice-10",
+    "bkm-cards"
+   ]
+  },
+  {
+   "q": "llms.txt",
+   "cat": "ai channel",
+   "target": "mcp"
+  },
+  {
+   "q": "llms",
+   "cat": "ai channel",
+   "target": "mcp"
+  },
+  {
+   "q": "ai agents",
+   "cat": "ai channel",
+   "target": "mcp"
+  },
+  {
+   "q": "claude",
+   "cat": "ai channel",
+   "target": "mcp"
+  },
+  {
+   "q": "cc by",
+   "cat": "ai channel",
+   "target": [
+    "mcp",
+    "monitors",
+    "consoles",
+    "playchoice-10",
+    "bkm-cards"
+   ]
+  },
+  {
+   "q": "scanlines",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "aperture grille",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "degauss",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "burn in",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "jamma",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "suicide battery",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "huo",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "klov",
+   "cat": "glossary",
+   "target": [
+    "glossary",
+    "about"
+   ]
+  },
+  {
+   "q": "rottendog",
+   "cat": "glossary",
+   "target": [
+    "indiana-jones",
+    "projects",
+    "glossary"
+   ]
+  },
+  {
+   "q": "15khz",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "15 khz",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "underscan",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "line doubler",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "sony model numbers",
+   "cat": "new pages",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "pvm model number meaning",
+   "cat": "new pages",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "what does the u mean on a pvm",
+   "cat": "new pages",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "sony monitor suffix meaning",
+   "cat": "new pages",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "bvm 1 vs 5",
+   "cat": "new pages",
+   "target": [
+    "sony-model-numbers",
+    "bkm-10r"
+   ]
+  },
+  {
+   "q": "what does pvm stand for",
+   "cat": "new pages",
+   "target": [
+    "sony-model-numbers",
+    "glossary"
+   ]
+  },
+  {
+   "q": "bvm model number decoder",
+   "cat": "new pages",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "sony monitor naming",
+   "cat": "new pages",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "lmd model numbers",
+   "cat": "new pages",
+   "target": [
+    "sony-model-numbers",
+    "lmd-wall"
+   ]
+  },
+  {
+   "q": "bkm card number meaning",
+   "cat": "new pages",
+   "target": [
+    "sony-model-numbers",
+    "bkm-cards"
+   ]
+  },
+  {
+   "q": "sony region suffix",
+   "cat": "new pages",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "decode sony badge",
+   "cat": "new pages",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "what does the w mean sony monitor",
+   "cat": "new pages",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "pvm q vs m",
+   "cat": "new pages",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "crt simulator",
+   "cat": "new pages",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "sony crt simulator",
+   "cat": "new pages",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "aperture grille simulator",
+   "cat": "new pages",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "scanline simulator",
+   "cat": "new pages",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "shadow mask vs aperture grille",
+   "cat": "new pages",
+   "target": [
+    "through-the-mask",
+    "crt-field-guide",
+    "glossary"
+   ]
+  },
+  {
+   "q": "compare crt pitch",
+   "cat": "new pages",
+   "target": [
+    "through-the-mask",
+    "monitors"
+   ]
+  },
+  {
+   "q": "tvl comparison",
+   "cat": "new pages",
+   "target": [
+    "through-the-mask",
+    "monitors"
+   ]
+  },
+  {
+   "q": "what does a pvm look like up close",
+   "cat": "new pages",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "crt viewing distance",
+   "cat": "new pages",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "through the mask",
+   "cat": "new pages",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "simulate pvm 20l5",
+   "cat": "new pages",
+   "target": [
+    "through-the-mask",
+    "pvm-20l5"
+   ]
+  },
+  {
+   "q": "scanlines up close",
+   "cat": "new pages",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "will it connect",
+   "cat": "new pages",
+   "target": "will-it-connect"
+  },
+  {
+   "q": "can i connect n64 to pvm",
+   "cat": "new pages",
+   "target": [
+    "will-it-connect",
+    "connect-console-to-pvm",
+    "nintendo-64"
+   ]
+  },
+  {
+   "q": "snes to bvm",
+   "cat": "new pages",
+   "target": [
+    "will-it-connect",
+    "connect-console-to-pvm"
+   ]
+  },
+  {
+   "q": "will my console work with a pvm",
+   "cat": "new pages",
+   "target": [
+    "will-it-connect",
+    "connect-console-to-pvm"
+   ]
+  },
+  {
+   "q": "console to monitor planner",
+   "cat": "new pages",
+   "target": "will-it-connect"
+  },
+  {
+   "q": "genesis to pvm cable",
+   "cat": "new pages",
+   "target": [
+    "will-it-connect",
+    "connect-console-to-pvm",
+    "genesis-cdx"
+   ]
+  },
+  {
+   "q": "ps2 component to pvm",
+   "cat": "new pages",
+   "target": [
+    "will-it-connect",
+    "connect-console-to-pvm",
+    "ps2-slim"
+   ]
+  },
+  {
+   "q": "which cable for pvm",
+   "cat": "new pages",
+   "target": [
+    "will-it-connect",
+    "connect-console-to-pvm"
+   ]
+  },
+  {
+   "q": "do i need a bkm card for rgb",
+   "cat": "new pages",
+   "target": [
+    "will-it-connect",
+    "bkm-cards"
+   ]
+  },
+  {
+   "q": "connection planner",
+   "cat": "new pages",
+   "target": "will-it-connect"
+  },
+  {
+   "q": "console compatibility pvm",
+   "cat": "new pages",
+   "target": [
+    "will-it-connect",
+    "connect-console-to-pvm"
+   ]
+  },
+  {
+   "q": "bkm 10r",
+   "cat": "new pages",
+   "target": [
+    "bkm-10r",
+    "bkm-cards"
+   ]
+  },
+  {
+   "q": "bkm-10r menu",
+   "cat": "new pages",
+   "target": "bkm-10r"
+  },
+  {
+   "q": "bvm controller",
+   "cat": "new pages",
+   "target": "bkm-10r"
+  },
+  {
+   "q": "bkm 10r manual",
+   "cat": "new pages",
+   "target": "bkm-10r"
+  },
+  {
+   "q": "bvm control unit",
+   "cat": "new pages",
+   "target": "bkm-10r"
+  },
+  {
+   "q": "how to adjust a bvm 20e1u",
+   "cat": "new pages",
+   "target": [
+    "bkm-10r",
+    "bvm-20e1u"
+   ]
+  },
+  {
+   "q": "bvm menu",
+   "cat": "new pages",
+   "target": "bkm-10r"
+  },
+  {
+   "q": "bkm-15r",
+   "cat": "new pages",
+   "target": [
+    "bkm-10r",
+    "bkm-cards",
+    "sony-model-numbers"
+   ]
+  },
+  {
+   "q": "bvm remote control",
+   "cat": "new pages",
+   "target": "bkm-10r"
+  },
+  {
+   "q": "bkm-10r buttons",
+   "cat": "new pages",
+   "target": "bkm-10r"
+  },
+  {
+   "q": "pvm vs bvm difference",
+   "cat": "overlap",
+   "target": "pvm-vs-bvm"
+  },
+  {
+   "q": "how to hook up a console to a pvm",
+   "cat": "overlap",
+   "target": "connect-console-to-pvm"
+  },
+  {
+   "q": "connect console to pvm guide",
+   "cat": "overlap",
+   "target": "connect-console-to-pvm"
+  },
+  {
+   "q": "bkm cards list",
+   "cat": "overlap",
+   "target": "bkm-cards"
+  },
+  {
+   "q": "which bkm card fits",
+   "cat": "overlap",
+   "target": "bkm-cards"
+  },
+  {
+   "q": "bvm-20e1u specs",
+   "cat": "overlap",
+   "target": "bvm-20e1u"
+  },
+  {
+   "q": "about orlandu's arcade",
+   "cat": "page titles",
+   "target": "about"
+  },
+  {
+   "q": "sony ams-100 audio monitor speaker",
+   "cat": "page titles",
+   "target": "ams-100-monograph"
+  },
+  {
+   "q": "sony ams-100 audio",
+   "cat": "title words",
+   "target": "ams-100-monograph"
+  },
+  {
+   "q": "ancestor and descendant",
+   "cat": "page titles",
+   "target": "ams-3-vs-ams-100"
+  },
+  {
+   "q": "operate a bkm-10r",
+   "cat": "page titles",
+   "target": "bkm-10r"
+  },
+  {
+   "q": "sony bkm cards which card fits which monitor",
+   "cat": "page titles",
+   "target": "bkm-cards"
+  },
+  {
+   "q": "sony bkm cards",
+   "cat": "title words",
+   "target": "bkm-cards"
+  },
+  {
+   "q": "thirty more years",
+   "cat": "page titles",
+   "target": "bvm-20e1u-service"
+  },
+  {
+   "q": "sony bvm-20e1u",
+   "cat": "page titles",
+   "target": "bvm-20e1u"
+  },
+  {
+   "q": "sony bvm-a14f5u",
+   "cat": "page titles",
+   "target": "bvm-a14f5u"
+  },
+  {
+   "q": "how to connect a retro console to a sony pvm or bvm",
+   "cat": "page titles",
+   "target": "connect-console-to-pvm"
+  },
+  {
+   "q": "connect retro console",
+   "cat": "title words",
+   "target": "connect-console-to-pvm"
+  },
+  {
+   "q": "the consoles",
+   "cat": "page titles",
+   "target": "consoles"
+  },
+  {
+   "q": "how to spot professional glass in the wild",
+   "cat": "page titles",
+   "target": "crt-field-guide"
+  },
+  {
+   "q": "spot professional glass",
+   "cat": "title words",
+   "target": "crt-field-guide"
+  },
+  {
+   "q": "coin-op games",
+   "cat": "page titles",
+   "target": "games"
+  },
+  {
+   "q": "game boy advance sp cobalt",
+   "cat": "page titles",
+   "target": "gba-sp"
+  },
+  {
+   "q": "game boy advance",
+   "cat": "title words",
+   "target": "gba-sp"
+  },
+  {
+   "q": "speak arcade broadcast",
+   "cat": "page titles",
+   "target": "glossary"
+  },
+  {
+   "q": "the strategy guide shelf",
+   "cat": "page titles",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "strategy guide shelf",
+   "cat": "title words",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "indiana jones",
+   "cat": "page titles",
+   "target": "indiana-jones"
+  },
+  {
+   "q": "the x'eye comes home",
+   "cat": "page titles",
+   "target": "jvc-xeye"
+  },
+  {
+   "q": "x'eye comes home",
+   "cat": "title words",
+   "target": "jvc-xeye"
+  },
+  {
+   "q": "the lmd wall",
+   "cat": "page titles",
+   "target": "lmd-wall"
+  },
+  {
+   "q": "mario bros. widebody",
+   "cat": "page titles",
+   "target": "mario-bros"
+  },
+  {
+   "q": "ask your assistant about the arcade",
+   "cat": "page titles",
+   "target": "mcp"
+  },
+  {
+   "q": "ask assistant about",
+   "cat": "title words",
+   "target": "mcp"
+  },
+  {
+   "q": "the mini cute",
+   "cat": "page titles",
+   "target": "mini-cute"
+  },
+  {
+   "q": "the monitor fleet",
+   "cat": "page titles",
+   "target": "monitors"
+  },
+  {
+   "q": "ocarina of time on switch 2 a review and returning player s guide",
+   "cat": "page titles",
+   "target": "ocarina-of-time-switch-2"
+  },
+  {
+   "q": "ocarina time switch",
+   "cat": "title words",
+   "target": "ocarina-of-time-switch-2"
+  },
+  {
+   "q": "the orlandu 100",
+   "cat": "page titles",
+   "target": "orlandu-100"
+  },
+  {
+   "q": "the orlandu 50",
+   "cat": "page titles",
+   "target": "orlandu-50-games"
+  },
+  {
+   "q": "pc engine duo-r",
+   "cat": "page titles",
+   "target": "pc-engine-duo-r"
+  },
+  {
+   "q": "the playchoice-10 cart wall",
+   "cat": "page titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "playchoice-10 cart wall",
+   "cat": "title words",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "playstation 2 slim",
+   "cat": "page titles",
+   "target": "ps2-slim"
+  },
+  {
+   "q": "what to check before you buy a pvm-20l5",
+   "cat": "page titles",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "check buy pvm-20l5",
+   "cat": "title words",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "sony pvm-20l5",
+   "cat": "page titles",
+   "target": "pvm-20l5"
+  },
+  {
+   "q": "sony pvm-2950q",
+   "cat": "page titles",
+   "target": "pvm-2950q"
+  },
+  {
+   "q": "the best screen for retro games was never sold to gamers",
+   "cat": "page titles",
+   "target": "pvm-vs-bvm"
+  },
+  {
+   "q": "best screen retro",
+   "cat": "title words",
+   "target": "pvm-vs-bvm"
+  },
+  {
+   "q": "the red tent",
+   "cat": "page titles",
+   "target": "red-tent"
+  },
+  {
+   "q": "the orlandu registry",
+   "cat": "page titles",
+   "target": "registry"
+  },
+  {
+   "q": "the signage wall",
+   "cat": "page titles",
+   "target": "signage"
+  },
+  {
+   "q": "how the signal gets to the glass",
+   "cat": "page titles",
+   "target": "signal-chain"
+  },
+  {
+   "q": "signal gets glass",
+   "cat": "title words",
+   "target": "signal-chain"
+  },
+  {
+   "q": "sony model numbers decoded what the letters and digits on a badge mean",
+   "cat": "page titles",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "the spinning top wall",
+   "cat": "page titles",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "spinning top wall",
+   "cat": "title words",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "forty years on one line",
+   "cat": "page titles",
+   "target": "timeline"
+  },
+  {
+   "q": "forty years line",
+   "cat": "title words",
+   "target": "timeline"
+  },
+  {
+   "q": "the hardest super mario bros. most people never noticed",
+   "cat": "page titles",
+   "target": "vs-smb"
+  },
+  {
+   "q": "hardest super mario",
+   "cat": "title words",
+   "target": "vs-smb"
+  },
+  {
+   "q": "bvm-a32e1wu",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-a32e1wu"
+   ]
+  },
+  {
+   "q": "bvm a32e1wu serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-a32e1wu",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-d32e1wu",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d32e1wu"
+   ]
+  },
+  {
+   "q": "bvm d32e1wu serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d32e1wu",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-a24e1wu",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-a24e1wu"
+   ]
+  },
+  {
+   "q": "bvm a24e1wu serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-a24e1wu",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-d24e1wu",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d24e1wu"
+   ]
+  },
+  {
+   "q": "bvm d24e1wu serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d24e1wu",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-1911",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1911"
+   ]
+  },
+  {
+   "q": "bvm 1911 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1911",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-1916",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1916"
+   ]
+  },
+  {
+   "q": "bvm 1916 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1916",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm 20e1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "bvm-20e1u",
+    "bvm-20e1u-service",
+    "registry-bvm-20e1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-20f1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-20f1u"
+   ]
+  },
+  {
+   "q": "bvm 20f1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-20f1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-20g1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-20g1u"
+   ]
+  },
+  {
+   "q": "bvm 20g1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-20g1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-a20f1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-a20f1u"
+   ]
+  },
+  {
+   "q": "bvm a20f1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-a20f1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-d20f1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d20f1u"
+   ]
+  },
+  {
+   "q": "bvm d20f1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d20f1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-1910",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1910"
+   ]
+  },
+  {
+   "q": "bvm 1910 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1910",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-1912",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1912"
+   ]
+  },
+  {
+   "q": "bvm 1912 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1912",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-1915",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1915"
+   ]
+  },
+  {
+   "q": "bvm 1915 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1915",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-14e1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14e1u"
+   ]
+  },
+  {
+   "q": "bvm 14e1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14e1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-14e5u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14e5u"
+   ]
+  },
+  {
+   "q": "bvm 14e5u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14e5u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-14f1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14f1u"
+   ]
+  },
+  {
+   "q": "bvm 14f1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14f1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-14f5u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14f5u"
+   ]
+  },
+  {
+   "q": "bvm 14f5u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14f5u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-14g1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14g1u"
+   ]
+  },
+  {
+   "q": "bvm 14g1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14g1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-14g5u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14g5u"
+   ]
+  },
+  {
+   "q": "bvm 14g5u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14g5u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm a14f5u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "bvm-a14f5u",
+    "registry-bvm-a14f5u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-d14h1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d14h1u"
+   ]
+  },
+  {
+   "q": "bvm d14h1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d14h1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-d14h5u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d14h5u"
+   ]
+  },
+  {
+   "q": "bvm d14h5u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d14h5u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-1310",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1310"
+   ]
+  },
+  {
+   "q": "bvm 1310 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1310",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-1315",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1315"
+   ]
+  },
+  {
+   "q": "bvm 1315 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1315",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-1316",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1316"
+   ]
+  },
+  {
+   "q": "bvm 1316 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1316",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-d9h1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d9h1u"
+   ]
+  },
+  {
+   "q": "bvm d9h1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d9h1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-d9h5u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d9h5u"
+   ]
+  },
+  {
+   "q": "bvm d9h5u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d9h5u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-8021",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-8021"
+   ]
+  },
+  {
+   "q": "bvm 8021 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-8021",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "bvm-8045qd",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-8045qd"
+   ]
+  },
+  {
+   "q": "bvm 8045qd serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-8045qd",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-4300",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-4300"
+   ]
+  },
+  {
+   "q": "pvm 4300 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-4300",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-3230",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-3230"
+   ]
+  },
+  {
+   "q": "pvm 3230 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-3230",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm 2950q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "pvm-2950q",
+    "registry-pvm-2950q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-2530",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-2530"
+   ]
+  },
+  {
+   "q": "pvm 2530 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-2530",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1942q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1942q"
+   ]
+  },
+  {
+   "q": "pvm 1942q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1942q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1943md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1943md"
+   ]
+  },
+  {
+   "q": "pvm 1943md serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1943md",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1944q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1944q"
+   ]
+  },
+  {
+   "q": "pvm 1944q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1944q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1953md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1953md"
+   ]
+  },
+  {
+   "q": "pvm 1953md serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1953md",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1954q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1954q"
+   ]
+  },
+  {
+   "q": "pvm 1954q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1954q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-2030",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-2030"
+   ]
+  },
+  {
+   "q": "pvm 2030 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-2030",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20l1",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l1"
+   ]
+  },
+  {
+   "q": "pvm 20l1 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l1",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20l2",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l2"
+   ]
+  },
+  {
+   "q": "pvm 20l2 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l2",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20l2md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l2md"
+   ]
+  },
+  {
+   "q": "pvm 20l2md serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l2md",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20l4",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l4"
+   ]
+  },
+  {
+   "q": "pvm 20l4 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l4",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm 20l5 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "pvm-20l5",
+    "pvm-20l5-buying-guide",
+    "registry-pvm-20l5",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20m2mdu",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m2mdu"
+   ]
+  },
+  {
+   "q": "pvm 20m2mdu serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m2mdu",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20m2u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m2u"
+   ]
+  },
+  {
+   "q": "pvm 20m2u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m2u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20m4u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m4u"
+   ]
+  },
+  {
+   "q": "pvm 20m4u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m4u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20m7mde",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m7mde"
+   ]
+  },
+  {
+   "q": "pvm 20m7mde serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m7mde",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20n1u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n1u"
+   ]
+  },
+  {
+   "q": "pvm 20n1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20n2u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n2u"
+   ]
+  },
+  {
+   "q": "pvm 20n2u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n2u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20n5u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n5u"
+   ]
+  },
+  {
+   "q": "pvm 20n5u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n5u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20n6u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n6u"
+   ]
+  },
+  {
+   "q": "pvm 20n6u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n6u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-20s1wu",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20s1wu"
+   ]
+  },
+  {
+   "q": "pvm 20s1wu serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20s1wu",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1910",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1910"
+   ]
+  },
+  {
+   "q": "pvm 1910 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1910",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1340",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1340"
+   ]
+  },
+  {
+   "q": "pvm 1340 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1340",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1341",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1341"
+   ]
+  },
+  {
+   "q": "pvm 1341 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1341",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1342q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1342q"
+   ]
+  },
+  {
+   "q": "pvm 1342q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1342q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1343md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1343md"
+   ]
+  },
+  {
+   "q": "pvm 1343md serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1343md",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1344q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1344q"
+   ]
+  },
+  {
+   "q": "pvm 1344q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1344q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1350",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1350"
+   ]
+  },
+  {
+   "q": "pvm 1350 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1350",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1351q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1351q"
+   ]
+  },
+  {
+   "q": "pvm 1351q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1351q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1353md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1353md"
+   ]
+  },
+  {
+   "q": "pvm 1353md serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1353md",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1354q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1354q"
+   ]
+  },
+  {
+   "q": "pvm 1354q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1354q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14l1",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l1"
+   ]
+  },
+  {
+   "q": "pvm 14l1 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l1",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14l2",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l2"
+   ]
+  },
+  {
+   "q": "pvm 14l2 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l2",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14l2md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l2md"
+   ]
+  },
+  {
+   "q": "pvm 14l2md serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l2md",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14l3",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l3"
+   ]
+  },
+  {
+   "q": "pvm 14l3 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l3",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14l4",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l4"
+   ]
+  },
+  {
+   "q": "pvm 14l4 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l4",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14l5",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l5"
+   ]
+  },
+  {
+   "q": "pvm 14l5 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l5",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14m2mdu",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14m2mdu"
+   ]
+  },
+  {
+   "q": "pvm 14m2mdu serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14m2mdu",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14m2u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14m2u"
+   ]
+  },
+  {
+   "q": "pvm 14m2u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14m2u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14m4u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14m4u"
+   ]
+  },
+  {
+   "q": "pvm 14m4u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14m4u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14n1u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n1u"
+   ]
+  },
+  {
+   "q": "pvm 14n1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14n2u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n2u"
+   ]
+  },
+  {
+   "q": "pvm 14n2u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n2u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14n5u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n5u"
+   ]
+  },
+  {
+   "q": "pvm 14n5u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n5u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-14n6u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n6u"
+   ]
+  },
+  {
+   "q": "pvm 14n6u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n6u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-136",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-136"
+   ]
+  },
+  {
+   "q": "pvm 136 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-136",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1380",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1380"
+   ]
+  },
+  {
+   "q": "pvm 1380 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1380",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1390",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1390"
+   ]
+  },
+  {
+   "q": "pvm 1390 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1390",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-1271q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1271q"
+   ]
+  },
+  {
+   "q": "pvm 1271q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1271q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-91",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-91"
+   ]
+  },
+  {
+   "q": "pvm 91 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-91",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-96",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-96"
+   ]
+  },
+  {
+   "q": "pvm 96 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-96",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-9l1",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-9l1"
+   ]
+  },
+  {
+   "q": "pvm 9l1 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-9l1",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-9l2",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-9l2"
+   ]
+  },
+  {
+   "q": "pvm 9l2 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-9l2",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-9l3",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-9l3"
+   ]
+  },
+  {
+   "q": "pvm 9l3 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-9l3",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-8020",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8020"
+   ]
+  },
+  {
+   "q": "pvm 8020 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8020",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-8040",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8040"
+   ]
+  },
+  {
+   "q": "pvm 8040 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8040",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-8041q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8041q"
+   ]
+  },
+  {
+   "q": "pvm 8041q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8041q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-8042q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8042q"
+   ]
+  },
+  {
+   "q": "pvm 8042q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8042q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-8044q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8044q"
+   ]
+  },
+  {
+   "q": "pvm 8044q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8044q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-8045q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8045q"
+   ]
+  },
+  {
+   "q": "pvm 8045q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8045q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-8220",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8220"
+   ]
+  },
+  {
+   "q": "pvm 8220 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8220",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-5041q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-5041q"
+   ]
+  },
+  {
+   "q": "pvm 5041q serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-5041q",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-411",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-411"
+   ]
+  },
+  {
+   "q": "pvm 411 serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-411",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "pvm-4b1u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-4b1u"
+   ]
+  },
+  {
+   "q": "pvm 4b1u serial numbers",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-4b1u",
+    "registry",
+    "registry-models"
+   ]
+  },
+  {
+   "q": "what is upright",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is cocktail",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is candy cab",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is widebody",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is dedicated",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is marquee",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is topper",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is instruction card",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is cpo control panel overlay",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is side art",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is jamma",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is pcb the board",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is multi",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is cps-1",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is suicide battery",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is vs. system",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is playchoice-10",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is interchanger",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is attract mode",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is free play",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is shop-out",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is playfield",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is backglass",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is dmd dot matrix display",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is dcs",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is magna-slings",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is huo home use only",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is on route",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is nos new old stock",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is klov",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is crt",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is trinitron",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is aperture grille",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is hr trinitron",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is pvm",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is rgb",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is composite",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is s-video",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is component",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is 15 khz",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is multiscan",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is multiformat",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is scanlines",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is scaler",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is scart",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is bnc",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is scart to 4 bnc breakout",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is sync",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is switcher",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is distribution amplifier",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is loop-through",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is termination",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is bkm card",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is sdi",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is tvl tv lines",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is smpte-c",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is geometry",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is degauss",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is color bars smpte bars",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is burn-in",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is zero scan",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is isr",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is audio monitor",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "what is rgb mod",
+   "cat": "glossary",
+   "target": "glossary"
+  },
+  {
+   "q": "1942 playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "balloon fight playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "baseball playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "baseball stars playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "captain skyhawk playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "castlevania playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "chip ’n dale rescue rangers playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "contra playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "double dragon playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "double dribble playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "dr. mario playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "duck hunt playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "excitebike playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "fester’s quest playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "gauntlet playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "golf playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "the goonies playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "gradius playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "hogan’s alley playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "kung fu playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "mario bros. playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "mario’s open golf playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "mega man 3 playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "metroid playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "mike tyson’s punch-out!! playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "ninja gaiden playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "ninja gaiden ii playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "ninja gaiden iii playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "nintendo world cup playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "pin·bot playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "power blade playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "pro wrestling playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "r.c. pro-am playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "rad racer playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "rad racer ii playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "rockin’ kats playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "rush’n attack playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "rygar playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "solar jetman playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "super c playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "super mario bros. playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "super mario bros. 2 playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "super mario bros. 3 playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "tecmo bowl playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "teenage mutant ninja turtles playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "teenage mutant ninja turtles ii: the arcade game playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "tennis playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "track & field playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "trojan playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "volleyball playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "wild gunman playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "yo! noid playchoice-10",
+   "cat": "pc-10 titles",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "captain skyhawk topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "castlevania topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "chip ’n dale rescue rangers topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "contra topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "double dragon topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "double dribble topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "dr. mario topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "gauntlet topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "gradius topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "kung fu topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "mega man 3 topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "metroid topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "mike tyson's punch-out!! topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "ninja gaiden topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "pro wrestling topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "rad racer topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "r.c. pro-am topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "rush'n attack topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "super mario bros. 2 topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "super mario bros. 3 topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "teenage mutant ninja turtles ii: the arcade game topper",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. baseball instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. castlevania instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. excitebike instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. golf instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. the goonies instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. gumshoe instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. hogan’s alley instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. ice climber instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. mach rider instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. pinball instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. r.b.i. baseball instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. sky kid instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. soccer instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. super mario bros. instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. tennis instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. t.k.o. boxing instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "vs. top gun instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "playchoice instruction card",
+   "cat": "signage walls",
+   "target": "signage"
+  },
+  {
+   "q": "nickel spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "copper spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "s.s. mirror spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "blue matte spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "arch bronze spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "black zirconium spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "pink spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "zirconium spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "bronze spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "rose pvd spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "black spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "red spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "golden-inox spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "aluminum spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "brass spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "stainless steel damascus spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "stainless steel spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "humanium metal (engraved) spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "emerald green spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "amber ore spinning top",
+   "cat": "tops",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "breath of fire iii guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "chrono trigger guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "donkey kong country guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "donkey kong country 2: diddy’s kong quest guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "donkey kong country 3: dixie kong’s double trouble! guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "final fantasy guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "final fantasy iii guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "the legend of zelda: a link to the past guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "the legend of zelda: link’s awakening guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "the legend of zelda: majora’s mask guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "the legend of zelda: ocarina of time guide",
+   "cat": "guides",
+   "target": [
+    "guide-shelf",
+    "ocarina-of-time-switch-2"
+   ]
+  },
+  {
+   "q": "the legend of zelda: the wind waker guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "mario mania guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "mario paint guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "street fighter ii turbo guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "super mario all-stars guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "super mario rpg: legend of the seven stars guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "super mario world 2: yoshi’s island guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "super metroid guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "super nes guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "top secret passwords guide",
+   "cat": "guides",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "sony bvm vs pvm",
+   "cat": "search console",
+   "target": "pvm-vs-bvm"
+  },
+  {
+   "q": "sony pvm vs bvm",
+   "cat": "search console",
+   "target": "pvm-vs-bvm"
+  },
+  {
+   "q": "sony ams-100",
+   "cat": "search console",
+   "target": [
+    "ams-100-monograph",
+    "ams-3-vs-ams-100"
+   ]
+  },
+  {
+   "q": "sony ams",
+   "cat": "search console",
+   "target": [
+    "ams-100-monograph",
+    "ams-3-vs-ams-100"
+   ]
+  },
+  {
+   "q": "capcom cute cabinet",
+   "cat": "search console",
+   "target": "mini-cute"
+  },
+  {
+   "q": "mini cute capcom",
+   "cat": "search console",
+   "target": "mini-cute"
+  },
+  {
+   "q": "nintendo tent review",
+   "cat": "search console",
+   "target": "red-tent"
+  },
+  {
+   "q": "red tent arcade",
+   "cat": "search console",
+   "target": "red-tent"
+  },
+  {
+   "q": "metal tops",
+   "cat": "search console",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "metal spinning top",
+   "cat": "search console",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "steel spinning top",
+   "cat": "search console",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "pvm systems",
+   "cat": "search console",
+   "target": [
+    "monitors",
+    "pvm-vs-bvm",
+    "crt-field-guide"
+   ]
+  },
+  {
+   "q": "pvm monitor",
+   "cat": "search console",
+   "target": [
+    "monitors",
+    "pvm-vs-bvm",
+    "crt-field-guide"
+   ]
+  },
+  {
+   "q": "bvm monitor",
+   "cat": "search console",
+   "target": [
+    "monitors",
+    "pvm-vs-bvm"
+   ]
+  },
+  {
+   "q": "nintendo vs unisystem",
+   "cat": "search console",
+   "target": "vs-unisystem"
+  },
+  {
+   "q": "line douler",
+   "cat": "typos",
+   "target": "glossary"
+  },
+  {
+   "q": "clude",
+   "cat": "typos",
+   "target": "mcp"
+  },
+  {
+   "q": "cps2 cabiet",
+   "cat": "typos",
+   "target": [
+    "big-blue",
+    "glossary"
+   ]
+  },
+  {
+   "q": "paychoice 10 boards",
+   "cat": "typos",
+   "target": [
+    "playchoice-10",
+    "forsale"
+   ]
+  },
+  {
+   "q": "nintndo red tent",
+   "cat": "typos",
+   "target": "red-tent"
+  },
+  {
+   "q": "pvm buyng guide",
+   "cat": "typos",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "dnkey kong",
+   "cat": "typos",
+   "target": "donkey-kong"
+  },
+  {
+   "q": "how to ajust a bvm 20e1u",
+   "cat": "typos",
+   "target": [
+    "bkm-10r",
+    "bvm-20e1u"
+   ]
+  },
+  {
+   "q": "playchoce 10 games list",
+   "cat": "typos",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "timelie",
+   "cat": "typos",
+   "target": "timeline"
+  },
+  {
+   "q": "uni sytem",
+   "cat": "typos",
+   "target": [
+    "vs-unisystem",
+    "glossary"
+   ]
+  },
+  {
+   "q": "tungten spinning top",
+   "cat": "typos",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "stategy guides",
+   "cat": "typos",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "checlist pdf",
+   "cat": "typos",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "toper",
+   "cat": "typos",
+   "target": [
+    "glossary",
+    "signage",
+    "wanted",
+    "forsale"
+   ]
+  },
+  {
+   "q": "fvorite games",
+   "cat": "typos",
+   "target": "orlandu-50-games"
+  },
+  {
+   "q": "ninteno store display",
+   "cat": "typos",
+   "target": [
+    "signage",
+    "gallery"
+   ]
+  },
+  {
+   "q": "dataet",
+   "cat": "typos",
+   "target": [
+    "mcp",
+    "monitors",
+    "consoles",
+    "playchoice-10",
+    "bkm-cards"
+   ]
+  },
+  {
+   "q": "total nuclear annihilaion",
+   "cat": "typos",
+   "target": "tna"
+  },
+  {
+   "q": "monior fleet",
+   "cat": "typos",
+   "target": "monitors"
+  },
+  {
+   "q": "sturn",
+   "cat": "typos",
+   "target": "consoles"
+  },
+  {
+   "q": "vs sytem",
+   "cat": "typos",
+   "target": [
+    "vs-unisystem",
+    "glossary",
+    "vs-smb"
+   ]
+  },
+  {
+   "q": "pvm vs bvm diference",
+   "cat": "typos",
+   "target": "pvm-vs-bvm"
+  },
+  {
+   "q": "psu reuild",
+   "cat": "typos",
+   "target": [
+    "projects",
+    "big-blue"
+   ]
+  },
+  {
+   "q": "dtasets",
+   "cat": "typos",
+   "target": [
+    "mcp",
+    "monitors",
+    "consoles",
+    "playchoice-10",
+    "bkm-cards"
+   ]
+  },
+  {
+   "q": "75 ohm terination",
+   "cat": "typos",
+   "target": [
+    "connect-console-to-pvm",
+    "glossary"
+   ]
+  },
+  {
+   "q": "what does the w mean sony monitr",
+   "cat": "typos",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "superbrie",
+   "cat": "typos",
+   "target": [
+    "signage",
+    "gallery"
+   ]
+  },
+  {
+   "q": "plachoice 10 topper",
+   "cat": "typos",
+   "target": [
+    "signage",
+    "wanted",
+    "forsale",
+    "glossary",
+    "playchoice-10"
+   ]
+  },
+  {
+   "q": "wantd",
+   "cat": "typos",
+   "target": "wanted"
+  },
+  {
+   "q": "conect console to pvm guide",
+   "cat": "typos",
+   "target": "connect-console-to-pvm"
+  },
+  {
+   "q": "bkm 10r maual",
+   "cat": "typos",
+   "target": "bkm-10r"
+  },
+  {
+   "q": "phtos",
+   "cat": "typos",
+   "target": [
+    "gallery",
+    "about"
+   ]
+  },
+  {
+   "q": "gnesis cdx",
+   "cat": "typos",
+   "target": [
+    "genesis-cdx",
+    "consoles"
+   ]
+  },
+  {
+   "q": "ghost bsters",
+   "cat": "typos",
+   "target": "ghostbusters"
+  },
+  {
+   "q": "sony model nmbers",
+   "cat": "typos",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "play chice 10",
+   "cat": "typos",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "playchoce toppers",
+   "cat": "typos",
+   "target": [
+    "signage",
+    "wanted",
+    "forsale",
+    "glossary"
+   ]
+  },
+  {
+   "q": "sucide battery",
+   "cat": "typos",
+   "target": "glossary"
+  },
+  {
+   "q": "orandu 100",
+   "cat": "typos",
+   "target": "orlandu-100"
+  },
+  {
+   "q": "oange county arcade",
+   "cat": "typos",
+   "target": [
+    "about",
+    "home"
+   ]
+  },
+  {
+   "q": "plaer's guide",
+   "cat": "typos",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "scanline siulator",
+   "cat": "typos",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "deguss",
+   "cat": "typos",
+   "target": "glossary"
+  },
+  {
+   "q": "spooky pinbal",
+   "cat": "typos",
+   "target": "rick-and-morty"
+  },
+  {
+   "q": "crt viewing ditance",
+   "cat": "typos",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "connecion planner",
+   "cat": "typos",
+   "target": "will-it-connect"
+  },
+  {
+   "q": "crt simlator",
+   "cat": "typos",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "consoe mods",
+   "cat": "typos",
+   "target": [
+    "consoles",
+    "glossary"
+   ]
+  },
+  {
+   "q": "lmd model numbrs",
+   "cat": "typos",
+   "target": [
+    "sony-model-numbers",
+    "lmd-wall"
+   ]
+  },
+  {
+   "q": "maazine",
+   "cat": "typos",
+   "target": [
+    "trinitron-fleet-vol1",
+    "orlandu-100",
+    "orlandu-50-games",
+    "stories"
+   ]
+  },
+  {
+   "q": "can i cnnect n64 to pvm",
+   "cat": "typos",
+   "target": [
+    "will-it-connect",
+    "connect-console-to-pvm",
+    "nintendo-64"
+   ]
+  },
+  {
+   "q": "scanlies up close",
+   "cat": "typos",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "q-sund",
+   "cat": "typos",
+   "target": [
+    "projects",
+    "big-blue"
+   ]
+  },
+  {
+   "q": "swither",
+   "cat": "typos",
+   "target": [
+    "signal-chain",
+    "glossary",
+    "connect-console-to-pvm"
+   ]
+  },
+  {
+   "q": "undersan",
+   "cat": "typos",
+   "target": "glossary"
+  },
+  {
+   "q": "nesrb top loader",
+   "cat": "typos",
+   "target": "nes-top-loader"
+  },
+  {
+   "q": "ai agnts",
+   "cat": "typos",
+   "target": "mcp"
+  },
+  {
+   "q": "rick and morty pinbal",
+   "cat": "typos",
+   "target": "rick-and-morty"
+  },
+  {
+   "q": "gaecube",
+   "cat": "typos",
+   "target": "consoles"
+  },
+  {
+   "q": "mario bros widebdy",
+   "cat": "typos",
+   "target": "mario-bros"
+  },
+  {
+   "q": "dnkey kong arcade",
+   "cat": "typos",
+   "target": "donkey-kong"
+  },
+  {
+   "q": "buyig guide",
+   "cat": "typos",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "pvm model number mening",
+   "cat": "typos",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "dfference between pvm and bvm",
+   "cat": "typos",
+   "target": "pvm-vs-bvm"
+  },
+  {
+   "q": "deode sony badge",
+   "cat": "typos",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "duo-r reion mod",
+   "cat": "typos",
+   "target": "pc-engine-duo-r"
+  },
+  {
+   "q": "top loder rgb",
+   "cat": "typos",
+   "target": "nes-top-loader"
+  },
+  {
+   "q": "contct",
+   "cat": "typos",
+   "target": "about"
+  },
+  {
+   "q": "projets",
+   "cat": "typos",
+   "target": "projects"
+  },
+  {
+   "q": "pc egine duo r",
+   "cat": "typos",
+   "target": [
+    "pc-engine-duo-r",
+    "consoles"
+   ]
+  },
+  {
+   "q": "will my consoe work with a pvm",
+   "cat": "typos",
+   "target": [
+    "will-it-connect",
+    "connect-console-to-pvm"
+   ]
+  },
+  {
+   "q": "otion card sony bvm",
+   "cat": "typos",
+   "target": [
+    "bkm-cards",
+    "bvm-20e1u",
+    "bvm-a14f5u"
+   ]
+  },
+  {
+   "q": "memard pro 2",
+   "cat": "typos",
+   "target": [
+    "ps2-slim",
+    "projects"
+   ]
+  },
+  {
+   "q": "broadcst monitors",
+   "cat": "typos",
+   "target": [
+    "monitors",
+    "pvm-vs-bvm",
+    "crt-field-guide"
+   ]
+  },
+  {
+   "q": "game boy advane sp",
+   "cat": "typos",
+   "target": [
+    "gba-sp",
+    "consoles"
+   ]
+  },
+  {
+   "q": "apertre grille",
+   "cat": "typos",
+   "target": "glossary"
+  },
+  {
+   "q": "nintedo 64",
+   "cat": "typos",
+   "target": [
+    "nintendo-64",
+    "consoles"
+   ]
+  },
+  {
+   "q": "sony monior naming",
+   "cat": "typos",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "nntendo players guide",
+   "cat": "typos",
+   "target": "guide-shelf"
+  },
+  {
+   "q": "foreverspn",
+   "cat": "typos",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "pc10 tppers",
+   "cat": "typos",
+   "target": [
+    "signage",
+    "wanted",
+    "forsale",
+    "glossary"
+   ]
+  },
+  {
+   "q": "bkm card number mening",
+   "cat": "typos",
+   "target": [
+    "sony-model-numbers",
+    "bkm-cards"
+   ]
+  },
+  {
+   "q": "cacom big blue",
+   "cat": "typos",
+   "target": "big-blue"
+  },
+  {
+   "q": "stoies",
+   "cat": "typos",
+   "target": "stories"
+  },
+  {
+   "q": "paychoise 10",
+   "cat": "typos",
+   "target": "playchoice-10"
+  },
+  {
+   "q": "arcade cbinets",
+   "cat": "typos",
+   "target": [
+    "games",
+    "glossary"
+   ]
+  },
+  {
+   "q": "ghostbustrs pinball",
+   "cat": "typos",
+   "target": "ghostbusters"
+  },
+  {
+   "q": "whats for sale",
+   "cat": "typos",
+   "target": "forsale"
+  },
+  {
+   "q": "favorte movies",
+   "cat": "typos",
+   "target": "orlandu-100"
+  },
+  {
+   "q": "cmpare crt pitch",
+   "cat": "typos",
+   "target": [
+    "through-the-mask",
+    "monitors"
+   ]
+  },
+  {
+   "q": "rgb vs componet",
+   "cat": "typos",
+   "target": [
+    "glossary",
+    "connect-console-to-pvm",
+    "pvm-vs-bvm"
+   ]
+  },
+  {
+   "q": "stern ghstbusters",
+   "cat": "typos",
+   "target": "ghostbusters"
+  },
+  {
+   "q": "vs instructon cards",
+   "cat": "typos",
+   "target": [
+    "signage",
+    "glossary"
+   ]
+  },
+  {
+   "q": "is the arcde open to the public",
+   "cat": "typos",
+   "target": "about"
+  },
+  {
+   "q": "nes top loder",
+   "cat": "typos",
+   "target": [
+    "nes-top-loader",
+    "consoles"
+   ]
+  },
+  {
+   "q": "galery",
+   "cat": "typos",
+   "target": "gallery"
+  },
+  {
+   "q": "captin skyhawk",
+   "cat": "typos",
+   "target": [
+    "forsale",
+    "signage"
+   ]
+  },
+  {
+   "q": "connet console to sony monitor",
+   "cat": "typos",
+   "target": "connect-console-to-pvm"
+  },
+  {
+   "q": "hook up geness to bvm",
+   "cat": "typos",
+   "target": [
+    "connect-console-to-pvm",
+    "genesis-cdx"
+   ]
+  },
+  {
+   "q": "instructon card",
+   "cat": "typos",
+   "target": [
+    "glossary",
+    "signage"
+   ]
+  },
+  {
+   "q": "can i use your phtos",
+   "cat": "typos",
+   "target": "about"
+  },
+  {
+   "q": "shadow mask vs apertue grille",
+   "cat": "typos",
+   "target": [
+    "through-the-mask",
+    "crt-field-guide",
+    "glossary"
+   ]
+  },
+  {
+   "q": "consoe to monitor planner",
+   "cat": "typos",
+   "target": "will-it-connect"
+  },
+  {
+   "q": "console compaibility pvm",
+   "cat": "typos",
+   "target": [
+    "will-it-connect",
+    "connect-console-to-pvm"
+   ]
+  },
+  {
+   "q": "what to check beore buying a pvm",
+   "cat": "typos",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "monograh",
+   "cat": "typos",
+   "target": [
+    "ams-100-monograph",
+    "projects"
+   ]
+  },
+  {
+   "q": "sony monior suffix meaning",
+   "cat": "typos",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "ka-bee",
+   "cat": "typos",
+   "target": [
+    "signage",
+    "gallery"
+   ]
+  },
+  {
+   "q": "tvl comparion",
+   "cat": "typos",
+   "target": [
+    "through-the-mask",
+    "monitors"
+   ]
+  },
+  {
+   "q": "will it cnnect",
+   "cat": "typos",
+   "target": "will-it-connect"
+  },
+  {
+   "q": "aperture grille simuator",
+   "cat": "typos",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "ps2 compnent to pvm",
+   "cat": "typos",
+   "target": [
+    "will-it-connect",
+    "connect-console-to-pvm",
+    "ps2-slim"
+   ]
+  },
+  {
+   "q": "donkeyong",
+   "cat": "typos",
+   "target": "donkey-kong"
+  },
+  {
+   "q": "idiana jones pinball",
+   "cat": "typos",
+   "target": "indiana-jones"
+  },
+  {
+   "q": "bvm contoller",
+   "cat": "typos",
+   "target": "bkm-10r"
+  },
+  {
+   "q": "signl chain",
+   "cat": "typos",
+   "target": "signal-chain"
+  },
+  {
+   "q": "deamcast",
+   "cat": "typos",
+   "target": "consoles"
+  },
+  {
+   "q": "bvm model number deoder",
+   "cat": "typos",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "sigage",
+   "cat": "typos",
+   "target": "signage"
+  },
+  {
+   "q": "bseball stars",
+   "cat": "typos",
+   "target": [
+    "wanted",
+    "playchoice-10"
+   ]
+  },
+  {
+   "q": "sony reion suffix",
+   "cat": "typos",
+   "target": "sony-model-numbers"
+  },
+  {
+   "q": "rottenog",
+   "cat": "typos",
+   "target": [
+    "indiana-jones",
+    "projects",
+    "glossary"
+   ]
+  },
+  {
+   "q": "triniton fleet",
+   "cat": "typos",
+   "target": "trinitron-fleet-vol1"
+  },
+  {
+   "q": "unisysem",
+   "cat": "typos",
+   "target": [
+    "vs-unisystem",
+    "glossary"
+   ]
+  },
+  {
+   "q": "metal spining tops",
+   "cat": "typos",
+   "target": "spinning-tops"
+  },
+  {
+   "q": "cacom mini cute",
+   "cat": "typos",
+   "target": "mini-cute"
+  },
+  {
+   "q": "scalines",
+   "cat": "typos",
+   "target": "glossary"
+  },
+  {
+   "q": "vs. unsystem",
+   "cat": "typos",
+   "target": "vs-unisystem"
+  },
+  {
+   "q": "glosary",
+   "cat": "typos",
+   "target": "glossary"
+  },
+  {
+   "q": "loking for",
+   "cat": "typos",
+   "target": [
+    "wanted",
+    "about"
+   ]
+  },
+  {
+   "q": "sony crt simulaor",
+   "cat": "typos",
+   "target": "through-the-mask"
+  },
+  {
+   "q": "how to spot a prfessional monitor",
+   "cat": "typos",
+   "target": "crt-field-guide"
+  },
+  {
+   "q": "checlist",
+   "cat": "typos",
+   "target": "pvm-20l5-buying-guide"
+  },
+  {
+   "q": "trintron",
+   "cat": "typos",
+   "target": [
+    "trinitron-fleet-vol1",
+    "monitors",
+    "glossary"
+   ]
+  },
+  {
+   "q": "orandu 50",
+   "cat": "typos",
+   "target": "orlandu-50-games"
+  },
+  {
+   "q": "philips discverer",
+   "cat": "typos",
+   "target": "wanted"
+  },
+  {
+   "q": "gba sp coalt",
+   "cat": "typos",
+   "target": [
+    "gba-sp",
+    "consoles"
+   ]
+  },
+  {
+   "q": "pc-10 toppr",
+   "cat": "typos",
+   "target": [
+    "signage",
+    "wanted",
+    "forsale",
+    "glossary"
+   ]
+  },
+  {
+   "q": "sony monitrs",
+   "cat": "typos",
+   "target": [
+    "monitors",
+    "pvm-vs-bvm",
+    "glossary"
+   ]
+  },
+  {
+   "q": "bvm a32e1wu",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-a32e1wu"
+   ]
+  },
+  {
+   "q": "bvm d32e1wu",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d32e1wu"
+   ]
+  },
+  {
+   "q": "bvm a24e1wu",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-a24e1wu"
+   ]
+  },
+  {
+   "q": "bvm d24e1wu",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d24e1wu"
+   ]
+  },
+  {
+   "q": "bvm 1911",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1911"
+   ]
+  },
+  {
+   "q": "bvm 1916",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1916"
+   ]
+  },
+  {
+   "q": "bvm 20f1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-20f1u"
+   ]
+  },
+  {
+   "q": "bvm 20g1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-20g1u"
+   ]
+  },
+  {
+   "q": "bvm a20f1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-a20f1u"
+   ]
+  },
+  {
+   "q": "bvm d20f1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d20f1u"
+   ]
+  },
+  {
+   "q": "bvm 1910",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1910"
+   ]
+  },
+  {
+   "q": "bvm 1912",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1912"
+   ]
+  },
+  {
+   "q": "bvm 1915",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1915"
+   ]
+  },
+  {
+   "q": "bvm 14e1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14e1u"
+   ]
+  },
+  {
+   "q": "bvm 14e5u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14e5u"
+   ]
+  },
+  {
+   "q": "bvm 14f1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14f1u"
+   ]
+  },
+  {
+   "q": "bvm 14f5u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14f5u"
+   ]
+  },
+  {
+   "q": "bvm 14g1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14g1u"
+   ]
+  },
+  {
+   "q": "bvm 14g5u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-14g5u"
+   ]
+  },
+  {
+   "q": "bvm d14h1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d14h1u"
+   ]
+  },
+  {
+   "q": "bvm d14h5u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d14h5u"
+   ]
+  },
+  {
+   "q": "bvm 1310",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1310"
+   ]
+  },
+  {
+   "q": "bvm 1315",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1315"
+   ]
+  },
+  {
+   "q": "bvm 1316",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-1316"
+   ]
+  },
+  {
+   "q": "bvm d9h1u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d9h1u"
+   ]
+  },
+  {
+   "q": "bvm d9h5u",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-d9h5u"
+   ]
+  },
+  {
+   "q": "bvm 8021",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-8021"
+   ]
+  },
+  {
+   "q": "bvm 8045qd",
+   "cat": "registry models",
+   "target": [
+    "registry-bvm-8045qd"
+   ]
+  },
+  {
+   "q": "pvm 4300",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-4300"
+   ]
+  },
+  {
+   "q": "pvm 3230",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-3230"
+   ]
+  },
+  {
+   "q": "pvm 2530",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-2530"
+   ]
+  },
+  {
+   "q": "pvm 1942q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1942q"
+   ]
+  },
+  {
+   "q": "pvm 1943md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1943md"
+   ]
+  },
+  {
+   "q": "pvm 1944q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1944q"
+   ]
+  },
+  {
+   "q": "pvm 1953md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1953md"
+   ]
+  },
+  {
+   "q": "pvm 1954q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1954q"
+   ]
+  },
+  {
+   "q": "pvm 2030",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-2030"
+   ]
+  },
+  {
+   "q": "pvm 20l1",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l1"
+   ]
+  },
+  {
+   "q": "pvm 20l2",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l2"
+   ]
+  },
+  {
+   "q": "pvm 20l2md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l2md"
+   ]
+  },
+  {
+   "q": "pvm 20l4",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20l4"
+   ]
+  },
+  {
+   "q": "pvm 20m2mdu",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m2mdu"
+   ]
+  },
+  {
+   "q": "pvm 20m2u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m2u"
+   ]
+  },
+  {
+   "q": "pvm 20m4u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m4u"
+   ]
+  },
+  {
+   "q": "pvm 20m7mde",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20m7mde"
+   ]
+  },
+  {
+   "q": "pvm 20n1u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n1u"
+   ]
+  },
+  {
+   "q": "pvm 20n2u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n2u"
+   ]
+  },
+  {
+   "q": "pvm 20n5u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n5u"
+   ]
+  },
+  {
+   "q": "pvm 20n6u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20n6u"
+   ]
+  },
+  {
+   "q": "pvm 20s1wu",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-20s1wu"
+   ]
+  },
+  {
+   "q": "pvm 1910",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1910"
+   ]
+  },
+  {
+   "q": "pvm 1340",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1340"
+   ]
+  },
+  {
+   "q": "pvm 1341",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1341"
+   ]
+  },
+  {
+   "q": "pvm 1342q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1342q"
+   ]
+  },
+  {
+   "q": "pvm 1343md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1343md"
+   ]
+  },
+  {
+   "q": "pvm 1344q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1344q"
+   ]
+  },
+  {
+   "q": "pvm 1350",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1350"
+   ]
+  },
+  {
+   "q": "pvm 1351q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1351q"
+   ]
+  },
+  {
+   "q": "pvm 1353md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1353md"
+   ]
+  },
+  {
+   "q": "pvm 1354q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1354q"
+   ]
+  },
+  {
+   "q": "pvm 14l1",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l1"
+   ]
+  },
+  {
+   "q": "pvm 14l2",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l2"
+   ]
+  },
+  {
+   "q": "pvm 14l2md",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l2md"
+   ]
+  },
+  {
+   "q": "pvm 14l3",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l3"
+   ]
+  },
+  {
+   "q": "pvm 14l4",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l4"
+   ]
+  },
+  {
+   "q": "pvm 14l5",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14l5"
+   ]
+  },
+  {
+   "q": "pvm 14m2mdu",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14m2mdu"
+   ]
+  },
+  {
+   "q": "pvm 14m2u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14m2u"
+   ]
+  },
+  {
+   "q": "pvm 14m4u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14m4u"
+   ]
+  },
+  {
+   "q": "pvm 14n1u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n1u"
+   ]
+  },
+  {
+   "q": "pvm 14n2u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n2u"
+   ]
+  },
+  {
+   "q": "pvm 14n5u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n5u"
+   ]
+  },
+  {
+   "q": "pvm 14n6u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-14n6u"
+   ]
+  },
+  {
+   "q": "pvm 136",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-136"
+   ]
+  },
+  {
+   "q": "pvm 1380",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1380"
+   ]
+  },
+  {
+   "q": "pvm 1390",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1390"
+   ]
+  },
+  {
+   "q": "pvm 1271q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-1271q"
+   ]
+  },
+  {
+   "q": "pvm 91",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-91"
+   ]
+  },
+  {
+   "q": "pvm 96",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-96"
+   ]
+  },
+  {
+   "q": "pvm 9l1",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-9l1"
+   ]
+  },
+  {
+   "q": "pvm 9l2",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-9l2"
+   ]
+  },
+  {
+   "q": "pvm 9l3",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-9l3"
+   ]
+  },
+  {
+   "q": "pvm 8020",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8020"
+   ]
+  },
+  {
+   "q": "pvm 8040",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8040"
+   ]
+  },
+  {
+   "q": "pvm 8041q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8041q"
+   ]
+  },
+  {
+   "q": "pvm 8042q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8042q"
+   ]
+  },
+  {
+   "q": "pvm 8044q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8044q"
+   ]
+  },
+  {
+   "q": "pvm 8045q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8045q"
+   ]
+  },
+  {
+   "q": "pvm 8220",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-8220"
+   ]
+  },
+  {
+   "q": "pvm 5041q",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-5041q"
+   ]
+  },
+  {
+   "q": "pvm 411",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-411"
+   ]
+  },
+  {
+   "q": "pvm 4b1u",
+   "cat": "registry models",
+   "target": [
+    "registry-pvm-4b1u"
+   ]
+  }
+ ]
 }

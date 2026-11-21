@@ -1020,3 +1020,18 @@ main.hub .card.sale>p:last-child{margin-top:auto!important;padding-top:.9rem}
   main.hub h2.sec{flex-wrap:wrap;row-gap:.15rem}
   main.hub h2.sec small{flex-basis:100%;margin-left:0;text-align:left}
 }
+
+/* ── Review eleven (2026-11-20): what the every-width sweep found ── */
+/* The nav dropped to a second row from 761 to ~990 px and again from 1101 to ~1150 px (the search pill and the
+   ninth nav word together outgrew the row). Tablets get an icon-only search button; the compact nav sizes now
+   run to 1190 px. Measured: one row at every 20 px step from 761 to 1920. */
+@media(min-width:761px) and (max-width:1010px){header.site .sbtn span,header.site .sbtn kbd{display:none}header.site .sbtn{padding:.5rem .6rem}}
+@media(min-width:1101px) and (max-width:1190px){nav.main a,.collbtn{font-size:.62rem;padding:.42rem .5rem;letter-spacing:.05em}nav.main{gap:.05rem}}
+/* Card grids asked for a 320 px / 260 px minimum column, so a 320–360 px phone scrolled sideways by ~19 px. */
+.grid.c2{grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr))}
+.grid.c3{grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr))}
+@media(max-width:860px){.specs{grid-template-columns:repeat(2,minmax(0,1fr))}.specs .sv{overflow-wrap:anywhere}}
+/* Tablet row: the logo and nav words give up a little so nine words, the logo and the search icon share one row from 761 px. */
+@media(min-width:761px) and (max-width:900px){header.site .navwrap{flex-wrap:nowrap;gap:.45rem;padding-left:.8rem;padding-right:.8rem}header.site .navlogo img{height:32px}nav.main{flex-wrap:nowrap;margin-left:auto}nav.main a,.collbtn{font-size:.58rem;padding:.42rem .34rem;letter-spacing:.03em}header.site .sbtn{margin-left:0}}
+/* A link inside a table cell was told apart from its neighbors by color alone (axe: 1.18:1). */
+table.spec:not(.models) td a{text-decoration:underline;text-decoration-color:var(--cyan-dim);text-underline-offset:.16em}

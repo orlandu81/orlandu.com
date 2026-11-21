@@ -372,8 +372,8 @@
     const block = line => {
       const rows = cat.models.filter(m => m.line === line);
       return '<h2 class="sec" id="' + line.toLowerCase() + '">' + (line === "BVM" ? "BVM · broadcast and master monitors" : "PVM · production monitors") + " <small>" + rows.length + " chassis</small></h2>" +
-        '<div class="tablewrap" tabindex="0"><table class="spec models"><thead><tr><th>Model</th><th>Size</th><th>Series</th><th>Era</th><th>Variants</th><th class="num">Registered</th></tr></thead><tbody>' +
-        rows.map(m => '<tr><td><a href="registry-' + m.slug + '.html">' + esc(m.model) + "</a></td><td>" + m.size_in + '"</td><td>' + esc(m.series) + '</td><td><span class="conf ' + m.era_confidence + '" title="' + conf[m.era_confidence] + '">' + esc(m.era) + '</span></td><td class="dim">' + esc(m.variants.filter(v => v !== m.model).join(", ")) + '</td><td class="num">' + (n[m.slug] ? '<b>' + n[m.slug] + "</b>" : '<span class="dim">0</span>') + "</td></tr>").join("") +
+        '<div class="tablewrap" tabindex="0"><table class="spec models"><thead><tr><th>Model</th><th>Size</th><th>Series</th><th>TV lines</th><th>Era</th><th>Variants</th><th class="num">Registered</th></tr></thead><tbody>' +
+        rows.map(m => '<tr><td><a href="registry-' + m.slug + '.html">' + esc(m.model) + "</a></td><td>" + m.size_in + '"</td><td>' + esc(m.series) + '</td><td>' + (m.specs && m.specs.tvl ? esc(m.specs.tvl) : '<span class="dim">&mdash;</span>') + '</td><td><span class="conf ' + m.era_confidence + '" title="' + conf[m.era_confidence] + '">' + esc(m.era) + '</span></td><td class="dim">' + esc(m.variants.filter(v => v !== m.model).join(", ")) + '</td><td class="num">' + (n[m.slug] ? '<b>' + n[m.slug] + "</b>" : '<span class="dim">0</span>') + "</td></tr>").join("") +
         "</tbody></table></div>";
     };
     const others = d.ok ? d.counts.filter(c => c.model_slug.startsWith("other-")) : [];

@@ -16,6 +16,7 @@ round-by-round notes (the old text is in git history if a detail is ever missing
 ### Before every push, run these, in this order
 
 ```
+python3 tools/build-registry-specs.py # before the page builder, only if a model's notes or the PHYS table changed (writes `specs` into the catalog)
 python3 tools/build-registry-pages.py # FIRST, only if data/registry-models.json or the builder changed (writes 99 pages)
 python3 tools/build-timeline.py      # only if a timeline thumb/year changed; it rewrites timeline.html
 python3 tools/build-machine-select.py # only if a machine profile's spec tiles or accent, a roster card's copy or a portrait changed; rewrites the select block in games.html
@@ -27,7 +28,7 @@ python3 tools/stamp-assets.py        # ?v=<hash> on every style.css / site.js / 
 python3 tools/update-lastmod.py      # sitemap <lastmod> = the Pacific day each page's <main> content last changed
 python3 tools/build-static-footer.py # after any footer/NAV change in site.js, and after build-registry-pages
 node tools/test-mcp.mjs              # contract checks on api/mcp.js — must print "0 failed"
-node tools/eval-search.mjs           # 271-query battery vs both search paths; top-1 ≥ 90 %, top-3 ≥ 97 %
+node tools/eval-search.mjs           # 958-query battery vs both search paths; top-1 ≥ 90 %, top-3 ≥ 97 %
 ```
 
 - Generators that write pages (registry builder, timeline, the magazine `build_page.py` scripts) emit bare asset
@@ -137,6 +138,12 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   gallery.html and the home filmstrip make their first six eager in JS.
 - Branding files: nav logo `assets/logo-wordmark-nav-v3.webp`, hero wordmark `logo-wordmark-hero-v4.webp` (11-03: the white inside the O, behind ORLANDU'S and between the mascot's legs cut to transparent; 11-04: the source PNG's bottom row was a full-width opaque gray line — it read as a rule under ARCADE on the dark hero — cleared in hero-v4 / nav-v3 / logo-wordmark-v3.png; older files deleted). The hero backdrop is DRAWN in style.css since 11-03 (Trinitron grille + vignette + SMPTE bars, a horizon glow along the floor plus the 2 px `.horizon` line, which since 11-04 runs through the vertical CENTER of the wordmark behind it (`top: calc(3.5rem + 0.1968 * min(680px, 0.92*(100vw - 2rem)))` — tracks the wordmark's size; David's call, don't move it to the floor), 40 star `<i>`s, scanline sweep) — `hero-bg.webp` is deleted; `.hero .heroimg` markup lives in index.html. Hero extras (index.html, index-scoped CSS + the coin script): a PVM readout `.osd` once per browser session (sessionStorage `orlandu-osd`), a round DEGAUSS button `.degauss` bottom-left (4.6 s `degauss` keyframes + `.purity` rainbow overlay, 5 s cooldown with the count in `.n`), and INSERT COIN now reveals a PRESS START link to a random coin-op/pin profile (10 slugs in `GAMES`). 11-04 polish: `.purity` is display:none until `.dg`; the coin has a focus ring; the countdown `.n` is aria-live; glossary has `color-bars` + a fuller `degauss`; About FAQ `#faq-degauss`; search HINTS for index + glossary; touch (`pointer:coarse`) 24 px hit areas on `h2 .hlink` and `sup a`. The SMPTE bars are a 10 px strip along the hero's bottom edge (`.hero .bars` + `.dmark`); a 20 % tint over the nav words was tried 11-03 and David pulled it after seeing it live — don't re-propose. What the nav DOES carry since 11-04: a 2 px accent line under each word in its hub's `--acc` color (`nav.main>a::after` / `.collbtn::before`, nth-of-type map in style.css; Home yellow, Collection WHITE (its own; David rejected orange, a seven-color gradient and violet), lines at 40 % at rest and 100 % on hover / current page, Gallery/Wanted cyan, Stories green, Projects orange, For Sale pink, Registry yellow, About red), desktop only — David chose it over a solid current-page highlight. OG cards: 39 of 49 were rebuilt 11-03 with the cut-out wordmark (the white under the old logo inpainted, Telea r7, from `og-place.json` placements) and RENAMED one version up (`-v2`, signage `-v3`, playchoice-10 `-v4`); the ten with the logo elsewhere (big-blue, donkey-kong, ghostbusters, indiana-jones, mario-bros, orlandu-100, orlandu-50-games, rick-and-morty, tna, vs-unisystem) still carry the old wordmark, mascots
   `mascot-foot.webp` / `mascot-about.webp`. The original PNGs stay as masters and JSON-LD `logo` URLs only.
+- **Wall and profile thumbs carry `srcset`** (11-20): every hand-written `<img src="media/thumbs/X.webp">` shown under ~700 px
+  has `X-400.webp` / `X-600.webp` siblings (cut from the `media/2026` master, WebP q82) and a `sizes` list MEASURED from the
+  rendered slot at 41 widths — a desktop was shrinking the 800 px file 2.9× (the resampling that banded the 2950Q). A new
+  wall photo owes both siblings and the same `srcset`/`sizes` as its neighbors; a first-screen image's `<link rel="preload">`
+  carries matching `imagesrcset`/`imagesizes`. Not covered: the generated select block on games.html, timeline tiles,
+  registry pages, the magazines.
 - **Thumbs:** story and step thumbs are 1200×514 (21:9) with an 800×343 sibling and the same `srcset`/`sizes` as their
   neighbors; the featured story keeps the plain 1200. Story thumbs are cut from the story's OWN media (navigational
   chrome, an allowed exception to one-photo-one-home); not in the sitemap. The Collection menu tiles are
@@ -423,6 +430,20 @@ consistent" — a new board, topper or card gets the same treatment.
   columns in site.js (Collection · Reading · Tools & reference · The arcade; `build-static-footer.py` no longer maps
   NAV). about.html intro is `.aboutintro` (text left; mascot + room-spin video right); monitors.html's magazine promo
   is `a.card.linked.magband`. Reading Room cards on the home page carry their story thumbs.
+- **Review eleven (2026-11-20), the heavy-processing round** (Project doc `claude/review-11-heavy-processing-2026-11-20.md`).
+  One CSS block at the end of style.css ("Review eleven"): the nav had dropped to a second row from 761 to ~990 px and
+  from 1101 to ~1150 px, so tablets (761–1010) get an icon-only search button, 761–900 a smaller logo and tighter nav
+  words, and the compact nav sizes run to 1190 px — re-measure the header at every 10 px after adding a nav word.
+  `.grid.c2/.c3` minimums are `min(…,100%)` so 320–360 px phones don't scroll sideways; the registry form no longer
+  takes its width from the longest `<option>`. Registry model pages carry a Specifications table (`spec_section` in the
+  builder, data from `tools/build-registry-specs.py`: fields parsed from each model's own notes, plus pitch / size /
+  weight for 28 chassis with the source graded sony / wiki / arcade — add a PHYS row only with the source in hand) and
+  the catalog table has a TV-lines column (builder AND `paintModels` in registry.js). Search: the one-letter typo retry
+  also knows HINTS words, sub-labels and ALIAS keys (site.js and api/mcp.js). Glossary +5 (S-Video, multiformat,
+  termination, SDI, HR Trinitron). Console-profile OG cards are dark-backdrop builds (`-v3`); ams-3-vs-ams-100 has its
+  own card. Mini Cute portrait/side masters were re-cut from the HEIC originals at 1362×1600. Measured and NOT changed:
+  the H.264 fallbacks (a from-master veryslow encode at equal SSIM saves ~9 %), and the other sub-1400 photos (no larger
+  original in `_originals/`).
 - **Review ten (2026-11-10), ten polish fixes — all ten approved.** One CSS block at the end of style.css ("Review
   ten"). Hooks: a grid with a FIXED card count adds `n2`/`n3`/`n5` beside `c2`/`c3` so no row ends with a hole (games
   `#gameroom` uses `quad`; consoles Nintendo/Sega `n3`; wanted marquees/BKM `n5`, Red Tent `n3`; projects photo rows

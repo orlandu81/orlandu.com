@@ -29,7 +29,13 @@
     "https://consolemods.org/wiki/images/d/d0/050585.doc.pdf",
     "https://ConsoleMods.org/wiki/images/6/6d/SONY51450_BVMA.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "1000",
+    "tube": "HR Trinitron",
+    "scan": "Multiformat, 15–45 kHz",
+    "control": "Separate control unit"
+   }
   },
   {
    "model": "BVM-D32E1WU",
@@ -52,7 +58,18 @@
     "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
     "https://consolemods.org/wiki/images/8/87/050584.doc.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "1000",
+    "tube": "HR Trinitron",
+    "scan": "Multiformat, 15–45 kHz",
+    "phosphor": "SMPTE-C",
+    "slots": "4",
+    "dims_mm": "794 × 694 × 556.5",
+    "weight": "206 lb 13 oz",
+    "phys_source": "ConsoleMods wiki infobox",
+    "phys_grade": "wiki"
+   }
   },
   {
    "model": "BVM-A24E1WU",
@@ -75,7 +92,12 @@
     "https://ConsoleMods.org/wiki/images/6/6d/SONY51450_BVMA.pdf",
     "https://consolemods.org/wiki/images/1/19/Microsoft_Word_-_070293.doc.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "1000",
+    "tube": "HR Trinitron",
+    "scan": "Multiformat, 15–45 kHz"
+   }
   },
   {
    "model": "BVM-D24E1WU",
@@ -99,7 +121,18 @@
     "https://consolemods.org/wiki/images/8/87/050584.doc.pdf",
     "https://consolemods.org/wiki/images/1/19/Microsoft_Word_-_070293.doc.pdf",
     "https://www.manualslib.com/brand/sony/monitor.html"
-   ]
+   ],
+   "specs": {
+    "tvl": "1000",
+    "tube": "HR Trinitron",
+    "scan": "Multiformat, 15–45 kHz",
+    "slots": "4",
+    "pitch_mm": "0.25",
+    "dims_mm": "565.5 × 436.8 × 587.3",
+    "weight": "112 lb 3 oz",
+    "phys_source": "ConsoleMods wiki infobox",
+    "phys_grade": "wiki"
+   }
   },
   {
    "model": "BVM-1911",
@@ -119,7 +152,10 @@
     "https://consolemods.org/wiki/images/7/7f/201993168.pdf",
     "https://www.manualslib.com/manual/1294789/Sony-Bvm-1911.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "900"
+   }
   },
   {
    "model": "BVM-1916",
@@ -138,7 +174,10 @@
    "sources": [
     "https://consolemods.org/wiki/images/7/7f/201993168.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600"
+   }
   },
   {
    "model": "BVM-20E1U",
@@ -194,7 +233,17 @@
       "U": "Up to 2,100,464"
      }
     }
-   ]
+   ],
+   "specs": {
+    "tvl": "1000",
+    "tube": "Super Fine Pitch Trinitron",
+    "pitch_mm": "0.25",
+    "rgb": "Built in",
+    "control": "Separate control unit",
+    "weight": "37 kg (82 lb)",
+    "phys_source": "Sony's figures, as on the arcade's fleet page",
+    "phys_grade": "arcade"
+   }
   },
   {
    "model": "BVM-20F1U",
@@ -251,7 +300,18 @@
       "U": "Up to 2,110,195"
      }
     }
-   ]
+   ],
+   "specs": {
+    "tvl": "900",
+    "tube": "HR Trinitron",
+    "pitch_mm": "0.30",
+    "rgb": "Built in",
+    "control": "Separate control unit",
+    "dims_mm": "444 × 399 × 570",
+    "weight": "37 kg (81 lb 9 oz)",
+    "phys_source": "ConsoleMods wiki infobox",
+    "phys_grade": "wiki"
+   }
   },
   {
    "model": "BVM-20G1U",
@@ -272,7 +332,15 @@
     "https://consolemods.org/wiki/images/0/01/BVM-G_Series_Brochure.pdf",
     "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "tube": "HR Trinitron",
+    "pitch_mm": "0.30",
+    "rgb": "Built in",
+    "phosphor": "SMPTE-C",
+    "slots": "1"
+   }
   },
   {
    "model": "BVM-A20F1U",
@@ -296,7 +364,18 @@
     "https://www.retrorgb.com/?p=1321",
     "https://shmups.system11.org/viewtopic.php?p=978179",
     "https://crtdatabase.com/crts/sony/sony-bvm-a20f1u"
-   ]
+   ],
+   "specs": {
+    "tvl": "900",
+    "tube": "HR Trinitron",
+    "scan": "Multiformat, 15–45 kHz",
+    "rgb": "With an option card",
+    "pitch_mm": "0.30",
+    "dims_mm": "444 × 414 × 570",
+    "weight": "88 lb 3 oz",
+    "phys_source": "ConsoleMods wiki infobox",
+    "phys_grade": "wiki"
+   }
   },
   {
    "model": "BVM-D20F1U",
@@ -319,7 +398,15 @@
     "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
     "https://consolemods.org/wiki/images/8/87/050584.doc.pdf",
     "https://crtdatabase.com/crts/sony/sony-bvm-d20f1u"
-   ]
+   ],
+   "specs": {
+    "tvl": "900",
+    "tube": "HR Trinitron",
+    "crt_part": "M49LCB20X",
+    "scan": "Multiformat, 15–45 kHz",
+    "control": "Separate control unit",
+    "slots": "4"
+   }
   },
   {
    "model": "BVM-1910",
@@ -337,7 +424,11 @@
    "sources": [
     "https://consolemods.org/wiki/images/d/d3/201992064.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "900",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "BVM-1912",
@@ -355,7 +446,11 @@
    "sources": [
     "https://consolemods.org/wiki/images/d/d3/201992064.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "900",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "BVM-1915",
@@ -372,7 +467,8 @@
    ],
    "sources": [
     "https://consolemods.org/wiki/images/d/d3/201992064.pdf"
-   ]
+   ],
+   "specs": {}
   },
   {
    "model": "BVM-14E1U",
@@ -428,7 +524,12 @@
       "U": "Up to 2,100,016"
      }
     }
-   ]
+   ],
+   "specs": {
+    "tvl": "900",
+    "pitch_mm": "0.22",
+    "control": "Separate control unit"
+   }
   },
   {
    "model": "BVM-14E5U",
@@ -484,7 +585,12 @@
       "U": "Up to 2,100,252"
      }
     }
-   ]
+   ],
+   "specs": {
+    "tvl": "900",
+    "pitch_mm": "0.22",
+    "control": "Built-in control panel"
+   }
   },
   {
    "model": "BVM-14F1U",
@@ -540,7 +646,12 @@
       "U": "Up to 2,100,135"
      }
     }
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "pitch_mm": "0.25",
+    "control": "Separate control unit"
+   }
   },
   {
    "model": "BVM-14F5U",
@@ -596,7 +707,16 @@
       "U": "Up to 2,100,907"
      }
     }
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "pitch_mm": "0.25",
+    "control": "Built-in control panel",
+    "dims_mm": "482 × 280 × 580",
+    "weight": "55 lb 1 oz",
+    "phys_source": "ConsoleMods wiki infobox",
+    "phys_grade": "wiki"
+   }
   },
   {
    "model": "BVM-14G1U",
@@ -617,7 +737,13 @@
     "https://consolemods.org/wiki/images/0/01/BVM-G_Series_Brochure.pdf",
     "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "pitch_mm": "0.25",
+    "control": "Separate control unit",
+    "slots": "1"
+   }
   },
   {
    "model": "BVM-14G5U",
@@ -638,7 +764,13 @@
     "https://consolemods.org/wiki/images/0/01/BVM-G_Series_Brochure.pdf",
     "https://consolemods.org/wiki/images/6/6b/202001230.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "pitch_mm": "0.25",
+    "control": "Built-in control panel",
+    "slots": "1"
+   }
   },
   {
    "model": "BVM-A14F5U",
@@ -661,7 +793,15 @@
     "https://ConsoleMods.org/wiki/images/6/6d/SONY51450_BVMA.pdf",
     "https://crtdatabase.com/crts/sony/sony-bvm-a14f5u",
     "https://www.manualslib.com/brand/sony/monitor.html"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "tube": "HR Trinitron",
+    "control": "Built-in control panel",
+    "weight": "26 kg (57 lb)",
+    "phys_source": "Sony's figures, as on the arcade's fleet page",
+    "phys_grade": "arcade"
+   }
   },
   {
    "model": "BVM-D14H1U",
@@ -684,7 +824,14 @@
     "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
     "https://consolemods.org/wiki/images/2/23/B-DPMO03-058-0.FM.pdf",
     "https://www.manualslib.com/brand/sony/monitor.html"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "tube": "HR Trinitron",
+    "crt_part": "M34LHF20X",
+    "scan": "Multiformat, 15–45 kHz",
+    "control": "Separate control unit"
+   }
   },
   {
    "model": "BVM-D14H5U",
@@ -707,7 +854,12 @@
     "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
     "https://consolemods.org/wiki/images/2/23/B-DPMO03-058-0.FM.pdf",
     "https://crtdatabase.com/crts/sony/sony-bvm-d14h5u"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "scan": "Multiformat, 15–45 kHz",
+    "control": "Built-in control panel"
+   }
   },
   {
    "model": "BVM-1310",
@@ -728,7 +880,12 @@
     "https://consolemods.org/wiki/images/d/d3/201992064.pdf",
     "https://ia803401.us.archive.org/13/items/bvm-1410-pm-sm-sony-service-manual-en/BVM1410PM_SM_SONY_EN.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "700",
+    "tube": "Super Fine Pitch Trinitron",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "BVM-1315",
@@ -746,7 +903,11 @@
    "sources": [
     "https://consolemods.org/wiki/images/d/d3/201992064.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "BVM-1316",
@@ -766,7 +927,10 @@
    "sources": [
     "https://consolemods.org/wiki/images/7/7f/201993168.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600"
+   }
   },
   {
    "model": "BVM-D9H1U",
@@ -789,7 +953,14 @@
     "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
     "https://consolemods.org/wiki/images/e/ed/040752.doc.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "450",
+    "tube": "HR Trinitron",
+    "scan": "Multiformat, 15–45 kHz",
+    "phosphor": "P-22",
+    "control": "Separate control unit"
+   }
   },
   {
    "model": "BVM-D9H5U",
@@ -812,7 +983,12 @@
     "https://archive.org/download/bvm_dseries/bvm_dseries.pdf",
     "https://consolemods.org/wiki/images/e/ed/040752.doc.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "450",
+    "scan": "Multiformat, 15–45 kHz",
+    "control": "Built-in control panel"
+   }
   },
   {
    "model": "BVM-8021",
@@ -830,7 +1006,12 @@
    "sources": [
     "https://crtdatabase.com/crts/sony/sony-bvm-8021",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "450",
+    "tube": "HR Trinitron",
+    "crt_part": "M20JMP10X"
+   }
   },
   {
    "model": "BVM-8045QD",
@@ -851,7 +1032,13 @@
     "https://crtdatabase.com/crts/sony/sony-bvm-8045qd",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "450",
+    "tube": "HR Trinitron",
+    "pitch_mm": "0.25",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-4300",
@@ -871,7 +1058,12 @@
     "https://consolemods.org/wiki/CRT:PVM-4300",
     "https://crtdatabase.com/crts/sony/sony-pvm-4300",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "560",
+    "tube": "Trinitron",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-3230",
@@ -890,7 +1082,12 @@
     "https://www.manualslib.com/manual/1261396/Sony-Pvm-3230.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-3230",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "650",
+    "tube": "Trinitron",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-2950Q",
@@ -911,7 +1108,15 @@
     "https://www.manualslib.com/manual/242763/Sony.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-2950q",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "Super Trinitron",
+    "rgb": "Built in",
+    "weight": "52 kg (115 lb)",
+    "phys_source": "Sony's figures, as on the arcade's fleet page",
+    "phys_grade": "arcade"
+   }
   },
   {
    "model": "PVM-2530",
@@ -931,7 +1136,12 @@
     "https://www.manualslib.com/manual/1296653/Sony-Pvm-2030.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-2530",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "approx. 420",
+    "tube": "Trinitron",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1942Q",
@@ -951,7 +1161,11 @@
     "https://www.manualslib.com/manual/3682037/Sony-Trinitron-Pvm-1944q.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-1942q",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1943MD",
@@ -971,7 +1185,11 @@
     "https://crtdatabase.com/crts/sony",
     "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-1342q"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1944Q",
@@ -991,7 +1209,11 @@
     "https://www.manualslib.com/manual/3682037/Sony-Trinitron-Pvm-1944q.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1953MD",
@@ -1013,7 +1235,11 @@
     "https://shmups.system11.org/viewtopic.php?p=1402999",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1954Q",
@@ -1035,7 +1261,18 @@
     "https://ConsoleMods.org/wiki/images/9/97/PVM-1954Q_PVM-1354Q_Brochure.pdf",
     "https://crtdatabase.com/crts/sony/sony-pvm-1954q",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "HR Trinitron",
+    "rgb": "Built in",
+    "phosphor": "SMPTE-C",
+    "pitch_mm": "0.4",
+    "dims_mm": "450 × 457.5 × 503",
+    "weight": "30.0 kg (66 lb 2 oz)",
+    "phys_source": "Sony PVM-1954Q/1354Q brochure",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-2030",
@@ -1055,7 +1292,13 @@
     "https://www.manualslib.com/manual/1296653/Sony-Pvm-2030.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-2030",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "approx. 420–560",
+    "tube": "Trinitron",
+    "crt_part": "A51JKQ10X",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-20L1",
@@ -1076,7 +1319,15 @@
     "https://ia804508.us.archive.org/0/items/pvm-14-l-1-20-l-1-ssm-14-l-1-20-l-1-service-manual-fixed/PVM-14L1%2020L1%20SSM-14L1%2020L1%20Service%20Manual%20-%20FIXED.pdf",
     "https://www.sony.jp/pro/lineup/pictm.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "Trinitron",
+    "rgb": "No",
+    "pitch_mm": "0.4",
+    "phys_source": "Sony PVM-L1 series brochure (2003)",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-20L2",
@@ -1098,7 +1349,18 @@
     "https://www.sony.jp/pro-monitor/products/PVM-20L2/index.html",
     "https://consolemods.org/wiki/CRT:PVM-20L2",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "Trinitron",
+    "pitch_mm": "0.4",
+    "scan": "15 kHz (standard definition)",
+    "rgb": "Built in",
+    "slots": "1",
+    "weight": "32.6 kg (72 lb 12 oz)",
+    "phys_source": "Sony PVM-L2 series brochure (2002)",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-20L2MD",
@@ -1118,7 +1380,11 @@
     "https://consolemods.org/wiki/CRT:PVM-20L2MD",
     "https://crtdatabase.com/crts/sony/sony-pvm-20l2md",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "slots": "1"
+   }
   },
   {
    "model": "PVM-20L4",
@@ -1138,7 +1404,20 @@
     "https://consolemods.org/wiki/images/e/eb/PVM-20L4_PVM-14L4_PVM-14L3_Brochure.pdf",
     "https://consolemods.org/wiki/images/8/82/302003004.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "tube": "HR Trinitron",
+    "scan": "15 kHz (standard definition)",
+    "rgb": "Built in",
+    "phosphor": "EBU",
+    "slots": "1",
+    "pitch_mm": "0.31",
+    "dims_mm": "452 × 414 × 500",
+    "weight": "31 kg (68 lb)",
+    "phys_source": "ConsoleMods wiki infobox",
+    "phys_grade": "wiki"
+   }
   },
   {
    "model": "PVM-20L5",
@@ -1161,7 +1440,18 @@
     "https://consolemods.org/wiki/images/8/82/302003004.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony/sony-pvm-20l5"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "tube": "HR Trinitron",
+    "scan": "Multiformat, 15–45 kHz",
+    "rgb": "Built in",
+    "phosphor": "SMPTE-C",
+    "slots": "1",
+    "weight": "31 kg (68 lb)",
+    "phys_source": "Sony's figures, as on the arcade's fleet page",
+    "phys_grade": "arcade"
+   }
   },
   {
    "model": "PVM-20M2MDU",
@@ -1184,7 +1474,15 @@
     "https://consolemods.org/wiki/images/1/18/302003214.pdf",
     "https://www.sony.jp/pro/lineup/pictm.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "rgb": "Built in",
+    "dims_mm": "450 × 457.5 × 503",
+    "weight": "30.0 kg",
+    "phys_source": "Sony PVM-20M2MD/14M2MD brochure",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-20M2U",
@@ -1206,7 +1504,16 @@
     "https://crtdatabase.com/crts/sony/sony-pvm-20m2u",
     "https://www.manualslib.com/manual/1303987/Sony-Pvm-20m2u.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "Trinitron",
+    "crt_part": "M49KGH11X",
+    "rgb": "Built in",
+    "dims_mm": "450 × 458 × 503",
+    "phys_source": "Sony PVM-M series Operation Manual (1996)",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-20M4U",
@@ -1230,7 +1537,16 @@
     "https://www.manualslib.com/manual/1303987/Sony-Pvm-20m2u.html",
     "https://www.retrorgb.com/?p=1321",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "tube": "HR Trinitron",
+    "crt_part": "M49LCB20X",
+    "rgb": "Built in",
+    "dims_mm": "450 × 458 × 503",
+    "phys_source": "Sony PVM-M series Operation Manual (1996)",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-20M7MDE",
@@ -1247,7 +1563,11 @@
    ],
    "sources": [
     "https://crtdatabase.com/crts/sony/sony-pvm-20m7mde"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "tube": "HR Trinitron"
+   }
   },
   {
    "model": "PVM-20N1U",
@@ -1266,7 +1586,11 @@
    "sources": [
     "https://consolemods.org/wiki/CRT:PVM-14N2",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "500",
+    "rgb": "No"
+   }
   },
   {
    "model": "PVM-20N2U",
@@ -1286,7 +1610,11 @@
     "https://consolemods.org/wiki/CRT:PVM-14N2",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html"
-   ]
+   ],
+   "specs": {
+    "tvl": "500",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-20N5U",
@@ -1309,7 +1637,11 @@
     "https://www.manualslib.com/manual/2633373/Sony-Trinitron-Pvm-14n5a.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://www.sony.jp/pro/lineup/pictm.html"
-   ]
+   ],
+   "specs": {
+    "tvl": "500",
+    "rgb": "No"
+   }
   },
   {
    "model": "PVM-20N6U",
@@ -1332,7 +1664,13 @@
     "https://crtdatabase.com/crts/sony/sony-pvm-20n6u",
     "https://www.sony.jp/pro/lineup/pictm.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "500",
+    "tube": "Trinitron",
+    "crt_part": "M49KGH10X",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-20S1WU",
@@ -1353,7 +1691,16 @@
     "https://crtdatabase.com/crts/sony/sony-pvm-20s1wu",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "300",
+    "crt_part": "W46LEZ070X",
+    "rgb": "Built in",
+    "dims_mm": "450 × 458 × 503",
+    "weight": "30.0 kg (66 lb 2 oz)",
+    "phys_source": "Sony PVM-20S1W brochure",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-1910",
@@ -1374,7 +1721,13 @@
     "https://crtdatabase.com/crts/sony/sony-pvm-1910",
     "https://www.manualslib.com/products/Sony-Trinitron-Pvm-1910-14095084.html",
     "https://www.manualslib.com/products/Sony-Trinitron-Pvm-1911-14095085.html"
-   ]
+   ],
+   "specs": {
+    "tvl": "350",
+    "tube": "Trinitron",
+    "crt_part": "A49JHT00X",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1340",
@@ -1394,7 +1747,11 @@
     "https://www.manualslib.com/manual/1446654/Sony-Trinitron-Pvm-1344q.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-1340",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "450",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1341",
@@ -1414,7 +1771,13 @@
     "https://www.manualslib.com/manual/242761/Sony-Trinitron-Pvm-1341.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-1341",
     "https://consolemods.org/wiki/CRT:PVM-1341"
-   ]
+   ],
+   "specs": {
+    "tvl": "450",
+    "tube": "Trinitron",
+    "crt_part": "A34JHS12X",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1342Q",
@@ -1435,7 +1798,12 @@
     "https://www.manualslib.com/manual/1339662/Sony-Pvm-1341.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-1342q",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "Super HR Trinitron",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1343MD",
@@ -1455,7 +1823,11 @@
     "https://www.manualslib.com/manual/1339662/Sony-Pvm-1341.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1344Q",
@@ -1475,7 +1847,17 @@
     "https://www.manualslib.com/manual/1446654/Sony-Trinitron-Pvm-1344q.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-1344q",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "Super HR Trinitron",
+    "crt_part": "M34KBE20X",
+    "rgb": "Built in",
+    "dims_mm": "346 × 340 × 412",
+    "weight": "16.5 kg (36 lb 6 oz)",
+    "phys_source": "ConsoleMods wiki infobox",
+    "phys_grade": "wiki"
+   }
   },
   {
    "model": "PVM-1350",
@@ -1492,7 +1874,11 @@
    ],
    "sources": [
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "450",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1351Q",
@@ -1511,7 +1897,12 @@
    "sources": [
     "https://www.manualslib.com/manual/3322819/Sony-Trinitron-Pvm-1954q.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "450",
+    "tube": "Trinitron",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1353MD",
@@ -1530,7 +1921,11 @@
    "sources": [
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1354Q",
@@ -1552,7 +1947,18 @@
     "https://ConsoleMods.org/wiki/images/9/97/PVM-1954Q_PVM-1354Q_Brochure.pdf",
     "https://crtdatabase.com/crts/sony/sony-pvm-1354q",
     "https://consolemods.org/wiki/CRT:PVM-1354Q"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "HR Trinitron",
+    "crt_part": "M34KBE20X",
+    "rgb": "Built in",
+    "phosphor": "SMPTE-C",
+    "pitch_mm": "0.25",
+    "weight": "16.7 kg (36 lb 13 oz)",
+    "phys_source": "Sony PVM-1954Q/1354Q brochure",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-14L1",
@@ -1575,7 +1981,12 @@
     "https://www.sony.jp/pro/lineup/pictm.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony/sony-pvm-14l1"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "Trinitron",
+    "rgb": "No"
+   }
   },
   {
    "model": "PVM-14L2",
@@ -1596,7 +2007,17 @@
     "https://archive.org/download/sony_PVM-L2_2002U/PVM-L2_2002U.pdf",
     "https://www.sony.jp/pro/lineup/pictm.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "Trinitron",
+    "scan": "15 kHz (standard definition)",
+    "rgb": "Built in",
+    "slots": "1",
+    "weight": "18.0 kg (39 lb 11 oz)",
+    "phys_source": "Sony PVM-L2 series brochure (2002)",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-14L2MD",
@@ -1615,7 +2036,10 @@
    "sources": [
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://consolemods.org/wiki/CRT:PVM-20L2MD"
-   ]
+   ],
+   "specs": {
+    "tvl": "600"
+   }
   },
   {
    "model": "PVM-14L3",
@@ -1636,7 +2060,15 @@
     "https://consolemods.org/wiki/images/8/82/302003004.pdf",
     "https://crtdatabase.com/crts/sony/sony-pvm-14l3",
     "https://www.manualslib.com/brand/sony/monitor.html"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "Trinitron",
+    "scan": "15 kHz (standard definition)",
+    "rgb": "Built in",
+    "phosphor": "P-22",
+    "slots": "1"
+   }
   },
   {
    "model": "PVM-14L4",
@@ -1656,7 +2088,15 @@
     "https://consolemods.org/wiki/images/e/eb/PVM-20L4_PVM-14L4_PVM-14L3_Brochure.pdf",
     "https://consolemods.org/wiki/images/8/82/302003004.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "tube": "HR Trinitron",
+    "scan": "15 kHz (standard definition)",
+    "rgb": "Built in",
+    "phosphor": "EBU",
+    "slots": "1"
+   }
   },
   {
    "model": "PVM-14L5",
@@ -1678,7 +2118,20 @@
     "https://ConsoleMods.org/wiki/images/c/c1/Sony_PVM-20L5_PVM-14L5_Brochure.pdf",
     "https://consolemods.org/wiki/images/8/82/302003004.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "tube": "HR Trinitron",
+    "scan": "Multiformat, 15–45 kHz",
+    "rgb": "Built in",
+    "phosphor": "SMPTE-C",
+    "slots": "1",
+    "pitch_mm": "0.25",
+    "dims_mm": "346 × 280 × 424",
+    "weight": "37 lb 8 oz",
+    "phys_source": "ConsoleMods wiki infobox",
+    "phys_grade": "wiki"
+   }
   },
   {
    "model": "PVM-14M2MDU",
@@ -1700,7 +2153,14 @@
     "https://consolemods.org/wiki/images/1/18/302003214.pdf",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony/sony-pvm-14m2mdu"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "rgb": "Built in",
+    "dims_mm": "346 × 340 × 430.5",
+    "phys_source": "Sony PVM-20M2MD/14M2MD brochure",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-14M2U",
@@ -1723,7 +2183,17 @@
     "https://www.manualslib.com/manual/1507579/Sony-Trinitron-Pvm-14m2u.html",
     "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "600",
+    "tube": "Trinitron",
+    "crt_part": "M34KBE11X",
+    "rgb": "Built in",
+    "dims_mm": "346 × 340 × 431",
+    "weight": "16.7 kg (36 lb 13 oz)",
+    "phys_source": "Sony PVM-M series Operation Manual (1996)",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-14M4U",
@@ -1746,7 +2216,17 @@
     "https://crtdatabase.com/crts/sony/sony-pvm-14m4j",
     "https://www.manualslib.com/manual/1507579/Sony-Trinitron-Pvm-14m2u.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "tube": "HR Trinitron",
+    "crt_part": "M34LHF20X",
+    "rgb": "Built in",
+    "dims_mm": "346 × 340 × 431",
+    "weight": "16.7 kg (36 lb 13 oz)",
+    "phys_source": "Sony PVM-M series Operation Manual (1996)",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-14N1U",
@@ -1765,7 +2245,11 @@
    "sources": [
     "https://consolemods.org/wiki/CRT:PVM-14N2",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "500",
+    "rgb": "No"
+   }
   },
   {
    "model": "PVM-14N2U",
@@ -1786,7 +2270,11 @@
     "https://consolemods.org/wiki/CRT:PVM-14N2",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html"
-   ]
+   ],
+   "specs": {
+    "tvl": "500",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-14N5U",
@@ -1810,7 +2298,16 @@
     "https://www.manualslib.com/manual/2633373/Sony-Trinitron-Pvm-14n5a.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "500",
+    "rgb": "No",
+    "pitch_mm": "0.25",
+    "dims_mm": "346 × 340 × 414",
+    "weight": "33 lb 1 oz",
+    "phys_source": "ConsoleMods wiki infobox",
+    "phys_grade": "wiki"
+   }
   },
   {
    "model": "PVM-14N6U",
@@ -1832,7 +2329,13 @@
     "https://www.manualslib.com/manual/2633373/Sony-Trinitron-Pvm-14n5a.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-14n6u",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "500",
+    "tube": "Trinitron",
+    "crt_part": "M34KBE10X",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-136",
@@ -1852,7 +2355,11 @@
     "https://crtdatabase.com/crts/sony/sony-pvm-136",
     "https://www.manualslib.com/products/Sony-Pvm-136-364897.html",
     "https://www.sony.jp/pro/lineup/pictm.html"
-   ]
+   ],
+   "specs": {
+    "tvl": "1000",
+    "color": "Monochrome"
+   }
   },
   {
    "model": "PVM-1380",
@@ -1871,7 +2378,11 @@
     "https://crtdatabase.com/crts/sony/sony-pvm-1380",
     "https://www.manualslib.com/manual/3678223/Sony-Trinitron-Pvm-1390.html",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "250",
+    "rgb": "No"
+   }
   },
   {
    "model": "PVM-1390",
@@ -1890,7 +2401,13 @@
     "https://www.manualslib.com/manual/3678223/Sony-Trinitron-Pvm-1390.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-1390",
     "https://ConsoleMods.org/wiki/CRT:PVM-1390"
-   ]
+   ],
+   "specs": {
+    "tvl": "400–450",
+    "tube": "Trinitron",
+    "crt_part": "A34JHS10X",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-1271Q",
@@ -1910,7 +2427,11 @@
     "https://www.videohistoryproject.org/node/10071",
     "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tube": "Trinitron",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-91",
@@ -1928,7 +2449,11 @@
    "sources": [
     "https://crtdatabase.com/crts/sony/sony-pvm-91",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "800",
+    "color": "Monochrome"
+   }
   },
   {
    "model": "PVM-96",
@@ -1949,7 +2474,11 @@
     "https://crtdatabase.com/crts/sony/sony-pvm-96",
     "https://www.sony.jp/pro/lineup/pictm.html",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "900",
+    "color": "Monochrome"
+   }
   },
   {
    "model": "PVM-9L1",
@@ -1969,7 +2498,12 @@
     "https://www.sony.jp/pro/lineup/pictm.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-9l1",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "250",
+    "tube": "Trinitron",
+    "rgb": "No"
+   }
   },
   {
    "model": "PVM-9L2",
@@ -1990,7 +2524,15 @@
     "https://crtdatabase.com/crts/sony/sony-pvm-9l2",
     "https://www.sony.jp/pro/lineup/pictm.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "250",
+    "tube": "Trinitron",
+    "rgb": "With an option card",
+    "weight": "8.0 kg (17 lb 10 oz)",
+    "phys_source": "Sony PVM-L2 series brochure (2002)",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-9L3",
@@ -2011,7 +2553,17 @@
     "https://crtdatabase.com/crts/sony/sony-pvm-9l3",
     "https://www.sony.jp/pro/lineup/pictm.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "450",
+    "tube": "HR Trinitron",
+    "crt_part": "M20JMP10X",
+    "rgb": "With an option card",
+    "dims_mm": "217 × 218 × 373",
+    "weight": "8.0 kg (17 lb 10 oz)",
+    "phys_source": "Sony PVM-9L3 brochure",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-8020",
@@ -2029,7 +2581,11 @@
    "sources": [
     "https://crtdatabase.com/crts/sony/sony-pvm-8020",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "230",
+    "tube": "Trinitron"
+   }
   },
   {
    "model": "PVM-8040",
@@ -2049,7 +2605,11 @@
     "https://www.manualslib.com/manual/688989/Sony-Pvm-8045q.html",
     "https://www.sony.jp/pro/lineup/pictm.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "250",
+    "rgb": "No"
+   }
   },
   {
    "model": "PVM-8041Q",
@@ -2071,7 +2631,13 @@
     "https://crtdatabase.com/crts/sony/sony-pvm-8041q",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html"
-   ]
+   ],
+   "specs": {
+    "tvl": "250",
+    "tube": "Trinitron",
+    "crt_part": "A20JMP10X",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-8042Q",
@@ -2091,7 +2657,12 @@
     "https://www.manualslib.com/manual/1282003/Sony-Trinitron-Pvm-8042q.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "250",
+    "tube": "Trinitron",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-8044Q",
@@ -2112,7 +2683,12 @@
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "450",
+    "tube": "HR Trinitron",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-8045Q",
@@ -2135,7 +2711,18 @@
     "https://www.manualslib.com/manual/688989/Sony-Pvm-8045q.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "450",
+    "tube": "HR Trinitron",
+    "crt_part": "M20JMP10X",
+    "rgb": "Built in",
+    "pitch_mm": "0.25",
+    "dims_mm": "217 × 217 × 352.5",
+    "weight": "8.2 kg (18 lb), without batteries",
+    "phys_source": "Sony PVM-8045Q/8042Q/8040/5041Q brochure",
+    "phys_grade": "sony"
+   }
   },
   {
    "model": "PVM-8220",
@@ -2153,7 +2740,12 @@
    "sources": [
     "https://crtdatabase.com/crts/sony/sony-pvm-8220",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "tvl": "approx. 230",
+    "tube": "Trinitron",
+    "crt_part": "A20JKU10X"
+   }
   },
   {
    "model": "PVM-5041Q",
@@ -2174,7 +2766,13 @@
     "https://www.radiomuseum.org/m/sony_j_de_noindex_25~typ.html",
     "https://www.sony.jp/pro/lineup/pictm.html",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"
-   ]
+   ],
+   "specs": {
+    "tvl": "250",
+    "tube": "Trinitron",
+    "crt_part": "A13JZV00X",
+    "rgb": "Built in"
+   }
   },
   {
    "model": "PVM-411",
@@ -2192,7 +2790,10 @@
    "sources": [
     "https://crtdatabase.com/crts/sony/sony-pvm-411",
     "https://crtdatabase.com/crts/sony"
-   ]
+   ],
+   "specs": {
+    "color": "Monochrome"
+   }
   },
   {
    "model": "PVM-4B1U",
@@ -2211,7 +2812,11 @@
    "sources": [
     "https://crtdatabase.com/crts/sony/sony-pvm-4b1u",
     "https://www.sony.jp/pro/lineup/pictm.html"
-   ]
+   ],
+   "specs": {
+    "tvl": "500",
+    "color": "Monochrome"
+   }
   }
  ],
  "unconfirmed": [

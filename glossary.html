@@ -27,10 +27,10 @@
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms-full.txt" title="Full text of this site for AI assistants">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms.txt" title="Site index for AI assistants">
 <link rel="alternate" type="application/rss+xml" href="https://www.orlandu.com/feed.xml" title="What's new at Orlandu's Arcade">
-<link rel="stylesheet" href="assets/style.css?v=a17a42a2">
+<link rel="stylesheet" href="assets/style.css?v=30706b82">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav-v3.webp">
 <style>main.hub{--acc:#5ee9ff}</style>
-<script src="assets/site.js?v=5fa2e0a4" defer></script>
+<script src="assets/site.js?v=fc94cfe3" defer></script>
 <style>
   .gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:.7rem 1.6rem;margin:0}
   .gl>div{border-top:1px solid var(--line);padding:.75rem 0 .5rem}
@@ -106,13 +106,16 @@
       <div><dt id="crt">CRT</dt><dd>Cathode ray tube: the glass display every one of these games was drawn for. An electron beam paints the picture line by line on phosphor, which is why pixel art looks right on one and slightly wrong on everything since.</dd></div>
       <div><dt id="trinitron">Trinitron</dt><dd>Sony's aperture-grille tube design, introduced in 1968 and used across its consumer televisions and professional monitors. Flatter vertically, brighter, and the reason the badge means something.</dd></div>
       <div><dt id="aperture-grille">Aperture grille</dt><dd>The fine vertical wires behind a Trinitron's screen that steer the beam to the right phosphor stripe, in place of the shadow mask other tubes use. It lets more light through; the trade is one or two faint horizontal damper wires you learn to stop seeing.</dd></div>
+      <div><dt id="hr-trinitron">HR Trinitron</dt><dd>Sony&rsquo;s high-resolution Trinitron: a finer-pitch tube than the standard one, and what puts 800 TV lines on the <a href="pvm-20l5.html">PVM-20L5</a>.</dd></div>
       <div><dt id="pvm">PVM / BVM / LMD</dt><dd>Sony's professional families. <b>PVM</b>, Professional Video Monitor, the studio workhorse. <b>BVM</b>, Broadcast Video Monitor, the reference grade with hand-selected tubes and plug-in cards. <b>LMD</b>, the flat-panel generation that followed. <a href="pvm-vs-bvm.html">The long version.</a></dd></div>
       <div><dt id="rgb">RGB</dt><dd>Red, green and blue carried as three separate signals straight from the console's video chip, nothing blended on the way. The single biggest reason these monitors matter to games.</dd></div>
       <div><dt id="composite">Composite</dt><dd>The single yellow-plug video signal of the consumer era, with all the color information squeezed into one wire and smeared in the process. Not welcome on the monitors here.</dd></div>
+      <div><dt id="s-video">S-Video (Y/C)</dt><dd>Video on two wires &mdash; brightness on one, color on the other &mdash; a step up from composite and a step short of RGB. Sony&rsquo;s manuals call it Y/C.</dd></div>
       <div><dt id="component">Component</dt><dd>Video split into three signals over three cables &mdash; luminance and two color-difference channels &mdash; the analog standard for DVD and early HD. What the LMD wall is fed.</dd></div>
       <div><dt id="240p">240p</dt><dd>The picture almost every classic console actually produces: 240 progressive lines, drawn every frame, at the 15 kHz scan rate of standard television. A CRT shows it with visible scanlines; a flat panel has to guess.</dd></div>
       <div><dt id="15khz">15 kHz</dt><dd>The horizontal scan rate of standard-definition television and of nearly every arcade board and classic console. A monitor that locks to it will show them natively; one that does not needs a converter in the way.</dd></div>
       <div><dt id="multiscan">Multiscan</dt><dd>A monitor that locks to a range of scan rates rather than one &mdash; 15 kHz for a Super Nintendo, 31 kHz for 480p, higher for HD &mdash; on the same tube. The <a href="pvm-20l5-buying-guide.html">PVM-20L5</a> is the famous one.</dd></div>
+      <div><dt id="multiformat">Multiformat</dt><dd>Sony&rsquo;s word for a monitor that takes standard definition and HD on the same screen. The <a href="pvm-20l5.html">PVM-20L5</a> and the <a href="bvm-a14f5u.html">BVM-A14F5U</a> are the two tubes here that do.</dd></div>
       <div><dt id="scanlines">Scanlines</dt><dd>The dark gaps between the lines a 240p picture draws on a CRT. Not a defect: part of how the art was meant to look, and impossible to fake convincingly.</dd></div>
       <div><dt id="scaler">Scaler / line doubler</dt><dd>A box that converts a 240p analog signal into something a flat panel accepts, adding processing and a frame or two of delay while it thinks. The <a href="signal-chain.html">signal chain here</a> has none, on purpose.</dd></div>
       <div><dt id="scart">SCART</dt><dd>The big rectangular European connector that carries RGB video and stereo audio in one plug. The retro-console world speaks it; Sony's professional monitors do not, which is why the next entry exists.</dd></div>
@@ -122,7 +125,9 @@
       <div><dt id="switcher">Switcher</dt><dd>A box with many inputs and one or two outputs so several consoles can share a monitor. An auto-switcher picks whichever console is powered on, which is what makes a large collection playable rather than just owned.</dd></div>
       <div><dt id="distribution-amp">Distribution amplifier</dt><dd>A box that takes one signal in and sends an identical, re-driven copy to many outputs &mdash; unlike a passive splitter, which halves the signal every time it divides. Behind <a href="monitors.html">the LMD wall</a>.</dd></div>
       <div><dt id="loop-through">Loop-through</dt><dd>A second connector beside an input that passes the same signal out again, so monitors can be daisy-chained. The last one in the chain gets a termination switch set to 75 ohms.</dd></div>
+      <div><dt id="termination">Termination</dt><dd>The 75 &Omega; load at the end of a video line. Professional inputs loop through to the next monitor, so the last monitor on the line &mdash; or the only one &mdash; needs its termination switched on, or the picture washes out. <a href="connect-console-to-pvm.html">Hooking one up.</a></dd></div>
       <div><dt id="bkm">BKM card</dt><dd>Sony's plug-in input boards for the BVM and late PVM chassis. Each card teaches the monitor another signal format, so on these monitors the slots <em>are</em> the inputs. Several are on <a href="wanted.html">the wanted list</a>.</dd></div>
+      <div><dt id="sdi">SDI</dt><dd>Serial digital interface: broadcast video as a digital stream down a single BNC cable. A BVM takes it through a <a href="bkm-cards.html">BKM card</a>; the LMD-940W on <a href="lmd-wall.html">the wall</a> takes it natively.</dd></div>
       <div><dt id="tvl">TVL <small>TV lines</small></dt><dd>The resolution figure Sony quoted for its tubes: how many alternating vertical lines the screen can resolve across a width equal to its height. A production PVM runs around 600 to 800; a BVM, around 1000.</dd></div>
       <div><dt id="smpte-c">SMPTE-C</dt><dd>The broadcast color standard for phosphors in North America. A monitor built to it shows colors where the mastering engineer put them, which a store-bought set never promised.</dd></div>
       <div><dt id="geometry">Geometry / convergence</dt><dd>Whether straight lines are straight and evenly spaced across the screen, and whether the red, green and blue beams land on the same spot. The first things to check on any tube, and the expensive ones to fix.</dd></div>

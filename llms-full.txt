@@ -244,7 +244,7 @@ The rarer sit-down side of the VS. family — the distinctive red-canopy cocktai
 The only candy-style cabinet in the collection, and it's the one that matters: Capcom's compact Mini Cute in the pink variant.
  CabinetCapcom Mini CuteYear1991BoardCPS1 + Darksoft MultiOriginJapan, by crate UprightsDonkey Kong (https://www.orlandu.com/donkey-kong.html)Mario Bros. (https://www.orlandu.com/mario-bros.html)VS. UniSystem (https://www.orlandu.com/vs-unisystem.html)Big Blue (https://www.orlandu.com/big-blue.html) PinballIndiana Jones (https://www.orlandu.com/indiana-jones.html)Ghostbusters (https://www.orlandu.com/ghostbusters.html)TNA (https://www.orlandu.com/tna.html)Rick & Morty (https://www.orlandu.com/rick-and-morty.html) Candy & cocktailRed Tent (https://www.orlandu.com/red-tent.html)Mini Cute (https://www.orlandu.com/mini-cute.html)
 
-The game room also hosts the big PVMs — the 29-inch PVM-2950Q (https://www.orlandu.com/pvm-2950q.html) and the PVM-20L5. Meet the fleet → (https://www.orlandu.com/monitors.html)
+The game room also hosts the big PVMs — the 29-inch PVM-2950Q (https://www.orlandu.com/pvm-2950q.html) and the PVM-20L5 (https://www.orlandu.com/pvm-20l5.html). Meet the fleet → (https://www.orlandu.com/monitors.html)
 
 ## In memoriam machines that passed through on their way to someone else's story
 
@@ -4501,7 +4501,7 @@ There is one more thing on the back of the AMS-3, and it is the best part. A pri
 
 That is the whole appeal of professional gear, really. A consumer speaker from 1985 would be landfill by now. This one was built to be racked, powered, ignored, and depreciated for decades — and after all of that, the worst thing wrong with it was a scratchy volume pot. That took a can of fader cleaner and an afternoon. It is off the bench now (https://www.orlandu.com/projects.html).
 
-***After the cleaning** — the SP LEVEL pots quiet again, both VU needles moving, the AMS-3 riding on top of the BVM-20E1U for the test*
+***After the cleaning** — the SP LEVEL pots quiet again, both VU needles moving, the AMS-3 riding on top of the BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html) for the test*
 
 The deep technical write-up on the AMS-100 — history, internals, and module configurations — is its own piece (https://www.orlandu.com/ams-100-monograph.html). This one is just about what happens when you put the two of them on top of each other.
 
@@ -4962,7 +4962,7 @@ Two things to set on the monitor. Professional inputs loop through to feed the n
 
 ## 5. Component sources skip the switcher
 
-The GameCube and the PlayStation 2 go component, over the OEM cable, into the monitor's component input — on a BVM-A through its analog option card, on a PVM-20L5 the same BNCs. Here the PS2 feeds a wall of nine LMDs through a distribution amplifier, which is not a splitter: a splitter halves the signal every time it divides, a DA buffers and re-drives it. The full chain, both rooms → (https://www.orlandu.com/signal-chain.html)
+The GameCube and the PlayStation 2 (https://www.orlandu.com/ps2-slim.html) go component, over the OEM cable, into the monitor's component input — on a BVM-A through its analog option card (https://www.orlandu.com/bkm-cards.html), on a PVM-20L5 the same BNCs. Here the PS2 feeds a wall of nine LMDs through a distribution amplifier, which is not a splitter: a splitter halves the signal every time it divides, a DA buffers and re-drives it. The full chain, both rooms → (https://www.orlandu.com/signal-chain.html)
 
 ## 6. The audio nobody plans for
 
@@ -5113,7 +5113,7 @@ Pick a console and a monitor. You get the exact chain the arcade would use — c
 
 ## The rules behind the answer
 
-A 15 kHz RGB signal — 240p and 480i — is what every CRT here was built for, so it ranks first whenever the console can produce it. Component carries 480p and HD only into the multiformat monitors: the PVM-20L5, the BVM-A14F5U through its BKM-68X, and the LMD-9030 and 9050. The BVM-20E1U and PVM-2950Q are standard-definition by design; a 480p-capable console still connects, it just runs at 480i. S-Video and composite are listed because they exist, not because the arcade uses them. The LMD-940W has no analog input at all, so anything older than HDMI needs a converter in front of it. Sync rides the composite-sync line of the SCART cable; a monitor whose BNCs take RGB or component is set to RGB; and the last, or only, monitor on a loop-through line is terminated at 75 Ω.
+A 15 kHz RGB signal — 240p and 480i — is what every CRT here was built for, so it ranks first whenever the console can produce it. Component carries 480p and HD only into the multiformat monitors: the PVM-20L5 (https://www.orlandu.com/pvm-20l5.html), the BVM-A14F5U (https://www.orlandu.com/bvm-a14f5u.html) through its BKM-68X, and the LMD-9030 (https://www.orlandu.com/lmd-wall.html) and 9050. The BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html) and PVM-2950Q (https://www.orlandu.com/pvm-2950q.html) are standard-definition by design; a 480p-capable console still connects, it just runs at 480i. S-Video and composite are listed because they exist, not because the arcade uses them. The LMD-940W has no analog input at all, so anything older than HDMI needs a converter in front of it. Sync rides the composite-sync line of the SCART cable; a monitor whose BNCs take RGB or component is set to RGB; and the last, or only, monitor on a loop-through line is terminated at 75 Ω.
 
 The rules are open data: connect.json (https://www.orlandu.com/data/connect.json), CC BY 4.0, credit Orlandu’s Arcade; the planner itself is one small script (https://www.orlandu.com/assets/connect-plan.js?v=9ab84117), and an AI assistant can call it as the plan_connection tool on the MCP server (https://www.orlandu.com/mcp.html). Which card fits which chassis is on the BKM reference (https://www.orlandu.com/bkm-cards.html); what each monitor accepts is on the fleet table (https://www.orlandu.com/monitors.html#specs).
 
@@ -5140,7 +5140,7 @@ Every tube in the fleet, modeled from its own numbers — picture height, 240 sc
 
 ## What is modeled, and what is not
 
-Scan lines are placed 240 to the viewable height, so the gap between them is Sony’s picture height divided by 240 — 1.21 mm on a 20-inch tube, 1.71 mm on the 2950Q. Horizontal softness comes from the center-resolution spec: TV lines over a width equal to the picture height, so 1000 TVL on the BVM-20E1U resolves a 0.29 mm element where the 2950Q’s 600 TVL resolves 0.69 mm. The aperture grille is drawn at the pitch Sony states where it states one — 0.25 mm on the E and F tubes from the E/F manual, 0.7–0.85 mm on the 2950Q from its brochure; the PVM-20L5 has no published figure and is drawn at the 0.25 mm class its HR tube belongs to. The LCDs are drawn as their actual pixel grids — 640×480 on the 9020 and 9030, 1024×768 on the 9050, 800×480 on the 940W — with 240p scaled by nearest neighbor, which is an assumption about Sony’s scaler, not a fact; the 9050’s 3.2× fractional scale is why its text shows uneven pixel widths. Beam bloom, gamma, the damper wires and the eye’s one-arcminute limit are approximations. Nothing here is a photograph of these monitors; the gallery (https://www.orlandu.com/gallery.html#tag=bvm-20e1u) has those.
+Scan lines are placed 240 to the viewable height, so the gap between them is Sony’s picture height divided by 240 — 1.21 mm on a 20-inch tube, 1.71 mm on the 2950Q. Horizontal softness comes from the center-resolution spec: TV lines over a width equal to the picture height, so 1000 TVL on the BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html) resolves a 0.29 mm element where the 2950Q’s 600 TVL resolves 0.69 mm. The aperture grille is drawn at the pitch Sony states where it states one — 0.25 mm on the E and F tubes from the E/F manual, 0.7–0.85 mm on the 2950Q from its brochure; the PVM-20L5 (https://www.orlandu.com/pvm-20l5.html) has no published figure and is drawn at the 0.25 mm class its HR tube belongs to. The LCDs are drawn as their actual pixel grids — 640×480 on the 9020 and 9030, 1024×768 on the 9050, 800×480 on the 940W — with 240p scaled by nearest neighbor, which is an assumption about Sony’s scaler, not a fact; the 9050’s 3.2× fractional scale is why its text shows uneven pixel widths. Beam bloom, gamma, the damper wires and the eye’s one-arcminute limit are approximations. Nothing here is a photograph of these monitors; the gallery (https://www.orlandu.com/gallery.html#tag=bvm-20e1u) has those.
 
 Numbers from the fleet spec table (https://www.orlandu.com/monitors.html#specs) and Sony’s documents; what each letter on a Sony badge means is on the model-number page (https://www.orlandu.com/sony-model-numbers.html). Links from the compare mode land here with the two models preselected.
 
@@ -5219,7 +5219,7 @@ L1 is the entry 600-line set; L2 adds an option slot; L5 is the multiformat HR T
 ### BVMBroadcast and master monitors
 **E / F generation**1990sBVM-14E1BVM-14E5BVM-14F1BVM-14F5BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html)BVM-20F1
 
-The tube letter follows the size: E is the finer grille, F the step down. The digit after it: 1 = display unit that needs a BKM-10R, 5 = controls built in.
+The tube letter follows the size: E is the finer grille, F the step down. The digit after it: 1 = display unit that needs a BKM-10R (https://www.orlandu.com/bkm-10r.html), 5 = controls built in.
 *Sony-documented***G generation**late 1990sBVM-14G1BVM-14G5BVM-20G1
 
 Controlled from the same BKM-10R system as the E and F. No Sony document opened so far gives the G tube’s pitch or line count.
@@ -5811,7 +5811,7 @@ The deep technical write-up is finished — history, internals, the module syste
 
 [Photo: Sony BVM-20E1U broadcast monitor displaying a crosshatch calibration pattern with an AMS-100 speaker on top]
 
-***Calibration hours** — crosshatch up on the BVM-20E1U*
+***Calibration hours** — crosshatch up on the BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html)*
 
 [Photo: The garage arcade mid-project: cabinets, pro monitors on the floor, decks overhead, and work in progress everywhere]
 
@@ -5954,13 +5954,16 @@ This site talks the way the hobby talks, which means it uses a lot of words with
 - **CRT**: Cathode ray tube: the glass display every one of these games was drawn for. An electron beam paints the picture line by line on phosphor, which is why pixel art looks right on one and slightly wrong on everything since.
 - **Trinitron**: Sony's aperture-grille tube design, introduced in 1968 and used across its consumer televisions and professional monitors. Flatter vertically, brighter, and the reason the badge means something.
 - **Aperture grille**: The fine vertical wires behind a Trinitron's screen that steer the beam to the right phosphor stripe, in place of the shadow mask other tubes use. It lets more light through; the trade is one or two faint horizontal damper wires you learn to stop seeing.
+- **HR Trinitron**: Sony’s high-resolution Trinitron: a finer-pitch tube than the standard one, and what puts 800 TV lines on the PVM-20L5 (https://www.orlandu.com/pvm-20l5.html).
 - **PVM / BVM / LMD**: Sony's professional families. **PVM**, Professional Video Monitor, the studio workhorse. **BVM**, Broadcast Video Monitor, the reference grade with hand-selected tubes and plug-in cards. **LMD**, the flat-panel generation that followed. The long version. (https://www.orlandu.com/pvm-vs-bvm.html)
 - **RGB**: Red, green and blue carried as three separate signals straight from the console's video chip, nothing blended on the way. The single biggest reason these monitors matter to games.
 - **Composite**: The single yellow-plug video signal of the consumer era, with all the color information squeezed into one wire and smeared in the process. Not welcome on the monitors here.
+- **S-Video (Y/C)**: Video on two wires — brightness on one, color on the other — a step up from composite and a step short of RGB. Sony’s manuals call it Y/C.
 - **Component**: Video split into three signals over three cables — luminance and two color-difference channels — the analog standard for DVD and early HD. What the LMD wall is fed.
 - **240p**: The picture almost every classic console actually produces: 240 progressive lines, drawn every frame, at the 15 kHz scan rate of standard television. A CRT shows it with visible scanlines; a flat panel has to guess.
 - **15 kHz**: The horizontal scan rate of standard-definition television and of nearly every arcade board and classic console. A monitor that locks to it will show them natively; one that does not needs a converter in the way.
 - **Multiscan**: A monitor that locks to a range of scan rates rather than one — 15 kHz for a Super Nintendo, 31 kHz for 480p, higher for HD — on the same tube. The PVM-20L5 (https://www.orlandu.com/pvm-20l5-buying-guide.html) is the famous one.
+- **Multiformat**: Sony’s word for a monitor that takes standard definition and HD on the same screen. The PVM-20L5 (https://www.orlandu.com/pvm-20l5.html) and the BVM-A14F5U (https://www.orlandu.com/bvm-a14f5u.html) are the two tubes here that do.
 - **Scanlines**: The dark gaps between the lines a 240p picture draws on a CRT. Not a defect: part of how the art was meant to look, and impossible to fake convincingly.
 - **Scaler / line doubler**: A box that converts a 240p analog signal into something a flat panel accepts, adding processing and a frame or two of delay while it thinks. The signal chain here (https://www.orlandu.com/signal-chain.html) has none, on purpose.
 - **SCART**: The big rectangular European connector that carries RGB video and stereo audio in one plug. The retro-console world speaks it; Sony's professional monitors do not, which is why the next entry exists.
@@ -5970,7 +5973,9 @@ This site talks the way the hobby talks, which means it uses a lot of words with
 - **Switcher**: A box with many inputs and one or two outputs so several consoles can share a monitor. An auto-switcher picks whichever console is powered on, which is what makes a large collection playable rather than just owned.
 - **Distribution amplifier**: A box that takes one signal in and sends an identical, re-driven copy to many outputs — unlike a passive splitter, which halves the signal every time it divides. Behind the LMD wall (https://www.orlandu.com/monitors.html).
 - **Loop-through**: A second connector beside an input that passes the same signal out again, so monitors can be daisy-chained. The last one in the chain gets a termination switch set to 75 ohms.
+- **Termination**: The 75 Ω load at the end of a video line. Professional inputs loop through to the next monitor, so the last monitor on the line — or the only one — needs its termination switched on, or the picture washes out. Hooking one up. (https://www.orlandu.com/connect-console-to-pvm.html)
 - **BKM card**: Sony's plug-in input boards for the BVM and late PVM chassis. Each card teaches the monitor another signal format, so on these monitors the slots *are* the inputs. Several are on the wanted list (https://www.orlandu.com/wanted.html).
+- **SDI**: Serial digital interface: broadcast video as a digital stream down a single BNC cable. A BVM takes it through a BKM card (https://www.orlandu.com/bkm-cards.html); the LMD-940W on the wall (https://www.orlandu.com/lmd-wall.html) takes it natively.
 - **TVL TV lines**: The resolution figure Sony quoted for its tubes: how many alternating vertical lines the screen can resolve across a width equal to its height. A production PVM runs around 600 to 800; a BVM, around 1000.
 - **SMPTE-C**: The broadcast color standard for phosphors in North America. A monitor built to it shows colors where the mastering engineer put them, which a store-bought set never promised.
 - **Geometry / convergence**: Whether straight lines are straight and evenly spaced across the screen, and whether the red, green and blue beams land on the same spot. The first things to check on any tube, and the expensive ones to fix.
@@ -6385,109 +6390,109 @@ The 96 chassis the registry knows, with their regional variants folded in. The e
 
 ## BVM · broadcast and master monitors 30 chassis
 
-| Model | Size | Series | Era | Variants | Registered |
-|---|---|---|---|---|---|
-| BVM-A32E1WU (https://www.orlandu.com/registry-bvm-a32e1wu.html) | 32" | A / E (16:9 flat) | 2006–c.2009 | BVM-A32E1WE, BVM-A32E1WJ, BVM-A32E1WM | … |
-| BVM-D32E1WU (https://www.orlandu.com/registry-bvm-d32e1wu.html) | 32" | D / E (16:9 flat) | 2000–2005 | BVM-D32E1WE, BVM-D32E1WJ, BVM-D32E1WA | … |
-| BVM-A24E1WU (https://www.orlandu.com/registry-bvm-a24e1wu.html) | 24" | A / E (16:9 flat) | 2006–2007 | BVM-A24E1WE, BVM-A24E1WJ, BVM-A24E1WM | … |
-| BVM-D24E1WU (https://www.orlandu.com/registry-bvm-d24e1wu.html) | 24" | D / E (16:9 flat) | 1999–2005 | BVM-D24E1WE, BVM-D24E1WJ, BVM-D24E1WA | … |
-| BVM-1911 (https://www.orlandu.com/registry-bvm-1911.html) | 20" | 19xx OSD | c.1992–1996 | BVM-2011P | … |
-| BVM-1916 (https://www.orlandu.com/registry-bvm-1916.html) | 20" | 19xx OSD | c.1993–1996 | BVM-2016P | … |
-| BVM-20E1U (https://www.orlandu.com/registry-bvm-20e1u.html) | 20" | E (1000 TVL) | 1996–c.2001 | BVM-20E1E, BVM-20E1J, BVM-20E1A | … |
-| BVM-20F1U (https://www.orlandu.com/registry-bvm-20f1u.html) | 20" | F (900 TVL) | c.1996–2001 | BVM-20F1E, BVM-20F1J, BVM-20F1A | … |
-| BVM-20G1U (https://www.orlandu.com/registry-bvm-20g1u.html) | 20" | G (800 TVL) | 1998–c.2003 | BVM-20G1E, BVM-20G1A | … |
-| BVM-A20F1U (https://www.orlandu.com/registry-bvm-a20f1u.html) | 20" | A / F (4:3) | 2006–c.2009 | BVM-A20F1E, BVM-A20F1J, BVM-A20F1M | … |
-| BVM-D20F1U (https://www.orlandu.com/registry-bvm-d20f1u.html) | 20" | D / F (4:3) | 1999–2005 | BVM-D20F1E, BVM-D20F1J, BVM-D20F1A | … |
-| BVM-1910 (https://www.orlandu.com/registry-bvm-1910.html) | 19" | 19xx analog | c.1988–1993 | | … |
-| BVM-1912 (https://www.orlandu.com/registry-bvm-1912.html) | 19" | 19xx analog | c.1991–1993 | | … |
-| BVM-1915 (https://www.orlandu.com/registry-bvm-1915.html) | 19" | 19xx analog | c.1991–1993 | | … |
-| BVM-14E1U (https://www.orlandu.com/registry-bvm-14e1u.html) | 14" | E (900 TVL) | c.1996–2001 | BVM-14E1E, BVM-14E1J, BVM-14E1A | … |
-| BVM-14E5U (https://www.orlandu.com/registry-bvm-14e5u.html) | 14" | E (900 TVL) | c.1996–2001 | BVM-14E5E, BVM-14E5J, BVM-14E5A | … |
-| BVM-14F1U (https://www.orlandu.com/registry-bvm-14f1u.html) | 14" | F (800 TVL) | c.1996–2001 | BVM-14F1E, BVM-14F1J, BVM-14F1A | … |
-| BVM-14F5U (https://www.orlandu.com/registry-bvm-14f5u.html) | 14" | F (800 TVL) | c.1996–2001 | BVM-14F5E, BVM-14F5J, BVM-14F5A | … |
-| BVM-14G1U (https://www.orlandu.com/registry-bvm-14g1u.html) | 14" | G (800 TVL) | 1998–c.2003 | BVM-14G1E, BVM-14G1A | … |
-| BVM-14G5U (https://www.orlandu.com/registry-bvm-14g5u.html) | 14" | G (800 TVL) | 1998–c.2003 | BVM-14G5E, BVM-14G5A | … |
-| BVM-A14F5U (https://www.orlandu.com/registry-bvm-a14f5u.html) | 14" | A / F (4:3) | 2006–c.2009 | BVM-A14F5E, BVM-A14F5J, BVM-A14F5M | … |
-| BVM-D14H1U (https://www.orlandu.com/registry-bvm-d14h1u.html) | 14" | D / H (4:3) | 1999–2005 | BVM-D14H1E, BVM-D14H1J, BVM-D14H1A | … |
-| BVM-D14H5U (https://www.orlandu.com/registry-bvm-d14h5u.html) | 14" | D / H (4:3) | 1999–2005 | BVM-D14H5E, BVM-D14H5J, BVM-D14H5A | … |
-| BVM-1310 (https://www.orlandu.com/registry-bvm-1310.html) | 13" | 13xx analog | c.1986–1992 | BVM-1410P, BVM-1410PM | … |
-| BVM-1315 (https://www.orlandu.com/registry-bvm-1315.html) | 13" | 13xx analog | c.1990–1993 | | … |
-| BVM-1316 (https://www.orlandu.com/registry-bvm-1316.html) | 13" | 13xx OSD | c.1993–1996 | BVM-1316C, BVM-1416 | … |
-| BVM-D9H1U (https://www.orlandu.com/registry-bvm-d9h1u.html) | 9" | D / H (9in) | 1999–2005 | BVM-D9H1E, BVM-D9H1J, BVM-D9H1A | … |
-| BVM-D9H5U (https://www.orlandu.com/registry-bvm-d9h5u.html) | 9" | D / H (9in) | 1999–2005 | BVM-D9H5E, BVM-D9H5J, BVM-D9H5A | … |
-| BVM-8021 (https://www.orlandu.com/registry-bvm-8021.html) | 8" | 8-inch (80s) | c.1985–1990 | | … |
-| BVM-8045QD (https://www.orlandu.com/registry-bvm-8045qd.html) | 8" | 8-inch digital | c.1995–2001 | BVM-9045QD, BVM-9045D | … |
+| Model | Size | Series | TV lines | Era | Variants | Registered |
+|---|---|---|---|---|---|---|
+| BVM-A32E1WU (https://www.orlandu.com/registry-bvm-a32e1wu.html) | 32" | A / E (16:9 flat) | 1000 | 2006–c.2009 | BVM-A32E1WE, BVM-A32E1WJ, BVM-A32E1WM | … |
+| BVM-D32E1WU (https://www.orlandu.com/registry-bvm-d32e1wu.html) | 32" | D / E (16:9 flat) | 1000 | 2000–2005 | BVM-D32E1WE, BVM-D32E1WJ, BVM-D32E1WA | … |
+| BVM-A24E1WU (https://www.orlandu.com/registry-bvm-a24e1wu.html) | 24" | A / E (16:9 flat) | 1000 | 2006–2007 | BVM-A24E1WE, BVM-A24E1WJ, BVM-A24E1WM | … |
+| BVM-D24E1WU (https://www.orlandu.com/registry-bvm-d24e1wu.html) | 24" | D / E (16:9 flat) | 1000 | 1999–2005 | BVM-D24E1WE, BVM-D24E1WJ, BVM-D24E1WA | … |
+| BVM-1911 (https://www.orlandu.com/registry-bvm-1911.html) | 20" | 19xx OSD | 900 | c.1992–1996 | BVM-2011P | … |
+| BVM-1916 (https://www.orlandu.com/registry-bvm-1916.html) | 20" | 19xx OSD | 600 | c.1993–1996 | BVM-2016P | … |
+| BVM-20E1U (https://www.orlandu.com/registry-bvm-20e1u.html) | 20" | E (1000 TVL) | 1000 | 1996–c.2001 | BVM-20E1E, BVM-20E1J, BVM-20E1A | … |
+| BVM-20F1U (https://www.orlandu.com/registry-bvm-20f1u.html) | 20" | F (900 TVL) | 900 | c.1996–2001 | BVM-20F1E, BVM-20F1J, BVM-20F1A | … |
+| BVM-20G1U (https://www.orlandu.com/registry-bvm-20g1u.html) | 20" | G (800 TVL) | 800 | 1998–c.2003 | BVM-20G1E, BVM-20G1A | … |
+| BVM-A20F1U (https://www.orlandu.com/registry-bvm-a20f1u.html) | 20" | A / F (4:3) | 900 | 2006–c.2009 | BVM-A20F1E, BVM-A20F1J, BVM-A20F1M | … |
+| BVM-D20F1U (https://www.orlandu.com/registry-bvm-d20f1u.html) | 20" | D / F (4:3) | 900 | 1999–2005 | BVM-D20F1E, BVM-D20F1J, BVM-D20F1A | … |
+| BVM-1910 (https://www.orlandu.com/registry-bvm-1910.html) | 19" | 19xx analog | 900 | c.1988–1993 | | … |
+| BVM-1912 (https://www.orlandu.com/registry-bvm-1912.html) | 19" | 19xx analog | 900 | c.1991–1993 | | … |
+| BVM-1915 (https://www.orlandu.com/registry-bvm-1915.html) | 19" | 19xx analog | — | c.1991–1993 | | … |
+| BVM-14E1U (https://www.orlandu.com/registry-bvm-14e1u.html) | 14" | E (900 TVL) | 900 | c.1996–2001 | BVM-14E1E, BVM-14E1J, BVM-14E1A | … |
+| BVM-14E5U (https://www.orlandu.com/registry-bvm-14e5u.html) | 14" | E (900 TVL) | 900 | c.1996–2001 | BVM-14E5E, BVM-14E5J, BVM-14E5A | … |
+| BVM-14F1U (https://www.orlandu.com/registry-bvm-14f1u.html) | 14" | F (800 TVL) | 800 | c.1996–2001 | BVM-14F1E, BVM-14F1J, BVM-14F1A | … |
+| BVM-14F5U (https://www.orlandu.com/registry-bvm-14f5u.html) | 14" | F (800 TVL) | 800 | c.1996–2001 | BVM-14F5E, BVM-14F5J, BVM-14F5A | … |
+| BVM-14G1U (https://www.orlandu.com/registry-bvm-14g1u.html) | 14" | G (800 TVL) | 800 | 1998–c.2003 | BVM-14G1E, BVM-14G1A | … |
+| BVM-14G5U (https://www.orlandu.com/registry-bvm-14g5u.html) | 14" | G (800 TVL) | 800 | 1998–c.2003 | BVM-14G5E, BVM-14G5A | … |
+| BVM-A14F5U (https://www.orlandu.com/registry-bvm-a14f5u.html) | 14" | A / F (4:3) | 800 | 2006–c.2009 | BVM-A14F5E, BVM-A14F5J, BVM-A14F5M | … |
+| BVM-D14H1U (https://www.orlandu.com/registry-bvm-d14h1u.html) | 14" | D / H (4:3) | 800 | 1999–2005 | BVM-D14H1E, BVM-D14H1J, BVM-D14H1A | … |
+| BVM-D14H5U (https://www.orlandu.com/registry-bvm-d14h5u.html) | 14" | D / H (4:3) | 800 | 1999–2005 | BVM-D14H5E, BVM-D14H5J, BVM-D14H5A | … |
+| BVM-1310 (https://www.orlandu.com/registry-bvm-1310.html) | 13" | 13xx analog | 700 | c.1986–1992 | BVM-1410P, BVM-1410PM | … |
+| BVM-1315 (https://www.orlandu.com/registry-bvm-1315.html) | 13" | 13xx analog | 600 | c.1990–1993 | | … |
+| BVM-1316 (https://www.orlandu.com/registry-bvm-1316.html) | 13" | 13xx OSD | 600 | c.1993–1996 | BVM-1316C, BVM-1416 | … |
+| BVM-D9H1U (https://www.orlandu.com/registry-bvm-d9h1u.html) | 9" | D / H (9in) | 450 | 1999–2005 | BVM-D9H1E, BVM-D9H1J, BVM-D9H1A | … |
+| BVM-D9H5U (https://www.orlandu.com/registry-bvm-d9h5u.html) | 9" | D / H (9in) | 450 | 1999–2005 | BVM-D9H5E, BVM-D9H5J, BVM-D9H5A | … |
+| BVM-8021 (https://www.orlandu.com/registry-bvm-8021.html) | 8" | 8-inch (80s) | 450 | c.1985–1990 | | … |
+| BVM-8045QD (https://www.orlandu.com/registry-bvm-8045qd.html) | 8" | 8-inch digital | 450 | c.1995–2001 | BVM-9045QD, BVM-9045D | … |
 
 ## PVM · production monitors 66 chassis
 
-| Model | Size | Series | Era | Variants | Registered |
-|---|---|---|---|---|---|
-| PVM-4300 (https://www.orlandu.com/registry-pvm-4300.html) | 43" | Profeel-type (43in) | 1989–c.1991 | | … |
-| PVM-3230 (https://www.orlandu.com/registry-pvm-3230.html) | 32" | 30 series (Profeel-type) | 1990–c.1994 | | … |
-| PVM-2950Q (https://www.orlandu.com/registry-pvm-2950q.html) | 29" | 50 series (29in) | c.1995–2000 | PVM-2950QM | … |
-| PVM-2530 (https://www.orlandu.com/registry-pvm-2530.html) | 25" | 30 series (Profeel-type) | 1986–c.1990 | PVM-2730QM | … |
-| PVM-1942Q (https://www.orlandu.com/registry-pvm-1942q.html) | 20" | Q (42 series) | 1989–c.1993 | PVM-2042QM | … |
-| PVM-1943MD (https://www.orlandu.com/registry-pvm-1943md.html) | 20" | Q/MD (43 series, medical) | c.1989–1993 | PVM-2043MD | … |
-| PVM-1944Q (https://www.orlandu.com/registry-pvm-1944q.html) | 20" | Q (44 series) | 1989–c.1993 | PVM-2044QM | … |
-| PVM-1953MD (https://www.orlandu.com/registry-pvm-1953md.html) | 20" | Q/MD (53 series, medical) | c.1993–1997 | PVM-2053MD, PVM-1953ST | … |
-| PVM-1954Q (https://www.orlandu.com/registry-pvm-1954q.html) | 20" | Q (54 series) | 1993–c.1997 | PVM-2054QM | … |
-| PVM-2030 (https://www.orlandu.com/registry-pvm-2030.html) | 20" | 30 series (Profeel-type) | 1986–c.1991 | PVM-2130QM | … |
-| PVM-20L1 (https://www.orlandu.com/registry-pvm-20l1.html) | 20" | L | c.2000–2005 | PVM-20L1E, SSM-20L1 | … |
-| PVM-20L2 (https://www.orlandu.com/registry-pvm-20l2.html) | 20" | L | c.2001–2006 | PVM-20L2E, PVM-D20L2J | … |
-| PVM-20L2MD (https://www.orlandu.com/registry-pvm-20l2md.html) | 20" | L (medical) | c.2001–2006 | PVM-20L2MDE | … |
-| PVM-20L4 (https://www.orlandu.com/registry-pvm-20l4.html) | 20" | L | 2001–c.2006 | PVM-20L4E | … |
-| PVM-20L5 (https://www.orlandu.com/registry-pvm-20l5.html) | 20" | L | 2002–c.2007 | PVM-D20L5J, PVM-D20L5DJ | … |
-| PVM-20M2MDU (https://www.orlandu.com/registry-pvm-20m2mdu.html) | 20" | M (medical) | c.1996–2003 | PVM-20M2MDE, PVM-20M2MDA, PVM-20M2MDJ | … |
-| PVM-20M2U (https://www.orlandu.com/registry-pvm-20m2u.html) | 20" | M | c.1996–2001 | PVM-20M2E, PVM-20M2A, PVM-20M2J | … |
-| PVM-20M4U (https://www.orlandu.com/registry-pvm-20m4u.html) | 20" | M | c.1996–2001 | PVM-20M4E, PVM-20M4A, PVM-20M4J | … |
-| PVM-20M7MDE (https://www.orlandu.com/registry-pvm-20m7mde.html) | 20" | M (medical, EU) | c.1995–2000 | | … |
-| PVM-20N1U (https://www.orlandu.com/registry-pvm-20n1u.html) | 20" | N | c.1995–1998 | SSM-20N1 | … |
-| PVM-20N2U (https://www.orlandu.com/registry-pvm-20n2u.html) | 20" | N | c.1995–1998 | PVM-20N2E | … |
-| PVM-20N5U (https://www.orlandu.com/registry-pvm-20n5u.html) | 20" | N | c.1997–2001 | PVM-20N5E, PVM-20N5A, PVM-20N5J, SSM-20N5U | … |
-| PVM-20N6U (https://www.orlandu.com/registry-pvm-20n6u.html) | 20" | N | c.1997–2001 | PVM-20N6E, PVM-20N6A, PVM-20N6J | … |
-| PVM-20S1WU (https://www.orlandu.com/registry-pvm-20s1wu.html) | 20" | S (16:9) | c.1997–2000 | PVM-20S1WE, PVM-20S1WA | … |
-| PVM-1910 (https://www.orlandu.com/registry-pvm-1910.html) | 19" | 10 series (80s) | c.1984–1988 | PVM-1911, PVM-2010QM | … |
-| PVM-1340 (https://www.orlandu.com/registry-pvm-1340.html) | 14" | 40 series | 1988–c.1993 | PVM-1440QM | … |
-| PVM-1341 (https://www.orlandu.com/registry-pvm-1341.html) | 14" | 41 series | 1988–c.1993 | | … |
-| PVM-1342Q (https://www.orlandu.com/registry-pvm-1342q.html) | 14" | Q (42 series) | 1988–c.1993 | PVM-1442QM | … |
-| PVM-1343MD (https://www.orlandu.com/registry-pvm-1343md.html) | 14" | Q/MD (43 series, medical) | c.1988–1993 | PVM-1443MD | … |
-| PVM-1344Q (https://www.orlandu.com/registry-pvm-1344q.html) | 14" | Q (44 series) | 1988–c.1993 | PVM-1444QM | … |
-| PVM-1350 (https://www.orlandu.com/registry-pvm-1350.html) | 14" | 50 series | c.1992–1995 | | … |
-| PVM-1351Q (https://www.orlandu.com/registry-pvm-1351q.html) | 14" | Q (50 series) | c.1992–1995 | PVM-1450QM | … |
-| PVM-1353MD (https://www.orlandu.com/registry-pvm-1353md.html) | 14" | Q/MD (53 series, medical) | c.1993–1997 | PVM-1453MD | … |
-| PVM-1354Q (https://www.orlandu.com/registry-pvm-1354q.html) | 14" | Q (54 series) | 1993–c.1997 | PVM-1454QM | … |
-| PVM-14L1 (https://www.orlandu.com/registry-pvm-14l1.html) | 14" | L | c.2000–2005 | PVM-14L1E, PVM-14L1MDE, SSM-14L1 | … |
-| PVM-14L2 (https://www.orlandu.com/registry-pvm-14l2.html) | 14" | L | c.2001–2006 | PVM-14L2E, PVM-D14L2J | … |
-| PVM-14L2MD (https://www.orlandu.com/registry-pvm-14l2md.html) | 14" | L (medical) | c.2001–2006 | PVM-14L2MDE | … |
-| PVM-14L3 (https://www.orlandu.com/registry-pvm-14l3.html) | 14" | L | 2001–c.2006 | PVM-14L3E | … |
-| PVM-14L4 (https://www.orlandu.com/registry-pvm-14l4.html) | 14" | L | 2001–c.2006 | PVM-14L4E | … |
-| PVM-14L5 (https://www.orlandu.com/registry-pvm-14l5.html) | 14" | L | 2002–c.2007 | PVM-D14L5J, PVM-D14L5DJ | … |
-| PVM-14M2MDU (https://www.orlandu.com/registry-pvm-14m2mdu.html) | 14" | M (medical) | c.1996–2003 | PVM-14M2MDE, PVM-14M2MDA | … |
-| PVM-14M2U (https://www.orlandu.com/registry-pvm-14m2u.html) | 14" | M | c.1996–2001 | PVM-14M2E, PVM-14M2A, PVM-14M2J | … |
-| PVM-14M4U (https://www.orlandu.com/registry-pvm-14m4u.html) | 14" | M | c.1996–2001 | PVM-14M4E, PVM-14M4A, PVM-14M4J | … |
-| PVM-14N1U (https://www.orlandu.com/registry-pvm-14n1u.html) | 14" | N | c.1995–1998 | SSM-14N1 | … |
-| PVM-14N2U (https://www.orlandu.com/registry-pvm-14n2u.html) | 14" | N | c.1995–1998 | PVM-14N2E, SSM-14N2U | … |
-| PVM-14N5U (https://www.orlandu.com/registry-pvm-14n5u.html) | 14" | N | c.1997–2001 | PVM-14N5E, PVM-14N5A, PVM-14N5J, PVM-14N5MDE, SSM-14N5U | … |
-| PVM-14N6U (https://www.orlandu.com/registry-pvm-14n6u.html) | 14" | N | c.1997–2001 | PVM-14N6E, PVM-14N6A, PVM-14N6J | … |
-| PVM-136 (https://www.orlandu.com/registry-pvm-136.html) | 13" | mono 13in | c.1993–2005 | PVM-137 | … |
-| PVM-1380 (https://www.orlandu.com/registry-pvm-1380.html) | 13" | 80 series (80s) | c.1987–1991 | | … |
-| PVM-1390 (https://www.orlandu.com/registry-pvm-1390.html) | 13" | 90 series (80s) | 1987–c.1991 | | … |
-| PVM-1271Q (https://www.orlandu.com/registry-pvm-1271q.html) | 12" | 70 series (80s) | 1984–c.1987 | PVM-1371QM | … |
-| PVM-91 (https://www.orlandu.com/registry-pvm-91.html) | 9" | mono 9in (80s) | c.1982–1990 | | … |
-| PVM-96 (https://www.orlandu.com/registry-pvm-96.html) | 9" | mono 9in | c.1993–2005 | PVM-96J, PVM-97 | … |
-| PVM-9L1 (https://www.orlandu.com/registry-pvm-9l1.html) | 9" | L | c.2000–2005 | PVM-9L1E | … |
-| PVM-9L2 (https://www.orlandu.com/registry-pvm-9l2.html) | 9" | L | c.2002–2006 | PVM-9L2E | … |
-| PVM-9L3 (https://www.orlandu.com/registry-pvm-9l3.html) | 9" | L | c.2003–2005 | PVM-9L3E | … |
-| PVM-8020 (https://www.orlandu.com/registry-pvm-8020.html) | 8" | 8-inch (80s) | c.1985–1989 | | … |
-| PVM-8040 (https://www.orlandu.com/registry-pvm-8040.html) | 8" | 8-inch (40) | c.1991–1997 | PVM-9040ME | … |
-| PVM-8041Q (https://www.orlandu.com/registry-pvm-8041q.html) | 8" | 8-inch Q (41) | c.1991–1997 | PVM-9041QM, PVM-9041Q | … |
-| PVM-8042Q (https://www.orlandu.com/registry-pvm-8042q.html) | 8" | 8-inch Q (42) | c.1997–2002 | PVM-9042QM | … |
-| PVM-8044Q (https://www.orlandu.com/registry-pvm-8044q.html) | 8" | 8-inch Q (44) | c.1991–1997 | PVM-9044QM | … |
-| PVM-8045Q (https://www.orlandu.com/registry-pvm-8045q.html) | 8" | 8-inch Q (45) | c.1997–2003 | PVM-9045QM, PVM-9045PM, PVM-9045Q | … |
-| PVM-8220 (https://www.orlandu.com/registry-pvm-8220.html) | 8" | 8-inch (80s) | c.1985–1989 | | … |
-| PVM-5041Q (https://www.orlandu.com/registry-pvm-5041q.html) | 5" | 5-inch Q | c.1990–1997 | PVM-6041QM | … |
-| PVM-411 (https://www.orlandu.com/registry-pvm-411.html) | 4" | quad 4in mono | c.1990–1996 | | … |
-| PVM-4B1U (https://www.orlandu.com/registry-pvm-4b1u.html) | 4" | quad 4in mono | c.1996–2004 | PVM-4B1J | … |
+| Model | Size | Series | TV lines | Era | Variants | Registered |
+|---|---|---|---|---|---|---|
+| PVM-4300 (https://www.orlandu.com/registry-pvm-4300.html) | 43" | Profeel-type (43in) | 560 | 1989–c.1991 | | … |
+| PVM-3230 (https://www.orlandu.com/registry-pvm-3230.html) | 32" | 30 series (Profeel-type) | 650 | 1990–c.1994 | | … |
+| PVM-2950Q (https://www.orlandu.com/registry-pvm-2950q.html) | 29" | 50 series (29in) | 600 | c.1995–2000 | PVM-2950QM | … |
+| PVM-2530 (https://www.orlandu.com/registry-pvm-2530.html) | 25" | 30 series (Profeel-type) | approx. 420 | 1986–c.1990 | PVM-2730QM | … |
+| PVM-1942Q (https://www.orlandu.com/registry-pvm-1942q.html) | 20" | Q (42 series) | 600 | 1989–c.1993 | PVM-2042QM | … |
+| PVM-1943MD (https://www.orlandu.com/registry-pvm-1943md.html) | 20" | Q/MD (43 series, medical) | 600 | c.1989–1993 | PVM-2043MD | … |
+| PVM-1944Q (https://www.orlandu.com/registry-pvm-1944q.html) | 20" | Q (44 series) | 600 | 1989–c.1993 | PVM-2044QM | … |
+| PVM-1953MD (https://www.orlandu.com/registry-pvm-1953md.html) | 20" | Q/MD (53 series, medical) | 600 | c.1993–1997 | PVM-2053MD, PVM-1953ST | … |
+| PVM-1954Q (https://www.orlandu.com/registry-pvm-1954q.html) | 20" | Q (54 series) | 600 | 1993–c.1997 | PVM-2054QM | … |
+| PVM-2030 (https://www.orlandu.com/registry-pvm-2030.html) | 20" | 30 series (Profeel-type) | approx. 420–560 | 1986–c.1991 | PVM-2130QM | … |
+| PVM-20L1 (https://www.orlandu.com/registry-pvm-20l1.html) | 20" | L | 600 | c.2000–2005 | PVM-20L1E, SSM-20L1 | … |
+| PVM-20L2 (https://www.orlandu.com/registry-pvm-20l2.html) | 20" | L | 600 | c.2001–2006 | PVM-20L2E, PVM-D20L2J | … |
+| PVM-20L2MD (https://www.orlandu.com/registry-pvm-20l2md.html) | 20" | L (medical) | 600 | c.2001–2006 | PVM-20L2MDE | … |
+| PVM-20L4 (https://www.orlandu.com/registry-pvm-20l4.html) | 20" | L | 800 | 2001–c.2006 | PVM-20L4E | … |
+| PVM-20L5 (https://www.orlandu.com/registry-pvm-20l5.html) | 20" | L | 800 | 2002–c.2007 | PVM-D20L5J, PVM-D20L5DJ | … |
+| PVM-20M2MDU (https://www.orlandu.com/registry-pvm-20m2mdu.html) | 20" | M (medical) | 600 | c.1996–2003 | PVM-20M2MDE, PVM-20M2MDA, PVM-20M2MDJ | … |
+| PVM-20M2U (https://www.orlandu.com/registry-pvm-20m2u.html) | 20" | M | 600 | c.1996–2001 | PVM-20M2E, PVM-20M2A, PVM-20M2J | … |
+| PVM-20M4U (https://www.orlandu.com/registry-pvm-20m4u.html) | 20" | M | 800 | c.1996–2001 | PVM-20M4E, PVM-20M4A, PVM-20M4J | … |
+| PVM-20M7MDE (https://www.orlandu.com/registry-pvm-20m7mde.html) | 20" | M (medical, EU) | 800 | c.1995–2000 | | … |
+| PVM-20N1U (https://www.orlandu.com/registry-pvm-20n1u.html) | 20" | N | 500 | c.1995–1998 | SSM-20N1 | … |
+| PVM-20N2U (https://www.orlandu.com/registry-pvm-20n2u.html) | 20" | N | 500 | c.1995–1998 | PVM-20N2E | … |
+| PVM-20N5U (https://www.orlandu.com/registry-pvm-20n5u.html) | 20" | N | 500 | c.1997–2001 | PVM-20N5E, PVM-20N5A, PVM-20N5J, SSM-20N5U | … |
+| PVM-20N6U (https://www.orlandu.com/registry-pvm-20n6u.html) | 20" | N | 500 | c.1997–2001 | PVM-20N6E, PVM-20N6A, PVM-20N6J | … |
+| PVM-20S1WU (https://www.orlandu.com/registry-pvm-20s1wu.html) | 20" | S (16:9) | 300 | c.1997–2000 | PVM-20S1WE, PVM-20S1WA | … |
+| PVM-1910 (https://www.orlandu.com/registry-pvm-1910.html) | 19" | 10 series (80s) | 350 | c.1984–1988 | PVM-1911, PVM-2010QM | … |
+| PVM-1340 (https://www.orlandu.com/registry-pvm-1340.html) | 14" | 40 series | 450 | 1988–c.1993 | PVM-1440QM | … |
+| PVM-1341 (https://www.orlandu.com/registry-pvm-1341.html) | 14" | 41 series | 450 | 1988–c.1993 | | … |
+| PVM-1342Q (https://www.orlandu.com/registry-pvm-1342q.html) | 14" | Q (42 series) | 600 | 1988–c.1993 | PVM-1442QM | … |
+| PVM-1343MD (https://www.orlandu.com/registry-pvm-1343md.html) | 14" | Q/MD (43 series, medical) | 600 | c.1988–1993 | PVM-1443MD | … |
+| PVM-1344Q (https://www.orlandu.com/registry-pvm-1344q.html) | 14" | Q (44 series) | 600 | 1988–c.1993 | PVM-1444QM | … |
+| PVM-1350 (https://www.orlandu.com/registry-pvm-1350.html) | 14" | 50 series | 450 | c.1992–1995 | | … |
+| PVM-1351Q (https://www.orlandu.com/registry-pvm-1351q.html) | 14" | Q (50 series) | 450 | c.1992–1995 | PVM-1450QM | … |
+| PVM-1353MD (https://www.orlandu.com/registry-pvm-1353md.html) | 14" | Q/MD (53 series, medical) | 600 | c.1993–1997 | PVM-1453MD | … |
+| PVM-1354Q (https://www.orlandu.com/registry-pvm-1354q.html) | 14" | Q (54 series) | 600 | 1993–c.1997 | PVM-1454QM | … |
+| PVM-14L1 (https://www.orlandu.com/registry-pvm-14l1.html) | 14" | L | 600 | c.2000–2005 | PVM-14L1E, PVM-14L1MDE, SSM-14L1 | … |
+| PVM-14L2 (https://www.orlandu.com/registry-pvm-14l2.html) | 14" | L | 600 | c.2001–2006 | PVM-14L2E, PVM-D14L2J | … |
+| PVM-14L2MD (https://www.orlandu.com/registry-pvm-14l2md.html) | 14" | L (medical) | 600 | c.2001–2006 | PVM-14L2MDE | … |
+| PVM-14L3 (https://www.orlandu.com/registry-pvm-14l3.html) | 14" | L | 600 | 2001–c.2006 | PVM-14L3E | … |
+| PVM-14L4 (https://www.orlandu.com/registry-pvm-14l4.html) | 14" | L | 800 | 2001–c.2006 | PVM-14L4E | … |
+| PVM-14L5 (https://www.orlandu.com/registry-pvm-14l5.html) | 14" | L | 800 | 2002–c.2007 | PVM-D14L5J, PVM-D14L5DJ | … |
+| PVM-14M2MDU (https://www.orlandu.com/registry-pvm-14m2mdu.html) | 14" | M (medical) | 600 | c.1996–2003 | PVM-14M2MDE, PVM-14M2MDA | … |
+| PVM-14M2U (https://www.orlandu.com/registry-pvm-14m2u.html) | 14" | M | 600 | c.1996–2001 | PVM-14M2E, PVM-14M2A, PVM-14M2J | … |
+| PVM-14M4U (https://www.orlandu.com/registry-pvm-14m4u.html) | 14" | M | 800 | c.1996–2001 | PVM-14M4E, PVM-14M4A, PVM-14M4J | … |
+| PVM-14N1U (https://www.orlandu.com/registry-pvm-14n1u.html) | 14" | N | 500 | c.1995–1998 | SSM-14N1 | … |
+| PVM-14N2U (https://www.orlandu.com/registry-pvm-14n2u.html) | 14" | N | 500 | c.1995–1998 | PVM-14N2E, SSM-14N2U | … |
+| PVM-14N5U (https://www.orlandu.com/registry-pvm-14n5u.html) | 14" | N | 500 | c.1997–2001 | PVM-14N5E, PVM-14N5A, PVM-14N5J, PVM-14N5MDE, SSM-14N5U | … |
+| PVM-14N6U (https://www.orlandu.com/registry-pvm-14n6u.html) | 14" | N | 500 | c.1997–2001 | PVM-14N6E, PVM-14N6A, PVM-14N6J | … |
+| PVM-136 (https://www.orlandu.com/registry-pvm-136.html) | 13" | mono 13in | 1000 | c.1993–2005 | PVM-137 | … |
+| PVM-1380 (https://www.orlandu.com/registry-pvm-1380.html) | 13" | 80 series (80s) | 250 | c.1987–1991 | | … |
+| PVM-1390 (https://www.orlandu.com/registry-pvm-1390.html) | 13" | 90 series (80s) | 400–450 | 1987–c.1991 | | … |
+| PVM-1271Q (https://www.orlandu.com/registry-pvm-1271q.html) | 12" | 70 series (80s) | — | 1984–c.1987 | PVM-1371QM | … |
+| PVM-91 (https://www.orlandu.com/registry-pvm-91.html) | 9" | mono 9in (80s) | 800 | c.1982–1990 | | … |
+| PVM-96 (https://www.orlandu.com/registry-pvm-96.html) | 9" | mono 9in | 900 | c.1993–2005 | PVM-96J, PVM-97 | … |
+| PVM-9L1 (https://www.orlandu.com/registry-pvm-9l1.html) | 9" | L | 250 | c.2000–2005 | PVM-9L1E | … |
+| PVM-9L2 (https://www.orlandu.com/registry-pvm-9l2.html) | 9" | L | 250 | c.2002–2006 | PVM-9L2E | … |
+| PVM-9L3 (https://www.orlandu.com/registry-pvm-9l3.html) | 9" | L | 450 | c.2003–2005 | PVM-9L3E | … |
+| PVM-8020 (https://www.orlandu.com/registry-pvm-8020.html) | 8" | 8-inch (80s) | 230 | c.1985–1989 | | … |
+| PVM-8040 (https://www.orlandu.com/registry-pvm-8040.html) | 8" | 8-inch (40) | 250 | c.1991–1997 | PVM-9040ME | … |
+| PVM-8041Q (https://www.orlandu.com/registry-pvm-8041q.html) | 8" | 8-inch Q (41) | 250 | c.1991–1997 | PVM-9041QM, PVM-9041Q | … |
+| PVM-8042Q (https://www.orlandu.com/registry-pvm-8042q.html) | 8" | 8-inch Q (42) | 250 | c.1997–2002 | PVM-9042QM | … |
+| PVM-8044Q (https://www.orlandu.com/registry-pvm-8044q.html) | 8" | 8-inch Q (44) | 450 | c.1991–1997 | PVM-9044QM | … |
+| PVM-8045Q (https://www.orlandu.com/registry-pvm-8045q.html) | 8" | 8-inch Q (45) | 450 | c.1997–2003 | PVM-9045QM, PVM-9045PM, PVM-9045Q | … |
+| PVM-8220 (https://www.orlandu.com/registry-pvm-8220.html) | 8" | 8-inch (80s) | approx. 230 | c.1985–1989 | | … |
+| PVM-5041Q (https://www.orlandu.com/registry-pvm-5041q.html) | 5" | 5-inch Q | 250 | c.1990–1997 | PVM-6041QM | … |
+| PVM-411 (https://www.orlandu.com/registry-pvm-411.html) | 4" | quad 4in mono | — | c.1990–1996 | | … |
+| PVM-4B1U (https://www.orlandu.com/registry-pvm-4b1u.html) | 4" | quad 4in mono | 500 | c.1996–2004 | PVM-4B1J | … |
 
 Missing a model that exists? Register it under "Not listed" with the badge as printed; it joins the catalog once a plate confirms it. Suffix key: U = USA, E = Europe, J = Japan, A = Australia/Asia, M = multistandard or M-region, QM = multistandard PAL/SECAM, MD = medical, SSM = security twin.
 
@@ -6507,7 +6512,7 @@ Player One
 
 Inside the game room — one full turn
 
-***A 33-second spin** — the framed PCB wall, Super Mario Bros. on the PVMs, the fiber-optic Kay·Bee World of Nintendo sign, and the Mini Cute and Red Tent holding their corners*
+***A 33-second spin** — the framed PCB wall, Super Mario Bros. on the PVMs, the fiber-optic Kay·Bee World of Nintendo sign, and the Mini Cute (https://www.orlandu.com/mini-cute.html) and Red Tent (https://www.orlandu.com/red-tent.html) holding their corners*
 
 Orlandu's Arcade is a private arcade and working collection in Orange County, California, spread across two rooms: the garage arcade, where the upright cabinets, the pinball row, and the broadcast monitor racks live, and the game room inside the house, home to the candy cab, the cocktail, and the big PVMs. Between them runs a fleet of Sony professional monitors that most video engineers would recognize before most gamers would.
 
