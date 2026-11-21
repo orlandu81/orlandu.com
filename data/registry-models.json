@@ -1095,9 +1095,9 @@
    "line": "PVM",
    "series": "50 series (29in)",
    "size_in": 29,
-   "era": "c.1995–2000",
-   "era_confidence": "low",
-   "era_basis": "Sony brochure/operation manual undated; collector consensus mid-late 1990s; plates in the registry read August 1995 and June 2000 (owner-confirmed), so the run was underway by 1995 — the start date itself is unconfirmed",
+   "era": "1994–c.2000",
+   "era_confidence": "medium",
+   "era_basis": "Sony's operating instructions carry a 1994 copyright, and a Sony service bulletin dated October 10, 1994 already covers the model (a new B board from serial 2,000,651), so the run began in 1994; Sony's 2000–2001 CCTV catalog still lists it; plates in the registry read August 1995 and June 2000 (owner-confirmed) — the end date is the open part",
    "notes": "600 TVL Super Trinitron, 29-inch tube (27-inch viewable); RGB/YPbPr, 2x S-Video/composite; multistandard incl. PAL60; digital convergence",
    "variants": [
     "PVM-2950Q",
@@ -1105,6 +1105,9 @@
    ],
    "sources": [
     "https://ConsoleMods.org/wiki/images/d/db/PVM-2950Q_PVM-2950QM_Brochure.pdf",
+    "https://ConsoleMods.org/wiki/images/7/71/PVM-2950Q_PVM-2950QM_Operation_Manual.pdf",
+    "https://consolemods.org/wiki/images/1/1e/301994103.pdf",
+    "https://archive.org/details/sony_2000-2001_CCTV_PVM-14N6U_20N6U_8045Q_8042Q_8040_2950Q",
     "https://www.manualslib.com/manual/242763/Sony.html",
     "https://crtdatabase.com/crts/sony/sony-pvm-2950q",
     "https://lr.us.psf.lt/r/crtgaming/wiki/speclist"

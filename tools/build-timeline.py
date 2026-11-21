@@ -43,7 +43,7 @@ CONSOLES = [
     ("New 3DS XL — SNES Edition", 2016, "media/thumbs/consoles-3ds-snes-dk.webp", "consoles.html"),
 ]
 MONITORS = [
-    ("PVM-2950Q", 1991, "media/thumbs/pvm-2950q.webp?v=7", "pvm-2950q.html"),
+    ("PVM-2950Q", 1994, "media/thumbs/pvm-2950q.webp?v=7", "pvm-2950q.html"),
     ("BVM-20E1U", 1995, "media/thumbs/bvm-20e1u-lit.webp", "bvm-20e1u.html"),
     ("PVM-20L5", 2002, "media/thumbs/pvm-20l5.webp?v=3", "pvm-20l5.html"),
     ("BVM-A14F5U", 2003, "media/thumbs/bvm-a14f5u-lit.webp?v=2", "bvm-a14f5u.html"),
