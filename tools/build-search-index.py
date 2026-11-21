@@ -29,6 +29,7 @@ HINTS = {
     "forsale.html": "buy ebay listings",
     "index.html": "degauss button color bars smpte insert coin press start splash",
     "glossary.html": "degauss color bars smpte bars",
+    "mario-before-super.html": "mario history jumpman carpenter plumber luigi donkey kong jr radar scope miyamoto origin arcade",
     "how-to-read-a-playfield.html": "pinball beginner guide how to play rules inserts lights flippers inlane outlane ramp scoop multiball modes",
     "ocarina-of-time-switch-2.html": "zelda oot ocarina remake switch 2 nintendo review guide n64 differences echo gem",
 }

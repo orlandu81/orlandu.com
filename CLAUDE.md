@@ -20,6 +20,7 @@ python3 tools/build-registry-specs.py # before the page builder, only if a model
 python3 tools/build-registry-pages.py # FIRST, only if data/registry-models.json or the builder changed (writes 99 pages)
 python3 tools/build-timeline.py      # only if a timeline thumb/year changed; it rewrites timeline.html
 python3 tools/build-machine-select.py # only if a machine profile's spec tiles or accent, a roster card's copy or a portrait changed; rewrites the select block in games.html
+python3 tools/build-gallery-static.py # after any assets/gallery-data.js edit: writes the wall into gallery.html as plain HTML (crawlers; the page script redraws it)
 python3 tools/build-llms-full.py     # llms-full.txt + data/pages.json (what the MCP server reads); refreshes the word count on mcp.html/llms.txt
 python3 tools/build-search-index.py  # assets/search-index.js is generated
 python3 tools/build-datasets.py      # data/*.json|csv + data/search-index.json (after the index)
@@ -106,7 +107,7 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   2026-10-30), `DATABASE_URL` + the Neon set, `BLOB_READ_WRITE_TOKEN`, optional `REGISTRY_ADMIN_SECRET`.
 - **Never delete** the root verification files `7984e193fb220a08e3d0a7abd9711dcd.txt` (IndexNow key) and
   `BingSiteAuth.xml`, or the MCP-registry TXT record at the orlandu.com apex in GoDaddy.
-- gallery.html renders client-side — verify it through `assets/gallery-data.js`. Certificates: SSL Labs, not
+- gallery.html draws its wall client-side from `assets/gallery-data.js`; since 2026-11-21 the same figures are also in the raw HTML between `gallery-static` markers (`tools/build-gallery-static.py`). Edit the data file, never the markers. Certificates: SSL Labs, not
   `openssl` from here (it returns the proxy's cert).
 - IndexNow: GET `https://api.indexnow.org/indexnow?url=<urlencoded>&key=7984e193fb220a08e3d0a7abd9711dcd` (empty 200 =
   success; WebFetch reports it as unparseable binary). Google ignores IndexNow.
@@ -429,14 +430,27 @@ consistent" — a new board, topper or card gets the same treatment.
 
 ## 11. Other features and references
 
+- **SEO review, 2026-11-21 (Project doc `claude/seo-review-2026-11-21.md` has the numbers and all ten items).** Shipped: registry
+  model pages retitled "Sony <model>: Years Made, Specs & Registry" with a static one-paragraph answer (`p#answer`, built in
+  `model_page()`; the live count still arrives by script); registry-models retitled "Sony PVM & BVM Production Years by Model" +
+  three Quick answers; mini-cute title/description ("Capcom Mini Cute: The 1991 Kid-Size Candy Cab"); Ocarina title shortened +
+  two Quick answers (Beggar, Bonooru); contextual links to the under-linked pages; the static gallery wall; a paste-able
+  "entry #N in the Orlandu Registry" line (plain + BBCode) in the registry's post-submit step. **Leave these alone until the
+  January pass:** mini-cute, ocarina-of-time-switch-2, registry-models and the registry model pages. **Owed on 12/10:** fold a
+  short "What is a PVM? What is a BVM?" section into pvm-vs-bvm.html (it is shown for "pvm", "pvm monitor", "what is pvm" at
+  position 25-48) and add the playfield-story link to ghostbusters.html.
+- **Story released 2026-11-21:** `mario-before-super.html` ("Mario Before He Was Super", kicker Did You Know?, 5 min; featured on
+  Stories; thumb/OG are the three screen photos side by side). Linked from donkey-kong, mario-bros, vs-unisystem, vs-smb. David's
+  DK cabinet also plays Donkey Kong 3; the donkey-kong.html profile still names only the Jr. board (not asked).
+  **"How Big Is Too Big?" is STILL HELD** (David, 11/21: "recut to 10 mins, then keep holding it") — the 10-minute cut and its
+  hub hooks are in `_pending-deploy\how-big-is-too-big-2026-11-21.bundle`; Project doc `claude/how-big-is-too-big-2026-11-06.md`.
 - **Pinball and arcade stories (2026-11-20).** `how-to-read-a-playfield.html` ("How to Read a Playfield", kicker Field Guide, 6 min)
   is live: a beginner's guide taught on the four tables, reusing the four playfield photos (David's choice, over one-photo-one-home).
   Its per-table rules come from the makers' cards/guides and community rule sheets (sources in the Project doc
   `claude/how-to-read-a-playfield-story-draft-2026-11-20.md`); David runs the latest code on every game. Glossary +7 pinball terms
   (insert, inlane/outlane, slingshot, drop target, scoop, multiball, wizard mode; `insert` and `scoop` are in SKIP so they are not
   auto-underlined). Linked from tna, indiana-jones and rick-and-morty; NOT from ghostbusters (leave-alone until 12/10 — add it then).
-  HELD at his choice: "Mario Before He Was Super" (`_pending-deploy\two-stories-2026-11-20.bundle` carries the page; draft and
-  hooks owed in `claude/mario-before-super-story-draft-2026-11-20.md` / `claude/story-ideas-2026-11-20.md`, which also lists six tabled ideas).
+  Six more ideas are tabled in `claude/story-ideas-2026-11-20.md`.
 - **Review nine (2026-10-30), the presentation pass — items 2–10 shipped, 1 (poster Step Inside cards) declined.**
   The CSS lives in one block at the end of style.css ("Review nine"). Hooks: a hub card that opens with a photo uses
   `<figure class="pf">` (no inline margin/radius styles — games, consoles; For Sale cards are `.card.sale` with the same

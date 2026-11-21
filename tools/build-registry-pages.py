@@ -206,7 +206,7 @@ def static_models():
     return "".join(out)
 
 def models_page():
-    desc = "Every Sony BVM and PVM chassis in the Orlandu Registry: 96 models with screen size, series, production era and regional variants, and how many are registered."
+    desc = "What years each Sony PVM and BVM was made: 96 CRT models with production era, screen size, series, TV lines and regional variants, and how many are registered."
     body = """<body data-registry="models">
 <header class="site" data-page="registry"></header>
 <main class="reg">
@@ -217,10 +217,18 @@ def models_page():
   </div>
   <div class="legend" style="margin:-.8rem 0 1.4rem"><span><i class="sq" style="background:#3f7d41"></i>Sony-dated</span><span><i class="sq" style="background:#ff8a00"></i>Manual or brochure year</span><span><i class="sq" style="background:#5a5a86"></i>Collector estimate</span></div>
   <div id="models-out">""" + static_models() + """</div>
+  <section id="qa">
+    <h2 class="sec">Quick answers</h2>
+    <div class="grid" style="grid-template-columns:1fr">
+      <div class="card"><h3>What year was my Sony PVM or BVM made?</h3><p>The exact month and year are on the plate on the rear panel, next to the model and serial number. The table above gives the production era for each model, for when the plate is missing or you are reading a listing.</p></div>
+      <div class="card"><h3>How many PVM and BVM models did Sony make?</h3><p>The registry catalog counts """ + str(len(cat["models"])) + """ CRT chassis, """ + str(sum(1 for m in cat["models"] if m["line"] == "BVM")) + """ BVM and """ + str(sum(1 for m in cat["models"] if m["line"] == "PVM")) + """ PVM, with their regional variants folded into one row each.</p></div>
+      <div class="card"><h3>How sure are the production years?</h3><p>It depends on the model, and the color on each era says which: Sony&rsquo;s own date from a press release, dealer bulletin or brochure; a manual&rsquo;s copyright year; or a collector estimate where nothing from Sony has turned up.</p></div>
+    </div>
+  </section>
   <p class="note">Missing a model that exists? Register it under "Not listed" with the badge as printed; it joins the catalog once a plate confirms it. Suffix key: U = USA, E = Europe, J = Japan, A = Australia/Asia, M = multistandard or M-region, QM = multistandard PAL/SECAM, MD = medical, SSM = security twin.</p>
 </main>
 """
-    return head("registry-models.html", "Sony BVM & PVM Model List & Production Eras — Orlandu's Arcade", "Every Sony BVM and PVM model, with production eras", desc, "Reference", crumbs=[("Registry", "registry.html"), ("Every model", "registry-models.html")]) + body + FOOT
+    return head("registry-models.html", "Sony PVM & BVM Production Years by Model — Orlandu's Arcade", "Every Sony BVM and PVM model, with production eras", desc, "Reference", crumbs=[("Registry", "registry.html"), ("Every model", "registry-models.html")]) + body + FOOT
 
 # ── the form ──────────────────────────────────────────────────────────────
 def submit_page():
@@ -430,8 +438,15 @@ def model_page(m):
     slug, model, line = m["slug"], m["model"], m["line"]
     variants = [v for v in m["variants"] if v != model]
     series = e(m["series"]) + (" series" if line == "PVM" else " generation")
-    title = f"Sony {model} Serial Number Registry — Orlandu's Arcade"
-    desc = f"Every Sony {model} registered by its owner: survivor count, serial-number range, hours and condition. {m['size_in']}-inch {line}, {m['era']}. Add yours."
+    title = f"Sony {model}: Years Made, Specs & Registry — Orlandu's Arcade"
+    sp0 = m.get("specs") or {}
+    made = "made " + m["era"]
+    desc = f"Sony {model}: a {m['size_in']}-inch {line}, {made}" + (f", {sp0['tvl']} TV lines" if sp0.get("tvl") else "") + ". Specs, variants and every unit registered by its owner, with serial range and condition."
+    # The answer a model-number search wants, in the raw HTML (the census below it arrives by script).
+    answer = (f"The Sony {e(model)} is a {m['size_in']}-inch {line} in the {series}, {e(made)} ({CONF[m['era_confidence']]})."
+              + (f" It resolves {e(sp0['tvl'])} TV lines." if sp0.get("tvl") else "")
+              + ({"Built in": " RGB and component input are built in.", "No": " It has no RGB input.", "With an option card": " RGB input needs an option card."}.get(sp0.get("rgb"), ""))
+              + (f" Regional and sibling badges: {e(', '.join(variants))}." if variants else ""))
     links = []
     if slug in PROFILES:
         links.append(f'The arcade\'s own unit is on the <a href="{PROFILES[slug]}">{e(model)} profile</a>.')
@@ -455,6 +470,7 @@ def model_page(m):
           <span class="conf-{m['era_confidence']}" title="{e(m.get('era_basis', ''))}"><b>{e(m['era'])}</b> · {CONF[m['era_confidence']]}</span>
           {f'<span><b>Variants</b> {e(" · ".join(variants))}</span>' if variants else ''}
         </div>
+        <p class="lede" id="answer" style="margin-bottom:.6rem;max-width:66ch">{answer}</p>
         <p class="lede" style="margin-bottom:.4rem;max-width:66ch"><span id="mlede">Loading the census&hellip;</span> {' '.join(links)}</p>
       </div>
       <div><a class="btn" href="registry-submit.html?m={slug}">Add your {e(model)} &rarr;</a></div>
@@ -494,7 +510,7 @@ def model_page(m):
 {related(line)}</main>
 """
     kw = {} if indexable(m) else {"robots": NOINDEX}
-    return head(f"registry-{slug}.html", title, f"Sony {model} Serial Number Registry", desc, "Registry", extra_ld=ld, **kw, crumbs=[("Registry", "registry.html"), (model, f"registry-{slug}.html")]) + body + FOOT
+    return head(f"registry-{slug}.html", title, f"Sony {model}: years made, specs and serial registry", desc, "Registry", extra_ld=ld, **kw, crumbs=[("Registry", "registry.html"), (model, f"registry-{slug}.html")]) + body + FOOT
 
 written = 0
 for fn, html in [("registry.html", landing()), ("registry-models.html", models_page()), ("registry-submit.html", submit_page())] + [(f"registry-{m['slug']}.html", model_page(m)) for m in cat["models"]]:

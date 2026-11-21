@@ -188,3 +188,6 @@ table.spec.mspec th{width:15.5rem;font-family:var(--cond);font-size:.82rem;font-
 .rform>*,.rfm>*{min-width:0}
 .rfm select,.rfm input,.rfm textarea{min-width:0;max-width:100%}
 @media(max-width:640px){.rfm{grid-template-columns:minmax(0,1fr)}}
+.done .cite{margin-top:1.2rem;padding-top:1rem;border-top:1px dotted rgba(255,255,255,.12)}
+.done .cite h3{font-size:1rem;margin-bottom:.3rem}
+.done .cite .cactions{margin:.6rem 0 0}

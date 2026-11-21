@@ -483,7 +483,11 @@
       '<div class="cactions"><button type="button" class="btn cardimg" data-id="' + e.id + '">Save my card as an image</button>' + (canShare ? '<button type="button" class="btn cy" id="done-share">Share the link</button>' : '<button type="button" class="btn cy copy" data-copy="' + esc(url) + '">Copy a link to this entry</button>') +
       '<a class="btn cy" href="' + page + '">See it on the ' + (j.catalog ? esc(j.model) + " page" : "registry") + ' &rarr;</a>' +
       '<button type="button" class="btn cy" id="done-again">Add another monitor</button></div>' +
-      '<p class="note">Post the image where you found the registry, or send the link to another owner. The card shows what you chose to share and nothing else.</p>';
+      '<p class="note">Post the image where you found the registry, or send the link to another owner. The card shows what you chose to share and nothing else.</p>' +
+      // 2026-11-21: a line the owner can paste into a for-sale listing or a forum signature. The owner posts it, not the arcade.
+      '<div class="cite"><h3>Selling it one day, or showing it off?</h3><p class="note">A registered monitor has a public record a buyer can check. Paste one of these into a listing or a forum signature.</p>' +
+      '<div class="cactions"><button type="button" class="btn cy copy" data-copy="' + esc("Sony " + j.model + ", entry #" + e.id + " in the Orlandu Registry: " + url) + '">Copy as plain text</button>' +
+      '<button type="button" class="btn cy copy" data-copy="' + esc("[url=" + url + "]Sony " + j.model + ", entry #" + e.id + " in the Orlandu Registry[/url]") + '">Copy for a forum (BBCode)</button></div></div>';
     form.hidden = true;
     box.scrollIntoView({ behavior: "smooth", block: "start" });
     if (canShare) document.getElementById("done-share").addEventListener("click", () => share(url, title, "My " + j.model + " is in the Orlandu Registry, a serial-number census of surviving Sony BVM and PVM monitors."));

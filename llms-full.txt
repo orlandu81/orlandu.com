@@ -95,6 +95,11 @@ The geometry grid, judging a tube with no hours counter, what to pay — and why
 ## Latest from the arcade
  New story
 
+### Mario before he was Super
+
+A carpenter with no name, then a plumber with a brother, then the character who lands on things: Mario’s arcade years, told by the three cabinets in the row. Read the story → (https://www.orlandu.com/mario-before-super.html)
+ New story
+
 ### How to read a playfield
 
 A beginner’s guide to pinball, taught on the four tables in the row: the lanes, the shots, what a flashing light is telling you, and a five-minute method for any machine. Read the story → (https://www.orlandu.com/how-to-read-a-playfield.html)
@@ -133,11 +138,6 @@ A serial-number census of surviving Sony BVM and PVM monitors, kept by the peopl
 ### Through the mask
 
 Every tube in the fleet simulated from its own numbers — scan-line gap, grille pitch, center resolution — two side by side, with a slider that walks you from the glass to the couch. See through it → (https://www.orlandu.com/through-the-mask.html)
- New tool
-
-### Will it connect?
-
-Pick any console and any monitor in the fleet: the cable chain step by step, the sync and termination rules, which BKM card it needs, and a plain verdict. Ask it → (https://www.orlandu.com/will-it-connect.html)
 
 ---
 
@@ -369,7 +369,7 @@ The full profile → (https://www.orlandu.com/pvm-20l5.html) · Feature in Vol. 
 
 The primary broadcast chassis, AMS-100 riding on top. On screen: *Chrono Trigger*, 1995 — the year this chassis went into production.
 
-The full profile → (https://www.orlandu.com/bvm-20e1u.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f2) · 3 in the registry → (https://www.orlandu.com/registry-bvm-20e1u.html)
+The full profile → (https://www.orlandu.com/bvm-20e1u.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f2) · The full service → (https://www.orlandu.com/bvm-20e1u-service.html) · 3 in the registry → (https://www.orlandu.com/registry-bvm-20e1u.html)
 
 [Photo: Sony BVM-A14F5U broadcast monitor lit and running Beggar Prince on the Sega Genesis, with its full control panel and an AMS-100 speaker above]
 
@@ -934,7 +934,7 @@ Runs its library from a MemCard Pro 2 with FMCB/OPL — the whole PS2 catalog, n
 
 The full profile → (https://www.orlandu.com/ps2-slim.html)
 
-Nearly every home console here reaches a CRT over analog RGB, through a pair of SCART switchers and a stack of BNC breakout cables. The Signal Chain (https://www.orlandu.com/signal-chain.html) shows the whole path.
+Nearly every home console here reaches a CRT over analog RGB, through a pair of SCART switchers and a stack of BNC breakout cables. The Signal Chain (https://www.orlandu.com/signal-chain.html) shows the whole path. What gets played on them is ranked in The Orlandu 50 (https://www.orlandu.com/orlandu-50-games.html).
 
 [Photo: GSCART automatic SCART switch on a clear acrylic mount, eight SCART cables plugged in]
 
@@ -1072,7 +1072,7 @@ What has been done to it.
 - **Model**: **NUS-001** — the one home model Nintendo made
 - **Status**: **In service** — Wired into the RGB chain.
 
-The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and The Signal Chain (https://www.orlandu.com/signal-chain.html) walks it box by box.
+The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and The Signal Chain (https://www.orlandu.com/signal-chain.html) walks it box by box. The game this console is best remembered for came back in 2026: Ocarina of Time on Switch 2, reviewed against the N64 original (https://www.orlandu.com/ocarina-of-time-switch-2.html).
 
 ---
 
@@ -2407,11 +2407,11 @@ Big Blue anchors the end of the row, next to the VS. UniSystem, Donkey Kong (htt
 
 ---
 
-# The Mini Cute: Capcom's Smallest Candy Cab
+# Capcom Mini Cute: The 1991 Kid-Size Candy Cab
 
 URL: https://www.orlandu.com/mini-cute.html
 
-Capcom's smallest candy cab: the Mini Cute, and how a pink one crossed the world from Sweden to a game room in Orange County.
+The Capcom Mini Cute is Capcom's smallest candy cab, built for Japanese kids in 1991. Photos, what it runs, and how a pink one got from Sweden to California.
 
 [Photo: Capcom Mini Cute candy cabinet head on, Street Fighter II on the screen and a Capcom poster above]
 
@@ -2668,6 +2668,89 @@ The internal backup RAM only holds data while it is powered, and the part that k
 No. Like the Genesis it is built on, it carries RGB on its AV port from the factory. An RGB SCART cable and a SCART to 4 BNC breakout put it on a PVM or BVM as-is.
 
 Bench photography on this page by iFixRetro (https://www.instagram.com/ifixretro/), used with permission. The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and the how-to (https://www.orlandu.com/connect-console-to-pvm.html) walks the cable chain step by step.
+
+---
+
+# Mario Before Super Mario: From Donkey Kong to VS.
+
+URL: https://www.orlandu.com/mario-before-super.html
+
+Before Super Mario Bros., Mario spent four years in arcades. Donkey Kong, Mario Bros. and VS. Super Mario Bros. show a character being invented.
+
+Did You Know?
+
+# Mario Before He Was Super
+
+Everyone knows where Mario ends up. A castle, a flag, a princess in another one. What gets forgotten is that he spent four years in arcades first, and that he arrived at Super Mario Bros. one job, one name and one idea at a time. Three machines in the cabinet row here cover that stretch: Donkey Kong (https://www.orlandu.com/donkey-kong.html), Mario Bros. (https://www.orlandu.com/mario-bros.html) and VS. Super Mario Bros. (https://www.orlandu.com/vs-unisystem.html) Read left to right, they are a character being invented.
+
+## 1981: a carpenter with no name
+
+Donkey Kong exists because Nintendo had a warehouse of cabinets nobody wanted. A game called Radar Scope had flopped in America, and a young designer named Shigeru Miyamoto was handed the job of turning the unsold machines into something that would sell. He drew an ape, a girl and a small man in overalls.
+
+The small man was not called Mario yet. He was simply Jumpman, and he was a carpenter, which is why the first stage is a building site. The overalls, the cap and the mustache were not character design so much as problem solving: on a sprite that small, a cap is easier to draw than hair, a mustache is easier than a mouth, and overalls let you see the arms move.
+
+[Photo: The Donkey Kong screen mid-game showing the girder stage, barrels rolling, score on the board]
+
+***Jumpman at work** — one girder's fall is fatal*
+
+Play it now and the surprise is how fragile he is. Jumpman can clear a barrel and not much else. Fall the height of one girder and he dies. The jump is purely a way to avoid things.
+
+In Donkey Kong, the jump is purely a way to avoid things.
+
+The cabinet here also plays both sequels, Donkey Kong Jr. and Donkey Kong 3, without swapping a board. They are worth a detour. Donkey Kong Jr. is the game that first put the name “Mario” on him, and the only one where he is the villain. Donkey Kong 3 does not have him in it at all.
+
+## 1983: a plumber, and a brother
+
+Mario Bros. is where the rest of him shows up. The setting moves underground, so the carpenter becomes a plumber. A second player needs a character, so he gets a brother, and Luigi appears for the first time as the same sprite in different colors. The enemies are turtles, which will turn out to be important.
+
+[Photo: The Mario Bros. screen mid-game with the full-width control panel below it, showing the four-platform sewer level]
+
+***Two plumbers, one panel** — hit the floor from below, then kick*
+
+It is also where the jump starts to do something. You still cannot land on an enemy; touch a Shellcreeper from above and you lose a life. Instead you punch the floor from underneath to flip it on its back, then run up and kick it away. The jump has become a weapon, just an indirect one. And he can now fall any distance without a scratch.
+
+The widebody cabinet makes the other point for itself. This is a two-player game on one wide panel, and it is nominally cooperative. Anyone who has played it knows what actually happens.
+
+## 1985: the missing step
+
+The next machine in the story is not an arcade game at all. Super Mario Bros. came out for the Famicom in 1985 and reached American living rooms with the NES. It took the turtles, the pipes, the coins and the brother from Mario Bros., pointed the whole thing sideways, and finally let Mario do the obvious thing: jump on an enemy’s head.
+
+That one change is the difference between the arcade Mario and the Mario everyone knows.
+ 1981The jump avoids1983The jump attacks from below1985The jump is the whole game
+
+## 1986: back to the arcade
+
+Which brings the row to its third cabinet. VS. Super Mario Bros. is the home game sent back to the arcade a year later, on Nintendo’s VS. System hardware, and quietly rebuilt to be harder. That story has its own page: The Hardest Super Mario Bros. Most People Never Noticed (https://www.orlandu.com/vs-smb.html).
+
+[Photo: The VS. Super Mario Bros. title screen on the UniSystem monitor with the control panel below]
+
+***The third cabinet** — the home game, sent back to the arcade*
+
+For this one, the point is simpler. Donkey Kong, Mario Bros. and the UniSystem sit side by side, and read in that order they are one story. A nameless carpenter who dies from a short fall becomes a named plumber who fights from underneath, and then the character who lands on things. It took Nintendo four years and three cabinets.
+
+## Quick answers
+
+### Was Mario originally called Jumpman?
+
+Yes. In Donkey Kong (1981) the character was Jumpman, a carpenter. The name Mario first appears with Donkey Kong Jr. in 1982.
+
+### When did Mario become a plumber?
+
+In Mario Bros. (1983). The game is set in the sewers, so the carpenter of Donkey Kong became a plumber.
+
+### What was Luigi’s first game?
+
+Mario Bros. (1983), as the second player’s character.
+
+### Could Mario stomp enemies in the arcade games?
+
+Not in Donkey Kong or Mario Bros. In Mario Bros. you hit the floor from below to flip an enemy, then kick it. Jumping on enemies arrived with Super Mario Bros. in 1985.
+
+### Has Mario ever been the villain?
+
+Once: in Donkey Kong Jr. (1982) he is the one holding Donkey Kong captive.
+
+Sources & further reading: Museum of the Game — Donkey Kong (https://www.arcade-museum.com/Videogame/donkey-kong) · Museum of the Game — Mario Bros. (https://www.arcade-museum.com/Videogame/mario-bros) · Super Mario Wiki (https://www.mariowiki.com/Mario)
 
 ---
 
@@ -2977,7 +3060,7 @@ With a VS. Interchanger switcher, yes. This one runs VS. Super Mario Bros. and V
 
 The UniSystem is the single-screen upright. The DualSystem is the two-screen, two-player cabinet — the sit-down cocktail with the red canopy is one. The Red Tent → (https://www.orlandu.com/red-tent.html)
 
-More photos of the VS. UniSystem in the gallery → (https://www.orlandu.com/gallery.html#tag=vs-unisystem)
+More photos of the VS. UniSystem in the gallery → (https://www.orlandu.com/gallery.html#tag=vs-unisystem) · Mario before he was Super: the row as one story → (https://www.orlandu.com/mario-before-super.html)
 
 Sources & further reading: Museum of the Game — VS. Super Mario Bros. (https://www.arcade-museum.com/Videogame/vs-super-mario-bros) · Super Mario Wiki (https://www.mariowiki.com/VS._Super_Mario_Bros.)
 
@@ -3030,7 +3113,7 @@ What has been done to it. Very little, by design — this one is close to how it
 - **Game**: **Donkey Kong** — 1981. Vertical monitor, single joystick, one button.
 - **Status**: **Free play** — In the cabinet row, marquee lit.
 
-More photos of Donkey Kong in the gallery → (https://www.orlandu.com/gallery.html#tag=donkey-kong)
+More photos of Donkey Kong in the gallery → (https://www.orlandu.com/gallery.html#tag=donkey-kong) · Mario before he was Super: the row as one story → (https://www.orlandu.com/mario-before-super.html)
 
 Sources & further reading: Museum of the Game — Donkey Kong (https://www.arcade-museum.com/Videogame/donkey-kong)
 
@@ -3081,7 +3164,7 @@ A light touch — the cabinet was in good order and stayed that way.
 - **Game**: **Mario Bros.** — 1983. Horizontal monitor, two players simultaneous.
 - **Status**: **Free play** — In the cabinet row.
 
-More photos of Mario Bros. in the gallery → (https://www.orlandu.com/gallery.html#tag=mario-bros)
+More photos of Mario Bros. in the gallery → (https://www.orlandu.com/gallery.html#tag=mario-bros) · Mario before he was Super: the row as one story → (https://www.orlandu.com/mario-before-super.html)
 
 Sources & further reading: Museum of the Game — Mario Bros. (https://www.arcade-museum.com/Videogame/mario-bros)
 
@@ -3332,24 +3415,31 @@ Read Before Playing
 # Stories
 
 The written side of the arcade — deep dives, restorations, and the history hiding inside the machines. New stories land here as they're written. The words they use without explaining are in the glossary (https://www.orlandu.com/glossary.html).
+ NewDid You Know?
+
+### Mario Before He Was Super
+
+Before the castle and the flag, Mario spent four years in arcades: a nameless carpenter in Donkey Kong, a plumber with a brother in Mario Bros., and only then the character who lands on things. Three cabinets in one row tell the origin story in order.
+
+Read the newest story →
+ (https://www.orlandu.com/mario-before-super.html)
+
+## More stories
  NewField Guide
 
 ### How to Read a Playfield
 
 Most people play pinball by keeping the ball alive and hoping. Every machine is covered in instructions: the lanes at the bottom, the handful of shots, what a lit or flashing light means, the card nobody reads. A beginner’s guide taught on four tables built across twenty-seven years.
 
-Read the newest story →
- (https://www.orlandu.com/how-to-read-a-playfield.html)
-
-## More stories
- NewRestoration Story
+Read the story →
+ (https://www.orlandu.com/how-to-read-a-playfield.html) NewRestoration Story
 
 ### Thirty More Years
 
 The BVM-20E1U arrived working and looking good. It went to SavonPat anyway: every board recapped, the tube serviced, the picture calibrated, and a verdict from a former Sony technician that it is fit to go back into the field. A full service that has nothing to do with fixing a fault.
 
 Read the story →
- (https://www.orlandu.com/bvm-20e1u-service.html) NewReview & Guide
+ (https://www.orlandu.com/bvm-20e1u-service.html) Review & Guide
 
 ### Ocarina of Time on Switch 2: A Review and Returning Player's Guide
 
@@ -4945,7 +5035,7 @@ Curious what the monitors on the other end of these cables actually are? PVM vs.
 
 ---
 
-# Ocarina of Time on Switch 2: Review and Guide to What Changed
+# Ocarina of Time Switch 2 Review & Guide: What Changed
 
 URL: https://www.orlandu.com/ocarina-of-time-switch-2.html
 
@@ -5049,6 +5139,14 @@ Talon has to be happy first. Wake him with the Pocket Cucco, then win Epona from
 ### Where is the Ice Cavern heart piece?
 
 Not in the Ice Cavern. It’s in an underwater cave on the lake floor of Zora’s Fountain, reached with the Iron Boots and the Zora Tunic.
+
+### What does the Kakariko Beggar pay in the Switch 2 remake?
+
+Less than he used to for Blue Fire: 40 rupees, down from 150. He pays 20 for a bottled bug, which makes the leaf circle outside Kakariko’s gate the working rupee farm.
+
+### Do I have to teach Bonooru the Scarecrow’s Song again as an adult?
+
+Yes. Pierre only appears once you’ve re-taught Bonooru the song as an adult. After that, a swirl of wind marks every spot where he will show up.
 
 ### Is there a Master Quest or an escape timer?
 
@@ -6532,11 +6630,11 @@ Model, serial and an email are the only required fields; everything else makes t
 
 ---
 
-# Sony BVM & PVM Model List & Production Eras
+# Sony PVM & BVM Production Years by Model
 
 URL: https://www.orlandu.com/registry-models.html
 
-Every Sony BVM and PVM chassis in the Orlandu Registry: 96 models with screen size, series, production era and regional variants, and how many are registered.
+What years each Sony PVM and BVM was made: 96 CRT models with production era, screen size, series, TV lines and regional variants, and how many are registered.
 
 Registry (https://www.orlandu.com/registry.html) · every model
 
@@ -6651,6 +6749,20 @@ The 96 chassis the registry knows, with their regional variants folded in. The e
 | PVM-411 (https://www.orlandu.com/registry-pvm-411.html) | 4" | quad 4in mono | — | c.1990–1996 | | … |
 | PVM-4B1U (https://www.orlandu.com/registry-pvm-4b1u.html) | 4" | quad 4in mono | 500 | c.1996–2004 | PVM-4B1J | … |
 
+## Quick answers
+
+### What year was my Sony PVM or BVM made?
+
+The exact month and year are on the plate on the rear panel, next to the model and serial number. The table above gives the production era for each model, for when the plate is missing or you are reading a listing.
+
+### How many PVM and BVM models did Sony make?
+
+The registry catalog counts 96 CRT chassis, 30 BVM and 66 PVM, with their regional variants folded into one row each.
+
+### How sure are the production years?
+
+It depends on the model, and the color on each era says which: Sony’s own date from a press release, dealer bulletin or brochure; a manual’s copyright year; or a collector estimate where nothing from Sony has turned up.
+
 Missing a model that exists? Register it under "Not listed" with the badge as printed; it joins the catalog once a plate confirms it. Suffix key: U = USA, E = Europe, J = Japan, A = Australia/Asia, M = multistandard or M-region, QM = multistandard PAL/SECAM, MD = medical, SSM = security twin.
 
 ---
@@ -6740,7 +6852,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 94,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 96,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server

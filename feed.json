@@ -8,6 +8,16 @@
  "language": "en-US",
  "items": [
   {
+   "id": "https://www.orlandu.com/mario-before-super.html",
+   "url": "https://www.orlandu.com/mario-before-super.html",
+   "title": "Mario before he was Super",
+   "summary": "A carpenter with no name, then a plumber with a brother, then the character who lands on things: Mario’s arcade years, told by the three cabinets in the row. Read the story →",
+   "tags": [
+    "New story"
+   ],
+   "date_published": "2026-11-21T17:00:00Z"
+  },
+  {
    "id": "https://www.orlandu.com/how-to-read-a-playfield.html",
    "url": "https://www.orlandu.com/how-to-read-a-playfield.html",
    "title": "How to read a playfield",
@@ -82,16 +92,6 @@
    "url": "https://www.orlandu.com/through-the-mask.html",
    "title": "Through the mask",
    "summary": "Every tube in the fleet simulated from its own numbers — scan-line gap, grille pitch, center resolution — two side by side, with a slider that walks you from the glass to the couch. See through it →",
-   "tags": [
-    "New tool"
-   ],
-   "date_published": "2026-10-22T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/will-it-connect.html",
-   "url": "https://www.orlandu.com/will-it-connect.html",
-   "title": "Will it connect?",
-   "summary": "Pick any console and any monitor in the fleet: the cable chain step by step, the sync and termination rules, which BKM card it needs, and a plain verdict. Ask it →",
    "tags": [
     "New tool"
    ],
