@@ -8,6 +8,26 @@
  "language": "en-US",
  "items": [
   {
+   "id": "https://www.orlandu.com/why-old-games-look-wrong.html",
+   "url": "https://www.orlandu.com/why-old-games-look-wrong.html",
+   "title": "Why old games look wrong on a new TV",
+   "summary": "The game was drawn for a screen that paints lines of light, not a grid of squares. What scan lines are, what a modern set does to 240 lines, and a picture you can drag between the two. Read the story →",
+   "tags": [
+    "New story"
+   ],
+   "date_published": "2026-11-21T17:00:00Z"
+  },
+  {
+   "id": "https://www.orlandu.com/playchoice-10-story.html",
+   "url": "https://www.orlandu.com/playchoice-10-story.html",
+   "title": "The arcade machine that sold you the NES",
+   "summary": "Ten games, one clock, and a second screen that taught you how to play: how the PlayChoice-10 worked, and what it was really for. Read the story →",
+   "tags": [
+    "New story"
+   ],
+   "date_published": "2026-11-21T17:00:00Z"
+  },
+  {
    "id": "https://www.orlandu.com/reading-a-sony-plate.html",
    "url": "https://www.orlandu.com/reading-a-sony-plate.html",
    "title": "What the plate tells you",
@@ -76,26 +96,6 @@
     "Restored"
    ],
    "date_published": "2026-11-02T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/signage.html#toppers",
-   "url": "https://www.orlandu.com/signage.html#toppers",
-   "title": "Double Dribble and Kung Fu",
-   "summary": "Two more original PlayChoice-10 toppers off the hunt list — Konami’s 1988 Double Dribble and Irem’s 1984 Kung Fu. See them on the topper wall →",
-   "tags": [
-    "Found"
-   ],
-   "date_published": "2026-10-26T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/registry.html",
-   "url": "https://www.orlandu.com/registry.html",
-   "title": "The Orlandu Registry",
-   "summary": "A serial-number census of surviving Sony BVM and PVM monitors, kept by the people who own them. Add yours and see how many of your model are still accounted for. Register a monitor →",
-   "tags": [
-    "New"
-   ],
-   "date_published": "2026-10-23T17:00:00Z"
   },
   {
    "id": "https://www.orlandu.com/connect-console-to-pvm.html",

@@ -8,7 +8,7 @@
 
 ## For agents
 
-- [Full text in one file](https://www.orlandu.com/llms-full.txt): every page as Markdown, about 96,000 words.
+- [Full text in one file](https://www.orlandu.com/llms-full.txt): every page as Markdown, about 97,000 words.
 - [MCP server](https://www.orlandu.com/api/mcp): read-only tools — search the site, read a page, Sony monitor specs, the PlayChoice-10 library, BKM cards, console video out, the console-to-monitor planner, and registry_census (the live Sony BVM/PVM survivor census). How to connect: https://www.orlandu.com/mcp.html
 - [What's new](https://www.orlandu.com/feed.xml): RSS of new pages, stories, tools and arrivals (also https://www.orlandu.com/feed.json); new registry entries at https://www.orlandu.com/api/registry?feed=rss
 - [Open datasets, CC BY 4.0](https://www.orlandu.com/mcp.html#the-datasets): sony-monitor-specs, playchoice-10-library, console-video-out, bkm-cards as JSON and CSV, connect (the Will-it-connect rules) as JSON under https://www.orlandu.com/data/; the Orlandu Registry entries (masked serials) live at https://www.orlandu.com/api/registry?export=json and ?export=csv
@@ -66,6 +66,8 @@
 - [Through the Mask: Sony CRT simulator](https://www.orlandu.com/through-the-mask.html): every monitor in the fleet simulated from its own specs — scan-line gap, aperture-grille pitch, center resolution, LCD pixel grid — two side by side with a viewing-distance slider; a model, not a photograph.
 - [Sony PVM, BVM & LMD Model Numbers Decoded](https://www.orlandu.com/sony-model-numbers.html): what each letter and digit on a Sony monitor badge means — line, size, series letter, display-unit vs stand-alone digit, W, region suffix, BKM card numbers — with Sony-stated readings kept apart from patterns; lineage strips per family.
 - [Sony BKM Cards: Which Card Fits Which BVM or PVM](https://www.orlandu.com/bkm-cards.html): every Sony BKM option card for the CRT-era BVM and PVM lines — function, which chassis it fits, installation rules, controllers; sourced to Sony's manuals; open dataset.
+- [Why Old Games Look Wrong on a New TV](https://www.orlandu.com/why-old-games-look-wrong.html): why 240-line games look blocky on a flat panel and right on a tube — scan lines, scaling, processing delay — with a drag-to-compare demonstration; the entry-level explainer.
+- [The Arcade Machine That Sold You the NES](https://www.orlandu.com/playchoice-10-story.html): how Nintendo's PlayChoice-10 worked — ten NES-based games in one cabinet, play sold by time, a second screen of instructions, the cabinet styles and conversion kits, 1986 to 1992.
 - [What the Plate Tells You](https://www.orlandu.com/reading-a-sony-plate.html): how to tell when a Sony PVM or BVM was made — the model number's production era, the build date on the rear plate, the hours counter only a BVM keeps, and what a serial number does not say.
 - [How to Spot Professional Glass in the Wild](https://www.orlandu.com/crt-field-guide.html): recognizing a Sony professional monitor in a thrift store or surplus auction.
 - [PVM-20L5 buying guide](https://www.orlandu.com/pvm-20l5-buying-guide.html): what to check before buying one, what to pay, and why not to ship it.

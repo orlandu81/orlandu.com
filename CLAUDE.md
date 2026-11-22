@@ -440,6 +440,18 @@ consistent" — a new board, topper or card gets the same treatment.
   (`sony-plate-pvm-2950q`, `sony-status-bvm-a14f5u`; serial covered / blurred by him) and stay at native size. Linked from
   sony-model-numbers.html and the registry hub's serial Quick answer (in the builder). David's site test, 11/21: "a pretty
   collection and learn conceptually how things work", NOT a how-to and fix-it site; don't pitch repair how-tos.
+- **Two more stories (2026-11-21, late night), both built from David's answers to the drafts.**
+  `why-old-games-look-wrong.html` ("Why Old Games Look Wrong on a New TV", Did You Know?, 3 min; FEATURED on Stories): the entry-level
+  explainer. Its example is a DRAWN demonstration (David chose it over taking a Switch screenshot): an original pixel-art scene
+  (`media/2026/oldgames-demo-pixels|tube`, `oldgames-closeup-pixels|tube`) rendered as square pixels and through a tube model, under a
+  drag divider (`.cmp`, a transparent range input sets `--p`). The scene and renders come from `tools/build-oldgames-demo.py` (not in the
+  pre-push list; run it only to change the art); the character is an original robot — never redraw it as a known game
+  character. No composite/dither-blending claims (RGB-only site). `playchoice-10-story.html` ("The Arcade Machine That Sold You the NES",
+  Did You Know?, 3 min; first in Arcade & pinball): how the system worked. David's rulings: single-monitor PlayChoice existed BOTH as a
+  dedicated cabinet and as a kit; the story MAY reuse the memoriam's three PlayChoice photos (a one-off approval, not a general
+  licence to clone the memoriam); the "last arcade system Nintendo sold in numbers" line was CUT. Count stays 52. In the search index
+  it carries weight -4 so the cart wall wins "<title> playchoice-10" (its H1 words substring-match two-letter query fragments); neither
+  page has HINTS (they cost battery queries). Home ledger dropped the Registry and Double Dribble/Kung Fu cards to make room.
 - **The home reading room rotates (2026-11-21, night).** `#readroom` still holds three static cards (the no-script default); an inline
   script swaps in three older stories from `ARCHIVE`, a different three each week (`floor(Date.now()/1 week)*3`, so every story
   comes around). The pool is GENERATED between the `archive-pool` markers by `tools/build-archive.py` from stories.html: every card

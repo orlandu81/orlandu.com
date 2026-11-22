@@ -371,6 +371,22 @@
     <image:image><image:loc>https://www.orlandu.com/media/2026/unisystem-screen.webp</image:loc><image:title>The VS. Super Mario Bros. title screen on the UniSystem monitor with the control panel below</image:title></image:image>
   </url>
   <url>
+    <loc>https://www.orlandu.com/why-old-games-look-wrong.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/oldgames-demo-pixels.webp</image:loc><image:title>An original pixel-art scene drawn as hard square pixels, the way a flat panel shows it</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/oldgames-demo-tube.webp</image:loc><image:title>The same pixel-art scene modeled on a tube: soft horizontal lines of light with dark gaps between them</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/oldgames-closeup-pixels.webp</image:loc><image:title>Close-up of the pixel-art scene as square pixels</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/oldgames-closeup-tube.webp</image:loc><image:title>Close-up of the same scene modeled on a tube, showing scan lines and the vertical stripes of an aperture grille</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.orlandu.com/playchoice-10-story.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-punchout-playchoice-row.webp</image:loc><image:title>Two Punch-Out arcade cabinets and two PlayChoice-10 cabinets in a garage</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-playchoice-upright.webp</image:loc><image:title>Nintendo PlayChoice-10 upright cabinet running Mike Tyson&apos;s Punch-Out</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/alumni-playchoice-countertops.webp</image:loc><image:title>Two Nintendo PlayChoice counter-top units showing their channel select menus</image:title></image:image>
+    <image:image><image:loc>https://www.orlandu.com/media/2026/redtent-channel-select.webp</image:loc><image:title>The Red Tent channel select menu listing ten NES games including Baseball Stars, Dragon Warrior, Final Fantasy, Metroid and VS. Duck Hunt</image:title></image:image>
+  </url>
+  <url>
     <loc>https://www.orlandu.com/reading-a-sony-plate.html</loc>
     <lastmod>2026-11-21</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/sony-plate-pvm-2950q.webp</image:loc><image:title>Rear panel plate of a Sony PVM-2950Q reading June 2000, with the serial number covered</image:title></image:image>
@@ -581,7 +597,7 @@
   </url>
   <url>
     <loc>https://www.orlandu.com/playchoice-10.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pc10-cart-1942-dk2.webp</image:loc><image:title>Nintendo PlayChoice-10 game board for 1942, component side</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pc10-cart-balloon-fight-dk2.webp</image:loc><image:title>Nintendo PlayChoice-10 game board for Balloon Fight, component side</image:title></image:image>
     <image:image><image:loc>https://www.orlandu.com/media/2026/pc10-cart-baseball-dk2.webp</image:loc><image:title>Nintendo PlayChoice-10 game board for Baseball, component side</image:title></image:image>

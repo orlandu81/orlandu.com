@@ -95,6 +95,16 @@ The geometry grid, judging a tube with no hours counter, what to pay — and why
 ## Latest from the arcade
  New story
 
+### Why old games look wrong on a new TV
+
+The game was drawn for a screen that paints lines of light, not a grid of squares. What scan lines are, what a modern set does to 240 lines, and a picture you can drag between the two. Read the story → (https://www.orlandu.com/why-old-games-look-wrong.html)
+ New story
+
+### The arcade machine that sold you the NES
+
+Ten games, one clock, and a second screen that taught you how to play: how the PlayChoice-10 worked, and what it was really for. Read the story → (https://www.orlandu.com/playchoice-10-story.html)
+ New story
+
 ### What the plate tells you
 
 A model number gives a span of years, the plate on the back gives a month, and a BVM counts its own hours: how to read a Sony monitor’s age from the monitor itself. Read the story → (https://www.orlandu.com/reading-a-sony-plate.html)
@@ -128,16 +138,6 @@ The NES Front Loader, the Genesis Model 1 and the TurboGrafx-16 were the only ca
 ### The X’Eye comes home
 
 JVC’s rare Genesis + Sega CD combo is back from a full servicing at iFixRetro — every capacitor on both boards, a new laser, and saves that never die. Read the story → (https://www.orlandu.com/jvc-xeye.html)
- Found
-
-### Double Dribble and Kung Fu
-
-Two more original PlayChoice-10 toppers off the hunt list — Konami’s 1988 Double Dribble and Irem’s 1984 Kung Fu. See them on the topper wall → (https://www.orlandu.com/signage.html#toppers)
- New
-
-### The Orlandu Registry
-
-A serial-number census of surviving Sony BVM and PVM monitors, kept by the people who own them. Add yours and see how many of your model are still accounted for. Register a monitor → (https://www.orlandu.com/registry.html)
 
 ---
 
@@ -1793,6 +1793,8 @@ No PlayChoice release either, so: a conversion, battery fitted. Necessary for a 
 
 ## What a board is and what it is not
 
+The whole machine, and what it was for, is in The Arcade Machine That Sold You the NES (https://www.orlandu.com/playchoice-10-story.html).
+
 The PlayChoice-10 arrived in 1986 and solved an operator’s problem rather than a player’s. A cabinet plays one game; a cabinet that plays ten earns ten times as many chances at the same quarter. Inside is a motherboard with ten slots, and each game is one of these boards plugged into it. Coins buy *time*, not lives, and the clock runs across the whole menu — pick a game, die in thirty seconds, pick another and keep going until the timer stops.
 
 The hardware underneath is a Nintendo Entertainment System, which is why the library reads like a shelf of NES boxes. It is not an NES, though, and a board like this will not run in one: the ROMs sit behind the PlayChoice’s own security and menu hardware, and the cabinet expects a second screen full of instructions above the game.
@@ -3417,12 +3419,12 @@ Read Before Playing
 The written side of the arcade — deep dives, restorations, and the history hiding inside the machines. New stories land here as they're written. The words they use without explaining are in the glossary (https://www.orlandu.com/glossary.html).
  Monitors & signalArcade & pinballConsoles & gamesOff the beat NewDid You Know?
 
-### Mario Before He Was Super
+### Why Old Games Look Wrong on a New TV
 
-Before the castle and the flag, Mario spent four years in arcades: a nameless carpenter in Donkey Kong, a plumber with a brother in Mario Bros., and only then the character who lands on things. Three cabinets in one row tell the origin story in order.
+Plug a Super Nintendo into a new television and it looks harsher and blockier than you remember. Your memory is fine. The game was drawn for a screen that paints lines of light, not a grid of squares, and you can drag between the two to see the difference.
 
 Read the newest story →
- (https://www.orlandu.com/mario-before-super.html)
+ (https://www.orlandu.com/why-old-games-look-wrong.html)
 
 ## Monitors & signal The Sony fleet and how a picture reaches it
  NewField Guide
@@ -3491,7 +3493,21 @@ Read Vol. 1 →
  (https://www.orlandu.com/trinitron-fleet-vol1.html)
 
 ## Arcade & pinball The cabinets and the tables
- NewField Guide
+ NewDid You Know?
+
+### The Arcade Machine That Sold You the NES
+
+In 1986 Nintendo put ten NES games in one cabinet, sold them by the minute, and gave a whole second screen to teaching you how to play. The PlayChoice-10 was an arcade machine built to send you to the toy store.
+
+Read the story →
+ (https://www.orlandu.com/playchoice-10-story.html) Did You Know?
+
+### Mario Before He Was Super
+
+Before the castle and the flag, Mario spent four years in arcades: a nameless carpenter in Donkey Kong, a plumber with a brother in Mario Bros., and only then the character who lands on things. Three cabinets in one row tell the origin story in order.
+
+Read the story →
+ (https://www.orlandu.com/mario-before-super.html) Field Guide
 
 ### How to Read a Playfield
 
@@ -5148,7 +5164,7 @@ The breakout's audio pair goes to a powered monitor speaker, not the two-inch dr
 
 ## 7. What you do not need
 
-No upscaler, no line doubler, no frame buffer — no OSSC, no RetroTINK, no Framemeister. A CRT is the one display that wants exactly what these consoles put out: 240p, 15 kHz, analog RGB, warts and all. Every box you add between them makes decisions on your behalf and adds lag while it thinks. The whole point of a professional monitor is to not need one.
+No upscaler, no line doubler, no frame buffer — no OSSC, no RetroTINK, no Framemeister. A CRT is the one display that wants exactly what these consoles put out: 240p, 15 kHz, analog RGB, warts and all. Every box you add between them makes decisions on your behalf and adds lag while it thinks. The whole point of a professional monitor is to not need one. Why old games look wrong on a new TV → (https://www.orlandu.com/why-old-games-look-wrong.html)
 
 ## The signal chain here, end to end
 
@@ -5707,6 +5723,162 @@ Every row cites the Sony document it comes from; the two community sources (Cons
 This table as open data: JSON (https://www.orlandu.com/data/bkm-cards.json) · CSV (https://www.orlandu.com/data/bkm-cards.csv) — CC BY 4.0, credit Orlandu’s Arcade. For AI agents → (https://www.orlandu.com/mcp.html)
 
 How to cite: Orlandu’s Arcade (“Orlandu81”), *Sony BKM Cards: Which Card Fits Which BVM or PVM*, orlandu.com, 2026, https://www.orlandu.com/bkm-cards.html
+
+---
+
+# Why Retro Games Look Wrong on a Modern TV
+
+URL: https://www.orlandu.com/why-old-games-look-wrong.html
+
+Old games were drawn for a tube that paints lines of light, not a grid of square pixels. What scan lines are, what a new TV does to 240 lines, and a demo.
+
+Did You Know?
+
+# Why Old Games Look Wrong on a New TV
+
+Plug a Super Nintendo into a new television and something is off. The picture is there, the colors are right, and it still looks harsher and blockier than you remember. Your memory is fine. The game was drawn for a different kind of screen.
+
+## The picture was never made of squares
+
+A game from that era sends about 240 lines of picture. A tube television draws those lines with a moving beam of light, one after another, sixty times a second. There is no grid of pixels inside a tube. Each line is a soft stripe, slightly blurred along its length, with a thin dark gap between it and the next.
+
+Those gaps are the scan lines. They are not a filter and nobody added them. A television picture has about twice that many lines, drawn in two alternating passes. These consoles draw the same 240 on every pass and leave the lines in between dark.
+
+## See it for yourself
+
+Drag across the picture. The left side is what a flat panel shows: every game pixel as a hard square. The right side is the same picture the way a tube draws it.
+
+[Photo: An original pixel-art scene drawn as hard square pixels, the way a flat panel shows it]
+
+[Photo: The same pixel-art scene modeled on a tube: soft horizontal lines of light with dark gaps between them]
+
+ Flat panelTube
+
+The scene is original art drawn for this page, and the tube side is a model, not a photograph: scan-line gaps and a soft beam, built the same way as Through the Mask (https://www.orlandu.com/through-the-mask.html).
+
+Closer in, a tube adds one more layer. A Trinitron lights its screen through fine vertical stripes of red, green and blue, so the picture has texture in both directions and no hard edge anywhere.
+
+[Photo: Close-up of the pixel-art scene as square pixels]
+
+[Photo: Close-up of the same scene modeled on a tube, showing scan lines and the vertical stripes of an aperture grille]
+
+## What the artists were drawing for
+
+The people who drew these games looked at them on tubes while they worked. The soft stripe was part of the canvas. Stair-step edges rounded off. Flat color picked up texture from the gaps. What reads as a jagged block on a modern panel was meant to arrive as a curve.
+
+What reads as a jagged block on a modern panel was meant to arrive as a curve.
+
+## What a new TV does to it
+
+A modern television is a fixed grid of millions of square pixels, and it was not built for 240 lines. Three things happen.
+
+- **It scales.** On a 4K set, 240 lines have to be stretched across 2,160. Every game pixel becomes a hard-edged block nine screen pixels tall, with no gap and no softness.
+- **It guesses.** Many sets mistake the signal for ordinary interlaced video and try to repair it, which smears motion.
+- **It waits.** That processing takes time, so the picture reaches the glass a beat after you press the button. A tube has nothing to process and shows each line as it arrives.
+
+## Why a monitor from a TV station is the best version of this
+
+Every tube does the first part. A professional monitor does it with a much finer screen, and it takes the console’s red, green and blue signals directly, with nothing mixed together and nothing to decode. That is the whole case for the monitors on this site (https://www.orlandu.com/monitors.html): the picture the artists saw, at the highest quality that kind of screen ever reached.
+
+What those monitors are is in PVM vs. BVM (https://www.orlandu.com/pvm-vs-bvm.html). How a console gets to one is in the connection guide (https://www.orlandu.com/connect-console-to-pvm.html).
+
+## Quick answers
+
+### Why do old games look blocky on a modern TV?
+
+A modern TV stretches each game pixel into a hard-edged block. A tube drew the same picture as soft lines of light with gaps between them.
+
+### What are scan lines?
+
+The dark gaps between the lines a tube draws when a console sends about 240 lines of picture to a screen built for twice that.
+
+### Do old consoles lag on new TVs?
+
+Often. The TV has to process and scale the signal before showing it. A tube shows it as it arrives.
+
+### Do I need a professional monitor to play old games properly?
+
+No. Any tube television shows the picture the way it was drawn. A professional monitor is the sharpest version of the same thing.
+
+Sources & further reading: Hackaday — Are CRT TVs Important for Retro Gaming? (https://hackaday.com/2024/10/11/are-crt-tvs-important-for-retro-gaming) · Engadget — Why retro games look better on old CRT TVs (https://engadget.com/2236809/why-retro-games-look-better-old-crt-tv) · ConsoleMods Wiki — What is 240p? (https://ConsoleMods.org/wiki/CRT:What_is_240p%3F)
+
+---
+
+# PlayChoice-10: How Nintendo's Arcade NES Worked
+
+URL: https://www.orlandu.com/playchoice-10-story.html
+
+The PlayChoice-10 put ten NES games in one arcade cabinet in 1986, sold play by the minute, and used a second screen to teach each game.
+
+Did You Know?
+
+# The Arcade Machine That Sold You the NES
+
+In 1986 Nintendo put a machine in arcades that did not really want your quarters. It wanted you to go home and ask for a Nintendo. The PlayChoice-10 held ten NES games in one cabinet, sold them to you by the minute, and showed you how to play each one before you had spent a cent.
+
+[Photo: Two Punch-Out arcade cabinets and two PlayChoice-10 cabinets in a garage]
+
+***Two screens** — PlayChoice-10 cabinets beside the Punch-Out!! machines whose cabinet they borrowed*
+
+## Ten games, one clock
+
+Every arcade game before it sold lives. The PlayChoice sold time. A coin started a countdown, and while it ran the whole menu was yours: play Super Mario Bros. until you fell in a pit, switch to Excitebike, switch again. Dying cost nothing but seconds. When the clock ran out the game stopped, whatever you were doing.
+
+For a kid, that was a sampler. For Nintendo, it was the point. Every one of those games was also on a shelf at the toy store.
+
+## The screen that taught you
+
+The first PlayChoice cabinets had two monitors. The game ran on the lower one. The upper one held the menu, the time you had left, and instructions and tips for whatever you had picked. It behaves less like an arcade cabinet than like a demonstration stand, and it is often described as exactly that: a demonstration unit for NES games.
+
+It behaves less like an arcade cabinet than like a demonstration stand.
+
+## Almost an NES
+
+Under the menu, the machine is close to the console it was advertising. The games are NES games, usually unchanged, which is why the library reads like a row of NES boxes. But a PlayChoice board will not run in an NES, and an NES cartridge will not run in a PlayChoice. Each game is a bare circuit board that plugs into one of ten slots, carrying the game plus a small extra chip of hint text for the top screen. A second processor runs the clock and the menu. And the picture leaves the machine as RGB, with a palette slightly different from the home console’s, so the same game looks a little different in the cabinet.
+
+All 52 boards, one by one, are on the cart wall (https://www.orlandu.com/playchoice-10.html), along with what the two-letter codes and part numbers on them mean.
+
+## How it spread
+
+Nintendo sold it in more than one shape. The two-monitor upright came first. From 1988 there was a single-monitor cabinet, where a button swapped the game for the instructions, and there was a counter-top. There were also kits that turned an operator’s tired Donkey Kong, Donkey Kong Jr., Popeye or VS. cabinet into a PlayChoice. One of those kits is installed in the Red Tent (https://www.orlandu.com/red-tent.html).
+
+[Photo: Nintendo PlayChoice-10 upright cabinet running Mike Tyson's Punch-Out]
+
+***One screen** — the single-monitor upright*
+
+[Photo: Two Nintendo PlayChoice counter-top units showing their channel select menus]
+
+***Counter-tops** — the channel select menu on both*
+
+On top of a cabinet sat a row of small metal stands, one for each game inside. Those are the toppers (https://www.orlandu.com/signage.html#toppers).
+
+[Photo: The Red Tent channel select menu listing ten NES games including Baseball Stars, Dragon Warrior, Final Fantasy, Metroid and VS. Duck Hunt]
+
+***Channel select** — the menu, with the clock running in the corner*
+
+## The end of the line
+
+The library ran to 52 titles and was still getting new ones in 1992. That summer, Nintendo of America stopped making coin-operated equipment altogether. By then the PlayChoice had done its job.
+
+## Quick answers
+
+### What is a PlayChoice-10?
+
+A Nintendo arcade system from 1986 that holds up to ten NES-based games in one cabinet and sells play by time instead of by lives.
+
+### Can a PlayChoice-10 game board run in an NES?
+
+No. The games are the same, but the boards and the hardware around them are not interchangeable.
+
+### How many PlayChoice-10 games are there?
+
+52. All of them are on the cart wall (https://www.orlandu.com/playchoice-10.html).
+
+### Why does a PlayChoice-10 have two screens?
+
+The lower screen runs the game. The upper one shows the menu, the time remaining and instructions for the game selected.
+
+The cabinets pictured have since moved on to other collections; the Red Tent’s kit is the PlayChoice here today. Sources & further reading: Super Mario Wiki — Nintendo PlayChoice-10 (https://www.mariowiki.com/PlayChoice-10) · Museum of the Game — PlayChoice 10 (https://arcade-museum.com/Videogame/playchoice-10) · System16 — PlayChoice 10 hardware (https://system16.com/hardware.php?id=550)
 
 ---
 
@@ -6892,7 +7064,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 96,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 97,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server
