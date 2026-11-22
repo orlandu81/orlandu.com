@@ -5739,6 +5739,8 @@ How firm that span is depends on where it came from. Some eras rest on a Sony pr
 
 On the rear panel, next to the model number, are the serial number and the build date: a month and a year, spelled out. It is the only date on the monitor that belongs to that unit alone.
 
+There is one large exception. Most monitors sold in Japan, the ones whose model number ends in J, carry no date on the plate at all. For those, the model’s production era is as close as the monitor itself will get you.
+
 [Photo: Rear panel plate of a Sony PVM-2950Q reading June 2000, with the serial number covered]
 
 ***The plate** — a PVM-2950Q, June 2000*
@@ -5746,8 +5748,6 @@ On the rear panel, next to the model number, are the serial number and the build
 [Photo: Status screen of a Sony BVM-A14F5U listing model name, serial number, operation time and CRT turn on time, with the serial number blurred]
 
 ***The status screen** — a BVM-A14F5U*
-
-It can surprise you. The BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html) here had been written down as a June 2007 build, years after the model left the catalog. The plate reads October 1998.
 
 A model number gives you a span of years. The plate gives you a month.
 
@@ -5771,7 +5771,7 @@ If you have read your plate, the census wants it (https://www.orlandu.com/regist
 
 ### How do I find out what year my Sony PVM or BVM was made?
 
-Read the build date on the rear panel plate, printed as a month and a year. The model number only gives the span of years the design was sold.
+Read the build date on the rear panel plate, printed as a month and a year. Most Japanese-market monitors (a model number ending in J) have no date there. The model number only gives the span of years the design was sold.
 
 ### Where is the serial number on a Sony PVM or BVM?
 
