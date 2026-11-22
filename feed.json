@@ -8,6 +8,16 @@
  "language": "en-US",
  "items": [
   {
+   "id": "https://www.orlandu.com/reading-a-sony-plate.html",
+   "url": "https://www.orlandu.com/reading-a-sony-plate.html",
+   "title": "What the plate tells you",
+   "summary": "A model number gives a span of years, the plate on the back gives a month, and a BVM counts its own hours: how to read a Sony monitor’s age from the monitor itself. Read the story →",
+   "tags": [
+    "New story"
+   ],
+   "date_published": "2026-11-21T17:00:00Z"
+  },
+  {
    "id": "https://www.orlandu.com/mario-before-super.html",
    "url": "https://www.orlandu.com/mario-before-super.html",
    "title": "Mario before he was Super",
@@ -88,16 +98,6 @@
    "date_published": "2026-10-23T17:00:00Z"
   },
   {
-   "id": "https://www.orlandu.com/through-the-mask.html",
-   "url": "https://www.orlandu.com/through-the-mask.html",
-   "title": "Through the mask",
-   "summary": "Every tube in the fleet simulated from its own numbers — scan-line gap, grille pitch, center resolution — two side by side, with a slider that walks you from the glass to the couch. See through it →",
-   "tags": [
-    "New tool"
-   ],
-   "date_published": "2026-10-22T17:00:00Z"
-  },
-  {
    "id": "https://www.orlandu.com/connect-console-to-pvm.html",
    "url": "https://www.orlandu.com/connect-console-to-pvm.html",
    "title": "How to Connect a Retro Console to a Sony PVM or BVM",
@@ -148,20 +148,20 @@
    "date_published": "2026-08-31T17:00:00Z"
   },
   {
-   "id": "https://www.orlandu.com/ams-100-monograph.html",
-   "url": "https://www.orlandu.com/ams-100-monograph.html",
-   "title": "The Sony AMS-100 Has No Written History",
-   "summary": "A 1RU broadcast confidence monitor with two option slots, three input boards and not one article written about it anywhere. This is the first: seven documented frames, twelve boards, the service internals, and a market that has almost never been priced.",
+   "id": "https://www.orlandu.com/pvm-20l5-buying-guide.html",
+   "url": "https://www.orlandu.com/pvm-20l5-buying-guide.html",
+   "title": "What to Check Before You Buy a PVM-20L5",
+   "summary": "The one check that tells you most, how to judge a tube that has no hours counter, what the bands actually are — and why a seventy-three pound monitor is something you drive to rather than something you ship.",
    "tags": [
     "Story"
    ],
    "date_published": "2026-08-26T17:00:00Z"
   },
   {
-   "id": "https://www.orlandu.com/pvm-20l5-buying-guide.html",
-   "url": "https://www.orlandu.com/pvm-20l5-buying-guide.html",
-   "title": "What to Check Before You Buy a PVM-20L5",
-   "summary": "The one check that tells you most, how to judge a tube that has no hours counter, what the bands actually are — and why a seventy-three pound monitor is something you drive to rather than something you ship.",
+   "id": "https://www.orlandu.com/ams-100-monograph.html",
+   "url": "https://www.orlandu.com/ams-100-monograph.html",
+   "title": "The Sony AMS-100 Has No Written History",
+   "summary": "A 1RU broadcast confidence monitor with two option slots, three input boards and not one article written about it anywhere. This is the first: seven documented frames, twelve boards, the service internals, and a market that has almost never been priced.",
    "tags": [
     "Story"
    ],
@@ -188,6 +188,16 @@
    "date_published": "2026-08-24T17:00:00Z"
   },
   {
+   "id": "https://www.orlandu.com/pvm-vs-bvm.html",
+   "url": "https://www.orlandu.com/pvm-vs-bvm.html",
+   "title": "The Best Screen for Retro Games Was Never Sold to Gamers",
+   "summary": "PVM vs. BVM: what Sony's professional monitors actually were, why RGB changes everything, and which one to buy today — answered from a fleet of thirteen.",
+   "tags": [
+    "Story"
+   ],
+   "date_published": "2026-08-23T17:00:00Z"
+  },
+  {
    "id": "https://www.orlandu.com/trinitron-fleet-vol1.html",
    "url": "https://www.orlandu.com/trinitron-fleet-vol1.html",
    "title": "TRINITRON FLEET",
@@ -212,16 +222,6 @@
    "url": "https://www.orlandu.com/red-tent.html",
    "title": "The Red Tent",
    "summary": "Nintendo's VS. DualSystem cocktail — found beat-up on Craigslist, restored down to the last screw, and now running VS. Excitebike on one side and a genuinely rare official PlayChoice-10 kit on the other.",
-   "tags": [
-    "Story"
-   ],
-   "date_published": "2026-08-23T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/pvm-vs-bvm.html",
-   "url": "https://www.orlandu.com/pvm-vs-bvm.html",
-   "title": "The Best Screen for Retro Games Was Never Sold to Gamers",
-   "summary": "PVM vs. BVM: what Sony's professional monitors actually were, why RGB changes everything, and which one to buy today — answered from a fleet of thirteen.",
    "tags": [
     "Story"
    ],

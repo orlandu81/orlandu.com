@@ -95,6 +95,11 @@ The geometry grid, judging a tube with no hours counter, what to pay — and why
 ## Latest from the arcade
  New story
 
+### What the plate tells you
+
+A model number gives a span of years, the plate on the back gives a month, and a BVM counts its own hours: how to read a Sony monitor’s age from the monitor itself. Read the story → (https://www.orlandu.com/reading-a-sony-plate.html)
+ New story
+
 ### Mario before he was Super
 
 A carpenter with no name, then a plumber with a brother, then the character who lands on things: Mario’s arcade years, told by the three cabinets in the row. Read the story → (https://www.orlandu.com/mario-before-super.html)
@@ -133,11 +138,6 @@ Two more original PlayChoice-10 toppers off the hunt list — Konami’s 1988 Do
 ### The Orlandu Registry
 
 A serial-number census of surviving Sony BVM and PVM monitors, kept by the people who own them. Add yours and see how many of your model are still accounted for. Register a monitor → (https://www.orlandu.com/registry.html)
- New tool
-
-### Through the mask
-
-Every tube in the fleet simulated from its own numbers — scan-line gap, grille pitch, center resolution — two side by side, with a slider that walks you from the glass to the couch. See through it → (https://www.orlandu.com/through-the-mask.html)
 
 ---
 
@@ -3415,7 +3415,7 @@ Read Before Playing
 # Stories
 
 The written side of the arcade — deep dives, restorations, and the history hiding inside the machines. New stories land here as they're written. The words they use without explaining are in the glossary (https://www.orlandu.com/glossary.html).
- NewDid You Know?
+ Monitors & signalArcade & pinballConsoles & gamesOff the beat NewDid You Know?
 
 ### Mario Before He Was Super
 
@@ -3424,36 +3424,22 @@ Before the castle and the flag, Mario spent four years in arcades: a nameless ca
 Read the newest story →
  (https://www.orlandu.com/mario-before-super.html)
 
-## More stories
+## Monitors & signal The Sony fleet and how a picture reaches it
  NewField Guide
 
-### How to Read a Playfield
+### What the Plate Tells You
 
-Most people play pinball by keeping the ball alive and hoping. Every machine is covered in instructions: the lanes at the bottom, the handful of shots, what a lit or flashing light means, the card nobody reads. A beginner’s guide taught on four tables built across twenty-seven years.
+Sony never said when it built its broadcast monitors, but every one carries the answer. The model number gives a span of years, the plate on the back gives a month, and a BVM keeps count of its own hours. Three numbers, and what each one does and does not tell you.
 
 Read the story →
- (https://www.orlandu.com/how-to-read-a-playfield.html) NewRestoration Story
+ (https://www.orlandu.com/reading-a-sony-plate.html) Restoration Story
 
 ### Thirty More Years
 
 The BVM-20E1U arrived working and looking good. It went to SavonPat anyway: every board recapped, the tube serviced, the picture calibrated, and a verdict from a former Sony technician that it is fit to go back into the field. A full service that has nothing to do with fixing a fault.
 
 Read the story →
- (https://www.orlandu.com/bvm-20e1u-service.html) Review & Guide
-
-### Ocarina of Time on Switch 2: A Review and Returning Player's Guide
-
-If you played the N64 original you can walk the remake from memory and be right nine times out of ten. This is the tenth time: what the remake adds and leaves out, what moved, what's new, the rebalanced economy, and the gates that stall a veteran — from one full playthrough, launch day to credits.
-
-Read the story →
- (https://www.orlandu.com/ocarina-of-time-switch-2.html) Restoration Story
-
-### The X'Eye Comes Home
-
-JVC's Genesis-and-Sega-CD-in-one is one of the rarer ways to play Sega, and one of the hardest to keep healthy. A full servicing at iFixRetro, board by board: every capacitor out and in, a new laser, a cleaned and greased drive, and ferroelectric RAM so a save never dies again.
-
-Read the story →
- (https://www.orlandu.com/jvc-xeye.html) How-To
+ (https://www.orlandu.com/bvm-20e1u-service.html) How-To
 
 ### How to Connect a Retro Console to a Sony PVM or BVM
 
@@ -3467,14 +3453,7 @@ Read the story →
 The best screens ever pointed at a game are still hiding in thrift stores, estate garages and surplus auctions, priced like old TVs. The badge, the BNC tells, the lookalikes — and the thirty-second check before you haul it home.
 
 Read the story →
- (https://www.orlandu.com/crt-field-guide.html) Monograph
-
-### The Sony AMS-100 Has No Written History
-
-A 1RU broadcast confidence monitor with two option slots, three input boards and not one article written about it anywhere. This is the first: seven documented frames, twelve boards, the service internals, and a market that has almost never been priced.
-
-Read the story →
- (https://www.orlandu.com/ams-100-monograph.html) Buyer's Guide
+ (https://www.orlandu.com/crt-field-guide.html) Buyer's Guide
 
 ### What to Check Before You Buy a PVM-20L5
 
@@ -3482,6 +3461,27 @@ The one check that tells you most, how to judge a tube that has no hours counter
 
 Read the story →
  (https://www.orlandu.com/pvm-20l5-buying-guide.html) Did You Know?
+
+### The Best Screen for Retro Games Was Never Sold to Gamers
+
+PVM vs. BVM: what Sony's professional monitors actually were, why RGB changes everything, and which one to buy today — answered from a fleet of thirteen.
+
+Read the story →
+ (https://www.orlandu.com/pvm-vs-bvm.html) The Setup
+
+### How the Signal Gets to the Glass
+
+A shelf of consoles, thirteen professional monitors, and not one scaler in the building — the switchers, the SCART-to-BNC cables and the distribution amp that make it all connect.
+
+Read the story →
+ (https://www.orlandu.com/signal-chain.html) Monograph
+
+### The Sony AMS-100 Has No Written History
+
+A 1RU broadcast confidence monitor with two option slots, three input boards and not one article written about it anywhere. This is the first: seven documented frames, twelve boards, the service internals, and a market that has almost never been priced.
+
+Read the story →
+ (https://www.orlandu.com/ams-100-monograph.html) Did You Know?
 
 ### Ancestor and Descendant
 
@@ -3495,14 +3495,17 @@ Read the story →
 An interactive magazine documenting the Sony professional monitor fleet — eight models, from the PVM-2950Q to the LMD-9050 squadron, and the calibration work that keeps them honest. Future volumes will follow as the fleet evolves.
 
 Read Vol. 1 →
- (https://www.orlandu.com/trinitron-fleet-vol1.html) The Setup
+ (https://www.orlandu.com/trinitron-fleet-vol1.html)
 
-### How the Signal Gets to the Glass
+## Arcade & pinball The cabinets and the tables
+ NewField Guide
 
-A shelf of consoles, thirteen professional monitors, and not one scaler in the building — the switchers, the SCART-to-BNC cables and the distribution amp that make it all connect.
+### How to Read a Playfield
+
+Most people play pinball by keeping the ball alive and hoping. Every machine is covered in instructions: the lanes at the bottom, the handful of shots, what a lit or flashing light means, the card nobody reads. A beginner’s guide taught on four tables built across twenty-seven years.
 
 Read the story →
- (https://www.orlandu.com/signal-chain.html) Did You Know?
+ (https://www.orlandu.com/how-to-read-a-playfield.html) Did You Know?
 
 ### The Hardest Super Mario Bros. Most People Never Noticed
 
@@ -3516,21 +3519,34 @@ Read the story →
 Nintendo's VS. DualSystem cocktail — found beat-up on Craigslist, restored down to the last screw, and now running VS. Excitebike on one side and a genuinely rare official PlayChoice-10 kit on the other.
 
 Read the story →
- (https://www.orlandu.com/red-tent.html) Did You Know?
-
-### The Best Screen for Retro Games Was Never Sold to Gamers
-
-PVM vs. BVM: what Sony's professional monitors actually were, why RGB changes everything, and which one to buy today — answered from a fleet of thirteen.
-
-Read the story →
- (https://www.orlandu.com/pvm-vs-bvm.html) The Machines
+ (https://www.orlandu.com/red-tent.html) The Machines
 
 ### The Mini Cute
 
 Capcom's smallest candy cab, built for Japanese kids in 1991 — and how this pink one crossed the world in a hand-built crate from Sweden, thanks to a friendship that started on KLOV.
 
 Read the story →
- (https://www.orlandu.com/mini-cute.html) Timeline
+ (https://www.orlandu.com/mini-cute.html)
+
+## Consoles & games The hardware on the shelf and what runs on it
+ Review & Guide
+
+### Ocarina of Time on Switch 2: A Review and Returning Player's Guide
+
+If you played the N64 original you can walk the remake from memory and be right nine times out of ten. This is the tenth time: what the remake adds and leaves out, what moved, what's new, the rebalanced economy, and the gates that stall a veteran — from one full playthrough, launch day to credits.
+
+Read the story →
+ (https://www.orlandu.com/ocarina-of-time-switch-2.html) Restoration Story
+
+### The X'Eye Comes Home
+
+JVC's Genesis-and-Sega-CD-in-one is one of the rarer ways to play Sega, and one of the hardest to keep healthy. A full servicing at iFixRetro, board by board: every capacitor out and in, a new laser, a cleaned and greased drive, and ferroelectric RAM so a save never dies again.
+
+Read the story →
+ (https://www.orlandu.com/jvc-xeye.html)
+
+## Across the collection
+ Timeline
 
 ### Forty Years on One Line
 
@@ -5404,7 +5420,7 @@ Reference
 
 # Sony Model Numbers Decoded: What the Letters and Digits on a Badge Mean
 
-Sony never published a key to its monitor model numbers. There is no Sony document, in any language, that says “E means this, 5 means that.” What there is instead is thirty years of manuals, brochures and press releases in which the same letters keep landing in the same places — and once you line them up, most of a Sony badge reads like a spec sheet. This page does that lining-up from Sony’s own literature, and says plainly where a reading is Sony’s and where it is a pattern. It sits beside the BKM card reference (https://www.orlandu.com/bkm-cards.html) and PVM vs. BVM (https://www.orlandu.com/pvm-vs-bvm.html): three pages on what the badge tells you.
+Sony never published a key to its monitor model numbers. There is no Sony document, in any language, that says “E means this, 5 means that.” What there is instead is thirty years of manuals, brochures and press releases in which the same letters keep landing in the same places — and once you line them up, most of a Sony badge reads like a spec sheet. This page does that lining-up from Sony’s own literature, and says plainly where a reading is Sony’s and where it is a pattern. It sits beside the BKM card reference (https://www.orlandu.com/bkm-cards.html) and PVM vs. BVM (https://www.orlandu.com/pvm-vs-bvm.html): three pages on what the badge tells you. For the date on the back, see what the plate tells you (https://www.orlandu.com/reading-a-sony-plate.html).
 
 ## There is no official decoder
 
@@ -5744,6 +5760,83 @@ Every row cites the Sony document it comes from; the two community sources (Cons
 This table as open data: JSON (https://www.orlandu.com/data/bkm-cards.json) · CSV (https://www.orlandu.com/data/bkm-cards.csv) — CC BY 4.0, credit Orlandu’s Arcade. For AI agents → (https://www.orlandu.com/mcp.html)
 
 How to cite: Orlandu’s Arcade (“Orlandu81”), *Sony BKM Cards: Which Card Fits Which BVM or PVM*, orlandu.com, 2026, https://www.orlandu.com/bkm-cards.html
+
+---
+
+# How to Tell When a Sony PVM or BVM Was Made
+
+URL: https://www.orlandu.com/reading-a-sony-plate.html
+
+The model number, the rear plate and the hours counter each answer a different question about a Sony PVM or BVM. What each one tells you, and what it does not.
+
+Field Guide
+
+# What the Plate Tells You
+
+Sony never published how many broadcast monitors it built, or when. What it did do was fasten a plate to the back of every one. Between that plate, the badge on the front and, on a BVM, a counter kept inside the monitor, a Sony will tell you most of its own history.
+
+## Three numbers, three questions
+
+A Sony professional monitor carries three numbers worth reading, and each one answers a different question.
+ ModelWhat it is, and when the design was soldPlateWhen this one left the factoryHoursHow much of its life it has used
+
+They get mixed up constantly. A model’s production era is not a build date, and a build date says nothing about wear.
+
+## The model is a window, not a date
+
+The badge on the front names the chassis: the line, the size, the series, and a suffix for the market it was sold in. Each letter and digit means something (https://www.orlandu.com/sony-model-numbers.html), and together they place a monitor in a span of years. A BVM-20E1U belongs to 1996–c.2001. A BVM-A14F5U belongs to 2006–c.2009.
+
+How firm that span is depends on where it came from. Some eras rest on a Sony press release, dealer bulletin or brochure. Some rest on the copyright year of a manual. Some are a collector estimate, because nothing from Sony has turned up. The models list (https://www.orlandu.com/registry-models.html) marks which is which for all 96 chassis.
+
+## The plate is the one date Sony printed
+
+On the rear panel, next to the model number, are the serial number and the build date: a month and a year, spelled out. It is the only date on the monitor that belongs to that unit alone.
+
+[Photo: Rear panel plate of a Sony PVM-2950Q reading June 2000, with the serial number covered]
+
+***The plate** — a PVM-2950Q, June 2000*
+
+[Photo: Status screen of a Sony BVM-A14F5U listing model name, serial number, operation time and CRT turn on time, with the serial number blurred]
+
+***The status screen** — a BVM-A14F5U*
+
+It can surprise you. The BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html) here had been written down as a June 2007 build, years after the model left the catalog. The plate reads October 1998.
+
+A model number gives you a span of years. The plate gives you a month.
+
+On a PVM the rear plate is the only place the serial appears. A BVM-D or BVM-A also shows it on a status screen, beside the model name.
+
+## Only a BVM keeps count
+
+A BVM logs its own running time. On the D and A series it is on the status screen, as OPERATION TIME. On the older E and F series, which have no controls of their own, the same status page comes up through the control unit (https://www.orlandu.com/bkm-10r.html). A PVM keeps no count at all. There is no number to read, and a tube has to be judged by eye (https://www.orlandu.com/pvm-20l5-buying-guide.html).
+
+The status screen above shows two counters, not one. OPERATION TIME is how long the monitor has been powered. CRT TURN ON TIME is how long the tube itself has been lit, and it is the smaller of the two.
+
+A big number is less alarming than it looks. The 20E1U here shows 44,708 hours: a little over five years of running time, spread across twenty-eight. The former Sony technician who serviced it (https://www.orlandu.com/bvm-20e1u-service.html) puts a tube in ordinary use at 60,000 hours and often well beyond.
+
+## What the serial does not tell you
+
+A serial number is a position in a run, not a date, and Sony never published the ranges. That gap is the reason the registry (https://www.orlandu.com/registry.html) exists. Enough owners reporting a serial and a plate date together will show where each run started and where it stopped.
+
+If you have read your plate, the census wants it (https://www.orlandu.com/registry-submit.html).
+
+## Quick answers
+
+### How do I find out what year my Sony PVM or BVM was made?
+
+Read the build date on the rear panel plate, printed as a month and a year. The model number only gives the span of years the design was sold.
+
+### Where is the serial number on a Sony PVM or BVM?
+
+On the rear panel plate, next to the model number. A BVM-D or BVM-A also shows it on the status screen; on a PVM the plate is the only place.
+
+### Does a Sony PVM have an hours counter?
+
+No. Only BVMs keep one. A PVM’s tube is judged by its picture.
+
+### What is the difference between operation time and CRT turn on time?
+
+Operation time counts how long the monitor has been powered. CRT turn on time counts how long the tube has been lit.
 
 ---
 
@@ -6567,7 +6660,7 @@ How to cite: Orlandu’s Arcade (“Orlandu81”) and the registry’s owners, *
 
 ### Where is the serial number on a Sony PVM or BVM?
 
-On the rear panel plate, next to the model number. A BVM-D or BVM-A also shows it on the status screen; on a PVM the rear plate is the only place.
+On the rear panel plate, next to the model number. A BVM-D or BVM-A also shows it on the status screen; on a PVM the rear plate is the only place. What the plate tells you → (https://www.orlandu.com/reading-a-sony-plate.html)
 
 ### What if my model isn't in the list?
 
@@ -6852,7 +6945,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 96,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 97,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server

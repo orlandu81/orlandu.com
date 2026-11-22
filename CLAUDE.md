@@ -430,6 +430,15 @@ consistent" — a new board, topper or card gets the same treatment.
 
 ## 11. Other features and references
 
+- **Stories sections + the plate story (2026-11-21, night).** stories.html is grouped by subject: the featured card, then
+  `#monitors` (Monitors & signal), `#arcade` (Arcade & pinball), `#consoles` (Consoles & games), `#whole` (Across the collection:
+  timeline + the coming-soon card) and `#offbeat`, with a `.chips` jump row in the page head. A new story goes FIRST in its own
+  section (newest first inside a section); the featured slot and the three rolling New badges work as before. build-feed.py reads
+  every `a.card.linked`, so the grouping needs no tool change. New story `reading-a-sony-plate.html` ("What the Plate Tells You",
+  kicker Field Guide, 3 min): model era vs. plate build date vs. BVM hours. Its two photos are David's 480 px KLOV-post photos
+  (`sony-plate-pvm-2950q`, `sony-status-bvm-a14f5u`; serial covered / blurred by him) and stay at native size. Linked from
+  sony-model-numbers.html and the registry hub's serial Quick answer (in the builder). David's site test, 11/21: "a pretty
+  collection and learn conceptually how things work", NOT a how-to and fix-it site; don't pitch repair how-tos.
 - **SEO review, 2026-11-21 (Project doc `claude/seo-review-2026-11-21.md` has the numbers and all ten items).** Shipped: registry
   model pages retitled "Sony <model>: Years Made, Specs & Registry" with a static one-paragraph answer (`p#answer`, built in
   `model_page()`; the live count still arrives by script); registry-models retitled "Sony PVM & BVM Production Years by Model" +

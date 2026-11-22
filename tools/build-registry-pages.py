@@ -173,7 +173,7 @@ def landing():
   <section id="qa">
     <h2 class="sec">Quick answers</h2>
     <div class="grid" style="grid-template-columns:1fr">
-      <div class="card"><h3>Where is the serial number on a Sony PVM or BVM?</h3><p>On the rear panel plate, next to the model number. A BVM-D or BVM-A also shows it on the status screen; on a PVM the rear plate is the only place.</p></div>
+      <div class="card"><h3>Where is the serial number on a Sony PVM or BVM?</h3><p>On the rear panel plate, next to the model number. A BVM-D or BVM-A also shows it on the status screen; on a PVM the rear plate is the only place. <a href="reading-a-sony-plate.html">What the plate tells you &rarr;</a></p></div>
       <div class="card"><h3>What if my model isn't in the list?</h3><p>Pick "Not listed" and type the badge exactly as printed. The catalog covers 96 PVM and BVM chassis and their regional variants; a model that isn't there gets added once a plate confirms it.</p></div>
       <div class="card"><h3>Why mask the serial?</h3><p>A full serial next to a photo is enough to clone a listing. Two masked digits keep the entry useful to the census and useless to a scammer.</p></div>
       <div class="card"><h3>Does the U, E or J at the end matter?</h3><p>Not for the count. The census groups a chassis with its regional variants (BVM-20E1U, 20E1E, 20E1J are one model); the suffix you pick or type is kept with the entry.</p></div>
