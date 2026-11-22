@@ -1072,13 +1072,13 @@
   {
    "q": "signal chain",
    "cat": "guides",
-   "target": "signal-chain"
+   "target": "connect-console-to-pvm"
   },
   {
    "q": "switcher",
    "cat": "guides",
    "target": [
-    "signal-chain",
+    "connect-console-to-pvm",
     "glossary",
     "connect-console-to-pvm"
    ]
@@ -1089,7 +1089,7 @@
    "target": [
     "glossary",
     "connect-console-to-pvm",
-    "signal-chain"
+    "connect-console-to-pvm"
    ]
   },
   {
@@ -1995,12 +1995,12 @@
   {
    "q": "how the signal gets to the glass",
    "cat": "page titles",
-   "target": "signal-chain"
+   "target": "connect-console-to-pvm"
   },
   {
    "q": "signal gets glass",
    "cat": "title words",
-   "target": "signal-chain"
+   "target": "connect-console-to-pvm"
   },
   {
    "q": "sony model numbers decoded what the letters and digits on a badge mean",
@@ -4983,7 +4983,7 @@
    "q": "swither",
    "cat": "typos",
    "target": [
-    "signal-chain",
+    "connect-console-to-pvm",
     "glossary",
     "connect-console-to-pvm"
    ]
@@ -5372,7 +5372,7 @@
   {
    "q": "signl chain",
    "cat": "typos",
-   "target": "signal-chain"
+   "target": "connect-console-to-pvm"
   },
   {
    "q": "deamcast",

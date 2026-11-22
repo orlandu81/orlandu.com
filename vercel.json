@@ -70,6 +70,11 @@
   ],
   "redirects": [
     {
+      "source": "/signal-chain.html",
+      "destination": "/connect-console-to-pvm.html",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true

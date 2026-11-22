@@ -392,7 +392,7 @@ The flat-panel side of the fleet, and the confidence layer behind the tubes — 
 
 The full profile → (https://www.orlandu.com/lmd-wall.html) · Feature in Vol. 1 → (https://www.orlandu.com/trinitron-fleet-vol1.html#f4)
 
-How every one of these actually gets a signal — the switchers, the SCART-to-BNC cables, and the distribution amp behind the LMD wall — is written up in The Signal Chain (https://www.orlandu.com/signal-chain.html); the vocabulary — TVL, multiscan, BKM, loop-through — is in the glossary (https://www.orlandu.com/glossary.html); which BKM card fits which monitor is in the BKM card reference (https://www.orlandu.com/bkm-cards.html). Recently departed: a BVM-14F5U and the nine-inch BVM-D9H5J found new homes — the fleet consolidates so the keepers get the attention they deserve.
+How every one of these actually gets a signal — the switchers, the SCART-to-BNC cables, and the distribution amp behind the LMD wall — is written up in The Signal Chain (https://www.orlandu.com/connect-console-to-pvm.html#chain); the vocabulary — TVL, multiscan, BKM, loop-through — is in the glossary (https://www.orlandu.com/glossary.html); which BKM card fits which monitor is in the BKM card reference (https://www.orlandu.com/bkm-cards.html). Recently departed: a BVM-14F5U and the nine-inch BVM-D9H5J found new homes — the fleet consolidates so the keepers get the attention they deserve.
 
 ## The fleet, to scale
 
@@ -738,7 +738,7 @@ The 940W is the future-proofing move: ChromaTRU color in 10-bit, one BNC that au
 What has been done to it since it arrived.
 
 - **LMD-9050 stands fitted** — The two HD-SDI units on their desk stands rather than rack ears.
-- **Distribution amp behind the wall** — A CE Labs AV901-HD feeds every unit the same frame at the same instant — the whole path is in The Signal Chain (https://www.orlandu.com/signal-chain.html).
+- **Distribution amp behind the wall** — A CE Labs AV901-HD feeds every unit the same frame at the same instant — the whole path is in The Signal Chain (https://www.orlandu.com/connect-console-to-pvm.html#chain).
 
 - **Family**: **Sony LMD** — TFT LCD, 8.4-inch chassis family plus the 9-inch 940W.
 - **Era**: **2005 onward** — Scaled and deinterlaced — confidence monitors, not the reference glass.
@@ -934,7 +934,7 @@ Runs its library from a MemCard Pro 2 with FMCB/OPL — the whole PS2 catalog, n
 
 The full profile → (https://www.orlandu.com/ps2-slim.html)
 
-Nearly every home console here reaches a CRT over analog RGB, through a pair of SCART switchers and a stack of BNC breakout cables. The Signal Chain (https://www.orlandu.com/signal-chain.html) shows the whole path. What gets played on them is ranked in The Orlandu 50 (https://www.orlandu.com/orlandu-50-games.html).
+Nearly every home console here reaches a CRT over analog RGB, through a pair of SCART switchers and a stack of BNC breakout cables. The Signal Chain (https://www.orlandu.com/connect-console-to-pvm.html#chain) shows the whole path. What gets played on them is ranked in The Orlandu 50 (https://www.orlandu.com/orlandu-50-games.html).
 
 [Photo: GSCART automatic SCART switch on a clear acrylic mount, eight SCART cables plugged in]
 
@@ -964,7 +964,7 @@ The part every collector asks about: which machines needed a modification to giv
 
 This table as open data: JSON (https://www.orlandu.com/data/console-video-out.json) · CSV (https://www.orlandu.com/data/console-video-out.csv) — CC BY 4.0, credit Orlandu’s Arcade.
 
-Handhelds and anything that does not run through the RGB chain are left off. “Switcher” is the GSCARTSW in each room; “breakout” is the SCART to 4 BNC cable. The whole path, box by box, is in The Signal Chain (https://www.orlandu.com/signal-chain.html). Nintendo’s official Player’s Guides have a shelf of their own (https://www.orlandu.com/guide-shelf.html).
+Handhelds and anything that does not run through the RGB chain are left off. “Switcher” is the GSCARTSW in each room; “breakout” is the SCART to 4 BNC cable. The whole path, box by box, is in The Signal Chain (https://www.orlandu.com/connect-console-to-pvm.html#chain). Nintendo’s official Player’s Guides have a shelf of their own (https://www.orlandu.com/guide-shelf.html).
 
 ---
 
@@ -1072,7 +1072,7 @@ What has been done to it.
 - **Model**: **NUS-001** — the one home model Nintendo made
 - **Status**: **In service** — Wired into the RGB chain.
 
-The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and The Signal Chain (https://www.orlandu.com/signal-chain.html) walks it box by box. The game this console is best remembered for came back in 2026: Ocarina of Time on Switch 2, reviewed against the N64 original (https://www.orlandu.com/ocarina-of-time-switch-2.html).
+The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and The Signal Chain (https://www.orlandu.com/connect-console-to-pvm.html#chain) walks it box by box. The game this console is best remembered for came back in 2026: Ocarina of Time on Switch 2, reviewed against the N64 original (https://www.orlandu.com/ocarina-of-time-switch-2.html).
 
 ---
 
@@ -1181,7 +1181,7 @@ What has been done to it.
 - **Model**: **MK-4121** — 1994, the combined unit
 - **Status**: **Serviced** — Wired into the RGB chain.
 
-The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and The Signal Chain (https://www.orlandu.com/signal-chain.html) walks it box by box.
+The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and The Signal Chain (https://www.orlandu.com/connect-console-to-pvm.html#chain) walks it box by box.
 
 ---
 
@@ -1227,7 +1227,7 @@ What has been done to it.
 - **Revision**: **Duo-R** — 1993
 - **Status**: **In service** — Wired into the RGB chain.
 
-The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and The Signal Chain (https://www.orlandu.com/signal-chain.html) walks it box by box.
+The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, and The Signal Chain (https://www.orlandu.com/connect-console-to-pvm.html#chain) walks it box by box.
 
 ---
 
@@ -1272,7 +1272,7 @@ How it’s set up.
 - **Revision**: **Slimline** — 2004
 - **Status**: **In service** — Feeding the LMD wall.
 
-The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, the LMD wall (https://www.orlandu.com/lmd-wall.html) is where this one lands, and The Signal Chain (https://www.orlandu.com/signal-chain.html) walks it box by box.
+The console mod table (https://www.orlandu.com/consoles.html#mods) lists every machine’s path to the monitors, the LMD wall (https://www.orlandu.com/lmd-wall.html) is where this one lands, and The Signal Chain (https://www.orlandu.com/connect-console-to-pvm.html#chain) walks it box by box.
 
 ---
 
@@ -3443,7 +3443,7 @@ Read the story →
 
 ### How to Connect a Retro Console to a Sony PVM or BVM
 
-A PVM has no SCART socket and no HDMI. The cable, the switcher, the SCART to 4 BNC breakout, sync, termination, audio — and the one box you do not need — from a setup that runs eight consoles into thirteen Sony monitors with no scaler in the path.
+A PVM has no SCART socket and no HDMI. The cable, the switcher, the SCART to 4 BNC breakout, sync, termination, audio — and the one box you do not need. Then the whole chain as it is wired here: eight consoles, thirteen Sony monitors, no scaler in the path.
 
 Read the story →
  (https://www.orlandu.com/connect-console-to-pvm.html) Field Guide
@@ -3467,14 +3467,7 @@ Read the story →
 PVM vs. BVM: what Sony's professional monitors actually were, why RGB changes everything, and which one to buy today — answered from a fleet of thirteen.
 
 Read the story →
- (https://www.orlandu.com/pvm-vs-bvm.html) The Setup
-
-### How the Signal Gets to the Glass
-
-A shelf of consoles, thirteen professional monitors, and not one scaler in the building — the switchers, the SCART-to-BNC cables and the distribution amp that make it all connect.
-
-Read the story →
- (https://www.orlandu.com/signal-chain.html) Monograph
+ (https://www.orlandu.com/pvm-vs-bvm.html) Monograph
 
 ### The Sony AMS-100 Has No Written History
 
@@ -3557,7 +3550,7 @@ See the timeline →
 
 ### More in the works
 
-On the docket: the AMS-3 triage write-up, once the keeper is healthy. The KLOV Arm Wrestling restoration thread (https://forums.arcade-museum.com/threads/orlandu%E2%80%99s-arcade-arm-wrestling-restoration-thread.447997/) holds you over in the meantime.
+More stories are on the way. The KLOV Arm Wrestling restoration thread (https://forums.arcade-museum.com/threads/orlandu%E2%80%99s-arcade-arm-wrestling-restoration-thread.447997/) holds you over in the meantime.
 
 ## Off the beat Not about the arcade at all
  NewMagazine · Issue Two
@@ -4972,85 +4965,6 @@ The full 28-line comparison table is omitted from the printed issue to keep it t
 
 ---
 
-# Signal Chain: Consoles to Sony Pro Monitors
-
-URL: https://www.orlandu.com/signal-chain.html
-
-How a shelf of retro consoles reaches a fleet of Sony professional monitors: SCART switchers, BNC runs, a distribution amp, and why there is no scaler anywhere.
-
-The Setup
-
-# How the Signal Gets to the Glass
-
-A shelf of consoles, thirteen Sony professional monitors, and not one scaler in the building. Here is the actual path a picture takes from a cartridge to a broadcast tube — cable by cable, box by box.
-
-Every article about professional monitors, this site's included, spends its time on *why*: why RGB beats composite, why a BVM shows you the truth. Almost none of them tell you *how* — what you actually buy, what plugs into what, and what happens when you try to put eight consoles on two screens. That gap is the reason a lot of people own one PVM and one modded console and still have them sitting in different rooms.
-
-So here is the whole thing, unglamorous parts included. Two rooms, two nearly identical chains, and one deliberate omission that shapes everything else.
- **The house rule:** nothing gets processed. No upscaler, no line doubler, no frame buffer — no OSSC, no RetroTINK, no Framemeister anywhere in the signal path. A CRT is the one display that wants exactly what these consoles put out: 240p, 15kHz, analog RGB, warts and all. Every box you insert to "improve" that is a box making decisions on your behalf, and adding a frame or two of lag while it thinks. The whole point of the fleet is to not need one.
-
-## The chain, end to end
-
-### Game room
-
-Eight consoles, two big PVMs, one switcher doing all the work.
- **The consoles**Saturn, Genesis, SNES, N64, PC Engine and friends — each on its own RGB SCART cable ▸ **GSCARTSW v5.2**8 in, 2 out. Auto-switching: power on a console and it takes the screen ▸ **PVM-2950Q**29-inch, via SCART → 4 BNC **PVM-20L5**20-inch multiformat, same cable type
-
-### Garage arcade — the broadcast pair
-
-The same idea again, in the room where the serious glass lives.
- **The consoles**Garage-side machines, RGB SCART again ▸ **Second GSCARTSW**Its own switcher, so neither room borrows from the other ▸ **BVM-20E1U**The primary E-series chassis **BVM-A14F5U**Two of three card slots filled
-
-### Garage arcade — the LMD wall
-
-A completely separate system, and the one people ask about first.
- **Receiver + USB stick**Looping video, plus a PS2 on a switcher when someone wants to play ▸ **CE Labs AV901-HD**1 in, 9 out component distribution amp — unity gain, 75 ohm ▸ **The LMD squadron**Every LMD in the rack showing the same picture at the same instant
-
-## The switcher is the whole trick
-
-The single component that makes a collection this size usable is the **GSCARTSW** — an eight-input, two-output RGB SCART switcher, and there is one in each room. Eight consoles stay permanently plugged in. It auto-switches: power on the Saturn and the Saturn takes the screen, no button, no menu, no crawling behind a rack. That sounds like a convenience feature. It is actually the difference between a collection you play and a collection you look at.
-
-Two outputs, two monitors, one per screen. That is why each room has its own switcher rather than one big one feeding the house — a second unit is cheaper than the cable run, and it means the garage never has to wait for the game room.
- **If you are building your own:** buy the switcher before you buy the second console. Everyone does this in the wrong order — they accumulate machines, run out of inputs, and end up swapping cables until they stop bothering. A good auto-switcher is the thing that keeps hardware in rotation.
-
-## SCART goes in, BNC comes out
-
-Here is the join that trips people up. The console world speaks **SCART** — a fat European connector carrying RGB and audio in one plug. The Sony professional world speaks **BNC** — individual coaxial connectors, one per signal, twist-locked, because a broadcast engineer is not interested in a cable that can fall out. A PVM has no SCART socket and never will.
-
-The bridge is a **SCART to 4 BNC breakout cable** — red, green, blue and sync on four BNCs, with an audio pair broken out alongside. The ones in use here come in both male and female SCART variants, depending on which end of the chain they land on. That single cable type is what makes the whole collection possible; without it the two halves of this hobby simply do not connect.
-
-Sync goes straight through. No stripper, no LM1881, no sync-on-green workaround — the composite sync riding on the SCART cable goes into the monitor's sync BNC as-is, and these monitors lock onto it without complaint. Professional Sony gear is far less fussy about sync than internet folklore suggests.
-
-## The audio nobody plans for
-
-The AMS-100s sitting on top of the monitors are not decoration. They are fed from the same breakout cables — the audio pair that comes off the SCART side, running into the audio monitor rather than into the CRT's small internal speaker. It is the correct period arrangement, it is how a real edit bay was laid out, and it sounds dramatically better than any CRT speaker ever did.
-
-This is the part most home setups skip, and it is worth not skipping. You go to enormous trouble to get the video signal pristine, then listen to it through a two-inch driver behind a metal grille. The audio path deserves the same attention as the video one.
-
-## The wall is a different animal
-
-The LMD rack does not run on any of the above. It is component video, not RGB SCART, and it is fed from a single source through a **CE Labs AV901-HD** distribution amplifier — one input, nine outputs, unity gain into 75 ohm terminations. A distribution amp is not a splitter; a passive splitter halves your signal every time it divides, and by the ninth monitor there would be nothing left. A DA buffers and re-drives, so the last screen in the chain looks like the first.
-
-What feeds it is deliberately mundane: a receiver playing video off a USB stick, with a PS2 switchable in when someone wants to actually play something. The effect is the point — every LMD in the rack showing the same frame at the same instant, which is precisely what these monitors did in the machine rooms they came from.
-
-## The cabinets are not part of any of this
-
-Worth saying plainly, because it is the question that follows: none of the arcade cabinets touch the switchers, the breakout cables or the distribution amp. Each one is a closed, original system — its board drives its own monitor inside its own cabinet, the way it left the factory. They are not all JAMMA and they were never rewired to feed the rack.
-
-That is deliberate. A cabinet that has been opened up and re-plumbed into a modern signal path is a cabinet that has stopped being the thing it was. The monitor fleet exists to serve the consoles; the cabinets serve themselves.
-
-## What it costs you
-
-Honesty about the trade: this setup is analog end to end, which means it is fussy in ways a modern one is not. Cables are specific and mostly not available at retail. Every console needs the right RGB cable for that console, and some of them need modding before they output RGB at all — the NES never did officially, which is why the top loader (https://www.orlandu.com/nes-top-loader.html) here carries an NESRGB board. Nothing here will ever appear on a flat panel without adding exactly the kind of box this setup refuses to use.
-
-What you get in return is a picture with nothing between the console and the tube, and a room where you press a power button and a game is on screen a second later. For a collection meant to be played rather than displayed, that trade has never once looked like the wrong one.
-
-Curious what the monitors on the other end of these cables actually are? PVM vs. BVM (https://www.orlandu.com/pvm-vs-bvm.html) covers the difference, and the fleet roster (https://www.orlandu.com/monitors.html) lists every unit. The consoles doing the sending are on the consoles page (https://www.orlandu.com/consoles.html).
-
-← More stories (https://www.orlandu.com/stories.html) · Meet the fleet → (https://www.orlandu.com/monitors.html)
-
----
-
 # Ocarina of Time Switch 2 Review & Guide: What Changed
 
 URL: https://www.orlandu.com/ocarina-of-time-switch-2.html
@@ -5226,7 +5140,7 @@ Two things to set on the monitor. Professional inputs loop through to feed the n
 
 ## 5. Component sources skip the switcher
 
-The GameCube and the PlayStation 2 (https://www.orlandu.com/ps2-slim.html) go component, over the OEM cable, into the monitor's component input — on a BVM-A through its analog option card (https://www.orlandu.com/bkm-cards.html), on a PVM-20L5 the same BNCs. Here the PS2 feeds a wall of nine LMDs through a distribution amplifier, which is not a splitter: a splitter halves the signal every time it divides, a DA buffers and re-drives it. The full chain, both rooms → (https://www.orlandu.com/signal-chain.html)
+The GameCube and the PlayStation 2 (https://www.orlandu.com/ps2-slim.html) go component, over the OEM cable, into the monitor's component input — on a BVM-A through its analog option card (https://www.orlandu.com/bkm-cards.html), on a PVM-20L5 the same BNCs. Here the PS2 feeds a wall of nine LMDs through a distribution amplifier, which is not a splitter: a splitter halves the signal every time it divides, a DA buffers and re-drives it. The full chain, both rooms →
 
 ## 6. The audio nobody plans for
 
@@ -5235,6 +5149,39 @@ The breakout's audio pair goes to a powered monitor speaker, not the two-inch dr
 ## 7. What you do not need
 
 No upscaler, no line doubler, no frame buffer — no OSSC, no RetroTINK, no Framemeister. A CRT is the one display that wants exactly what these consoles put out: 240p, 15 kHz, analog RGB, warts and all. Every box you add between them makes decisions on your behalf and adds lag while it thinks. The whole point of a professional monitor is to not need one.
+
+## The signal chain here, end to end
+
+Those seven steps, as they are actually wired: two nearly identical chains for the tubes, and a third system for the LMD wall that shares nothing with them.
+
+### Game room
+
+Eight consoles, two big PVMs, one switcher doing all the work.
+ **The consoles**Saturn, Genesis, SNES, N64, PC Engine and friends — each on its own RGB SCART cable ▸ **GSCARTSW v5.2**8 in, 2 out. Auto-switching: power on a console and it takes the screen ▸ **PVM-2950Q**29-inch, via SCART → 4 BNC **PVM-20L5**20-inch multiformat, same cable type
+
+### Garage arcade — the broadcast pair
+
+The same idea again, in the room where the serious glass lives.
+ **The consoles**Garage-side machines, RGB SCART again ▸ **Second GSCARTSW**Its own switcher, so neither room borrows from the other ▸ **BVM-20E1U**The primary E-series chassis **BVM-A14F5U**Two of three card slots filled
+
+### Garage arcade — the LMD wall
+
+A completely separate system, and the one people ask about first.
+ **Receiver + USB stick**Looping video, plus a PS2 on a switcher when someone wants to play ▸ **CE Labs AV901-HD**1 in, 9 out component distribution amp — unity gain, 75 ohm ▸ **The LMD squadron**Every LMD in the rack showing the same picture at the same instant
+
+Two outputs, two monitors, one per screen. That is why each room has its own switcher rather than one big one feeding the house — a second unit is cheaper than the cable run, and it means the garage never has to wait for the game room.
+
+## The cabinets are not part of any of this
+
+Worth saying plainly, because it is the question that follows: none of the arcade cabinets touch the switchers, the breakout cables or the distribution amp. Each one is a closed, original system — its board drives its own monitor inside its own cabinet, the way it left the factory. They are not all JAMMA and they were never rewired to feed the rack.
+
+That is deliberate. A cabinet that has been opened up and re-plumbed into a modern signal path is a cabinet that has stopped being the thing it was. The monitor fleet exists to serve the consoles; the cabinets serve themselves.
+
+## What it costs you
+
+Honesty about the trade: this setup is analog end to end, which means it is fussy in ways a modern one is not. Cables are specific and mostly not available at retail. Every console needs the right RGB cable for that console, and some of them need modding before they output RGB at all — the NES never did officially, which is why the top loader (https://www.orlandu.com/nes-top-loader.html) here carries an NESRGB board. Nothing here will ever appear on a flat panel without adding exactly the kind of box this setup refuses to use.
+
+What you get in return is a picture with nothing between the console and the tube, and a room where you press a power button and a game is on screen a second later. For a collection meant to be played rather than displayed, that trade has never once looked like the wrong one.
 
 ## Quick answers
 
@@ -5715,7 +5662,7 @@ The later boards are a different physical format again and are outside this coll
 
 ## In this collection
 
-Three of the families are on the floor here, which is how this table got checked against real plates. The BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html) has a BKM-21D fitted in one of its four slots, a BKM-24N and a BKM-20D on the shelf waiting for the right moment, and a BKM-10R (https://www.orlandu.com/bkm-10r.html) controller wired to it. The BVM-A14F5U (https://www.orlandu.com/bvm-a14f5u.html) runs a BKM-62HS and a BKM-68X clone with one slot open. The PVM-20L5 (https://www.orlandu.com/pvm-20l5.html) has its BKM-129X. The E/F decoder cards still missing are on the wanted list (https://www.orlandu.com/wanted.html); how the cards get a signal is in The Signal Chain (https://www.orlandu.com/signal-chain.html).
+Three of the families are on the floor here, which is how this table got checked against real plates. The BVM-20E1U (https://www.orlandu.com/bvm-20e1u.html) has a BKM-21D fitted in one of its four slots, a BKM-24N and a BKM-20D on the shelf waiting for the right moment, and a BKM-10R (https://www.orlandu.com/bkm-10r.html) controller wired to it. The BVM-A14F5U (https://www.orlandu.com/bvm-a14f5u.html) runs a BKM-62HS and a BKM-68X clone with one slot open. The PVM-20L5 (https://www.orlandu.com/pvm-20l5.html) has its BKM-129X. The E/F decoder cards still missing are on the wanted list (https://www.orlandu.com/wanted.html); how the cards get a signal is in The Signal Chain (https://www.orlandu.com/connect-console-to-pvm.html#chain).
 
 ## Quick answers
 
@@ -6313,7 +6260,7 @@ This site talks the way the hobby talks, which means it uses a lot of words with
 - **Multiscan**: A monitor that locks to a range of scan rates rather than one — 15 kHz for a Super Nintendo, 31 kHz for 480p, higher for HD — on the same tube. The PVM-20L5 (https://www.orlandu.com/pvm-20l5-buying-guide.html) is the famous one.
 - **Multiformat**: Sony’s word for a monitor that takes standard definition and HD on the same screen. The PVM-20L5 (https://www.orlandu.com/pvm-20l5.html) and the BVM-A14F5U (https://www.orlandu.com/bvm-a14f5u.html) are the two tubes here that do.
 - **Scanlines**: The dark gaps between the lines a 240p picture draws on a CRT. Not a defect: part of how the art was meant to look, and impossible to fake convincingly.
-- **Scaler / line doubler**: A box that converts a 240p analog signal into something a flat panel accepts, adding processing and a frame or two of delay while it thinks. The signal chain here (https://www.orlandu.com/signal-chain.html) has none, on purpose.
+- **Scaler / line doubler**: A box that converts a 240p analog signal into something a flat panel accepts, adding processing and a frame or two of delay while it thinks. The signal chain here (https://www.orlandu.com/connect-console-to-pvm.html#chain) has none, on purpose.
 - **SCART**: The big rectangular European connector that carries RGB video and stereo audio in one plug. The retro-console world speaks it; Sony's professional monitors do not, which is why the next entry exists.
 - **BNC**: The twist-lock coaxial connector broadcast equipment uses, one per signal. A row of them on the back is the quickest tell that you are looking at a professional monitor. How to spot one. (https://www.orlandu.com/crt-field-guide.html)
 - **SCART to 4 BNC breakout**: The cable that joins the two worlds: SCART on one end, four BNCs — red, green, blue and sync — on the other, with an audio pair broken out beside them.
@@ -6945,7 +6892,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 97,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 96,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server

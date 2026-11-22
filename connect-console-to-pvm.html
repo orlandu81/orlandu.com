@@ -16,20 +16,20 @@
 <meta property="og:title" content="How to Connect a Retro Console to a Sony PVM or BVM — Orlandu's Arcade">
 <meta property="og:description" content="What plugs into what to get a retro console onto a Sony PVM or BVM: the RGB cable, the switcher, the SCART to 4 BNC breakout, sync, termination and audio.">
 <meta property="og:url" content="https://www.orlandu.com/connect-console-to-pvm.html">
-<meta property="og:image" content="https://www.orlandu.com/media/og/og-connect-console-to-pvm-v2.jpg">
+<meta property="og:image" content="https://www.orlandu.com/media/og/og-connect-console-to-pvm-v3.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How to Connect a Retro Console to a Sony PVM or BVM — Orlandu's Arcade">
 <meta name="twitter:description" content="What plugs into what to get a retro console onto a Sony PVM or BVM: the RGB cable, the switcher, the SCART to 4 BNC breakout, sync, termination and audio.">
-<meta name="twitter:image" content="https://www.orlandu.com/media/og/og-connect-console-to-pvm-v2.jpg">
+<meta name="twitter:image" content="https://www.orlandu.com/media/og/og-connect-console-to-pvm-v3.jpg">
 <link rel="canonical" href="https://www.orlandu.com/connect-console-to-pvm.html">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms-full.txt" title="Full text of this site for AI assistants">
 <link rel="alternate" type="text/markdown" href="https://www.orlandu.com/llms.txt" title="Site index for AI assistants">
 <link rel="alternate" type="application/rss+xml" href="https://www.orlandu.com/feed.xml" title="What's new at Orlandu's Arcade">
 <link rel="stylesheet" href="assets/style.css?v=30706b82">
 <link rel="preload" as="image" href="assets/logo-wordmark-nav-v3.webp">
-<script src="assets/site.js?v=fc94cfe3" defer></script>
+<script src="assets/site.js?v=be973503" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -114,7 +114,7 @@
     "creditText": "Orlandu's Arcade",
     "license": "https://www.orlandu.com/about.html#photo-use",
     "acquireLicensePage": "https://www.orlandu.com/about.html#photo-use",
-    "url": "https://www.orlandu.com/media/og/og-connect-console-to-pvm-v2.jpg"
+    "url": "https://www.orlandu.com/media/og/og-connect-console-to-pvm-v3.jpg"
    },
    "breadcrumb": {
     "@id": "https://www.orlandu.com/connect-console-to-pvm.html#breadcrumb"
@@ -163,11 +163,34 @@
    },
    "inLanguage": "en-US",
    "articleSection": "Stories",
-   "image": "https://www.orlandu.com/media/og/og-connect-console-to-pvm-v2.jpg"
+   "image": "https://www.orlandu.com/media/og/og-connect-console-to-pvm-v3.jpg"
   }
  ]
 }
 </script>
+<style>
+  .chain{margin:1.4rem 0 1.8rem}
+  .lane{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:1rem 1.1rem 1.2rem;margin-bottom:1rem}
+  .lane > h3{font-family:var(--disp);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin:0 0 .15rem}
+  .lane > p.sub{color:var(--dim);font-size:.95rem;margin:0 0 .9rem}
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:.5rem}
+  .node{flex:1 1 150px;min-width:0;border:1px solid var(--line);border-radius:9px;background:var(--panel2);padding:.6rem .7rem}
+  .node b{display:block;font-family:var(--cond);font-size:1.02rem;color:var(--ink);line-height:1.2}
+  .node span{display:block;color:var(--dim);font-size:.86rem;margin-top:.2rem;line-height:1.35}
+  .node.hub{border-color:var(--fire2)}
+  .node.hub b{color:var(--fire3)}
+  .node.out{border-color:#3a3a5c}
+  .arrow{flex:0 0 auto;align-self:center;color:var(--fire2);font-family:var(--mono);font-size:1.05rem;padding:0 .1rem}
+  .stack{display:grid;gap:.4rem;flex:1 1 150px;min-width:0}
+  .stack .node{flex:none}
+  .rule{border-left:3px solid var(--fire2);background:var(--panel);padding:.7rem .9rem;margin:1rem 0;border-radius:0 8px 8px 0}
+  .rule b{color:var(--fire3);font-family:var(--cond);letter-spacing:.02em}
+  @media (max-width:620px){
+    .flow{display:block}
+    .node,.stack{margin-bottom:.4rem}
+    .arrow{display:block;text-align:center;padding:.1rem 0;transform:rotate(90deg)}
+  }
+</style>
 </head>
 <body>
 
@@ -175,7 +198,7 @@
 
 <main class="reading">
   <div class="kicker">How-To</div>
-  <div class="rt">4 min read</div>
+  <div class="rt">6 min read</div>
   <h1 class="page">How to Connect a Retro Console<br>to a Sony PVM or BVM</h1>
   <p class="lede">A PVM has no SCART socket, no HDMI, and no interest in making this easy. Here is what actually plugs into what — the cable, the switcher, the four BNCs — and the one box you do not need.</p>
 
@@ -226,7 +249,7 @@
 
   <section>
     <h2 class="sec">5. Component sources skip the switcher</h2>
-    <p>The GameCube and the <a href="ps2-slim.html">PlayStation 2</a> go component, over the OEM cable, into the monitor's component input — on a BVM-A through its analog <a href="bkm-cards.html">option card</a>, on a PVM-20L5 the same BNCs. Here the PS2 feeds a wall of nine LMDs through a distribution amplifier, which is not a splitter: a splitter halves the signal every time it divides, a DA buffers and re-drives it. <a href="signal-chain.html">The full chain, both rooms &rarr;</a></p>
+    <p>The GameCube and the <a href="ps2-slim.html">PlayStation 2</a> go component, over the OEM cable, into the monitor's component input — on a BVM-A through its analog <a href="bkm-cards.html">option card</a>, on a PVM-20L5 the same BNCs. Here the PS2 feeds a wall of nine LMDs through a distribution amplifier, which is not a splitter: a splitter halves the signal every time it divides, a DA buffers and re-drives it. <a href="#chain">The full chain, both rooms &rarr;</a></p>
   </section>
 
   <section>
@@ -239,6 +262,64 @@
     <p>No upscaler, no line doubler, no frame buffer — no OSSC, no RetroTINK, no Framemeister. A CRT is the one display that wants exactly what these consoles put out: 240p, 15 kHz, analog RGB, warts and all. Every box you add between them makes decisions on your behalf and adds lag while it thinks. The whole point of a professional monitor is to not need one.</p>
   </section>
 
+  <section id="chain">
+    <h2 class="sec">The signal chain here, end to end</h2>
+    <p>Those seven steps, as they are actually wired: two nearly identical chains for the tubes, and a third system for the LMD wall that shares nothing with them.</p>
+  <div class="chain">
+    <div class="lane">
+      <h3>Game room</h3>
+      <p class="sub">Eight consoles, two big PVMs, one switcher doing all the work.</p>
+      <div class="flow">
+        <div class="node"><b>The consoles</b><span>Saturn, Genesis, SNES, N64, PC&nbsp;Engine and friends — each on its own RGB SCART cable</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="node hub"><b>GSCARTSW v5.2</b><span>8&nbsp;in, 2&nbsp;out. Auto-switching: power on a console and it takes the screen</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="stack">
+          <div class="node out"><b>PVM-2950Q</b><span>29-inch, via SCART&nbsp;&rarr;&nbsp;4&nbsp;BNC</span></div>
+          <div class="node out"><b>PVM-20L5</b><span>20-inch multiformat, same cable type</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lane">
+      <h3>Garage arcade &mdash; the broadcast pair</h3>
+      <p class="sub">The same idea again, in the room where the serious glass lives.</p>
+      <div class="flow">
+        <div class="node"><b>The consoles</b><span>Garage-side machines, RGB SCART again</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="node hub"><b>Second GSCARTSW</b><span>Its own switcher, so neither room borrows from the other</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="stack">
+          <div class="node out"><b>BVM-20E1U</b><span>The primary E-series chassis</span></div>
+          <div class="node out"><b>BVM-A14F5U</b><span>Two of three card slots filled</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lane">
+      <h3>Garage arcade &mdash; the LMD wall</h3>
+      <p class="sub">A completely separate system, and the one people ask about first.</p>
+      <div class="flow">
+        <div class="node"><b>Receiver + USB stick</b><span>Looping video, plus a PS2 on a switcher when someone wants to play</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="node hub"><b>CE&nbsp;Labs AV901-HD</b><span>1&nbsp;in, 9&nbsp;out component distribution amp &mdash; unity gain, 75&nbsp;ohm</span></div>
+        <div class="arrow">&#9656;</div>
+        <div class="node out"><b>The LMD squadron</b><span>Every LMD in the rack showing the same picture at the same instant</span></div>
+      </div>
+    </div>
+  </div>
+    <p>Two outputs, two monitors, one per screen. That is why each room has its own switcher rather than one big one feeding the house — a second unit is cheaper than the cable run, and it means the garage never has to wait for the game room.</p>
+  </section>
+  <section>
+    <h2 class="sec">The cabinets are not part of any of this</h2>
+    <p>Worth saying plainly, because it is the question that follows: none of the arcade cabinets touch the switchers, the breakout cables or the distribution amp. Each one is a closed, original system &mdash; its board drives its own monitor inside its own cabinet, the way it left the factory. They are not all JAMMA and they were never rewired to feed the rack.</p>
+    <p>That is deliberate. A cabinet that has been opened up and re-plumbed into a modern signal path is a cabinet that has stopped being the thing it was. The monitor fleet exists to serve the consoles; the cabinets serve themselves.</p>
+  </section>
+  <section>
+    <h2 class="sec">What it costs you</h2>
+    <p>Honesty about the trade: this setup is analog end to end, which means it is fussy in ways a modern one is not. Cables are specific and mostly not available at retail. Every console needs the right RGB cable for that console, and some of them need modding before they output RGB at all — the NES never did officially, which is why the <a href="nes-top-loader.html">top loader</a> here carries an NESRGB board. Nothing here will ever appear on a flat panel without adding exactly the kind of box this setup refuses to use.</p>
+    <p>What you get in return is a picture with nothing between the console and the tube, and a room where you press a power button and a game is on screen a second later. For a collection meant to be played rather than displayed, that trade has never once looked like the wrong one.</p>
+  </section>
   <section>
     <h2 class="sec">Quick answers</h2>
     <div class="grid" style="margin-bottom:1.6rem">
@@ -267,7 +348,7 @@
 
   <p class="note" style="margin-top:1.5rem">Buying the monitor first? <a href="pvm-20l5-buying-guide.html">What to check before you buy a PVM-20L5</a> is the sweep, and <a href="crt-field-guide.html">the field guide</a> is how to spot one in the wild. To check one console against one monitor, <a href="will-it-connect.html">Will it connect?</a> plans the chain.</p>
 
-  <p style="margin-top:1.2rem"><a class="btn cy" href="stories.html">← More stories</a> &nbsp; <a class="btn" href="signal-chain.html">The signal chain →</a> &nbsp; <a class="btn" href="pvm-vs-bvm.html">PVM vs. BVM →</a></p>
+  <p style="margin-top:1.2rem"><a class="btn cy" href="stories.html">← More stories</a> &nbsp; <a class="btn" href="will-it-connect.html">Will it connect? →</a> &nbsp; <a class="btn" href="pvm-vs-bvm.html">PVM vs. BVM →</a></p>
 
   <nav class="machnav" aria-label="More stories">
     <a class="mn prev" href="pvm-vs-bvm.html"><span class="mnl">&larr; Previous story</span><b>PVM vs. BVM</b></a>
@@ -276,7 +357,7 @@
   </nav>
 </main>
 
-<footer class="site"><div class="footwrap"><img src="assets/mascot-foot.webp" alt="Orlandu’s Arcade mascot" width="176" height="216" loading="lazy" decoding="async"><div class="links"><a href="about.html">About</a><a href="about.html#contact">Contact</a><a href="stories.html">Stories</a><a href="mailto:orlandusarcade@gmail.com">Email</a><a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a><a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a><a href="feed.xml">RSS</a></div><nav class="explore" aria-label="Explore the site"><div><span>Collection</span><a href="games.html">Coin-Op Games</a><a href="monitors.html">The Monitor Fleet</a><a href="consoles.html">Consoles</a><a href="playchoice-10.html">PlayChoice-10 wall</a><a href="signage.html">Signage</a><a href="guide-shelf.html">Guide shelf</a><a href="spinning-tops.html">Spinning tops</a><a href="gallery.html">Gallery</a><a href="registry.html">The Orlandu Registry</a><a href="timeline.html">Timeline</a></div><div><span>Reading</span><a href="stories.html">All stories</a><a href="connect-console-to-pvm.html">Console to PVM, cable by cable</a><a href="crt-field-guide.html">Professional glass in the wild</a><a href="ams-100-monograph.html">The AMS-100 monograph</a><a href="pvm-20l5-buying-guide.html">PVM-20L5 buying guide</a><a href="pvm-vs-bvm.html">PVM vs. BVM</a><a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol. 1</a><a href="signal-chain.html">The signal chain</a><a href="ams-3-vs-ams-100.html">Ancestor and descendant</a><a href="vs-smb.html">VS. Super Mario Bros.</a><a href="red-tent.html">The Red Tent</a><a href="mini-cute.html">The Mini Cute</a><a href="orlandu-100.html">The Orlandu 100</a></div><div><span>Tools &amp; reference</span><a href="through-the-mask.html">Through the mask — CRT simulator</a><a href="will-it-connect.html">Will it connect?</a><a href="bkm-10r.html">Operate a BKM-10R</a><a href="monitors.html#specs">Compare two monitors</a><a href="monitors.html#scale">The fleet, to scale</a><a href="bkm-cards.html">BKM card reference</a><a href="sony-model-numbers.html">Sony model numbers decoded</a><a href="glossary.html">Glossary</a><a href="mcp.html">For AI agents</a></div><div><span>The arcade</span><a href="about.html">About</a><a href="about.html#contact">Contact</a><a href="about.html#faq">FAQ</a><a href="projects.html">Projects</a><a href="forsale.html">For Sale</a><a href="wanted.html">Wanted</a><a href="mailto:orlandusarcade@gmail.com">Email</a><a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a><a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a><a href="feed.xml">RSS</a></div></nav><div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>Photography © Orlandu’s Arcade. Game logos and characters are the property of their respective owners.</div></div></footer>
+<footer class="site"><div class="footwrap"><img src="assets/mascot-foot.webp" alt="Orlandu’s Arcade mascot" width="176" height="216" loading="lazy" decoding="async"><div class="links"><a href="about.html">About</a><a href="about.html#contact">Contact</a><a href="stories.html">Stories</a><a href="mailto:orlandusarcade@gmail.com">Email</a><a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a><a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a><a href="feed.xml">RSS</a></div><nav class="explore" aria-label="Explore the site"><div><span>Collection</span><a href="games.html">Coin-Op Games</a><a href="monitors.html">The Monitor Fleet</a><a href="consoles.html">Consoles</a><a href="playchoice-10.html">PlayChoice-10 wall</a><a href="signage.html">Signage</a><a href="guide-shelf.html">Guide shelf</a><a href="spinning-tops.html">Spinning tops</a><a href="gallery.html">Gallery</a><a href="registry.html">The Orlandu Registry</a><a href="timeline.html">Timeline</a></div><div><span>Reading</span><a href="stories.html">All stories</a><a href="connect-console-to-pvm.html">Console to PVM, cable by cable</a><a href="crt-field-guide.html">Professional glass in the wild</a><a href="ams-100-monograph.html">The AMS-100 monograph</a><a href="pvm-20l5-buying-guide.html">PVM-20L5 buying guide</a><a href="pvm-vs-bvm.html">PVM vs. BVM</a><a href="trinitron-fleet-vol1.html">Trinitron Fleet, Vol. 1</a><a href="ams-3-vs-ams-100.html">Ancestor and descendant</a><a href="vs-smb.html">VS. Super Mario Bros.</a><a href="red-tent.html">The Red Tent</a><a href="mini-cute.html">The Mini Cute</a><a href="orlandu-100.html">The Orlandu 100</a></div><div><span>Tools &amp; reference</span><a href="through-the-mask.html">Through the mask — CRT simulator</a><a href="will-it-connect.html">Will it connect?</a><a href="bkm-10r.html">Operate a BKM-10R</a><a href="monitors.html#specs">Compare two monitors</a><a href="monitors.html#scale">The fleet, to scale</a><a href="bkm-cards.html">BKM card reference</a><a href="sony-model-numbers.html">Sony model numbers decoded</a><a href="glossary.html">Glossary</a><a href="mcp.html">For AI agents</a></div><div><span>The arcade</span><a href="about.html">About</a><a href="about.html#contact">Contact</a><a href="about.html#faq">FAQ</a><a href="projects.html">Projects</a><a href="forsale.html">For Sale</a><a href="wanted.html">Wanted</a><a href="mailto:orlandusarcade@gmail.com">Email</a><a href="https://www.instagram.com/orlandusarcade/" target="_blank" rel="noopener">Instagram</a><a href="https://www.ebay.com/usr/orlandu81" target="_blank" rel="noopener">eBay</a><a href="feed.xml">RSS</a></div></nav><div class="fine">© 2026 Orlandu’s Arcade™ · Orange County, CA<br>Photography © Orlandu’s Arcade. Game logos and characters are the property of their respective owners.</div></div></footer>
 
 </body>
 </html>

@@ -101,7 +101,7 @@
    "id": "https://www.orlandu.com/connect-console-to-pvm.html",
    "url": "https://www.orlandu.com/connect-console-to-pvm.html",
    "title": "How to Connect a Retro Console to a Sony PVM or BVM",
-   "summary": "A PVM has no SCART socket and no HDMI. The cable, the switcher, the SCART to 4 BNC breakout, sync, termination, audio — and the one box you do not need — from a setup that runs eight consoles into thirteen Sony monitors with no scaler in the path.",
+   "summary": "A PVM has no SCART socket and no HDMI. The cable, the switcher, the SCART to 4 BNC breakout, sync, termination, audio — and the one box you do not need. Then the whole chain as it is wired here: eight consoles, thirteen Sony monitors, no scaler in the path.",
    "tags": [
     "Story"
    ],
@@ -176,16 +176,6 @@
     "Story"
    ],
    "date_published": "2026-08-25T17:00:00Z"
-  },
-  {
-   "id": "https://www.orlandu.com/signal-chain.html",
-   "url": "https://www.orlandu.com/signal-chain.html",
-   "title": "How the Signal Gets to the Glass",
-   "summary": "A shelf of consoles, thirteen professional monitors, and not one scaler in the building — the switchers, the SCART-to-BNC cables and the distribution amp that make it all connect.",
-   "tags": [
-    "Story"
-   ],
-   "date_published": "2026-08-24T17:00:00Z"
   },
   {
    "id": "https://www.orlandu.com/pvm-vs-bvm.html",
