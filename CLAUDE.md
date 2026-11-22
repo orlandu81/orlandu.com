@@ -21,6 +21,7 @@ python3 tools/build-registry-pages.py # FIRST, only if data/registry-models.json
 python3 tools/build-timeline.py      # only if a timeline thumb/year changed; it rewrites timeline.html
 python3 tools/build-machine-select.py # only if a machine profile's spec tiles or accent, a roster card's copy or a portrait changed; rewrites the select block in games.html
 python3 tools/build-gallery-static.py # after any assets/gallery-data.js edit: writes the wall into gallery.html as plain HTML (crawlers; the page script redraws it)
+python3 tools/build-archive.py       # after any Stories or Latest-ledger edit: the home reading room's rotation pool (index.html)
 python3 tools/build-llms-full.py     # llms-full.txt + data/pages.json (what the MCP server reads); refreshes the word count on mcp.html/llms.txt
 python3 tools/build-search-index.py  # assets/search-index.js is generated
 python3 tools/build-datasets.py      # data/*.json|csv + data/search-index.json (after the index)
@@ -439,14 +440,21 @@ consistent" — a new board, topper or card gets the same treatment.
   (`sony-plate-pvm-2950q`, `sony-status-bvm-a14f5u`; serial covered / blurred by him) and stay at native size. Linked from
   sony-model-numbers.html and the registry hub's serial Quick answer (in the builder). David's site test, 11/21: "a pretty
   collection and learn conceptually how things work", NOT a how-to and fix-it site; don't pitch repair how-tos.
+- **The home reading room rotates (2026-11-21, night).** `#readroom` still holds three static cards (the no-script default); an inline
+  script swaps in three older stories from `ARCHIVE`, a different three each week (`floor(Date.now()/1 week)*3`, so every story
+  comes around). The pool is GENERATED between the `archive-pool` markers by `tools/build-archive.py` from stories.html: every card
+  without a New badge that the Latest ledger does not already show, monitor stories interleaved with the rest. **Run it after any
+  Stories or ledger edit** (it sits before build-llms-full in the pre-push order). Chosen over a tenth home card: David has pulled
+  extra home cards before.
 - **Signal Chain merged into the how-to (2026-11-21, night; David: "if you think it makes sense to merge, that works for me").**
   `signal-chain.html` is DELETED and 301s to `connect-console-to-pvm.html` (vercel.json). The how-to already carried most of its
   text; what moved across is `section#chain` ("The signal chain here, end to end": the three lane diagrams + the page-scoped
   `.chain/.lane/.flow/.node` CSS), "The cabinets are not part of any of this" and "What it costs you". Links that said "The
   Signal Chain" now point at `connect-console-to-pvm.html#chain`; pvm-vs-bvm and nes-top-loader (leave-alone until 12/10) still
   link the old address and ride the redirect — repoint them on 12/10. Story chain: ams-3-vs-ams-100 → vs-smb. Footer Reading
-  column lost its link. The how-to took over Signal Chain's thumb and OG card (the three LMDs; `story-connect-console-to-pvm-v2`,
-  `og-connect-console-to-pvm-v3`) because David saw it sharing the Sonic & Knuckles photo with pvm-vs-bvm on Stories. Trinitron Fleet Vol. 1 was considered for a merge and KEPT (a designed magazine issue, not a duplicate).
+  column lost its link. The how-to's thumb and OG card are cut from `console-shelf-day` (two PVMs running games over the console shelf;
+  `story-connect-console-to-pvm-v3`, `og-connect-console-to-pvm-v4`): David saw it sharing the Sonic & Knuckles photo with pvm-vs-bvm on
+  Stories, then rejected the three-LMD photo ("it is not even showing a game"). A story card photo shows a GAME on a screen. Trinitron Fleet Vol. 1 was considered for a merge and KEPT (a designed magazine issue, not a duplicate).
 - **SEO review, 2026-11-21 (Project doc `claude/seo-review-2026-11-21.md` has the numbers and all ten items).** Shipped: registry
   model pages retitled "Sony <model>: Years Made, Specs & Registry" with a static one-paragraph answer (`p#answer`, built in
   `model_page()`; the live count still arrives by script); registry-models retitled "Sony PVM & BVM Production Years by Model" +

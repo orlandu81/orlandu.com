@@ -347,8 +347,8 @@ document.addEventListener('DOMContentLoaded', function(){
   </section>
 
   <section>
-    <h2 class="sec">The reading room</h2>
-    <div class="grid readroom">
+    <h2 class="sec">The reading room <small>From the archive &middot; three change every week</small></h2>
+    <div class="grid readroom" id="readroom">
       <a class="card linked" href="ams-100-monograph.html">
         <img class="cthumb" src="media/story-thumbs/story-ams-100-monograph-800.webp" srcset="media/story-thumbs/story-ams-100-monograph-800.webp 800w, media/story-thumbs/story-ams-100-monograph.webp 1200w" sizes="(max-width:900px) 100vw, 400px" alt="" loading="lazy" decoding="async" width="1200" height="514">
         <div class="sub">Monograph</div>
@@ -368,6 +368,21 @@ document.addEventListener('DOMContentLoaded', function(){
         <p>The geometry grid, judging a tube with no hours counter, what to pay &mdash; and why you should drive to it rather than ship it.</p>
       </a>
     </div>
+    <script>
+/* The reading room rotates: three older stories from the pool, a different three each week. The cards above are the
+   no-script default. The pool is generated from stories.html by tools/build-archive.py. */
+(function(){
+/* archive-pool:start */
+var ARCHIVE=[{"u":"vs-smb.html","s":"media/story-thumbs/story-vs-smb-800.webp","l":"media/story-thumbs/story-vs-smb.webp","k":"Did You Know?","t":"The Hardest Super Mario Bros. Most People Never Noticed","p":"The VS. UniSystem's Super Mario Bros. looks exactly like the NES classic — and was quietly rebuilt to fight back: removed 1-ups, patched turtle tricks, and levels that later became The Lost Levels."},{"u":"connect-console-to-pvm.html","s":"media/story-thumbs/story-connect-console-to-pvm-v3-800.webp","l":"media/story-thumbs/story-connect-console-to-pvm-v3.webp","k":"How-To","t":"How to Connect a Retro Console to a Sony PVM or BVM","p":"A PVM has no SCART socket and no HDMI. The cable, the switcher, the SCART to 4 BNC breakout, sync, termination, audio — and the one box you do not need. Then the whole chain as it is wired here: eight consoles, thirteen Sony monitors, no scaler in the path."},{"u":"red-tent.html","s":"media/story-thumbs/story-red-tent-800.webp?v=2","l":"media/story-thumbs/story-red-tent.webp?v=2","k":"Restoration Story","t":"The Red Tent","p":"Nintendo's VS. DualSystem cocktail — found beat-up on Craigslist, restored down to the last screw, and now running VS. Excitebike on one side and a genuinely rare official PlayChoice-10 kit on the other."},{"u":"crt-field-guide.html","s":"media/story-thumbs/story-crt-field-guide-800.webp","l":"media/story-thumbs/story-crt-field-guide.webp","k":"Field Guide","t":"How to Spot Professional Glass in the Wild","p":"The best screens ever pointed at a game are still hiding in thrift stores, estate garages and surplus auctions, priced like old TVs. The badge, the BNC tells, the lookalikes — and the thirty-second check before you haul it home."},{"u":"mini-cute.html","s":"media/story-thumbs/story-mini-cute-800.webp?v=3","l":"media/story-thumbs/story-mini-cute.webp?v=3","k":"The Machines","t":"The Mini Cute","p":"Capcom's smallest candy cab, built for Japanese kids in 1991 — and how this pink one crossed the world in a hand-built crate from Sweden, thanks to a friendship that started on KLOV."},{"u":"pvm-20l5-buying-guide.html","s":"media/story-thumbs/story-pvm-20l5-buying-guide-800.webp?v=3","l":"media/story-thumbs/story-pvm-20l5-buying-guide.webp?v=3","k":"Buyer's Guide","t":"What to Check Before You Buy a PVM-20L5","p":"The one check that tells you most, how to judge a tube that has no hours counter, what the bands actually are — and why a seventy-three pound monitor is something you drive to rather than something you ship."},{"u":"pvm-vs-bvm.html","s":"media/story-thumbs/story-pvm-vs-bvm-800.webp?v=2","l":"media/story-thumbs/story-pvm-vs-bvm.webp?v=2","k":"Did You Know?","t":"The Best Screen for Retro Games Was Never Sold to Gamers","p":"PVM vs. BVM: what Sony's professional monitors actually were, why RGB changes everything, and which one to buy today — answered from a fleet of thirteen."},{"u":"ams-100-monograph.html","s":"media/story-thumbs/story-ams-100-monograph-800.webp?v=3","l":"media/story-thumbs/story-ams-100-monograph.webp?v=3","k":"Monograph","t":"The Sony AMS-100 Has No Written History","p":"A 1RU broadcast confidence monitor with two option slots, three input boards and not one article written about it anywhere. This is the first: seven documented frames, twelve boards, the service internals, and a market that has almost never been priced."},{"u":"ams-3-vs-ams-100.html","s":"media/story-thumbs/story-ams-3-vs-ams-100-800.webp?v=2","l":"media/story-thumbs/story-ams-3-vs-ams-100.webp?v=2","k":"Did You Know?","t":"Ancestor and Descendant","p":"Sony's AMS-3 and AMS-100 do the same job in the same kind of room, more than a decade apart — one with a transformer and a wall of heatsink, one with SDI and plug-in cards. Stacked on the bench, the difference is not subtle."},{"u":"trinitron-fleet-vol1.html","s":"media/story-thumbs/story-trinitron-fleet-vol1-800.webp?v=2","l":"media/story-thumbs/story-trinitron-fleet-vol1.webp?v=2","k":"Magazine · Vol. 1","t":"TRINITRON FLEET","p":"An interactive magazine documenting the Sony professional monitor fleet — eight models, from the PVM-2950Q to the LMD-9050 squadron, and the calibration work that keeps them honest. Future volumes will follow as the fleet evolves."}];
+/* archive-pool:end */
+  var box=document.getElementById("readroom"); if(!box||typeof ARCHIVE==="undefined") return;
+  var n=ARCHIVE.length, w=Math.floor(Date.now()/6048e5), out="";
+  function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+  for(var i=0;i<3;i++){var a=ARCHIVE[(w*3+i)%n];
+    out+='<a class="card linked" href="'+esc(a.u)+'"><img class="cthumb" src="'+esc(a.s)+'" srcset="'+esc(a.s)+' 800w, '+esc(a.l)+' 1200w" sizes="(max-width:900px) 100vw, 400px" alt="" loading="lazy" decoding="async" width="1200" height="514"><div class="sub">'+esc(a.k)+'</div><h3>'+esc(a.t)+'</h3><p>'+esc(a.p)+'</p></a>';}
+  box.innerHTML=out;
+})();
+    </script>
   </section>
 
   <section>
