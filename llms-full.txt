@@ -6498,6 +6498,34 @@ Prices shown are eBay asking prices, with eBay's fees baked in. Buying direct? E
 
 Selling isn't the only direction — the arcade is buying, too. The hunt list (https://www.orlandu.com/wanted.html) names exactly what it's after, and fair prices are paid.
 
+## Up for trade
+
+No price on these — they go for the right trade. The hunt list (https://www.orlandu.com/wanted.html) names what the arcade is after.
+
+[Photo: Unused Nintendo VS. Super Mario Bros. arcade marquee, untrimmed: Mario, Goombas and a pipe over the brick logo, with the operating instructions at right]
+
+ For trade VS. System marquee
+
+### VS. Super Mario Bros.
+
+New old stock from Nintendo of America, 1986: never on a cabinet, still on its original backing and untrimmed. This marquee yellows fast in front of a hot marquee bulb, usually within months, and this one has never seen a bulb. On a machine it gets trimmed and applied to plexi; the arcade’s own VS. Super Mario Bros. (https://www.orlandu.com/vs-smb.html) already wears one, which is why this one can go.
+
+[Photo: Unused Nintendo VS. Excitebike instruction card: controls, jumping and overheating tips, and a row of do and don’t diagrams]
+
+ For trade VS. System instruction card
+
+### VS. Excitebike
+
+New old stock: an original Nintendo card, never used. A whole riding lesson on one square — wheelies, landing angles, the temp meter, and a row of do and don’t diagrams along the bottom. More of these on the instruction-card wall (https://www.orlandu.com/signage.html#cards).
+
+[Photo: Unused Nintendo VS. Ice Climber instruction card: joystick and button diagram, game-select buttons, two screens of play and the four enemies]
+
+ For trade VS. System instruction card
+
+### VS. Ice Climber
+
+New old stock: an original Nintendo card, never used. The control diagram, the game-select buttons, two screens of play, and all four enemies by name — Topi, Condor, Nitpicker and the White Bear.
+
 ---
 
 # Wanted: PlayChoice-10 Toppers & VS. Marquees
@@ -7064,7 +7092,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 97,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 98,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server
