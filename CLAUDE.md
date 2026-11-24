@@ -431,8 +431,8 @@ consistent" — a new board, topper or card gets the same treatment.
 
 ## 11. Other features and references
 
-- **Machine paperwork on the profiles (2026-11-23).** donkey-kong ("The manual"), red-tent ("The PlayChoice kit paperwork") and
-  indiana-jones ("The paperwork": manuals + key fob, a `grid c2`) carry a short section directly above the Work log: David's flat-lay
+- **Machine paperwork on the profiles (2026-11-23).** donkey-kong ("The manual"), red-tent ("The PlayChoice kit paperwork"),
+  ghostbusters ("The paperwork") and indiana-jones ("The paperwork": manuals + key fob, a `grid c2`) carry a short section directly above the Work log: David's flat-lay
   photos of manuals, flyers and promo pieces as cut-outs on the walls' dark backdrop (`media/2026/<slug>-dk.webp` 1280×1600,
   thumbs 800/600/400, objects at 86 %, not watermarked). David approved them from screenshots of the real pages; the headings and
   captions are placeholders he has not reworded, and there is no body copy (don't invent the story behind a piece). Rulings: the
