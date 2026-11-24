@@ -431,6 +431,16 @@ consistent" — a new board, topper or card gets the same treatment.
 
 ## 11. Other features and references
 
+- **Machine paperwork on the profiles (2026-11-23).** donkey-kong ("The manual"), red-tent ("The PlayChoice kit paperwork") and
+  indiana-jones ("The paperwork": manuals + key fob, a `grid c2`) carry a short section directly above the Work log: David's flat-lay
+  photos of manuals, flyers and promo pieces as cut-outs on the walls' dark backdrop (`media/2026/<slug>-dk.webp` 1280×1600,
+  thumbs 800/600/400, objects at 86 %, not watermarked). David approved them from screenshots of the real pages; the headings and
+  captions are placeholders he has not reworded, and there is no body copy (don't invent the story behind a piece). Rulings: the
+  PlayChoice kit belongs on the Red Tent profile; the Donkey Kong cover's printed model line is fine; the Williams "Manuals"
+  envelope photo was dropped. Both numbers on the PlayChoice plates are blurred in the master. Recipe (mat removal by local-contrast
+  outlines, the clear Ghostbusters bag as a highlight matte, a partial white-balance pull) and scripts: Project doc
+  `claude/machine-paperwork-2026-11-23.md`. Declined the same day from mockups: a VS. board wall and a BKM card wall ("both of these
+  look bad"); video games stay off the site (the no-inventory rule); a skate-deck wall is parked until he has time to shoot it.
 - **Stories sections + the plate story (2026-11-21, night).** stories.html is grouped by subject: the featured card, then
   `#monitors` (Monitors & signal), `#arcade` (Arcade & pinball), `#consoles` (Consoles & games), `#whole` (Across the collection:
   timeline + the coming-soon card) and `#offbeat`, with a `.chips` jump row in the page head. A new story goes FIRST in its own

@@ -2545,6 +2545,12 @@ Today the surviving Tent runs VS. Excitebike on one side. The other side holds s
 
 The instruction cards were made for this cabinet — eighteen NOS titles are on the card wall (https://www.orlandu.com/signage.html#cards), with three still on the hunt list (https://www.orlandu.com/wanted.html). The PlayChoice-10 toppers on the canopy weren’t: those were printed for PC-10 uprights, and the canopy is just where they get shown — twenty-one so far (https://www.orlandu.com/signage.html#toppers), with more still out there.
 
+## The PlayChoice kit paperwork
+
+[Photo: Nintendo PlayChoice kit manual for the VS. table, with the channel-select card, two plates and the adjustments sheet]
+
+***The PlayChoice kit** — manual, channel-select card, plates and adjustments sheet*
+
 ## Work log
 
 What is on and in the machine today, beyond the restoration itself.
@@ -3104,6 +3110,12 @@ This one is blue plywood — the construction collectors look for. It sits betwe
 
 Donkey Kong's monitor is mounted *vertically*, which is why the screen is taller than it is wide. That was a deliberate choice: the whole game is about climbing, and a portrait screen gives you more girders to climb. Almost every arcade conversion of the era got this wrong; the original never did.
 
+## The manual
+
+[Photo: Nintendo Donkey Kong operation manual, cover with the line-drawn Donkey Kong]
+
+***Operation manual***
+
 ## Work log
 
 What has been done to it. Very little, by design — this one is close to how it left the factory.
@@ -3205,6 +3217,16 @@ Widebody means there is genuinely more to look at, and Williams filled every inc
 [Photo: The Indiana Jones pinball playfield lit up, showing the ramps, mine cart and center idol]
 
 ***All of it lit** — widebody, and Williams used every inch*
+
+## The paperwork
+
+[Photo: Williams Indiana Jones operations manual, WPC schematic manual, operators handbook, flyer and loose sheets]
+
+***The manuals** — operations, schematics, handbook, flyer and loose sheets*
+
+[Photo: Indiana Jones pinball key fob and a round promo plastic]
+
+***Key fob and promo plastic***
 
 ## Work log
 
@@ -7084,7 +7106,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 97,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 98,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server
