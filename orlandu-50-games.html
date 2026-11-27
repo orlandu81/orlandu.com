@@ -86,7 +86,7 @@
   }
 
   /* ── eleven to fifty ──────────────────────────────────────── */
-  .o50g{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1rem}
+  .o50g{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(330px,100%),1fr));gap:1rem}
   .ent{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
     border-radius:12px;padding:1.05rem 1.2rem}
   .ent .hd{display:flex;gap:.7rem;align-items:baseline;margin-bottom:.3rem}
@@ -110,7 +110,7 @@
   .noresult{border:1px dashed var(--line);border-radius:12px;padding:1.6rem;text-align:center;color:var(--dim)}
 
   /* ── the shelf of shame ───────────────────────────────────── */
-  .shameg{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1rem 1.6rem}
+  .shameg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(330px,100%),1fr));gap:1rem 1.6rem}
   .nbi{border-left:2px solid var(--shame);padding-left:1rem;max-width:74ch}
   .nbi h3{font-family:var(--disp);font-size:1rem;color:var(--ink);margin-bottom:.15rem}
   .nbi .sc{font-family:var(--cond);font-size:.88rem;letter-spacing:.05em;text-transform:uppercase;
@@ -118,7 +118,7 @@
   .nbi p{color:var(--dim)}
 
   /* ── findings + colophon ──────────────────────────────────── */
-  .finds{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+  .finds{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:1rem}
   .find{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
     border-top:2px solid var(--acc);border-radius:12px;padding:1.05rem 1.2rem}
   .find h3{font-family:var(--disp);font-size:.98rem;color:var(--ink);margin-bottom:.3rem}

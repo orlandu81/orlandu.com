@@ -224,6 +224,13 @@ body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:1
 .section-rule h2{font-family:var(--disp);font-size:14.5px;font-weight:700;letter-spacing:.3em;
   text-transform:uppercase;color:var(--cyan);white-space:nowrap;text-shadow:0 0 14px rgba(34,232,255,.6)}
 .section-rule i{flex:1;height:1px;background:linear-gradient(90deg,var(--cyan),transparent)}
+/* 320-380 px phones: the longest section title ran off the screen, and the battle's three columns left ~70 px cells */
+@media(max-width:380px){
+  .section-rule h2{font-size:13px;letter-spacing:.16em}
+  .vs-round{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 12px}
+  .vs-round .r{grid-column:1/-1;grid-row:1}
+  .vs-round .c{overflow-wrap:anywhere}
+}
 .contents{padding:70px 20px 60px;max-width:1180px;margin:0 auto}
 .toc{border-top:1px solid var(--hair)}
 .toc a{display:grid;grid-template-columns:56px 1fr auto;gap:18px;align-items:baseline;

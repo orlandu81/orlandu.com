@@ -42,7 +42,11 @@ node tools/eval-search.mjs           # 958-query battery vs both search paths; t
   `media/pvm-20l5-checklist.pdf` is in the sitemap WITHOUT a lastmod, deliberately.
 - **The footer is pre-rendered into every page's shell** so crawlers that don't run JS see the full link set. site.js
   overwrites it at runtime with the identical string; never hand-edit the static copy (the tool asserts they match).
-- Then verify locally with Playwright (no console errors, no horizontal overflow at 390 and 1280).
+- Then verify locally with Playwright (no console errors, no horizontal overflow at 320, 360, 390 and 1280). The 320 and
+  360 widths were added 11-27: a 390-only check had let five pages scroll sideways on small phones (an auto-fill
+  `minmax(330px,1fr)` in both magazines, the one-word GHOSTBUSTERS heading, a URL in `<code>` on mcp.html, and the
+  Trinitron Fleet battle rows). Write auto-fill minimums as `minmax(min(Npx,100%),1fr)`; the Orlandu 50's `build_page.py`
+  on David's device carries the same change.
 
 ### How a push actually happens
 
