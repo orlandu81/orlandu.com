@@ -560,7 +560,7 @@ consistent" — a new board, topper or card gets the same treatment.
   ten"). Hooks: a grid with a FIXED card count adds `n2`/`n3`/`n4`/`n5` beside `c2`/`c3` so no row ends with a hole (games
   `#gameroom` uses `quad`; consoles Nintendo/Sega `n3`; wanted marquees `n4` (four since the VS. Castlevania marquee arrived 11-27; 2×2 from 761 px, four across from 1100), BKM `n5`, Red Tent `n3`; projects photo rows
   `n3` + `align-items:start`; about FAQ `n2`; the registry builder adds `n3` when the related row divides by three) —
-  when a count changes, change the class. "More stories" is a growing list and is left alone. Home Latest: the first
+  when a count changes, change the class. The `.n*` rules live in the Review eleven block, BELOW its `.grid.c2/.c3` restatement (equal specificity, later wins; they sat above it from 11-20 to 11-27 and did nothing). "More stories" is a growing list and is left alone. Home Latest: the first
   card spans both columns (nine = lead + 4×2). `--measure:72ch` caps unclassed running text in `main.hub section`
   and `.signshow p`. Page-head band: the grid floor has its own strip under the text; ends fade from 1241 px.
   `main.hub .sub` / `.wantgroup` take the page's `--acc` (home is not a hub and stays orange). For Sale buttons pin

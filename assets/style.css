@@ -970,9 +970,7 @@ main.hub .card.sale > figure.pf img{position:absolute;inset:0;width:100%;height:
 
 /* 1. A block with a fixed number of cards pins its columns, so no row ends with a hole.
       .n2/.n3/.n4/.n5 sit beside c2/c3 (which stay as the narrow-screen fallback). */
-@media(min-width:900px){.grid.n2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(min-width:761px){.grid.n4{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(min-width:1100px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid.n5{grid-template-columns:repeat(5,minmax(0,1fr))}}
+/*    The rules themselves sit in the Review eleven block, after the .grid.c2/.c3 restatement there. */
 /* Home Latest holds nine: the newest leads full width over a 4×2 */
 @media(min-width:761px){
   .ledger .card:first-child{grid-column:1/-1}
@@ -1031,6 +1029,11 @@ main.hub .card.sale>p:last-child{margin-top:auto!important;padding-top:.9rem}
 /* Card grids asked for a 320 px / 260 px minimum column, so a 320–360 px phone scrolled sideways by ~19 px. */
 .grid.c2{grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr))}
 .grid.c3{grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr))}
+/* The fixed-count classes from Review ten come AFTER the two lines above: same specificity, so the later rule
+   wins. They sat above until 11-27 and had been switched off since this block was added. Keep them below. */
+@media(min-width:900px){.grid.n2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:761px){.grid.n4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid.n5{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media(max-width:860px){.specs{grid-template-columns:repeat(2,minmax(0,1fr))}.specs .sv{overflow-wrap:anywhere}}
 /* Tablet row: the logo and nav words give up a little so nine words, the logo and the search icon share one row from 761 px. */
 @media(min-width:761px) and (max-width:900px){header.site .navwrap{flex-wrap:nowrap;gap:.45rem;padding-left:.8rem;padding-right:.8rem}header.site .navlogo img{height:32px}nav.main{flex-wrap:nowrap;margin-left:auto}nav.main a,.collbtn{font-size:.58rem;padding:.42rem .34rem;letter-spacing:.03em}header.site .sbtn{margin-left:0}}
