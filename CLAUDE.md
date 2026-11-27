@@ -167,6 +167,12 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   or push the image under a new unreferenced slug first and fetch it in the container.
 - **Watermarks:** For Sale photos (`© orlandu.com` bottom-right, 4.2 % of the short edge) and the PC-10 board,
   topper and VS.-card tiles (section 10). Nothing else on the site is watermarked, and nothing else should be.
+- **The racetrack loop is `sign-racetrack-loop-v2` since 11-27** (David: "remove the light bleed"): the same 12 s clip with
+  the wash over the black face taken out (it turned red or blue-gray with the pattern), along with the haze between the
+  rows and what was left of the TV-reflection streaks. The fibers and their own glow are untouched (no mask: the bleed is
+  the picture's lower envelope, subtracted with a smooth ramp). Made from the published H.264, not the 4K source, so it
+  is a second-generation encode (crf 23; AV1 crf 50, HEVC crf 30). David looked at the Kay·Bee loop the same day and left
+  it alone ("looks fine"): its face is already near black. Script: Project doc `claude/racetrack-light-bleed-2026-11-27.md`.
 - **Never hard-code the marquee's animation duration** — site.js sets it from a 75 px/s target.
 - **Marquee CSS targets `.strip>span` (direct child only).** The FOR SALE items are nested `data-itm` spans; a
   descendant selector gave each one 100 % padding and its own scroll, blanking the strip after "FOR SALE:" (10/31).
@@ -349,6 +355,9 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   generated registry model pages −10 (a model number finds its profile first). `tt` carries a `<title>` that differs
   from the H1. Body capped at 6,000 characters. `HINTS` in build-search-index.py adds search-only words per page — add
   one only if it moves a battery query. Magazine/monograph bodies are headings-only.
+  A Wanted card that links a registry model page is indexed at weight −14, under that page (11-27: the two BVM want cards
+  had taken top-1 from their registry pages). **Read BOTH `ALL` lines of eval-search.mjs** (MCP path first, header search
+  second); a `tail` that shows only the last one hid a dip to 89 % for one push.
 - **Glossary tooltips:** `assets/glossary-data.js` from `glossary.html` via `tools/build-glossary.py`; first occurrence per
   page on pages with a reading time (not the glossary, monograph or magazines).
 - **Feed:** `tools/build-feed.py` → `feed.xml` (RSS) + `feed.json`, ≤ 30 items from the Latest ledger and the Stories

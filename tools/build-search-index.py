@@ -115,7 +115,11 @@ for p in sorted(root.glob("*.html")):
             ct = text(h3.group(1))
             if not ct or ct.lower().startswith("more on"):
                 continue
-            entries.append({"u": p.name, "t": ct, "k": CARD_KIND[p.name], "s": text(c)[:180], "h": "", "b": text(c)[:600], "w": 4})
+            # A Wanted card that names a monitor with its own registry model page ranks UNDER that page (-10), so the
+            # model number still finds the reference first and the want second (2026-11-27: the BVM-D20F1U / BVM-A20F1U
+            # cards took top-1 from their registry pages and cost the battery two queries).
+            cw = -14 if (p.name == "wanted.html" and re.search(r'href="registry-[a-z0-9-]+\.html"', c)) else 4
+            entries.append({"u": p.name, "t": ct, "k": CARD_KIND[p.name], "s": text(c)[:180], "h": "", "b": text(c)[:600], "w": cw})
 
     if p.name == "about.html":
         faq = re.search(r'<section id="faq">(.*?)</section>', src, re.S)
