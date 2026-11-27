@@ -199,6 +199,15 @@
   .rankbtn{margin:.8rem 0 1.4rem}
   .rankscroll{overflow-x:auto;overflow-y:hidden}
   @media(max-width:640px){.rankchart{min-width:600px}}
+
+  .pickrow{display:flex;flex-wrap:wrap;gap:.6rem .9rem;align-items:center;margin:0 0 .6rem}
+  .pickrow label{font-family:var(--cond);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+  .pickrow select{font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.45rem .6rem;max-width:100%}
+  .pickrow select:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+  .pickrow button{font-family:var(--cond);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:.45rem .7rem;cursor:pointer}
+  .pickrow button:hover,.pickrow button:focus-visible{border-color:var(--cyan)}
+  #pickfig .cut{fill:rgba(255,255,255,.045)}
+  #pickfig .pt{stroke-width:1.5}
 </style>
 </head>
 <body>
@@ -299,6 +308,19 @@
     <p>Baseball Stars reached its highest spot, number 8, in May 1994. It had first charted more than four years earlier.</p>
     <p>Nintendo World Cup made the chart exactly once: at number 9, on the final one.</p>
     <p>Gauntlet went the other way. It arrived at number 5, was 14th the next issue, and never appeared again.</p>
+  </section>
+  <section>
+    <h2 class="sec">Look one up</h2>
+    <p>Each of the 36 has its own shape. Pick a game to see where it stood on every chart it made.</p>
+    <noscript><p class="note fine">The chart needs JavaScript. Every game&rsquo;s totals are in the ranking above.</p></noscript>
+    <figure class="rank" id="pickfig" hidden>
+      <div class="pickrow"><label for="pickgame">Game</label><select id="pickgame"></select><button type="button" id="pickprev" aria-label="Previous game in the ranking">&larr; Prev</button><button type="button" id="picknext" aria-label="Next game in the ranking">Next &rarr;</button></div>
+      <h3 id="pickh"></h3>
+      <p class="sub2" id="picksub"></p>
+      <div class="rankscroll" tabindex="0"><svg class="rankchart" id="picksvg" viewBox="0 0 620 300" role="img" aria-labelledby="pickh picksub" preserveAspectRatio="xMidYMid meet"></svg></div>
+      <div class="ranktip" id="picktip" role="status"></div>
+      <figcaption>Position on Nintendo Power&rsquo;s NES chart, July/August 1988 to December 1994. A break in the line is a chart the game missed. The shaded corner marks the years the chart had only 20 places.</figcaption>
+    </figure>
   </section>
   <section>
     <h2 class="sec">The one that charted early</h2>
@@ -522,6 +544,53 @@
     var set=function(c){tb.classList.toggle('collapsed',c); bt.setAttribute('aria-expanded',String(!c)); bt.textContent=c?'Show all 52 \u2192':'Show the top ten only';};
     set(true); bt.addEventListener('click',function(){set(!tb.classList.contains('collapsed'));});
   }
+})();
+</script>
+<script>
+(function(){
+  var D={"d":["1988-07","1988-09","1988-11","1989-01","1989-03","1989-05","1989-07","1989-09","1989-11","1990-01","1990-03","1990-05","1990-07","1990-09","1990-11","1991-01","1991-02","1991-03","1991-04","1991-05","1991-06","1991-07","1991-08","1991-09","1991-10","1991-11","1991-12","1992-01","1992-02","1992-03","1992-04","1992-05","1992-06","1992-07","1992-08","1992-09","1992-10","1992-11","1992-12","1993-01","1993-02","1993-03","1993-04","1993-05","1993-06","1993-07","1993-08","1993-09","1993-10","1993-11","1993-12","1994-01","1994-02","1994-03","1994-04","1994-05","1994-06","1994-07","1994-08","1994-09","1994-10","1994-11","1994-12"],"bi":15,"g":[["Super Mario Bros. 3","1",1761,[0,0,0,0,0,0,0,20,0,13,7,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,1,1,1,2,1,2,2,1,2,2,3,3,1,3,2,3,5,2,2]],["Super Mario Bros. 2","2",1540,[0,28,6,1,1,2,1,2,2,3,3,8,3,5,7,8,16,15,0,13,16,13,11,13,13,12,10,10,13,7,13,10,12,10,12,16,7,10,14,11,10,15,14,11,6,14,16,16,13,16,11,12,19,19,12,16,18,18,18,20,0,14,17]],["Metroid","3",1313,[3,3,2,5,10,9,13,10,21,20,16,16,18,22,18,0,0,21,25,0,0,0,0,0,0,0,0,9,8,18,12,8,10,13,14,18,17,0,13,12,19,7,19,7,13,5,7,15,6,10,7,6,7,11,8,9,8,9,4,5,4,4,4]],["Dr. Mario","4",1022,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6,5,5,8,10,10,10,11,15,13,5,6,3,5,9,8,9,15,8,8,12,10,8,15,10,11,5,11,8,13,8,11,7,14,15,11,9,7,0,10,5,6,6,2,7,7]],["Teenage Mutant Ninja Turtles","5",717,[0,0,0,0,0,27,18,16,5,1,1,3,8,3,10,5,11,14,12,16,23,20,19,22,0,0,28,0,0,20,20,0,0,0,20,19,0,0,0,0,0,0,0,0,0,0,6,12,14,0,16,11,0,0,0,0,0,0,0,0,0,0,0]],["Mega Man 3","6",700,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,13,4,2,3,3,4,3,3,5,8,7,6,4,14,8,13,17,12,10,10,15,16,9,10,18,11,10,16,16,16,17,20,0,17,0,18,0,0,0,0,0,0,0,0,0,0,0]],["Teenage Mutant Ninja Turtles II: The Arcade Game","7",602,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,8,11,3,2,1,2,2,2,2,4,2,4,14,4,9,12,11,8,19,17,14,11,17,17,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Mike Tyson’s Punch-Out!!","8",478,[2,2,4,6,4,16,21,17,13,25,0,0,17,24,25,0,0,20,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Tecmo Bowl","9",475,[0,0,0,0,0,15,5,11,12,11,10,15,9,17,16,18,14,16,0,0,30,0,0,20,23,0,14,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Ninja Gaiden","10",432,[0,0,0,0,0,0,3,3,4,4,8,10,11,14,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Double Dragon","11",388,[0,6,9,4,9,13,10,23,17,24,0,20,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Baseball Stars","12",378,[0,0,0,0,0,0,0,0,18,0,28,0,29,20,12,0,0,0,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,20,15,0,19,0,15,0,18,19,0,0,9,10,0,8,19,17,15,11,8,16,10]],["Contra","13",364,[22,11,14,9,5,4,14,18,19,27,19,0,0,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Mario’s Open Golf","14",244,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,17,0,0,19,20,0,0,13,18,0,0,0,19,13,0,0,8,4,6,5,5]],["Super Mario Bros.","15",228,[4,4,11,16,0,17,24,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Castlevania","16",222,[12,12,13,13,14,20,25,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["R.C. Pro-Am","17",204,[6,8,12,18,16,25,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Ninja Gaiden II","18",153,[0,0,0,0,0,0,0,0,0,0,0,0,0,4,5,12,18,0,0,0,0,0,0,0,0,0,27,0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Double Dribble","19",134,[10,16,26,25,30,21,23,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Rad Racer","20",130,[8,9,17,0,0,0,0,0,0,0,0,29,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Super C","21",118,[0,0,0,0,0,0,0,0,0,0,0,0,21,13,14,20,0,0,0,24,0,28,0,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Pro Wrestling","22",88,[11,15,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Gauntlet","23",86,[0,0,5,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Kung Fu","24",44,[14,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Rygar","25",38,[30,24,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Excitebike","26=",38,[18,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Mario Bros.","26=",38,[25,0,0,0,0,0,0,0,0,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Baseball","28",36,[21,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Rush’n Attack","29",30,[16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Nintendo World Cup","30",22,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9]],["Fester’s Quest","31",21,[0,0,0,0,0,0,0,0,0,0,0,0,30,0,0,19,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Gradius","32",18,[28,0,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Chip ’n Dale Rescue Rangers","33",14,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,27,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Golf","34",6,[0,0,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Solar Jetman","35",2,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],["Pin·Bot","36",1,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]};
+  var fig=document.getElementById('pickfig'); if(!fig) return;
+  var sel=document.getElementById('pickgame'), svg=document.getElementById('picksvg'), tip=document.getElementById('picktip');
+  var MO=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var NS='http://www.w3.org/2000/svg', L=36, R=606, T=22, B=252, M0=1988*12+6, MN=1994*12+11;
+  function mi(n){var p=D.d[n].split('-'); return (+p[0])*12+(+p[1])-1;}
+  function label(n){var p=D.d[n].split('-'), y=+p[0], m=+p[1]-1; return n<D.bi ? MO[m]+'/'+MO[m+1]+' '+y : MO[m]+' '+y;}
+  function X(n){return L+(mi(n)-M0)/(MN-M0)*(R-L);}
+  function Y(r){return T+(r-1)/29*(B-T);}
+  function el(t,a,txt){var e=document.createElementNS(NS,t); for(var k in a) e.setAttribute(k,a[k]); if(txt!=null) e.textContent=txt; return e;}
+  D.g.forEach(function(g,i){var o=document.createElement('option'); o.value=i; o.textContent=g[1]+'. '+g[0]; sel.appendChild(o);});
+  function draw(i){
+    var g=D.g[i], a=g[3], n, on=[], best=99;
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    for(n=0;n<a.length;n++) if(a[n]){on.push(n); if(a[n]<best) best=a[n];}
+    document.getElementById('pickh').textContent=g[0];
+    document.getElementById('picksub').textContent='Ranked '+g[1].replace('=',' (tied)')+' of 36 \u00b7 score '+g[2].toLocaleString('en-US')+' \u00b7 on '+on.length+' of 63 charts \u00b7 highest spot: number '+best+' \u00b7 '+(on.length>1?label(on[0])+' to '+label(on[on.length-1]):label(on[0]));
+    var x92=L+((1992*12)-M0)/(MN-M0)*(R-L);
+    svg.appendChild(el('rect',{'class':'cut',x:x92,y:Y(20.5),width:R-x92+6,height:Y(30.5)-Y(20.5)}));
+    [1,5,10,15,20,25,30].forEach(function(r){svg.appendChild(el('line',{'class':'g',x1:L,x2:R,y1:Y(r),y2:Y(r)})); svg.appendChild(el('text',{'class':'ax',x:L-8,y:Y(r)+4,'text-anchor':'end'},r));});
+    for(var y=1989;y<=1994;y++){var x=L+(y*12-M0)/(MN-M0)*(R-L); svg.appendChild(el('line',{'class':'g',x1:x,x2:x,y1:B+6,y2:B+12})); svg.appendChild(el('text',{'class':'ax',x:x,y:B+28,'text-anchor':'middle'},y));}
+    svg.appendChild(el('text',{'class':'ax',x:R+4,y:Y(25.5)+4,'text-anchor':'end'},'Top 20 only'));
+    var seg=[];
+    on.forEach(function(n,k){ if(k&&on[k-1]!==n-1){ if(seg.length>1) svg.appendChild(el('polyline',{'class':'ln',points:seg.join(' ')})); seg=[]; } seg.push(X(n).toFixed(1)+','+Y(a[n]).toFixed(1)); });
+    if(seg.length>1) svg.appendChild(el('polyline',{'class':'ln',points:seg.join(' ')}));
+    on.forEach(function(n){svg.appendChild(el('circle',{'class':'pt',cx:X(n),cy:Y(a[n]),r:on.length>30?2.6:3.4}));});
+    on.forEach(function(n){
+      var w=n<D.bi?14:7.4, h=el('rect',{'class':'hit',x:X(n)-w/2,y:T-8,width:w,height:B-T+16,tabindex:0,role:'img','aria-label':label(n)+': number '+a[n]+' of '+(mi(n)>=1992*12?20:30)});
+      var show=function(){var fr=fig.getBoundingClientRect(), r=h.getBoundingClientRect(), py=svg.getBoundingClientRect();
+        tip.innerHTML='<b>'+label(n)+'</b>Number '+a[n]+' of '+(mi(n)>=1992*12?20:30);
+        tip.style.left=Math.max(110,Math.min(fr.width-110,r.left+r.width/2-fr.left))+'px';
+        tip.style.top=(py.top-fr.top+(Y(a[n])/300)*py.height)+'px'; tip.classList.add('on');};
+      var hide=function(){tip.classList.remove('on');};
+      h.addEventListener('mouseenter',show); h.addEventListener('focus',show); h.addEventListener('click',show);
+      h.addEventListener('mouseleave',hide); h.addEventListener('blur',hide);
+      svg.appendChild(h);
+    });
+  }
+  function go(i){i=(i+D.g.length)%D.g.length; sel.value=i; tip.classList.remove('on'); draw(i);}
+  sel.addEventListener('change',function(){go(+sel.value);});
+  document.getElementById('pickprev').addEventListener('click',function(){go(+sel.value-1);});
+  document.getElementById('picknext').addEventListener('click',function(){go(+sel.value+1);});
+  fig.hidden=false; go(2);
 })();
 </script>
 </body>
