@@ -452,7 +452,7 @@ consistent" — a new board, topper or card gets the same treatment.
   chose it 11-26; nine consoles are not sourced yet, so no date labels are shown). Findings and the open list: Project doc
   `claude/console-launch-dates-prices-2026-11-26.md`.
 - **The ranked PlayChoice-10 story (2026-11-26).** `playchoice-10-ranked.html` ("Ranked: Every PlayChoice-10 Game, and the One That Charted
-  Early", kicker By the Numbers, 6 min; FEATURED on Stories). All 52 cart-wall titles scored against Nintendo Power's NES chart, 63 charts
+  Early", kicker By the Numbers, 7 min; FEATURED on Stories). Since 11-26 night it also has "Look one up": a select plus a script-drawn chart of any charted game's run (`#pickfig`; the data is the `D` object in the page's last script, built from the same dataset; no chart without JavaScript, the table carries the numbers). Period lines about the PlayChoice-10 found in Nintendo Power (Vol. 4 p. 87, Vol. 6 p. 6, Vol. 9 p. 92, Vol. 14 p. 97) are paraphrased in this story and in playchoice-10-story.html, never quoted at length. All 52 cart-wall titles scored against Nintendo Power's NES chart, 63 charts
   (Vols. 1-12, 14, 16, 18, 20-67; the Top 30 became a Top 20 with Vol. 32). **Scoring (David asked for a ranking, the method is Claude's
   and he approved it):** 30 points for #1 down to 1 for #30, summed; the bi-monthly charts (Vols. 1-18) count twice; ties by more charts,
   then higher peak; exact ties share a rank. 36 charted, 16 never did. Matching calls he approved: Mario's Open Golf = "NES Open

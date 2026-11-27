@@ -5927,6 +5927,10 @@ Every arcade game before it sold lives. The PlayChoice sold time. A coin started
 
 For a kid, that was a sampler. For Nintendo, it was the point. Every one of those games was also on a shelf at the toy store.
 
+Nintendo Power explained the deal to its readers in early 1989 and called the machine a video jukebox. A quarter bought 300 units of time. Two quarters at once bought 750, a bonus for paying ahead.
+
+By the summer of 1990 the magazine was telling readers to expect some games on the PlayChoice before they reached the NES. It named three new arrivals: Ninja Gaiden II, Rescue Rangers and Captain Skyhawk.
+
 ## The screen that taught you
 
 The first PlayChoice cabinets had two monitors. The game ran on the lower one. The upper one held the menu, the time you had left, and instructions and tips for whatever you had picked. It behaves less like an arcade cabinet than like a demonstration stand, and it is often described as exactly that: a demonstration unit for NES games.
@@ -5979,7 +5983,7 @@ No. The games are the same, but the boards and the hardware around them are not 
 
 The lower screen runs the game. The upper one shows the menu, the time remaining and instructions for the game selected.
 
-The cabinets pictured have since moved on to other collections; the Red Tent’s kit is the PlayChoice here today. Sources & further reading: Super Mario Wiki — Nintendo PlayChoice-10 (https://www.mariowiki.com/PlayChoice-10) · Museum of the Game — PlayChoice 10 (https://arcade-museum.com/Videogame/playchoice-10) · System16 — PlayChoice 10 hardware (https://system16.com/hardware.php?id=550)
+The cabinets pictured have since moved on to other collections; the Red Tent’s kit is the PlayChoice here today. Sources & further reading: Nintendo Power Vol. 4 (January/February 1989) and Vol. 14 (July/August 1990) · Super Mario Wiki — Nintendo PlayChoice-10 (https://www.mariowiki.com/PlayChoice-10) · Museum of the Game — PlayChoice 10 (https://arcade-museum.com/Videogame/playchoice-10) · System16 — PlayChoice 10 hardware (https://system16.com/hardware.php?id=550)
 
 ---
 
@@ -6102,9 +6106,20 @@ Nintendo World Cup made the chart exactly once: at number 9, on the final one.
 
 Gauntlet went the other way. It arrived at number 5, was 14th the next issue, and never appeared again.
 
+## Look one up
+
+Each of the 36 has its own shape. Pick a game to see where it stood on every chart it made.
+ Game
+
+###
+
+*Position on Nintendo Power’s NES chart, July/August 1988 to December 1994. A break in the line is a chart the game missed. The shaded corner marks the years the chart had only 20 places.*
+
 ## The one that charted early
 
 Super Mario Bros. 3 reached American PlayChoice-10 machines in July 1989. The cartridge did not go on sale until February 1990. In between, the way to play it in the United States was on one of those machines.
+
+Nintendo said as much at the time. In the May/June 1989 issue a reader asked about a third Super Mario Bros., and the magazine answered that the game was being made for the PlayChoice-10 for late that summer, with no immediate plans for an NES release. By the November/December issue the cartridge was promised for 1990, and in the meantime readers were pointed to the arcade machine.
 
 It was already on the chart. Super Mario Bros. 3 shows up at number 20 in the September/October 1989 issue and at 13 in January/February 1990. In March/April it is 7th, and that issue prints one line under it: “You’ve played it on Play-Choice 10 and now it’s coming home.”
 
@@ -6217,7 +6232,7 @@ It combined three polls, from readers, Nintendo’s game counselors and retailer
 
 The last one is in the December 1994 issue, Volume 67.
 
-Chart positions and points are from Nintendo Power, Volumes 1 to 67 (July/August 1988 to December 1994), read issue by issue. Release dates: Super Mario Wiki — Super Mario Bros. 3 (https://www.mariowiki.com/Super_Mario_Bros._3). The Goonies: Museum of the Game — The Goonies (https://arcade-museum.com/Videogame/goonies-the).
+Chart positions and points are from Nintendo Power, Volumes 1 to 67 (July/August 1988 to December 1994), read issue by issue; the replies about Super Mario Bros. 3 are in Volumes 6 and 9. Release dates: Super Mario Wiki — Super Mario Bros. 3 (https://www.mariowiki.com/Super_Mario_Bros._3). The Goonies: Museum of the Game — The Goonies (https://arcade-museum.com/Videogame/goonies-the).
 
 ---
 
