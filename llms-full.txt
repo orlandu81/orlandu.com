@@ -836,7 +836,7 @@ The plain black clamshell, and the last of the two-screen Nintendo handhelds.
 
 [Photo: New Nintendo 3DS XL SNES Edition closed, showing the Super Nintendo styling with purple power and reset accents]
 
- 2016
+ 2017
 
 ### New 3DS XL — SNES Edition
 
@@ -2008,6 +2008,28 @@ Twenty of these are Player’s Guides, the softcover format Nintendo sold one ga
 ***Top Secret Passwords***
 
 The games themselves — fifty favorites, every one of them finished — are ranked in The Orlandu 50 (https://www.orlandu.com/orlandu-50-games.html).
+
+## How Nintendo got them into the house
+
+You could buy these books. But the magazine’s own pages show how often Nintendo gave them away, because a Player’s Guide was the best reason it had to make you subscribe.
+
+In early 1992 a new subscriber picked one of four guides free, Mario Mania and the Super NES guide among them, and the offer called it “a $15 value.” Top Secret Passwords went out to every club member at no charge. By 1994 the guide and the magazine came as one deal: renew for $18 and the 128-page Super Metroid guide was free. By early 1995 the same $18 bought the Donkey Kong Country guide.
+
+The ad for the A Link to the Past guide promised more than a walkthrough. It said the book would teach you the history of Hyrule.
+
+| Guide | How Nintendo Power offered it | Issue |
+|---|---|---|
+| Mario Mania · Super NES | Free with a subscription, one of four guides to choose from | Vol. 32, January 1992 |
+| The Legend of Zelda: A Link to the Past | Advertised as new, with the history of Hyrule as the selling point | Vol. 37, June 1992 |
+| Top Secret Passwords | Mailed free to every club member the year before | Vol. 54, November 1993 |
+| Street Fighter II Turbo · Super Mario All-Stars | Announced together as new 168-page guides | Vol. 54, November 1993 |
+| Super Metroid | Free with an $18 club renewal; 128 pages | Vol. 60, May 1994 |
+| Donkey Kong Country | The guide and a year of the magazine for $18 | Vol. 68, January 1995 |
+| Yoshi’s Island · Chrono Trigger · Donkey Kong Country 2 | Promised for later that year in the editor’s letter | Vol. 76, September 1995 |
+| Donkey Kong Country 2 · Super Mario RPG | Free with a subscription, one of three to choose from | Vol. 84, May 1996 |
+| Donkey Kong Country 3 | Free for giving a gift subscription | Vol. 91, December 1996 |
+
+From the subscription pages and advertisements in Nintendo Power, by volume. The other guides on the shelf did not turn up in the issues searched.
 
 ---
 
@@ -6713,7 +6735,33 @@ The Long View
 # Forty Years on One Line
 
 Everything in the collection in the order the world first saw it — the cabinets and pins, the consoles, and the Sony monitors on one line, oldest at the top. Years are release years, not the year each one arrived here. Click anything to open its page.
- **1981**Donkey KongCoin-op (https://www.orlandu.com/donkey-kong.html)**1983**Mario Bros.Coin-op (https://www.orlandu.com/mario-bros.html)**1984**VS. Red TentCoin-op (https://www.orlandu.com/red-tent.html)VS. UniSystemCoin-op (https://www.orlandu.com/vs-unisystem.html)**1985**NES Front LoaderConsoles (https://www.orlandu.com/consoles.html)**1989**Game BoyConsoles (https://www.orlandu.com/consoles.html)Genesis Model 1Consoles (https://www.orlandu.com/consoles.html)TurboGrafx-16Consoles (https://www.orlandu.com/consoles.html)**1990**Turbo ExpressConsoles (https://www.orlandu.com/consoles.html)**1991**Mini CuteCoin-op (https://www.orlandu.com/mini-cute.html)Super NintendoConsoles (https://www.orlandu.com/consoles.html)**1992**Big BlueCoin-op (https://www.orlandu.com/big-blue.html)**1993**Indiana JonesCoin-op (https://www.orlandu.com/indiana-jones.html)PC Engine Duo-RConsoles (https://www.orlandu.com/pc-engine-duo-r.html)NES Top LoaderConsoles (https://www.orlandu.com/nes-top-loader.html)**1994**Genesis CDXConsoles (https://www.orlandu.com/genesis-cdx.html)JVC X'EyeConsoles (https://www.orlandu.com/jvc-xeye.html)PVM-2950QMonitors (https://www.orlandu.com/pvm-2950q.html)**1995**SaturnConsoles (https://www.orlandu.com/consoles.html)NomadConsoles (https://www.orlandu.com/consoles.html)BVM-20E1UMonitors (https://www.orlandu.com/bvm-20e1u.html)**1996**Nintendo 64Consoles (https://www.orlandu.com/nintendo-64.html)**1999**DreamcastConsoles (https://www.orlandu.com/consoles.html)**2001**GameCubeConsoles (https://www.orlandu.com/consoles.html)**2002**PVM-20L5Monitors (https://www.orlandu.com/pvm-20l5.html)**2003**Game Boy Advance SPConsoles (https://www.orlandu.com/gba-sp.html)BVM-A14F5UMonitors (https://www.orlandu.com/bvm-a14f5u.html)**2004**PlayStation 2Consoles (https://www.orlandu.com/ps2-slim.html)**2005**LMD wallMonitors (https://www.orlandu.com/lmd-wall.html)**2015**New 3DS XLConsoles (https://www.orlandu.com/consoles.html)**2016**GhostbustersCoin-op (https://www.orlandu.com/ghostbusters.html)New 3DS XL — SNES EditionConsoles (https://www.orlandu.com/consoles.html)**2017**Total Nuclear AnnihilationCoin-op (https://www.orlandu.com/tna.html)**2020**Rick and MortyCoin-op (https://www.orlandu.com/rick-and-morty.html)
+ **1981**Donkey KongCoin-op (https://www.orlandu.com/donkey-kong.html)**1983**Mario Bros.Coin-op (https://www.orlandu.com/mario-bros.html)**1984**VS. Red TentCoin-op (https://www.orlandu.com/red-tent.html)VS. UniSystemCoin-op (https://www.orlandu.com/vs-unisystem.html)**1985**NES Front LoaderConsoles · Oct 18 (https://www.orlandu.com/consoles.html)**1989**Game BoyConsoles · Jul 31 (https://www.orlandu.com/consoles.html)Genesis Model 1Consoles · Aug 14 (https://www.orlandu.com/consoles.html)TurboGrafx-16Consoles · Aug 29 (https://www.orlandu.com/consoles.html)**1990**Turbo ExpressConsoles · Dec (https://www.orlandu.com/consoles.html)**1991**Mini CuteCoin-op (https://www.orlandu.com/mini-cute.html)Super NintendoConsoles · Aug 23 (https://www.orlandu.com/consoles.html)**1992**Big BlueCoin-op (https://www.orlandu.com/big-blue.html)**1993**Indiana JonesCoin-op (https://www.orlandu.com/indiana-jones.html)PC Engine Duo-RConsoles · Mar 25 (https://www.orlandu.com/pc-engine-duo-r.html)NES Top LoaderConsoles · Oct (https://www.orlandu.com/nes-top-loader.html)**1994**Genesis CDXConsoles · Apr (https://www.orlandu.com/genesis-cdx.html)JVC X'EyeConsoles (https://www.orlandu.com/jvc-xeye.html)PVM-2950QMonitors (https://www.orlandu.com/pvm-2950q.html)**1995**SaturnConsoles · May 11 (https://www.orlandu.com/consoles.html)NomadConsoles · Oct (https://www.orlandu.com/consoles.html)BVM-20E1UMonitors (https://www.orlandu.com/bvm-20e1u.html)**1996**Nintendo 64Consoles · Sep 29 (https://www.orlandu.com/nintendo-64.html)**1999**DreamcastConsoles · Sep 9 (https://www.orlandu.com/consoles.html)**2001**GameCubeConsoles · Nov 18 (https://www.orlandu.com/consoles.html)**2002**PVM-20L5Monitors (https://www.orlandu.com/pvm-20l5.html)**2003**Game Boy Advance SPConsoles · Mar 23 (https://www.orlandu.com/gba-sp.html)BVM-A14F5UMonitors (https://www.orlandu.com/bvm-a14f5u.html)**2004**PlayStation 2Consoles · Nov 1 (https://www.orlandu.com/ps2-slim.html)**2005**LMD wallMonitors (https://www.orlandu.com/lmd-wall.html)**2015**New 3DS XLConsoles · Feb 13 (https://www.orlandu.com/consoles.html)**2016**GhostbustersCoin-op (https://www.orlandu.com/ghostbusters.html)**2017**Total Nuclear AnnihilationCoin-op (https://www.orlandu.com/tna.html)New 3DS XL — SNES EditionConsoles · Nov 27 (https://www.orlandu.com/consoles.html)**2020**Rick and MortyCoin-op (https://www.orlandu.com/rick-and-morty.html)
+
+## Where the console dates come from
+
+The date on a console tile is the day it went on sale in North America, unless the table says otherwise. Where a document from the time gives the date, that is the source. Where none has turned up yet, the date comes from a reference work and the table says so.
+
+| Console | On sale | Source |
+|---|---|---|
+| NES Front Loader | October 18, 1985, in a New York test market | Wikipedia, citing Wired (2010). Reference work, not a period document. |
+| Game Boy | July 31, 1989 | Wikipedia. Nintendo Power Vol. 7 (July/August 1989) expected it in stores in early September. Reference work, not a period document. |
+| Genesis Model 1 | August 14, 1989, in New York and Los Angeles | Sega Retro. Reference work, not a period document. |
+| TurboGrafx-16 | August 29, 1989, in New York and Los Angeles | Wikipedia, citing Kent, The Ultimate History of Video Games (2001). Reference work, not a period document. |
+| Turbo Express | December 1990 | Wikipedia. Reference work, not a period document. |
+| Super Nintendo | August 23, 1991; nationwide September 9 | Electronic Gaming Monthly, November 1991, and The New York Times, September 10, 1991, as quoted by SNES Central. |
+| PC Engine Duo-R | March 25, 1993, in Japan | NEC Retro; the tg-16.com archive of Gekkan PC Engine, May 1993. Reference work, not a period document. |
+| NES Top Loader | October 1993 | Nintendo Power Vol. 53 (October 1993). |
+| Genesis CDX | April 1994 | Sega Retro, citing GamePro, April 1994. Reference work, not a period document. |
+| JVC X'Eye | 1994 | Year only; no dated source yet. |
+| Saturn | May 11, 1995 | Sega of America press release, May 11, 1995. |
+| Nomad | October 1995 | Sega of America press release, August 22, 1995. |
+| Nintendo 64 | September 29, 1996 | Nintendo Power Vols. 88 and 89; UPI, October 24, 1996. |
+| Dreamcast | September 9, 1999 | Wikipedia, citing Kent (2001) and IGN. Reference work, not a period document. |
+| GameCube | November 18, 2001 | Nintendo Power Vol. 149 (October 2001). |
+| Game Boy Advance SP | March 23, 2003 | Nintendo of America press release, January 7, 2003; Nintendo Power Vol. 166. |
+| PlayStation 2 | November 1, 2004 (the slim model) | Sony Computer Entertainment press release, September 21, 2004. |
+| New 3DS XL | February 13, 2015 | Wikipedia (Nintendo announced the date on January 14, 2015). Reference work, not a period document. |
+| New 3DS XL — SNES Edition | November 27, 2017 (the U.S. Super NES Edition, sold through Amazon) | GameSpot and Nintendo World Report, October 23, 2017. |
 
 ---
 
@@ -7438,7 +7486,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 101,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 102,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server

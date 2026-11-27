@@ -40,7 +40,7 @@ CONSOLES = [
     ("Game Boy Advance SP", 2003, "media/thumbs/consoles-gba-sp-dk.webp", "gba-sp.html"),
     ("PlayStation 2", 2004, "media/thumbs/consoles-ps2-dk.webp", "ps2-slim.html"),
     ("New 3DS XL", 2015, "media/thumbs/consoles-3ds-black-dk.webp", "consoles.html"),
-    ("New 3DS XL — SNES Edition", 2016, "media/thumbs/consoles-3ds-snes-dk.webp", "consoles.html"),
+    ("New 3DS XL — SNES Edition", 2017, "media/thumbs/consoles-3ds-snes-dk.webp", "consoles.html"),
 ]
 MONITORS = [
     ("PVM-2950Q", 1994, "media/thumbs/monitors-pvm-2950q-dk.webp", "pvm-2950q.html"),
@@ -49,14 +49,31 @@ MONITORS = [
     ("BVM-A14F5U", 2003, "media/thumbs/monitors-bvm-a14f5u-dk.webp", "bvm-a14f5u.html"),
     ("LMD wall", 2005, "media/thumbs/monitors-lmd-wall-dk.webp", "lmd-wall.html"),
 ]
-# Order inside a year, consoles only, where a period source dates the release (month, day; day 0 = month only).
-# Sources are on each profile's "At launch" section and in the Project doc claude/console-launch-dates-prices-2026-11-26.md.
-# A console without an entry sorts after the dated ones, by name. Add a date only with its source in hand.
+# Console on-sale dates: (month, day [0 = month only], label on the tile, date as written in the table, source).
+# North American dates unless the entry says otherwise. They order the consoles inside a year, label the tiles and fill
+# the sources table under the timeline. A console with no entry sorts last in its year and shows no date.
+# Add or change a date only with its source in hand; findings are in the Project doc claude/console-launch-dates-prices-2026-11-26.md.
+P = "period"      # a document from the time: the maker's press release, a newspaper, a magazine of that month
+R = "reference"   # a reference work written later; no period document found yet
 RELEASED = {
-    "PC Engine Duo-R": (3, 25),   # Japan; NEC Retro / Gekkan PC Engine, May 1993
-    "NES Top Loader": (10, 0),    # Nintendo Power Vol. 53, October 1993
-    "Saturn": (5, 11),            # Sega of America press release, May 11, 1995
-    "Nomad": (10, 0),             # Sega of America press release, August 22, 1995
+    "NES Front Loader": (10, 18, "Oct 18", "October 18, 1985, in a New York test market", R, "Wikipedia, citing Wired (2010)"),
+    "Game Boy": (7, 31, "Jul 31", "July 31, 1989", R, "Wikipedia. Nintendo Power Vol. 7 (July/August 1989) expected it in stores in early September"),
+    "Genesis Model 1": (8, 14, "Aug 14", "August 14, 1989, in New York and Los Angeles", R, "Sega Retro"),
+    "TurboGrafx-16": (8, 29, "Aug 29", "August 29, 1989, in New York and Los Angeles", R, "Wikipedia, citing Kent, The Ultimate History of Video Games (2001)"),
+    "Turbo Express": (12, 0, "Dec", "December 1990", R, "Wikipedia"),
+    "Super Nintendo": (8, 23, "Aug 23", "August 23, 1991; nationwide September 9", P, "Electronic Gaming Monthly, November 1991, and The New York Times, September 10, 1991, as quoted by SNES Central"),
+    "PC Engine Duo-R": (3, 25, "Mar 25", "March 25, 1993, in Japan", R, "NEC Retro; the tg-16.com archive of Gekkan PC Engine, May 1993"),
+    "NES Top Loader": (10, 0, "Oct", "October 1993", P, "Nintendo Power Vol. 53 (October 1993)"),
+    "Genesis CDX": (4, 0, "Apr", "April 1994", R, "Sega Retro, citing GamePro, April 1994"),
+    "Saturn": (5, 11, "May 11", "May 11, 1995", P, "Sega of America press release, May 11, 1995"),
+    "Nomad": (10, 0, "Oct", "October 1995", P, "Sega of America press release, August 22, 1995"),
+    "Nintendo 64": (9, 29, "Sep 29", "September 29, 1996", P, "Nintendo Power Vols. 88 and 89; UPI, October 24, 1996"),
+    "Dreamcast": (9, 9, "Sep 9", "September 9, 1999", R, "Wikipedia, citing Kent (2001) and IGN"),
+    "GameCube": (11, 18, "Nov 18", "November 18, 2001", P, "Nintendo Power Vol. 149 (October 2001)"),
+    "Game Boy Advance SP": (3, 23, "Mar 23", "March 23, 2003", P, "Nintendo of America press release, January 7, 2003; Nintendo Power Vol. 166"),
+    "PlayStation 2": (11, 1, "Nov 1", "November 1, 2004 (the slim model)", P, "Sony Computer Entertainment press release, September 21, 2004"),
+    "New 3DS XL": (2, 13, "Feb 13", "February 13, 2015", R, "Wikipedia (Nintendo announced the date on January 14, 2015)"),
+    "New 3DS XL — SNES Edition": (11, 27, "Nov 27", "November 27, 2017 (the U.S. Super NES Edition, sold through Amazon)", P, "GameSpot and Nintendo World Report, October 23, 2017"),
 }
 LANES = [("Coin-op", "coinop", COINOP, "#ff8a00"), ("Consoles", "consoles", CONSOLES, "#5ee9ff"), ("Monitors", "monitors", MONITORS, "#9effa0")]
 
@@ -89,7 +106,7 @@ def card(it):
            else f'<span class="tph" aria-hidden="true">{html.escape(it[4])}</span>')
     return (f'<a class="tc {key}" href="{href}" style="--acc:{color}">'
             f'{pic}'
-            f'<span class="tn">{html.escape(name)}</span><span class="tk">{title}</span></a>')
+            f'<span class="tn">{html.escape(name)}</span><span class="tk">{title}{(" &middot; " + RELEASED[name][2]) if (key == "consoles" and name in RELEASED) else ""}</span></a>')
 
 spine = ""
 prev = None
@@ -97,11 +114,19 @@ for y in years:
     if prev is not None and y - prev >= 3:
         n = y - prev - 1
         spine += f'<div class="gap" aria-hidden="true"><span>{n} quiet years</span></div>'
-    items = sorted(byyear[y], key=lambda x: (["coinop", "consoles", "monitors"].index(LANE_OF[x][1]), RELEASED.get(x[0], (99, 0)), x[0]))
+    items = sorted(byyear[y], key=lambda x: (["coinop", "consoles", "monitors"].index(LANE_OF[x][1]), RELEASED.get(x[0], (99, 0))[:2], x[0]))
     spine += (f'<section class="yr" id="y{y}"><div class="ymark"><b>{y}</b></div>'
               f'<div class="ycards">{"".join(card(i) for i in items)}</div></section>')
     prev = y
 
+def srcrow(it):
+    name, year = it[0], it[1]
+    if name in RELEASED:
+        m, d, lab, when, grade, src = RELEASED[name]
+        tail = "" if grade == P else ' <span class="ref">Reference work, not a period document.</span>'
+        return f'          <tr><td>{html.escape(name)}</td><td>{html.escape(when)}</td><td>{html.escape(src)}.{tail}</td></tr>'
+    return f'          <tr><td>{html.escape(name)}</td><td>{year}</td><td><span class="ref">Year only; no dated source yet.</span></td></tr>'
+srcrows = "\n".join(srcrow(it) for it in sorted(CONSOLES, key=lambda x: (x[1], RELEASED.get(x[0], (99, 0))[:2], x[0])))
 counts = {key: len(items) for title, key, items, color in LANES}
 desc = "Every machine, console and monitor in the collection, in the order the world first saw them, from the 1981 Donkey Kong to the 2020 Rick and Morty."
 page = f"""<!DOCTYPE html>
@@ -151,6 +176,9 @@ page = f"""<!DOCTYPE html>
   .gap span{{display:inline-block;background:var(--bg);padding:.1rem .4rem;margin-left:-.4rem}}
   .gap::before{{content:"";position:absolute;left:-3.4rem;top:.55rem;width:2px;height:1.2rem;border-left:2px dashed var(--line)}}
   .filters .cnt{{opacity:.8;margin-left:.3rem;font-size:.85em}}
+  table.tsrc td:nth-child(2){{white-space:nowrap}}
+  table.tsrc .ref{{color:var(--dim)}}
+  @media(max-width:700px){{table.tsrc td:nth-child(2){{white-space:normal}}}}
   .spine[data-show="coinop"] .tc:not(.coinop),.spine[data-show="consoles"] .tc:not(.consoles),.spine[data-show="monitors"] .tc:not(.monitors){{display:none}}
   .spine[data-show] .yr:not(:has(.tc:not([style*="display: none"]))){{}}
   .yr.empty,.gap.hidden{{display:none}}
@@ -190,6 +218,18 @@ page = f"""<!DOCTYPE html>
     </div>
     <div class="spine" id="spine">
       {spine}
+    </div>
+  </section>
+  <section id="dates">
+    <h2 class="sec">Where the console dates come from</h2>
+    <p>The date on a console tile is the day it went on sale in North America, unless the table says otherwise. Where a document from the time gives the date, that is the source. Where none has turned up yet, the date comes from a reference work and the table says so.</p>
+    <div class="tablewrap" tabindex="0">
+      <table class="spec tsrc">
+        <thead><tr><th>Console</th><th>On sale</th><th>Source</th></tr></thead>
+        <tbody>
+{srcrows}
+        </tbody>
+      </table>
     </div>
   </section>
 </main>
