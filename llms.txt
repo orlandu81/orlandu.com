@@ -82,7 +82,7 @@
 ## Trading
 
 - [For Sale](https://www.orlandu.com/forsale.html): arcade hardware and collectibles currently listed on eBay, plus pieces offered for trade.
-- [Wanted](https://www.orlandu.com/wanted.html): PlayChoice-10 toppers, VS. marquees, Sony BKM input cards, consumer CRTs.
+- [Wanted](https://www.orlandu.com/wanted.html): PlayChoice-10 toppers, VS. marquees, a Sony 20-inch BVM (BVM-D20F1U or BVM-A20F1U), Sony BKM input cards, consumer CRTs.
 - [The Orlandu Registry](https://www.orlandu.com/registry.html): a serial-number census of surviving Sony BVM and PVM monitors, kept by their owners — survivor counts per model, serial-range charts, masked serials. Add yours at [registry-submit.html](https://www.orlandu.com/registry-submit.html).
 - [Every BVM and PVM in the registry](https://www.orlandu.com/registry-models.html): the 96-chassis catalog with sizes, series, production eras (confidence-tagged) and regional variants; one page per model (registry-<model>.html); data at [data/registry-models.json](https://www.orlandu.com/data/registry-models.json), CC BY 4.0.
 - [About and contact](https://www.orlandu.com/about.html): orlandusarcade@gmail.com
