@@ -441,6 +441,19 @@ consistent" — a new board, topper or card gets the same treatment.
   outlines, the clear Ghostbusters bag as a highlight matte, a partial white-balance pull) and scripts: Project doc
   `claude/machine-paperwork-2026-11-23.md`. Declined the same day from mockups: a VS. board wall and a BKM card wall ("both of these
   look bad"); video games stay off the site (the no-inventory rule); a skate-deck wall is parked until he has time to shoot it.
+- **The ranked PlayChoice-10 story (2026-11-26).** `playchoice-10-ranked.html` ("Ranked: Every PlayChoice-10 Game, and the One That Charted
+  Early", kicker By the Numbers, 6 min; FEATURED on Stories). All 52 cart-wall titles scored against Nintendo Power's NES chart, 63 charts
+  (Vols. 1-12, 14, 16, 18, 20-67; the Top 30 became a Top 20 with Vol. 32). **Scoring (David asked for a ranking, the method is Claude's
+  and he approved it):** 30 points for #1 down to 1 for #30, summed; the bi-monthly charts (Vols. 1-18) count twice; ties by more charts,
+  then higher peak; exact ties share a rank. 36 charted, 16 never did. Matching calls he approved: Mario's Open Golf = "NES Open
+  Tournament Golf"; the later plain "Punch-Out!!" entries count with Mike Tyson's Punch-Out!!. **The Nintendo Power and strategy-guide
+  scans are research only: never publish a page scan or a crop of one** (facts are cited by volume; the pictures are his own board photo
+  and a drawn chart). The table rows and the SVG are written out by hand in the page (built once from the dataset in the Project doc
+  `claude/nintendo-power-nes-charts-2026-11-26.md`; the CSVs are in `Claude outputs\nintendo-power-charts\` in the connected folder) --
+  a matching change means re-scoring, not editing one row. Search: weight -16 and `profile = False` in build-search-index.py so the
+  cart wall still wins "playchoice 10 games list"; the home ledger card is titled "The cart wall, ranked" for the same reason (a
+  "PlayChoice-10" heading on the home page outranked signage for "pro wrestling topper"). Thumb and OG card are the SMB3 board on the
+  dark backdrop (no game-on-a-screen photo exists for this one).
 - **Stories sections + the plate story (2026-11-21, night).** stories.html is grouped by subject: the featured card, then
   `#monitors` (Monitors & signal), `#arcade` (Arcade & pinball), `#consoles` (Consoles & games), `#whole` (Across the collection:
   timeline + the coming-soon card) and `#offbeat`, with a `.chips` jump row in the page head. A new story goes FIRST in its own

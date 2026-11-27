@@ -8,6 +8,16 @@
  "language": "en-US",
  "items": [
   {
+   "id": "https://www.orlandu.com/playchoice-10-ranked.html",
+   "url": "https://www.orlandu.com/playchoice-10-ranked.html",
+   "title": "The cart wall, ranked",
+   "summary": "Nintendo Power charted America’s favorite NES games 63 times. Here is where all 52 PlayChoice-10 games came out, and the one that charted before its cartridge was on sale. Read the story →",
+   "tags": [
+    "New story"
+   ],
+   "date_published": "2026-11-26T17:00:00Z"
+  },
+  {
    "id": "https://www.orlandu.com/why-old-games-look-wrong.html",
    "url": "https://www.orlandu.com/why-old-games-look-wrong.html",
    "title": "Why old games look wrong on a new TV",
@@ -90,10 +100,10 @@
   {
    "id": "https://www.orlandu.com/jvc-xeye.html",
    "url": "https://www.orlandu.com/jvc-xeye.html",
-   "title": "The X’Eye comes home",
-   "summary": "JVC’s rare Genesis + Sega CD combo is back from a full servicing at iFixRetro — every capacitor on both boards, a new laser, and saves that never die. Read the story →",
+   "title": "The X'Eye Comes Home",
+   "summary": "JVC's Genesis-and-Sega-CD-in-one is one of the rarer ways to play Sega, and one of the hardest to keep healthy. A full servicing at iFixRetro, board by board: every capacitor out and in, a new laser, a cleaned and greased drive, and ferroelectric RAM so a save never dies again.",
    "tags": [
-    "Restored"
+    "Story"
    ],
    "date_published": "2026-11-02T17:00:00Z"
   },

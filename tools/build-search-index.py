@@ -25,7 +25,7 @@ HINTS = {
     "wanted.html": "looking for hunt list",
     "pvm-20l5-buying-guide.html": "checklist pdf inspection",
     "monitors.html": "sony monitors pvm systems professional video monitor dataset",
-    "playchoice-10.html": "playchoice",
+    "playchoice-10.html": "playchoice games list",
     "forsale.html": "buy ebay listings",
     "index.html": "degauss button color bars smpte insert coin press start splash",
     "glossary.html": "degauss color bars smpte bars",
@@ -94,9 +94,10 @@ for p in sorted(root.glob("*.html")):
     profile = bool(re.search(r'<main[^>]*class="[^"]*\bprofile\b', src) or re.search(r'<div class="rt"', body_html))
     # A story ABOUT a machine must not outrank that machine's profile for the bare model number ("bvm 20e1u" has to
     # find bvm-20e1u.html first): such stories are listed here and rank at card weight (4), below the profile (10).
-    if p.name in ("bvm-20e1u-service.html", "playchoice-10-story.html"): profile = False
+    if p.name in ("bvm-20e1u-service.html", "playchoice-10-story.html", "playchoice-10-ranked.html"): profile = False
     ent = {"u": url, "t": h1t, "k": kind, "s": lede_t[:180], "h": " ".join(heads)[:1200], "b": body[:6000], "w": 10 if (profile or kind in ("Machine", "Monitors", "Coin-Op") or kind.startswith("Tool")) else -10 if (kind == "Registry" and p.name not in KIND) else 6}  # the 96 generated registry model pages rank below every real page (a model number must find its profile first; they still answer when nothing else has the model), so "pvm-20l5" still finds the profile first
     if p.name in ("bvm-20e1u-service.html",): ent["w"] = 4
+    if p.name == "playchoice-10-ranked.html": ent["w"] = -16  # same reason as the story below: it names all 52 games, so without this it outranks the cart wall for "<title> playchoice-10"
     if p.name == "playchoice-10-story.html": ent["w"] = -4  # additive: its H1 words ("Arcade", "You") substring-match two-letter query fragments, so it ranks under the cart wall for "<title> playchoice-10"
     if p.name in HINTS:
         ent["h"] = (ent["h"] + " " + HINTS[p.name]).strip()  # scored like a heading, never displayed
