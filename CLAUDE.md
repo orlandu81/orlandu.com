@@ -166,7 +166,7 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
 - `device_stage_files` refuses files newly created in the OneDrive folder ("hardlinked"). Convert on the laptop instead,
   or push the image under a new unreferenced slug first and fetch it in the container.
 - **Watermarks:** For Sale photos (`© orlandu.com` bottom-right, 4.2 % of the short edge) and the PC-10 board,
-  topper and VS.-card tiles (section 9). Nothing else on the site is watermarked, and nothing else should be.
+  topper and VS.-card tiles (section 10). Nothing else on the site is watermarked, and nothing else should be.
 - **Never hard-code the marquee's animation duration** — site.js sets it from a 75 px/s target.
 - **Marquee CSS targets `.strip>span` (direct child only).** The FOR SALE items are nested `data-itm` spans; a
   descendant selector gave each one 100 % padding and its own scroll, blanking the strip after "FOR SALE:" (10/31).
@@ -296,7 +296,8 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
 - **playchoice-10.html:** 52 board tiles (title-only captions, alphabetical ignoring "The") + 10 conversions (each a
   short story about its own game) + anatomy. Toppers stay on signage.html; never pair topper and cart tiles. The page's
   slugs are `pc10-cart-*` / `pc10-conv-*` (toppers own `pc10-<slug>`).
-- **signage.html:** topper wall (21, alphabetical; Double Dragon double-wide) and VS. instruction cards (18); the three
+- **signage.html:** topper wall (21, alphabetical; Double Dragon double-wide) and VS. instruction cards (18, each card
+  filling its tile since 11-27, section 10); the three
   lit signs as showcase entries. A topper is a sticker on a metal stand; the VS. cards were made for the Red Tent, the
   toppers were not (he only displays them there). Say "topper", not "insert" or "marquee".
 - **wanted.html** hunt list as David tiered it. **Name clashes:** a name on the wanted list, the Orlandu 50, the VS. card
@@ -419,18 +420,33 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
 - Testing without Neon: PGlite harness described in the Project doc `claude/registry-2026-10-23.md`.
 - Open, not promised: price-over-time chart, "update my entry" flow, LMD/AMS/BKM scope, CSV past ~100 entries.
 
-## 10. Dark backdrops on the PC-10, topper and VS. card walls
+## 10. Dark backdrops on the PC-10 and topper walls; the VS. card wall fills its tiles
 
-Every tile on playchoice-10.html and signage.html (#toppers, #cards) is a cut-out on the Spinning Tops backdrop
+Every tile on playchoice-10.html and signage.html#toppers is a cut-out on the Spinning Tops backdrop
 (radial glow (46,46,62) → (19,19,34), soft shadow, edge = `.shot` panel #131322). David: "this only works if it looks
 consistent" — a new board, topper or card gets the same treatment.
 - Boards 1600×480 (thumb 800×240, the 10:3 plate), built from the published redacted files; **heavy diagonal
   watermark on every board** plus the corner mark (`<slug>-dk2.webp`; Ninja Gaiden III keeps its `-dk`).
-- Toppers 1600×804 (Double Dragon 2400×819), cards 1600×1600, cut from the HEIC camera originals in `_originals/`,
+- Toppers 1600×804 (Double Dragon 2400×819), cut from the HEIC camera originals in `_originals/`,
   never from published crops; edges picked by eye at zoom, perspective-squared; a **light diagonal** "© orlandu.com"
-  (0.20 alpha, scaled 1.5× toppers / 2× cards, panel pixels only) plus the corner mark. Small PCH1-01-ROM boards need
+  (0.20 alpha, scaled 1.5× on toppers, panel pixels only) plus the corner mark. Small PCH1-01-ROM boards need
   keystone correction. Match a new topper's exposure to the wall with one linear gain.
-- Build scripts and edge picks: `_pending-deploy\dark-backdrops-2026-10-25.zip` + `dark-backdrops-wm.py` in the connected
+- **VS. instruction cards (signage.html#cards) left the backdrop on 2026-11-27.** David called the For Sale Excitebike
+  card "perfection" and asked for the same edit on every wall card; from three mock-ups he chose "fills the tile + watermark".
+  Each of the 18 is `media/2026/vscard-<slug>-cut.webp` (1600 px wide, alpha outside the card's real outline) with
+  800/600/400 thumbs; `.cardwall .shot img{aspect-ratio:1/1;object-fit:contain}` keeps the rows even (Sky Kid is taller
+  than square, T.K.O. Boxing wider; the other sixteen are set square). Recipe: every edge is traced on the card in the
+  HEIC original (the outermost mat-to-card step, about 900 samples a side), fitted with a spline and straightened with one
+  resample (output grid, Coons patch, perspective), so a curled card comes out flat-edged; 1.5 px inset; corners masked to
+  the card's own shape (Excitebike is rounded top-left only; R.B.I. Baseball and Sky Kid are square; most are rounded on
+  all four); camera tone untouched; the light diagonal "© orlandu.com" at 0.20 on card pixels + the 42 px corner mark.
+  PlayChoice and T.K.O. Boxing are black cards on the black mat, where no edge can be traced: PlayChoice is placed from
+  its white keyline plus the border width read off the mat's texture, T.K.O. from its white lower half and the
+  hand-checked top corners. Top Gun (a curled sticker) is rounded on all four corners to clear two rough ones.
+  **A new card gets this treatment, not the backdrop.** The For Sale card photos are the same cut without the diagonal.
+  Kit: `_pending-deploy\vs-card-cut-2026-11-27.zip` (cardcut.py, radii, per-card notes). The og-signage cover and the
+  step-signage tile still show cards on the backdrop (not rebuilt).
+- Build scripts and edge picks for the backdrop walls: `_pending-deploy\dark-backdrops-2026-10-25.zip` + `dark-backdrops-wm.py` in the connected
   folder, and the Project doc `claude/dark-backdrop-walls.md`. The og-signage-v2 cover was not watermarked.
 
 ## 11. Other features and references
