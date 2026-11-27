@@ -49,6 +49,15 @@ MONITORS = [
     ("BVM-A14F5U", 2003, "media/thumbs/monitors-bvm-a14f5u-dk.webp", "bvm-a14f5u.html"),
     ("LMD wall", 2005, "media/thumbs/monitors-lmd-wall-dk.webp", "lmd-wall.html"),
 ]
+# Order inside a year, consoles only, where a period source dates the release (month, day; day 0 = month only).
+# Sources are on each profile's "At launch" section and in the Project doc claude/console-launch-dates-prices-2026-11-26.md.
+# A console without an entry sorts after the dated ones, by name. Add a date only with its source in hand.
+RELEASED = {
+    "PC Engine Duo-R": (3, 25),   # Japan; NEC Retro / Gekkan PC Engine, May 1993
+    "NES Top Loader": (10, 0),    # Nintendo Power Vol. 53, October 1993
+    "Saturn": (5, 11),            # Sega of America press release, May 11, 1995
+    "Nomad": (10, 0),             # Sega of America press release, August 22, 1995
+}
 LANES = [("Coin-op", "coinop", COINOP, "#ff8a00"), ("Consoles", "consoles", CONSOLES, "#5ee9ff"), ("Monitors", "monitors", MONITORS, "#9effa0")]
 
 
@@ -88,7 +97,7 @@ for y in years:
     if prev is not None and y - prev >= 3:
         n = y - prev - 1
         spine += f'<div class="gap" aria-hidden="true"><span>{n} quiet years</span></div>'
-    items = sorted(byyear[y], key=lambda x: (["coinop", "consoles", "monitors"].index(LANE_OF[x][1]), x[0]))
+    items = sorted(byyear[y], key=lambda x: (["coinop", "consoles", "monitors"].index(LANE_OF[x][1]), RELEASED.get(x[0], (99, 0)), x[0]))
     spine += (f'<section class="yr" id="y{y}"><div class="ymark"><b>{y}</b></div>'
               f'<div class="ycards">{"".join(card(i) for i in items)}</div></section>')
     prev = y

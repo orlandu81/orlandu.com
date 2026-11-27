@@ -990,6 +990,19 @@ It also dropped the front loader’s AV jacks. Stock, the top loader speaks RF o
 
 The NESRGB board fixes that at the source. It takes the color straight from the console’s picture chip, so this NES joins the rest of the shelf in RGB: an RGB SCART cable into the switcher, a SCART to 4 BNC breakout out of it, and a Sony monitor at the end.
 
+## At launch
+
+- **Price**: $49.95
+- **In print**: October 1993
+- **Designer**: Lance Barr
+- **Aimed at**: First-time players
+
+Nintendo Power gave the redesign two pages in its October 1993 issue, under the headline “The New NES.” It put the suggested retail price at $49.95 and said Nintendo wanted an entry-level machine for people who had never played the classics.
+
+It also named the designer. Lance Barr, the Nintendo of America engineer who drew the box-shaped original in 1984, did this one too, after trying a Control Deck shaped like Mario’s head. And it says in five words why this console needed its mod: “Gone are the A/V outputs.”
+
+Source: Nintendo Power Vol. 53 (October 1993), pp. 86–87. The article gives a price but no on-sale day.
+
 ## What it puts out, and how it gets to the glass
 
 - **Stock output**: RF only
@@ -1053,6 +1066,19 @@ Its video is the catch. The American console sends composite and S-Video out of 
 
 The RGB upgrade puts it there, so the N64 takes the same road to the monitors as the rest of the shelf: an RGB SCART cable into the switcher, a SCART to 4 BNC breakout out of it, and a Sony monitor at the end.
 
+## At launch
+
+- **On sale**: September 29, 1996
+- **First announced for**: September 30
+- **Price**: About $200
+- **To rent**: $16.99 at Blockbuster Video
+
+Nintendo Power’s September 1996 issue caught the date changing. One page gives the North American debut as September 30. Another says the system goes on sale on the 29th. The October issue settles it for a reader: the launch had moved up to Sunday.
+
+The magazine never printed the price. A wire story a month after launch did: the console went on sale September 29 “with a $200 price tag.”
+
+Sources: Nintendo Power Vol. 88 (September 1996) and Vol. 89 (October 1996) for the dates and the rental; UPI, October 24, 1996 (https://www.upi.com/Archives/1996/10/24/Nintendo-64-US-sales-at-460000/6046846129600/), for the price.
+
 ## What it puts out, and how it gets to the glass
 
 - **Stock output**: Composite and S-Video
@@ -1097,6 +1123,17 @@ Nintendo folded the Game Boy Advance in half in 2003: a clamshell that protects 
 That light was a front light. It shone across the screen from the edge, and the picture looked washed out next to anything backlit.
 
 This one has an IPS panel in its place, installed by iFixRetro: a backlit screen with real contrast and wide viewing angles, inside the original cobalt shell.
+
+## At launch
+
+- **On sale**: March 23, 2003
+- **Price**: $99.95
+- **Launch colors**: Cobalt and platinum
+- **Announced**: January 7, 2003
+
+Nintendo announced the SP in New York on January 7, 2003, with an estimated retail price of $99.95 and two launch colors, cobalt and platinum. Nintendo Power’s March issue gave readers the date, March 23, and ran an ad that showed the platinum one with cobalt “also available.”
+
+Sources: Nintendo of America press release, January 7, 2003 (https://nintendoworldreport.com/pr/8149/game-boy-advance-sp-the-press-release); Nintendo Power Vol. 166 (March 2003). The Seattle Times of January 8, 2003 printed the price as $99.99.
 
 ## What changed, and what didn’t
 
@@ -1161,6 +1198,15 @@ Like every Genesis, it carries RGB on its AV port from the factory, so it needs 
 
 The weak point on any CD system is the laser. This one’s has been replaced, and two more of the same Sanyo pickup sit on the shelf for the next time.
 
+## At launch
+
+- **On sale**: April 1994
+- **Price**: $399
+
+Sega put the CDX on sale in North America in April 1994 at $399. Outside North America the same machine was called the Multi-Mega.
+
+Source: Sega Retro (https://segaretro.org/CDX), which cites GamePro, April 1994.
+
 ## What it puts out, and how it gets to the glass
 
 - **Video out**: RGB (native)
@@ -1207,6 +1253,15 @@ Two mods make it the one PC Engine the room needs. A region mod lets it run Amer
 
 A spare laser pickup for the Duo family sits on the shelf for the day the drive needs it.
 
+## At launch
+
+- **On sale**: March 25, 1993, in Japan
+- **Price**: ¥39,800
+
+NEC put the Duo-R on sale in Japan on March 25, 1993, at ¥39,800. It was a cost-reduced Duo: the same machine in a new shell, without the headphone jack and the lid lock.
+
+Sources: NEC Retro (https://necretro.org/Duo-R); the tg-16.com archive of Gekkan PC Engine, May 1993 (https://archives.tg-16.com/Gekkan_PC_Engine_1993_05.htm).
+
 ## What it puts out, and how it gets to the glass
 
 - **Stock output**: Composite
@@ -1252,6 +1307,17 @@ The slim PlayStation 2 arrived in 2004 at a fraction of the original’s size, w
 This one runs its games from a MemCard Pro 2. The card sits in the memory card slot, boots Free McBoot, and Open PS2 Loader plays games from its SD card, so the disc drive stays idle. Nothing inside the console is modified.
 
 It is also the one console here that doesn’t take the SCART road. Its component output goes through the switcher to a CE Labs AV901-HD distribution amplifier, which feeds the LMD wall.
+
+## At launch
+
+- **On sale**: November 1, 2004
+- **Price**: $149
+- **Announced**: September 21, 2004
+- **In Japan**: November 3, 2004
+
+Sony announced the redesign in Tokyo on September 21, 2004, and dated the North American release for Monday, November 1, at $149. Japan got it two days later.
+
+Source: Sony Computer Entertainment press release, September 21, 2004 (https://sonyinteractive.com/en/press-releases/2004/playstation2-gets-stunning-new-look/).
 
 ## What it puts out, and how it gets to the glass
 
@@ -6632,7 +6698,7 @@ The Long View
 # Forty Years on One Line
 
 Everything in the collection in the order the world first saw it — the cabinets and pins, the consoles, and the Sony monitors on one line, oldest at the top. Years are release years, not the year each one arrived here. Click anything to open its page.
- **1981**Donkey KongCoin-op (https://www.orlandu.com/donkey-kong.html)**1983**Mario Bros.Coin-op (https://www.orlandu.com/mario-bros.html)**1984**VS. Red TentCoin-op (https://www.orlandu.com/red-tent.html)VS. UniSystemCoin-op (https://www.orlandu.com/vs-unisystem.html)**1985**NES Front LoaderConsoles (https://www.orlandu.com/consoles.html)**1989**Game BoyConsoles (https://www.orlandu.com/consoles.html)Genesis Model 1Consoles (https://www.orlandu.com/consoles.html)TurboGrafx-16Consoles (https://www.orlandu.com/consoles.html)**1990**Turbo ExpressConsoles (https://www.orlandu.com/consoles.html)**1991**Mini CuteCoin-op (https://www.orlandu.com/mini-cute.html)Super NintendoConsoles (https://www.orlandu.com/consoles.html)**1992**Big BlueCoin-op (https://www.orlandu.com/big-blue.html)**1993**Indiana JonesCoin-op (https://www.orlandu.com/indiana-jones.html)NES Top LoaderConsoles (https://www.orlandu.com/nes-top-loader.html)PC Engine Duo-RConsoles (https://www.orlandu.com/pc-engine-duo-r.html)**1994**Genesis CDXConsoles (https://www.orlandu.com/genesis-cdx.html)JVC X'EyeConsoles (https://www.orlandu.com/jvc-xeye.html)PVM-2950QMonitors (https://www.orlandu.com/pvm-2950q.html)**1995**NomadConsoles (https://www.orlandu.com/consoles.html)SaturnConsoles (https://www.orlandu.com/consoles.html)BVM-20E1UMonitors (https://www.orlandu.com/bvm-20e1u.html)**1996**Nintendo 64Consoles (https://www.orlandu.com/nintendo-64.html)**1999**DreamcastConsoles (https://www.orlandu.com/consoles.html)**2001**GameCubeConsoles (https://www.orlandu.com/consoles.html)**2002**PVM-20L5Monitors (https://www.orlandu.com/pvm-20l5.html)**2003**Game Boy Advance SPConsoles (https://www.orlandu.com/gba-sp.html)BVM-A14F5UMonitors (https://www.orlandu.com/bvm-a14f5u.html)**2004**PlayStation 2Consoles (https://www.orlandu.com/ps2-slim.html)**2005**LMD wallMonitors (https://www.orlandu.com/lmd-wall.html)**2015**New 3DS XLConsoles (https://www.orlandu.com/consoles.html)**2016**GhostbustersCoin-op (https://www.orlandu.com/ghostbusters.html)New 3DS XL — SNES EditionConsoles (https://www.orlandu.com/consoles.html)**2017**Total Nuclear AnnihilationCoin-op (https://www.orlandu.com/tna.html)**2020**Rick and MortyCoin-op (https://www.orlandu.com/rick-and-morty.html)
+ **1981**Donkey KongCoin-op (https://www.orlandu.com/donkey-kong.html)**1983**Mario Bros.Coin-op (https://www.orlandu.com/mario-bros.html)**1984**VS. Red TentCoin-op (https://www.orlandu.com/red-tent.html)VS. UniSystemCoin-op (https://www.orlandu.com/vs-unisystem.html)**1985**NES Front LoaderConsoles (https://www.orlandu.com/consoles.html)**1989**Game BoyConsoles (https://www.orlandu.com/consoles.html)Genesis Model 1Consoles (https://www.orlandu.com/consoles.html)TurboGrafx-16Consoles (https://www.orlandu.com/consoles.html)**1990**Turbo ExpressConsoles (https://www.orlandu.com/consoles.html)**1991**Mini CuteCoin-op (https://www.orlandu.com/mini-cute.html)Super NintendoConsoles (https://www.orlandu.com/consoles.html)**1992**Big BlueCoin-op (https://www.orlandu.com/big-blue.html)**1993**Indiana JonesCoin-op (https://www.orlandu.com/indiana-jones.html)PC Engine Duo-RConsoles (https://www.orlandu.com/pc-engine-duo-r.html)NES Top LoaderConsoles (https://www.orlandu.com/nes-top-loader.html)**1994**Genesis CDXConsoles (https://www.orlandu.com/genesis-cdx.html)JVC X'EyeConsoles (https://www.orlandu.com/jvc-xeye.html)PVM-2950QMonitors (https://www.orlandu.com/pvm-2950q.html)**1995**SaturnConsoles (https://www.orlandu.com/consoles.html)NomadConsoles (https://www.orlandu.com/consoles.html)BVM-20E1UMonitors (https://www.orlandu.com/bvm-20e1u.html)**1996**Nintendo 64Consoles (https://www.orlandu.com/nintendo-64.html)**1999**DreamcastConsoles (https://www.orlandu.com/consoles.html)**2001**GameCubeConsoles (https://www.orlandu.com/consoles.html)**2002**PVM-20L5Monitors (https://www.orlandu.com/pvm-20l5.html)**2003**Game Boy Advance SPConsoles (https://www.orlandu.com/gba-sp.html)BVM-A14F5UMonitors (https://www.orlandu.com/bvm-a14f5u.html)**2004**PlayStation 2Consoles (https://www.orlandu.com/ps2-slim.html)**2005**LMD wallMonitors (https://www.orlandu.com/lmd-wall.html)**2015**New 3DS XLConsoles (https://www.orlandu.com/consoles.html)**2016**GhostbustersCoin-op (https://www.orlandu.com/ghostbusters.html)New 3DS XL — SNES EditionConsoles (https://www.orlandu.com/consoles.html)**2017**Total Nuclear AnnihilationCoin-op (https://www.orlandu.com/tna.html)**2020**Rick and MortyCoin-op (https://www.orlandu.com/rick-and-morty.html)
 
 ---
 
@@ -7357,7 +7423,7 @@ Everything on this site is readable by an AI assistant, and now callable by one.
 ## Three ways in
 
 - **llms.txt** — a one-page index of the site for agents: https://www.orlandu.com/llms.txt (https://www.orlandu.com/llms.txt)
-- **llms-full.txt** — the whole site's text in one Markdown file, about 100,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
+- **llms-full.txt** — the whole site's text in one Markdown file, about 101,000 words, for an agent that wants to read everything at once: https://www.orlandu.com/llms-full.txt (https://www.orlandu.com/llms-full.txt)
 - **The MCP server** — tools an agent can call: https://www.orlandu.com/api/mcp
 
 ## The MCP server

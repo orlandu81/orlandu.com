@@ -441,6 +441,16 @@ consistent" — a new board, topper or card gets the same treatment.
   outlines, the clear Ghostbusters bag as a highlight matte, a partial white-balance pull) and scripts: Project doc
   `claude/machine-paperwork-2026-11-23.md`. Declined the same day from mockups: a VS. board wall and a BKM card wall ("both of these
   look bad"); video games stay off the site (the no-inventory rule); a skate-deck wall is parked until he has time to shoot it.
+- **"At launch" on the six console profiles (2026-11-26).** nes-top-loader, nintendo-64, gba-sp, genesis-cdx, pc-engine-duo-r and
+  ps2-slim carry an `h2.sec` "At launch" above their first technical section: a `dl.inputs` (two or four cells, never three), one or
+  two paragraphs, and a `p.note.fine` source line. Every fact there has a source named on the page: Nintendo Power by volume (Top
+  Loader Vol. 53; N64 Vols. 88-89; GBA SP Vol. 166), a maker's press release (GBA SP, PS2 Slim) or a wire story (N64 price), and for
+  the CDX and Duo-R a reference site that cites the period magazine (weaker; say so if asked). Launch prices are the makers' list
+  prices, not David's, and stay OUT of Quick answers. Nintendo Power rarely printed a hardware price (found: the Top Loader and the GameCube), so prices
+  generally need a newspaper or press release. `RELEASED` in tools/build-timeline.py orders consoles inside a year where a source
+  dates them (1993, 1995 so far). Still owed: sourced dates for all 19 consoles shown on the timeline with a sources table (David
+  chose it 11-26; nine consoles are not sourced yet, so no date labels are shown). Findings and the open list: Project doc
+  `claude/console-launch-dates-prices-2026-11-26.md`.
 - **The ranked PlayChoice-10 story (2026-11-26).** `playchoice-10-ranked.html` ("Ranked: Every PlayChoice-10 Game, and the One That Charted
   Early", kicker By the Numbers, 6 min; FEATURED on Stories). All 52 cart-wall titles scored against Nintendo Power's NES chart, 63 charts
   (Vols. 1-12, 14, 16, 18, 20-67; the Top 30 became a Top 20 with Vol. 32). **Scoring (David asked for a ranking, the method is Claude's
