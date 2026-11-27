@@ -557,8 +557,8 @@ consistent" — a new board, topper or card gets the same treatment.
   the H.264 fallbacks (a from-master veryslow encode at equal SSIM saves ~9 %), and the other sub-1400 photos (no larger
   original in `_originals/`).
 - **Review ten (2026-11-10), ten polish fixes — all ten approved.** One CSS block at the end of style.css ("Review
-  ten"). Hooks: a grid with a FIXED card count adds `n2`/`n3`/`n5` beside `c2`/`c3` so no row ends with a hole (games
-  `#gameroom` uses `quad`; consoles Nintendo/Sega `n3`; wanted marquees/BKM `n5`, Red Tent `n3`; projects photo rows
+  ten"). Hooks: a grid with a FIXED card count adds `n2`/`n3`/`n4`/`n5` beside `c2`/`c3` so no row ends with a hole (games
+  `#gameroom` uses `quad`; consoles Nintendo/Sega `n3`; wanted marquees `n4` (four since the VS. Castlevania marquee arrived 11-27; 2×2 from 761 px, four across from 1100), BKM `n5`, Red Tent `n3`; projects photo rows
   `n3` + `align-items:start`; about FAQ `n2`; the registry builder adds `n3` when the related row divides by three) —
   when a count changes, change the class. "More stories" is a growing list and is left alone. Home Latest: the first
   card spans both columns (nine = lead + 4×2). `--measure:72ch` caps unclassed running text in `main.hub section`
