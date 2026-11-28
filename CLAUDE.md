@@ -341,8 +341,14 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   **Metal Gear Solid** for PlayStation (front + back of the case side by side on alpha; a game David puts up for trade is
   his call and not a reopening of the no-games-wall ruling). Marquee photos are full-frame rectangles with SQUARE corners
   (David, 11-27: "square off the castlevania marquee… no rounded corners"), edges traced and straightened, corner mark
-  26 px — bottom-left on Castlevania because the bottom-right holds the trademark lines. The desktop grid is THREE columns
-  from ~1141 px: a `wide` card spans two, so count columns when a card is added or leaves (today 4 + 2 | 2 + 1 closes).
+  26 px — bottom-left on Castlevania because the bottom-right holds the trademark lines. **Layout since 11-27 evening**
+  (David: "everything is kind of cluttered… make it look more clean and inviting"), page-scoped CSS in forsale.html on
+  `.grid.c2.sales`: fixed columns (1 / 2 from 701 px / 3 from 1141 px), 3rem between rows, `grid-auto-flow:dense`; a `wide`
+  card spans two and sits BEFORE the single card that shares its row in the source, so both marquees stack on the left
+  (3 | 2+1 | 2+1 today — count columns when a card is added or leaves). Each card is a grid: photo, ONE label row (badge +
+  `.sub` side by side), name, copy capped at 62ch, and a quiet text link in place of the outlined button ("View on eBay →",
+  "Offer a trade →"; the `/itm/` href is what `api/ebay.js` reads, not the words). The flex rules for `.card.sale` in
+  style.css ("Review ten") are overridden there.
   The home ticker names the trade marquees in plain text. Listing copies for eBay / KLOV are made WITHOUT the site mark.
   Kit: `_pending-deploy\for-trade-2026-11-27.zip`.
 - **`api/ebay.js`** (the safety net, not the sweep): `GET /api/ebay?ids=…` checks each `/itm/` id via eBay's Browse
