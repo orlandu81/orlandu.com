@@ -247,9 +247,8 @@ against the merged file — a stale edit can be wrong, not just conflicting.
   N64s and both NES units are RGB-modded (NESRGB); the Duo-R has RGB + region mods; the TurboGrafx-16 is stock and
   reaches RGB through an EDFX AV Adapter; the PS2 Slim is not modded; one switcher per room; the Mini Cute is fully
   original; LMD-9020 SD only, LMD-9030 HD over component, both 640×480; LMD-940W HDMI + SDI; BVM-A14F5U has the
-  BKM-68X clone + BKM-62HS; the 20L5's slot holds a BKM-129X (second analog input, not SCART/VGA), sync 15–45 kHz
-  (its grille pitch is 0.31 mm per Sony's preliminary spec sheet — that change to through-the-mask ships with the
-  held How Big story); BVM-20E1U has four slots with only a BKM-21D fitted, is controlled by the BKM-10R, reads
+  BKM-68X clone + BKM-62HS; the 20L5's slot holds a BKM-129X (second analog input, not SCART/VGA), sync 15–45 kHz,
+  grille pitch 0.31 mm (Sony's preliminary spec sheet; in through-the-mask since 11-27); BVM-20E1U has four slots with only a BKM-21D fitted, is controlled by the BKM-10R, reads
   44,708 hours, plate October 1998, fully serviced by **SavonPat** in 2026 (story `bvm-20e1u-service.html`; Sony's
   30,000-hour rating was cut from it — don't put it back); the AMS-3 is in storage with its pots fixed; Ghostbusters'
   Spike 1 board is a spare; the PlayChoice library is 52; he finished A Link to the Past about fifty times.
@@ -350,9 +349,10 @@ against the merged file — a stale edit can be wrong, not just conflicting.
   `how-to-read-a-playfield.html`; `mario-before-super.html`; `ocarina-of-time-switch-2.html`; `jvc-xeye.html`;
   `connect-console-to-pvm.html` (holds the merged Signal Chain as `#chain`); Trinitron Fleet Vol. 1 (kept, not merged).
 - **HELD, not on main (bundles in `_pending-deploy\`, both re-cut on 11-27 against that night's main):**
-  "How Big Is Too Big?" (`how-big-is-too-big.html`, the 10-minute cut David has not read; his 11/21 ruling was "recut
+  "How Big Is Too Big?" (`how-big-is-too-big.html`, the 10-minute cut; reading copy sent 11-27; his 11/21 ruling was "recut
   to 10 mins, then keep holding it") and "Only Ten Games Ever Topped Nintendo Power's NES Chart"
-  (`nes-number-ones.html`; title is Claude's). Release = fetch the bundle, merge, rerun the pre-push list, ask.
+  (`nes-number-ones.html`; title is Claude's). On 11-27 he shipped everything else and kept both held. Release =
+  fetch the bundle, merge (main has moved one commit past the bundles' base), rerun the pre-push list, ask.
   Tabled story ideas (not declined): `claude/story-ideas-2026-11-20.md`.
 - **Home page:** registry band under the hero; ticker; filmstrip (from the gallery); Step Inside = twelve cards, two
   across on phones (thumb + title only), three across from 1061 px; the reading room rotates three older stories a
@@ -368,7 +368,8 @@ against the merged file — a stale edit can be wrong, not just conflicting.
   (`claude/ams-100-pdf-build.md`); publish a rebuild under a new filename. Appendix E cites Sony's AMS-3 manual.
 - **Vault:** `vault.html` on David's device (not in the repo), ~1,283 items; facts he has corrected on the site win.
   `C:\Users\david\Vault Photos` holds documentation shots by item id. Searched 11-27 for larger originals of the 35
-  published photos under 1,400 px: none is the same shot. It does hold sharp, separate photos of Big Blue's marquee
-  and control panel (`ARC\ORL-ARC-1`), offered to David as replacements for the two 520 px photos — his call.
+  published photos under 1,400 px: none is the same shot. Big Blue's marquee (lit) and control panel (from above) on
+  big-blue.html are Vault shots since 11-27 (`big-blue-marquee-v2`, `big-blue-control-panel-v2`, cut from
+  `ARC\ORL-ARC-1`; David saw the mock and said ship). The panel photo is wider than its two neighbors.
 - **Sweep baseline:** `_qa\baseline-2026-11-20-*.zip` in the connected folder (65 pages × 390/768/1280/1920). Every
   page is ~25 px shorter than those shots since the footer lost a link, so compare regions, not page heights.
