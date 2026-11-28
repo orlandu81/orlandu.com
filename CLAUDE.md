@@ -335,6 +335,16 @@ the merged file: a stale edit can be wrong, not just conflicting (an item you're
   sitemap `<image:image>` line + delete both `sale-*` sizes (delete is the default; don't ask) → re-cut
   `step-forsale` if it was cut from that item (don't ask which board) → gallery entry + files if any → counts and
   copy on neighboring cards → generators. The first card owns the head preload/fetchpriority.
+- **For Trade cards** (since 11-23; same grid, badge `For trade`, button "Offer a trade →" to `about.html?subject=…#write`, no
+  `/itm/`, no `data-itm`): two VS. cards, the VS. Super Mario Bros. marquee, and since 11-27 the **VS. Castlevania marquee**
+  (David: it "has been cut so it is not NOS anymore but it is in very good condition" — the card says exactly that) and
+  **Metal Gear Solid** for PlayStation (front + back of the case side by side on alpha; a game David puts up for trade is
+  his call and not a reopening of the no-games-wall ruling). Marquee photos are full-frame rectangles with SQUARE corners
+  (David, 11-27: "square off the castlevania marquee… no rounded corners"), edges traced and straightened, corner mark
+  26 px — bottom-left on Castlevania because the bottom-right holds the trademark lines. The desktop grid is THREE columns
+  from ~1141 px: a `wide` card spans two, so count columns when a card is added or leaves (today 4 + 2 | 2 + 1 closes).
+  The home ticker names the trade marquees in plain text. Listing copies for eBay / KLOV are made WITHOUT the site mark.
+  Kit: `_pending-deploy\for-trade-2026-11-27.zip`.
 - **`api/ebay.js`** (the safety net, not the sweep): `GET /api/ebay?ids=…` checks each `/itm/` id via eBay's Browse
   API (client-credentials token, edge cache 30 min); `live:false` hides the card and the marquee `data-itm` span; the
   "More on eBay" line reads live feedback into `data-fb-pct`/`data-fb-score`. **New sale cards must keep the `/itm/`
