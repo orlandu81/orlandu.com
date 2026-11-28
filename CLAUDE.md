@@ -1,649 +1,374 @@
 # orlandu.com — working notes for Claude
 
-> **BEFORE YOU PUSH ANYTHING — ASK DAVID FIRST.** Every push stores a full ~100 MB copy of the site on Vercel and
-> the Hobby Deployment Storage allowance is the binding limit. When an edit is ready, do not push it. Ask, as a
-> multiple-choice question: **"Push now, or hold it for the next batch?"** Only push on "now". This applies to
-> one-line and docs-only commits too, unless his request already said "push now". If he says hold, leave the
-> commit local and say plainly at the end of the session what is held (a held commit lives only in that clone).
+> **BEFORE YOU PUSH ANYTHING — ASK DAVID FIRST.** Every push stores a full ~100 MB copy of the site on Vercel. When an
+> edit is ready, do not push it. Ask, as a multiple-choice question: **"Push now, or hold it for the next batch?"** Only
+> push on "now". This applies to one-line and docs-only commits too, unless his request already said "push now". If he
+> says hold, leave the commit local, save a bundle in `_pending-deploy\`, and say plainly what is held.
 
 Static site for Orlandu's Arcade: a garage arcade + game room, ~10 machines, 13 Sony professional monitors,
 ~25 consoles. Owner: David (GitHub `orlandu81`). No build step — plain HTML/CSS/JS served from the repo root, plus
-Vercel functions under `api/`. This file is organized by topic, not by date; rewritten 2026-10-30 from the
-round-by-round notes (the old text is in git history if a detail is ever missing).
+Vercel functions under `api/`. Organized by topic, not by date. Rewritten 2026-11-27 (73 KB → about half); the
+round-by-round text it replaced is in git history, and the long recipes live in the Project docs named below
+(`claude/<name>.md` in the claude.ai Project "Orlandu.com").
 
 ## 1. Deploying
 
 ### Before every push, run these, in this order
 
 ```
-python3 tools/build-registry-specs.py # before the page builder, only if a model's notes or the PHYS table changed (writes `specs` into the catalog)
-python3 tools/build-registry-pages.py # FIRST, only if data/registry-models.json or the builder changed (writes 99 pages)
-python3 tools/build-timeline.py      # only if a timeline thumb/year changed; it rewrites timeline.html
-python3 tools/build-machine-select.py # only if a machine profile's spec tiles or accent, a roster card's copy or a portrait changed; rewrites the select block in games.html
-python3 tools/build-gallery-static.py # after any assets/gallery-data.js edit: writes the wall into gallery.html as plain HTML (crawlers; the page script redraws it)
-python3 tools/build-archive.py       # after any Stories or Latest-ledger edit: the home reading room's rotation pool (index.html)
-python3 tools/build-llms-full.py     # llms-full.txt + data/pages.json (what the MCP server reads); refreshes the word count on mcp.html/llms.txt
-python3 tools/build-search-index.py  # assets/search-index.js is generated
+python3 tools/build-registry-specs.py # only if a model's notes or the PHYS table changed (writes `specs` into the catalog)
+python3 tools/build-registry-pages.py # only if data/registry-models.json or the builder changed (writes 99 pages)
+python3 tools/build-timeline.py      # only if a timeline thumb/year/date changed; rewrites timeline.html
+python3 tools/build-machine-select.py # only if a machine profile's spec tiles/accent, a roster card or a portrait changed (games.html select block)
+python3 tools/build-gallery-static.py # after any assets/gallery-data.js edit (plain-HTML wall inside gallery.html)
+python3 tools/build-archive.py       # after any Stories or Latest-ledger edit (home reading-room rotation pool)
+python3 tools/build-llms-full.py     # llms-full.txt + data/pages.json; refreshes the word count on mcp.html/llms.txt
+python3 tools/build-search-index.py  # assets/search-index.js
 python3 tools/build-datasets.py      # data/*.json|csv + data/search-index.json (after the index)
-python3 tools/build-feed.py          # feed.xml + feed.json; run after any Latest-ledger or Stories edit
+python3 tools/build-feed.py          # feed.xml + feed.json; after any Latest-ledger or Stories edit
 python3 tools/stamp-assets.py        # ?v=<hash> on every style.css / site.js / gallery-data.js / registry / connect-plan reference
-python3 tools/update-lastmod.py      # sitemap <lastmod> = the Pacific day each page's <main> content last changed
+python3 tools/update-lastmod.py      # sitemap <lastmod> = the Pacific day each page's <main> last changed
 python3 tools/build-static-footer.py # after any footer/NAV change in site.js, and after build-registry-pages
-node tools/test-mcp.mjs              # contract checks on api/mcp.js — must print "0 failed"
-node tools/eval-search.mjs           # 958-query battery vs both search paths; top-1 ≥ 90 %, top-3 ≥ 97 %
+node tools/test-mcp.mjs              # must print "0 failed"
+node tools/eval-search.mjs           # 958 queries, both search paths; top-1 ≥ 90 %, top-3 ≥ 97 % — read BOTH `ALL` lines
 ```
 
 - Generators that write pages (registry builder, timeline, the magazine `build_page.py` scripts) emit bare asset
-  references and an empty `<footer class="site">` shell, so **stamp and re-render the footer AFTER generating**.
-- `stamp-assets.py` exists because `assets/*.css|js` are served stale-while-revalidate for a week.
-- `update-lastmod.py` and `build-feed.py` need full history (`git fetch --unshallow` on a shallow clone). Both date
-  commits by their **Pacific** day, so an evening push from the UTC laptop VM no longer stamps tomorrow.
-  update-lastmod ignores head-only edits on purpose. It reads every sitemap `<loc>` that has a `<lastmod>` as UTF-8, so
-  `media/pvm-20l5-checklist.pdf` is in the sitemap WITHOUT a lastmod, deliberately.
-- **The footer is pre-rendered into every page's shell** so crawlers that don't run JS see the full link set. site.js
-  overwrites it at runtime with the identical string; never hand-edit the static copy (the tool asserts they match).
-- Then verify locally with Playwright (no console errors, no horizontal overflow at 320, 360, 390 and 1280). The 320 and
-  360 widths were added 11-27: a 390-only check had let five pages scroll sideways on small phones (an auto-fill
-  `minmax(330px,1fr)` in both magazines, the one-word GHOSTBUSTERS heading, a URL in `<code>` on mcp.html, and the
-  Trinitron Fleet battle rows). Write auto-fill minimums as `minmax(min(Npx,100%),1fr)`; the Orlandu 50's `build_page.py`
-  on David's device carries the same change.
+  references and an empty `<footer class="site">`, so **stamp and re-render the footer AFTER generating**. The footer
+  is pre-rendered into every page for crawlers; site.js overwrites it with the identical string. Never hand-edit it.
+- `update-lastmod.py` and `build-feed.py` need full history (`git fetch --unshallow`). Both date by the Pacific day.
+  update-lastmod ignores head-only edits. `media/pvm-20l5-checklist.pdf` is in the sitemap WITHOUT a lastmod on purpose.
+- Then check locally with Playwright: no console errors, no sideways scroll at **320, 360, 390 and 1280**. Write
+  auto-fill minimums as `minmax(min(Npx,100%),1fr)`.
 
-### How a push actually happens
+### How a push happens (since 2026-11-14)
 
-**Changed 2026-11-14.** The device shell on David's laptop now refuses `git push` ("Cowork blocked this request: only
-git clone, git fetch and plain downloads from GitHub work here"), so the token route below no longer works from
-there. David connected GitHub to Claude the same day (Customize > Connectors > GitHub Integration, Claude GitHub App
-installed on `orlandu81`). The route now: attach the repo to the session with push access (`add_repo`, access
-`push`), clone in the CONTAINER, commit there and push from there. Seen so far: a new `claude/…` branch pushes; a tag
-push and a branch delete are refused (403). If a push to `main` is refused, push a `claude/…` branch and merge it by
-pull request. Fallback that always works: a bundle in `_pending-deploy\` plus a paste-into-PowerShell block David
-runs on his PC (Git for Windows is installed).
+Attach the repo with push access (`add_repo`, access `push`), clone in the CONTAINER, commit and push `main` from
+there. Commit as `git -c user.name=orlandu81 -c user.email=orlandusarcade@gmail.com -c commit.gpgsign=false` — David is
+the author on this repo; if a hook asks to re-author to an Anthropic address, don't, and tell him once. A new
+`claude/…` branch pushes; tag pushes and branch deletes are refused. If `main` is refused, push a `claude/…` branch
+and merge by pull request. The device shell on his laptop can clone and fetch but **not push**.
+Fallback that always works: `git bundle create` in /tmp, copy it into `_pending-deploy\` in the connected folder,
+and give him a paste-into-PowerShell block (Git for Windows is installed). Afterwards move the bundle to `_to_delete\`.
+Verify a push with the GitHub commit-status API ("Deployment has completed", ~45 s), then the live page in the
+browser pane. The container and the device shell cannot reach `www.orlandu.com`; WebFetch caches 15 min per URL.
 
-Before 11/14 the container could clone and fetch but not push, and pushes went from David's laptop VM through the
-device shell (kept for reference; steps 2, 4, 5 and 6 still apply to the bundle fallback):
-1. Clone fresh into a unique `/tmp/orl-<ts>` (the VM's `$HOME` sits on a shared `/sessions` disk that fills up; old
-   clones in `/tmp` may belong to dead sessions and can't be removed). `--depth 20` is fine for a push.
-2. Bring the work across: either make the commits there, or `git bundle create x.bundle <origin-sha>..main` in the
-   container, `SendUserFile` it, `device_commit_files` it into the connected folder (full Windows path
-   `C:\Users\david\OneDrive\Kempner Docs LAST BACKUP 5.24.2025\Desktop\orlandu.com\_pending-deploy\…`; `~/mnt/…` paths are
-   rejected), then `git fetch <bundle> main:incoming && git merge --ff-only incoming`.
-3. Token: `github-token.txt` in the connected folder is a note with the token in prose —
-   `grep -o 'gh[pousr]_[A-Za-z0-9_]\{20,\}' github-token.txt | head -1`. Push to
-   `https://x-access-token:$T@github.com/orlandu81/orlandu.com.git HEAD:main`. Never echo the token.
-4. Move the bundle to `_to_delete/` (the device shell cannot `rm` in mounted folders). Don't chain that `mv` with `&&`
-   after a step that can fail, or the bundle is filed away unpushed.
-5. Verify: GitHub commit-status API ("Deployment has completed", ~40–50 s), then the live page in the browser pane
-   (`get_page_text`). The container's curl and the device shell can't reach `www` (403 / blocked); WebFetch caches
-   15 min per URL, so add a throwaway query.
-6. Commit as `git -c user.name=orlandu81 -c user.email=orlandusarcade@gmail.com` — David is the author on this repo.
+### One push per session; a rejected push means another session is live
 
-### One push per session
-
-Every push stores the whole output for the retention period (set to the shortest; Vercel still keeps the last
-10 + 20 production deployments, ~2 GB floor). ~170 pushes in a week once took Deployment Storage to 75 % and later
-past the 10 GB allowance (it has since purged; see the project memory on hosting limits). So: **batch a session's
-work, verify locally, ask, push once.** A second push needs a reason (he asked for it live, or the first was broken).
-Never push "to see it on the live site". A sale that must come off For Sale is a "now"; a caption tweak is a "hold".
-
-### A rejected push means another session is live — merge, never force
-
-David runs several Claude sessions against this repo; one once held 17 unpushed commits. **Never `--force` or
-`--force-with-lease`.** On `! [rejected]`: fetch, read `git log --oneline HEAD..FETCH_HEAD`, merge if clean and say what
-came in. **If it conflicts, throw away your version, not theirs** (`merge --abort`, `reset --hard FETCH_HEAD`, redo
-your edit on their file) — hand-resolving risks reverting their work invisibly. Then re-check your content against
-the merged file: a stale edit can be wrong, not just conflicting (an item you're editing may already have sold).
+Batch a session's work, verify locally, ask, push once. A second push needs a reason (he asked for it live, or the
+first was broken). A sale that must come off For Sale is a "now"; a caption tweak is a "hold".
+David runs several Claude sessions against this repo. **Never `--force` or `--force-with-lease`.** On `! [rejected]`:
+fetch, read `git log --oneline HEAD..FETCH_HEAD`, merge if clean and say what came in. If it conflicts, throw away
+YOUR version (`merge --abort`, `reset --hard FETCH_HEAD`, redo your edit on their file), then re-read your content
+against the merged file — a stale edit can be wrong, not just conflicting.
 
 ## 2. Hosting and verification
 
-- **Vercel**, auto-deploys `main`. History: GitHub Pages → Netlify → Vercel. GitHub Pages was disabled 2026-10-20;
-  `netlify.toml` and `CNAME` were deleted 2026-10-30 on David's say-so. The old Netlify project may still answer at
-  `sensational-cocada-4cbd01.netlify.app` — not evidence of anything. Check DNS with
-  `https://dns.google/resolve?name=www.orlandu.com&type=CNAME&cd=0` (apex A 216.198.79.1, www → `*.vercel-dns-017.com`,
-  nameservers GoDaddy) — never infer the host from repo files.
-- `vercel.json` is the only hosting config: security headers, caching, CORS on `/data/*` + llms/feed files, and
-  redirects (`/index.html → /`, `/library.html → /consoles.html`, the old AMS-100 PDF → `-rev2`).
-- **Internal links to the home page are `/`, never `index.html`** (a redirecting URL in every nav cost a GSC
-  "Page with redirect" notice).
-- **Vercel Web Analytics self-traffic opt-out:** any page with `?noanalytics=1` sets
-  `localStorage["orlandu-noanalytics"]="1"` and that browser is never counted (`=0` re-enables). Open the first page
-  in a new browser-pane profile that way.
-- **A Vercel function only sees a new or changed environment variable after the NEXT deployment.** Env vars:
-  `RESEND_API_KEY`, `EBAY_CLIENT_ID` / `EBAY_CLIENT_SECRET` (Secret type — write-only in the UI; fixed and verified
-  2026-10-30), `DATABASE_URL` + the Neon set, `BLOB_READ_WRITE_TOKEN`, optional `REGISTRY_ADMIN_SECRET`.
-- **Never delete** the root verification files `7984e193fb220a08e3d0a7abd9711dcd.txt` (IndexNow key) and
-  `BingSiteAuth.xml`, or the MCP-registry TXT record at the orlandu.com apex in GoDaddy.
-- gallery.html draws its wall client-side from `assets/gallery-data.js`; since 2026-11-21 the same figures are also in the raw HTML between `gallery-static` markers (`tools/build-gallery-static.py`). Edit the data file, never the markers. Certificates: SSL Labs, not
-  `openssl` from here (it returns the proxy's cert).
-- IndexNow: GET `https://api.indexnow.org/indexnow?url=<urlencoded>&key=7984e193fb220a08e3d0a7abd9711dcd` (empty 200 =
-  success; WebFetch reports it as unparseable binary). Google ignores IndexNow.
+- **Vercel**, auto-deploys `main`. `vercel.json` is the only hosting config: security headers, caching, CORS on
+  `/data/*` + llms/feed files, redirects (`/index.html → /`, `/library.html → /consoles.html`,
+  `/signal-chain.html → /connect-console-to-pvm.html`, old AMS-100 PDFs → `-rev3`). DNS is GoDaddy; check with
+  `https://dns.google/resolve?name=www.orlandu.com&type=CNAME&cd=0`, never infer the host from repo files.
+- **Internal links to the home page are `/`, never `index.html`.**
+- Analytics self-traffic opt-out: `?noanalytics=1` on any page sets `localStorage["orlandu-noanalytics"]="1"`. Open the
+  first page in a new browser-pane profile that way.
+- A Vercel function sees a new or changed environment variable only after the NEXT deployment. Env vars:
+  `RESEND_API_KEY`, `EBAY_CLIENT_ID` / `EBAY_CLIENT_SECRET` (write-only in the UI), `DATABASE_URL` + the Neon set,
+  `BLOB_READ_WRITE_TOKEN`, optional `REGISTRY_ADMIN_SECRET`.
+- **Never delete** `7984e193fb220a08e3d0a7abd9711dcd.txt` (IndexNow key), `BingSiteAuth.xml`, or the MCP-registry TXT
+  record at the apex. `ebay-callback.html` and `tesla-callback.html` are noindex utility pages, not part of the site.
+- IndexNow: GET `https://api.indexnow.org/indexnow?url=<urlencoded>&key=7984e193fb220a08e3d0a7abd9711dcd` from a
+  www.orlandu.com page in the browser pane (`fetch(..., {mode:'no-cors'})`). Google ignores IndexNow; use Search
+  Console's Request Indexing (recipe and quota in the project notes on SEO).
+- PageSpeed runs from the browser pane (pagespeed.web.dev). A local Lighthouse run is indicative only: it reported
+  CLS 0.16 on the home page where the live page measures 0 (11-27: live mobile 96 / 100 / 100 / 100).
 
 ## 3. Media
 
-- Photos are **WebP**: full size `media/2026/` (longest side ≤ 1600, q82), thumbs `media/thumbs/` 800 wide, saved with
-  Pillow `save(p, "WEBP", quality=82, method=6)`, never with `exif=`. `media/og/` stays JPEG for social scrapers.
-  Siblings `-400/-600/-800/-2x` keep their convention. HEIC needs `pillow-heif` and `ImageOps.exif_transpose`.
-- **Never replace a media file in place.** `/media/*` and assets images/fonts are `max-age=31536000, immutable`; a browser
-  that has a file keeps it a year. A changed image gets a NEW filename (`-v2`) and the old file is deleted; an `-800`
-  sibling carries the same version as its 1200. CSS/JS are stamped by `stamp-assets.py`. JSON-LD image URLs stay
-  unversioned.
-- **Strip location metadata.** iPhone originals carry GPS. Pillow drops EXIF unless asked and ffmpeg drops QuickTime
-  location tags, so never commit a camera original into `media/`. Re-audit EXIF after any bulk add.
-- **Video is three encodes per clip:** `<clip>.av1.mp4`, `<clip>.hevc.mp4` (`hvc1` tag), then the H.264 `<clip>.mp4` last,
-  each `<source>` with a `codecs` type read from the file. `tools/encode-video.sh media/video/<clip>.mp4` makes both
-  siblings and prints SSIM (keep ≥ 0.97) and the source lines. **H.264 stays canonical**: VideoObject `contentUrl`,
-  sitemap `video:content_loc`. gallery.html adds the siblings from the entry's `av1`/`hevc` fields. A new video needs a
-  VideoObject (duration from ffprobe; `uploadDate` = the ship date).
-- **Fonts are self-hosted** in `assets/fonts/` (Orbitron 600/800, Rajdhani 400/500/600, Barlow Condensed 400/500,
-  Press Start 2P). Never add a Google Fonts link; copy an existing `<head>` (two font preloads + the nav-logo preload).
-  Exceptions: `trinitron-fleet-vol1.html` declares a wider weight set inline, and `404.html` uses absolute `/assets/` paths.
-  style.css defines metric-matched `"… Fallback"` faces second in each stack — page-level `font-family` declarations keep
-  them. Mobile CLS from font swap measured 0 on the buying guide in PageSpeed (10-30) after the 10-23 retune;
-  `font-display:optional` remains David's call if it ever comes back.
-- **First-screen images:** not `loading="lazy"`; the top one carries `fetchpriority="high"` with a matching
-  `<link rel="preload" as="image">`. Change both when that photo changes; never preload a below-the-fold image.
-  gallery.html and the home filmstrip make their first six eager in JS.
-- Branding files: nav logo `assets/logo-wordmark-nav-v3.webp`, hero wordmark `logo-wordmark-hero-v4.webp` (11-03: the white inside the O, behind ORLANDU'S and between the mascot's legs cut to transparent; 11-04: the source PNG's bottom row was a full-width opaque gray line — it read as a rule under ARCADE on the dark hero — cleared in hero-v4 / nav-v3 / logo-wordmark-v3.png; older files deleted). The hero backdrop is DRAWN in style.css since 11-03 (Trinitron grille + vignette + SMPTE bars, a horizon glow along the floor plus the 2 px `.horizon` line, which since 11-04 runs through the vertical CENTER of the wordmark behind it (`top: calc(3.5rem + 0.1968 * min(680px, 0.92*(100vw - 2rem)))` — tracks the wordmark's size; David's call, don't move it to the floor), 40 star `<i>`s, scanline sweep) — `hero-bg.webp` is deleted; `.hero .heroimg` markup lives in index.html. Hero extras (index.html, index-scoped CSS + the coin script): a PVM readout `.osd` once per browser session (sessionStorage `orlandu-osd`), a round DEGAUSS button `.degauss` bottom-left (4.6 s `degauss` keyframes + `.purity` rainbow overlay, 5 s cooldown with the count in `.n`), and INSERT COIN now reveals a PRESS START link to a random coin-op/pin profile (10 slugs in `GAMES`). 11-04 polish: `.purity` is display:none until `.dg`; the coin has a focus ring; the countdown `.n` is aria-live; glossary has `color-bars` + a fuller `degauss`; About FAQ `#faq-degauss`; search HINTS for index + glossary; touch (`pointer:coarse`) 24 px hit areas on `h2 .hlink` and `sup a`. The SMPTE bars are a 10 px strip along the hero's bottom edge (`.hero .bars` + `.dmark`); a 20 % tint over the nav words was tried 11-03 and David pulled it after seeing it live — don't re-propose. What the nav DOES carry since 11-04: a 2 px accent line under each word in its hub's `--acc` color (`nav.main>a::after` / `.collbtn::before`, nth-of-type map in style.css; Home yellow, Collection WHITE (its own; David rejected orange, a seven-color gradient and violet), lines at 40 % at rest and 100 % on hover / current page, Gallery/Wanted cyan, Stories green, Projects orange, For Sale pink, Registry yellow, About red), desktop only — David chose it over a solid current-page highlight. OG cards: 39 of 49 were rebuilt 11-03 with the cut-out wordmark (the white under the old logo inpainted, Telea r7, from `og-place.json` placements) and RENAMED one version up (`-v2`, signage `-v3`, playchoice-10 `-v4`); the ten with the logo elsewhere (big-blue, donkey-kong, ghostbusters, indiana-jones, mario-bros, orlandu-100, orlandu-50-games, rick-and-morty, tna, vs-unisystem) still carry the old wordmark, mascots
-  `mascot-foot.webp` / `mascot-about.webp`. The original PNGs stay as masters and JSON-LD `logo` URLs only.
-- **Wall and profile thumbs carry `srcset`** (11-20): every hand-written `<img src="media/thumbs/X.webp">` shown under ~700 px
-  has `X-400.webp` / `X-600.webp` siblings (cut from the `media/2026` master, WebP q82) and a `sizes` list MEASURED from the
-  rendered slot at 41 widths — a desktop was shrinking the 800 px file 2.9× (the resampling that banded the 2950Q). A new
-  wall photo owes both siblings and the same `srcset`/`sizes` as its neighbors; a first-screen image's `<link rel="preload">`
-  carries matching `imagesrcset`/`imagesizes`. Not covered: the generated select block on games.html, timeline tiles,
-  registry pages, the magazines.
-- **Thumbs:** story and step thumbs are 1200×514 (21:9) with an 800×343 sibling and the same `srcset`/`sizes` as their
-  neighbors; the featured story keeps the plain 1200. Story thumbs are cut from the story's OWN media (navigational
-  chrome, an allowed exception to one-photo-one-home); not in the sitemap. The Collection menu tiles are
-  `step-<slug>-320/-640.webp` from site.js's `COLLECTION` map — the JS string can't carry `?v=`, so a re-cut RENAMES the
-  slug. Home Step-inside `sizes` is `(max-width:700px) calc(73vw - 38px), …`. Timeline tiles are 84×84 cut by
-  `build-timeline.py` — rerun after a re-cut.
-- **Never crop a subject out to make a layout align.** Cabinet and monitor photos keep their controls, badges and the
-  AMS-100 on top; align with `object-fit:contain` plates (`background:transparent`) and verify numerically that each
-  scaled image fits its box. Recropping a SOURCE photo when David asks is different: frame a symmetrical object
-  symmetrically (cabinet edge to cabinet edge) — one-sided crops read as crooked. Use `.masonry` for mixed orientations.
-- A gallery recrop changes the entry's `w`/`h` in `gallery-data.js` — update them with the filename. Nothing wider than
-  ~2.2:1 goes in the home filmstrip (index.html filters by `w`/`h` before fetching).
-- David's edited photos arrive as lowercase `.heic`; uppercase `.HEIC` beside them are unedited originals.
-- `device_stage_files` refuses files newly created in the OneDrive folder ("hardlinked"). Convert on the laptop instead,
-  or push the image under a new unreferenced slug first and fetch it in the container.
-- **Watermarks:** For Sale photos (`© orlandu.com` bottom-right, 4.2 % of the short edge) and the PC-10 board,
-  topper and VS.-card tiles (section 10). Nothing else on the site is watermarked, and nothing else should be.
-- **The racetrack loop is `sign-racetrack-loop-v2` since 11-27** (David: "remove the light bleed"): the same 12 s clip with
-  the wash over the black face taken out (it turned red or blue-gray with the pattern), along with the haze between the
-  rows and what was left of the TV-reflection streaks. The fibers and their own glow are untouched (no mask: the bleed is
-  the picture's lower envelope, subtracted with a smooth ramp). Made from the published H.264, not the 4K source, so it
-  is a second-generation encode (crf 23; AV1 crf 50, HEVC crf 30). David looked at the Kay·Bee loop the same day and left
-  it alone ("looks fine"): its face is already near black. Script: Project doc `claude/racetrack-light-bleed-2026-11-27.md`.
-- **Never hard-code the marquee's animation duration** — site.js sets it from a 75 px/s target.
-- **Marquee CSS targets `.strip>span` (direct child only).** The FOR SALE items are nested `data-itm` spans; a
-  descendant selector gave each one 100 % padding and its own scroll, blanking the strip after "FOR SALE:" (10/31).
+- Photos are **WebP**: full size `media/2026/` (longest side ≤ 1600, q82), thumbs `media/thumbs/` 800 wide plus
+  `-400` / `-600` siblings, saved with Pillow `save(p, "WEBP", quality=82, method=6)`, never with `exif=`.
+  `media/og/` stays JPEG. HEIC needs `pillow-heif` and `ImageOps.exif_transpose`.
+- **Never replace a media file in place.** `/media/*` and asset images/fonts are `immutable` for a year. A changed image
+  gets a NEW filename (`-v2`) and the old file is deleted. CSS/JS are stamped by `stamp-assets.py`.
+- **Strip location metadata.** iPhone originals carry GPS; never commit a camera original into `media/`.
+- **Video is three encodes per clip:** `.av1.mp4`, `.hevc.mp4` (`hvc1`), then the H.264 `.mp4` last, each `<source>`
+  with a `codecs` type. `tools/encode-video.sh media/video/<clip>.mp4` makes the siblings and prints SSIM (keep ≥ 0.97).
+  H.264 stays canonical (VideoObject `contentUrl`, sitemap `video:content_loc`). Playwright's Chromium cannot decode
+  H.264 or AV1 here — check playback in the browser pane.
+- **Fonts are self-hosted** in `assets/fonts/` (Orbitron, Rajdhani, Barlow Condensed, Press Start 2P) with
+  metric-matched `"… Fallback"` faces. Never add a Google Fonts link; copy an existing `<head>`.
+- **First-screen images:** not lazy; the top one has `fetchpriority="high"` and a matching `<link rel="preload"
+  as="image">` (with `imagesrcset`/`imagesizes` when the image has a `srcset`). Change both together.
+- **`srcset` + `sizes` are MEASURED from the rendered slot**, not guessed. Wall and profile thumbs carry
+  `-400/-600/800`. Home Step-inside tiles carry `-320/-640/-800/1200` with
+  `sizes="(max-width:700px) calc(50vw - 26px), (max-width:1060px) calc(50vw - 29px), 400px"` (re-measured 11-27; the
+  old `73vw` value was wrong). A new Step tile owes all four sizes.
+- **Thumbs:** story and step thumbs are 1200×514 with an 800×343 sibling, cut from the page's OWN media. The Collection
+  menu tiles are `step-<slug>-320/-640.webp` from site.js's `COLLECTION` map — the JS string can't carry `?v=`, so a
+  re-cut RENAMES the slug. Timeline tiles are 84×84 cut by `build-timeline.py`. The Signage step tile is the
+  Superbrite sign (`step-signage-v2`), not cards.
+- **A story card photo shows a GAME on a screen** when one exists (David rejected a three-LMD photo for that reason).
+- **Never crop a subject out to make a layout align.** Use `object-fit:contain` plates; frame a symmetrical object
+  symmetrically. A gallery recrop changes the entry's `w`/`h` in `gallery-data.js`. Nothing wider than ~2.2:1 goes in
+  the home filmstrip.
+- David's edited photos arrive as lowercase `.heic`; uppercase `.HEIC` beside them are unedited originals. A fresh
+  OneDrive file that the device shell can't open can usually be staged (`device_stage_files` hydrates it).
+- **Watermarks:** For Sale photos (`© orlandu.com`, bottom-right) and the PC-10 board, topper and VS.-card tiles
+  (section 10). Nothing else. Listing copies for eBay / KLOV are made WITHOUT the site mark.
+- **Logo files:** nav `assets/logo-wordmark-nav-v3.webp`, hero `logo-wordmark-hero-v4.webp`, JSON-LD
+  `logo-wordmark-v3.png` — the cut-out wordmark with its bottom pixel row cleared (the source PNG carried a gray line
+  there). **OG cards:** 1200×630 JPEG, wordmark bottom-left. On 11-27 the 29 cards built before the logo fix were
+  repaired (the gray line under ARCADE was baked into them) and renamed one version up; `og-signage-v4` was rebuilt
+  from the cut cards. Ten cards (big-blue, donkey-kong, ghostbusters, indiana-jones, mario-bros, orlandu-100,
+  orlandu-50-games, rick-and-morty, tna, vs-unisystem) carry no wordmark by design. Build a new card with the v3
+  PNG, and rename on any change (scrapers cache by URL).
+- **Home hero** is DRAWN in style.css (Trinitron grille, vignette, SMPTE bar strip, horizon line through the vertical
+  center of the wordmark at 40 %, stars, scanline sweep). Extras in index.html: a PVM readout once per session, a round
+  DEGAUSS button (4.6 s, 5 s cooldown), INSERT COIN → PRESS START to a random coin-op profile. The nav carries a 2 px
+  accent line per word in its hub color (Collection white), 40 % at rest. **Declined, don't re-propose:** a photo
+  backdrop, nav-word tints, a solid current-page highlight, a nav gradient, VHS tracking, a game running behind the
+  logo, machine silhouettes, a CRT power-on, moving the horizon to the floor, a random INPUT readout.
+- **Loops on signage.html:** `sign-kaybee-loop-v2` and `sign-racetrack-loop-v2` (12.0 s, 1280×416; light bleed removed
+  11-27). A rebuild of the racetrack loop from the 4K original was made and measured the same night (fiber detail
+  +7 %, black face equal, no visible difference at 3×) and NOT shipped — don't redo it. David finds the Kay·Bee
+  loop fine as it is. Recipes: `claude/racetrack-light-bleed-2026-11-27.md` and the project notes on each loop.
+- Never hard-code the marquee's animation duration (site.js sets it from 75 px/s). Marquee CSS targets `.strip>span`
+  (direct child only); the FOR SALE items are nested `data-itm` spans.
 
 ## 4. Page conventions
 
-- **Titles** front-load the searchable term and spell out the page, 58–65 characters, ending "— Orlandu's Arcade"
-  ("Sony BVM-20E1U: Specs, BKM Cards & Work Log — Orlandu's Arcade"). `og:title`/`twitter:title` keep the short form;
-  twitter tags mirror og. The site search shows the H1, so a long title costs nothing there.
-- Head: `<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">`,
-  descriptions ≤ ~158, canonical + og:url, one H1, `rel=alternate` to feed.xml and the llms files. Copy an existing
-  page's head for a new page.
-- **Quick answers:** guides/profiles that need them end with `h2.sec` "Quick answers" + a single-column `.grid` of
-  `.card`s (h3 question, p answer). Facts only from the site, no prices, and deliberately NO FAQPage schema (about.html's
-  FAQ is the one FAQPage, and editing an answer there means editing its JSON-LD too).
-- **JSON-LD:** every page has one `@graph` (WebSite + Organization + Person + page node + BreadcrumbList). **No `Product`
-  anywhere, not even nested** — use `Thing` for "this page is about X"; forsale.html has no Product/Offer/ItemList and
-  must not get them back. **No `datePublished`** (no-date rule). Every `ImageObject` carries `creator` (Organization
-  "Orlandu's Arcade"), `copyrightNotice` "© Orlandu's Arcade", `creditText` "Orlandu's Arcade", and `license` +
-  `acquireLicensePage` → `about.html#photo-use`. In any node Google validates (Dataset, etc.) write creator/publisher as
-  inline typed objects, never an `@id`-only reference. No PostalAddress/LocalBusiness markup (private residence).
-- **Profiles** (machine, monitor, console pages): `main.profile`, a page-scoped accent `<style>` overriding only
-  `main .kicker`, the `h1.page` gradient, `h2.sec` and `.card .sub`, taken from the machine's own art; `nav.machnav`
-  prev/next looping in the hub's order (center cell → the hub). A new profile = hub-card link + sitemap block + llms.txt
-  line + timeline href + re-link both chain neighbors + an OG card `media/og/og-<slug>.jpg`.
+- **Titles** front-load the searchable term, 58–65 characters, ending "— Orlandu's Arcade". `og:title` /
+  `twitter:title` keep the short form. Titles outside that range on ~35 pages are his call; don't trim unasked.
+- Head: `robots` `index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1`, description ≤ ~158,
+  canonical + og:url, one H1, `rel=alternate` to feed.xml and the llms files. Copy an existing head.
+- **Quick answers:** `h2.sec` "Quick answers" + a single-column `.grid` of `.card`s (h3 question, p answer). Facts only
+  from the site, no prices, NO FAQPage schema (about.html's FAQ is the one FAQPage; edit its JSON-LD with it).
+- **JSON-LD:** one `@graph` per page (WebSite + Organization + Person + page node + BreadcrumbList). **No `Product`
+  anywhere** (use `Thing`); forsale.html has no Product/Offer/ItemList. **No `datePublished`.** Every `ImageObject`
+  carries `creator`, `copyrightNotice`, `creditText`, `license` + `acquireLicensePage` → `about.html#photo-use`.
+  In nodes Google validates (Dataset) write creator/publisher inline. No PostalAddress/LocalBusiness.
+- **Profiles** (machine, monitor, console): `main.profile`, a page-scoped accent `<style>`, `div.prail` (sticky
+  `figure.pshot` + `.specs`), `nav.machnav` prev/next in the hub's order. A new profile = hub-card link + sitemap block
+  + llms.txt line + timeline href + re-link both neighbors + an OG card.
 - **Work logs** (`ul.worklog`) come from `vault.html` on David's device, not from asking him; skip trivial repairs.
-- **Grids:** `.grid.c2`/`.c3` are auto-fill, so the column count follows the viewport. A block with a FIXED number of
-  items pins its columns (`repeat(N,minmax(0,1fr))` with breakpoints). A photoless card can't share a row with photo
-  cards. Page-scoped grid classes need `.grid.x{}` specificity to beat style.css.
-- **Section ids:** `#wall` is taken by style.css (columns:3). The sitewide search input is `id="q"`; the magazine filter
-  is `id="mq"` (carry that into any magazine `build_page.py` regeneration).
-- **Accessibility:** scrolling `.tablewrap`s and `pre.chain` carry `tabindex="0"`; blank corner `<th>`s get an `.sr-only`
-  label; full-bleed bands outside `<main>` carry `role="region"` + `aria-label`; `button.btn` needs
-  `background:transparent`. Run axe with reduced motion — color-contrast hits mid scroll-reveal are false positives.
-- **Lighthouse:** PageSpeed's web UI works from the browser pane (pagespeed.web.dev is approved); if it stalls, `npx
-  lighthouse` in the container against a local server with `CHROME_PATH=/opt/pw-browsers/chromium-*/chrome-linux64/chrome`.
-- **Lightbox** (site.js) clones `figcaption` innerHTML — markup inside a caption needs a `#lightbox` style; with no
-  `<figure>` it falls back to `alt`.
-- site.js's scroll-reveal threshold must stay 0 (0.05 hid a tall section on mobile).
-- Section links + Share: every `main h2` gets an id from its text (renaming a heading changes it); pages with `div.rt` get
-  reading progress and a resume pill (`orl-read:<path>` in localStorage).
+- **Grids.** `.grid.c2`/`.c3` are auto-fill. A block with a FIXED number of cards adds `n2`/`n3`/`n4`/`n5` so no row
+  ends with a hole — change the class when the count changes. **Cascade trap:** the "Review eleven" block near the end
+  of style.css restates `.grid.c2`/`.c3`, so any EARLIER rule of equal specificity that sets columns on such a grid is
+  dead. It switched off the `n*` rules (11-20 → 11-27) and the phone two-across Step-inside rule (same dates; phones
+  showed twelve full-width tiles). Put a column rule AFTER that block or give it more specificity
+  (`.grid.c2.steps`). A photoless card can't share a row with photo cards.
+- `#contact` on about.html is five cards across from 1000 px; its h3s wrap (`overflow-wrap:anywhere`, and the email
+  has a `<wbr>` before the @) — the address used to be cut off at 1280.
+- **Section ids:** `#wall` is taken by style.css. The sitewide search input is `id="q"`; the magazine filter is
+  `id="mq"`. Every `main h2` gets a runtime id from its text (so `consoles.html#sega` works; renaming a heading
+  changes it). `a[href="#search"]` opens the search dialog.
+- **Accessibility:** scrolling `.tablewrap`s and `pre.chain` carry `tabindex="0"`; blank corner `<th>`s get an
+  `.sr-only` label; full-bleed bands outside `<main>` carry `role="region"` + `aria-label`; a button's `aria-label`
+  must contain its visible text. Run axe with reduced motion. Known and left (moderate): heading order on bkm-10r and
+  the games select block, `.regband` and the magazine back-pill outside a landmark, nine BKM-10R two-legend keys.
+- **Callouts:** two back-to-back thoughts share one `div.note`; sources and caveats are `p.note.fine`.
+- **Lightbox** clones `figcaption` innerHTML (markup in a caption needs a `#lightbox` style). Scroll-reveal threshold
+  stays 0. Pages with `div.rt` get reading progress and a resume pill.
+- Small labels are Barlow Condensed; Orbitron keeps H1/H2/card titles/nav/buttons. The nav fits one row from 761 px —
+  re-measure the header at every 10 px after adding a nav word. Footer = four literal columns in site.js.
 
 ## 5. Content and privacy rules David has set
 
-- **Location is "Orange County, California" — never the city.** A PRIVACY rule: the arcade is in his home and the site
-  is a public inventory of valuable machines. No city, neighborhood, landmark, ZIP, school, local business, or photo
-  with a house number or street sign — in copy, meta, JSON-LD, alt text, llms.txt, site.js, commit messages or the
-  GitHub repo description. "Southern California" in prose is fine; "an Orange County production".
-- **No which-room mapping.** Never state which room a specific machine is in (no room column, no "in the game room" in
-  alt text, sitemap image titles or info cards; keep sitemap image titles in sync with the alt text they mirror).
-  STILL PRESENT, pending David's call: games.html's two-room lede and its PVM note (the room headings left with the
-  select screen, 11-10; `#gameroom` survives only as an anchor id), the about.html two-room description, an index card, the "Garage arcade" lane headings in connect-console-to-pvm.html#chain (moved there from signal-chain 11-21), and
-  captions on photos that literally show the garage. Ask before flattening those — they are voice, not a map.
-- **No full inventory:** one card per model on consoles.html, no unit counts ("×2", "the pair"), no condition values,
-  serials or prices of his own items.
-- **Every photo must be his own** (the footer claims "Photography © Orlandu's Arcade"). If provenance is unclear, ask;
-  if a third-party photo is found, pull it (entry, sitemap line, files).
-- **Serials:** check every new photo (sale photos especially — the lightbox shows the 1600 master at 1:1) for serials,
-  barcodes and former-owner asset tags. On the PC-10 boards the serial is DESTROYED (overwritten with synthetic paper,
-  then softened), not just blurred. David chose to leave the Captain Skyhawk and Baseball Stars sale photos as they are.
-- US spelling ("color", "gray", "center"). No date stamps in page copy ("August 2026"); the feed is the one place dates
-  exist. Don't imply a current count from a photo of a past state.
-- One photo, one editorial home; the gallery may draw from anywhere. **The gallery is a curated showcase** of his lit,
-  composed photography — bench shots stay on their story/project page. The home filmstrip is built from the gallery,
-  so a gallery entry is also a front-page entry.
-- **Never publish a fault on a machine he has sold**; say only that it moved on. **Never editorialize a flaw from a photo**
-  — a flaw HE discloses can go in For Sale copy.
-- **Declined — don't propose again:** sourcing/channel content (where or how he buys; "Japan pipeline"); failures/regrets
-  editorial; composite-video screenshots on his monitors (RGB only); grayscale/faded memoriam photos; a per-owner
-  registry leaderboard; The Catalog (generated PDF book); AVIF (measured ~15 %, stopped); forum/Reddit/HN/outreach
-  posting (organic traffic only); FAQPage on guide pages; Article dates; a PC-10 "missing titles" checklist (the wall's
-  52 is the complete library — don't cite fandom lists against it); attract-mode clips on profiles ("maybe", don't
-  re-pitch); the big-blue-side-art reshoot.
-- Don't over-quote trivia (most cabinets are Japanese — say it once). Big Blue runs a **Darksoft CPS-2 multi in a
-  Jasen's Customs case**, not a Marvel vs. Capcom board.
-- **Japan language:** channel-flavored copy is out; plain unit provenance ("sourced from Japan") stays.
+- **Location is "Orange County, California" — never the city.** A PRIVACY rule (the arcade is in his home). No city,
+  neighborhood, landmark, ZIP, school, local business, house number or street sign — in copy, meta, JSON-LD, alt text,
+  llms.txt, site.js, commit messages or the GitHub description. "Southern California" is fine.
+- **No which-room mapping** for a specific machine. Still present, pending his call (voice, not a map — ask before
+  flattening): games.html's two-room lede and PVM note, about.html's two-room description, an index card, the "Garage
+  arcade" lane headings in connect-console-to-pvm.html#chain, captions on photos that literally show the garage.
+- **No full inventory:** one card per model on consoles.html, no unit counts, no condition values, serials or prices
+  of his own items. Video games stay off the site (a game he puts up for trade is his call, not a reopening).
+- **Every photo must be his own.** Exceptions he approved, credited: iFixRetro's X'Eye bench photos; Switch 2
+  screenshots on the Ocarina story ("Game imagery © Nintendo", no photo-use license). **Nintendo Power and strategy
+  guide scans are research only — never publish a page scan or a crop of one**; cite by volume and page.
+- **Serials:** check every new photo (the lightbox shows the 1600 master) for serials, barcodes and asset tags. On the
+  PC-10 boards the serial is DESTROYED, not blurred. AMS rear photos are redacted. He chose to leave the Captain
+  Skyhawk and Baseball Stars sale photos as they are. Registry owner photos: section 9.
+- US spelling. No date stamps in page copy; the feed is the one place dates exist. Don't imply a current count from a
+  photo of a past state. An "arcade" is a place — never call a machine or cabinet an "arcade".
+- One photo, one editorial home; the gallery may draw from anywhere and is a curated showcase (bench shots stay on
+  their story). A gallery entry is also a home-filmstrip entry. The gallery wall order is a deliberate subject spread.
+- **Never publish a fault on a machine he has sold. Never editorialize a flaw from a photo.** Captions on object walls
+  are title-only; a caption that narrates what the photo shows gets removed.
+- **Site identity (11/21):** "a pretty collection and learn conceptually how things work" — NOT a how-to / fix-it
+  site. Don't pitch repair how-tos.
+- **Declined — don't propose again:** sourcing/channel content; failures/regrets editorial; composite-video
+  screenshots on his monitors (RGB only); grayscale memoriam photos; a per-owner registry leaderboard; The Catalog
+  (PDF book); AVIF (measured ~15 %); forum/Reddit/HN/outreach posting (organic only; a one-time editor tip to RetroRGB
+  was his own exception); FAQPage on guides; Article dates; a PC-10 "missing titles" checklist (52 is the complete
+  library); attract-mode clips on profiles; the big-blue-side-art reshoot; poster-style Step cards; home as a front
+  page; a VS. board wall and a BKM card wall; restoration strips, "what feeds it" rows, a random-page link; stories
+  "How a Trinitron Makes a Picture" and a degauss explainer; scheduled reminders about photos.
+- Big Blue runs a **Darksoft CPS-2 multi in a Jasen's Customs case**, not a Marvel vs. Capcom board. Plain unit
+  provenance ("sourced from Japan") stays; channel-flavored copy is out.
 
 ## 6. Collection pages
 
-- **games.html** is the "Coin-Op Games" page — every piece of media on it must be coin-op. It opens on the **machine
-  select screen** (David chose it 11-10 from three big proposals): ten static `.spanel` panels, one visible, plus a
-  roster of uncropped 240 px tiles (`media/select/`), grouped Uprights / Pinball / Candy & cocktail (ids `#uprights`,
-  `#pinball`, `#gameroom` kept as anchors), YEAR order within a group. The block between `select:start/end` is
-  GENERATED by `tools/build-machine-select.py`: roster, card copy and portraits live in the tool; the four spec tiles
-  and the accent are read from each profile's `.specs` and `main.profile{--acc}`. The page-scoped CSS and the small
-  inline script (hover/focus previews, arrows move, a touch tap selects first then opens, `games.html#m-<slug>` opens
-  on that machine) are hand-written in games.html. Every tile and panel button is a plain link, so it works without
-  JavaScript. A new machine = a MACHINES row + its profile. The name is sized from its own column (`.sinfo` is a size container, `9.5cqi` = the longest word, GHOSTBUSTERS, on one line) after the first build let that word run into the roster; three columns hold from 1141 px, roster drops below to 761, one column under that. **Check every panel at every width, not three widths**: a longer name than GHOSTBUSTERS needs a smaller cqi. The old two-up photo cards are gone from the hub. The **In memoriam** section (full color, `figure.shot`, "<b>Name</b> — one line") is the ONLY memoriam on the
-  site; don't clone it elsewhere without asking.
-- **Console photos are cut-outs on the walls' dark backdrop** (David, 11-10: "make sure you blend the acrylic in with
-  the background"): `media/2026/consoles-<slug>-dk.webp` (4:3, object at 80 %, up to 1600 px) + `media/thumbs/…-dk.webp`
-  (800×600), used on consoles.html, the six console profiles, jvc-xeye.html and the timeline tiles; the white files are
-  deleted. Recipe: cut-out (rembg `isnet-general-use`) from the published white file, backdrop radial (46,46,62) →
-  (19,19,34), a faint backlight so black shells don't sink, soft shadow. **Acrylic stands are redrawn as glass**: below
-  the console's bottom line the stand becomes a ~6 % haze with its edges kept as light lines (edge strength from the
-  photo's own gradients); things seen through the slab are cleared. Per-console lines and the build scripts are in the
-  Project doc `claude/big-two-build-2026-11-10.md`. A new console photo gets the same treatment. The console OG cards
-  were not rebuilt.
-- **consoles.html** sorts by the PLATFORM's original release within each maker (a revision sorts at its family's debut;
-  the visible `sub` year is the revision's own — deliberately out of order). One card per model; the two New 3DS XLs
-  get separate cards. Years are North American releases where the vault has a Japan year (SNES 1991, Turbo Express
-  1990, New 3DS XL Black 2015, PC Engine Duo-R 1993). Six consoles have profiles (nes-top-loader, nintendo-64, gba-sp,
-  genesis-cdx, pc-engine-duo-r, ps2-slim); the others stay card-only by his choice. The PS2 Slim is NOT modded.
-  Every card has a photo since 11-03 (NES Front Loader, Genesis Model 1 and TurboGrafx-16 were footnotes until then;
-  the "not on the display shelf" footnotes are gone). TG-16 is stock and reaches RGB through the EDFX AV Adapter.
-  `consoles.html#mods` lists only consoles whose signal path the site states.
-- **monitors.html:** photo cards; since 11-20 the four tube cards and the LMD card are cut-outs on the walls' dark backdrop
-  (`media/2026/monitors-<slug>-dk.webp` 1600×1200, thumbs 800/600/400; monitor at 80 %, 4:3 plates) — David found the
-  edge-to-edge photos "overly cropped" and asked for looser frames with the background filled in "to match the other
-  collection items". Cut from the camera originals in `_originals/` by hand-picked polygons (20L5 and 2950Q squared to
-  the cabinet front; the 20E1U and A14F5U were shot edge to edge, so their AMS-100 / BKM-10R stay clipped by the frame).
-  Also used (same night, his "check the rest of the site") by the five monitor profiles' hero, the buying guide's 20L5 figure and the
-  timeline tiles. The gallery entries (and so the home filmstrip, `media/strip/`) use them too, by his choice; his four registry entries
-  too (photo_url FIXUPS, 11-20). The old photograph files' siblings and `lmd-rack` are deleted; `media/2026` + `media/thumbs`
-  `pvm-2950q`, `pvm-20l5`, `bvm-20e1u-lit`, `bvm-a14f5u-lit` are KEPT unreferenced for cached registry answers — delete after 12/1.
-  Story thumbs, step tiles and OG cards were not rebuilt.
-  Build script: Project doc `claude/monitors-dark-backdrop-2026-11-20.md`. The four LMD models are folded into one wide card; its
-  picture is the same treatment (`monitors-lmd-wall-dk`, 1600×576, the three units cut from IMG_3698 in the garage intake). **The fleet is THIRTEEN units across EIGHT models** (LMD-9050 ×2); a count change is
-  swept across index, monitors, stories, connect-console-to-pvm, pvm-vs-bvm and Trinitron Fleet Vol. 1 (its `UNITS` array, stats
-  and no-JS mirror). Magazine fleet weight 381 lb. `#specs` is condensed from the magazine's `DATA` (change both); its
-  Compare mode reads the table itself; `#scale` SVGs are generated by `tools/build-fleet-scale.py` between
-  `fleet-scale` markers (edit MODELS there, never the SVG). Weights and dimensions are Sony's figures.
-  Monitor profiles: pvm-2950q, pvm-20l5, bvm-20e1u, bvm-a14f5u, lmd-wall (body copy = the magazine's COPY object).
-  Name **SavonPat** on the A14F5U service (2025) and on the BVM-20E1U's full service (2026: every board recapped, tube
-  serviced, calibrated, shell cleaned and sanded; his line that it is the best 20-inch tube Sony ever made is on the profile); the story is `bvm-20e1u-service.html` ("Thirty More Years", shipped 11/14; its three photos are perspective-squared to the monitor's front frame and framed identically; David cut Sony's 30,000-hour tube rating from it — don't put it back; its `<title>` leaves out "20E1U" and `build-search-index.py` ranks it at weight 4 so the model number still finds the profile first); the 20L5's slot holds a **BKM-129X** (second analog input, component or RGB
-  with loop-through — not SCART/VGA); 20L5 sync range 15–45 kHz.
-- **playchoice-10.html:** 52 board tiles (title-only captions, alphabetical ignoring "The") + 10 conversions (each a
-  short story about its own game) + anatomy. Toppers stay on signage.html; never pair topper and cart tiles. The page's
-  slugs are `pc10-cart-*` / `pc10-conv-*` (toppers own `pc10-<slug>`).
-- **signage.html:** topper wall (21, alphabetical; Double Dragon double-wide; each topper filling its tile since 11-27,
-  section 10) and VS. instruction cards (18, each card
-  filling its tile since 11-27, section 10); the three
-  lit signs as showcase entries. A topper is a sticker on a metal stand; the VS. cards were made for the Red Tent, the
-  toppers were not (he only displays them there). Say "topper", not "insert" or "marquee".
-- **wanted.html** hunt list as David tiered it. Since 11-27 it also has `#bvm` "Sony broadcast monitors": one 20-inch
-  multiformat BVM, a BVM-D20F1U or a BVM-A20F1U (two cards, copy from the registry catalog only; no price, condition or
-  sourcing lines). "What it looks like" links must open on a page that SHOWS the object (checked in the browser pane). **Name clashes:** a name on the wanted list, the Orlandu 50, the VS. card
-  wall or the topper wall is usually a DIFFERENT object from a For Sale board of the same name — read every grep hit
-  before deleting on a name match.
-- **Timeline** (`timeline.html`) is generated by `tools/build-timeline.py` from (name, RELEASE year, thumb, href)
-  lists — release years only, never acquisition dates; a tuple with `None` thumb + a label gets a lettered tile.
-- Facts David settled (don't re-raise): TNA is 2017 with the Classic Edition package he installed; the Superbrite has
-  three F25T12 tubes; both N64s and both NES units are RGB-modded (NESRGB); the Duo-R has RGB + region mods; the
-  TurboGrafx-16 gets RGB from an external EDFX AV Adapter (not modded); one switcher per room; the Mini Cute is fully
-  original; LMD-9020 SD only, LMD-9030 HD over component, both 640×480; LMD-940W HDMI + SDI, no analog component;
-  BVM-A14F5U has the BKM-68X clone + BKM-62HS, no BKM-61D; BVM-20E1U has four option slots with only a BKM-21D fitted
-  (BKM-24N and BKM-20D on the shelf), is controlled by the rack-width BKM-10R and can't be adjusted without it, reads
-  44,708 hours, and its plate reads October 1998 (confirmed 10/31; the vault's June 2007 was wrong — registry entry 3
-  carries 1998-10 via a FIXUP);
-  the AMS-3 is in storage and its pots are fixed; Ghostbusters' Spike 1 board is a spare.
+- **games.html** ("Coin-Op Games"; every piece of media must be coin-op) opens on the **machine select screen**: ten
+  static `.spanel` panels plus a roster of 240 px tiles, grouped Uprights / Pinball / Candy & cocktail, year order.
+  The block between `select:start/end` is GENERATED by `tools/build-machine-select.py` (roster, copy and portraits in
+  the tool; spec tiles and accent read from each profile). The name is sized from its own column (`9.5cqi` fits
+  GHOSTBUSTERS); check every panel at every width after a change. **In memoriam** there is the only memoriam on the
+  site; don't clone it (the PlayChoice story's reuse of three of its photos was a one-off approval).
+- **Console photos are cut-outs on the dark backdrop** (`consoles-<slug>-dk`, 4:3, object at 80 %), acrylic stands
+  redrawn as glass; used on consoles.html, the six profiles, jvc-xeye and timeline tiles. Recipe:
+  `claude/big-two-build-2026-11-10.md`. consoles.html sorts by the PLATFORM's original release within each maker;
+  years are North American releases. Six consoles have profiles (nes-top-loader, nintendo-64, gba-sp, genesis-cdx,
+  pc-engine-duo-r, ps2-slim); the rest stay card-only by his choice. Each profile has an "At launch" section whose
+  every fact names its source; launch prices stay OUT of Quick answers.
+- **monitors.html:** the four tube cards and the LMD card are cut-outs on the dark backdrop (`monitors-<slug>-dk`),
+  also used on the five monitor profiles, the buying guide, timeline, gallery/filmstrip and his registry entries.
+  Recipe: `claude/monitors-dark-backdrop-2026-11-20.md`. Old `pvm-2950q` / `pvm-20l5` / `bvm-20e1u-lit` /
+  `bvm-a14f5u-lit` files are kept unreferenced for cached registry answers — delete after 12/1. **The fleet is
+  THIRTEEN units across EIGHT models**; a count change is swept across index, monitors, stories,
+  connect-console-to-pvm, pvm-vs-bvm and Trinitron Fleet Vol. 1. `#specs` is condensed from the magazine's `DATA`
+  (change both); `#scale` SVGs come from `tools/build-fleet-scale.py`. Weights and dimensions are Sony's figures.
+- **playchoice-10.html:** 52 board tiles (title-only, alphabetical ignoring "The") + 10 conversions + anatomy. Slugs
+  `pc10-cart-*` / `pc10-conv-*`; toppers own `pc10-<slug>` and stay on signage.html.
+- **signage.html:** topper wall (21, alphabetical, Double Dragon double-wide), VS. instruction cards (18), three lit
+  signs. A topper is a sticker on a metal stand; the VS. cards were made for the Red Tent, the toppers were not. Say
+  "topper", not "insert" or "marquee".
+- **wanted.html:** the hunt list as he tiered it, plus `#bvm` (a BVM-D20F1U or BVM-A20F1U; copy from the registry
+  catalog only). "What it looks like" links must open on a page that SHOWS the object. **Name clashes:** a name on
+  the wanted list, the Orlandu 50, a wall or For Sale is often a DIFFERENT object — read every grep hit.
+- **Timeline** is generated by `tools/build-timeline.py`: release years only, never acquisition dates. `RELEASED`
+  holds each console's on-sale date, source and grade ("period" or "reference"); upgrade a reference row only with the
+  period document in hand. His New 3DS XL SNES Edition is the U.S. Super NES Edition (2017).
+- **guide-shelf.html:** 22 covers (title-only) + `#how-they-arrived`, cited by Nintendo Power volume.
+- **Machine paperwork** sits above the Work log on donkey-kong, red-tent, ghostbusters and indiana-jones (cut-outs on
+  the backdrop, no invented body copy). Recipe: `claude/machine-paperwork-2026-11-23.md`.
+- **Counts on the home page** are swept when a wall changes; the Stories step card says "More than twenty long reads"
+  on purpose (an exact count went stale at thirteen).
+- **Facts David settled (don't re-raise):** TNA is 2017 with the Classic Edition package he installed; he runs the
+  latest code on every pin; the DK cabinet also plays DK Jr. and DK 3; the Superbrite has three F25T12 tubes; both
+  N64s and both NES units are RGB-modded (NESRGB); the Duo-R has RGB + region mods; the TurboGrafx-16 is stock and
+  reaches RGB through an EDFX AV Adapter; the PS2 Slim is not modded; one switcher per room; the Mini Cute is fully
+  original; LMD-9020 SD only, LMD-9030 HD over component, both 640×480; LMD-940W HDMI + SDI; BVM-A14F5U has the
+  BKM-68X clone + BKM-62HS; the 20L5's slot holds a BKM-129X (second analog input, not SCART/VGA), sync 15–45 kHz
+  (its grille pitch is 0.31 mm per Sony's preliminary spec sheet — that change to through-the-mask ships with the
+  held How Big story); BVM-20E1U has four slots with only a BKM-21D fitted, is controlled by the BKM-10R, reads
+  44,708 hours, plate October 1998, fully serviced by **SavonPat** in 2026 (story `bvm-20e1u-service.html`; Sony's
+  30,000-hour rating was cut from it — don't put it back); the AMS-3 is in storage with its pots fixed; Ghostbusters'
+  Spike 1 board is a spare; the PlayChoice library is 52; he finished A Link to the Past about fifty times.
 
 ## 7. For Sale and sold items
 
-- **forsale.html is present tense.** A card comes OUT the moment the item sells — no SOLD badge, no sold archive.
-  Card copy is short: what it is, why this example, the one caveat. `.sub` names the kind ("PlayChoice-10 topper").
-  Badge `On eBay · $PRICE`. Re-read eBay before quoting a price; prices move. Never publish what he paid, order numbers,
-  sellers or receipts. When a documented unit is listed, link its history on the site (never put site links in the
-  eBay listing — eBay prohibits them).
-- **The sweep when something sells:** the card → the named FOR SALE marquee segment in index.html (a `data-itm` span) →
-  sitemap `<image:image>` line + delete both `sale-*` sizes (delete is the default; don't ask) → re-cut
-  `step-forsale` if it was cut from that item (don't ask which board) → gallery entry + files if any → counts and
-  copy on neighboring cards → generators. The first card owns the head preload/fetchpriority.
-- **For Trade cards** (since 11-23; same grid, badge `For trade`, button "Offer a trade →" to `about.html?subject=…#write`, no
-  `/itm/`, no `data-itm`): two VS. cards, the VS. Super Mario Bros. marquee, and since 11-27 the **VS. Castlevania marquee**
-  (David: it "has been cut so it is not NOS anymore but it is in very good condition" — the card says exactly that) and
-  **Metal Gear Solid** for PlayStation (front + back of the case side by side on alpha; a game David puts up for trade is
-  his call and not a reopening of the no-games-wall ruling). Marquee photos are full-frame rectangles with SQUARE corners
-  (David, 11-27: "square off the castlevania marquee… no rounded corners"), edges traced and straightened, corner mark
-  26 px — bottom-left on Castlevania because the bottom-right holds the trademark lines. **Layout since 11-27 evening**
-  (David: "everything is kind of cluttered… make it look more clean and inviting"), page-scoped CSS in forsale.html on
-  `.grid.c2.sales`: fixed columns (1 / 2 from 701 px / 3 from 1141 px), 3rem between rows, `grid-auto-flow:dense`; a `wide`
-  card spans two and sits BEFORE the single card that shares its row in the source, so both marquees stack on the left
-  (3 | 2+1 | 2+1 today — count columns when a card is added or leaves). Each card is a grid: photo, ONE label row (badge +
-  `.sub` side by side), name, copy capped at 62ch, and a quiet text link in place of the outlined button ("View on eBay →",
-  "Offer a trade →"; the `/itm/` href is what `api/ebay.js` reads, not the words). The flex rules for `.card.sale` in
-  style.css ("Review ten") are overridden there.
-  The home ticker names the trade marquees in plain text. Listing copies for eBay / KLOV are made WITHOUT the site mark.
-  Kit: `_pending-deploy\for-trade-2026-11-27.zip`.
-- **`api/ebay.js`** (the safety net, not the sweep): `GET /api/ebay?ids=…` checks each `/itm/` id via eBay's Browse
-  API (client-credentials token, edge cache 30 min); `live:false` hides the card and the marquee `data-itm` span; the
-  "More on eBay" line reads live feedback into `data-fb-pct`/`data-fb-score`. **New sale cards must keep the `/itm/`
-  link and, if named in the marquee, a `data-itm` span.** Keys are David's eBay developer app (the Tidbyt keyset);
-  a 401 `invalid_client` means the Vercel values don't match it.
-- **Memoriam bar is high:** a departure usually gets a clause in existing prose (monitors.html's `p.note`), not a section.
-  If one earns a games.html memoriam entry, its photos become `alumni-<slug>` via `git mv`.
-  `media/2026/alumni-ams-100.webp` (+ thumb) and the Double Dragon board photos are deliberately kept unreferenced.
-- **When something sells, its gallery entry comes out too** (the filmstrip would put it on the front page).
+- **forsale.html is present tense.** A card comes OUT the moment the item sells — no SOLD badge, no archive. Copy is
+  short: what it is, why this example, the one caveat. Badge `On eBay · $PRICE` (re-read eBay before quoting) or
+  `For trade` (link "Offer a trade →" to `about.html?subject=…#write`, no `/itm/`). Never publish what he paid,
+  sellers or receipts. Never put site links in an eBay listing.
+- **The sweep when something sells:** the card → the FOR SALE marquee segment in index.html (`data-itm` span) →
+  sitemap `<image:image>` line + delete both `sale-*` sizes → re-cut `step-forsale` if it was cut from that item →
+  gallery entry + files → counts and copy on neighbors → generators. The first card owns the head preload.
+- **Layout (11-27):** page-scoped CSS on `.grid.c2.sales` — fixed columns (1 / 2 from 701 px / 3 from 1141 px), dense
+  flow; a `wide` card spans two and sits BEFORE the single card that shares its row. Count columns when a card is
+  added or leaves. Marquee photos are full-frame rectangles with square corners. Kit:
+  `_pending-deploy\for-trade-2026-11-27.zip`.
+- **`api/ebay.js`** is the safety net: `GET /api/ebay?ids=…` checks each `/itm/` id (edge cache 30 min);
+  `live:false` hides the card and the marquee span. New sale cards keep the `/itm/` link and a `data-itm` span.
+  A 401 `invalid_client` means the Vercel key values don't match his eBay app.
+- **Memoriam bar is high:** a departure usually gets a clause in existing prose. `alumni-ams-100.webp` and the Double
+  Dragon board photos are kept unreferenced on purpose.
 
 ## 8. Generated content, search and the AI channel
 
-- **Site search:** the header dialog over `assets/search-index.js` and the MCP `search_orlandu` share ONE ranking —
-  `search()` in `api/mcp.js` and the `/* search-score:start … end */` block in `assets/site.js`. Change both or neither;
-  `eval-search.mjs` lifts the site.js block verbatim. Rules: hyphens/periods/apostrophes dropped; filler words ignored;
-  plural, -ing, -ate forms and the `ALIAS` map (n64, snes, pc10, tna, scanline…); run-together tokens; one-letter typo
-  retry. Index weights `w`: profiles/guides/tools/hubs 10, other pages 6, glossary 5, cards 4, FAQ 3, photos 2, the
-  generated registry model pages −10 (a model number finds its profile first). `tt` carries a `<title>` that differs
-  from the H1. Body capped at 6,000 characters. `HINTS` in build-search-index.py adds search-only words per page — add
-  one only if it moves a battery query. Magazine/monograph bodies are headings-only.
-  A Wanted card that links a registry model page is indexed at weight −14, under that page (11-27: the two BVM want cards
-  had taken top-1 from their registry pages). **Read BOTH `ALL` lines of eval-search.mjs** (MCP path first, header search
-  second); a `tail` that shows only the last one hid a dip to 89 % for one push.
-- **Glossary tooltips:** `assets/glossary-data.js` from `glossary.html` via `tools/build-glossary.py`; first occurrence per
-  page on pages with a reading time (not the glossary, monograph or magazines).
-- **Feed:** `tools/build-feed.py` → `feed.xml` (RSS) + `feed.json`, ≤ 30 items from the Latest ledger and the Stories
-  grid; dates = the Pacific day the page (or the ledger card's heading) entered git. Registry entries have their own
-  feed at `/api/registry?feed=rss`.
-- **llms.txt** (hand-kept index — add new pages), **llms-full.txt** + `data/pages.json` (generated; skip the registry model
-  pages). **Datasets** under `data/` (CC BY 4.0 — the prose and photos stay ©; say so wherever a dataset is mentioned):
-  sony-monitor-specs, playchoice-10-library, console-video-out, bkm-cards (built from bkm-cards.html's five tables),
-  connect.json (hand-authored), registry-models.json; each owning page carries a Dataset node.
-- **`api/mcp.js`** — read-only MCP server (Streamable HTTP, stateless, no deps), nine tools: search_orlandu,
-  read_orlandu_page, list_orlandu_pages, sony_monitor_specs, playchoice_10_library, console_video_out, bkm_cards,
-  plan_connection, registry_census. mcp.html and llms.txt state the tool and dataset counts — update them with a new
-  tool. Published in the MCP Registry as `com.orlandu/arcade` from `server.json` (DNS-verified; key
-  `mcp-registry-key.pem` in the connected folder, never in the repo; publish from the browser pane with WebCrypto —
-  `/v0/auth/dns` then `/v0/publish`; bump `version` to republish; one listing per URL). Wikidata: Sony AMS-100 is
-  Q141689973 (AMS-100 only). Never add prompt-injection text for assistants.
-- **will-it-connect.html** rules live in `data/connect.json` (logic `assets/connect-plan.js`, shared with the MCP tool)
-  AND an inline copy in the page's `var DATA` — after editing the JSON, paste it back (`json.dumps`,
-  `ensure_ascii=False`). "Works as-is" only when neither side needs anything; mod/adapter verdicts rank level with it.
-- **through-the-mask.html** models each tube from Sony's figures in its `M` array (20L5 pitch marked `est`); it is a model,
-  not a photo. `?a=&b=` preselects.
-- **bkm-10r.html** follows Sony's BVM-14E5/14F5 Operation Manual (rev. 1, pp. 22–59); shared sub-lists are functions so
-  the tree stays one copy.
-- **sony-model-numbers.html:** the H1 carries no specific model numbers (it stole the BKM queries); the A suffix is
-  omitted; the G-tube pitch is "undocumented" by David's ruling; the 20L5 worked example stays suffix-neutral.
-- **bkm-cards.html:** Sony documents are the authority; community claims are marked; BNC counts are Sony's figures.
+- **Site search:** the header dialog and the MCP `search_orlandu` share ONE ranking — `search()` in `api/mcp.js` and
+  the `/* search-score:start … end */` block in `assets/site.js`. Change both or neither. Index weights: profiles /
+  guides / tools / hubs 10, other pages 6, glossary 5, cards 4, FAQ 3, photos 2, registry model pages −10, Wanted cards
+  that link a registry page −14, playchoice-10-ranked −16, playchoice-10-story −4, nes-number-ones −10 (so a wall or
+  profile wins its own query). `HINTS` adds search-only words per page — add one only if it moves a battery query.
+- **Glossary tooltips** come from `glossary.html` via `tools/build-glossary.py` (first occurrence per page).
+- **Feed:** `feed.xml` + `feed.json` from the Latest ledger and every `a.card.linked` on stories.html.
+- **llms.txt** is hand-kept (add new pages); llms-full.txt + `data/pages.json` are generated. **Datasets** under
+  `data/` are CC BY 4.0 (prose and photos stay ©); each owning page carries a Dataset node.
+- **`api/mcp.js`** — read-only MCP server, nine tools; mcp.html and llms.txt state the counts. Published in the MCP
+  Registry as `com.orlandu/arcade` (key `mcp-registry-key.pem` in the connected folder, never in the repo).
+  Wikidata: Sony AMS-100 is Q141689973. Never add prompt-injection text for assistants.
+- **will-it-connect.html:** rules in `data/connect.json` AND an inline `var DATA` copy — paste the JSON back after
+  editing. **through-the-mask.html** models each tube from Sony's figures. **bkm-10r.html** follows Sony's
+  BVM-14E5/14F5 Operation Manual. **sony-model-numbers.html:** no specific model numbers in the H1; G-tube pitch is
+  "undocumented" by his ruling. **bkm-cards.html:** Sony documents are the authority; community claims are marked.
 
 ## 9. The Orlandu Registry (Sony BVM + PVM serial census)
 
-- **Rules (David's):** BVM + PVM only; serials shown with the last two digits masked, full serial stored privately for
-  duplicates; auto-publish with an email alert + signed delete link; optional photo, handle, country/state; email
-  required, never shown. **Other owners' prices and sellers are welcome; David's own entries carry neither.** Records
-  strip shows monitors, never owners, in TWO strips since 10/31. FLEET (`#records-fleet`): Most registered, Working share,
-  PVM vs BVM, Catalog coverage, Years of production spanned, Combined BVM reported runtime, Longest production span,
-  Countries. SINGLE-MONITOR (`#records-out`, each links an entry): Biggest/Smallest tube [a shared size is a TIE:
-  "PVM-2950Q · 2 tied", linking the model page], Lowest hours, Workhorse, Oldest/Newest plate, Oldest still working,
-  Earliest in its run and Closest to the end of its run [the six models with Sony bulletin ceilings — `CEILINGS` /
-  `RUN_START` in lib/registry.js; distance BUCKETED to within 10/100/1,000, never exact], Serial neighbors [same badge,
-  gap bucketed the same way], Best find [ranked in rough USD]. Each hides without data. David CUT Priciest, Where they
-  came from, Farthest from the factory, and Lowest/Highest serial (a serial's leading digits are a plant/run prefix —
-  a UK-built PVM-20L1 plate reads 6200431, Oct 2003 — so a cross-model high or low means nothing). Don't bring them back. Lowest hours stays the hours record; Workhorse is its own badge. Only BVMs have hours (PVM cards/pages/forms hide them). Build year vs catalog era
-  is a NUDGE (hint + one warning + an alert-mail flag), never a gate — except a build year after 2010 is refused
-  (`BUILT_MAX`). An OWNER-CONFIRMED plate outside an era WIDENS the era (edit `era`, name the plate in `era_basis`,
-  keep the confidence tag — it rises only on a Sony document). The registry keeps its researched eras even where the
-  fleet table / decoder say otherwise (his call).
-- **Files:** `data/registry-models.json` is the catalog — 96 chassis with regional variants folded under each (the form's
-  "Badge as printed" keeps the exact variant as public `model_as_entered`; counts group by chassis); `era`,
-  `era_confidence`, `era_basis`, `sources`; 24 `unconfirmed` names kept out of the dropdown; `sony_serials` on six
-  chassis, copied exactly as printed from Sony bulletins (a ceiling is how far a run had reached, never a production
-  total). Research with per-model URLs: `Claude outputs/registry/registry-catalog-research.json` in the connected folder.
-  `tools/build-registry-pages.py` GENERATES registry.html,
-  registry-models.html, registry-submit.html (`form.rfm`, never `.cform` — site.js hijacks those for the contact relay)
-  and 96 `registry-<slug>.html` — edit the builder, never the pages. `assets/registry.js` / `registry.css` (one `card()`
-  renderer; `live()` paints from localStorage then refreshes — paint functions must stay idempotent). `api/registry.js`
-  (GET summary / `?model=` / `?entries=1&page=N` / `?export=json|csv` / `?feed=rss`; `R.CACHE` = s-maxage 60 +
-  stale-while-revalidate one week; `?fresh=<ts>` bypasses the edge), `api/registry-submit.js` (honeypot `site`,
-  per-IP-hour + daily caps, 409 on duplicates, Blob upload, Resend alert), `api/registry-admin.js` (HMAC-signed
-  soft delete), shared code in `lib/registry.js` (outside `api/`). The chart floors serials to the hundred. The repo's
-  only dependencies (`package.json`: `@neondatabase/serverless`, `@vercel/blob`; `node_modules/` gitignored) are used
-  inside the functions only — there is still no build step.
-- **Data fixes ship as code:** `FIXUP_FIELDS` / FIXUPS in lib/registry.js (photo_url and, since 10/31, built included; `cond` since 11/14 — the value must be a COND key; `hours` since 11/17 — an integer; `from: null` means the field was empty; `field: "serial"` is a PREFIX swap that
-  moves serial + mask + number together, guarded by the old prefix — entry 14's doubled digit, 10/31) — David does not run
-  SQL or click through admin consoles himself. Sony BVM/PVM serials are SEVEN digits; the form nudges once on any other count. Photo swaps go into Blob under a NEW name via the Blob dashboard page.
-- **Indexing:** 13 model pages are indexable — six with `sony_serials`, the arcade's own (`PROFILES`), and
-  `INDEX_EXTRA` (BVM-D14H1U, PVM-1354Q, PVM-14M2U, PVM-8041Q, promoted 10-30 at two entries each). The rest are
-  `noindex,follow` and out of the sitemap. To promote a page with real entries: add its slug to `INDEX_EXTRA`, rerun,
-  add its sitemap block, then request indexing.
-- Home: `a.regband` under the hero + a Step Inside card with `[data-reg]` counts repainted by `regCounts()` in site.js;
-  monitors.html cards end "N in the registry →" (`[data-regmodel]`). Entry cards carry permalinks
-  (`registry-<slug>.html#e<id>`), Copy link, and Save as image (1080×1080 canvas PNG). Photos get a 320-px `-t.jpg`
-  thumb. "While you're here" rows are stripped from the search index. Registry stays 9th in the nav.
-- Testing without Neon: PGlite harness described in the Project doc `claude/registry-2026-10-23.md`.
-- Open, not promised: price-over-time chart, "update my entry" flow, LMD/AMS/BKM scope, CSV past ~100 entries.
+- **Rules (David's):** BVM + PVM only; serials shown with the last two digits masked; auto-publish with an email alert
+  + signed delete link; optional photo, handle, country/state. Other owners' prices and sellers are welcome; his own
+  entries carry neither. Records strips show monitors, never owners; he CUT Priciest, Where they came from, Farthest
+  from the factory and Lowest/Highest serial — don't bring them back. Only BVMs have hours. A build year outside the
+  catalog era is a nudge, never a gate (after 2010 is refused); an owner-confirmed plate WIDENS the era. The registry
+  keeps its researched eras even where the fleet table says otherwise (his call).
+- **Files:** `data/registry-models.json` is the catalog (96 chassis). `tools/build-registry-pages.py` GENERATES
+  registry.html, registry-models.html, registry-submit.html (`form.rfm`, never `.cform`) and 96 model pages — edit the
+  builder, never the pages. `api/registry.js`, `api/registry-submit.js`, `api/registry-admin.js`, shared
+  `lib/registry.js`; `assets/registry.js` paints from localStorage then refreshes (paint functions stay idempotent).
+  Model pages carry a Specifications table from `tools/build-registry-specs.py` (add a PHYS row only with the source
+  in hand; wiki figures are labeled community).
+- **Data fixes ship as code:** FIXUPS in lib/registry.js (`photo_url`, `built`, `cond`, `hours`, serial prefix swaps)
+  — David does not run SQL or click through admin consoles. A blurred photo goes into Blob under a NEW name.
+- **Owner photos** are checked for readable serials when an entry arrives. Full sweep 11-27: 36 entries, 28 owner
+  photos, nothing readable; entries 18, 19, 30, 31 and 32 are blurred copies and entry 35's owner masked his own.
+- **Indexing:** 13 model pages are indexable (six with Sony serial ceilings, his own, and `INDEX_EXTRA`); the rest are
+  `noindex,follow`. To promote: add the slug to `INDEX_EXTRA`, rerun, add the sitemap block, request indexing.
+- Home: `a.regband` + a Step card with live counts; monitors.html cards end "N in the registry →".
+- Testing without Neon: PGlite harness in `claude/registry-2026-10-23.md`.
 
-## 10. Dark backdrop on the PC-10 board wall; the topper and VS. card walls fill their tiles
+## 10. The three object walls
 
-Every board tile on playchoice-10.html is a cut-out on the Spinning Tops backdrop
-(radial glow (46,46,62) → (19,19,34), soft shadow, edge = `.shot` panel #131322). David: "this only works if it looks
-consistent" — a new board gets the same treatment; a new topper or card gets its wall's treatment below.
-- Boards 1600×480 (thumb 800×240, the 10:3 plate), built from the published redacted files; **heavy diagonal
-  watermark on every board** plus the corner mark (`<slug>-dk2.webp`; Ninja Gaiden III keeps its `-dk`).
-- **Toppers (signage.html#toppers) left the backdrop on 2026-11-27, the same day as the cards** (David, after the card wall
-  shipped: "yes build all 21"). Each is `media/2026/pc10-<slug>-cut.webp`, 1600×804 (Double Dragon 2400×819, still
-  double-wide), alpha outside the panel, thumbs 800/600/400 (Double Dragon 1600/800/600). Cut from the HEIC camera
-  originals in `_originals/`, never from published crops. Recipe: start from the October quad; each side is traced on the
-  panel (strongest color step near the line, robust low-order fit) or set by hand where the tracer cannot be trusted; the
-  four sides give the panel's real corners and the panel is straightened in one resample; 2.8 px inset; one 56 px corner
-  radius for the whole wall; tone carried to the tile it replaces (the wall's approved exposure) with a per-channel
-  curve; the light diagonal "© orlandu.com" at 0.20 on panel pixels + a 34 px corner mark (bottom-left on Kung Fu,
-  Rad Racer, R.C. Pro-Am and Rush'n Attack, where the bottom-right holds the maker's logo or the copyright line).
-  **The bottom edge is the sticker's lower edge, never the metal stand's lip under it** (the lip shows on the AMS-rack
-  shots and on Rad Racer). Where the lip or a drooping corner sits inside a straight cut, the MASK is trimmed there and
-  the art is not bent (Super Mario Bros. 3 bottom, Metroid top-left). Mike Tyson's Punch-Out!! is foil: its thin silver
-  rim outside the black border is part of the sticker and stays. **Check every edge on a zoomed band rendered with a
-  margin** (`qa_bands` in the kit) before shipping a new topper; the October quads were off by up to 14 px on a side.
-  **A new topper gets this treatment, not the backdrop.** Kit: `_pending-deploy\topper-cut-2026-11-27.zip` (topcut.py,
-  params.py with every per-side setting, build_top.py). The og-signage cover and the step-signage tile still show the
-  old backdrop look (not rebuilt).
-- **VS. instruction cards (signage.html#cards) left the backdrop on 2026-11-27.** David called the For Sale Excitebike
-  card "perfection" and asked for the same edit on every wall card; from three mock-ups he chose "fills the tile + watermark".
-  Each of the 18 is `media/2026/vscard-<slug>-cut.webp` (1600 px wide, alpha outside the card's real outline) with
-  800/600/400 thumbs; `.cardwall .shot img{aspect-ratio:1/1;object-fit:contain}` keeps the rows even (Sky Kid is taller
-  than square, T.K.O. Boxing wider; the other sixteen are set square). Recipe: every edge is traced on the card in the
-  HEIC original (the outermost mat-to-card step, about 900 samples a side), fitted with a spline and straightened with one
-  resample (output grid, Coons patch, perspective), so a curled card comes out flat-edged; 1.5 px inset; corners masked to
-  the card's own shape (Excitebike is rounded top-left only; R.B.I. Baseball and Sky Kid are square; most are rounded on
-  all four); camera tone untouched; the light diagonal "© orlandu.com" at 0.20 on card pixels + the 42 px corner mark.
-  PlayChoice and T.K.O. Boxing are black cards on the black mat, where no edge can be traced: PlayChoice is placed from
-  its white keyline plus the border width read off the mat's texture, T.K.O. from its white lower half and the
-  hand-checked top corners. Top Gun (a curled sticker) is rounded on all four corners to clear two rough ones.
-  **A new card gets this treatment, not the backdrop.** The For Sale card photos are the same cut without the diagonal.
-  Kit: `_pending-deploy\vs-card-cut-2026-11-27.zip` (cardcut.py, radii, per-card notes). The og-signage cover and the
-  step-signage tile still show cards on the backdrop (not rebuilt).
-- Build scripts and edge picks for the backdrop wall (and the toppers' October quads): `_pending-deploy\dark-backdrops-2026-10-25.zip` + `dark-backdrops-wm.py` in the connected
-  folder, and the Project doc `claude/dark-backdrop-walls.md`. The og-signage-v2 cover was not watermarked.
+"This only works if it looks consistent" (David) — a new tile gets its own wall's treatment.
+- **PC-10 boards (playchoice-10.html): cut-outs on the dark backdrop** — radial (46,46,62) → (19,19,34), soft shadow,
+  1600×480, heavy diagonal watermark + corner mark (`<slug>-dk2.webp`). Kit: `_pending-deploy\dark-backdrops-2026-10-25.zip`
+  + `dark-backdrops-wm.py`; doc `claude/dark-backdrop-walls.md`.
+- **Toppers (signage.html#toppers): each fills its tile** since 11-27 — `pc10-<slug>-cut.webp`, 1600×804 (Double
+  Dragon 2400×819), alpha outside the panel, thumbs 800/600/400. Cut from the HEIC originals, every side traced and
+  checked on a zoomed band; the bottom edge is the sticker's edge, never the metal stand's lip; 56 px corner radius;
+  light diagonal mark at 0.20 + 34 px corner mark. Kit: `_pending-deploy\topper-cut-2026-11-27.zip`; doc
+  `claude/topper-wall-recut-2026-11-27.md` (per-topper notes).
+- **VS. instruction cards (signage.html#cards): each fills its tile** since 11-27 (he called the For Sale Excitebike
+  cut "perfection") — `vscard-<slug>-cut.webp`, edges traced on the card and straightened in one resample, corners
+  masked to the card's own shape, camera tone untouched, diagonal mark + 42 px corner mark. Kit:
+  `_pending-deploy\vs-card-cut-2026-11-27.zip`; doc `claude/vs-card-wall-recut-2026-11-27.md` (per-card notes).
+- Spinning tops (60 tiles, 1200 px by design) and the guide shelf have their own docs
+  (`claude/spinning-top-wall.md`; project notes on the guide shelf).
 
-## 11. Other features and references
+## 11. Stories, home page and other features
 
-- **Machine paperwork on the profiles (2026-11-23).** donkey-kong ("The manual"), red-tent ("The PlayChoice kit paperwork"),
-  ghostbusters ("The paperwork") and indiana-jones ("The paperwork": manuals + key fob, a `grid c2`) carry a short section directly above the Work log: David's flat-lay
-  photos of manuals, flyers and promo pieces as cut-outs on the walls' dark backdrop (`media/2026/<slug>-dk.webp` 1280×1600,
-  thumbs 800/600/400, objects at 86 %, not watermarked). David approved them from screenshots of the real pages; the headings and
-  captions are placeholders he has not reworded, and there is no body copy (don't invent the story behind a piece). Rulings: the
-  PlayChoice kit belongs on the Red Tent profile; the Donkey Kong cover's printed model line is fine; the Williams "Manuals"
-  envelope photo was dropped. Both numbers on the PlayChoice plates are blurred in the master. Recipe (mat removal by local-contrast
-  outlines, the clear Ghostbusters bag as a highlight matte, a partial white-balance pull) and scripts: Project doc
-  `claude/machine-paperwork-2026-11-23.md`. Declined the same day from mockups: a VS. board wall and a BKM card wall ("both of these
-  look bad"); video games stay off the site (the no-inventory rule); a skate-deck wall is parked until he has time to shoot it.
-- **"At launch" on the six console profiles (2026-11-26).** nes-top-loader, nintendo-64, gba-sp, genesis-cdx, pc-engine-duo-r and
-  ps2-slim carry an `h2.sec` "At launch" above their first technical section: a `dl.inputs` (two or four cells, never three), one or
-  two paragraphs, and a `p.note.fine` source line. Every fact there has a source named on the page: Nintendo Power by volume (Top
-  Loader Vol. 53; N64 Vols. 88-89; GBA SP Vol. 166), a maker's press release (GBA SP, PS2 Slim) or a wire story (N64 price), and for
-  the CDX and Duo-R a reference site that cites the period magazine (weaker; say so if asked). Launch prices are the makers' list
-  prices, not David's, and stay OUT of Quick answers. Nintendo Power rarely printed a hardware price (found: the Top Loader and the GameCube), so prices
-  generally need a newspaper or press release. `RELEASED` in tools/build-timeline.py (11-26, night) holds each console's on-sale date, tile label, source and grade
-  ("period" = a document from the time; "reference" = a later reference work). It orders consoles inside a year, puts the date on the
-  tile ("Consoles · Sep 29") and fills the "Where the console dates come from" table (`#dates`) under the timeline. 18 of 19 are dated;
-  only the JVC X'Eye shows the year alone. David's New 3DS XL SNES Edition is the U.S. Super NES Edition (his answer, 11-26), so its
-  year is 2017 on consoles.html and the timeline (the Japanese Super Famicom Edition was 2016). Nine rows are reference-graded and say so on the page; upgrade a row
-  only with the period document in hand, and never label a date the table cannot source. Findings and the open list: Project doc
-  `claude/console-launch-dates-prices-2026-11-26.md`.
-- **Guide shelf: "How Nintendo got them into the house" (2026-11-26, night).** guide-shelf.html has a second section (`#how-they-arrived`)
-  under the wall: three short paragraphs and a table of how Nintendo Power offered eleven of the guides (free subscription picks, the
-  $18 club deals, the Vol. 76 editor's letter), cited by volume. The wall's captions stay title-only. Only the Vol. 60 Super Metroid ad
-  was read by eye; the rest is from text recognition of the subscription and ad pages, so re-check a row before quoting it elsewhere.
-  Not found in the issues searched: Final Fantasy, Link's Awakening, Mario Paint (only a letters-page note that a guide was in
-  production, Vol. 49), Final Fantasy III, EarthBound, Breath of Fire III, Ocarina of Time, Majora's Mask, The Wind Waker (listed on
-  the Vol. 166 order form, price not confirmed).
-- **The ranked PlayChoice-10 story (2026-11-26).** `playchoice-10-ranked.html` ("Ranked: Every PlayChoice-10 Game, and the One That Charted
-  Early", kicker By the Numbers, 7 min; FEATURED on Stories). Since 11-26 night it also has "Look one up": a select plus a script-drawn chart of any charted game's run (`#pickfig`; the data is the `D` object in the page's last script, built from the same dataset; no chart without JavaScript, the table carries the numbers). Period lines about the PlayChoice-10 found in Nintendo Power (Vol. 4 p. 87, Vol. 6 p. 6, Vol. 9 p. 92, Vol. 14 p. 97) are paraphrased in this story and in playchoice-10-story.html, never quoted at length. All 52 cart-wall titles scored against Nintendo Power's NES chart, 63 charts
-  (Vols. 1-12, 14, 16, 18, 20-67; the Top 30 became a Top 20 with Vol. 32). **Scoring (David asked for a ranking, the method is Claude's
-  and he approved it):** 30 points for #1 down to 1 for #30, summed; the bi-monthly charts (Vols. 1-18) count twice; ties by more charts,
-  then higher peak; exact ties share a rank. 36 charted, 16 never did. Matching calls he approved: Mario's Open Golf = "NES Open
-  Tournament Golf"; the later plain "Punch-Out!!" entries count with Mike Tyson's Punch-Out!!. **The Nintendo Power and strategy-guide
-  scans are research only: never publish a page scan or a crop of one** (facts are cited by volume; the pictures are his own board photo
-  and a drawn chart). The table rows and the SVG are written out by hand in the page (built once from the dataset in the Project doc
-  `claude/nintendo-power-nes-charts-2026-11-26.md`; the CSVs are in `Claude outputs\nintendo-power-charts\` in the connected folder) --
-  a matching change means re-scoring, not editing one row. Search: weight -16 and `profile = False` in build-search-index.py so the
-  cart wall still wins "playchoice 10 games list"; the home ledger card is titled "The cart wall, ranked" for the same reason (a
-  "PlayChoice-10" heading on the home page outranked signage for "pro wrestling topper"). Thumb and OG card are the SMB3 board on the
-  dark backdrop (no game-on-a-screen photo exists for this one).
-- **Stories sections + the plate story (2026-11-21, night).** stories.html is grouped by subject: the featured card, then
-  `#monitors` (Monitors & signal), `#arcade` (Arcade & pinball), `#consoles` (Consoles & games), `#whole` (Across the collection:
-  timeline + the coming-soon card) and `#offbeat`, with a `.chips` jump row in the page head. A new story goes FIRST in its own
-  section (newest first inside a section); the featured slot and the three rolling New badges work as before. build-feed.py reads
-  every `a.card.linked`, so the grouping needs no tool change. New story `reading-a-sony-plate.html` ("What the Plate Tells You",
-  kicker Field Guide, 3 min): model era vs. plate build date vs. BVM hours. Its two photos are David's 480 px KLOV-post photos
-  (`sony-plate-pvm-2950q`, `sony-status-bvm-a14f5u`; serial covered / blurred by him) and stay at native size. Linked from
-  sony-model-numbers.html and the registry hub's serial Quick answer (in the builder). David's site test, 11/21: "a pretty
-  collection and learn conceptually how things work", NOT a how-to and fix-it site; don't pitch repair how-tos.
-- **Two more stories (2026-11-21, late night), both built from David's answers to the drafts.**
-  `why-old-games-look-wrong.html` ("Why Old Games Look Wrong on a New TV", Did You Know?, 3 min; FEATURED on Stories): the entry-level
-  explainer. Its example is a DRAWN demonstration (David chose it over taking a Switch screenshot): an original pixel-art scene
-  (`media/2026/oldgames-demo-pixels|tube`, `oldgames-closeup-pixels|tube`) rendered as square pixels and through a tube model, under a
-  drag divider (`.cmp`, a transparent range input sets `--p`). The scene and renders come from `tools/build-oldgames-demo.py` (not in the
-  pre-push list; run it only to change the art); the character is an original robot — never redraw it as a known game
-  character. No composite/dither-blending claims (RGB-only site). `playchoice-10-story.html` ("The Arcade Machine That Sold You the NES",
-  Did You Know?, 3 min; first in Arcade & pinball): how the system worked. David's rulings: single-monitor PlayChoice existed BOTH as a
-  dedicated cabinet and as a kit; the story MAY reuse the memoriam's three PlayChoice photos (a one-off approval, not a general
-  licence to clone the memoriam); the "last arcade system Nintendo sold in numbers" line was CUT. Count stays 52. In the search index
-  it carries weight -4 so the cart wall wins "<title> playchoice-10" (its H1 words substring-match two-letter query fragments); neither
-  page has HINTS (they cost battery queries). Home ledger dropped the Registry and Double Dribble/Kung Fu cards to make room.
-- **The home reading room rotates (2026-11-21, night).** `#readroom` still holds three static cards (the no-script default); an inline
-  script swaps in three older stories from `ARCHIVE`, a different three each week (`floor(Date.now()/1 week)*3`, so every story
-  comes around). The pool is GENERATED between the `archive-pool` markers by `tools/build-archive.py` from stories.html: every card
-  without a New badge that the Latest ledger does not already show, monitor stories interleaved with the rest. **Run it after any
-  Stories or ledger edit** (it sits before build-llms-full in the pre-push order). Chosen over a tenth home card: David has pulled
-  extra home cards before.
-- **Signal Chain merged into the how-to (2026-11-21, night; David: "if you think it makes sense to merge, that works for me").**
-  `signal-chain.html` is DELETED and 301s to `connect-console-to-pvm.html` (vercel.json). The how-to already carried most of its
-  text; what moved across is `section#chain` ("The signal chain here, end to end": the three lane diagrams + the page-scoped
-  `.chain/.lane/.flow/.node` CSS), "The cabinets are not part of any of this" and "What it costs you". Links that said "The
-  Signal Chain" now point at `connect-console-to-pvm.html#chain`; pvm-vs-bvm and nes-top-loader (leave-alone until 12/10) still
-  link the old address and ride the redirect — repoint them on 12/10. Story chain: ams-3-vs-ams-100 → vs-smb. Footer Reading
-  column lost its link. The how-to's thumb and OG card are cut from `console-shelf-day` (two PVMs running games over the console shelf;
-  `story-connect-console-to-pvm-v3`, `og-connect-console-to-pvm-v4`): David saw it sharing the Sonic & Knuckles photo with pvm-vs-bvm on
-  Stories, then rejected the three-LMD photo ("it is not even showing a game"). A story card photo shows a GAME on a screen. Trinitron Fleet Vol. 1 was considered for a merge and KEPT (a designed magazine issue, not a duplicate).
-- **SEO review, 2026-11-21 (Project doc `claude/seo-review-2026-11-21.md` has the numbers and all ten items).** Shipped: registry
-  model pages retitled "Sony <model>: Years Made, Specs & Registry" with a static one-paragraph answer (`p#answer`, built in
-  `model_page()`; the live count still arrives by script); registry-models retitled "Sony PVM & BVM Production Years by Model" +
-  three Quick answers; mini-cute title/description ("Capcom Mini Cute: The 1991 Kid-Size Candy Cab"); Ocarina title shortened +
-  two Quick answers (Beggar, Bonooru); contextual links to the under-linked pages; the static gallery wall; a paste-able
-  "entry #N in the Orlandu Registry" line (plain + BBCode) in the registry's post-submit step. **Leave these alone until the
-  January pass:** mini-cute, ocarina-of-time-switch-2, registry-models and the registry model pages. **Owed on 12/10:** fold a
-  short "What is a PVM? What is a BVM?" section into pvm-vs-bvm.html (it is shown for "pvm", "pvm monitor", "what is pvm" at
-  position 25-48) and add the playfield-story link to ghostbusters.html.
-- **Story released 2026-11-21:** `mario-before-super.html` ("Mario Before He Was Super", kicker Did You Know?, 5 min; featured on
-  Stories; thumb/OG are the three screen photos side by side). Linked from donkey-kong, mario-bros, vs-unisystem, vs-smb. David's
-  DK cabinet also plays Donkey Kong 3; the donkey-kong.html profile still names only the Jr. board (not asked).
-  **"How Big Is Too Big?" is STILL HELD** (David, 11/21: "recut to 10 mins, then keep holding it") — the 10-minute cut and its
-  hub hooks are in `_pending-deploy\how-big-is-too-big-2026-11-21.bundle`; Project doc `claude/how-big-is-too-big-2026-11-06.md`.
-- **Pinball and arcade stories (2026-11-20).** `how-to-read-a-playfield.html` ("How to Read a Playfield", kicker Field Guide, 6 min)
-  is live: a beginner's guide taught on the four tables, reusing the four playfield photos (David's choice, over one-photo-one-home).
-  Its per-table rules come from the makers' cards/guides and community rule sheets (sources in the Project doc
-  `claude/how-to-read-a-playfield-story-draft-2026-11-20.md`); David runs the latest code on every game. Glossary +7 pinball terms
-  (insert, inlane/outlane, slingshot, drop target, scoop, multiball, wizard mode; `insert` and `scoop` are in SKIP so they are not
-  auto-underlined). Linked from tna, indiana-jones and rick-and-morty; NOT from ghostbusters (leave-alone until 12/10 — add it then).
-  Six more ideas are tabled in `claude/story-ideas-2026-11-20.md`.
-- **Review nine (2026-10-30), the presentation pass — items 2–10 shipped, 1 (poster Step Inside cards) declined.**
-  The CSS lives in one block at the end of style.css ("Review nine"). Hooks: a hub card that opens with a photo uses
-  `<figure class="pf">` (no inline margin/radius styles — games, consoles; For Sale cards are `.card.sale` with the same
-  `figure.pf` on a 4:3 contain plate, and the eBay store card is `.card.saleband` under the grid). Every `main.profile`
-  page wraps `figure.pshot` + `.specs` in `<div class="prail">` (sticky); only donkey-kong also carries its two shots
-  in `.pmore` — pages with several photo sets keep them inline with their text. Small labels (badges, chips, spec
-  labels, ticker, footer labels, regband, machnav, TOC) are Barlow Condensed; Orbitron keeps H1/H2/card titles/nav/
-  buttons; headings `text-wrap:balance`. Nav fits one row from 761 px (compact sizes ≤1100). Footer = four literal
-  columns in site.js (Collection · Reading · Tools & reference · The arcade; `build-static-footer.py` no longer maps
-  NAV). about.html intro is `.aboutintro` (text left; mascot + room-spin video right); monitors.html's magazine promo
-  is `a.card.linked.magband`. Reading Room cards on the home page carry their story thumbs.
-- **Review eleven (2026-11-20), the heavy-processing round** (Project doc `claude/review-11-heavy-processing-2026-11-20.md`).
-  One CSS block at the end of style.css ("Review eleven"): the nav had dropped to a second row from 761 to ~990 px and
-  from 1101 to ~1150 px, so tablets (761–1010) get an icon-only search button, 761–900 a smaller logo and tighter nav
-  words, and the compact nav sizes run to 1190 px — re-measure the header at every 10 px after adding a nav word.
-  `.grid.c2/.c3` minimums are `min(…,100%)` so 320–360 px phones don't scroll sideways; the registry form no longer
-  takes its width from the longest `<option>`. Registry model pages carry a Specifications table (`spec_section` in the
-  builder, data from `tools/build-registry-specs.py`: fields parsed from each model's own notes, plus pitch / size /
-  weight for 28 chassis with the source graded sony / wiki / arcade — add a PHYS row only with the source in hand) and
-  the catalog table has a TV-lines column (builder AND `paintModels` in registry.js). Search: the one-letter typo retry
-  also knows HINTS words, sub-labels and ALIAS keys (site.js and api/mcp.js). Glossary +5 (S-Video, multiformat,
-  termination, SDI, HR Trinitron). Console-profile OG cards are dark-backdrop builds (`-v3`); ams-3-vs-ams-100 has its
-  own card. Mini Cute portrait/side masters were re-cut from the HEIC originals at 1362×1600. Measured and NOT changed:
-  the H.264 fallbacks (a from-master veryslow encode at equal SSIM saves ~9 %), and the other sub-1400 photos (no larger
-  original in `_originals/`).
-- **Review ten (2026-11-10), ten polish fixes — all ten approved.** One CSS block at the end of style.css ("Review
-  ten"). Hooks: a grid with a FIXED card count adds `n2`/`n3`/`n4`/`n5` beside `c2`/`c3` so no row ends with a hole (games
-  `#gameroom` uses `quad`; consoles Nintendo/Sega `n3`; wanted marquees `n4` (four since the VS. Castlevania marquee arrived 11-27; 2×2 from 761 px, four across from 1100), BKM `n5`, Red Tent `n3`; projects photo rows
-  `n3` + `align-items:start`; about FAQ `n2`; the registry builder adds `n3` when the related row divides by three) —
-  when a count changes, change the class. The `.n*` rules live in the Review eleven block, BELOW its `.grid.c2/.c3` restatement (equal specificity, later wins; they sat above it from 11-20 to 11-27 and did nothing). "More stories" is a growing list and is left alone. Home Latest: the first
-  card spans both columns (nine = lead + 4×2). `--measure:72ch` caps unclassed running text in `main.hub section`
-  and `.signshow p`. Page-head band: the grid floor has its own strip under the text; ends fade from 1241 px.
-  `main.hub .sub` / `.wantgroup` take the page's `--acc` (home is not a hub and stays orange). For Sale buttons pin
-  to the card bottom (`!important` beats the inline margin). **Callouts:** two back-to-back thoughts share one
-  `<div class="note"><p>…</p><p>…</p></div>`; sources, open-data lines and table caveats are `p.note.fine` (unboxed).
-  site.js glues a trailing "→" to its last word at runtime. Phones: footer is two columns and hides the top link
-  row; an `h2.sec small` note drops under its title. Home Stories card = `step-stories-v2` (the Mini Cute triptych,
-  copied from `story-mini-cute`) so it no longer repeats the Monograph card's AMS-100 stack.
-- **Contact form:** `api/contact.js` relays through Resend from `onboarding@resend.dev` to orlandusarcade@gmail.com;
-  forms `form.cform` on about.html#write and wanted.html#have-one ("I have one →" links prefill the subject); honeypot
-  `site`; photos ≤ 3 MB after an in-browser downscale; the mailto stays as the fallback.
-- **Gallery:** tags + `TAG_LABELS`, deep links `gallery.html#tag=<slug>`; Attract Mode slideshow (`#play`). Home Latest
-  ledger holds NINE text cards (deliberately no thumbnails); a new page earns a Latest card and the oldest drops.
-  Step Inside holds twelve cards plus the registry card.
-- **The AMS-100 monograph:** web edition is canonical; no images by the author's ruling; §4.5.2 / EXT-02 removed fully and
-  never reintroduced; all rights reserved with the citation block; `.mbody` text children carry the 74ch measure (never
-  the section); `.tag` must not be nowrap. The PDF `media/ams-100-monograph-rev3.pdf` (11-14; rev2 and the original both 301 to it) is typeset FROM the web edition
-  (pandoc → xelatex, DejaVu Serif, his rights metadata copied across); the old PDF 301s to it. Rebuild scripts: Project
-  doc `claude/ams-100-pdf-build.md`; publish under a new filename and repoint the two links. Appendix E cites Sony's AMS-3 Operation and Maintenance Manual as `[AMS-3 OM]` (found by David 11-14 as a manualslib.de scan, read online): three destinations J / UC / AE with serial floors 10031 / 20001 / 10011, the covered rear fitting is the voltage selector, Sony weight 14.5 kg beside his measured 35 lb. The lineage claim stays low confidence; the manual does not name the AMS-100.
-- **Vault:** `vault.html` on David's device (not in the repo), ~1,283 items, JSON between `/*VAULT_DATA_START*/` and
-  `/*VAULT_DATA_END*/` prefixed `items = [`. Useful fields: `upgrades`, `conditionNotes`, `notes`, `lastServiced`,
-  `originality`. Facts he has corrected on the site win over the vault.
-- Planning artifacts: Attract Mode (photo plan) https://claude.ai/code/artifact/c4999444-8cc3-49fd-8f52-bf996c268710 ·
-  The Bench Book (work-log intake, mostly superseded by the vault)
-  https://claude.ai/code/artifact/0f218037-5cbf-469f-a9c1-8832f67ef0a4
+- **stories.html** is grouped: featured card, `#monitors`, `#arcade`, `#consoles`, `#whole`, `#offbeat`, with a
+  `.chips` jump row. A new story goes FIRST in its section; the featured slot and three rolling New badges move with
+  it. A new story also owes: story thumb + OG card, home Latest card (nine text cards; the oldest drops) + marquee
+  line, sitemap block, llms.txt line, search weight/hints check, links from related pages, `build-archive.py`, and —
+  as soon as it is live — IndexNow + Google Request Indexing. David posts story links on KLOV himself and likes a
+  short text plus a screenshot of the top of the story.
+- **Live stories and their fixed points:** `playchoice-10-ranked.html` (FEATURED; scoring: 30 points for #1 down to 1,
+  bi-monthly charts count twice; the table and SVG are hand-written from the dataset in
+  `claude/nintendo-power-nes-charts-2026-11-26.md` — a matching change means re-scoring); `playchoice-10-story.html`
+  (single-monitor PlayChoice existed as a cabinet AND a kit); `why-old-games-look-wrong.html` (a DRAWN demo from
+  `tools/build-oldgames-demo.py`; the robot is original — never a known character; no composite claims);
+  `reading-a-sony-plate.html` (480 px photos at native size; most J-suffix monitors carry no plate date);
+  `how-to-read-a-playfield.html`; `mario-before-super.html`; `ocarina-of-time-switch-2.html`; `jvc-xeye.html`;
+  `connect-console-to-pvm.html` (holds the merged Signal Chain as `#chain`); Trinitron Fleet Vol. 1 (kept, not merged).
+- **HELD, not on main (bundles in `_pending-deploy\`, both re-cut on 11-27 against that night's main):**
+  "How Big Is Too Big?" (`how-big-is-too-big.html`, the 10-minute cut David has not read; his 11/21 ruling was "recut
+  to 10 mins, then keep holding it") and "Only Ten Games Ever Topped Nintendo Power's NES Chart"
+  (`nes-number-ones.html`; title is Claude's). Release = fetch the bundle, merge, rerun the pre-push list, ask.
+  Tabled story ideas (not declined): `claude/story-ideas-2026-11-20.md`.
+- **Home page:** registry band under the hero; ticker; filmstrip (from the gallery); Step Inside = twelve cards, two
+  across on phones (thumb + title only), three across from 1061 px; the reading room rotates three older stories a
+  week from the `archive-pool` markers; Latest ledger = lead card + eight.
+- **Search-engine leave-alone lists** and what is owed on the next monthly pass (the 10th) live in the project notes
+  on SEO and `claude/seo-check-2026-11-27.md`. Owed 12/10: a "What is a PVM? What is a BVM?" section on pvm-vs-bvm,
+  the playfield-story link on ghostbusters, repointing two signal-chain links (pvm-vs-bvm, nes-top-loader).
+- **Contact form:** `api/contact.js` relays through Resend to orlandusarcade@gmail.com; `form.cform` on
+  about.html#write and wanted.html#have-one; honeypot `site`; the mailto stays as the fallback.
+- **Gallery:** tags + `TAG_LABELS`, deep links `gallery.html#tag=<slug>`, Attract Mode slideshow (`#play`).
+- **The AMS-100 monograph:** the web edition is canonical; no images; §4.5.2 / EXT-02 removed and never reintroduced;
+  all rights reserved. The PDF `media/ams-100-monograph-rev3.pdf` is typeset FROM the web edition
+  (`claude/ams-100-pdf-build.md`); publish a rebuild under a new filename. Appendix E cites Sony's AMS-3 manual.
+- **Vault:** `vault.html` on David's device (not in the repo), ~1,283 items; facts he has corrected on the site win.
+  `C:\Users\david\Vault Photos` holds documentation shots by item id. Searched 11-27 for larger originals of the 35
+  published photos under 1,400 px: none is the same shot. It does hold sharp, separate photos of Big Blue's marquee
+  and control panel (`ARC\ORL-ARC-1`), offered to David as replacements for the two 520 px photos — his call.
+- **Sweep baseline:** `_qa\baseline-2026-11-20-*.zip` in the connected folder (65 pages × 390/768/1280/1920). Every
+  page is ~25 px shorter than those shots since the footer lost a link, so compare regions, not page heights.

@@ -759,7 +759,9 @@ table.spec.stack{min-width:0}
 
 /* ── 3. Home on a phone: "Step inside" goes two-across, thumb and title only ── */
 @media(max-width:700px){
-  .grid.steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+  /* .c2 in the selector on purpose: the Review eleven block restates .grid.c2 further down, and at equal
+     specificity that later rule had put phones back to one card per row from 11-20 to 11-27. */
+  .grid.c2.steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
   .grid.steps .card{padding:.7rem .75rem .8rem}
   .grid.steps .card .cthumb{width:calc(100% + 1.5rem);margin:-.7rem -.75rem .6rem;aspect-ratio:16/10}
   .grid.steps .card .sub{font-size:.68rem;margin-bottom:.25rem}
@@ -952,6 +954,8 @@ main.hub .card.sale > figure.pf img{position:absolute;inset:0;width:100%;height:
 .aboutintro .aside .lbl{display:block;font-family:var(--cond);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fire2);margin:.2rem 0 .5rem}
 @media(max-width:760px){.aboutintro{grid-template-columns:1fr}.aboutintro .aside{grid-column:1;grid-row:2;max-width:300px;margin:0 auto}}
 @media(min-width:1000px){#contact .grid.c3{grid-template-columns:repeat(5,minmax(0,1fr))}}
+/* Five narrow cards: a handle or address longer than its card wraps instead of being cut off (the email lost "il.com" at 1280). */
+#contact .card h3{overflow-wrap:anywhere}
 
 /* ── 10. Monitors: the magazine as a cover band ── */
 .card.linked.magband{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);padding:0;overflow:hidden;border-color:var(--cyan-dim)}
